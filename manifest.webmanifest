@@ -1,0 +1,16 @@
+{
+  "id": "./",
+  "name": "Respira · Tu espacio de calma",
+  "short_name": "Respira",
+  "description": "Ejercicios gratuitos para encontrar un momento de calma.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#edf7f8",
+  "theme_color": "#edf7f8",
+  "lang": "es",
+  "icons": [
+    {"src":"./icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"./icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}

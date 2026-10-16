@@ -1,0 +1,56 @@
+RESPIRA · Versión inicial 1.0
+================================
+
+QUÉ INCLUYE
+- Pantalla de bienvenida, inicio, métodos, favoritos y más.
+- Respiración guiada 4-4-4-4 con pausa, reinicio y contador de ciclos.
+- Meditaciones con temporizadores de 5, 8 y 10 minutos.
+- Técnica sensorial 5-4-3-2-1, relajación muscular y reencuadre mental.
+- Consejos prácticos, favoritos y diario local.
+- Diseño móvil, manifiesto PWA, iconos y caché para uso sin conexión.
+- No requiere servidor, cuenta ni base de datos.
+
+CÓMO SUBIR A GITHUB PAGES (SIN PROGRAMAR)
+1. Inicia sesión en https://github.com/.
+2. Pulsa el signo + (arriba a la derecha) > New repository.
+3. En Repository name escribe: respira.
+4. Marca Public y pulsa Create repository.
+5. En el repositorio, haz clic en Add file > Upload files.
+6. DESCOMPRIME el ZIP y sube EL CONTENIDO de la carpeta Respira,
+   no la carpeta como subcarpeta: index.html debe quedar en la raíz.
+   Incluye también la carpeta icons con sus 2 archivos.
+7. Pulsa Commit changes.
+8. Abre Settings > Pages. En Build and deployment selecciona
+   Deploy from a branch, Branch: main, Folder: /(root), y Save.
+9. Espera unos minutos y visita la dirección que muestra Pages:
+   https://TU_USUARIO.github.io/respira/
+   (reemplaza TU_USUARIO por tu usuario real).
+10. En Android abre la URL con Chrome y busca en el menú ⋮
+    la opción Instalar aplicación o Añadir a pantalla de inicio.
+    El texto exacto cambia según el navegador y la versión.
+
+PRUEBAS RECOMENDADAS
+- Recorre los métodos y verifica sus instrucciones.
+- Inicia, pausa y reinicia la respiración y las meditaciones.
+- Guarda favoritos y comprueba que persisten al cerrar y reabrir.
+- Escribe una nota, guárdala y vuelve a abrirla.
+- Instala la app desde su dirección HTTPS publicada.
+- Abre la app una vez con internet; después activa modo avión
+  y comprueba que los recursos ya visitados abren sin conexión.
+
+IMPORTANTE
+- Abrir index.html directamente como archivo local puede impedir
+  que funcionen el service worker y la instalación. Usa GitHub Pages
+  (HTTPS) o un servidor local para comprobar la PWA.
+- Los datos están en el almacenamiento local del navegador.
+  No hay copia de seguridad ni sincronización entre dispositivos.
+- No sustituye a la atención psicológica o médica profesional.
+- Para actualizar el caché offline después de modificar archivos,
+  cambia el nombre CACHE en sw.js (por ejemplo, respira-v2).
+- Distribuir un APK es una opción posterior: puede generarse con
+  herramientas como PWABuilder o Bubblewrap, sujetas a requisitos
+  de firma y prueba. El ZIP actual NO incluye un APK.
+
+ARCHIVOS
+index.html, style.css, app.js, sw.js, manifest.webmanifest,
+logo.svg, landscape.svg, icons/icon-192.png, icons/icon-512.png
