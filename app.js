@@ -1,5 +1,27 @@
 'use strict';
 const app=document.getElementById('app');
+// Fotografías locales: archivos originales sin alteraciones.
+const welcomePhotos=['./fondos/fondo1.jpg','./fondos/fondo2.jpg','./fondos/fondo3.jpg','./fondos/fondo4.jpg'];
+let slideshowTimer=null;
+let currentSlide=0;
+function stopWelcomeSlideshow(){
+  if(slideshowTimer!==null){clearInterval(slideshowTimer);slideshowTimer=null}
+}
+function startWelcomeSlideshow(){
+  stopWelcomeSlideshow();
+  currentSlide=0;
+  const photos=[...app.querySelectorAll('.welcome-photo')];
+  if(photos.length<2 || (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches))return;
+  slideshowTimer=setInterval(()=>{
+    // Sin cambios cuando la pestaña está oculta.
+    if(document.hidden || view!=='welcome')return;
+    const next=(currentSlide+1)%photos.length;
+    photos[next].classList.add('is-active');
+    photos[currentSlide].classList.remove('is-active');
+    currentSlide=next;
+  },10000);
+}
+
 const catalog={
  breath:{title:'Respiración 4-4-4-4',sub:'Una técnica para recuperar la calma',emoji:'💨',color:'blue',kind:'breath'},
  calm:{title:'Calma en 5 minutos',sub:'Un momento de atención plena',emoji:'🌿',color:'green',kind:'timer',duration:300,script:'Siéntate cómodamente. Nota cómo entra y sale el aire. Cuando aparezca un pensamiento, obsérvalo con amabilidad y vuelve a tu respiración.'},
@@ -29,7 +51,7 @@ function backhead(title){return `<div class="backhead"><button class="iconbtn" d
 function bottom(active){return `<nav class="bottomnav" aria-label="Navegación principal">${[['home','⌂','Inicio'],['methods','▦','Métodos'],['favorites','♡','Favoritos'],['more','···','Más']].map(([id,ic,t])=>`<button class="navitem ${active===id?'active':''}" data-go="${id}" ${active===id?'aria-current="page"':''}><span class="navicon">${ic}</span>${t}</button>`).join('')}</nav>`}
 function item(id){const x=catalog[id],fav=getStore('favorites',[]).includes(id);return `<div class="listbtn" style="cursor:default"><button class="round" data-open="${id}" aria-label="Abrir ${safe(x.title)}" style="border:0;background:var(--unused,#e6f7fc)">${x.emoji}</button><button class="copy" data-open="${id}" style="border:0;background:none;text-align:left;color:inherit;padding:0"><strong>${safe(x.title)}</strong><small>${safe(x.sub)}</small></button><button class="iconbtn ${fav?'heart':''}" data-fav="${id}" aria-label="${fav?'Quitar de':'Añadir a'} favoritos: ${safe(x.title)}">${fav?'♥':'♡'}</button><button class="iconbtn" data-open="${id}" aria-label="Abrir">›</button></div>`}
 function render(){let html='';
-if(view==='welcome'){html=`<div class="welcome"><div class="spacer"></div><img class="brandmark" src="./logo.svg" alt="Logo Respira"><h1>Respira</h1><p>Tu espacio de calma,<br>siempre contigo.</p><div class="spacer"></div><button class="pill light full" data-go="home">Comenzar</button><small style="margin-top:16px">Gratis · Sin registro</small></div>`}
+if(view==='welcome'){html=`<div class="welcome"><div class="welcome-gallery" aria-hidden="true">${welcomePhotos.map((src,i)=>`<img class="welcome-photo ${i===0?'is-active':''}" src="${src}" alt="" decoding="async" ${i===0?'fetchpriority="high"':''}>`).join('')}</div><div class="spacer"></div><img class="brandmark" src="./logo.svg" alt="Logo Respira"><h1>Respira</h1><p>Tu espacio de calma,<br>siempre contigo.</p><div class="spacer"></div><button class="pill light full" data-go="home">Comenzar</button><small style="margin-top:16px">Gratis · Sin registro</small></div>`}
 if(view==='home'){html=`<main class="view"><div class="brandhead"><img src="./logo.svg" alt=""><div><span class="eyebrow">Tu espacio de calma</span><h1>Hola ♡</h1></div></div><p class="muted">Tómate un momento, estás bien.</p><div class="intro"><div class="symbol">♡</div><div style="font-size:13px;line-height:1.5">El estrés es parte de la vida, pero no tiene que controlarte. Aquí tienes herramientas para sentirte mejor.</div></div><div class="tiles"><button class="tile blue" data-open="breath"><span class="tileicon">💨</span><strong>Respiración</strong><span>Calma tu mente en minutos →</span></button><button class="tile green" data-go="meditation"><span class="tileicon">🌿</span><strong>Meditación</strong><span>Enfócate y reduce la tensión →</span></button><button class="tile purple" data-go="quick"><span class="tileicon">🧠</span><strong>Técnicas rápidas</strong><span>Recursos para el momento →</span></button><button class="tile yellow" data-go="advice"><span class="tileicon">📋</span><strong>Consejos</strong><span>Hábitos y tips útiles →</span></button></div><div class="section note">🌱 Está bien necesitar una pausa. Respira a tu ritmo.</div></main>${bottom('home')}`}
 if(view==='methods'){html=`<main class="view"><div class="topline"><div><span class="eyebrow">Explorar</span><h1>Métodos</h1></div><span style="font-size:33px">🌱</span></div><p class="muted">Encuentra una herramienta para este momento.</p><div class="list">${[['breath','Respiración guiada'],['meditation','Meditaciones'],['quick','Técnicas rápidas'],['advice','Consejos'],['journal','Mi espacio para escribir']].map(([dest,t])=>`<button class="listbtn" ${catalog[dest]?`data-open="${dest}"`:`data-go="${dest}"`}><span class="round">${({breath:'💨',meditation:'🌿',quick:'🧠',advice:'📋',journal:'📝'})[dest]}</span><span class="copy"><strong>${t}</strong></span><span class="chevron">›</span></button>`).join('')}</div></main>${bottom('methods')}`}
 if(['meditation','quick','advice'].includes(view)){const headings={meditation:['Meditación','Dedica unos minutos a ti. No necesitas experiencia.'],quick:['Técnicas rápidas','Cuando no tienes mucho tiempo, estas técnicas pueden ayudarte.'],advice:['Consejos','Pequeños hábitos que pueden hacer una gran diferencia.']};html=`<main class="view">${backhead(headings[view][0])}<p class="muted center">${headings[view][1]}</p><div class="list">${groups[view].map(item).join('')}</div></main>${bottom('methods')}`}
@@ -45,7 +67,8 @@ if(x.kind==='reframe'){body=`<div class="card section"><h3>1. Identifica el pens
 if(x.kind==='journal'){const previous=getStore('journal','');body=`<p class="muted">Este espacio es tuyo. Escribe sin juzgar lo que sientes.</p><label for="journal-text"><strong>¿Cómo me siento hoy?</strong></label><textarea class="field section" id="journal-text" maxlength="10000" placeholder="Hoy me siento...">${safe(previous)}</textarea><div class="note">El texto se guarda solo en este dispositivo, no en una cuenta ni en la nube. Evita escribir información que no quieras dejar en un dispositivo compartido.</div><div class="actions"><button class="pill" data-action="journal-save">Guardar nota</button><button class="softbtn" data-action="journal-clear">Borrar nota</button></div><p id="journal-status" class="muted" role="status"></p>`}
 if(x.kind==='advice'){body=`<div class="card section"><p>${safe(x.script)}</p></div><div class="note">Cada persona es distinta. Elige las recomendaciones que sean adecuadas para ti.</div>`}
 const fav=getStore('favorites',[]).includes(activeId);html=`<main class="view">${backhead(x.title)}<div class="topline section"><span class="tag">${x.emoji} ${safe(x.title)}</span><button class="iconbtn ${fav?'heart':''}" data-fav="${activeId}" aria-label="${fav?'Quitar de':'Añadir a'} favoritos">${fav?'♥':'♡'}</button></div>${body}</main>${bottom('methods')}`}
-app.innerHTML=html;}
+app.innerHTML=html;
+if(view==='welcome')startWelcomeSlideshow();else stopWelcomeSlideshow();}
 function clock(seconds){return `${String(Math.floor(seconds/60)).padStart(2,'0')}:${String(seconds%60).padStart(2,'0')}`}
 function breathTick(){breathElapsed++;if(breathElapsed>=breathPhases[breathIndex][1]){breathElapsed=0;breathIndex=(breathIndex+1)%4;if(breathIndex===0)breathCycles++}updateBreath()}
 function updateBreath(){const phase=document.getElementById('phase');if(!phase)return;phase.textContent=breathPhases[breathIndex][0];document.getElementById('phase-seconds').textContent=`${breathPhases[breathIndex][1]-breathElapsed} segundos`;document.getElementById('breath-cycles').textContent=`Ciclos completados: ${breathCycles}`;document.getElementById('breath-inner').classList.toggle('expand',breathIndex===0);document.getElementById('breath-status').textContent=running?'Respira cómodamente. Puedes pausar cuando quieras.':'Pausado. Continúa cuando quieras.';document.getElementById('breath-toggle').textContent=running?'Ⅱ Pausar':'▶ Continuar'}
