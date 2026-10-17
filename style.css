@@ -294,3 +294,54 @@
   .welcome-bottom .pill.light.welcome-cta{animation:none!important}
   .welcome-bottom .pill.light.welcome-cta .welcome-cta-arrow{transition:none!important}
 }
+
+
+/* RESPIRA 1.7 — Isotipo ligeramente más grande en la bienvenida. */
+.welcome-center .brandmark{
+  width:92px;
+  height:92px;
+  margin:0 auto 13px;
+}
+@media(max-height:600px){
+  .welcome-center .brandmark{
+    width:70px;
+    height:70px;
+    margin-bottom:7px;
+  }
+}
+
+
+/* RESPIRA 1.8 — Ajuste final: isotipo y flecha del botón un poco más grandes. */
+.welcome-center .brandmark{
+  width:100px;
+  height:100px;
+  margin:0 auto 14px;
+}
+.welcome-bottom .pill.light.welcome-cta{
+  grid-template-columns:40px 1fr 44px;
+  min-height:64px;
+  padding:8px 12px 8px 14px;
+}
+.welcome-bottom .pill.light.welcome-cta .welcome-cta-arrow{
+  width:43px;
+  height:43px;
+  font-size:25px;
+  font-weight:800;
+}
+@media(max-height:600px){
+  .welcome-center .brandmark{
+    width:76px;
+    height:76px;
+    margin-bottom:8px;
+  }
+  .welcome-bottom .pill.light.welcome-cta{
+    grid-template-columns:36px 1fr 38px;
+    min-height:51px;
+    padding:5px 10px 5px 12px;
+  }
+  .welcome-bottom .pill.light.welcome-cta .welcome-cta-arrow{
+    width:36px;
+    height:36px;
+    font-size:22px;
+  }
+}
