@@ -19,23 +19,36 @@ const welcomeMessages=[
 let slideshowTimer=null;
 let currentSlide=0;
 let currentMessage=0;
+let messageBag=[];
+// Elegimos al azar sin repetir frases hasta agotar las pendientes.
+// Al reiniciar la bolsa, se evita repetir la última frase de inmediato.
+function shuffledRemainingMessages(exceptIndex){
+  const indices=welcomeMessages.map((_,index)=>index).filter(index=>index!==exceptIndex);
+  for(let i=indices.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [indices[i],indices[j]]=[indices[j],indices[i]];
+  }
+  return indices;
+}
+function nextRandomMessage(){
+  if(!messageBag.length)messageBag=shuffledRemainingMessages(currentMessage);
+  return messageBag.pop();
+}
 function stopWelcomeSlideshow(){
   if(slideshowTimer!==null){clearInterval(slideshowTimer);slideshowTimer=null}
 }
 function startWelcomeSlideshow(){
   stopWelcomeSlideshow();
   currentSlide=0;
-  currentMessage=0;
   const photos=[...app.querySelectorAll('.welcome-slide')];
   const quotes=[...app.querySelectorAll('.welcome-quote')];
   if(photos.length<2)return;
-  // Para quienes prefieren menos movimiento, mantenemos la imagen fija.
-  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  // Si el dispositivo prefiere menos movimiento, el CSS elimina las transiciones.
   slideshowTimer=setInterval(()=>{
     if(document.hidden || view!=='welcome')return;
     const nextPhoto=(currentSlide+1)%photos.length;
-    const nextMessage=(currentMessage+1)%quotes.length;
-    // Imagen y mensaje cambian simultáneamente, cada uno en su propia secuencia.
+    const nextMessage=nextRandomMessage();
+    // Los dos cambian al mismo tiempo: el paisaje rota y la frase es aleatoria.
     photos[nextPhoto].classList.add('is-active');
     photos[currentSlide].classList.remove('is-active');
     quotes[nextMessage].classList.add('is-active');
@@ -76,16 +89,19 @@ function backhead(title){return `<div class="backhead"><button class="iconbtn" d
 function bottom(active){return `<nav class="bottomnav" aria-label="Navegación principal">${[['home','⌂','Inicio'],['methods','▦','Métodos'],['favorites','♡','Favoritos'],['more','···','Más']].map(([id,ic,t])=>`<button class="navitem ${active===id?'active':''}" data-go="${id}" ${active===id?'aria-current="page"':''}><span class="navicon">${ic}</span>${t}</button>`).join('')}</nav>`}
 function item(id){const x=catalog[id],fav=getStore('favorites',[]).includes(id);return `<div class="listbtn" style="cursor:default"><button class="round" data-open="${id}" aria-label="Abrir ${safe(x.title)}" style="border:0;background:var(--unused,#e6f7fc)">${x.emoji}</button><button class="copy" data-open="${id}" style="border:0;background:none;text-align:left;color:inherit;padding:0"><strong>${safe(x.title)}</strong><small>${safe(x.sub)}</small></button><button class="iconbtn ${fav?'heart':''}" data-fav="${id}" aria-label="${fav?'Quitar de':'Añadir a'} favoritos: ${safe(x.title)}">${fav?'♥':'♡'}</button><button class="iconbtn" data-open="${id}" aria-label="Abrir">›</button></div>`}
 function render(){let html='';
-if(view==='welcome'){html=`<section class="welcome" aria-label="Bienvenida a Respira">
+if(view==='welcome'){
+  currentMessage=Math.floor(Math.random()*welcomeMessages.length);
+  messageBag=shuffledRemainingMessages(currentMessage);
+  html=`<section class="welcome" aria-label="Bienvenida a Respira">
   <header class="welcome-top">
     <div class="welcome-overline"><span class="welcome-sparkle" aria-hidden="true">✦</span> UN MOMENTO PARA TI <span class="welcome-sparkle" aria-hidden="true">✦</span></div>
-    <div class="welcome-quotes" aria-label="Frase para acompañarte">${welcomeMessages.map((text,i)=>`<span class="welcome-quote ${i===0?'is-active':''}" aria-hidden="${i!==0}">${text}</span>`).join('')}</div>
+    <div class="welcome-quotes" aria-label="Frase para acompañarte">${welcomeMessages.map((text,i)=>`<span class="welcome-quote ${i===currentMessage?'is-active':''}" aria-hidden="${i!==currentMessage}">${text}</span>`).join('')}</div>
   </header>
   <div class="welcome-gallery">
     ${welcomePhotos.map((src,i)=>`<div class="welcome-slide ${i===0?'is-active':''}" style="--photo-matte:${['#256f79','#627f87','#294f5d','#527981'][i]}"><img class="welcome-photo" src="${src}" alt="" decoding="async" ${i===0?'fetchpriority="high"':'loading="lazy"'}></div>`).join('')}
     <div class="welcome-center"><img class="brandmark" src="./logo.svg" alt=""><h1>Respira</h1><p>Tu espacio de calma,<br>siempre contigo.</p></div>
   </div>
-  <footer class="welcome-bottom"><button class="pill light full" data-go="home">Comenzar <span aria-hidden="true">→</span></button><small>Gratis · Sin registro</small></footer>
+  <footer class="welcome-bottom"><button class="pill light full welcome-cta" data-go="home" aria-label="Comenzar a usar Respira"><span class="welcome-cta-sparkle" aria-hidden="true">✦</span><span class="welcome-cta-label">Comenzar</span><span class="welcome-cta-arrow" aria-hidden="true">→</span></button><small>Gratis · Sin registro</small></footer>
 </section>`}
 if(view==='home'){html=`<main class="view"><div class="brandhead"><img src="./logo.svg" alt=""><div><span class="eyebrow">Tu espacio de calma</span><h1>Hola ♡</h1></div></div><p class="muted">Tómate un momento, estás bien.</p><div class="intro"><div class="symbol">♡</div><div style="font-size:13px;line-height:1.5">El estrés es parte de la vida, pero no tiene que controlarte. Aquí tienes herramientas para sentirte mejor.</div></div><div class="tiles"><button class="tile blue" data-open="breath"><span class="tileicon">💨</span><strong>Respiración</strong><span>Calma tu mente en minutos →</span></button><button class="tile green" data-go="meditation"><span class="tileicon">🌿</span><strong>Meditación</strong><span>Enfócate y reduce la tensión →</span></button><button class="tile purple" data-go="quick"><span class="tileicon">🧠</span><strong>Técnicas rápidas</strong><span>Recursos para el momento →</span></button><button class="tile yellow" data-go="advice"><span class="tileicon">📋</span><strong>Consejos</strong><span>Hábitos y tips útiles →</span></button></div><div class="section note">🌱 Está bien necesitar una pausa. Respira a tu ritmo.</div></main>${bottom('home')}`}
 if(view==='methods'){html=`<main class="view"><div class="topline"><div><span class="eyebrow">Explorar</span><h1>Métodos</h1></div><span style="font-size:33px">🌱</span></div><p class="muted">Encuentra una herramienta para este momento.</p><div class="list">${[['breath','Respiración guiada'],['meditation','Meditaciones'],['quick','Técnicas rápidas'],['advice','Consejos'],['journal','Mi espacio para escribir']].map(([dest,t])=>`<button class="listbtn" ${catalog[dest]?`data-open="${dest}"`:`data-go="${dest}"`}><span class="round">${({breath:'💨',meditation:'🌿',quick:'🧠',advice:'📋',journal:'📝'})[dest]}</span><span class="copy"><strong>${t}</strong></span><span class="chevron">›</span></button>`).join('')}</div></main>${bottom('methods')}`}

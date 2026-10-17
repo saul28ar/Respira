@@ -233,3 +233,64 @@
   .welcome-center .brandmark,.welcome-center h1,.welcome-center p,
   .welcome-bottom .pill.light,.welcome-bottom small{animation:none!important}
 }
+
+
+/* RESPIRA 1.6 — Botón destacado y sereno para iniciar la app. */
+.welcome-bottom .pill.light.welcome-cta{
+  position:relative;
+  display:grid;
+  grid-template-columns:38px 1fr 38px;
+  align-items:center;
+  column-gap:6px;
+  min-height:62px;
+  padding:8px 12px;
+  border:1px solid rgba(209,255,252,.68);
+  border-radius:999px;
+  background:linear-gradient(112deg,#37b8aa 0%,#258e9d 49%,#226c91 100%);
+  color:white;
+  font-weight:800;
+  font-size:17px;
+  letter-spacing:.01em;
+  text-shadow:0 1px 2px rgba(15,59,76,.18);
+  box-shadow:0 10px 25px rgba(4,38,57,.28), 0 0 0 3px rgba(194,255,244,.09);
+  animation:respiraEntrada .9s .65s both, respiraBotonBrillo 4.5s 1.55s ease-in-out infinite;
+  transition:transform .25s ease,box-shadow .25s ease,filter .25s ease;
+}
+.welcome-bottom .pill.light.welcome-cta .welcome-cta-sparkle{
+  display:grid;place-items:center;
+  font-size:17px;
+  color:#dcfff6;
+  line-height:1;
+}
+.welcome-bottom .pill.light.welcome-cta .welcome-cta-label{justify-self:center;font-size:17px}
+.welcome-bottom .pill.light.welcome-cta .welcome-cta-arrow{
+  width:37px;height:37px;
+  border-radius:50%;
+  display:grid;place-items:center;
+  line-height:1;
+  font-size:22px;
+  color:#124d65;
+  background:rgba(255,255,255,.92);
+  box-shadow:0 2px 8px rgba(4,42,58,.12);
+  transition:transform .25s ease;
+}
+.welcome-bottom .pill.light.welcome-cta:hover,.welcome-bottom .pill.light.welcome-cta:focus-visible{
+  filter:brightness(1.07);
+  transform:translateY(-2px);
+  box-shadow:0 14px 31px rgba(4,38,57,.36),0 0 0 4px rgba(194,255,244,.15);
+}
+.welcome-bottom .pill.light.welcome-cta:hover .welcome-cta-arrow,
+.welcome-bottom .pill.light.welcome-cta:focus-visible .welcome-cta-arrow{transform:translateX(3px)}
+.welcome-bottom .pill.light.welcome-cta:active{transform:scale(.985)}
+@keyframes respiraBotonBrillo{
+  0%,100%{box-shadow:0 10px 25px rgba(4,38,57,.28),0 0 0 3px rgba(194,255,244,.09)}
+  50%{box-shadow:0 10px 28px rgba(4,38,57,.32),0 0 0 6px rgba(194,255,244,.16)}
+}
+@media(max-height:600px){
+  .welcome-bottom .pill.light.welcome-cta{min-height:49px;padding:5px 11px}
+  .welcome-bottom .pill.light.welcome-cta .welcome-cta-arrow{height:32px;width:32px}
+}
+@media(prefers-reduced-motion:reduce){
+  .welcome-bottom .pill.light.welcome-cta{animation:none!important}
+  .welcome-bottom .pill.light.welcome-cta .welcome-cta-arrow{transition:none!important}
+}
