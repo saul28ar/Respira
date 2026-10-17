@@ -95,3 +95,36 @@
 @media(prefers-reduced-motion:reduce){
   .welcome-photo{transition:none!important}
 }
+
+
+/* RESPIRA 1.3 — Los originales se ven ENTEROS y el fondo continúa suavemente.
+   Capa posterior: otra visualización de la misma foto, difuminada para llenar
+   espacios en distintas proporciones de pantalla. No altera los archivos JPG. */
+.welcome-gallery{background:#1c4f60}
+.welcome-slide{
+  position:absolute;inset:0;opacity:0;
+  transition:opacity 2s ease-in-out;
+  overflow:hidden;
+}
+.welcome-slide.is-active{opacity:1}
+.welcome-slide::before{
+  content:"";
+  position:absolute;
+  inset:-36px;
+  background-image:var(--respira-photo);
+  background-position:center center;
+  background-size:cover;
+  background-repeat:no-repeat;
+  filter:blur(24px) brightness(.76);
+  transform:scale(1.04);
+}
+.welcome-slide .welcome-photo{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:contain;
+  object-position:center;
+  display:block;
+  opacity:1;transition:none;
+}
+@media(prefers-reduced-motion:reduce){
+  .welcome-slide{transition:none!important}
+}
