@@ -115,9 +115,6 @@
   text-shadow:0 1px 8px rgba(0,0,0,.12);
 }
 .welcome-quote.is-active{opacity:1}
-.welcome-dots{display:flex;align-items:center;justify-content:center;gap:7px;height:8px}
-.welcome-dot{display:block;width:5px;height:5px;border-radius:9px;background:#a5d6da66;transition:width 1s ease,background 1s ease}
-.welcome-dot.is-active{width:19px;background:#d6f5ef}
 .welcome-gallery{
   position:relative;
   z-index:0;
@@ -232,7 +229,7 @@
   .welcome-bottom .pill.light{min-height:46px;padding:11px}
 }
 @media(prefers-reduced-motion:reduce){
-  .welcome-slide,.welcome-quote,.welcome-dot{transition:none!important}
+  .welcome-slide,.welcome-quote{transition:none!important}
   .welcome-center .brandmark,.welcome-center h1,.welcome-center p,
   .welcome-bottom .pill.light,.welcome-bottom small{animation:none!important}
 }

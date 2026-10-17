@@ -2,40 +2,48 @@
 const app=document.getElementById('app');
 // Fotografías locales: archivos originales sin alteraciones.
 const welcomePhotos=['./fondos/fondo1.jpg','./fondos/fondo2.jpg','./fondos/fondo3.jpg','./fondos/fondo4.jpg'];
-// Cuatro frases tranquilas que se sincronizan con las fotografías.
+// Diez mensajes breves; rotan independientemente de las cuatro fotografías.
+// No mostramos indicadores de progreso ni la cantidad de mensajes.
 const welcomeMessages=[
-  'Este momento es para ti.',
-  'Respira a tu propio ritmo.',
-  'Un pequeño descanso también cuenta.',
-  'Vuelve a ti, poco a poco.'
+  'Que el ruido espere; este instante es tuyo.',
+  'También florecemos cuando descansamos.',
+  'Hoy puedes caminar a tu propio ritmo.',
+  'No hace falta llenar cada silencio.',
+  'La calma también cabe en un minuto.',
+  'Deja que tus pensamientos pasen como nubes.',
+  'Hay días que se recorren paso a paso.',
+  'Tu paz puede empezar en algo pequeño.',
+  'No todo necesita resolverse hoy.',
+  'Regálate un momento sin prisas.'
 ];
 let slideshowTimer=null;
 let currentSlide=0;
+let currentMessage=0;
 function stopWelcomeSlideshow(){
   if(slideshowTimer!==null){clearInterval(slideshowTimer);slideshowTimer=null}
 }
 function startWelcomeSlideshow(){
   stopWelcomeSlideshow();
   currentSlide=0;
+  currentMessage=0;
   const photos=[...app.querySelectorAll('.welcome-slide')];
   const quotes=[...app.querySelectorAll('.welcome-quote')];
-  const markers=[...app.querySelectorAll('.welcome-dot')];
   if(photos.length<2)return;
   // Para quienes prefieren menos movimiento, mantenemos la imagen fija.
   if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
   slideshowTimer=setInterval(()=>{
     if(document.hidden || view!=='welcome')return;
-    const next=(currentSlide+1)%photos.length;
-    // La frase y la fotografía comienzan su transición en el mismo instante.
-    photos[next].classList.add('is-active');
+    const nextPhoto=(currentSlide+1)%photos.length;
+    const nextMessage=(currentMessage+1)%quotes.length;
+    // Imagen y mensaje cambian simultáneamente, cada uno en su propia secuencia.
+    photos[nextPhoto].classList.add('is-active');
     photos[currentSlide].classList.remove('is-active');
-    quotes[next].classList.add('is-active');
-    quotes[next].setAttribute('aria-hidden','false');
-    quotes[currentSlide].classList.remove('is-active');
-    quotes[currentSlide].setAttribute('aria-hidden','true');
-    markers[next].classList.add('is-active');
-    markers[currentSlide].classList.remove('is-active');
-    currentSlide=next;
+    quotes[nextMessage].classList.add('is-active');
+    quotes[nextMessage].setAttribute('aria-hidden','false');
+    quotes[currentMessage].classList.remove('is-active');
+    quotes[currentMessage].setAttribute('aria-hidden','true');
+    currentSlide=nextPhoto;
+    currentMessage=nextMessage;
   },10000);
 }
 
@@ -72,7 +80,6 @@ if(view==='welcome'){html=`<section class="welcome" aria-label="Bienvenida a Res
   <header class="welcome-top">
     <div class="welcome-overline"><span class="welcome-sparkle" aria-hidden="true">✦</span> UN MOMENTO PARA TI <span class="welcome-sparkle" aria-hidden="true">✦</span></div>
     <div class="welcome-quotes" aria-label="Frase para acompañarte">${welcomeMessages.map((text,i)=>`<span class="welcome-quote ${i===0?'is-active':''}" aria-hidden="${i!==0}">${text}</span>`).join('')}</div>
-    <div class="welcome-dots" aria-hidden="true">${welcomePhotos.map((_,i)=>`<span class="welcome-dot ${i===0?'is-active':''}"></span>`).join('')}</div>
   </header>
   <div class="welcome-gallery">
     ${welcomePhotos.map((src,i)=>`<div class="welcome-slide ${i===0?'is-active':''}" style="--photo-matte:${['#256f79','#627f87','#294f5d','#527981'][i]}"><img class="welcome-photo" src="${src}" alt="" decoding="async" ${i===0?'fetchpriority="high"':'loading="lazy"'}></div>`).join('')}
