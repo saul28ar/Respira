@@ -345,3 +345,163 @@
     font-size:22px;
   }
 }
+
+
+/* RESPIRA 2.0 · Etapa 1: pantalla principal renovada. */
+.home2-view{
+  min-height:100%;
+  padding:21px 20px 30px;
+  background:linear-gradient(180deg,#f3fbfa 0%,#f9fcfd 48%,#f6faf9 100%);
+  color:#173e4b;
+  animation:home2-appear .48s ease both;
+}
+@keyframes home2-appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.home2-header{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:19px}
+.home2-brand{display:flex;align-items:center;gap:9px}
+.home2-brand img{width:46px;height:46px;object-fit:contain}
+.home2-brand h1{font-size:23px;margin:0;color:#174c53;line-height:1.1;letter-spacing:-.035em}
+.home2-kicker{font-size:10px;letter-spacing:.14em;color:#4b9490;font-weight:800;line-height:1.5}
+.home2-leaf{font-size:14px;color:#43aaa0;vertical-align:4px}
+.home2-header-dot{font-size:24px;color:#b2ddd4;background:#e8f6f2;width:42px;height:42px;border-radius:15px;display:grid;place-items:center}
+.home2-welcome{margin:0 0 22px}
+.home2-hello{font-size:11px;letter-spacing:.13em;font-weight:750;color:#67a59b}
+.home2-welcome h2{font-size:clamp(23px,6.5vw,29px);font-weight:800;letter-spacing:-.04em;line-height:1.17;color:#193f4b;margin:8px 0 9px}
+.home2-welcome p{max-width:330px;font-size:13px;line-height:1.55;color:#6d8990;margin:0}
+.home2-calm{position:relative;overflow:hidden;isolation:isolate;min-height:193px;border-radius:23px;padding:21px 22px;box-shadow:0 14px 30px rgba(15,103,104,.15);background:linear-gradient(123deg,#1d777f 0%,#2a9690 48%,#61b9ad 100%);color:#fff}
+.home2-calm-content{position:relative;z-index:2;max-width:74%}
+.home2-calm-eyebrow{font-size:9px;font-weight:850;letter-spacing:.19em;color:#d0f8f0}
+.home2-calm h2{font-size:23px;line-height:1.16;letter-spacing:-.035em;margin:8px 0 7px;color:white}
+.home2-calm p{font-size:12px;line-height:1.45;margin:0 0 15px;color:#e0f7f3;max-width:230px}
+.home2-calm-button{display:inline-flex;justify-content:center;align-items:center;gap:16px;border:0;color:#216d72;background:white;border-radius:999px;padding:11px 15px;min-height:42px;font-size:12px;font-weight:800;box-shadow:0 6px 14px rgba(10,62,68,.16);transition:transform .2s,box-shadow .2s}
+.home2-calm-button span{font-size:17px;line-height:0}
+.home2-calm-button:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(10,62,68,.23)}
+.home2-calm-button:active{transform:scale(.98)}
+.home2-calm-art{position:absolute;inset:0;z-index:1;pointer-events:none}
+.home2-ring{position:absolute;display:block;border-radius:50%;border:1px solid rgba(220,255,244,.3);right:-64px;top:50%;transform:translateY(-50%);width:230px;height:230px}
+.home2-ring-b{width:174px;height:174px;right:-36px;border-color:rgba(220,255,244,.38)}
+.home2-ring-c{width:109px;height:109px;right:-4px;border:25px solid rgba(217,255,239,.14);background:rgba(220,255,244,.15)}
+.home2-spark{position:absolute;right:39px;top:26px;font-size:25px;color:#c2f5eb}
+.home2-section{margin:27px 0 17px}
+.home2-section-title{display:flex;align-items:end;justify-content:space-between;gap:10px;margin-bottom:14px}
+.home2-section-title h2{margin:3px 0 0;font-size:20px;letter-spacing:-.035em;color:#1b4450}
+.home2-petal{color:#8acac0;font-size:22px}
+.home2-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.home2-tile{position:relative;min-width:0;min-height:143px;border:1px solid rgba(255,255,255,.66);border-radius:19px;padding:17px 13px 14px;text-align:left;display:flex;align-items:flex-start;flex-direction:column;color:#245567;box-shadow:0 5px 14px rgba(49,106,111,.035);transition:transform .2s,box-shadow .2s}
+.home2-tile:active{transform:scale(.98)}.home2-tile:hover{transform:translateY(-2px);box-shadow:0 9px 18px rgba(49,106,111,.09)}
+.home2-tile-blue{background:#dceffc}.home2-tile-green{background:#d7f0e8}.home2-tile-lilac{background:#e8e2fa}.home2-tile-sand{background:#fff0dc}
+.home2-tile-icon{width:42px;height:42px;display:grid;place-items:center;background:rgba(255,255,255,.66);border-radius:14px;font-size:25px;color:#38899a;line-height:1;margin-bottom:16px}
+.home2-tile-green .home2-tile-icon{color:#559d88}.home2-tile-lilac .home2-tile-icon{color:#8575bb}.home2-tile-sand .home2-tile-icon{color:#bb9554}
+.home2-tile strong{font-size:13px;line-height:1.25;letter-spacing:-.01em;margin:0 18px 3px 0}
+.home2-tile small{font-size:10.5px;line-height:1.4;color:#527985}
+.home2-tile-arrow{position:absolute;bottom:14px;right:13px;font-weight:bold;font-size:17px;color:#5f8f98}
+.home2-journal{width:100%;display:flex;align-items:center;gap:12px;text-align:left;background:white;border:1px solid #e8f1ef;border-radius:18px;padding:15px 13px;color:#245463;box-shadow:0 5px 18px rgba(20,80,79,.04);margin-bottom:18px;transition:background .2s}
+.home2-journal:hover{background:#f8fdfb}
+.home2-journal-icon{display:grid;place-items:center;flex:0 0 auto;border-radius:13px;background:#eaf6f3;color:#3f9b8e;width:44px;height:44px;font-size:24px}
+.home2-journal-copy{min-width:0;flex:1;display:grid;gap:4px}
+.home2-journal-copy strong{font-size:13px}.home2-journal-copy small{font-size:11px;color:#6d8a8e}
+.home2-journal-arrow{color:#5a9c93;font-size:23px}
+.home2-footer{text-align:center;font-size:11px;color:#779b9c;margin:22px 0 8px}
+@media(max-width:355px){.home2-view{padding-left:15px;padding-right:15px}.home2-calm{padding:18px}.home2-calm h2{font-size:21px}.home2-calm-content{max-width:82%}.home2-ring{right:-102px}.home2-ring-b{right:-75px}.home2-ring-c{right:-43px}.home2-tile{padding:14px 11px}.home2-tile strong{font-size:12.5px}}
+@media(prefers-reduced-motion:reduce){.home2-view{animation:none!important}.home2-calm-button,.home2-tile{transition:none!important}}
+
+
+/* RESPIRA 2.0 opción 2 · Etapa 1: paisaje ilustrado, tarjetas vivas, sin cambiar funciones. */
+.home3-view{padding:0 0 27px;min-height:100%;background:linear-gradient(180deg,#f5faf7 0%,#fffaf2 70%,#f5f9f5 100%);color:#173d48;animation:home3-fade .5s ease both}
+@keyframes home3-fade{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+.home3-top{display:flex;align-items:center;justify-content:space-between;padding:19px 21px 16px;background:#f9fcf8;gap:12px}
+.home3-identity{display:flex;align-items:center;gap:9px}.home3-identity img{width:42px;height:42px}.home3-identity>div{display:flex;flex-direction:column;gap:3px}
+.home3-identity strong{font-size:24px;line-height:1;color:#175060;letter-spacing:-.04em}.home3-identity span{font-size:8px;letter-spacing:.2em;color:#6a9692;font-weight:800}
+.home3-top-decoration{color:#97c2ab;font-size:24px}
+.home3-hero{position:relative;isolation:isolate;min-height:285px;overflow:hidden;background:#cbe6da}
+.home3-hero-landscape{position:absolute;inset:0;z-index:-1;background-image:linear-gradient(90deg,rgba(11,65,71,.34),rgba(11,65,71,0) 83%),url('./arte/paisaje-inicio.svg');background-size:cover;background-position:center;}
+.home3-hero-copy{position:relative;z-index:2;max-width:70%;padding:30px 16px 34px 22px}
+.home3-overline{font-size:9px;letter-spacing:.22em;color:#eafff3;font-weight:800;text-shadow:0 1px 8px #1d6068aa}
+.home3-hero h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(30px,8vw,40px);letter-spacing:-.025em;line-height:1.1;font-weight:700;color:white;text-shadow:0 3px 16px #1b636baa;margin:20px 0 14px}
+.home3-hero p{font-size:13px;color:#f8fffc;text-shadow:0 2px 14px #1b606ac7;max-width:190px;line-height:1.5;margin:0}
+.home3-friend{position:absolute;z-index:1;right:8px;bottom:6px;width:clamp(105px,30vw,145px);height:auto;filter:drop-shadow(0 8px 6px #145a5145);animation:home3-bob 4s ease-in-out infinite}
+@keyframes home3-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+.home3-calm{position:relative;display:flex;align-items:center;gap:13px;margin:-20px 16px 0;width:calc(100% - 32px);text-align:left;cursor:pointer;padding:16px 15px;border-radius:22px;background:linear-gradient(108deg,#2b8390,#28778b 70%,#276c86);border:2px solid #e0fcf2;color:white;box-shadow:0 10px 23px #246b7850;z-index:3}
+.home3-calm-heart{font-size:39px;line-height:1;color:#e6ffef;flex:0 0 auto;width:42px;text-align:center}.home3-calm-copy{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
+.home3-calm strong{font-size:18px;line-height:1.3}.home3-calm small{font-size:11px;color:#dbf3f1;line-height:1.35}
+.home3-calm-go{flex:0 0 auto;width:45px;height:45px;border-radius:50%;border:1px solid #c2eded;background:#ffffff2e;color:#fff;font-size:29px;line-height:1;display:grid;place-items:center;transition:background .2s,transform .2s}
+.home3-calm:hover .home3-calm-go,.home3-calm:focus-visible .home3-calm-go{background:#ffffff45;transform:translateX(2px)}
+.home3-explore{padding:21px 16px 0}.home3-section-heading{display:flex;align-items:center;justify-content:space-between;margin:4px 4px 14px}
+.home3-section-heading h2{margin:0;font-size:19px;letter-spacing:-.03em;color:#1a4b54}.home3-section-heading span{color:#b0cdaa;font-size:21px}
+.home3-cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.home3-card{display:flex;flex-direction:column;text-align:left;min-width:0;overflow:hidden;padding:0;border:1px solid #dee9e5;border-radius:21px;background:#fff;color:#184c57;box-shadow:0 6px 13px #24556c12;transition:transform .2s ease,box-shadow .2s ease}
+.home3-card:hover{transform:translateY(-2px);box-shadow:0 9px 17px #24556c22}.home3-card:active{transform:scale(.985)}
+.home3-art{display:block;width:100%;height:105px;background-size:cover;background-position:center}
+.home3-card-copy{position:relative;display:flex;flex-direction:column;gap:5px;flex:1;width:100%;padding:13px 27px 15px 13px;min-height:82px}
+.home3-card strong{font-size:14px;font-weight:750;line-height:1.25}.home3-card small{font-size:10.5px;line-height:1.35;color:#55717a}
+.home3-card-arrow{position:absolute;right:10px;bottom:16px;color:#3a8387;font-size:24px;line-height:1}
+.home3-blue .home3-card-copy{background:#eef9fa}.home3-peach .home3-card-copy{background:#fff6ee}.home3-mint .home3-card-copy{background:#eef9ef}.home3-cream .home3-card-copy{background:#fff8ed}
+.home3-journal{width:calc(100% - 32px);margin:16px 16px 0;display:flex;align-items:center;gap:13px;border:1px solid #ece5e8;border-radius:19px;text-align:left;padding:13px;background:linear-gradient(110deg,#f8f1f2,#f0e6ed);color:#254b54;box-shadow:0 5px 12px #463e5110;transition:transform .2s}
+.home3-journal:hover{transform:translateY(-1px)}.home3-journal-picture{width:48px;height:48px;flex:0 0 auto;display:grid;place-items:center;border-radius:12px;background:#fffdf9;color:#679c89;font-size:27px;box-shadow:0 2px 8px #3b595819}
+.home3-journal-text{flex:1;display:flex;flex-direction:column;gap:4px;min-width:0}.home3-journal-text strong{font-size:13px}.home3-journal-text small{font-size:11px;color:#6e7b7e}.home3-journal-arrow{color:#517e80;font-size:24px}
+.home3-footnote{text-align:center;font-size:11px;color:#729b95;margin:23px 10px 11px}
+@media(max-width:355px){.home3-hero{min-height:252px}.home3-hero-copy{padding-top:25px}.home3-hero h1{font-size:29px}.home3-friend{width:108px;right:0}.home3-calm{margin-left:12px;margin-right:12px;width:calc(100% - 24px);padding:13px 10px;gap:8px}.home3-calm strong{font-size:16px}.home3-calm small{font-size:10px}.home3-calm-heart{font-size:30px;width:31px}.home3-calm-go{width:39px;height:39px}.home3-art{height:86px}.home3-explore{padding:18px 12px 0}.home3-cards{gap:10px}.home3-card-copy{padding:12px 22px 12px 10px}.home3-card strong{font-size:12.5px}.home3-card small{font-size:10px}.home3-journal{margin-left:12px;margin-right:12px;width:calc(100% - 24px)}}
+@media(prefers-reduced-motion:reduce){.home3-view,.home3-friend{animation:none!important}.home3-card,.home3-journal,.home3-calm-go{transition:none!important}}
+
+.app.pet-mode{padding-bottom:0} 
+
+/* RESPIRA 2.0 · Etapa 2: selección diaria de Brotecito, Nubecita y Lunita.
+   Ilustraciones PNG: recortes en píxeles originales, nunca redibujadas ni filtradas. */
+.pet-page{color:#174654;min-height:100dvh;background:linear-gradient(180deg,#edf9f9,#f8fcf5 43%,#f8f9f4);padding:0 18px 34px}
+.pet-header{display:flex;justify-content:center;align-items:center;gap:9px;padding:18px 0 12px}.pet-header img{width:39px;height:39px}.pet-header div{display:grid;gap:3px}.pet-header strong{font-size:23px;line-height:1}.pet-header span{letter-spacing:.16em;font-size:8px;color:#578d97;font-weight:700}
+.pet-select-intro{text-align:center;padding:22px 8px 22px;background:radial-gradient(ellipse at center,#e9f4e4 0%,transparent 72%)}
+.pet-sky{color:#9ab9b4;font-size:23px;letter-spacing:1em}.pet-select-intro h1,.pet-confirm-copy h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(26px,7.4vw,35px);font-weight:700;line-height:1.17;margin:11px 0 12px;color:#1b5364}.pet-select-intro p,.pet-confirm-copy p{margin:0 auto;max-width:310px;font-size:13px;line-height:1.5;color:#4c7884}
+.pet-choices{display:grid;gap:12px}.pet-choice{width:100%;min-height:114px;display:flex;align-items:center;gap:11px;padding:8px;text-align:left;border:2px solid #f6fefa;border-radius:23px;box-shadow:0 6px 16px #264f5a12;color:#164758;transition:transform .18s,box-shadow .18s}.pet-choice:hover{transform:translateY(-2px);box-shadow:0 8px 18px #264f5a20}.pet-choice:active{transform:scale(.99)}
+.pet-choice-verde{background:#e9f4e8}.pet-choice-azul{background:#e1f1fb}.pet-choice-lila{background:#f0e9fa}
+.pet-choice img{display:block;width:107px;height:99px;object-fit:contain;flex:0 0 107px;border-radius:17px;background:white}
+.pet-choice-text{display:grid;gap:5px;flex:1;min-width:0}.pet-choice-text strong{font-size:17px;font-weight:800}.pet-choice-text small{font-size:11px;line-height:1.37;color:#4a7681}.pet-choice-next{display:grid;place-items:center;flex:0 0 27px;width:27px;height:27px;border-radius:100%;background:#ffffffa6;color:#377e83;font-size:26px;line-height:1}
+.pet-choice-footer{text-align:center;background:#eef4ed;border-radius:20px;margin:20px 3px 0;padding:12px 15px}.pet-choice-footer p{font-size:12px;color:#5c8290;line-height:1.5;margin:0 0 10px}.pet-link{border:0;background:transparent;color:#377c7f;text-decoration:underline;text-underline-offset:3px;font-weight:650;padding:8px;font-size:12px}
+.pet-detail-page{padding:0 0 34px}.pet-detail-verde{background:linear-gradient(#e9f5e6,#f8fbf1)}.pet-detail-azul{background:linear-gradient(#e8f5fd,#f5fbfe)}.pet-detail-lila{background:linear-gradient(#f2ecfa,#fbf8fd)}
+.pet-detail-top{display:flex;align-items:center;gap:15px;padding:15px 18px 9px;min-height:55px;font-size:10px;letter-spacing:.13em;color:#57838e;font-weight:750}.pet-back{border:0;background:white;color:#2d6876;box-shadow:0 3px 9px #294a5212;border-radius:100%;font-size:29px;width:37px;height:37px;line-height:1;display:grid;place-items:center}
+.pet-detail-scene{display:block;width:min(100%,420px);max-height:300px;object-fit:contain;margin:0 auto;border-radius:23px}
+.pet-detail-body{padding:10px 20px 0;text-align:center}.pet-detail-body h1{font-size:28px;margin:4px 0 3px}.pet-detail-sub{font-size:12px;color:#477986;margin-bottom:13px}
+.pet-info-card{text-align:left;background:#ffffffd9;border:1px solid #ebf0ed;border-radius:22px;padding:18px 19px;box-shadow:0 7px 20px #1d59650c}.pet-info-card h2{font-size:14px;color:#1c5c64;margin:1px 0 4px}.pet-info-card p{font-size:12px;color:#587b83;line-height:1.5;margin:0 0 12px}.pet-info-card p:last-child{margin-bottom:0}
+.pet-quote{border-radius:20px;background:#e9f7f3;color:#356f78;font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:14px;line-height:1.4;margin:15px 0;padding:14px 18px;text-align:center}
+.pet-primary{width:100%;min-height:50px;display:flex;align-items:center;justify-content:center;gap:14px;border:0;border-radius:999px;padding:13px 16px;background:linear-gradient(105deg,#38ada6,#278d94,#287b91);color:#fff;font-weight:800;font-size:14px;box-shadow:0 8px 21px #25687b33}.pet-primary span{font-size:23px;line-height:0}
+.pet-locked-text{font-size:12px;color:#567880;line-height:1.4}
+.pet-confirm-page{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;background:linear-gradient(180deg,#e8f6f4 0%,#f4f6ef 100%)}.pet-confirm-copy{padding:10px 5px 0}.pet-confetti{color:#73aaa2;letter-spacing:.6em;font-size:20px}.pet-confirm-copy h1{font-size:clamp(26px,7.4vw,34px)}.pet-confirm-scene{display:block;width:min(96%,410px);height:auto;max-height:310px;object-fit:contain;border-radius:22px;margin:7px auto}.pet-confirm-page .pet-quote{width:100%;margin:5px 0}.pet-confirm-tomorrow{font-size:12px;color:#709093;margin:0}.pet-storage-warning{font-size:12px;color:#954d32;background:#fff4e9;padding:9px;border-radius:10px}
+.home3-companion-avatar{position:absolute;z-index:2;right:11px;bottom:11px;padding:3px;width:118px;height:116px;border:2px solid #ffffffad;background:#fffffff2;border-radius:22px;box-shadow:0 5px 15px #164b4b50;animation:home3-bob 4s ease-in-out infinite;overflow:hidden}.home3-companion-avatar img{width:100%;height:100%;object-fit:contain;border-radius:16px;display:block}
+.home3-brand-orb{position:absolute;right:20px;bottom:26px;font-size:70px;line-height:1;color:#e2f8e6;text-shadow:0 2px 20px #135a5899}
+.home3-pet-note{margin:17px 16px 0;padding:13px 15px;background:#eaf7ef;border:1px solid #d3ebe0;border-radius:19px;box-shadow:0 4px 14px #1c574c0e}.home3-pet-note-head{display:flex;align-items:center;gap:9px}.home3-pet-dot{font-size:26px;color:#4ea896}.home3-pet-note-head>div{flex:1;min-width:0;display:grid;gap:3px}.home3-pet-note-head strong{font-size:13px;color:#24565c}.home3-pet-note-head small{font-size:10px;color:#63878b}.home3-pet-see{border:0;background:#fff;border-radius:99px;padding:8px 10px;color:#347f7f;font-size:11px;font-weight:650}.home3-pet-note p{margin:12px 3px 9px;color:#356974;font-size:13px;font-family:Georgia,'Times New Roman',serif;font-style:italic;line-height:1.5}.home3-pet-other{border:1px solid #b9e1d7;border-radius:90px;color:#387c78;background:#fff;padding:9px 12px;font-size:11px;font-weight:750}
+.home3-choose-pet{margin:16px 16px 0;width:calc(100% - 32px);padding:16px 15px;border-radius:16px;border:1px solid #d9e5d7;background:#edf7e9;color:#326a69;font-weight:800;text-align:left;display:flex;align-items:center;justify-content:space-between}
+@media(max-width:355px){.pet-page{padding-left:12px;padding-right:12px}.pet-choices{gap:9px}.pet-choice{gap:7px;padding:6px;min-height:101px}.pet-choice img{width:91px;height:87px;flex-basis:91px}.pet-choice-text strong{font-size:15px}.pet-choice-text small{font-size:10px}.pet-choice-next{width:22px;height:22px;flex-basis:22px}.home3-companion-avatar{width:100px;height:98px;right:6px;bottom:8px}}
+@media(prefers-reduced-motion:reduce){.pet-choice,.home3-companion-avatar{transition:none!important;animation:none!important}}
+
+/* RESPIRA 2.1 — Selección rápida y lectura opcional, sin modificar ninguna ilustración. */
+.pet-choices{gap:12px}
+.pet-choice{display:grid;grid-template-columns:minmax(95px,36%) 1fr;gap:10px;min-height:139px;align-items:center;padding:8px 11px 8px 8px;transition:none}
+.pet-choice:hover{transform:none}
+.pet-choice>img{width:100%;height:auto;max-height:145px;min-height:105px;aspect-ratio:1.06;object-fit:contain;flex:none;border-radius:18px;background:transparent}
+.pet-choice-main{min-width:0;display:flex;flex-direction:column;align-items:start;gap:4px}
+.pet-choice-main>strong{font-size:18px;font-weight:800;color:#174758}
+.pet-choice-main>small{font-size:11px;line-height:1.35;color:#4a7681}
+.pet-choice-actions{display:flex;flex-direction:column;align-items:start;gap:5px;width:100%;margin-top:4px}
+.pet-choice-pick{color:white;border:0;min-height:35px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:10px;padding:7px 16px;background:linear-gradient(110deg,#359e93,#24818d);font-size:12px;font-weight:750;box-shadow:0 5px 12px #245b6640;max-width:100%;width:100%}
+.pet-choice-azul .pet-choice-pick{background:linear-gradient(115deg,#57b0dc,#3289c3)}
+.pet-choice-lila .pet-choice-pick{background:linear-gradient(115deg,#8d8bcc,#696ab7)}
+.pet-choice-pick span{font-size:18px;line-height:1}
+.pet-choice-learn{border:0;background:transparent;color:#326e80;text-decoration:underline;text-underline-offset:3px;font-size:11px;padding:3px 6px;min-height:28px}
+.pet-choice-chosen{font-size:11px;color:#3c7a75;line-height:1.25;font-weight:750;min-height:32px;display:flex;align-items:center}
+/* Historia inmersiva, sin colocar a la mascota en tarjetas o marcos. */
+.pet-detail-page{padding-bottom:30px}
+.pet-detail-top{position:relative;z-index:2;padding:12px 18px;min-height:58px}
+.pet-detail-landscape{text-align:center;position:relative;overflow:hidden;padding:0 0 8px;background:radial-gradient(ellipse at 50% 58%,#ffffffc7,transparent 74%)}
+.pet-detail-landscape h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(30px,8vw,38px);line-height:1.1;color:#235d67;margin:5px 0 4px}
+.pet-detail-landscape>p{font-size:13px;line-height:1.4;color:#507f85;margin:0 16px 9px}
+.pet-detail-scene{width:100%;max-width:560px;height:auto;max-height:none;aspect-ratio:auto;object-fit:contain;border-radius:0;margin:0 auto;display:block;filter:none}
+.pet-detail-body{padding:12px 23px 0;text-align:center}
+.pet-story-lines{display:grid;gap:10px;text-align:left;padding:0 3px}
+.pet-story-line{display:grid;grid-template-columns:33px 1fr;align-items:start;gap:9px;padding:3px 0 10px;border-bottom:1px solid #b8d1ca75}
+.pet-story-line:last-child{border-bottom:0}
+.pet-story-icon{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#dcefe3;color:#528e79;font-size:18px}
+.pet-detail-azul .pet-story-icon{background:#daedff;color:#5c92ae}
+.pet-detail-lila .pet-story-icon{background:#e8e2fa;color:#8880b0}
+.pet-story-line h2{font-size:13px;font-weight:800;color:#245666;margin:0 0 3px}
+.pet-story-line p{font-size:12px;line-height:1.55;color:#557e80;margin:0}
+.pet-detail-page .pet-quote{margin:13px 0;background:#ffffffc9}
+@media(max-width:355px){.pet-choice{grid-template-columns:90px 1fr;padding:7px;gap:8px;min-height:125px}.pet-choice>img{width:90px;min-height:90px;max-height:105px}.pet-choice-main>strong{font-size:16px}.pet-choice-pick{font-size:11px;min-height:31px;padding:6px 9px}.pet-choice-actions{gap:2px}.pet-detail-body{padding:11px 16px 0}}
+@media(prefers-reduced-motion:reduce){.pet-choice-pick{transition:none!important}}
