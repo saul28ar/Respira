@@ -85,9 +85,9 @@ function setStore(key,value){try{localStorage.setItem('respira_'+key,JSON.string
 
 // Respira 2.0 — Mascotas oficiales: arte extraído SIN redibujar de la lámina aprobada.
 const pets={
-  brotecito:{name:'Brotecito',image:'./mascotas/brotecito.png',subtitle:'Un pequeño impulso para un gran día.',theme:'verde',essence:'Crecimiento y esperanza',story:'Brotecito nació de una pequeña semilla que descansó bajo la tierra. Aprendió que las raíces también crecen en silencio y que cada persona avanza a su propio ritmo.',personality:'Curioso, paciente y alentador.',quote:'No necesitas florecer todos los días para seguir creciendo.',messages:['¡Qué bonito verte por aquí! Podemos empezar con calma.','Un paso pequeñito también cuenta.','Descansar es parte de crecer.','Hoy no tienes que compararte con nadie.','¿Quieres regalarte un momento para ti?']},
-  nubecita:{name:'Nubecita',image:'./mascotas/nubecita.png',subtitle:'Una respiración contigo, siempre.',theme:'azul',essence:'Ligereza y serenidad',story:'Nubecita nació de una brisa sobre el océano. Descubrió que el cielo puede ser hermoso incluso cuando pasan nubes oscuras: no tiene que despejarlo todo para acompañarte.',personality:'Dulce, soñadora y tranquila.',quote:'No todos los pensamientos necesitan quedarse.',messages:['Podemos ir despacito.','No tienes que resolverlo todo ahora.','Si te apetece, hagamos una pausa.','Respira como te resulte cómodo.','Los pensamientos pueden pasar como nubes.']},
-  lunita:{name:'Lunita',image:'./mascotas/lunita.png',subtitle:'Encuentra tu equilibrio, siempre contigo.',theme:'lila',essence:'Equilibrio y conexión interior',story:'Lunita nació del reflejo de la luna en un lago silencioso. Aprendió que, aunque el agua se agite, su luz no desaparece. Le gusta acompañarte en los momentos de reflexión.',personality:'Reflexiva, serena y cariñosa.',quote:'A veces, para encontrarte, solo necesitas escucharte.',messages:['Tu voz interior merece un momento de escucha.','No necesitas tener todas las respuestas.','Tus emociones merecen espacio.','Puedes sentir muchas cosas a la vez.','¿Te gustaría escribir cómo va tu día?']}
+  brotecito:{name:'Brotecito',image:'./escenas/perfil-hd-brotecito.png',subtitle:'Un pequeño impulso para un gran día.',theme:'verde',essence:'Crecimiento y esperanza',story:'Brotecito nació de una pequeña semilla que descansó bajo la tierra. Aprendió que las raíces también crecen en silencio y que cada persona avanza a su propio ritmo.',personality:'Curioso, paciente y alentador.',quote:'No necesitas florecer todos los días para seguir creciendo.',messages:['¡Qué bonito verte por aquí! Podemos empezar con calma.','Un paso pequeñito también cuenta.','Descansar es parte de crecer.','Hoy no tienes que compararte con nadie.','¿Quieres regalarte un momento para ti?']},
+  nubecita:{name:'Nubecita',image:'./escenas/perfil-hd-nubecita.png',subtitle:'Una respiración contigo, siempre.',theme:'azul',essence:'Ligereza y serenidad',story:'Nubecita nació de una brisa sobre el océano. Descubrió que el cielo puede ser hermoso incluso cuando pasan nubes oscuras: no tiene que despejarlo todo para acompañarte.',personality:'Dulce, soñadora y tranquila.',quote:'No todos los pensamientos necesitan quedarse.',messages:['Podemos ir despacito.','No tienes que resolverlo todo ahora.','Si te apetece, hagamos una pausa.','Respira como te resulte cómodo.','Los pensamientos pueden pasar como nubes.']},
+  lunita:{name:'Lunita',image:'./escenas/perfil-hd-lunita.png',subtitle:'Encuentra tu equilibrio, siempre contigo.',theme:'lila',essence:'Equilibrio y conexión interior',story:'Lunita nació del reflejo de la luna en un lago silencioso. Aprendió que, aunque el agua se agite, su luz no desaparece. Le gusta acompañarte en los momentos de reflexión.',personality:'Reflexiva, serena y cariñosa.',quote:'A veces, para encontrarte, solo necesitas escucharte.',messages:['Tu voz interior merece un momento de escucha.','No necesitas tener todas las respuestas.','Tus emociones merecen espacio.','Puedes sentir muchas cosas a la vez.','¿Te gustaría escribir cómo va tu día?']}
 };
 const petProfiles={"brotecito":{"short":"Brotecito nació de una pequeña semilla que descansó bajo la tierra. Aprendió que las raíces también crecen en silencio y que cada persona avanza a su propio ritmo.","long":"En un valle escondido, donde la lluvia caía suavemente y las montañas protegían pequeñas flores silvestres, vivía una semillita que creía que nunca llegaría a crecer. Veía cómo las demás plantas florecían, mientras ella permanecía bajo la tierra. Una mañana comprendió que no estaba llegando tarde. Durante todo ese tiempo había estado formando sus raíces. Cuando finalmente apareció sobre la superficie, se convirtió en Brotecito, una pequeña criatura que decidió acompañar a quienes a veces sienten que avanzan demasiado despacio. Desde entonces recuerda a sus amigos que descansar también forma parte de crecer.","personality":"Curioso, optimista, juguetón, paciente y cariñoso.","meaning":"Crecimiento, esperanza y nuevos comienzos.","quote":"No necesitas florecer todos los días para seguir creciendo.","message":"Hoy también podemos empezar de nuevo. Un paso suave sigue siendo un paso.","activities":[["✿","Respirar juntos","Una pausa para comenzar de nuevo"],["✎","Escribir en mi diario","Un pensamiento amable para hoy"],["✧","Consejo para hoy","Un pequeño paso a tu ritmo"]],"color":"#3b958c","gradient":"linear-gradient(145deg,#eef8e7,#d2e8d7)"},"nubecita":{"short":"Nubecita nació de una brisa suave sobre el océano. Aprendió que los pensamientos y las emociones, como las nubes, llegan, cambian y pueden seguir su camino.","long":"Muy arriba, sobre un océano tranquilo, una pequeña nube apareció durante el primer amanecer de primavera. Al principio, Nubecita intentaba mantener siempre el cielo despejado. Cada vez que aparecía una nube oscura, se preocupaba y trataba de alejarla. Hasta que una tarde el viento le enseñó algo importante: el cielo no necesita estar completamente despejado para seguir siendo hermoso. Desde entonces, Nubecita viaja acompañando a quienes sienten que tienen demasiadas cosas en la mente. No intenta borrar sus emociones; simplemente les recuerda que pueden observarlas con paciencia.","personality":"Dulce, soñadora, tranquila, sensible y un poquito distraída.","meaning":"Calma, ligereza y atención al presente.","quote":"No todos los pensamientos necesitan quedarse.","message":"Tomemos un momento para respirar. Puedes hacerlo a tu ritmo; yo te acompaño.","activities":[["◌","Respirar juntos","Respira de la manera más cómoda para ti"],["☁","Hacer una pausa","Unos minutos sin exigencias"],["✧","Técnica rápida","Regresa suavemente al presente"]],"color":"#448cc0","gradient":"linear-gradient(145deg,#eaf7ff,#d3eaf8)"},"lunita":{"short":"Lunita nació del reflejo de la luna sobre un lago silencioso. Comprendió que las emociones pueden agitar nuestro mundo interior sin hacernos perder lo que somos.","long":"En lo profundo de un bosque existía un lago que reflejaba las estrellas. Cada noche, la luna se miraba sobre su superficie. Una vez, el viento agitó tanto el agua que su reflejo desapareció. La luna creyó que había perdido su luz, pero cuando el lago recuperó la tranquilidad, su imagen volvió a aparecer. De aquel reflejo nació Lunita, una pequeña criatura que comprendió que las emociones pueden agitar nuestro mundo interior sin hacernos perder lo que somos. Ahora acompaña a quienes desean conocerse mejor y encontrar pequeños espacios de serenidad.","personality":"Reflexiva, observadora, tierna, reservada y afectuosa.","meaning":"Equilibrio, serenidad y conexión interior.","quote":"A veces, para encontrarte, solo necesitas escucharte.","message":"Aquí tienes un espacio para ti. Escúchate con amabilidad.","activities":[["☾","Meditar juntos","Un momento tranquilo para ti"],["✎","Escribir en mi diario","Dale espacio a lo que sientes"],["✧","Relajarse","Un descanso para tu cuerpo y tu mente"]],"color":"#7f77b4","gradient":"linear-gradient(145deg,#f2eeff,#e3e9f9)"}};
 let petProfileReturn='pet-select';
@@ -167,7 +167,13 @@ if(view==='pet-detail'){
   html=`<main class="pet-page pet23-page pet23-${p.theme}" style="--pet23-accent:${f.color};--pet23-gradient:${f.gradient}">
     <div class="pet23-top"><button class="pet23-back" data-go="${petProfileReturn}" aria-label="Volver">‹</button><span>SI QUIERES, CONOCE SU HISTORIA</span></div>
     <header class="pet23-intro"><h1>${safe(p.name)}</h1><p>${safe(p.subtitle)}</p></header>
-    <section class="pet23-hero pet24-hero" aria-label="Paisaje abierto de ${safe(p.name)}"><img src="./escenas/ficha-${currentPetProfile}.png" alt="Escena aprobada: ${safe(p.name)} en el lago rodeado de naturaleza" fetchpriority="high"></section>
+    <section class="pet23-hero pet24-hero pet30-scene pet30-${currentPetProfile}" aria-label="Escena interactiva de ${safe(p.name)}">
+      <img class="pet30-art" src="./escenas/perfil-hd-${currentPetProfile}.png" alt="${safe(p.name)} en su paisaje original de alta definición" fetchpriority="high" draggable="false">
+      <div class="pet30-effects" aria-hidden="true">${petReactionArtwork(currentPetProfile)}</div>
+      <button type="button" class="pet30-touch" data-action="pet-react" aria-label="Tocar a ${safe(p.name)} para ver su reacción especial"><span class="sr-only">Animar a ${safe(p.name)}</span></button>
+      <span class="pet30-hint" aria-hidden="true">Tócame ✨</span>
+      <span class="sr-only" role="status" aria-live="polite" data-pet-reaction-status></span>
+    </section>
     <div class="pet23-content">
       <div class="pet23-message"><small>${safe(f.emoji|| (currentPetProfile==='brotecito'?'🌱':currentPetProfile==='nubecita'?'☁️':'🌙'))} · UN MENSAJITO PARA TI</small><p>“${safe(f.message)}”</p></div>
       <div class="pet23-about">
@@ -207,12 +213,69 @@ app.classList.toggle('pet-mode',['pet-select','pet-detail','pet-confirm'].includ
 app.classList.toggle('welcome-mode',view==='welcome');
 app.innerHTML=html;
 if(view==='welcome')startWelcomeSlideshow();else stopWelcomeSlideshow();}
+
+// Respira 3.0 · Efectos independientes. No alteran nunca los PNG originales.
+function petReactionArtwork(id){
+  if(id==='brotecito')return `<svg class="pet30-fx-svg" viewBox="0 0 390 345" preserveAspectRatio="none" role="presentation">
+    <g transform="translate(195 64)"><g class="pet30-newleaf">
+      <path class="pet30-newleaf-stem" d="M 0 21 Q 1 -10 1 -33" fill="none" stroke="#378963" stroke-width="3.7" stroke-linecap="round"/>
+      <path class="pet30-newleaf-blade" d="M 1 -15 Q -31 -31 -20 -55 Q -3 -54 1 -15 Z" fill="#a4d869" stroke="#6eac65" stroke-width="1.5"/>
+      <path class="pet30-newleaf-vein" d="M -18 -49 Q -8 -34 0 -19" fill="none" stroke="#e6f5ae" stroke-width="2.4" stroke-linecap="round"/>
+    </g></g>
+    <g class="pet30-happy-face">
+      <path d="M 117 155 C 109 145 97 153 105 163 L 117 176 129 163 C 137 153 125 145 117 155Z" fill="#ffb4c1" stroke="#ffe4e7" stroke-width="1.5"/>
+      <path d="M 288 160 C 282 151 272 160 279 169 L 288 179 298 169 C 305 160 294 151 288 160Z" fill="#ffbec9" stroke="#ffe5ea" stroke-width="1.4"/>
+    </g>
+    <g class="pet30-sparkle pet30-sparkle-1"><path d="M 107 121 l 4 10 11 3 -11 3 -4 10 -4 -10 -11 -3 11 -3Z" fill="#fff5c4"/></g>
+    <g class="pet30-sparkle pet30-sparkle-2"><path d="M 283 119 l 3 9 9 3 -9 3 -3 9 -3 -9 -9 -3 9 -3Z" fill="#fffdd7"/></g>
+    <g class="pet30-sparkle pet30-sparkle-3"><path d="M 293 234 l 3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3Z" fill="#f5f4bc"/></g>
+  </svg>`;
+  if(id==='nubecita')return `<svg class="pet30-fx-svg" viewBox="0 0 390 345" preserveAspectRatio="none" role="presentation">
+    <path class="pet30-breeze pet30-breeze-one" d="M -40 209 C 30 138 76 269 136 190 S 260 141 316 190 S 377 215 426 173"/>
+    <path class="pet30-breeze pet30-breeze-two" d="M -30 267 C 59 218 79 295 139 250 S 257 201 308 251 S 364 270 415 222"/>
+    <path class="pet30-breeze pet30-breeze-three" d="M -10 146 C 68 117 70 190 112 168 C 149 146 142 126 166 118"/>
+    <g class="pet30-breeze-heart" fill="#fff9ff"><path d="M 304 96 c -13 -18 -37 0 -11 22 l 11 9 12 -11 c 21 -21 -1 -37 -12 -20Z"/></g>
+    <g class="pet30-sparkle pet30-sparkle-1"><path d="M 67 98 l 5 13 13 5 -13 5 -5 13 -5 -13 -13 -5 13 -5Z" fill="white"/></g>
+    <g class="pet30-sparkle pet30-sparkle-2"><path d="M 322 280 l 4 11 11 4 -11 4 -4 11 -4 -11 -11 -4 11 -4Z" fill="white"/></g>
+  </svg>`;
+  return `<svg class="pet30-fx-svg" viewBox="0 0 390 345" preserveAspectRatio="none" role="presentation">
+    <g class="pet30-lotus" transform="translate(195 283)">
+      <path class="pet30-lotus-side pet30-lotus-left" d="M 0 28 C -46 20 -85 -9 -78 -59 C -44 -55 -13 -20 0 28Z" fill="#f6cef7" stroke="#ffedff" stroke-width="2"/>
+      <path class="pet30-lotus-side pet30-lotus-right" d="M 0 28 C 46 20 85 -9 78 -59 C 44 -55 13 -20 0 28Z" fill="#f4b8ed" stroke="#fff0fc" stroke-width="2"/>
+      <path class="pet30-lotus-side pet30-lotus-inner-left" d="M 0 28 C -29 4 -47 -35 -29 -70 C -8 -48 -4 -12 0 28Z" fill="#ffdafa" stroke="#fff5ff" stroke-width="2"/>
+      <path class="pet30-lotus-side pet30-lotus-inner-right" d="M 0 28 C 29 4 47 -35 29 -70 C 8 -48 4 -12 0 28Z" fill="#e8c9ff" stroke="#fff5ff" stroke-width="2"/>
+      <path class="pet30-lotus-center" d="M 0 27 C -27 -3 -24 -63 0 -98 C 24 -63 27 -3 0 27Z" fill="#fffaf1" stroke="#fffaf4" stroke-width="2"/>
+      <ellipse class="pet30-lotus-glow" cx="0" cy="5" rx="81" ry="78" fill="url(#pet30glow)"/>
+    </g>
+    <defs><radialGradient id="pet30glow"><stop offset="0" stop-color="#fffbe3" stop-opacity=".40"/><stop offset="1" stop-color="#fffbe3" stop-opacity="0"/></radialGradient></defs>
+    <g class="pet30-sparkle pet30-sparkle-1"><path d="M 90 79 l 4 14 14 4 -14 4 -4 14 -4 -14 -14 -4 14 -4Z" fill="#fffce5"/></g>
+    <g class="pet30-sparkle pet30-sparkle-2"><path d="M 322 102 l 4 13 13 4 -13 4 -4 13 -4 -13 -13 -4 13 -4Z" fill="#ffe6ff"/></g>
+  </svg>`;
+}
+const petReactionTimers=new WeakMap();
+function triggerPetReaction(button){
+ const scene=button.closest('.pet30-scene');
+ if(!scene)return;
+ const previous=petReactionTimers.get(scene);
+ if(previous)clearTimeout(previous);
+ scene.classList.remove('is-reacting');
+ // Reiniciamos la secuencia completa incluso si el usuario toca repetidamente.
+ void scene.offsetWidth;
+ scene.classList.add('is-reacting');
+ const id=scene.classList.contains('pet30-brotecito')?'brotecito':scene.classList.contains('pet30-nubecita')?'nubecita':'lunita';
+ const status=scene.querySelector('[data-pet-reaction-status]');
+ if(status) status.textContent= id==='brotecito'?'Le brota una hojita, sonríe muy feliz y da un saltito.':id==='nubecita'?'Una brisa cariñosa abraza a Nubecita y se pone feliz.':'Lunita abre su flor de loto con delicadeza.';
+ const timer=setTimeout(()=>{scene.classList.remove('is-reacting');petReactionTimers.delete(scene);if(status)status.textContent='';},3300);
+ petReactionTimers.set(scene,timer);
+}
+
 function clock(seconds){return `${String(Math.floor(seconds/60)).padStart(2,'0')}:${String(seconds%60).padStart(2,'0')}`}
 function breathTick(){breathElapsed++;if(breathElapsed>=breathPhases[breathIndex][1]){breathElapsed=0;breathIndex=(breathIndex+1)%4;if(breathIndex===0)breathCycles++}updateBreath()}
 function updateBreath(){const phase=document.getElementById('phase');if(!phase)return;phase.textContent=breathPhases[breathIndex][0];document.getElementById('phase-seconds').textContent=`${breathPhases[breathIndex][1]-breathElapsed} segundos`;document.getElementById('breath-cycles').textContent=`Ciclos completados: ${breathCycles}`;document.getElementById('breath-inner').classList.toggle('expand',breathIndex===0);document.getElementById('breath-status').textContent=running?'Respira cómodamente. Puedes pausar cuando quieras.':'Pausado. Continúa cuando quieras.';document.getElementById('breath-toggle').textContent=running?'Ⅱ Pausar':'▶ Continuar'}
 function timerTick(){remaining=Math.max(remaining-1,0);document.getElementById('clock').textContent=clock(remaining);document.getElementById('timer-progress').style.width=`${100*(1-remaining/catalog[activeId].duration)}%`;if(remaining===0){clearTimer();document.getElementById('timer-toggle').textContent='✓ Terminado';document.getElementById('timer-toggle').disabled=true}}
 function showStep(kind){const isGround=kind==='ground',idx=isGround?groundStep:muscleStep,steps=isGround?groundSteps:muscleSteps;document.getElementById(kind+'-count').textContent=`Paso ${idx+1} de ${steps.length}`;document.getElementById(kind+'-title').textContent=steps[idx][0];document.getElementById(kind+'-desc').textContent=steps[idx][1];document.getElementById(kind+'-progress').style.width=`${100*(idx+1)/steps.length}%`;document.getElementById(kind+'-next').textContent=idx===steps.length-1?'Volver a empezar':'Siguiente →'}
 app.addEventListener('click',e=>{const el=e.target.closest('[data-go],[data-open],[data-fav],[data-action],[data-pet-view]');if(!el)return;if(el.dataset.petView){petProfileReturn=view==='pet-select'?'pet-select':'home';currentPetProfile=el.dataset.petView;petProfileExpanded=false;navigate('pet-detail');return}if(el.dataset.go){if(view==='welcome'&&el.dataset.go==='home'&&!companionToday()){navigate('pet-select')}else{navigate(el.dataset.go)}return}if(el.dataset.open){petActivityReturn=view==='pet-detail'?currentPetProfile:null;navigate('detail',el.dataset.open);return}if(el.dataset.fav){const id=el.dataset.fav,arr=getStore('favorites',[]),next=arr.includes(id)?arr.filter(x=>x!==id):[...arr,id];setStore('favorites',next);render();return}const a=el.dataset.action;
+if(a==='pet-react'){triggerPetReaction(el);return;}
 if(a==='pet-story-toggle'){
   petProfileExpanded=!petProfileExpanded;
   const story=document.getElementById('pet23-fullstory');

@@ -748,3 +748,84 @@ body:has(.app.welcome-mode) {
   overflow:hidden;
   background:#aed8d0;
 }
+
+
+/* RESPIRA 3.0 · Paisajes aprobados completos, mascota interactiva SOLO al tocar.
+   Los PNG HD se conservan sin retoques ni ampliación artificial. */
+.pet30-scene{height:clamp(308px,93vw,392px)!important;overflow:hidden;isolation:isolate;background:#c8e9ed;touch-action:pan-y}
+.pet30-scene .pet30-art,
+.pet30-scene .pet30-reactive-sprite{
+ position:absolute;inset:0;width:100%;height:100%;display:block;
+ object-fit:cover;object-position:50% 55%;user-select:none;pointer-events:none;
+ filter:none;border:0;border-radius:0
+}
+.pet30-brotecito .pet30-art,.pet30-brotecito .pet30-reactive-sprite{object-position:50% 55%}
+.pet30-nubecita .pet30-art,.pet30-nubecita .pet30-reactive-sprite{object-position:50% 52%}
+.pet30-lunita .pet30-art,.pet30-lunita .pet30-reactive-sprite{object-position:50% 64%}
+.pet30-scene .pet30-reactive-sprite{opacity:0;z-index:2;will-change:transform;transform:translateY(0) scale(1);}
+.pet30-brotecito .pet30-reactive-sprite{
+ -webkit-mask-image:radial-gradient(ellipse 36% 42% at 49% 53%,#000 68%,transparent 99%);
+ mask-image:radial-gradient(ellipse 36% 42% at 49% 53%,#000 68%,transparent 99%);
+}
+.pet30-nubecita .pet30-reactive-sprite{
+ -webkit-mask-image:radial-gradient(ellipse 40% 32% at 49% 40%,#000 67%,transparent 99%);
+ mask-image:radial-gradient(ellipse 40% 32% at 49% 40%,#000 67%,transparent 99%);
+}
+.pet30-lunita .pet30-reactive-sprite{
+ -webkit-mask-image:radial-gradient(ellipse 37% 40% at 50% 54%,#000 66%,transparent 99%);
+ mask-image:radial-gradient(ellipse 37% 40% at 50% 54%,#000 66%,transparent 99%);
+}
+.pet30-effects{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden}
+.pet30-fx-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none}
+.pet30-touch{position:absolute;z-index:5;left:15%;top:12%;width:70%;height:74%;border:0;background:transparent;color:transparent;cursor:pointer;border-radius:48%;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+.pet30-brotecito .pet30-touch{left:17%;top:13%;width:66%;height:74%}
+.pet30-nubecita .pet30-touch{left:10%;top:10%;width:79%;height:66%}
+.pet30-lunita .pet30-touch{left:14%;top:19%;width:72%;height:75%}
+.pet30-touch:focus-visible{outline:3px solid #fcf4b7;outline-offset:-9px;background:rgba(255,255,255,.08)}
+.pet30-hint{position:absolute;right:11px;bottom:11px;z-index:4;font-size:11px;font-weight:750;padding:6px 10px;border-radius:30px;color:#266e78;background:rgba(255,255,255,.83);box-shadow:0 3px 15px #1d5a6433;pointer-events:none}
+.pet30-scene.is-reacting .pet30-hint{opacity:0;transition:opacity .18s}
+.pet30-newleaf,.pet30-happy-face,.pet30-sparkle,.pet30-breeze,.pet30-breeze-heart,.pet30-lotus{opacity:0}
+/* BROTECITO: 0 a .7 seg = hojita; .75 a 1.35 = sonrisa; 1.4 a 2.2 = salto. */
+.pet30-brotecito.is-reacting .pet30-newleaf{animation:pet30Leaf 3.15s ease-out forwards;transform-box:fill-box;transform-origin:48% 88%}
+.pet30-brotecito.is-reacting .pet30-happy-face{animation:pet30Smile 3.15s ease-in-out forwards}
+.pet30-brotecito.is-reacting .pet30-art{animation:pet30BroteJump 3.15s ease-in-out both}
+.pet30-brotecito.is-reacting .pet30-sparkle{animation:pet30Spark 1.55s ease-out .65s both}
+.pet30-brotecito.is-reacting .pet30-sparkle-2{animation-delay:.9s}
+.pet30-brotecito.is-reacting .pet30-sparkle-3{animation-delay:1.2s}
+@keyframes pet30Leaf{0%,5%{opacity:0;transform:scale(.03)}15%{opacity:1;transform:scale(.35)}28%,82%{opacity:1;transform:scale(1)}99%{opacity:0;transform:scale(.8)}100%{opacity:0}}
+@keyframes pet30Smile{0%,23%{opacity:0}29%,74%{opacity:1}92%,100%{opacity:0}}
+@keyframes pet30BroteJump{0%,43%{transform:translateY(0) scale(1)}52%{transform:translateY(3px) scale(1.018)}61%,68%{transform:translateY(-13px) scale(1.046)}78%{transform:translateY(0) scale(1.022)}88%,100%{transform:translateY(0) scale(1)}}
+@keyframes pet30Spark{0%{opacity:0;transform:scale(.25)}28%{opacity:1;transform:scale(1.35)}64%{opacity:.9;transform:scale(.86)}100%{opacity:0;transform:scale(.1)}}
+/* NUBECITA: viene la brisa, la envuelve, nubecita se balancea y sonríe. */
+.pet30-breeze{fill:none;stroke:#fff;stroke-width:7;stroke-linecap:round;filter:drop-shadow(0 1px 2px #559dd2aa);stroke-dasharray:460;stroke-dashoffset:480}
+.pet30-nubecita.is-reacting .pet30-breeze{animation:pet30Breeze 2.5s ease-in-out .1s both}
+.pet30-nubecita.is-reacting .pet30-breeze-two{animation-delay:.3s;stroke-width:4.5;stroke:#e5fbff}
+.pet30-nubecita.is-reacting .pet30-breeze-three{animation-delay:.2s;stroke-width:4;stroke:#fffad9}
+.pet30-nubecita.is-reacting .pet30-art{animation:pet30CloudFloat 3.1s ease-in-out both}
+.pet30-nubecita.is-reacting .pet30-breeze-heart{animation:pet30CloudHeart 2.5s ease-in-out .65s both}
+.pet30-nubecita.is-reacting .pet30-sparkle{animation:pet30Spark 1.9s ease-in-out .5s both}
+@keyframes pet30Breeze{0%{opacity:0;stroke-dashoffset:480}20%{opacity:.8}72%{opacity:1;stroke-dashoffset:0}100%{opacity:0;stroke-dashoffset:-70}}
+@keyframes pet30CloudFloat{0%,15%{transform:translateY(0) scale(1)}34%{transform:translateY(-4px) scale(1.018)}56%{transform:translateY(-7px) scale(1.025)}77%{transform:translateY(-2px) scale(1.015)}100%{transform:translateY(0) scale(1)}}
+@keyframes pet30CloudHeart{0%{opacity:0;transform:translateY(14px) scale(.4);transform-origin:304px 113px}30%{opacity:1;transform:translateY(-2px) scale(1.06)}75%{opacity:.95;transform:translateY(-17px) scale(1)}100%{opacity:0;transform:translateY(-35px) scale(.8)}}
+/* LUNITA: pétalos del loto se despliegan, ilumina y se vuelven a cerrar. */
+.pet30-lunita.is-reacting .pet30-lotus{animation:pet30LotusShow 3.15s ease-out both}
+.pet30-lotus-side,.pet30-lotus-center{transform-box:fill-box;transform-origin:50% 100%}
+.pet30-lunita.is-reacting .pet30-lotus-left{animation:pet30PetalLeft 3.15s ease-in-out both;transform-origin:100% 100%}
+.pet30-lunita.is-reacting .pet30-lotus-right{animation:pet30PetalRight 3.15s ease-in-out both;transform-origin:0% 100%}
+.pet30-lunita.is-reacting .pet30-lotus-inner-left{animation:pet30PetalInnerLeft 3.15s ease-in-out both;transform-origin:100% 100%}
+.pet30-lunita.is-reacting .pet30-lotus-inner-right{animation:pet30PetalInnerRight 3.15s ease-in-out both;transform-origin:0% 100%}
+.pet30-lunita.is-reacting .pet30-lotus-center{animation:pet30PetalCenter 3.15s ease-in-out both}
+.pet30-lunita.is-reacting .pet30-art{animation:pet30LunitaScene 3.15s ease-in-out both}
+.pet30-lunita.is-reacting .pet30-sparkle{animation:pet30Spark 1.8s ease-in-out .8s both}
+.pet30-lunita.is-reacting .pet30-sparkle-2{animation-delay:1.15s}
+@keyframes pet30LotusShow{0%,8%{opacity:0}18%,70%{opacity:1}95%,100%{opacity:0}}
+@keyframes pet30PetalLeft{0%,12%{transform:scale(.18) rotate(40deg)}35%,65%{transform:scale(1) rotate(-16deg)}89%,100%{transform:scale(.16) rotate(40deg)}}
+@keyframes pet30PetalRight{0%,12%{transform:scale(.18) rotate(-40deg)}35%,65%{transform:scale(1) rotate(16deg)}89%,100%{transform:scale(.16) rotate(-40deg)}}
+@keyframes pet30PetalInnerLeft{0%,12%{transform:scale(.15) rotate(20deg)}35%,65%{transform:scale(1) rotate(-6deg)}89%,100%{transform:scale(.15) rotate(20deg)}}
+@keyframes pet30PetalInnerRight{0%,12%{transform:scale(.15) rotate(-20deg)}35%,65%{transform:scale(1) rotate(6deg)}89%,100%{transform:scale(.15) rotate(-20deg)}}
+@keyframes pet30PetalCenter{0%,12%{transform:scale(.12)}35%,65%{transform:scale(1)}89%,100%{transform:scale(.12)}}
+@keyframes pet30LunitaScene{0%,12%{transform:scale(1)}40%,63%{transform:scale(1.018)}100%{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){
+ .pet30-scene.is-reacting .pet30-art{animation:none!important}
+ .pet30-scene.is-reacting .pet30-newleaf,.pet30-scene.is-reacting .pet30-happy-face,.pet30-scene.is-reacting .pet30-breeze,.pet30-scene.is-reacting .pet30-lotus{animation:none!important;opacity:.85!important}
+}
