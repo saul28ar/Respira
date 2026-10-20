@@ -111,9 +111,12 @@ function item(id){const x=catalog[id],fav=getStore('favorites',[]).includes(id);
 function render(){let html='';
 if(view==='welcome'){
   html=`<main class="welcome25" aria-label="Bienvenida a Respira">
-    <img class="welcome25-art" src="./escenas/bienvenida-exacta.png" alt="" fetchpriority="high" draggable="false">
+    <div class="welcome-final-artboard">
+      <img class="welcome-final-art" src="./escenas/bienvenida-aprobada-hd.png" alt="" fetchpriority="high" draggable="false">
+      <img class="welcome-final-logo" src="./escenas/logo-original-recortado.png" alt="" aria-hidden="true" draggable="false">
+      <button class="welcome25-cta" data-go="home" aria-label="Comenzar: elegir mi compañía de hoy"><span class="sr-only">Comenzar</span></button>
+    </div>
     <div class="sr-only"><h1>Respira</h1><p>Tu espacio de calma. Pequeños momentos para una vida más tranquila.</p><p>Brotecito, Nubecita y Lunita junto a un lago de montañas, plantas y flores.</p></div>
-    <button class="welcome25-cta" data-go="home" aria-label="Comenzar: elegir mi compañía de hoy"><span class="sr-only">Comenzar</span></button>
   </main>`;
 }
 if(view==='home'){
@@ -236,4 +239,4 @@ if(a==='pet-message'){
 }
 if(a==='breath-toggle'){if(running){clearTimer();updateBreath()}else{running=true;updateBreath();interval=setInterval(breathTick,1000)}}if(a==='breath-reset'){clearTimer();breathIndex=0;breathElapsed=0;breathCycles=0;updateBreath();document.getElementById('breath-toggle').textContent='▶ Empezar'}if(a==='timer-toggle'){if(remaining===0)return;if(running){clearTimer();el.textContent='▶ Continuar'}else{running=true;el.textContent='Ⅱ Pausar';interval=setInterval(timerTick,1000)}}if(a==='timer-reset'){clearTimer();remaining=catalog[activeId].duration;document.getElementById('clock').textContent=clock(remaining);document.getElementById('timer-progress').style.width='0%';const b=document.getElementById('timer-toggle');b.disabled=false;b.textContent='▶ Empezar'}if(a==='ground-next'||a==='ground-prev'){groundStep=a.endsWith('prev')?Math.max(0,groundStep-1):(groundStep+1)%5;showStep('ground')}if(a==='muscle-next'||a==='muscle-prev'){muscleStep=a.endsWith('prev')?Math.max(0,muscleStep-1):(muscleStep+1)%5;showStep('muscle')}if(a==='journal-save'){const ok=setStore('journal',document.getElementById('journal-text').value);document.getElementById('journal-status').textContent=ok?'Tu nota se guardó en este dispositivo.':'No fue posible guardar tu nota. Revisa el espacio o permisos del navegador.'}if(a==='journal-clear'){if(confirm('¿Quieres borrar tu nota guardada?')){const ok=setStore('journal','');if(ok){document.getElementById('journal-text').value='';document.getElementById('journal-status').textContent='Nota borrada.'}}}});
 render();
-if('serviceWorker'in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}))}
+if ('serviceWorker' in navigator) { window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {})); }

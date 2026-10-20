@@ -685,3 +685,37 @@
 @media(max-width:345px){.home26-header{height:82px}.home26-card{min-height:131px}.home26-card img{height:69px}.home26-card strong{font-size:12px}.home26-calm{min-height:60px}.home26-main{padding-left:12px;padding-right:12px}}
 @media(min-width:700px){.home26{border-radius:25px}.home26-nav{bottom:20px;border-radius:0 0 25px 25px}}
 @media(prefers-reduced-motion:reduce){.home26-nav{backdrop-filter:none}}
+
+
+/* RESPIRA — VISTA PREVIA DE BIENVENIDA. Imagen original sin estirar ni cambiar composición. */
+.welcome25{height:100dvh!important;min-height:0!important;padding:0!important;overflow:hidden;position:relative;background:linear-gradient(180deg,#78c3ef 0%,#d7eff9 17%,#b3e5e7 58%,#124d5c 100%);isolation:isolate}
+.welcome-final-artboard{
+  position:absolute;
+  top:50%;left:50%;
+  width:100%;height:100%;
+  aspect-ratio:auto;
+  transform:translate(-50%,-50%);
+  overflow:hidden;
+}
+.welcome-final-art{display:block;width:100%;height:100%;object-fit:fill;pointer-events:none;user-select:none;-webkit-user-drag:none}
+.welcome-final-logo{
+  position:absolute;
+  left:36.132%;top:14.593%;width:27.737%;height:10.1077%;object-fit:fill;
+  pointer-events:none;user-select:none;
+  transform-origin:50% 52%;
+  animation:respiraLogoSuave 4.2s ease-in-out infinite;
+  will-change:transform;
+}
+@keyframes respiraLogoSuave{0%,100%{transform:scale(1)}50%{transform:scale(1.055)}}
+.welcome25-cta{
+  position:absolute;z-index:5;
+  left:21.6%;right:auto;bottom:auto;top:79.45%;
+  width:56.8%;height:7.05%;min-height:0;
+  display:block;
+  padding:0;margin:0;border:0;border-radius:999px;background:transparent;
+  cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;
+}
+.welcome25-cta:focus-visible{outline:3px solid white;outline-offset:4px;box-shadow:0 0 0 6px #155d73}
+.welcome25-cta:active{background:rgba(255,255,255,.12)}
+@media(min-width:700px){.welcome25{height:100dvh!important}}
+@media(prefers-reduced-motion:reduce){.welcome-final-logo{animation:none!important;will-change:auto}}
