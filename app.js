@@ -145,11 +145,11 @@ if(view==='home'){
   </main>`;
 }
 if(view==='pet-select'){
-  // Respira 3.4: arte aprobado como única imagen, con 4 zonas táctiles.
+  // Respira 3.5: misma ilustración aprobada, sin textos «Conocer más»; cuatro zonas táctiles originales.
   // No se superponen textos ni se modifica el diseño ilustrado.
   html=`<main class="pet34-page" aria-label="¿Quién te acompañará hoy?">
     <div class="pet34-artboard">
-      <img class="pet34-art" src="./escenas/seleccion-diaria-aprobada.png" alt="¿Quién te acompañará hoy? Elige a quien quieras tener cerquita hoy. Sin prisas y a tu manera. Brotecito: Un pequeño impulso para un gran día. Nubecita: Una respiración contigo, siempre. Lunita: Encuentra tu equilibrio, siempre contigo. Los tres tienen las opciones Elegir y Conocer más. Tu compañía es opcional. Puedes entrar a Respira sin elegir. Ahora no, ir al inicio." width="941" height="1672" draggable="false" fetchpriority="high">
+      <img class="pet34-art" src="./escenas/seleccion-diaria-aprobada.png" alt="¿Quién te acompañará hoy? Elige a quien quieras tener cerquita hoy. Sin prisas y a tu manera. Brotecito: Un pequeño impulso para un gran día. Nubecita: Una respiración contigo, siempre. Lunita: Encuentra tu equilibrio, siempre contigo. Los tres tienen la opción Elegir. Tu compañía es opcional. Puedes entrar a Respira sin elegir. Ahora no, ir al inicio." width="941" height="1672" draggable="false" fetchpriority="high">
       <button type="button" class="pet34-hit pet34-pick pet34-pick-brotecito" data-action="pet-pick" data-pet-id="brotecito" aria-label="Elegir a Brotecito"></button>
       <button type="button" class="pet34-hit pet34-pick pet34-pick-nubecita" data-action="pet-pick" data-pet-id="nubecita" aria-label="Elegir a Nubecita"></button>
       <button type="button" class="pet34-hit pet34-pick pet34-pick-lunita" data-action="pet-pick" data-pet-id="lunita" aria-label="Elegir a Lunita"></button>

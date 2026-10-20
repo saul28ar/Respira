@@ -1,0 +1,9 @@
+RESPIRA 3.5 — SOLO RETIRAR «CONOCER MÁS» DE SELECCIÓN
+
+- Portada 3.3, paisajes, tarjetas, mascotas, textos y perfiles: sin cambios.
+- Imagen de selección: mismos píxeles salvo las tres zonas donde decía «Conocer más».
+- Los cuatro botones (Elegir a cada mascota y Ahora no, ir al inicio) conservan las acciones existentes.
+- Las historias y fichas se mantienen en la aplicación para su uso posterior.
+- Caché actualizada para cargar la imagen nueva.
+
+Copia los archivos del ZIP en la raíz del repositorio GitHub Desktop Respira, reemplazando los existentes, y luego Commit to main > Push origin.
