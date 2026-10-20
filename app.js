@@ -149,7 +149,7 @@ if(view==='pet-select'){
   const selected=companionToday();
   html=`<main class="pet-page pet-select-page">${petHeader()}
     <div class="pet-select-intro"><span class="pet-sky" aria-hidden="true">✦ &nbsp; ✧</span><h1>${selected?'Tu compañía de hoy':'¿Quién te acompañará hoy?'}</h1><p>${selected?'Hoy te acompaña '+safe(pets[selected].name)+'. Mañana podrás elegir de nuevo.':'Elige a quien quieras tener cerquita hoy. Sin prisas y a tu manera.'}</p></div>
-    <div class="pet-choices">${Object.entries(pets).map(([id,p])=>`<article class="pet-choice pet-choice-${p.theme}"><img src="${p.image}" alt="Ilustración original de ${safe(p.name)}" loading="lazy"><div class="pet-choice-main"><strong>${safe(p.name)}</strong><small>${safe(p.subtitle)}</small><div class="pet-choice-actions">${!selected?`<button class="pet-choice-pick" data-action="pet-pick" data-pet-id="${id}" aria-label="Elegir a ${safe(p.name)} para hoy">Elegir hoy <span aria-hidden="true">→</span></button>`:`<span class="pet-choice-chosen">${selected===id?'✓ Tu compañía de hoy':'Disponible mañana'}</span>`}<button class="pet-choice-learn" data-pet-view="${id}" aria-label="Conocer la historia de ${safe(p.name)}">Conocer más ›</button></div></div></article>`).join('')}</div>
+    <div class="pet-choices">${Object.entries(pets).map(([id,p])=>`<article class="pet-choice pet-choice-${p.theme}"><img src="./mascotas/${id}.png" alt="Ilustración de ${safe(p.name)}" loading="lazy"><div class="pet-choice-main"><strong>${safe(p.name)}</strong><small>${safe(p.subtitle)}</small><div class="pet-choice-actions">${!selected?`<button class="pet-choice-pick" data-action="pet-pick" data-pet-id="${id}" aria-label="Elegir a ${safe(p.name)} para hoy">Elegir hoy <span aria-hidden="true">→</span></button>`:`<span class="pet-choice-chosen">${selected===id?'✓ Tu compañía de hoy':'Disponible mañana'}</span>`}<button class="pet-choice-learn" data-pet-view="${id}" aria-label="Conocer la historia de ${safe(p.name)}">Conocer más ›</button></div></div></article>`).join('')}</div>
     <div class="pet-choice-footer"><p>Tu compañía es opcional. Puedes entrar a Respira sin elegir. ♡</p><button class="pet-link" data-go="home">${selected?'Ir al inicio':'Ahora no, ir al inicio'}</button></div>
   </main>`
 }
@@ -164,27 +164,23 @@ if(view==='pet-detail'){
     lunita:['calm','journal','muscle']
   };
   const activities=f.activities.map(([icon,title,subtitle],idx)=>`<button class="pet23-activity" data-open="${petActions[currentPetProfile][idx]}" aria-label="${safe(title)}: ${safe(subtitle)}"><span class="pet23-act-icon" aria-hidden="true">${safe(icon)}</span><span class="pet23-act-copy"><strong>${safe(title)}</strong><small>${safe(subtitle)}</small></span><span class="pet23-act-arrow" aria-hidden="true">›</span></button>`).join('');
-  html=`<main class="pet-page pet23-page pet23-${p.theme}" style="--pet23-accent:${f.color};--pet23-gradient:${f.gradient}">
-    <div class="pet23-top"><button class="pet23-back" data-go="${petProfileReturn}" aria-label="Volver">‹</button><span>SI QUIERES, CONOCE SU HISTORIA</span></div>
-    <header class="pet23-intro"><h1>${safe(p.name)}</h1><p>${safe(p.subtitle)}</p></header>
-    <section class="pet23-hero pet24-hero pet30-scene pet30-${currentPetProfile}" aria-label="Escena interactiva de ${safe(p.name)}">
-      <img class="pet30-art" src="./escenas/perfil-hd-${currentPetProfile}.png" alt="${safe(p.name)} en su paisaje original de alta definición" fetchpriority="high" draggable="false">
-      <div class="pet30-effects" aria-hidden="true">${petReactionArtwork(currentPetProfile)}</div>
-      <button type="button" class="pet30-touch" data-action="pet-react" aria-label="Tocar a ${safe(p.name)} para ver su reacción especial"><span class="sr-only">Animar a ${safe(p.name)}</span></button>
-      <span class="pet30-hint" aria-hidden="true">Tócame ✨</span>
-      <span class="sr-only" role="status" aria-live="polite" data-pet-reaction-status></span>
-    </section>
-    <div class="pet23-content">
-      <div class="pet23-message"><small>${safe(f.emoji|| (currentPetProfile==='brotecito'?'🌱':currentPetProfile==='nubecita'?'☁️':'🌙'))} · UN MENSAJITO PARA TI</small><p>“${safe(f.message)}”</p></div>
-      <div class="pet23-about">
-        <section class="pet23-info"><span class="pet23-icon" aria-hidden="true">❧</span><div class="pet23-info-body"><h2>Su historia</h2><p>${safe(f.short)}</p><div class="pet23-fullstory" id="pet23-fullstory" ${petProfileExpanded?'':'hidden'}><p>${safe(f.long)}</p></div><button class="pet23-readmore" data-action="pet-story-toggle" aria-expanded="${petProfileExpanded}" aria-controls="pet23-fullstory">${petProfileExpanded?'Leer menos ↑':'Leer más ↓'}</button></div></section>
-        <section class="pet23-info"><span class="pet23-icon" aria-hidden="true">♡</span><div class="pet23-info-body"><h2>Su personalidad</h2><p>${safe(f.personality)}</p></div></section>
-        <section class="pet23-info"><span class="pet23-icon" aria-hidden="true">✧</span><div class="pet23-info-body"><h2>Lo que representa</h2><p>${safe(f.meaning)}</p></div></section>
-      </div>
+  html=`<main class="pet-page pet31-page pet31-${p.theme}" aria-label="Perfil de ${safe(p.name)}">
+    <div class="pet31-artboard">
+      <img class="pet31-art" src="./escenas/perfil-final-${currentPetProfile}.png" width="941" height="1672" alt="Perfil ilustrado de ${safe(p.name)}, con su paisaje natural, un mensajito y las tarjetas Su historia, Su personalidad y Lo que representa" draggable="false" fetchpriority="high">
+      <button class="pet31-hit pet31-back" type="button" data-go="${petProfileReturn}" aria-label="Volver a la pantalla anterior"><span class="sr-only">Volver</span></button>
+      <button class="pet31-hit pet31-card pet31-card-story" type="button" data-action="pet31-open" data-section="story" aria-label="Leer la historia completa de ${safe(p.name)}"><span class="sr-only">Abrir Su historia</span></button>
+      <button class="pet31-hit pet31-card pet31-card-personality" type="button" data-action="pet31-open" data-section="personality" aria-label="Conocer la personalidad de ${safe(p.name)}"><span class="sr-only">Abrir Su personalidad</span></button>
+      <button class="pet31-hit pet31-card pet31-card-meaning" type="button" data-action="pet31-open" data-section="meaning" aria-label="Descubrir lo que representa ${safe(p.name)}"><span class="sr-only">Abrir Lo que representa</span></button>
+    </div>
+    <div class="pet31-more">
       <blockquote class="pet23-quote">“${safe(f.quote)}”</blockquote>
       <section class="pet23-acts"><h2>Hoy pueden hacer juntos…</h2><p>Elige algo que te venga bien. Sin ninguna prisa.</p>${activities}</section>
       <footer class="pet23-end"><p>${chosenText}</p>${!chosen?`<button class="pet23-footer-btn" data-action="pet-pick" data-pet-id="${currentPetProfile}">Elegir a ${safe(p.name)} <span aria-hidden="true">→</span></button>`:`<button class="pet23-footer-btn" data-go="home">Volver al inicio <span aria-hidden="true">→</span></button>`}</footer>
     </div>
+    <dialog class="pet31-dialog" id="pet31-dialog" aria-labelledby="pet31-dialog-title">
+      <button type="button" class="pet31-dialog-close" data-action="pet31-close" aria-label="Cerrar información">×</button>
+      <div id="pet31-dialog-content"></div>
+    </dialog>
   </main>`;
 }
 if(view==='pet-confirm'){
@@ -214,76 +210,33 @@ app.classList.toggle('welcome-mode',view==='welcome');
 app.innerHTML=html;
 if(view==='welcome')startWelcomeSlideshow();else stopWelcomeSlideshow();}
 
-// Respira 3.0 · Efectos independientes. No alteran nunca los PNG originales.
-function petReactionArtwork(id){
-  if(id==='brotecito')return `<svg class="pet30-fx-svg" viewBox="0 0 390 345" preserveAspectRatio="none" role="presentation">
-    <g transform="translate(195 64)"><g class="pet30-newleaf">
-      <path class="pet30-newleaf-stem" d="M 0 21 Q 1 -10 1 -33" fill="none" stroke="#378963" stroke-width="3.7" stroke-linecap="round"/>
-      <path class="pet30-newleaf-blade" d="M 1 -15 Q -31 -31 -20 -55 Q -3 -54 1 -15 Z" fill="#a4d869" stroke="#6eac65" stroke-width="1.5"/>
-      <path class="pet30-newleaf-vein" d="M -18 -49 Q -8 -34 0 -19" fill="none" stroke="#e6f5ae" stroke-width="2.4" stroke-linecap="round"/>
-    </g></g>
-    <g class="pet30-happy-face">
-      <path d="M 117 155 C 109 145 97 153 105 163 L 117 176 129 163 C 137 153 125 145 117 155Z" fill="#ffb4c1" stroke="#ffe4e7" stroke-width="1.5"/>
-      <path d="M 288 160 C 282 151 272 160 279 169 L 288 179 298 169 C 305 160 294 151 288 160Z" fill="#ffbec9" stroke="#ffe5ea" stroke-width="1.4"/>
-    </g>
-    <g class="pet30-sparkle pet30-sparkle-1"><path d="M 107 121 l 4 10 11 3 -11 3 -4 10 -4 -10 -11 -3 11 -3Z" fill="#fff5c4"/></g>
-    <g class="pet30-sparkle pet30-sparkle-2"><path d="M 283 119 l 3 9 9 3 -9 3 -3 9 -3 -9 -9 -3 9 -3Z" fill="#fffdd7"/></g>
-    <g class="pet30-sparkle pet30-sparkle-3"><path d="M 293 234 l 3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3Z" fill="#f5f4bc"/></g>
-  </svg>`;
-  if(id==='nubecita')return `<svg class="pet30-fx-svg" viewBox="0 0 390 345" preserveAspectRatio="none" role="presentation">
-    <path class="pet30-breeze pet30-breeze-one" d="M -40 209 C 30 138 76 269 136 190 S 260 141 316 190 S 377 215 426 173"/>
-    <path class="pet30-breeze pet30-breeze-two" d="M -30 267 C 59 218 79 295 139 250 S 257 201 308 251 S 364 270 415 222"/>
-    <path class="pet30-breeze pet30-breeze-three" d="M -10 146 C 68 117 70 190 112 168 C 149 146 142 126 166 118"/>
-    <g class="pet30-breeze-heart" fill="#fff9ff"><path d="M 304 96 c -13 -18 -37 0 -11 22 l 11 9 12 -11 c 21 -21 -1 -37 -12 -20Z"/></g>
-    <g class="pet30-sparkle pet30-sparkle-1"><path d="M 67 98 l 5 13 13 5 -13 5 -5 13 -5 -13 -13 -5 13 -5Z" fill="white"/></g>
-    <g class="pet30-sparkle pet30-sparkle-2"><path d="M 322 280 l 4 11 11 4 -11 4 -4 11 -4 -11 -11 -4 11 -4Z" fill="white"/></g>
-  </svg>`;
-  return `<svg class="pet30-fx-svg" viewBox="0 0 390 345" preserveAspectRatio="none" role="presentation">
-    <g class="pet30-lotus" transform="translate(195 283)">
-      <path class="pet30-lotus-side pet30-lotus-left" d="M 0 28 C -46 20 -85 -9 -78 -59 C -44 -55 -13 -20 0 28Z" fill="#f6cef7" stroke="#ffedff" stroke-width="2"/>
-      <path class="pet30-lotus-side pet30-lotus-right" d="M 0 28 C 46 20 85 -9 78 -59 C 44 -55 13 -20 0 28Z" fill="#f4b8ed" stroke="#fff0fc" stroke-width="2"/>
-      <path class="pet30-lotus-side pet30-lotus-inner-left" d="M 0 28 C -29 4 -47 -35 -29 -70 C -8 -48 -4 -12 0 28Z" fill="#ffdafa" stroke="#fff5ff" stroke-width="2"/>
-      <path class="pet30-lotus-side pet30-lotus-inner-right" d="M 0 28 C 29 4 47 -35 29 -70 C 8 -48 4 -12 0 28Z" fill="#e8c9ff" stroke="#fff5ff" stroke-width="2"/>
-      <path class="pet30-lotus-center" d="M 0 27 C -27 -3 -24 -63 0 -98 C 24 -63 27 -3 0 27Z" fill="#fffaf1" stroke="#fffaf4" stroke-width="2"/>
-      <ellipse class="pet30-lotus-glow" cx="0" cy="5" rx="81" ry="78" fill="url(#pet30glow)"/>
-    </g>
-    <defs><radialGradient id="pet30glow"><stop offset="0" stop-color="#fffbe3" stop-opacity=".40"/><stop offset="1" stop-color="#fffbe3" stop-opacity="0"/></radialGradient></defs>
-    <g class="pet30-sparkle pet30-sparkle-1"><path d="M 90 79 l 4 14 14 4 -14 4 -4 14 -4 -14 -14 -4 14 -4Z" fill="#fffce5"/></g>
-    <g class="pet30-sparkle pet30-sparkle-2"><path d="M 322 102 l 4 13 13 4 -13 4 -4 13 -4 -13 -13 -4 13 -4Z" fill="#ffe6ff"/></g>
-  </svg>`;
-}
-const petReactionTimers=new WeakMap();
-function triggerPetReaction(button){
- const scene=button.closest('.pet30-scene');
- if(!scene)return;
- const previous=petReactionTimers.get(scene);
- if(previous)clearTimeout(previous);
- scene.classList.remove('is-reacting');
- // Reiniciamos la secuencia completa incluso si el usuario toca repetidamente.
- void scene.offsetWidth;
- scene.classList.add('is-reacting');
- const id=scene.classList.contains('pet30-brotecito')?'brotecito':scene.classList.contains('pet30-nubecita')?'nubecita':'lunita';
- const status=scene.querySelector('[data-pet-reaction-status]');
- if(status) status.textContent= id==='brotecito'?'Le brota una hojita, sonríe muy feliz y da un saltito.':id==='nubecita'?'Una brisa cariñosa abraza a Nubecita y se pone feliz.':'Lunita abre su flor de loto con delicadeza.';
- const timer=setTimeout(()=>{scene.classList.remove('is-reacting');petReactionTimers.delete(scene);if(status)status.textContent='';},3300);
- petReactionTimers.set(scene,timer);
-}
+// Respira 3.1: mascotas estáticas. Sus animaciones se desarrollarán por separado.
 
 function clock(seconds){return `${String(Math.floor(seconds/60)).padStart(2,'0')}:${String(seconds%60).padStart(2,'0')}`}
 function breathTick(){breathElapsed++;if(breathElapsed>=breathPhases[breathIndex][1]){breathElapsed=0;breathIndex=(breathIndex+1)%4;if(breathIndex===0)breathCycles++}updateBreath()}
 function updateBreath(){const phase=document.getElementById('phase');if(!phase)return;phase.textContent=breathPhases[breathIndex][0];document.getElementById('phase-seconds').textContent=`${breathPhases[breathIndex][1]-breathElapsed} segundos`;document.getElementById('breath-cycles').textContent=`Ciclos completados: ${breathCycles}`;document.getElementById('breath-inner').classList.toggle('expand',breathIndex===0);document.getElementById('breath-status').textContent=running?'Respira cómodamente. Puedes pausar cuando quieras.':'Pausado. Continúa cuando quieras.';document.getElementById('breath-toggle').textContent=running?'Ⅱ Pausar':'▶ Continuar'}
 function timerTick(){remaining=Math.max(remaining-1,0);document.getElementById('clock').textContent=clock(remaining);document.getElementById('timer-progress').style.width=`${100*(1-remaining/catalog[activeId].duration)}%`;if(remaining===0){clearTimer();document.getElementById('timer-toggle').textContent='✓ Terminado';document.getElementById('timer-toggle').disabled=true}}
 function showStep(kind){const isGround=kind==='ground',idx=isGround?groundStep:muscleStep,steps=isGround?groundSteps:muscleSteps;document.getElementById(kind+'-count').textContent=`Paso ${idx+1} de ${steps.length}`;document.getElementById(kind+'-title').textContent=steps[idx][0];document.getElementById(kind+'-desc').textContent=steps[idx][1];document.getElementById(kind+'-progress').style.width=`${100*(idx+1)/steps.length}%`;document.getElementById(kind+'-next').textContent=idx===steps.length-1?'Volver a empezar':'Siguiente →'}
-app.addEventListener('click',e=>{const el=e.target.closest('[data-go],[data-open],[data-fav],[data-action],[data-pet-view]');if(!el)return;if(el.dataset.petView){petProfileReturn=view==='pet-select'?'pet-select':'home';currentPetProfile=el.dataset.petView;petProfileExpanded=false;navigate('pet-detail');return}if(el.dataset.go){if(view==='welcome'&&el.dataset.go==='home'&&!companionToday()){navigate('pet-select')}else{navigate(el.dataset.go)}return}if(el.dataset.open){petActivityReturn=view==='pet-detail'?currentPetProfile:null;navigate('detail',el.dataset.open);return}if(el.dataset.fav){const id=el.dataset.fav,arr=getStore('favorites',[]),next=arr.includes(id)?arr.filter(x=>x!==id):[...arr,id];setStore('favorites',next);render();return}const a=el.dataset.action;
-if(a==='pet-react'){triggerPetReaction(el);return;}
-if(a==='pet-story-toggle'){
-  petProfileExpanded=!petProfileExpanded;
-  const story=document.getElementById('pet23-fullstory');
-  story.hidden=!petProfileExpanded;
-  el.textContent=petProfileExpanded?'Leer menos ↑':'Leer más ↓';
-  el.setAttribute('aria-expanded',String(petProfileExpanded));
-  return;
+function openPet31Info(section){
+ const pet=pets[currentPetProfile],data=petProfiles[currentPetProfile];
+ const dialog=document.getElementById('pet31-dialog');
+ const content=document.getElementById('pet31-dialog-content');
+ if(!pet||!data||!dialog||!content)return;
+ const intro={story:'La historia de',personality:'La personalidad de',meaning:'Lo que representa'};
+ if(!Object.prototype.hasOwnProperty.call(intro,section))return;
+ const title=section==='story'?'Su historia':section==='personality'?'Su personalidad':'Lo que representa';
+ let body='';
+ if(section==='story')body=`<p>${safe(data.short)}</p><p>${safe(data.long)}</p>`;
+ if(section==='personality')body=`<p class="pet31-details-lead">${safe(data.personality)}</p><p class="pet31-details-foot">Cada compañía tiene su propia manera de cuidarte. Descubre la historia de ${safe(pet.name)} cuando te apetezca.</p>`;
+ if(section==='meaning')body=`<p class="pet31-details-lead">${safe(data.meaning)}</p><blockquote>“${safe(data.quote)}”</blockquote>`;
+ const symbol=section==='story'?'✧':section==='personality'?'♡':'✦';
+ content.innerHTML=`<div class="pet31-dialog-symbol" aria-hidden="true">${symbol}</div><span class="pet31-dialog-eyebrow">${safe(pet.name)} · TU ESPACIO DE CALMA</span><h2 id="pet31-dialog-title">${title}</h2><div class="pet31-dialog-text">${body}</div>`;
+ try{dialog.showModal()}catch(err){dialog.setAttribute('open','')}
 }
+app.addEventListener('click',e=>{const el=e.target.closest('[data-go],[data-open],[data-fav],[data-action],[data-pet-view]');if(!el)return;if(el.dataset.petView){petProfileReturn=view==='pet-select'?'pet-select':'home';currentPetProfile=el.dataset.petView;petProfileExpanded=false;navigate('pet-detail');return}if(el.dataset.go){if(view==='welcome'&&el.dataset.go==='home'&&!companionToday()){navigate('pet-select')}else{navigate(el.dataset.go)}return}if(el.dataset.open){petActivityReturn=view==='pet-detail'?currentPetProfile:null;navigate('detail',el.dataset.open);return}if(el.dataset.fav){const id=el.dataset.fav,arr=getStore('favorites',[]),next=arr.includes(id)?arr.filter(x=>x!==id):[...arr,id];setStore('favorites',next);render();return}const a=el.dataset.action;
+if(a==='pet31-open'){openPet31Info(el.dataset.section);return;}
+if(a==='pet31-close'){const dialog=document.getElementById('pet31-dialog');if(dialog)dialog.close();return;}
+
 if(a==='pet-activity-return'){currentPetProfile=petActivityReturn||companionToday()||'brotecito';petProfileReturn='home';petProfileExpanded=false;petActivityReturn=null;navigate('pet-detail');return;}
 if(a==='pet-pick'){
   if(companionToday()){navigate('home');return}
@@ -304,3 +257,6 @@ if(a==='pet-message'){
 if(a==='breath-toggle'){if(running){clearTimer();updateBreath()}else{running=true;updateBreath();interval=setInterval(breathTick,1000)}}if(a==='breath-reset'){clearTimer();breathIndex=0;breathElapsed=0;breathCycles=0;updateBreath();document.getElementById('breath-toggle').textContent='▶ Empezar'}if(a==='timer-toggle'){if(remaining===0)return;if(running){clearTimer();el.textContent='▶ Continuar'}else{running=true;el.textContent='Ⅱ Pausar';interval=setInterval(timerTick,1000)}}if(a==='timer-reset'){clearTimer();remaining=catalog[activeId].duration;document.getElementById('clock').textContent=clock(remaining);document.getElementById('timer-progress').style.width='0%';const b=document.getElementById('timer-toggle');b.disabled=false;b.textContent='▶ Empezar'}if(a==='ground-next'||a==='ground-prev'){groundStep=a.endsWith('prev')?Math.max(0,groundStep-1):(groundStep+1)%5;showStep('ground')}if(a==='muscle-next'||a==='muscle-prev'){muscleStep=a.endsWith('prev')?Math.max(0,muscleStep-1):(muscleStep+1)%5;showStep('muscle')}if(a==='journal-save'){const ok=setStore('journal',document.getElementById('journal-text').value);document.getElementById('journal-status').textContent=ok?'Tu nota se guardó en este dispositivo.':'No fue posible guardar tu nota. Revisa el espacio o permisos del navegador.'}if(a==='journal-clear'){if(confirm('¿Quieres borrar tu nota guardada?')){const ok=setStore('journal','');if(ok){document.getElementById('journal-text').value='';document.getElementById('journal-status').textContent='Nota borrada.'}}}});
 render();
 if ('serviceWorker' in navigator) { window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {})); }
+
+// Cerrar fichas al tocar fuera del panel (comportamiento nativo de dialog).
+app.addEventListener('click',event=>{if(event.target instanceof HTMLDialogElement && event.target.id==='pet31-dialog')event.target.close()});

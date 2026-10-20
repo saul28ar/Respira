@@ -829,3 +829,43 @@ body:has(.app.welcome-mode) {
  .pet30-scene.is-reacting .pet30-art{animation:none!important}
  .pet30-scene.is-reacting .pet30-newleaf,.pet30-scene.is-reacting .pet30-happy-face,.pet30-scene.is-reacting .pet30-breeze,.pet30-scene.is-reacting .pet30-lotus{animation:none!important;opacity:.85!important}
 }
+
+
+/* RESPIRA 3.1 — Perfiles ilustrados aprobados (imágenes exactas, sin recortes ni animación).
+   La cabecera, el paisaje, la frase y las tres tarjetas pertenecen a UN solo PNG.
+   Cuatro zonas transparentes hacen funcionales la flecha Atrás y las tres tarjetas.
+   Mantener esta hoja DESPUÉS de estilos anteriores para que no haya franjas. */
+.app.pet-mode:has(.pet31-page){padding-bottom:0;background:#e9f6ee}
+.pet31-page{padding:0 0 20px!important;min-height:100dvh;overflow:hidden;margin:0;background:linear-gradient(#e4f6eb,#f1f9f4)}
+.pet31-azul{background:linear-gradient(#e6f4ff,#eef5ff)}
+.pet31-lila{background:linear-gradient(#ede9ff,#f6f2ff)}
+.pet31-artboard{position:relative;width:100%;max-width:560px;margin:0 auto;padding:0;line-height:0;background:transparent;isolation:isolate}
+.pet31-art{display:block;width:100%;height:auto;aspect-ratio:941 / 1672;object-fit:contain;object-position:center;user-select:none;-webkit-user-drag:none;pointer-events:none;border:0;filter:none}
+.pet31-hit{position:absolute;z-index:2;display:block;border:0;margin:0;padding:0;min-width:0;min-height:0;background:transparent;color:transparent;border-radius:22px;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.pet31-hit:focus-visible{outline:3px solid #226c8f;outline-offset:-2px;background:#ffffff25}
+.pet31-hit:active{background:#ffffff1d}
+.pet31-back{top:4.5%;left:3%;width:11%;height:5.6%;border-radius:50%}
+.pet31-card{left:3.6%;width:92.8%}
+.pet31-card-story{top:68.4%;height:9.5%}
+.pet31-card-personality{top:78.2%;height:9.5%}
+.pet31-card-meaning{top:88.0%;height:9.8%}
+.pet31-more{padding:4px 18px 26px;margin:0 auto;max-width:560px}
+.pet31-more .pet23-quote{margin:5px 0 18px;box-shadow:0 5px 16px #2c698514}
+.pet31-more .pet23-acts{margin-bottom:12px}
+.pet31-more .pet23-end{padding-bottom:12px}
+.pet31-dialog{position:fixed;max-width:min(440px,calc(100vw - 32px));width:calc(100vw - 32px);max-height:min(80dvh,740px);overflow:auto;overscroll-behavior:contain;margin:auto;padding:30px 25px 25px;background:#fffcff;color:#244e63;border:1px solid #ecf5f8;border-radius:26px;box-shadow:0 18px 65px #0c3b575e;line-height:1.55}
+.pet31-dialog::backdrop{background:rgba(20,42,58,.52);backdrop-filter:blur(5px)}
+.pet31-dialog-close{position:absolute;right:14px;top:12px;width:38px;height:38px;border-radius:50%;border:0;background:#e9f3f7;color:#345b70;font-size:26px;line-height:1}
+.pet31-dialog-symbol{display:grid;place-items:center;width:54px;height:54px;margin:0 0 10px;background:#e7f6f3;border-radius:18px;font-size:27px;color:#45978d}
+.pet31-azul .pet31-dialog-symbol{background:#e5f2ff;color:#559cce}
+.pet31-lila .pet31-dialog-symbol{background:#ede7ff;color:#8776c1}
+.pet31-dialog-eyebrow{display:block;letter-spacing:.14em;font-weight:750;font-size:10px;line-height:1.5;color:#638994;padding-right:23px}
+.pet31-dialog h2{font-family:Georgia,serif;color:#20505d;font-size:clamp(26px,6.5vw,32px);margin:8px 0 15px;line-height:1.1}
+.pet31-dialog-text p{font-size:15px;line-height:1.75;color:#456a75;margin:0 0 17px}
+.pet31-dialog-text p:last-child{margin-bottom:0}
+.pet31-dialog-text .pet31-details-lead{font-size:17px;font-weight:600;line-height:1.75}
+.pet31-dialog-text .pet31-details-foot{font-size:14px}
+.pet31-dialog-text blockquote{font:italic 20px/1.55 Georgia,serif;text-align:center;color:#33757c;margin:18px 0 0;padding:17px;background:#eff8f5;border-radius:18px}
+.pet31-lila .pet31-dialog-text blockquote{background:#f3eefe;color:#7462a0}
+@media(min-width:700px){.app.pet-mode:has(.pet31-page){border-radius:0;overflow:visible;box-shadow:0 0 24px #3b5a5e19}}
+@media(prefers-reduced-motion:reduce){.pet31-dialog::backdrop{backdrop-filter:none}}
