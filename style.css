@@ -505,3 +505,87 @@
 .pet-detail-page .pet-quote{margin:13px 0;background:#ffffffc9}
 @media(max-width:355px){.pet-choice{grid-template-columns:90px 1fr;padding:7px;gap:8px;min-height:125px}.pet-choice>img{width:90px;min-height:90px;max-height:105px}.pet-choice-main>strong{font-size:16px}.pet-choice-pick{font-size:11px;min-height:31px;padding:6px 9px}.pet-choice-actions{gap:2px}.pet-detail-body{padding:11px 16px 0}}
 @media(prefers-reduced-motion:reduce){.pet-choice-pick{transition:none!important}}
+
+
+/* RESPIRA 2.3 — Fichas interactivas aprobadas, sin alterar ilustraciones ni paisajes. */
+.pet23-page{padding:0 0 30px;overflow:hidden;min-height:100dvh;background:linear-gradient(180deg,#f5f9f4 0%,#f8fcfa 55%,#f1f8f2 100%);text-align:left;color:#1b5060}
+.pet23-top{height:84px;position:relative;display:flex;align-items:center;justify-content:center;padding-top:23px;background:var(--pet23-gradient)}
+.pet23-top>span{font-size:10px;letter-spacing:.16em;font-weight:800;color:#56878a;text-align:center;padding:0 44px}
+.pet23-back{position:absolute;left:14px;top:34px;width:34px;height:34px;border:0;border-radius:50%;box-shadow:0 3px 10px #173e4b12;background:#fff;color:#326e72;font-size:25px;display:grid;place-items:center}
+.pet23-intro{text-align:center;background:var(--pet23-gradient);padding:7px 25px 16px}
+.pet23-intro h1{font-family:Georgia,'Times New Roman',serif;font-size:38px;line-height:1.06;letter-spacing:-.035em;margin:5px 0 9px;color:#185b69}
+.pet23-intro p{font-size:12.5px;color:#357985;margin:0}
+.pet23-hero{width:100%;height:clamp(258px,77vw,345px);overflow:hidden;position:relative;background:var(--pet23-gradient)}
+.pet23-hero img{display:block;width:100%;height:100%;object-fit:contain;object-position:center center;filter:none;transform:none;border:0;border-radius:0}
+.pet23-hero:after{content:'';position:absolute;inset:auto 0 0;height:11px;background:linear-gradient(transparent,#f7fbf8);pointer-events:none}
+.pet23-content{padding:12px 20px 5px}
+.pet23-message{padding:14px 16px 13px;border-radius:22px;background:#fff;box-shadow:0 4px 20px #163d4b0b;margin:0 0 12px;text-align:center;border:1px solid #ecf4f0}
+.pet23-message small{display:block;font-size:10px;color:#53878b;font-weight:800;letter-spacing:.08em;margin-bottom:5px}
+.pet23-message p{font-family:Georgia,'Times New Roman',serif;font-style:italic;font-size:15px;line-height:1.4;margin:0;color:#376779}
+.pet23-about{padding:0 2px}
+.pet23-info{display:flex;gap:11px;padding:11px 1px;border-bottom:1px solid #dce7e1}
+.pet23-info:last-child{border-bottom:none}
+.pet23-icon{width:31px;height:31px;border-radius:50%;display:grid;place-items:center;background:#e2eee8;color:var(--pet23-accent);font-size:18px;flex-shrink:0;margin-top:2px}
+.pet23-info-body{flex:1;min-width:0}
+.pet23-info h2{font-size:13px;font-weight:800;margin:0 0 4px;color:#174c59}
+.pet23-info p{font-size:11.8px;line-height:1.47;margin:0;color:#53777b}
+.pet23-readmore{padding:7px 0 0;border:0;background:none;color:var(--pet23-accent);font-size:11.5px;font-weight:800;text-decoration:underline;text-underline-offset:3px;min-height:30px}
+.pet23-fullstory p{margin-top:9px;line-height:1.54}
+.pet23-fullstory[hidden]{display:none!important}
+.pet23-quote{font-family:Georgia,'Times New Roman',serif;font-size:14px;text-align:center;font-style:italic;color:#416f79;background:#fff;border-radius:22px;padding:14px 13px;margin:12px 0 16px}
+.pet23-acts h2{font-size:17px;margin:0 0 4px;color:#164d5c;letter-spacing:-.02em}
+.pet23-acts>p{font-size:11.5px;color:#6a898b;margin:0 0 12px}
+.pet23-activity{width:100%;display:flex;align-items:center;text-align:left;padding:10px 11px 10px 12px;gap:11px;border-radius:15px;background:#fff;border:1px solid #e4f0ec;box-shadow:0 2px 7px #193f4d08;margin-bottom:8px;color:#214f61;transition:transform .15s ease,background .15s ease}
+.pet23-activity:hover,.pet23-activity:focus-visible{background:#f4faf8;transform:translateY(-1px)}
+.pet23-act-icon{width:34px;height:34px;flex-shrink:0;border-radius:12px;display:grid;place-items:center;background:var(--pet23-gradient);font-size:20px;color:var(--pet23-accent)}
+.pet23-act-copy{flex:1;min-width:0}.pet23-act-copy strong{display:block;font-size:12px;font-weight:800}.pet23-act-copy small{display:block;font-size:10px;color:#789397;margin-top:2px}
+.pet23-act-arrow{margin-left:auto;color:var(--pet23-accent);font-size:20px}
+.pet23-end{margin:18px 0 0}.pet23-end p{font-size:10.5px;text-align:center;color:#63838a;margin:0 0 11px}
+.pet23-footer-btn{background:linear-gradient(105deg,var(--pet23-accent),#246e83);color:white;font-size:14px;font-weight:750;border:0;border-radius:50px;width:100%;padding:15px 8px;box-shadow:0 5px 12px #17444c16}
+.pet23-footer-btn span{padding-left:8px}
+@media(max-width:340px){.pet23-hero{height:270px}.pet23-intro h1{font-size:33px}.pet23-content{padding-left:16px;padding-right:16px}}
+@media(prefers-reduced-motion:reduce){.pet23-activity{transition:none!important}}
+
+/* Respira 2.4 — Respeta las escenas aprobadas sin redibujar su contenido. */
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.welcome24{height:100dvh;min-height:560px;background:#ecf8f5;display:flex;flex-direction:column;overflow:hidden;position:relative;text-align:center;color:#185263}
+.welcome24-head{flex:0 0 auto;height:35%;min-height:236px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 20px 2px;background:linear-gradient(180deg,#f4fffc,#e7f7f5 83%,#d2eeec);position:relative}
+.welcome24-leaves{color:#8ebc9c;position:absolute;top:10px;left:13px;font-size:28px;opacity:.65}
+.welcome24-head>img{height:56px;width:56px;object-fit:contain}
+.welcome24-head h1{font-family:Georgia,serif;font-size:clamp(37px,10vw,48px);letter-spacing:-.035em;line-height:1;margin:8px 0 3px}
+.welcome24-head span{font-size:9px;letter-spacing:.22em;color:#4d828a;font-weight:750}
+.welcome24-head p{font-family:Georgia,serif;font-style:italic;font-size:clamp(15px,4vw,17px);line-height:1.4;color:#47858b;margin:16px 0 2px}
+.welcome24-scene{flex:1 1 auto;min-height:0;position:relative;background:linear-gradient(#ceeae6,#7fbab3);overflow:hidden}
+.welcome24-scene img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 70%}
+.welcome24-bottom{height:92px;flex:0 0 92px;background:linear-gradient(180deg,#80bdb6 0%,#e5f4ed 90%);display:flex;align-items:flex-start;justify-content:center;padding:8px 18px max(10px,env(safe-area-inset-bottom))}
+.welcome24-start{border:1px solid #c4f3e7;border-radius:100px;background:linear-gradient(100deg,#247d87,#13677d);box-shadow:0 6px 20px #17465a40;color:#fff;width:100%;max-width:475px;min-height:54px;font-weight:800;font-size:16px;position:relative}
+.welcome24-start span{position:absolute;right:20px;font-size:23px;top:9px}
+@media(max-height:700px){.welcome24-head{min-height:195px;height:33%}.welcome24-head p{margin-top:9px}.welcome24-head>img{width:46px;height:46px}.welcome24-bottom{height:77px;flex-basis:77px}}
+.home24{min-height:100dvh;background:#fdfbf5;color:#153d50;padding:0 0 75px;position:relative}
+.home24-top{background:linear-gradient(180deg,#effaf7,#cde9e4);overflow:hidden}
+.home24-head{height:106px;display:flex;align-items:center;justify-content:center;position:relative;padding:11px 14px 4px;background:#e4f4f1}
+.home24-logo{text-align:center;display:flex;align-items:center;flex-direction:column;gap:0}.home24-logo img{height:43px;width:43px}.home24-logo strong{font-family:Georgia,serif;font-size:30px;letter-spacing:-.04em;display:block;line-height:1.0}.home24-logo small{display:block;letter-spacing:.21em;font-size:8px;color:#3f8790;margin-top:5px}
+.home24-more{position:absolute;right:12px;top:12px;background:transparent;border:0;color:#185c70;font-size:22px;min-width:44px;min-height:44px}
+.home24-scene{height:clamp(265px,72vw,350px);position:relative;overflow:hidden;background:#9ac9c1}
+.home24-backdrop{width:100%;height:100%;display:block;object-fit:cover;object-position:center center}
+.home24-pet-hotspot{position:absolute;background:transparent;border:0;min-width:85px;min-height:90px;z-index:2;cursor:pointer;touch-action:manipulation;border-radius:50%}
+.home24-hotspot-brotecito{width:45%;height:48%;right:0%;bottom:0%}
+.home24-hotspot-nubecita{width:53%;height:48%;right:17%;bottom:0%}
+.home24-hotspot-lunita{width:48%;height:54%;right:17%;bottom:0%}
+.home24-pet-hotspot:focus-visible{outline:3px dashed #fff;outline-offset:-5px;background:#ffffff1a}
+.home24-no-pet{background-image:url('./arte/paisaje-inicio.svg');background-size:cover;background-position:center}.home24-text{position:relative;z-index:1;padding:22px 18px 0;color:#fff;text-shadow:0 2px 12px #2e6c7277}.home24-text h1{font-family:Georgia,serif;font-size:29px;line-height:1.15}.home24-text p{font-size:14px}.home24-choose{position:absolute;left:16px;right:16px;bottom:15px;padding:13px;border-radius:24px;border:0;color:#fff;background:#278b8e;font-weight:750}
+.home24-body{padding:0 16px}.home24-calm{display:flex;width:100%;align-items:center;gap:13px;background:linear-gradient(110deg,#2b9392,#23738d);color:#fff;border:2px solid #fff;border-radius:28px;padding:12px 15px;text-align:left;margin:-8px 0 13px;position:relative;z-index:3;box-shadow:0 5px 14px #1f4b6350;min-height:69px}
+.home24-calm>span:first-child{font-size:28px}.home24-calm>span:nth-child(2){flex:1}.home24-calm strong{display:block;font-size:17px}.home24-calm small{display:block;font-size:11px;opacity:.9;margin-top:2px}.home24-calm>span:last-child{font-size:20px}
+.home24-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}.home24-card{border:1px solid #e4eee9;border-radius:19px;background:#edfcf7;overflow:hidden;padding:0 0 9px;display:flex;flex-direction:column;align-items:stretch;text-align:left;color:#183e53;position:relative;box-shadow:0 4px 9px #19425213;min-height:150px}.home24-card:nth-child(2){background:#fff7ed}.home24-card:nth-child(3){background:#eaf7ec}.home24-card:nth-child(4){background:#fff9f2}
+.home24-card>span{display:block;width:100%;height:81px;background-size:cover;background-position:center center}.home24-card strong{font-size:13px;padding:8px 11px 0}.home24-card small{font-size:10px;line-height:1.3;padding:3px 26px 0 11px;color:#56767c}.home24-card b{position:absolute;right:10px;bottom:13px;font-size:15px;color:#2b6b7a}
+.home24-journal{width:100%;display:flex;gap:11px;align-items:center;margin:12px 0 0;border:0;border-radius:25px;background:#e6f1eb;color:#153d50;padding:12px 14px;text-align:left;min-height:61px}.home24-journal>span:first-child{font-size:28px}.home24-journal>span:nth-child(2){flex:1}.home24-journal strong{font-size:13px;display:block}.home24-journal small{font-size:10px;display:block;margin-top:4px;color:#638088}
+.home24-message{border-radius:20px;background:#fff;padding:14px 17px;margin:13px 0 3px;color:#49717b;font-size:13px}.home24-message>span{font-weight:700;font-size:11px;color:#2c7d82}.home24-message p{font-style:italic}.home24-message button{border:0;background:none;color:#2a777d;text-decoration:underline;padding:3px 0;font-weight:700}
+.home24-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);max-width:560px;width:100%;z-index:9;display:flex;justify-content:space-around;align-items:center;background:#fffefb;border-top:1px solid #e4eae5;min-height:68px;padding:5px 0 max(6px,env(safe-area-inset-bottom))}.home24-nav button{border:0;background:none;color:#487b7e;display:flex;align-items:center;flex-direction:column;gap:3px;font-size:22px;min-width:57px}.home24-nav small{font-size:9px}.home24-nav button:nth-child(2) small{max-width:70px}
+.pet24-hero{height:clamp(242px,74vw,390px);min-height:242px;border:0;border-radius:0;background:#c4e8e6}
+.pet24-hero img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;border:0;border-radius:0}
+@media(min-width:700px){.home24{border-radius:24px;overflow:hidden}.home24-nav{bottom:20px}.welcome24{border-radius:24px}}
+
+/* Corrección de encuadre: texto completo y mascota integrada sin recortes. */
+.home24-scene{height:clamp(330px,108vw,430px)}
+.pet24-hero{height:clamp(232px,70vw,320px)}
+.home24-card>span{height:86px}
