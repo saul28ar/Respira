@@ -719,3 +719,32 @@
 .welcome25-cta:active{background:rgba(255,255,255,.12)}
 @media(min-width:700px){.welcome25{height:100dvh!important}}
 @media(prefers-reduced-motion:reduce){.welcome-final-logo{animation:none!important;will-change:auto}}
+
+
+/* RESPIRA 2.9 — quitar SOLO la franja vacía debajo de la bienvenida.
+   No modificar ni recortar la ilustración HD, las mascotas ni sus proporciones
+   respecto de la versión 2.8 aprobada. */
+.app.welcome-mode {
+  box-sizing:border-box;
+  padding:0 !important;
+  height:100dvh !important;
+  min-height:100dvh !important;
+  overflow:hidden !important;
+  border-radius:0 !important;
+}
+.app.welcome-mode > .welcome25 {
+  box-sizing:border-box;
+  position:relative;
+  width:100%;
+  height:100% !important;
+  min-height:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+/* Evitar la franja por el margen que la vista escritorio añade al body. */
+body:has(.app.welcome-mode) {
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden;
+  background:#aed8d0;
+}

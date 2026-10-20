@@ -204,6 +204,7 @@ if(x.kind==='journal'){const previous=getStore('journal','');body=`<p class="mut
 if(x.kind==='advice'){body=`<div class="card section"><p>${safe(x.script)}</p></div><div class="note">Cada persona es distinta. Elige las recomendaciones que sean adecuadas para ti.</div>`}
 const fav=getStore('favorites',[]).includes(activeId);html=`<main class="view">${backhead(x.title)}<div class="topline section"><span class="tag">${x.emoji} ${safe(x.title)}</span><button class="iconbtn ${fav?'heart':''}" data-fav="${activeId}" aria-label="${fav?'Quitar de':'Añadir a'} favoritos">${fav?'♥':'♡'}</button></div>${body}${petActivityReturn?`<button class="softbtn full" style="margin-top:18px" data-action="pet-activity-return">← Volver a mi compañía</button>`:''}</main>${bottom('methods')}`}
 app.classList.toggle('pet-mode',['pet-select','pet-detail','pet-confirm'].includes(view));
+app.classList.toggle('welcome-mode',view==='welcome');
 app.innerHTML=html;
 if(view==='welcome')startWelcomeSlideshow();else stopWelcomeSlideshow();}
 function clock(seconds){return `${String(Math.floor(seconds/60)).padStart(2,'0')}:${String(seconds%60).padStart(2,'0')}`}

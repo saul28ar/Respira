@@ -1,0 +1,14 @@
+RESPIRA 2.9 — Corrección de franja blanca de bienvenida
+
+ACTUALIZACIÓN SOBRE RESPIRA 2.8. NO BORRAR IMÁGENES.
+
+1. Descomprime este ZIP.
+2. En GitHub Desktop abre Repository > Show in Explorer.
+3. Copia los cuatro archivos: index.html, style.css, app.js y sw.js.
+4. Pégalos en la carpeta raíz Respira y acepta reemplazar.
+5. NO reemplaces, edites ni borres ninguna imagen o carpeta de imágenes.
+6. En GitHub Desktop, Summary: Respira 2.9 - corregir franja blanca.
+7. Haz Commit to main y Push origin.
+8. Abre https://saul28ar.github.io/Respira/ y espera si GitHub Pages todavía publica los cambios.
+
+No cambia el contenido de la bienvenida ni su proporción respecto a la 2.8. Solo elimina el espacio inferior blanco de la plantilla.
