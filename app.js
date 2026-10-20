@@ -113,7 +113,8 @@ if(view==='welcome'){
   html=`<main class="welcome25" aria-label="Bienvenida a Respira">
     <div class="welcome-final-artboard">
       <img class="welcome-final-art" src="./escenas/bienvenida-aprobada-hd.png" alt="" fetchpriority="high" draggable="false">
-      <img class="welcome-final-logo" src="./escenas/logo-original-recortado.png" alt="" aria-hidden="true" draggable="false">
+      <img class="welcome-sprout-leaf welcome-sprout-leaf-left" src="./escenas/portada-hoja-izquierda.png" alt="" aria-hidden="true" draggable="false">
+      <img class="welcome-sprout-leaf welcome-sprout-leaf-right" src="./escenas/portada-hoja-derecha.png" alt="" aria-hidden="true" draggable="false">
       <button class="welcome25-cta" data-go="home" aria-label="Comenzar: elegir mi compañía de hoy"><span class="sr-only">Comenzar</span></button>
     </div>
     <div class="sr-only"><h1>Respira</h1><p>Tu espacio de calma. Pequeños momentos para una vida más tranquila.</p><p>Brotecito, Nubecita y Lunita junto a un lago de montañas, plantas y flores.</p></div>
@@ -149,7 +150,7 @@ if(view==='pet-select'){
   const selected=companionToday();
   html=`<main class="pet-page pet-select-page">${petHeader()}
     <div class="pet-select-intro"><span class="pet-sky" aria-hidden="true">✦ &nbsp; ✧</span><h1>${selected?'Tu compañía de hoy':'¿Quién te acompañará hoy?'}</h1><p>${selected?'Hoy te acompaña '+safe(pets[selected].name)+'. Mañana podrás elegir de nuevo.':'Elige a quien quieras tener cerquita hoy. Sin prisas y a tu manera.'}</p></div>
-    <div class="pet-choices">${Object.entries(pets).map(([id,p])=>`<article class="pet-choice pet-choice-${p.theme}"><img src="./mascotas/${id}.png" alt="Ilustración de ${safe(p.name)}" loading="lazy"><div class="pet-choice-main"><strong>${safe(p.name)}</strong><small>${safe(p.subtitle)}</small><div class="pet-choice-actions">${!selected?`<button class="pet-choice-pick" data-action="pet-pick" data-pet-id="${id}" aria-label="Elegir a ${safe(p.name)} para hoy">Elegir hoy <span aria-hidden="true">→</span></button>`:`<span class="pet-choice-chosen">${selected===id?'✓ Tu compañía de hoy':'Disponible mañana'}</span>`}<button class="pet-choice-learn" data-pet-view="${id}" aria-label="Conocer la historia de ${safe(p.name)}">Conocer más ›</button></div></div></article>`).join('')}</div>
+    <div class="pet-choices">${Object.entries(pets).map(([id,p])=>`<article class="pet-choice pet-choice-${p.theme}"><img src="./mascotas/tarjeta-${id}.png" alt="${safe(p.name)} con su escenario recortado" loading="lazy" width="724" height="724"><div class="pet-choice-main"><strong>${safe(p.name)}</strong><small>${safe(p.subtitle)}</small><div class="pet-choice-actions">${!selected?`<button class="pet-choice-pick" data-action="pet-pick" data-pet-id="${id}" aria-label="Elegir a ${safe(p.name)} para hoy">Elegir hoy <span aria-hidden="true">→</span></button>`:`<span class="pet-choice-chosen">${selected===id?'✓ Tu compañía de hoy':'Disponible mañana'}</span>`}<button class="pet-choice-learn" data-pet-view="${id}" aria-label="Conocer la historia de ${safe(p.name)}">Conocer más ›</button></div></div></article>`).join('')}</div>
     <div class="pet-choice-footer"><p>Tu compañía es opcional. Puedes entrar a Respira sin elegir. ♡</p><button class="pet-link" data-go="home">${selected?'Ir al inicio':'Ahora no, ir al inicio'}</button></div>
   </main>`
 }

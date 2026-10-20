@@ -869,3 +869,46 @@ body:has(.app.welcome-mode) {
 .pet31-lila .pet31-dialog-text blockquote{background:#f3eefe;color:#7462a0}
 @media(min-width:700px){.app.pet-mode:has(.pet31-page){border-radius:0;overflow:visible;box-shadow:0 0 24px #3b5a5e19}}
 @media(prefers-reduced-motion:reduce){.pet31-dialog::backdrop{backdrop-filter:none}}
+
+
+/* Respira 3.3 · PORTADA aprobada, imagen HD íntegra y sin franjas.
+   Las únicas capas nuevas son las dos hojitas originales del punto de la i.
+   Movimiento mínimo alrededor de la unión con el brotecito, sin desplazamiento.
+*/
+.welcome-final-logo{display:none!important}
+.welcome-sprout-leaf{
+  position:absolute;display:block;z-index:2;object-fit:fill;
+  pointer-events:none;user-select:none;-webkit-user-drag:none;
+  backface-visibility:hidden;
+  transform:rotate(0deg) scale(1);
+  animation-duration:4.6s;
+  animation-iteration-count:infinite;
+  animation-timing-function:ease-in-out;
+}
+.welcome-sprout-leaf-left{
+  left:57.27949%;top:14.89234%;width:5.31350%;height:2.93062%;
+  transform-origin:87% 91%;animation-name:respiraHojaIzquierda;
+}
+.welcome-sprout-leaf-right{
+  left:61.31775%;top:15.01196%;width:6.48247%;height:2.87081%;
+  transform-origin:9% 91%;animation-name:respiraHojaDerecha;
+}
+@keyframes respiraHojaIzquierda{
+  0%,100%{transform:rotate(0deg) scale(1)}
+  50%{transform:rotate(-1.8deg) scale(1.024)}
+}
+@keyframes respiraHojaDerecha{
+  0%,100%{transform:rotate(0deg) scale(1)}
+  50%{transform:rotate(1.8deg) scale(1.024)}
+}
+/* Zona táctil invisible colocada EXACTAMENTE sobre el Comenzar del dibujo. */
+.welcome25-cta{
+  left:21.7%!important;top:84.42%!important;
+  width:56.1%!important;height:8.92%!important;
+  right:auto!important;bottom:auto!important;
+  background:transparent!important;border:0!important;
+  border-radius:999px!important;touch-action:manipulation;
+}
+@media(prefers-reduced-motion:reduce){
+  .welcome-sprout-leaf{animation:none!important;transform:none!important}
+}
