@@ -110,30 +110,34 @@ function bottom(active){return `<nav class="bottomnav" aria-label="Navegación p
 function item(id){const x=catalog[id],fav=getStore('favorites',[]).includes(id);return `<div class="listbtn" style="cursor:default"><button class="round" data-open="${id}" aria-label="Abrir ${safe(x.title)}" style="border:0;background:var(--unused,#e6f7fc)">${x.emoji}</button><button class="copy" data-open="${id}" style="border:0;background:none;text-align:left;color:inherit;padding:0"><strong>${safe(x.title)}</strong><small>${safe(x.sub)}</small></button><button class="iconbtn ${fav?'heart':''}" data-fav="${id}" aria-label="${fav?'Quitar de':'Añadir a'} favoritos: ${safe(x.title)}">${fav?'♥':'♡'}</button><button class="iconbtn" data-open="${id}" aria-label="Abrir">›</button></div>`}
 function render(){let html='';
 if(view==='welcome'){
-  html=`<main class="welcome24" aria-label="Bienvenida a Respira">
-  <div class="welcome24-head"><div class="welcome24-leaves" aria-hidden="true">❧ &nbsp; ✧</div><img src="./logo.svg" width="67" height="67" alt=""><h1>Respira</h1><span>TU ESPACIO DE CALMA</span><p>Pequeños momentos<br>para una vida<br>más tranquila.</p></div>
-  <div class="welcome24-scene" role="img" aria-label="Paisaje aprobado de montañas, lago, flores y las tres mascotas de Respira"><img src="./escenas/bienvenida-lago.png" alt="Brotecito, Nubecita y Lunita junto al lago, rodeados de plantas y montañas" /></div>
-  <div class="welcome24-bottom"><button data-go="home" class="welcome24-start">Comenzar <span aria-hidden="true">→</span></button></div>
+  html=`<main class="welcome25" aria-label="Bienvenida a Respira">
+    <img class="welcome25-art" src="./escenas/bienvenida-exacta.png" alt="" fetchpriority="high" draggable="false">
+    <div class="sr-only"><h1>Respira</h1><p>Tu espacio de calma. Pequeños momentos para una vida más tranquila.</p><p>Brotecito, Nubecita y Lunita junto a un lago de montañas, plantas y flores.</p></div>
+    <button class="welcome25-cta" data-go="home" aria-label="Comenzar: elegir mi compañía de hoy"><span class="sr-only">Comenzar</span></button>
   </main>`;
 }
 if(view==='home'){
   const cp=companionToday();
-  html=`<main class="home24">
-    <section class="home24-top">
-      <header class="home24-head"><div class="home24-logo"><img src="./logo.svg" alt="" width="45" height="45"><div><strong>Respira</strong><small>TU ESPACIO DE CALMA</small></div></div><button aria-label="Más opciones" data-go="more" class="home24-more">☰</button></header>
-      ${cp?`<div class="home24-scene home24-${cp}"><img class="home24-backdrop" src="./escenas/menu-${cp}.png" alt="Paisaje del lago aprobado con ${safe(pets[cp].name)}"/><button class="home24-pet-hotspot home24-hotspot-${cp}" data-pet-view="${cp}" aria-label="Toca para conocer a ${safe(pets[cp].name)}"><span class="sr-only">Conocer a ${safe(pets[cp].name)}</span></button></div>`:
-      `<div class="home24-scene home24-no-pet"><div class="home24-text"><h1>¡Qué bueno<br>verte aquí! ♡</h1><p>Hoy también es un buen día para cuidarte.</p></div><button class="home24-choose" data-go="pet-select">Elegir mi compañía de hoy →</button></div>`}
+  const nav26=`<nav class="home26-nav" aria-label="Navegación principal"><button data-go="home" aria-current="page"><span aria-hidden="true">⌂</span><small>Inicio</small></button><button data-go="methods"><span aria-hidden="true">▦</span><small>Métodos</small></button><button data-go="favorites"><span aria-hidden="true">♡</span><small>Favoritos</small></button><button data-go="more"><span aria-hidden="true">⚙</span><small>Más</small></button></nav>`;
+  const homeCards=[
+    ['breath','respiracion','Respiración','Ejercicios para relajarte',true],
+    ['meditation','meditacion','Meditación','Encuentra un momento de calma',false],
+    ['quick','tecnicas','Técnicas rápidas','Para cuando lo necesites',false],
+    ['advice','consejos','Consejos','Pequeñas ideas para ti',false]
+  ].map(([key,im,title,desc,isExercise])=>`<button class="home26-card" ${isExercise?'data-open':'data-go'}="${key}"><img src="./escenas/tarjeta-${im}.png" alt="" loading="lazy"><span class="home26-card-text"><strong>${title}</strong><small>${desc}</small><span aria-hidden="true" class="home26-card-arrow">›</span></span></button>`).join('');
+  html=`<main class="home26">
+    <header class="home26-header">
+      <div class="home26-brand"><img src="./logo.svg" width="46" height="46" alt=""><strong>Respira</strong><span>TU ESPACIO DE CALMA</span></div>
+      <button class="home26-menu" data-go="more" aria-label="Abrir menú de opciones">☰</button>
+    </header>
+    ${cp?`<section class="home26-hero" aria-label="Paisaje natural con ${safe(pets[cp].name)}"><img class="home26-art" src="./escenas/menu-${cp}.png" alt="Ilustración aprobada: ${safe(pets[cp].name)} junto al lago, con montañas y plantas" fetchpriority="high"><button class="home26-pet-hit home26-pet-${cp}" data-pet-view="${cp}" aria-label="Conocer a ${safe(pets[cp].name)} y hacer actividades juntos"><span class="sr-only">Conocer a ${safe(pets[cp].name)}</span></button></section>`:
+    `<section class="home26-hero home26-empty"><h1>¡Qué bueno verte aquí! ♡</h1><p>Hoy también es un buen día para cuidar de ti.</p><button class="home26-choose" data-go="pet-select">Elegir mi compañía de hoy →</button></section>`}
+    <section class="home26-main" aria-label="Herramientas de bienestar"><button class="home26-calm" data-open="grounding"><span class="home26-heart" aria-hidden="true">♥</span><span class="home26-calm-copy"><strong>Necesito calma</strong><small>Comienza un ejercicio ahora</small></span><span class="home26-next" aria-hidden="true">›</span></button>
+    <div class="home26-cards">${homeCards}</div>
+    <button class="home26-diary" data-open="journal"><span class="home26-diary-icon" aria-hidden="true">▤</span><span><strong>Mi espacio para escribir</strong><small>Comparte lo que sientes</small></span><span aria-hidden="true" class="home26-diary-arrow">›</span></button>
+    ${cp?`<section class="home26-message"><div class="home26-message-title">Un mensajito de ${safe(pets[cp].name)} ♡</div><p class="pet-message-text">“${safe(companionSentence())}”</p><button data-action="pet-message">Otro mensajito ↗</button></section>`:''}
     </section>
-    <div class="home24-body"><button class="home24-calm" data-open="grounding"><span aria-hidden="true">♥</span><span><strong>Necesito calma</strong><small>Comienza un ejercicio ahora</small></span><span aria-hidden="true">❯</span></button>
-    <div class="home24-cards">
-      <button data-open="breath" class="home24-card"><span style="background-image:url('./escenas/tarjeta-respiracion.png')" aria-hidden="true"></span><strong>Respiración</strong><small>Ejercicios para relajarte</small><b aria-hidden="true">❯</b></button>
-      <button data-go="meditation" class="home24-card"><span style="background-image:url('./escenas/tarjeta-meditacion.png')" aria-hidden="true"></span><strong>Meditación</strong><small>Encuentra un momento de calma</small><b aria-hidden="true">❯</b></button>
-      <button data-go="quick" class="home24-card"><span style="background-image:url('./escenas/tarjeta-tecnicas.png')" aria-hidden="true"></span><strong>Técnicas rápidas</strong><small>Para cuando lo necesites</small><b aria-hidden="true">❯</b></button>
-      <button data-go="advice" class="home24-card"><span style="background-image:url('./escenas/tarjeta-consejos.png')" aria-hidden="true"></span><strong>Consejos</strong><small>Pequeñas ideas para ti</small><b aria-hidden="true">❯</b></button>
-    </div>
-    <button class="home24-journal" data-open="journal"><span aria-hidden="true">▤</span><span><strong>Mi espacio para escribir</strong><small>Comparte lo que sientes</small></span><span aria-hidden="true">❯</span></button>
-    ${cp?`<div class="home24-message"><span>De parte de ${safe(pets[cp].name)}:</span><p class="pet-message-text">“${safe(companionSentence())}”</p><button data-action="pet-message">Otro mensajito ♡</button></div>`:''}
-    </div><nav class="home24-nav" aria-label="Secciones"><button data-go="home" aria-current="page">⌂<small>Inicio</small></button><button data-go="more">▦<small>Calendario (próximamente)</small></button><button data-go="favorites">♡<small>Favoritos</small></button><button data-go="more">⚙<small>Más</small></button></nav>
+    ${nav26}
   </main>`;
 }
 if(view==='pet-select'){
