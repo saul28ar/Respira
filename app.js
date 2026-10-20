@@ -145,14 +145,17 @@ if(view==='home'){
   </main>`;
 }
 if(view==='pet-select'){
-  // Una sola pulsación sobre Elegir hoy guarda la elección y abre Inicio.
-  // Conocer más sigue siendo completamente opcional.
-  const selected=companionToday();
-  html=`<main class="pet-page pet-select-page">${petHeader()}
-    <div class="pet-select-intro"><span class="pet-sky" aria-hidden="true">✦ &nbsp; ✧</span><h1>${selected?'Tu compañía de hoy':'¿Quién te acompañará hoy?'}</h1><p>${selected?'Hoy te acompaña '+safe(pets[selected].name)+'. Mañana podrás elegir de nuevo.':'Elige a quien quieras tener cerquita hoy. Sin prisas y a tu manera.'}</p></div>
-    <div class="pet-choices">${Object.entries(pets).map(([id,p])=>`<article class="pet-choice pet-choice-${p.theme}"><img src="./mascotas/tarjeta-${id}.png" alt="${safe(p.name)} con su escenario recortado" loading="lazy" width="724" height="724"><div class="pet-choice-main"><strong>${safe(p.name)}</strong><small>${safe(p.subtitle)}</small><div class="pet-choice-actions">${!selected?`<button class="pet-choice-pick" data-action="pet-pick" data-pet-id="${id}" aria-label="Elegir a ${safe(p.name)} para hoy">Elegir hoy <span aria-hidden="true">→</span></button>`:`<span class="pet-choice-chosen">${selected===id?'✓ Tu compañía de hoy':'Disponible mañana'}</span>`}<button class="pet-choice-learn" data-pet-view="${id}" aria-label="Conocer la historia de ${safe(p.name)}">Conocer más ›</button></div></div></article>`).join('')}</div>
-    <div class="pet-choice-footer"><p>Tu compañía es opcional. Puedes entrar a Respira sin elegir. ♡</p><button class="pet-link" data-go="home">${selected?'Ir al inicio':'Ahora no, ir al inicio'}</button></div>
-  </main>`
+  // Respira 3.4: arte aprobado como única imagen, con 4 zonas táctiles.
+  // No se superponen textos ni se modifica el diseño ilustrado.
+  html=`<main class="pet34-page" aria-label="¿Quién te acompañará hoy?">
+    <div class="pet34-artboard">
+      <img class="pet34-art" src="./escenas/seleccion-diaria-aprobada.png" alt="¿Quién te acompañará hoy? Elige a quien quieras tener cerquita hoy. Sin prisas y a tu manera. Brotecito: Un pequeño impulso para un gran día. Nubecita: Una respiración contigo, siempre. Lunita: Encuentra tu equilibrio, siempre contigo. Los tres tienen las opciones Elegir y Conocer más. Tu compañía es opcional. Puedes entrar a Respira sin elegir. Ahora no, ir al inicio." width="941" height="1672" draggable="false" fetchpriority="high">
+      <button type="button" class="pet34-hit pet34-pick pet34-pick-brotecito" data-action="pet-pick" data-pet-id="brotecito" aria-label="Elegir a Brotecito"></button>
+      <button type="button" class="pet34-hit pet34-pick pet34-pick-nubecita" data-action="pet-pick" data-pet-id="nubecita" aria-label="Elegir a Nubecita"></button>
+      <button type="button" class="pet34-hit pet34-pick pet34-pick-lunita" data-action="pet-pick" data-pet-id="lunita" aria-label="Elegir a Lunita"></button>
+      <button type="button" class="pet34-hit pet34-skip" data-go="home" aria-label="Ahora no, ir al inicio"></button>
+    </div>
+  </main>`;
 }
 if(view==='pet-detail'){
   const p=pets[currentPetProfile],f=petProfiles[currentPetProfile];
