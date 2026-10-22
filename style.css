@@ -913,7 +913,7 @@ body:has(.app.welcome-mode) {
   .welcome-sprout-leaf{animation:none!important;transform:none!important}
 }
 
-/* RESPIRA 3.4 - Segunda pantalla aprobada EXACTAMENTE como imagen.
+/* RESPIRA 3.6 - Segunda pantalla ilustrada aprobada EXACTAMENTE como imagen.
    ÚNICAMENTE son funcionales las 3 elecciones y "Ahora no, ir al inicio".
    Ningún texto, tarjeta o mascota ha sido dibujado sobre el original.
    Las posiciones son porcentuales y se adaptan a la escala de la imagen. */
@@ -924,9 +924,9 @@ body:has(.app.welcome-mode) {
 .pet34-hit{position:absolute;z-index:2;display:block;border:0;margin:0;padding:0;min-width:0;min-height:0;background:transparent;color:transparent;border-radius:999px;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent;box-shadow:none}
 .pet34-hit:focus-visible{outline:3px solid #0b6b77;outline-offset:2px;background:#ffffff25}
 .pet34-hit:active{background:#ffffff20}
-.pet34-pick{left:39.2%;width:39.0%;height:4.6%}
-.pet34-pick-brotecito{top:39.2%}
-.pet34-pick-nubecita{top:56.0%}
-.pet34-pick-lunita{top:72.6%}
-.pet34-skip{left:31.6%;width:35.4%;top:87.7%;height:4.0%;border-radius:18px}
+.pet34-pick{left:39.1%;width:49.1%;height:4.0%}
+.pet34-pick-brotecito{top:54.1%}
+.pet34-pick-nubecita{top:68.5%}
+.pet34-pick-lunita{top:82.8%}
+.pet34-skip{left:34%;width:33%;top:93.4%;height:2.9%;border-radius:18px}
 @media(min-width:700px){.app.pet-mode:has(.pet34-page){border-radius:0;overflow:visible;box-shadow:0 0 24px #3b5a5e19}}

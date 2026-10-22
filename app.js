@@ -145,7 +145,8 @@ if(view==='home'){
   </main>`;
 }
 if(view==='pet-select'){
-  // Respira 3.5: misma ilustración aprobada, sin textos «Conocer más»; cuatro zonas táctiles originales.
+  // Respira 3.6: arte final aprobado sin alteraciones; cuatro zonas táctiles ajustadas a la nueva composición.
+  // «Quiénes somos??» se mantiene visual, se conectará a perfiles en otra etapa.
   // No se superponen textos ni se modifica el diseño ilustrado.
   html=`<main class="pet34-page" aria-label="¿Quién te acompañará hoy?">
     <div class="pet34-artboard">
