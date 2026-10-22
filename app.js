@@ -1,65 +1,5 @@
 'use strict';
 const app=document.getElementById('app');
-// Fotografías locales: archivos originales sin alteraciones.
-const welcomePhotos=['./fondos/fondo1.jpg','./fondos/fondo2.jpg','./fondos/fondo3.jpg','./fondos/fondo4.jpg'];
-// Diez mensajes breves; rotan independientemente de las cuatro fotografías.
-// No mostramos indicadores de progreso ni la cantidad de mensajes.
-const welcomeMessages=[
-  'Que el ruido espere; este instante es tuyo.',
-  'También florecemos cuando descansamos.',
-  'Hoy puedes caminar a tu propio ritmo.',
-  'No hace falta llenar cada silencio.',
-  'La calma también cabe en un minuto.',
-  'Deja que tus pensamientos pasen como nubes.',
-  'Hay días que se recorren paso a paso.',
-  'Tu paz puede empezar en algo pequeño.',
-  'No todo necesita resolverse hoy.',
-  'Regálate un momento sin prisas.'
-];
-let slideshowTimer=null;
-let currentSlide=0;
-let currentMessage=0;
-let messageBag=[];
-// Elegimos al azar sin repetir frases hasta agotar las pendientes.
-// Al reiniciar la bolsa, se evita repetir la última frase de inmediato.
-function shuffledRemainingMessages(exceptIndex){
-  const indices=welcomeMessages.map((_,index)=>index).filter(index=>index!==exceptIndex);
-  for(let i=indices.length-1;i>0;i--){
-    const j=Math.floor(Math.random()*(i+1));
-    [indices[i],indices[j]]=[indices[j],indices[i]];
-  }
-  return indices;
-}
-function nextRandomMessage(){
-  if(!messageBag.length)messageBag=shuffledRemainingMessages(currentMessage);
-  return messageBag.pop();
-}
-function stopWelcomeSlideshow(){
-  if(slideshowTimer!==null){clearInterval(slideshowTimer);slideshowTimer=null}
-}
-function startWelcomeSlideshow(){
-  stopWelcomeSlideshow();
-  currentSlide=0;
-  const photos=[...app.querySelectorAll('.welcome-slide')];
-  const quotes=[...app.querySelectorAll('.welcome-quote')];
-  if(photos.length<2)return;
-  // Si el dispositivo prefiere menos movimiento, el CSS elimina las transiciones.
-  slideshowTimer=setInterval(()=>{
-    if(document.hidden || view!=='welcome')return;
-    const nextPhoto=(currentSlide+1)%photos.length;
-    const nextMessage=nextRandomMessage();
-    // Los dos cambian al mismo tiempo: el paisaje rota y la frase es aleatoria.
-    photos[nextPhoto].classList.add('is-active');
-    photos[currentSlide].classList.remove('is-active');
-    quotes[nextMessage].classList.add('is-active');
-    quotes[nextMessage].setAttribute('aria-hidden','false');
-    quotes[currentMessage].classList.remove('is-active');
-    quotes[currentMessage].setAttribute('aria-hidden','true');
-    currentSlide=nextPhoto;
-    currentMessage=nextMessage;
-  },10000);
-}
-
 const catalog={
  breath:{title:'Respiración 4-4-4-4',sub:'Una técnica para recuperar la calma',emoji:'💨',color:'blue',kind:'breath'},
  calm:{title:'Calma en 5 minutos',sub:'Un momento de atención plena',emoji:'🌿',color:'green',kind:'timer',duration:300,script:'Siéntate cómodamente. Nota cómo entra y sale el aire. Cuando aparezca un pensamiento, obsérvalo con amabilidad y vuelve a tu respiración.'},
@@ -85,9 +25,9 @@ function setStore(key,value){try{localStorage.setItem('respira_'+key,JSON.string
 
 // Respira 2.0 — Mascotas oficiales: arte extraído SIN redibujar de la lámina aprobada.
 const pets={
-  brotecito:{name:'Brotecito',image:'./escenas/perfil-hd-brotecito.png',subtitle:'Un pequeño impulso para un gran día.',theme:'verde',essence:'Crecimiento y esperanza',story:'Brotecito nació de una pequeña semilla que descansó bajo la tierra. Aprendió que las raíces también crecen en silencio y que cada persona avanza a su propio ritmo.',personality:'Curioso, paciente y alentador.',quote:'No necesitas florecer todos los días para seguir creciendo.',messages:['¡Qué bonito verte por aquí! Podemos empezar con calma.','Un paso pequeñito también cuenta.','Descansar es parte de crecer.','Hoy no tienes que compararte con nadie.','¿Quieres regalarte un momento para ti?']},
-  nubecita:{name:'Nubecita',image:'./escenas/perfil-hd-nubecita.png',subtitle:'Una respiración contigo, siempre.',theme:'azul',essence:'Ligereza y serenidad',story:'Nubecita nació de una brisa sobre el océano. Descubrió que el cielo puede ser hermoso incluso cuando pasan nubes oscuras: no tiene que despejarlo todo para acompañarte.',personality:'Dulce, soñadora y tranquila.',quote:'No todos los pensamientos necesitan quedarse.',messages:['Podemos ir despacito.','No tienes que resolverlo todo ahora.','Si te apetece, hagamos una pausa.','Respira como te resulte cómodo.','Los pensamientos pueden pasar como nubes.']},
-  lunita:{name:'Lunita',image:'./escenas/perfil-hd-lunita.png',subtitle:'Encuentra tu equilibrio, siempre contigo.',theme:'lila',essence:'Equilibrio y conexión interior',story:'Lunita nació del reflejo de la luna en un lago silencioso. Aprendió que, aunque el agua se agite, su luz no desaparece. Le gusta acompañarte en los momentos de reflexión.',personality:'Reflexiva, serena y cariñosa.',quote:'A veces, para encontrarte, solo necesitas escucharte.',messages:['Tu voz interior merece un momento de escucha.','No necesitas tener todas las respuestas.','Tus emociones merecen espacio.','Puedes sentir muchas cosas a la vez.','¿Te gustaría escribir cómo va tu día?']}
+  brotecito:{name:'Brotecito',image:'./imagenes/perfiles/escena-brotecito.png',subtitle:'Un pequeño impulso para un gran día.',theme:'verde',essence:'Crecimiento y esperanza',story:'Brotecito nació de una pequeña semilla que descansó bajo la tierra. Aprendió que las raíces también crecen en silencio y que cada persona avanza a su propio ritmo.',personality:'Curioso, paciente y alentador.',quote:'No necesitas florecer todos los días para seguir creciendo.',messages:['¡Qué bonito verte por aquí! Podemos empezar con calma.','Un paso pequeñito también cuenta.','Descansar es parte de crecer.','Hoy no tienes que compararte con nadie.','¿Quieres regalarte un momento para ti?']},
+  nubecita:{name:'Nubecita',image:'./imagenes/perfiles/escena-nubecita.png',subtitle:'Una respiración contigo, siempre.',theme:'azul',essence:'Ligereza y serenidad',story:'Nubecita nació de una brisa sobre el océano. Descubrió que el cielo puede ser hermoso incluso cuando pasan nubes oscuras: no tiene que despejarlo todo para acompañarte.',personality:'Dulce, soñadora y tranquila.',quote:'No todos los pensamientos necesitan quedarse.',messages:['Podemos ir despacito.','No tienes que resolverlo todo ahora.','Si te apetece, hagamos una pausa.','Respira como te resulte cómodo.','Los pensamientos pueden pasar como nubes.']},
+  lunita:{name:'Lunita',image:'./imagenes/perfiles/escena-lunita.png',subtitle:'Encuentra tu equilibrio, siempre contigo.',theme:'lila',essence:'Equilibrio y conexión interior',story:'Lunita nació del reflejo de la luna en un lago silencioso. Aprendió que, aunque el agua se agite, su luz no desaparece. Le gusta acompañarte en los momentos de reflexión.',personality:'Reflexiva, serena y cariñosa.',quote:'A veces, para encontrarte, solo necesitas escucharte.',messages:['Tu voz interior merece un momento de escucha.','No necesitas tener todas las respuestas.','Tus emociones merecen espacio.','Puedes sentir muchas cosas a la vez.','¿Te gustaría escribir cómo va tu día?']}
 };
 const petProfiles={"brotecito":{"short":"Brotecito nació de una pequeña semilla que descansó bajo la tierra. Aprendió que las raíces también crecen en silencio y que cada persona avanza a su propio ritmo.","long":"En un valle escondido, donde la lluvia caía suavemente y las montañas protegían pequeñas flores silvestres, vivía una semillita que creía que nunca llegaría a crecer. Veía cómo las demás plantas florecían, mientras ella permanecía bajo la tierra. Una mañana comprendió que no estaba llegando tarde. Durante todo ese tiempo había estado formando sus raíces. Cuando finalmente apareció sobre la superficie, se convirtió en Brotecito, una pequeña criatura que decidió acompañar a quienes a veces sienten que avanzan demasiado despacio. Desde entonces recuerda a sus amigos que descansar también forma parte de crecer.","personality":"Curioso, optimista, juguetón, paciente y cariñoso.","meaning":"Crecimiento, esperanza y nuevos comienzos.","quote":"No necesitas florecer todos los días para seguir creciendo.","message":"Hoy también podemos empezar de nuevo. Un paso suave sigue siendo un paso.","activities":[["✿","Respirar juntos","Una pausa para comenzar de nuevo"],["✎","Escribir en mi diario","Un pensamiento amable para hoy"],["✧","Consejo para hoy","Un pequeño paso a tu ritmo"]],"color":"#3b958c","gradient":"linear-gradient(145deg,#eef8e7,#d2e8d7)"},"nubecita":{"short":"Nubecita nació de una brisa suave sobre el océano. Aprendió que los pensamientos y las emociones, como las nubes, llegan, cambian y pueden seguir su camino.","long":"Muy arriba, sobre un océano tranquilo, una pequeña nube apareció durante el primer amanecer de primavera. Al principio, Nubecita intentaba mantener siempre el cielo despejado. Cada vez que aparecía una nube oscura, se preocupaba y trataba de alejarla. Hasta que una tarde el viento le enseñó algo importante: el cielo no necesita estar completamente despejado para seguir siendo hermoso. Desde entonces, Nubecita viaja acompañando a quienes sienten que tienen demasiadas cosas en la mente. No intenta borrar sus emociones; simplemente les recuerda que pueden observarlas con paciencia.","personality":"Dulce, soñadora, tranquila, sensible y un poquito distraída.","meaning":"Calma, ligereza y atención al presente.","quote":"No todos los pensamientos necesitan quedarse.","message":"Tomemos un momento para respirar. Puedes hacerlo a tu ritmo; yo te acompaño.","activities":[["◌","Respirar juntos","Respira de la manera más cómoda para ti"],["☁","Hacer una pausa","Unos minutos sin exigencias"],["✧","Técnica rápida","Regresa suavemente al presente"]],"color":"#448cc0","gradient":"linear-gradient(145deg,#eaf7ff,#d3eaf8)"},"lunita":{"short":"Lunita nació del reflejo de la luna sobre un lago silencioso. Comprendió que las emociones pueden agitar nuestro mundo interior sin hacernos perder lo que somos.","long":"En lo profundo de un bosque existía un lago que reflejaba las estrellas. Cada noche, la luna se miraba sobre su superficie. Una vez, el viento agitó tanto el agua que su reflejo desapareció. La luna creyó que había perdido su luz, pero cuando el lago recuperó la tranquilidad, su imagen volvió a aparecer. De aquel reflejo nació Lunita, una pequeña criatura que comprendió que las emociones pueden agitar nuestro mundo interior sin hacernos perder lo que somos. Ahora acompaña a quienes desean conocerse mejor y encontrar pequeños espacios de serenidad.","personality":"Reflexiva, observadora, tierna, reservada y afectuosa.","meaning":"Equilibrio, serenidad y conexión interior.","quote":"A veces, para encontrarte, solo necesitas escucharte.","message":"Aquí tienes un espacio para ti. Escúchate con amabilidad.","activities":[["☾","Meditar juntos","Un momento tranquilo para ti"],["✎","Escribir en mi diario","Dale espacio a lo que sientes"],["✧","Relajarse","Un descanso para tu cuerpo y tu mente"]],"color":"#7f77b4","gradient":"linear-gradient(145deg,#f2eeff,#e3e9f9)"}};
 let petProfileReturn='pet-select';
@@ -100,7 +40,7 @@ let currentPetProfile='brotecito';
 let petMessageIndex=0;
 function companionToday(){const x=sessionPetChoice||getStore('petOfDay',null);return x&&x.day===dateAtDevice()&&pets[x.id]?x.id:null}
 function companionSentence(){const id=companionToday();if(!id)return '';return pets[id].messages[petMessageIndex%pets[id].messages.length]}
-function petHeader(){return `<header class="pet-header"><img src="./logo.svg" width="40" height="40" alt=""><div><strong>Respira</strong><span>TU ESPACIO DE CALMA</span></div></header>`}
+function petHeader(){return `<header class="pet-header"><img src="./imagenes/inicio/logo.svg" width="40" height="40" alt=""><div><strong>Respira</strong><span>TU ESPACIO DE CALMA</span></div></header>`}
 
 function safe(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function clearTimer(){if(interval!==null)clearInterval(interval);interval=null;running=false}
@@ -112,9 +52,9 @@ function render(){let html='';
 if(view==='welcome'){
   html=`<main class="welcome25" aria-label="Bienvenida a Respira">
     <div class="welcome-final-artboard">
-      <img class="welcome-final-art" src="./escenas/bienvenida-aprobada-hd.png" alt="" fetchpriority="high" draggable="false">
-      <img class="welcome-sprout-leaf welcome-sprout-leaf-left" src="./escenas/portada-hoja-izquierda.png" alt="" aria-hidden="true" draggable="false">
-      <img class="welcome-sprout-leaf welcome-sprout-leaf-right" src="./escenas/portada-hoja-derecha.png" alt="" aria-hidden="true" draggable="false">
+      <img class="welcome-final-art" src="./imagenes/portada/portada-aprobada.png" alt="" fetchpriority="high" draggable="false">
+      <img class="welcome-sprout-leaf welcome-sprout-leaf-left" src="./imagenes/portada/hoja-izquierda.png" alt="" aria-hidden="true" draggable="false">
+      <img class="welcome-sprout-leaf welcome-sprout-leaf-right" src="./imagenes/portada/hoja-derecha.png" alt="" aria-hidden="true" draggable="false">
       <button class="welcome25-cta" data-go="home" aria-label="Comenzar: elegir mi compañía de hoy"><span class="sr-only">Comenzar</span></button>
     </div>
     <div class="sr-only"><h1>Respira</h1><p>Tu espacio de calma. Pequeños momentos para una vida más tranquila.</p><p>Brotecito, Nubecita y Lunita junto a un lago de montañas, plantas y flores.</p></div>
@@ -128,13 +68,13 @@ if(view==='home'){
     ['meditation','meditacion','Meditación','Encuentra un momento de calma',false],
     ['quick','tecnicas','Técnicas rápidas','Para cuando lo necesites',false],
     ['advice','consejos','Consejos','Pequeñas ideas para ti',false]
-  ].map(([key,im,title,desc,isExercise])=>`<button class="home26-card" ${isExercise?'data-open':'data-go'}="${key}"><img src="./escenas/tarjeta-${im}.png" alt="" loading="lazy"><span class="home26-card-text"><strong>${title}</strong><small>${desc}</small><span aria-hidden="true" class="home26-card-arrow">›</span></span></button>`).join('');
+  ].map(([key,im,title,desc,isExercise])=>`<button class="home26-card" ${isExercise?'data-open':'data-go'}="${key}"><img src="./imagenes/inicio/tarjeta-${im}.png" alt="" loading="lazy"><span class="home26-card-text"><strong>${title}</strong><small>${desc}</small><span aria-hidden="true" class="home26-card-arrow">›</span></span></button>`).join('');
   html=`<main class="home26">
     <header class="home26-header">
-      <div class="home26-brand"><img src="./logo.svg" width="46" height="46" alt=""><strong>Respira</strong><span>TU ESPACIO DE CALMA</span></div>
+      <div class="home26-brand"><img src="./imagenes/inicio/logo.svg" width="46" height="46" alt=""><strong>Respira</strong><span>TU ESPACIO DE CALMA</span></div>
       <button class="home26-menu" data-go="more" aria-label="Abrir menú de opciones">☰</button>
     </header>
-    ${cp?`<section class="home26-hero" aria-label="Paisaje natural con ${safe(pets[cp].name)}"><img class="home26-art" src="./escenas/menu-${cp}.png" alt="Ilustración aprobada: ${safe(pets[cp].name)} junto al lago, con montañas y plantas" fetchpriority="high"><button class="home26-pet-hit home26-pet-${cp}" data-pet-view="${cp}" aria-label="Conocer a ${safe(pets[cp].name)} y hacer actividades juntos"><span class="sr-only">Conocer a ${safe(pets[cp].name)}</span></button></section>`:
+    ${cp?`<section class="home26-hero" aria-label="Paisaje natural con ${safe(pets[cp].name)}"><img class="home26-art" src="./imagenes/inicio/${cp}.png" alt="Ilustración aprobada: ${safe(pets[cp].name)} junto al lago, con montañas y plantas" fetchpriority="high"><button class="home26-pet-hit home26-pet-${cp}" data-pet-view="${cp}" aria-label="Conocer a ${safe(pets[cp].name)} y hacer actividades juntos"><span class="sr-only">Conocer a ${safe(pets[cp].name)}</span></button></section>`:
     `<section class="home26-hero home26-empty"><h1>¡Qué bueno verte aquí! ♡</h1><p>Hoy también es un buen día para cuidar de ti.</p><button class="home26-choose" data-go="pet-select">Elegir mi compañía de hoy →</button></section>`}
     <section class="home26-main" aria-label="Herramientas de bienestar"><button class="home26-calm" data-open="grounding"><span class="home26-heart" aria-hidden="true">♥</span><span class="home26-calm-copy"><strong>Necesito calma</strong><small>Comienza un ejercicio ahora</small></span><span class="home26-next" aria-hidden="true">›</span></button>
     <div class="home26-cards">${homeCards}</div>
@@ -145,17 +85,33 @@ if(view==='home'){
   </main>`;
 }
 if(view==='pet-select'){
-  // Respira 3.6: arte final aprobado sin alteraciones; cuatro zonas táctiles ajustadas a la nueva composición.
-  // «Quiénes somos??» se mantiene visual, se conectará a perfiles en otra etapa.
+  // Ilustración intacta; la zona completa de «Quiénes somos??» abre la sección de perfiles.
   // No se superponen textos ni se modifica el diseño ilustrado.
   html=`<main class="pet34-page" aria-label="¿Quién te acompañará hoy?">
     <div class="pet34-artboard">
-      <img class="pet34-art" src="./escenas/seleccion-diaria-aprobada.png" alt="¿Quién te acompañará hoy? Elige a quien quieras tener cerquita hoy. Sin prisas y a tu manera. Brotecito: Un pequeño impulso para un gran día. Nubecita: Una respiración contigo, siempre. Lunita: Encuentra tu equilibrio, siempre contigo. Los tres tienen la opción Elegir. Tu compañía es opcional. Puedes entrar a Respira sin elegir. Ahora no, ir al inicio." width="941" height="1672" draggable="false" fetchpriority="high">
+      <img class="pet34-art" src="./imagenes/seleccion/seleccion-aprobada.png" alt="¿Quién te acompañará hoy? Elige a quien quieras tener cerquita hoy. Sin prisas y a tu manera. Brotecito: Un pequeño impulso para un gran día. Nubecita: Una respiración contigo, siempre. Lunita: Encuentra tu equilibrio, siempre contigo. Los tres tienen la opción Elegir. Tu compañía es opcional. Puedes entrar a Respira sin elegir. Ahora no, ir al inicio." width="941" height="1672" draggable="false" fetchpriority="high">
+      <button type="button" class="pet34-hit pet34-who" data-go="pet-library" aria-label="Quiénes somos: conocer a Brotecito, Nubecita y Lunita"><span class="sr-only">Conocer a las tres mascotas</span></button>
       <button type="button" class="pet34-hit pet34-pick pet34-pick-brotecito" data-action="pet-pick" data-pet-id="brotecito" aria-label="Elegir a Brotecito"></button>
       <button type="button" class="pet34-hit pet34-pick pet34-pick-nubecita" data-action="pet-pick" data-pet-id="nubecita" aria-label="Elegir a Nubecita"></button>
       <button type="button" class="pet34-hit pet34-pick pet34-pick-lunita" data-action="pet-pick" data-pet-id="lunita" aria-label="Elegir a Lunita"></button>
       <button type="button" class="pet34-hit pet34-skip" data-go="home" aria-label="Ahora no, ir al inicio"></button>
     </div>
+  </main>`;
+}
+if(view==='pet-library'){
+  const infos=[
+    ['brotecito','Brotecito','Un pequeño impulso para un gran día.'],
+    ['nubecita','Nubecita','Una respiración contigo, siempre.'],
+    ['lunita','Lunita','Encuentra tu equilibrio, siempre contigo.']
+  ];
+  html=`<main class="pet-library" aria-label="Conoce a tus acompañantes">
+    <header class="pet-library-header">
+      <button class="pet-library-back" type="button" data-go="pet-select" aria-label="Volver a elegir acompañante">←</button>
+      <span>SI QUIERES, CONOCE SU HISTORIA</span>
+      <h1>Conoce a tus acompañantes</h1>
+      <p>Elige a quién quieres conocer. Cada uno tiene una historia para compartir contigo.</p>
+    </header>
+    <div class="pet-library-items">${infos.map(([id,name,subtitle])=>`<button class="pet-library-card pet-library-${id}" type="button" data-pet-view="${id}" aria-label="Conocer el perfil de ${name}"><img src="./imagenes/mascotas/${id}.png" alt="" width="724" height="724" loading="lazy"><span><strong>${name}</strong><small>${subtitle}</small><em>Conocer su historia <span aria-hidden="true">→</span></em></span></button>`).join('')}</div>
   </main>`;
 }
 if(view==='pet-detail'){
@@ -171,7 +127,7 @@ if(view==='pet-detail'){
   const activities=f.activities.map(([icon,title,subtitle],idx)=>`<button class="pet23-activity" data-open="${petActions[currentPetProfile][idx]}" aria-label="${safe(title)}: ${safe(subtitle)}"><span class="pet23-act-icon" aria-hidden="true">${safe(icon)}</span><span class="pet23-act-copy"><strong>${safe(title)}</strong><small>${safe(subtitle)}</small></span><span class="pet23-act-arrow" aria-hidden="true">›</span></button>`).join('');
   html=`<main class="pet-page pet31-page pet31-${p.theme}" aria-label="Perfil de ${safe(p.name)}">
     <div class="pet31-artboard">
-      <img class="pet31-art" src="./escenas/perfil-final-${currentPetProfile}.png" width="941" height="1672" alt="Perfil ilustrado de ${safe(p.name)}, con su paisaje natural, un mensajito y las tarjetas Su historia, Su personalidad y Lo que representa" draggable="false" fetchpriority="high">
+      <img class="pet31-art" src="./imagenes/perfiles/${currentPetProfile}.png" width="941" height="1672" alt="Perfil ilustrado de ${safe(p.name)}, con su paisaje natural, un mensajito y las tarjetas Su historia, Su personalidad y Lo que representa" draggable="false" fetchpriority="high">
       <button class="pet31-hit pet31-back" type="button" data-go="${petProfileReturn}" aria-label="Volver a la pantalla anterior"><span class="sr-only">Volver</span></button>
       <button class="pet31-hit pet31-card pet31-card-story" type="button" data-action="pet31-open" data-section="story" aria-label="Leer la historia completa de ${safe(p.name)}"><span class="sr-only">Abrir Su historia</span></button>
       <button class="pet31-hit pet31-card pet31-card-personality" type="button" data-action="pet31-open" data-section="personality" aria-label="Conocer la personalidad de ${safe(p.name)}"><span class="sr-only">Abrir Su personalidad</span></button>
@@ -210,10 +166,10 @@ if(x.kind==='reframe'){body=`<div class="card section"><h3>1. Identifica el pens
 if(x.kind==='journal'){const previous=getStore('journal','');body=`<p class="muted">Este espacio es tuyo. Escribe sin juzgar lo que sientes.</p><label for="journal-text"><strong>¿Cómo me siento hoy?</strong></label><textarea class="field section" id="journal-text" maxlength="10000" placeholder="Hoy me siento...">${safe(previous)}</textarea><div class="note">El texto se guarda solo en este dispositivo, no en una cuenta ni en la nube. Evita escribir información que no quieras dejar en un dispositivo compartido.</div><div class="actions"><button class="pill" data-action="journal-save">Guardar nota</button><button class="softbtn" data-action="journal-clear">Borrar nota</button></div><p id="journal-status" class="muted" role="status"></p>`}
 if(x.kind==='advice'){body=`<div class="card section"><p>${safe(x.script)}</p></div><div class="note">Cada persona es distinta. Elige las recomendaciones que sean adecuadas para ti.</div>`}
 const fav=getStore('favorites',[]).includes(activeId);html=`<main class="view">${backhead(x.title)}<div class="topline section"><span class="tag">${x.emoji} ${safe(x.title)}</span><button class="iconbtn ${fav?'heart':''}" data-fav="${activeId}" aria-label="${fav?'Quitar de':'Añadir a'} favoritos">${fav?'♥':'♡'}</button></div>${body}${petActivityReturn?`<button class="softbtn full" style="margin-top:18px" data-action="pet-activity-return">← Volver a mi compañía</button>`:''}</main>${bottom('methods')}`}
-app.classList.toggle('pet-mode',['pet-select','pet-detail','pet-confirm'].includes(view));
+app.classList.toggle('pet-mode',['pet-select','pet-library','pet-detail','pet-confirm'].includes(view));
 app.classList.toggle('welcome-mode',view==='welcome');
 app.innerHTML=html;
-if(view==='welcome')startWelcomeSlideshow();else stopWelcomeSlideshow();}
+}
 
 // Respira 3.1: mascotas estáticas. Sus animaciones se desarrollarán por separado.
 
@@ -238,7 +194,7 @@ function openPet31Info(section){
  content.innerHTML=`<div class="pet31-dialog-symbol" aria-hidden="true">${symbol}</div><span class="pet31-dialog-eyebrow">${safe(pet.name)} · TU ESPACIO DE CALMA</span><h2 id="pet31-dialog-title">${title}</h2><div class="pet31-dialog-text">${body}</div>`;
  try{dialog.showModal()}catch(err){dialog.setAttribute('open','')}
 }
-app.addEventListener('click',e=>{const el=e.target.closest('[data-go],[data-open],[data-fav],[data-action],[data-pet-view]');if(!el)return;if(el.dataset.petView){petProfileReturn=view==='pet-select'?'pet-select':'home';currentPetProfile=el.dataset.petView;petProfileExpanded=false;navigate('pet-detail');return}if(el.dataset.go){if(view==='welcome'&&el.dataset.go==='home'&&!companionToday()){navigate('pet-select')}else{navigate(el.dataset.go)}return}if(el.dataset.open){petActivityReturn=view==='pet-detail'?currentPetProfile:null;navigate('detail',el.dataset.open);return}if(el.dataset.fav){const id=el.dataset.fav,arr=getStore('favorites',[]),next=arr.includes(id)?arr.filter(x=>x!==id):[...arr,id];setStore('favorites',next);render();return}const a=el.dataset.action;
+app.addEventListener('click',e=>{const el=e.target.closest('[data-go],[data-open],[data-fav],[data-action],[data-pet-view]');if(!el)return;if(el.dataset.petView){petProfileReturn=['pet-select','pet-library'].includes(view)?view:'home';currentPetProfile=el.dataset.petView;petProfileExpanded=false;navigate('pet-detail');return}if(el.dataset.go){if(view==='welcome'&&el.dataset.go==='home'&&!companionToday()){navigate('pet-select')}else{navigate(el.dataset.go)}return}if(el.dataset.open){petActivityReturn=view==='pet-detail'?currentPetProfile:null;navigate('detail',el.dataset.open);return}if(el.dataset.fav){const id=el.dataset.fav,arr=getStore('favorites',[]),next=arr.includes(id)?arr.filter(x=>x!==id):[...arr,id];setStore('favorites',next);render();return}const a=el.dataset.action;
 if(a==='pet31-open'){openPet31Info(el.dataset.section);return;}
 if(a==='pet31-close'){const dialog=document.getElementById('pet31-dialog');if(dialog)dialog.close();return;}
 

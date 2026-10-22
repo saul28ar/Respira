@@ -1,8 +1,0 @@
-RESPIRA 3.4 — Elección diaria (imagen aprobada sin alteraciones)
-
-Esta versión conserva la Portada 3.3 y los perfiles anteriores.
-La pantalla de elección diaria usa la imagen aprobada tal cual, sin cambios ni recortes.
-ÚNICAS zonas táctiles activas sobre esa imagen: tres «Elegir» y «Ahora no, ir al inicio».
-Los textos «Conocer más» se ven tal cual en la imagen, pero no son interactivos en esta versión, siguiendo el pedido de solo cuatro botones.
-
-SUBIR: descomprimir este ZIP; copiar TODO su contenido dentro de la carpeta del repositorio Respira y aceptar sobrescribir; en GitHub Desktop Commit to main y Push origin.
