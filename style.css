@@ -1078,3 +1078,39 @@ body:has(.app.welcome-mode) {
 @media (min-width:700px){
   .bottomnav.respira-tabbar{bottom:0;border-radius:25px 25px 0 0}
 }
+
+/* RESPIRA 3.14 — Sólo zonas táctiles de la barra inferior.
+   Ni el wallpaper ni las hojas ni el resto de la barra son enlaces.
+   Las cuatro ilustraciones aprobadas y sus dimensiones NO se modifican.
+   Se mantiene la barra por encima de la página, fija al borde inferior. */
+.home40-navdock,
+.bottomnav.respira-tabbar{
+  z-index:40;
+}
+.home40-navdock .home40-navpicture,
+.bottomnav.respira-tabbar .respira-tabbar-image{
+  pointer-events:none;
+}
+/* En la página 3, el dock reutiliza sin editar la franja original del PNG.
+   Las zonas están centradas sobre icono + nombre + punto activo. */
+.home40-navdock .home40-navhit{
+  top:38%;
+  height:58%;
+  border-radius:12px;
+}
+.home40-navdock .home40-nav-home{left:14.6%;width:13.7%}
+.home40-navdock .home40-nav-methods{left:35%;width:13.8%}
+.home40-navdock .home40-nav-favorites{left:57.0%;width:13.8%}
+.home40-navdock .home40-nav-more{left:75.5%;width:13.8%}
+/* En métodos, favoritos y más, el PNG sigue intacto y sólo se activan
+   los cuatro pequeños cuadros centrados en los controles visibles. */
+.bottomnav.respira-tabbar .navitem{
+  top:9%;
+  height:84%;
+  border-radius:12px;
+  -webkit-tap-highlight-color:transparent;
+}
+.bottomnav.respira-tabbar .navitem:nth-of-type(1){left:14.6%;width:13.7%}
+.bottomnav.respira-tabbar .navitem:nth-of-type(2){left:35%;width:13.8%}
+.bottomnav.respira-tabbar .navitem:nth-of-type(3){left:57.0%;width:13.8%}
+.bottomnav.respira-tabbar .navitem:nth-of-type(4){left:75.5%;width:13.8%}
