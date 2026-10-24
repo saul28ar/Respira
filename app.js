@@ -103,9 +103,8 @@ if(view==='welcome'){
 }
 if(view==='home'){
   const cp=companionToday();
-  // Las cuatro ilustraciones aprobadas permanecen intactas. La franja de
-  // navegación se muestra al pie de la pantalla reutilizando EL MISMO PNG,
-  // sin duplicar archivos ni cambiar ninguno de sus píxeles.
+  // Ilustraciones originales intactas; navegación ovalada transparente
+  // independiente (idéntica a la usada en el resto de las secciones).
   const homeImage=cp?`./imagenes/inicio/${cp}.png`:'./imagenes/inicio/sin-compania.png';
   const areas=[
     ['home40-menu', 'data-go="more"', 'Abrir menú de opciones'],
@@ -119,12 +118,6 @@ if(view==='home'){
     ['home40-advice', 'data-go="advice"', 'Consejos: pequeñas ideas para ti'],
     ['home40-diary', 'data-open="journal"', 'Mi espacio para escribir: compartir lo que sientes']
   ];
-  const navAreas=[
-    ['home40-nav-home','data-go="home"','Inicio'],
-    ['home40-nav-methods','data-go="methods"','Métodos'],
-    ['home40-nav-favorites','data-go="favorites"','Favoritos'],
-    ['home40-nav-more','data-go="more"','Más opciones']
-  ];
   html=`<main class="home40-page ${cp?'home40-haspet':'home40-nopet'}" aria-label="Inicio de Respira${cp?`, con ${safe(pets[cp].name)}`:', sin mascota elegida'}">
     <div class="home40-artboard">
       <img class="home40-art" src="${homeImage}" width="941" height="1672" alt="" aria-hidden="true" draggable="false" fetchpriority="high">
@@ -132,10 +125,7 @@ if(view==='home'){
       ${areas.map(([cls,attr,label])=>`<button type="button" class="home40-hit ${cls}" ${attr} aria-label="${safe(label)}"><span class="sr-only">${safe(label)}</span></button>`).join('')}
     </div>
     <div class="home40-tail" aria-hidden="true"></div>
-    <nav class="home40-navdock" aria-label="Navegación principal">
-      <div class="home40-navpicture"><img src="${homeImage}" width="941" height="1672" alt="" aria-hidden="true" draggable="false"></div>
-      ${navAreas.map(([cls,attr,label])=>`<button type="button" class="home40-hit home40-navhit ${cls}" ${attr} aria-label="${safe(label)}" ${label==='Inicio'?'aria-current="page"':''}><span class="sr-only">${safe(label)}</span></button>`).join('')}
-    </nav>
+    ${bottom('home')}
   </main>`;
 }
 if(view==='pet-select'){
