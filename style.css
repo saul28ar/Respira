@@ -1028,3 +1028,53 @@ body:has(.app.welcome-mode) {
 @media(min-width:700px){
   .home40-navdock,.bottomnav{bottom:0}
 }
+
+/* RESPIRA 3.13 — ÚNICAMENTE integrar las cuatro pantallas y las cuatro barras
+   aprobadas. Las ilustraciones se usan íntegras, sin redibujar ni recomprimir. */
+.home40-page.home40-nopet .home40-choose{
+  left:51.0%;top:20.6%;width:47.8%;height:9.3%;border-radius:999px;
+}
+/* La versión sin mascota sitúa sus botones más arriba que las otras tres.
+   Ajustar el mapa táctil no cambia su imagen ni su composición. */
+.home40-page.home40-nopet .home40-calm{top:36.3%;height:8.6%}
+.home40-page.home40-nopet .home40-breath,
+.home40-page.home40-nopet .home40-meditation{top:45.4%;height:15.3%}
+.home40-page.home40-nopet .home40-quick,
+.home40-page.home40-nopet .home40-advice{top:61.8%;height:14.8%}
+.home40-page.home40-nopet .home40-diary{top:77.35%;height:8%}
+/* Áreas de los cuatro accesos, alineadas con sus centros visibles. */
+.home40-nav-home{left:9%;width:22%}
+.home40-nav-methods{left:31%;width:21%}
+.home40-nav-favorites{left:52.5%;width:21%}
+.home40-nav-more{left:74%;width:21%}
+/* Las otras secciones usan las cuatro barras aprobadas, con toques HTML
+   independientes en vez de una imagen inerte. */
+.bottomnav.respira-tabbar{
+  position:fixed;z-index:30;left:50%;bottom:0;
+  transform:translateX(-50%);width:100%;max-width:560px;
+  height:calc(clamp(64px,17.43vw,93px) + env(safe-area-inset-bottom,0px));
+  display:block;padding:0;border:0;background:#f9fdfb;
+  border-radius:0;isolation:isolate;overflow:hidden;
+}
+.bottomnav.respira-tabbar .respira-tabbar-image{
+  position:absolute;left:0;top:0;display:block;width:100%;
+  height:calc(100% - env(safe-area-inset-bottom,0px));
+  object-fit:fill;pointer-events:none;user-select:none;-webkit-user-drag:none;
+}
+.bottomnav.respira-tabbar .navitem{
+  position:absolute;top:0;z-index:2;height:calc(100% - env(safe-area-inset-bottom,0px));
+  min-width:0;margin:0;padding:0;border:0;background:none;color:transparent;
+  border-radius:12px;cursor:pointer;touch-action:manipulation;
+}
+.bottomnav.respira-tabbar .navitem:nth-of-type(1){left:9%;width:22%}
+.bottomnav.respira-tabbar .navitem:nth-of-type(2){left:31%;width:21%}
+.bottomnav.respira-tabbar .navitem:nth-of-type(3){left:52.5%;width:21%}
+.bottomnav.respira-tabbar .navitem:nth-of-type(4){left:74%;width:21%}
+.bottomnav.respira-tabbar .navitem:focus-visible,
+.home40-navdock .home40-navhit:focus-visible{
+  outline:3px solid #136875;outline-offset:-4px;background:#e1fff41c;
+}
+.app:has(.bottomnav.respira-tabbar){padding-bottom:calc(80px + env(safe-area-inset-bottom,0px))}
+@media (min-width:700px){
+  .bottomnav.respira-tabbar{bottom:0;border-radius:25px 25px 0 0}
+}

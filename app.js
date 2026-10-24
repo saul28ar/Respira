@@ -79,7 +79,15 @@ document.addEventListener('keydown',event=>{
   navigate(prior.view,prior.activeId,true);
 });
 function backhead(title){return `<div class="backhead"><button class="iconbtn" data-go="methods" aria-label="Volver">‹</button><strong>${safe(title)}</strong></div>`}
-function bottom(active){return `<nav class="bottomnav" aria-label="Navegación principal">${[['home','⌂','Inicio'],['methods','▦','Métodos'],['favorites','♡','Favoritos'],['more','···','Más']].map(([id,ic,t])=>`<button class="navitem ${active===id?'active':''}" data-go="${id}" ${active===id?'aria-current="page"':''}><span class="navicon">${ic}</span>${t}</button>`).join('')}</nav>`}
+function bottom(active){
+  // Cuatro imágenes oficiales: mismo diseño, solo cambia la sección resaltada.
+  const tabs=[['home','Inicio'],['methods','Métodos'],['favorites','Favoritos'],['more','Más']];
+  const selected=['home','methods','favorites','more'].includes(active)?active:'home';
+  return `<nav class="bottomnav respira-tabbar" aria-label="Navegación principal">
+    <img class="respira-tabbar-image" src="./imagenes/navegacion/${selected}.png" alt="" aria-hidden="true" draggable="false">
+    ${tabs.map(([id,label])=>`<button type="button" class="navitem ${id===selected?'active':''}" data-go="${id}" aria-label="${label}" ${id===selected?'aria-current="page"':''}><span class="sr-only">${label}</span></button>`).join('')}
+  </nav>`;
+}
 function item(id){const x=catalog[id],fav=getStore('favorites',[]).includes(id);return `<div class="listbtn" style="cursor:default"><button class="round" data-open="${id}" aria-label="Abrir ${safe(x.title)}" style="border:0;background:var(--unused,#e6f7fc)">${x.emoji}</button><button class="copy" data-open="${id}" style="border:0;background:none;text-align:left;color:inherit;padding:0"><strong>${safe(x.title)}</strong><small>${safe(x.sub)}</small></button><button class="iconbtn ${fav?'heart':''}" data-fav="${id}" aria-label="${fav?'Quitar de':'Añadir a'} favoritos: ${safe(x.title)}">${fav?'♥':'♡'}</button><button class="iconbtn" data-open="${id}" aria-label="Abrir">›</button></div>`}
 function render(){let html='';
 if(view==='welcome'){
@@ -117,7 +125,7 @@ if(view==='home'){
     ['home40-nav-favorites','data-go="favorites"','Favoritos'],
     ['home40-nav-more','data-go="more"','Más opciones']
   ];
-  html=`<main class="home40-page" aria-label="Inicio de Respira${cp?`, con ${safe(pets[cp].name)}`:', sin mascota elegida'}">
+  html=`<main class="home40-page ${cp?'home40-haspet':'home40-nopet'}" aria-label="Inicio de Respira${cp?`, con ${safe(pets[cp].name)}`:', sin mascota elegida'}">
     <div class="home40-artboard">
       <img class="home40-art" src="${homeImage}" width="941" height="1672" alt="" aria-hidden="true" draggable="false" fetchpriority="high">
       <h1 class="sr-only">¡Qué bueno verte aquí! Hoy también es un buen día para cuidar de ti.</h1>
