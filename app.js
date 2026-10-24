@@ -62,6 +62,31 @@ if(view==='welcome'){
 }
 if(view==='home'){
   const cp=companionToday();
+  if(cp){
+    // La pantalla aprobada se muestra píxel por píxel sin alterar ni reconstruir sus textos.
+    // Botones HTML transparentes sobre cada zona: la imagen sigue intacta y la app es funcional.
+    const areas=[
+      ['home40-menu', 'data-go="more"', 'Abrir menú de opciones'],
+      [`home40-pet home40-pet-${cp}`, `data-pet-view="${cp}"`, `Abrir el perfil completo de ${pets[cp].name}`],
+      ['home40-calm', 'data-open="grounding"', 'Necesito calma: comenzar técnica 5-4-3-2-1'],
+      ['home40-breath', 'data-open="breath"', 'Respiración: abrir ejercicios para relajarte'],
+      ['home40-meditation', 'data-go="meditation"', 'Meditación: encontrar un momento de calma'],
+      ['home40-quick', 'data-go="quick"', 'Técnicas rápidas: para cuando lo necesites'],
+      ['home40-advice', 'data-go="advice"', 'Consejos: pequeñas ideas para ti'],
+      ['home40-diary', 'data-open="journal"', 'Mi espacio para escribir: compartir lo que sientes'],
+      ['home40-nav-home', 'data-go="home"', 'Inicio'],
+      ['home40-nav-methods', 'data-go="methods"', 'Métodos'],
+      ['home40-nav-favorites', 'data-go="favorites"', 'Favoritos'],
+      ['home40-nav-more', 'data-go="more"', 'Más opciones']
+    ];
+    html=`<main class="home40-page" aria-label="Inicio de Respira, con ${safe(pets[cp].name)}">
+      <div class="home40-artboard">
+        <img class="home40-art" src="./imagenes/inicio/${cp}.png" width="941" height="1672" alt="" aria-hidden="true" draggable="false" fetchpriority="high">
+        <h1 class="sr-only">¡Qué bueno verte aquí! Hoy también es un buen día para cuidar de ti.</h1>
+        ${areas.map(([cls,attr,label])=>`<button type="button" class="home40-hit ${cls}" ${attr} aria-label="${safe(label)}"><span class="sr-only">${safe(label)}</span></button>`).join('')}
+      </div>
+    </main>`;
+  }else{
   const nav26=`<nav class="home26-nav" aria-label="Navegación principal"><button data-go="home" aria-current="page"><span aria-hidden="true">⌂</span><small>Inicio</small></button><button data-go="methods"><span aria-hidden="true">▦</span><small>Métodos</small></button><button data-go="favorites"><span aria-hidden="true">♡</span><small>Favoritos</small></button><button data-go="more"><span aria-hidden="true">⚙</span><small>Más</small></button></nav>`;
   const homeCards=[
     ['breath','respiracion','Respiración','Ejercicios para relajarte',true],
@@ -83,6 +108,7 @@ if(view==='home'){
     </section>
     ${nav26}
   </main>`;
+  }
 }
 if(view==='pet-select'){
   // Ilustración intacta; la zona completa de «Quiénes somos??» abre la sección de perfiles.
