@@ -954,31 +954,77 @@ body:has(.app.welcome-mode) {
 .pet34-skip{left:27%;width:46%;top:91.8%;height:5.6%}
 
 
-/* RESPIRA 3.10 — Pantalla principal con las tres ilustraciones aprobadas.
-   Los PNG se incorporaron sin edición, filtros, redimensionado de archivo ni duplicados.
-   Las zonas táctiles mantienen su posición relativa al arte, incluso en pantallas anchas. */
+/* RESPIRA 3.11 — Sólo corregir la distribución inferior en CELULAR.
+   Las cuatro ilustraciones PNG se conservan sin modificación ni regeneración.
+   Mostrar la franja inferior del MISMO PNG como barra fija evita el espacio vacío
+   por debajo en pantallas más altas (incluida la barra del navegador).
+   Las zonas táctiles son HTML transparentes; textos y colores siguen en la imagen. */
 .app:has(.home40-page){padding-bottom:0;background:#f8fcfa}
-.home40-page{position:relative;width:100%;margin:0;padding:0;background:#f8fcfa;min-height:100dvh}
-.home40-artboard{position:relative;isolation:isolate;width:100%;max-width:560px;margin:0 auto;padding:0;line-height:0}
-.home40-art{display:block;width:100%;height:auto;aspect-ratio:941/1672;object-fit:contain;object-position:center;pointer-events:none;user-select:none;-webkit-user-drag:none;border:0;filter:none}
+.home40-page{position:relative;min-height:100dvh;width:100%;margin:0;padding:0 0 max(0px,env(safe-area-inset-bottom));background:#f8fcfa}
+/* 1508px = 90.2% de 1672px; la franja inferior de 164px queda en la barra. */
+.home40-artboard{position:relative;isolation:isolate;width:100%;max-width:560px;margin:0 auto;aspect-ratio:941 / 1508;overflow:hidden;line-height:0}
+.home40-art{display:block;width:100%;height:auto;aspect-ratio:941 / 1672;object-fit:contain;object-position:center;pointer-events:none;user-select:none;-webkit-user-drag:none;border:0;filter:none}
 .home40-hit{display:block;position:absolute;z-index:2;margin:0;padding:0;min-width:0;min-height:0;border:0;background:transparent;border-radius:18px;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
 .home40-hit:focus-visible{outline:3px solid #0a7182;outline-offset:-3px;background:#ffffff20}
 .home40-hit:active{background:#ffffff19}
-/* Posiciones expresadas en % de la lámina original de 941 × 1672 px. */
-.home40-menu{left:85.2%;top:2.5%;width:11.1%;height:5.6%;border-radius:50%}
+/* Coordenadas 3.10 anteriores aplicadas a una lámina cuyo alto visible es 90.2%. */
+.home40-menu{left:85.2%;top:2.7716%;width:11.1%;height:6.2084%;border-radius:50%}
 .home40-pet{z-index:3;touch-action:manipulation}
-.home40-pet-brotecito{left:53.0%;top:14.2%;width:42.1%;height:22.1%;clip-path:polygon(6% 22%,13% 4%,33% 0%,51% 24%,64% 12%,85% 11%,100% 27%,93% 50%,100% 77%,86% 98%,12% 100%,0 78%,5% 53%)}
-.home40-pet-nubecita{left:53.5%;top:18.1%;width:41.1%;height:17.4%;clip-path:ellipse(49% 49% at 50% 50%)}
-.home40-pet-lunita{left:53.8%;top:14.9%;width:41.6%;height:19.0%;clip-path:polygon(50% 0,72% 22%,85% 32%,96% 49%,100% 81%,89% 98%,11% 98%,0 81%,5% 47%,25% 32%)}
-.home40-calm{left:3.2%;top:39.6%;width:92.1%;height:9.0%;border-radius:999px}
-.home40-breath{left:3.1%;top:49.4%;width:45.6%;height:15.6%}
-.home40-meditation{left:50.5%;top:49.4%;width:45.7%;height:15.6%}
-.home40-quick{left:3.1%;top:65.9%;width:45.6%;height:14.7%}
-.home40-advice{left:50.5%;top:65.9%;width:45.7%;height:14.7%}
-.home40-diary{left:3.4%;top:81.2%;width:92.6%;height:7.6%;border-radius:24px}
-.home40-nav-home,.home40-nav-methods,.home40-nav-favorites,.home40-nav-more{top:90.2%;height:9.2%;border-radius:15px}
+.home40-pet-brotecito{left:53.0%;top:15.7428%;width:42.1%;height:24.5011%;clip-path:polygon(6% 22%,13% 4%,33% 0%,51% 24%,64% 12%,85% 11%,100% 27%,93% 50%,100% 77%,86% 98%,12% 100%,0 78%,5% 53%)}
+.home40-pet-nubecita{left:53.5%;top:20.0665%;width:41.1%;height:19.2905%;clip-path:ellipse(49% 49% at 50% 50%)}
+.home40-pet-lunita{left:53.8%;top:16.5188%;width:41.6%;height:21.0643%;clip-path:polygon(50% 0,72% 22%,85% 32%,96% 49%,100% 81%,89% 98%,11% 98%,0 81%,5% 47%,25% 32%)}
+.home40-choose{left:51.2%;top:25.0%;width:47%;height:9.5%;border-radius:40px}
+.home40-calm{left:3.2%;top:43.9024%;width:92.1%;height:9.9778%;border-radius:999px}
+.home40-breath{left:3.1%;top:54.7672%;width:45.6%;height:17.2949%}
+.home40-meditation{left:50.5%;top:54.7672%;width:45.7%;height:17.2949%}
+.home40-quick{left:3.1%;top:73.0599%;width:45.6%;height:16.2971%}
+.home40-advice{left:50.5%;top:73.0599%;width:45.7%;height:16.2971%}
+.home40-diary{left:3.4%;top:90.0222%;width:92.6%;height:8.4257%;border-radius:24px}
+/* 164px de la misma imagen, renderizados exactamente a la misma escala. */
+.home40-navdock{position:fixed;z-index:15;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:560px;aspect-ratio:941 / 164;overflow:hidden;background:#fff;isolation:isolate;box-shadow:0 -1px 7px rgba(30,68,76,.02)}
+.home40-navpicture{position:absolute;inset:0;overflow:hidden;pointer-events:none}
+.home40-navpicture img{position:absolute;bottom:0;left:0;display:block;width:100%;height:auto;pointer-events:none;user-select:none;-webkit-user-drag:none;border:0;filter:none}
+.home40-navhit{top:0;z-index:3;height:93.88%;border-radius:15px}
 .home40-nav-home{left:8%;width:16.5%}
 .home40-nav-methods{left:29.7%;width:18.7%}
 .home40-nav-favorites{left:52.1%;width:20.6%}
 .home40-nav-more{left:77.1%;width:19%}
-@media(min-width:700px){.app:has(.home40-page){border-radius:0;overflow:visible;box-shadow:0 0 24px #3b5a5e19}}
+/* La página se puede desplazar hasta el diario sin que la barra lo tape. */
+.home40-page::after{content:"";display:block;height:calc(min(100vw,560px) * 164 / 941);pointer-events:none}
+@media(min-width:700px){.app:has(.home40-page){border-radius:0;overflow:visible;box-shadow:0 0 24px #3b5a5e19}.home40-navdock{bottom:20px}}
+
+/* RESPIRA 3.12 — Únicamente espacio bajo la página 3 y barra fija.
+   Las cuatro ilustraciones aprobadas siguen como archivos originales, sin edición. */
+.home40-page{
+  display:flex;
+  flex-direction:column;
+  min-height:100dvh;
+  padding-bottom:0;
+}
+.home40-artboard{flex:none}
+/* Rellena el hueco variable de las pantallas altas con una continuidad
+   suave del paisaje: no tapa ni desplaza tarjetas, textos o imágenes. */
+.home40-tail{
+  flex:1 1 auto;
+  min-height:0;
+  position:relative;
+  pointer-events:none;
+  background:#f8fcfa url('./imagenes/inicio/fondo-inferior.webp') center bottom/100% 100% no-repeat;
+}
+/* El dock existente conserva EXACTAMENTE su imagen, colores e iconos.
+   Sólo respeta el área segura del móvil y queda pegado abajo en PC. */
+.home40-navdock{
+  bottom:0;
+  height:calc(min(100vw,560px) * 164 / 941 + env(safe-area-inset-bottom,0px));
+  aspect-ratio:auto;
+}
+.home40-navpicture{bottom:env(safe-area-inset-bottom,0px)}
+.home40-navhit{height:calc((100% - env(safe-area-inset-bottom,0px)) * .9388)}
+.home40-page::after{
+  flex:none;
+  height:calc(min(100vw,560px) * 164 / 941 + env(safe-area-inset-bottom,0px));
+}
+/* Las barras de las otras herramientas también permanecen fijas en PC. */
+@media(min-width:700px){
+  .home40-navdock,.bottomnav{bottom:0}
+}
