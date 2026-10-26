@@ -103,9 +103,10 @@ if(view==='welcome'){
 }
 if(view==='home'){
   const cp=companionToday();
-  // Ilustraciones originales intactas; navegación ovalada transparente
-  // independiente (idéntica a la usada en el resto de las secciones).
-  const homeImage=cp?`./imagenes/inicio/${cp}.png`:'./imagenes/inicio/sin-compania.png';
+  // Portadas aprobadas 25/10/2026: conservar el PNG original, sin modificaciones.
+  // Solo se selecciona el recurso correspondiente a la mascota del día.
+  // Navegación, ejercicios, perfiles, favoritos y diario siguen siendo HTML y JS funcionales.
+  const homeImage=cp?`./imagenes/inicio/capa-interfaz-${cp}.png`:'./imagenes/inicio/capa-interfaz-sin-compania.png';
   const areas=[
     ['home40-menu', 'data-go="more"', 'Abrir menú de opciones'],
     ...(cp?

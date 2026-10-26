@@ -1209,3 +1209,138 @@ body:has(.app.welcome-mode) {
     background: transparent;
   }
 }
+
+/* RESPIRA 3.16 — actualización únicamente estética de la portada.
+   Cuatro imágenes aprobadas (sin mascota, Lunita, Brotecito, Nubecita),
+   sin redibujarlas ni mover otros componentes de la app.
+   El mapa interactivo invisible se alinea con las tarjetas de la nueva versión.
+   El dock ovalado fijo de la versión 3.15 permanece sin cambios. */
+.home40-page .home40-menu {left:85.0%;top:2.2%;width:12.2%;height:7.8%}
+.home40-page .home40-pet-brotecito {left:52.0%;top:15.4%;width:43.9%;height:22.7%}
+.home40-page .home40-pet-nubecita {left:53.2%;top:18.9%;width:40.8%;height:18.5%}
+.home40-page .home40-pet-lunita {left:53.0%;top:16.5%;width:42.5%;height:21.0%}
+.home40-page .home40-choose,
+.home40-page.home40-nopet .home40-choose {left:50.9%;top:25.2%;width:47.7%;height:8.5%;border-radius:999px}
+.home40-page .home40-calm,
+.home40-page.home40-nopet .home40-calm {left:3.1%;top:38.4%;width:93%;height:9.7%;border-radius:999px}
+.home40-page .home40-breath,
+.home40-page.home40-nopet .home40-breath {left:3.6%;top:48.9%;width:45.0%;height:17.4%}
+.home40-page .home40-meditation,
+.home40-page.home40-nopet .home40-meditation {left:50.2%;top:48.9%;width:45.9%;height:17.4%}
+.home40-page .home40-quick,
+.home40-page.home40-nopet .home40-quick {left:3.6%;top:67.1%;width:45.0%;height:16.1%}
+.home40-page .home40-advice,
+.home40-page.home40-nopet .home40-advice {left:50.2%;top:67.1%;width:45.9%;height:16.1%}
+.home40-page .home40-diary,
+.home40-page.home40-nopet .home40-diary {left:3.7%;top:84.1%;width:92.0%;height:8.4%;border-radius:26px}
+
+/* Continuidad en pantallas altas: utiliza el wallpaper original que proporcionó
+   el usuario para prolongar únicamente la zona bajo las tarjetas.
+   Las capturas aprobadas, sus elementos y la barra fija siguen intactos. */
+.home40-page .home40-tail {
+  background-color: #eaf9fd;
+  background-image: url('./imagenes/recursos-originales-portada/fondo-aprobado-texto.png');
+  background-position: center bottom;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+
+/* RESPIRA 3.17 — FONDO CONTINUO (únicamente pantalla de inicio)
+   La parte superior conserva los PNG aprobados pixel por pixel.
+   El tramo bajo las tarjetas empieza exactamente en la última línea
+   visible de esos PNG y continúa las olas originales SIN reiniciar el lago.
+   La barra fija es una ilustración ovalada RGBA realmente transparente;
+   no debe quedar ningún rectángulo blanco, de fondo o reservado tras ella. */
+.app:has(.home40-page){background:transparent;padding-bottom:0!important}
+.home40-page{
+  background:#e4f7fc;
+  min-height:100dvh;
+  padding:0;
+  display:flex;
+  flex-direction:column;
+  overflow:visible;
+}
+.home40-artboard{flex:0 0 auto;aspect-ratio:941 / 1508;overflow:hidden}
+.home40-page .home40-tail{
+  position:relative;
+  flex:1 0 auto;
+  min-height:calc(min(100vw,560px) * 80 / 941 + env(safe-area-inset-bottom,0px));
+  background-color:#e4f7fc;
+  background-image:url('./imagenes/inicio/continuacion-ondas-sin-compania.webp');
+  background-position:center top;
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  pointer-events:none;
+}
+.home40-page:has(.home40-pet-lunita) .home40-tail{background-image:url('./imagenes/inicio/continuacion-ondas-lunita.webp')}
+.home40-page:has(.home40-pet-brotecito) .home40-tail{background-image:url('./imagenes/inicio/continuacion-ondas-brotecito.webp')}
+.home40-page:has(.home40-pet-nubecita) .home40-tail{background-image:url('./imagenes/inicio/continuacion-ondas-nubecita.webp')}
+.home40-page::after{display:none;content:none;height:0}
+/* El fondo de la barra NO es una caja: fuera del óvalo se ve el lago y las ondas. */
+.home40-page>.bottomnav.respira-tabbar{
+  background:transparent!important;
+  border:none!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+  overflow:visible!important;
+}
+.home40-page>.bottomnav.respira-tabbar .respira-tabbar-image{
+  background:transparent;
+  object-fit:contain;
+}
+@media (min-width:700px){
+  .app:has(.home40-page){background:transparent}
+  .home40-page{min-height:calc(100dvh - 40px)}
+}
+/* Transparencia real del óvalo: las olas inferiores se perciben debajo;
+   todos los píxeles de los archivos PNG aprobados se conservan intactos. */
+.home40-page>.bottomnav.respira-tabbar{
+  border-radius:999px;
+  -webkit-backdrop-filter:blur(3px);
+  backdrop-filter:blur(3px);
+}
+.home40-page>.bottomnav.respira-tabbar .respira-tabbar-image{opacity:.86}
+
+
+/* RESPIRA 3.18 — SIN COSTURAS: un único fondo para toda la página.
+   El wallpaper autorizado cubre el 100% de la pantalla, incluidas las zonas
+   bajo la barra inferior ovalada. Las imágenes aprobadas permanecen intactas
+   en /imagenes/inicio/. Por encima se presentan únicamente los elementos de
+   la interfaz (copias RGBA con el fondo antiguo eliminado progresivamente).
+   NO hay ninguna segunda fotografía, textura reiniciada, ni background-tail. */
+.app:has(.home40-page){padding-bottom:0!important;background:transparent!important}
+.home40-page{
+  position:relative;
+  width:100%;
+  min-height:100dvh;
+  padding:0!important;
+  margin:0 auto;
+  background-color:#e3f7fb!important;
+  background-image:url('./imagenes/recursos-originales-portada/fondo-aprobado-texto.png')!important;
+  background-size:100% 100%!important;
+  background-position:center top!important;
+  background-repeat:no-repeat!important;
+  display:flex;
+  flex-direction:column;
+  overflow:visible;
+}
+.home40-artboard{flex:0 0 auto;position:relative;background:transparent!important;overflow:hidden}
+.home40-art{display:block;width:100%;height:auto;filter:none;pointer-events:none}
+.home40-page .home40-tail{
+  position:relative;flex:1 1 auto;min-height:0;
+  background:transparent!important;background-image:none!important;
+  border:none!important;pointer-events:none;
+}
+.home40-page::after{content:none!important;display:none!important;height:0!important}
+.home40-page>.bottomnav.respira-tabbar{
+  background:none!important;border:0!important;box-shadow:none!important;
+  backdrop-filter:none!important;-webkit-backdrop-filter:none!important;
+  border-radius:0!important;overflow:visible!important;
+}
+.home40-page>.bottomnav.respira-tabbar .respira-tabbar-image{
+  display:block;background:none!important;object-fit:contain;
+  opacity:1!important;
+}
+@media(min-width:700px){.home40-page{min-height:calc(100dvh - 40px)}}
