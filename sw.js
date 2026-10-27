@@ -1,5 +1,62 @@
-const CACHE='respira-3-18-fondo-unico-v1';
-const ASSETS=["./","./index.html","./style.css","./app.js","./manifest.webmanifest","./imagenes/portada/portada-aprobada.png","./imagenes/portada/hoja-izquierda.png","./imagenes/portada/hoja-derecha.png","./imagenes/seleccion/seleccion-aprobada.png","./imagenes/perfiles/brotecito.png","./imagenes/perfiles/nubecita.png","./imagenes/perfiles/lunita.png","./imagenes/perfiles/escena-brotecito.png","./imagenes/perfiles/escena-nubecita.png","./imagenes/perfiles/escena-lunita.png","./imagenes/navegacion/home.png","./imagenes/navegacion/methods.png","./imagenes/navegacion/favorites.png","./imagenes/navegacion/more.png","./imagenes/inicio/brotecito.png","./imagenes/inicio/nubecita.png","./imagenes/inicio/lunita.png","./imagenes/inicio/sin-compania.png","./imagenes/inicio/capa-interfaz-sin-compania.png","./imagenes/inicio/capa-interfaz-nubecita.png","./imagenes/inicio/capa-interfaz-brotecito.png","./imagenes/inicio/capa-interfaz-lunita.png","./imagenes/inicio/fondo-inferior.webp","./imagenes/inicio/continuacion-ondas-sin-compania.webp","./imagenes/inicio/continuacion-ondas-lunita.webp","./imagenes/inicio/continuacion-ondas-brotecito.webp","./imagenes/inicio/continuacion-ondas-nubecita.webp","./imagenes/recursos-originales-portada/fondo-aprobado-texto.png","./imagenes/inicio/tarjeta-respiracion.png","./imagenes/inicio/tarjeta-meditacion.png","./imagenes/inicio/tarjeta-tecnicas.png","./imagenes/inicio/tarjeta-consejos.png","./imagenes/inicio/paisaje-sin-compania.svg","./imagenes/inicio/logo.svg","./iconos/icon-192.png","./iconos/icon-512.png","./imagenes/mascotas/brotecito.png","./imagenes/mascotas/nubecita.png","./imagenes/mascotas/lunita.png"];
-self.addEventListener('install',e=>{e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS)).then(()=>self.skipWaiting()))});
-self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ns=>Promise.all(ns.filter(n=>n!==CACHE).map(n=>caches.delete(n)))).then(()=>self.clients.claim()))});
-self.addEventListener('fetch',e=>{if(e.request.method!=='GET'||new URL(e.request.url).origin!==self.location.origin)return;e.respondWith(caches.match(e.request).then(cached=>cached||fetch(e.request).then(resp=>{if(resp.ok){const cloned=resp.clone();caches.open(CACHE).then(c=>c.put(e.request,cloned))}return resp})))})
+const CACHE = 'respira-code-4-2-v1';
+const ASSETS = [
+  "./",
+  "./index.html",
+  "./manifest.webmanifest",
+  "./css/base.css",
+  "./css/companions.css",
+  "./css/home.css",
+  "./css/interface.css",
+  "./iconos/icon-192.png",
+  "./iconos/icon-512.png",
+  "./js/app.js",
+  "./js/data.js",
+  "./js/icons.js",
+  "./js/storage.js",
+  "./js/timer.js",
+  "./js/utils.js",
+  "./imagenes/inicio/logo.svg",
+  "./imagenes/inicio/arte-inicio-original.png",
+  "./imagenes/interfaz/marco-original.png",
+  "./imagenes/inicio/tarjeta-consejos.png",
+  "./imagenes/inicio/tarjeta-meditacion.png",
+  "./imagenes/inicio/tarjeta-respiracion.png",
+  "./imagenes/inicio/tarjeta-tecnicas.png",
+  "./imagenes/mascotas/brotecito.png",
+  "./imagenes/mascotas/lunita.png",
+  "./imagenes/mascotas/nubecita.png",
+  "./imagenes/paisajes/lago.png",
+  "./imagenes/paisajes/ondas-original.png",
+  "./imagenes/perfiles/escena-brotecito.png",
+  "./imagenes/perfiles/escena-lunita.png",
+  "./imagenes/perfiles/escena-nubecita.png",
+  "./js/components/activities.js",
+  "./js/components/common.js",
+  "./js/components/interface.js",
+  "./js/components/companions.js",
+  "./js/components/home.js",
+  "./js/components/home-art.js",
+  "./js/components/settings.js"
+];
+self.addEventListener('install', event => {
+  event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
+});
+self.addEventListener('activate', event => {
+  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key.startsWith('respira-code-') && key !== CACHE).map(key => caches.delete(key)))).then(() => self.clients.claim()));
+});
+self.addEventListener('fetch', event => {
+  const request = event.request;
+  if (request.method !== 'GET' || new URL(request.url).origin !== self.location.origin) return;
+  if (request.mode === 'navigate') {
+    event.respondWith(fetch(request).catch(() => caches.open(CACHE).then(cache => cache.match('./index.html'))));
+  } else {
+    event.respondWith(caches.open(CACHE).then(async cache => {
+      const cached = await cache.match(request);
+      if (cached) return cached;
+      const response = await fetch(request);
+      if (response.ok) await cache.put(request, response.clone());
+      return response;
+    }));
+  }
+});
+

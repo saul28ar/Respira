@@ -1,0 +1,223 @@
+{
+  "version": "Respira 4.2 · Inicio aprobado",
+  "fecha_aprobacion": "2026-10-27",
+  "variantes": [
+    "Sin compañía",
+    "Brotecito",
+    "Nubecita",
+    "Lunita"
+  ],
+  "criterio": "Conservar el diseño aprobado sin cambios visuales salvo nueva solicitud explícita del usuario.",
+  "archivos": [
+    {
+      "archivo": "index.html",
+      "bytes": 1189,
+      "sha256": "bed86c16919fc41a07245b4792e61be82e4a77a138b5802b3c03e6d7cd726f10"
+    },
+    {
+      "archivo": "sw.js",
+      "bytes": 2318,
+      "sha256": "1c8d20403bdddf22156cce20cea20e2f2a99f5d492e809d490e62e885c64c29a"
+    },
+    {
+      "archivo": "manifest.webmanifest",
+      "bytes": 620,
+      "sha256": "d52c83bb8946e8e5edf1a205c99a7422ab08202ee0819e77ed972db26512a182"
+    },
+    {
+      "archivo": "INICIAR_RESPIRA.cmd",
+      "bytes": 166,
+      "sha256": "c32c360baeb7e5aea9b2667e80dcc92ffb246e0cbac67d13955c422bc64c77b6"
+    },
+    {
+      "archivo": "Servidor.ps1",
+      "bytes": 3400,
+      "sha256": "4e5d7c30594e6e42ff40bc11916ad62df691b8d9fc791f39b8e714c895f8ac96"
+    },
+    {
+      "archivo": "LEEME.md",
+      "bytes": 7891,
+      "sha256": "3bd435eb8186ca3e6d51c2bbefb113fc00f1e9b4c13a0241080c12e0658bd195"
+    },
+    {
+      "archivo": "VERIFICACION.md",
+      "bytes": 3861,
+      "sha256": "f5423fcc859127ce273daf1871c826f5c218af33c9dd985693d59e6ee27e608e"
+    },
+    {
+      "archivo": "DISENO_APROBADO.md",
+      "bytes": 1127,
+      "sha256": "e7ea92871f3a2dcda2e10a3160b466719c1c6e37f1692183c531f32d9fe2d0df"
+    },
+    {
+      "archivo": "css/base.css",
+      "bytes": 9776,
+      "sha256": "ecfe9d3f5835a237be36ea8643c531c32f7b1996e89d73177e4e688d538ac619"
+    },
+    {
+      "archivo": "css/companions.css",
+      "bytes": 15055,
+      "sha256": "152f2be63a94eed195dbe21b77bf0bfa27124548d34749ccf169b797397a72c3"
+    },
+    {
+      "archivo": "css/home.css",
+      "bytes": 8836,
+      "sha256": "78d617332f1317774e67e962b74b7f6d2e033818480a29f9de0ec8ac3c744162"
+    },
+    {
+      "archivo": "css/interface.css",
+      "bytes": 4828,
+      "sha256": "0a431da7150dfc7b981c6267f20e1f4df4b7fed1ca5283d8f89440faece9bd3d"
+    },
+    {
+      "archivo": "js/app.js",
+      "bytes": 12601,
+      "sha256": "91dd6789f0896115a7f0fa740fd90077763fc21f2052e87deca591a0d8cf25aa"
+    },
+    {
+      "archivo": "js/components/activities.js",
+      "bytes": 6865,
+      "sha256": "129a0e7a456edabbc5a3b2b153afe6384af739a72217b72f8cee7e2bbd53f625"
+    },
+    {
+      "archivo": "js/components/common.js",
+      "bytes": 285,
+      "sha256": "c5cc05f47df939892506d12ddd0d4cb068392e1f4db1528153d6775517600742"
+    },
+    {
+      "archivo": "js/components/companions.js",
+      "bytes": 9363,
+      "sha256": "219d2909f694aefa620df7bed72b32242dcdc525fc38f54b29c244f98363000d"
+    },
+    {
+      "archivo": "js/components/home-art.js",
+      "bytes": 1053,
+      "sha256": "7529c88f64299c97401565e896a55407d2b4f04424bad1dbe8f489df5c24e62d"
+    },
+    {
+      "archivo": "js/components/home.js",
+      "bytes": 3468,
+      "sha256": "14aa1449d47834438c1a1ce54befafdc3e579efa9f918cb2fda10a568369d369"
+    },
+    {
+      "archivo": "js/components/interface.js",
+      "bytes": 2340,
+      "sha256": "c7984e5e3c79fbdd15b5cc431f7ca52a1a3ef1d1a1885c1f66e8b47890533504"
+    },
+    {
+      "archivo": "js/components/settings.js",
+      "bytes": 2566,
+      "sha256": "187193f4e7cf4d1dd35cda9f122bd4ec2c731267ef9be016d6e5fcbbdf6c3bc2"
+    },
+    {
+      "archivo": "js/data.js",
+      "bytes": 9869,
+      "sha256": "1d09c2bf76051f59c842ede906448b6904453323a4a9f96b9e0d3da7babd997c"
+    },
+    {
+      "archivo": "js/icons.js",
+      "bytes": 2392,
+      "sha256": "1902b48fd6d98e387a98175eddcbfaa5f35fd8646f198d5d62dd8826c056a79b"
+    },
+    {
+      "archivo": "js/storage.js",
+      "bytes": 1325,
+      "sha256": "6b493d49e33ad3c4bbfd68730cacdf00aec82ac9a7787d7df719782e37c1667f"
+    },
+    {
+      "archivo": "js/timer.js",
+      "bytes": 1344,
+      "sha256": "038a656982c6f67df92b86c74165acfaafdbd763a370737d85266e86309b564c"
+    },
+    {
+      "archivo": "js/utils.js",
+      "bytes": 499,
+      "sha256": "90f22978055bf8c0c15ccb112c3b02bfecac634840ddee141f1339017d058ceb"
+    },
+    {
+      "archivo": "imagenes/inicio/arte-inicio-original.png",
+      "bytes": 2465694,
+      "sha256": "b3fdc5a9a6e05c1d0f0eab77cafcf4a9cba5b4c0a2fb19899d50727b3f8a8f54"
+    },
+    {
+      "archivo": "imagenes/inicio/logo.svg",
+      "bytes": 663,
+      "sha256": "a6e1242d6e62672e353195dd274bab551e09ad3fc421c1c4ed4cda1701e60c11"
+    },
+    {
+      "archivo": "imagenes/inicio/tarjeta-consejos.png",
+      "bytes": 279709,
+      "sha256": "d61ab2d514ee9e4ddbbe5a5f2b49cda9664f9e3fb1325efb998badf9a2708588"
+    },
+    {
+      "archivo": "imagenes/inicio/tarjeta-meditacion.png",
+      "bytes": 154756,
+      "sha256": "2c66f7e5eee33620188d36676a61a8e696657ffa74c486cd246d243384ca182e"
+    },
+    {
+      "archivo": "imagenes/inicio/tarjeta-respiracion.png",
+      "bytes": 225415,
+      "sha256": "ff2f142ae0c56ae2366acc772c46aa5c8d289b0b649d2d42f767b96086a1d87b"
+    },
+    {
+      "archivo": "imagenes/inicio/tarjeta-tecnicas.png",
+      "bytes": 261097,
+      "sha256": "8d4b8c36b4ab047122ba5b59c3c4985d072de9a60cfe6e610517dfc450894151"
+    },
+    {
+      "archivo": "imagenes/interfaz/marco-original.png",
+      "bytes": 317416,
+      "sha256": "dea56c144cb12f119051f5e237ac02bf4e52abece74289dc3a7994b58b834516"
+    },
+    {
+      "archivo": "imagenes/mascotas/brotecito.png",
+      "bytes": 620725,
+      "sha256": "4875e14623f999ba19b4b73ed04fdc0c97fb273800e2509feefe742f9c8a6a19"
+    },
+    {
+      "archivo": "imagenes/mascotas/lunita.png",
+      "bytes": 465905,
+      "sha256": "da9632831f492b6134e28f14027545db4063841a39a8ff6b3d0c6d0e18a7e66b"
+    },
+    {
+      "archivo": "imagenes/mascotas/nubecita.png",
+      "bytes": 455066,
+      "sha256": "449fe12110c145feda2c8b410c4595518067f5789e2ae23c20b89e9d673b7238"
+    },
+    {
+      "archivo": "imagenes/paisajes/lago.png",
+      "bytes": 4312480,
+      "sha256": "34cb5665b6ab5826480e7fe0ad276a0baf52e9bb40a1204e1e5e9580e249cac3"
+    },
+    {
+      "archivo": "imagenes/paisajes/ondas-original.png",
+      "bytes": 2230664,
+      "sha256": "01ca6a514bac2dd04f1ff87f3f1ba12a441fcb86ebfeee412f86a79e318ec7fd"
+    },
+    {
+      "archivo": "imagenes/perfiles/escena-brotecito.png",
+      "bytes": 1789766,
+      "sha256": "be9359a5778a8ceac51770a253541fc9d82132247a3292a5cad0995bbead4077"
+    },
+    {
+      "archivo": "imagenes/perfiles/escena-lunita.png",
+      "bytes": 1703727,
+      "sha256": "6736d0d3a832265c48a405981ac7bb3028913fec39e52e7ecf5b463bfe375f46"
+    },
+    {
+      "archivo": "imagenes/perfiles/escena-nubecita.png",
+      "bytes": 1567741,
+      "sha256": "d5418fd69d93e10a99975360e99a18edae7399545345964944bd5cb6dc5efb00"
+    },
+    {
+      "archivo": "iconos/icon-192.png",
+      "bytes": 5680,
+      "sha256": "18a3dfad48a284112d9a2ea4f0de89ac69eadd2f6205e3285693483ce8ae1f65"
+    },
+    {
+      "archivo": "iconos/icon-512.png",
+      "bytes": 18719,
+      "sha256": "ce0ac37197e3bdb7f6a2c2cac2d9a9061f9e0901dbe4e0b05e9c32402895e267"
+    }
+  ]
+}

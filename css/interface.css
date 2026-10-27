@@ -1,0 +1,137 @@
+/* Un solo tema para marca, menú superior y barra inferior.
+   Cambia estas variables para dar estilo a las tres piezas juntas. */
+.app-shell[data-interface-theme="botanico"] {
+  --interface-accent: #064f4e;
+  --interface-inactive: #7c7aaa;
+  --interface-surface: #ffffffed;
+  --interface-border: #ffffffef;
+  --interface-edge: #c2e5e8;
+  --interface-shadow: 0 3px 15px #4a9bad25;
+  --interface-foliage: #66ae76;
+  --interface-blur: 9px;
+  --interface-filter: none;
+  --interface-width: 600px;
+  --interface-brand-width: 142px;
+  --interface-menu-size: 46px;
+}
+
+/* Display contents conserva el orden normal de la página y agrupa el tema
+   sin usar una imagen de pantalla completa ni zonas de toque invisibles. */
+.app-interface { display: contents; }
+.interface-header {
+  width: min(1040px,calc(100% - 48px));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0 14px;
+}
+.interface-brand {
+  display: inline-flex;
+  width: var(--interface-brand-width);
+  min-height: 44px;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  filter: var(--interface-filter);
+  color: var(--interface-accent);
+  background: transparent;
+  border-radius: 18px;
+}
+.interface-wordmark {
+  display: block;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 210 / 123;
+  overflow: hidden;
+}
+.interface-wordmark-art {
+  position: absolute;
+  width: 448.095238%;
+  height: auto;
+  max-width: none;
+  left: -7.142857%;
+  top: -21.138211%;
+  pointer-events: none;
+}
+.interface-menu {
+  width: var(--interface-menu-size);
+  height: var(--interface-menu-size);
+  color: var(--interface-accent);
+  background: var(--interface-surface);
+  border: 1px solid var(--interface-border);
+  outline: 1px solid var(--interface-edge);
+  box-shadow: var(--interface-shadow);
+  backdrop-filter: blur(var(--interface-blur));
+  filter: var(--interface-filter);
+}
+.interface-menu .icon { width: 24px; height: 24px; }
+.interface-menu:hover { background: #fff; }
+.interface-nav {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 20;
+  display: block;
+  width: min(var(--interface-width),calc(100% - 28px));
+  bottom: calc(14px + env(safe-area-inset-bottom));
+  padding: 4px 22px;
+  background: linear-gradient(160deg,#fff 4%,#eafaffd9 28%,#ffffffec 46%,#eaf8efda 72%,#fff 96%);
+  border: 1.5px solid var(--interface-border);
+  outline: 1px solid var(--interface-edge);
+  box-shadow: var(--interface-shadow);
+  border-radius: 100px;
+  backdrop-filter: blur(var(--interface-blur));
+  filter: var(--interface-filter);
+  color: var(--interface-accent);
+  isolation: isolate;
+  overflow: hidden;
+}
+.interface-nav::before {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(ellipse at 18% -110%,#c4edfb77 50%,transparent 51%),radial-gradient(ellipse at 75% 160%,#c5f0e44d 50%,transparent 51%);
+}
+.interface-tabs { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); position: relative; }
+.interface-nav .nav-item {
+  min-height: 60px;
+  min-width: 0;
+  padding: 4px 0 8px;
+  gap: 3px;
+  color: var(--interface-inactive);
+  font-size: .72rem;
+  font-weight: 600;
+  position: relative;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  line-height: 1.2;
+  border-radius: 99px;
+}
+.interface-nav .nav-item .icon { width: 24px; height: 24px; }
+.interface-nav .nav-item.is-active { color: var(--interface-accent); background: transparent; }
+.interface-nav .nav-item.is-active>.icon { fill: currentColor; }
+.interface-nav .nav-item.is-active>.icon path,
+.interface-nav .nav-item.is-active>.icon rect { stroke-width: 1.4; }
+.interface-nav .nav-item:hover { background: #d4eae65e; }
+.interface-nav .nav-item:focus-visible { outline-offset: -3px; }
+.interface-active-dot { position: absolute; bottom: 2px; width: 5px; height: 5px; background: currentColor; border-radius: 50%; opacity: 0; }
+.interface-nav .is-active .interface-active-dot { opacity: 1; }
+.interface-foliage { position: absolute; top: -2px; height: calc(100% + 4px); width: 84px; z-index: -1; pointer-events: none; color: var(--interface-foliage); }
+.interface-foliage-left { left: -14px; }
+.interface-foliage-right { right: -16px; transform: rotate(180deg); color: #7aadd8; }
+@media (max-width: 640px) {
+  .app-shell[data-interface-theme="botanico"] { --interface-brand-width: 126px; --interface-menu-size: 44px; }
+  .interface-header { width: calc(100% - 36px); padding-top: 10px; padding-bottom: 8px; }
+  .interface-nav { padding: 4px 12px; }
+  .interface-nav .nav-item { min-height: 57px; font-size: .65rem; }
+  .interface-nav .nav-item .icon { width: 22px; height: 22px; }
+  .interface-foliage { width: 60px; opacity: .85; }
+}
