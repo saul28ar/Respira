@@ -1,0 +1,70 @@
+/* Welcome Esmeralda: réplica del prototipo 02. Todo está acotado a esta vista. */
+.welcome-desktop-v2 {
+  --wd2-ink: #124d37;
+  --wd2-accent: #176447;
+  --wd2-muted: #516e5d;
+  --wd2-line: #cddbc9;
+  display: block;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 38px 84px;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 100% 30%, #dceccf 0%, transparent 50%), #f1f5e9;
+  color: var(--wd2-ink);
+  font: 16px "Segoe UI", Arial, sans-serif;
+  line-height: normal;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.welcome-desktop-v2 a { color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent; }
+.welcome-desktop-v2 a:focus-visible { outline: 3px solid #d7b974; outline-offset: 5px; }
+.welcome-desktop-v2 .wd2-shell { max-width: 1300px; margin: 0 auto; position: relative; z-index: 1; }
+.welcome-desktop-v2 .wd2-topbar { display: flex; align-items: center; gap: 42px; height: 84px; margin-bottom: 15px; }
+.welcome-desktop-v2 .wd2-brand { display: block; width: 174px; flex: none; }
+.welcome-desktop-v2 .wd2-brand img { display: block; width: 100%; height: auto; }
+.welcome-desktop-v2 .wd2-toplinks { display: flex; gap: 32px; align-items: center; margin-left: auto; font-size: 13px; color: var(--wd2-muted); letter-spacing: .01em; }
+.welcome-desktop-v2 .wd2-backlink { display: flex; align-items: center; gap: 15px; font-size: 13px; border-bottom: 1px solid var(--wd2-accent); padding: 5px 0; color: var(--wd2-accent); }
+.welcome-desktop-v2 .wd2-backlink span { font-size: 20px; }
+.welcome-desktop-v2 .wd2-hero { display: grid; grid-template-columns: 1.14fr .86fr; gap: 48px; align-items: center; min-height: 730px; }
+.welcome-desktop-v2 .wd2-copy { max-width: 620px; padding-bottom: 20px; }
+.welcome-desktop-v2 .wd2-eyebrow { display: flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 650; letter-spacing: .16em; color: var(--wd2-accent); margin-bottom: 23px; }
+.welcome-desktop-v2 .wd2-eyebrow span { width: 23px; height: 1px; background: currentColor; display: block; }
+.welcome-desktop-v2 .wd2-headline { font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; font-size: 71px; font-weight: 400; line-height: 1.08; letter-spacing: -.05em; margin: 0 0 30px; }
+.welcome-desktop-v2 .wd2-description { max-width: 430px; font-size: 17px; line-height: 1.9; color: var(--wd2-muted); margin: 0 0 28px; }
+.welcome-desktop-v2 .wd2-actions { display: flex; align-items: center; gap: 24px; margin: 0 0 18px; }
+.welcome-desktop-v2 .wd2-primary { display: inline-flex; align-items: center; justify-content: space-between; gap: 48px; padding: 16px 27px; border-radius: 999px; background: linear-gradient(130deg, #247448, #105338); border: 1px solid #bcaa6e; color: #fff7df; font-size: 14px; font-weight: 600; min-width: 179px; min-height: 52px; box-shadow: 0 7px 14px #14513b20; }
+.welcome-desktop-v2 .wd2-primary svg { width: 21px; height: 21px; flex: none; }
+.welcome-desktop-v2 .wd2-quiet-link { font-size: 13px; color: var(--wd2-accent); display: block; }
+.welcome-desktop-v2 .wd2-gentle { color: var(--wd2-muted); font-size: 12px; line-height: 1.6; margin: 0; }
+.welcome-desktop-v2 .wd2-art-area { margin: 0; display: flex; align-items: center; justify-content: center; position: relative; }
+.welcome-desktop-v2 .wd2-art-frame { height: 692px; position: relative; isolation: isolate; display: flex; justify-content: center; align-items: center; border-radius: 26px; max-width: 100%; background: transparent; box-shadow: 0 0 0 12px #ffffff98, 0 0 0 13px #cad9bd, 0 30px 60px -36px #345c2975; transform: rotate(1.3deg); }
+.welcome-desktop-v2 .wd2-poster { height: 100%; width: auto; max-width: 100%; display: block; object-fit: contain; border-radius: inherit; position: relative; z-index: 1; }
+.welcome-desktop-v2 .wd2-features { display: flex; justify-content: space-between; gap: 32px; align-items: center; border-top: 1px solid var(--wd2-line); padding: 25px 0 0; margin-top: 21px; color: var(--wd2-accent); }
+.welcome-desktop-v2 .wd2-feature { display: flex; align-items: center; gap: 13px; font-size: 12px; white-space: nowrap; }
+.welcome-desktop-v2 .wd2-feature svg { width: 22px; height: 22px; flex: none; }
+
+/* En pantallas menores la misma composición se adapta sin cortar la portada. */
+@media (min-width: 768px) and (max-width: 1399px) {
+  .welcome-desktop-v2 { padding: 30px clamp(30px, 5.25vw, 74px); }
+  .welcome-desktop-v2 .wd2-hero { grid-template-columns: minmax(0, 1.14fr) minmax(0, .86fr); gap: clamp(26px, 3vw, 42px); min-height: clamp(560px, 51vw, 710px); }
+  .welcome-desktop-v2 .wd2-headline { font-size: clamp(43px, 4.44vw, 67px); }
+  .welcome-desktop-v2 .wd2-description { font-size: 16px; max-width: 410px; }
+  .welcome-desktop-v2 .wd2-art-frame { height: min(660px, 49.4vw); }
+  .welcome-desktop-v2 .wd2-actions { gap: 18px; flex-wrap: wrap; }
+  .welcome-desktop-v2 .wd2-primary { gap: 32px; min-width: 160px; }
+  .welcome-desktop-v2 .wd2-toplinks { gap: 22px; }
+  .welcome-desktop-v2 .wd2-feature { font-size: 11px; gap: 9px; }
+}
+@media (min-width: 768px) and (max-width: 999px) {
+  .welcome-desktop-v2 .wd2-topbar { gap: 24px; }
+  .welcome-desktop-v2 .wd2-brand { width: 145px; }
+  .welcome-desktop-v2 .wd2-toplinks { gap: 18px; font-size: 12px; }
+  .welcome-desktop-v2 .wd2-backlink { font-size: 12px; gap: 8px; }
+  .welcome-desktop-v2 .wd2-eyebrow { letter-spacing: .12em; font-size: 10px; margin-bottom: 20px; }
+  .welcome-desktop-v2 .wd2-description { font-size: 15px; line-height: 1.8; }
+  .welcome-desktop-v2 .wd2-gentle { font-size: 11px; }
+  .welcome-desktop-v2 .wd2-features { gap: 17px; }
+  .welcome-desktop-v2 .wd2-feature { white-space: normal; align-items: flex-start; }
+  .welcome-desktop-v2 .wd2-feature svg { width: 20px; height: 20px; }
+}

@@ -1,5 +1,15 @@
-const CACHE = 'respira-code-4-2-v1';
+const CACHE = 'respira-code-4-4-welcome-aprobado-v2';
 const ASSETS = [
+  "./css/welcome-desktop.css",
+  "./css/welcome-mobile-v2.css",
+  "./css/welcome-mobile.css",
+  "./js/components/welcome-desktop.js",
+  "./js/components/welcome-mobile.js",
+  "./js/components/welcome-poster.js",
+  "./imagenes/welcome/portada-aprobada-v2.png",
+  "./imagenes/welcome/logo-aprobado-v2.png",
+  "./imagenes/welcome/boton-iniciar-original-v2.png",
+  "./imagenes/welcome/portada-movil-feliz-serena-v1.png",
   "./",
   "./index.html",
   "./manifest.webmanifest",

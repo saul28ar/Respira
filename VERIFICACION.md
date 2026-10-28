@@ -1,4 +1,19 @@
-# Revisión de Respira 4.0
+# Revisión de Respira 4.4 · Welcome aprobado
+
+Actualización del 28 de octubre de 2026, en Chrome para Windows:
+
+- 16 comprobaciones del welcome aprobadas con servidor HTTP bajo la ruta `/Respira/`: enlaces, ambos botones Iniciar, teclado, tamaños y uso sin conexión.
+- Escritorio revisado a 768, 1024, 1280, 1440, 1600 y 1920 píxeles de ancho. Captura de comparación a 2400×1500 con el diseño Esmeralda aprobado.
+- Móvil revisado a 360×800, 390×844, 430×932 y 600×960; teléfono táctil horizontal a 844×390. La portada se muestra completa y conserva su proporción.
+- 15 comprobaciones de regresión aprobadas: mascotas, almacenamiento, navegación, favoritos, diario, respiración, temporizador y pasos de ejercicios.
+- Cero errores JavaScript, imágenes rotas o recursos fallidos en los recorridos.
+- Los 12 archivos protegidos de estilos, inicio, datos y funciones mantienen su SHA-256 previo.
+- Las cuatro capturas del inicio son idénticas píxel por píxel a las capturas anteriores: cero diferencias.
+- Foto, logo y botón suministrados conservan sus bytes originales. No se usó generación de imágenes en esta integración.
+
+La prueba sin conexión de esta entrega sí se realizó por HTTP, con instalación de la nueva caché y recarga del welcome sin red.
+
+## Historial: revisión de Respira 4.0
 
 Realizada el 27 de octubre de 2026 con Chrome en Windows, usando el servidor local incluido en el paquete.
 

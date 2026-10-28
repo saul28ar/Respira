@@ -1,6 +1,14 @@
-# Respira · Base modular e interfaz compartida
+# Respira 4.4 · Welcome aprobado
 
-Esta versión convierte las pantallas de Respira 3.18 en una interfaz real: textos, tarjetas, botones, navegación y perfiles se construyen con HTML, CSS y JavaScript. Las ilustraciones se usan como arte, sin botones ni textos funcionales dibujados dentro de ellas.
+Esta entrega integra el welcome Esmeralda (versión 2 aprobada) para computadora y la portada aprobada para celular. El texto y la navegación de escritorio son HTML, CSS y JavaScript. La portada conserva el gráfico original; su botón Iniciar es un control HTML visible y accesible que reproduce el arte aprobado. Los cuatro inicios anteriores se mantienen iguales.
+
+## Para cargar esta actualización
+
+Extrae todo el ZIP. Copia su contenido a la carpeta principal de la aplicación o del sitio, conservando las carpetas `css/`, `js/`, `imagenes/` e `iconos/`. `index.html` debe quedar en esa raíz. Para el sitio que ya usas, conserva la misma dirección y ruta.
+
+Después de subirlo, recarga la página. Si el navegador muestra la versión anterior, cierra esa pestaña y ábrela nuevamente; en computadora también puedes usar Ctrl+F5. Se actualizó la caché sin conexión para incluir los nuevos archivos.
+
+Los tres archivos recibidos están incluidos sin modificar en `imagenes/welcome/`: `portada-aprobada-v2.png`, `boton-iniciar-original-v2.png` y `logo-aprobado-v2.png`. El botón transparente se conserva por separado para futuras ediciones. El control de la portada usa una ventana del propio arte aprobado para mantener exactamente el tamaño menor de la palabra Iniciar.
 
 ## Cómo abrirla en Windows
 
@@ -31,6 +39,10 @@ El lanzador usa PowerShell incluido en Windows. No requiere instalar paquetes ni
 | Inicio | `js/components/home.js` | Saludo, compañía, tarjetas, calma y diario. |
 | Arte del inicio | `js/components/home-art.js` | Fondos y ventanas decorativas de las imágenes originales, sin textos ni controles dibujados. |
 | Mascotas | `js/components/companions.js` | Bienvenida, selección, biblioteca y perfiles. |
+| Welcome de computadora | `js/components/welcome-desktop.js` | Versión Esmeralda aprobada, con texto y enlaces reales. |
+| Welcome de celular | `js/components/welcome-mobile.js` | Portada aprobada completa, sin deformarla. |
+| Botón de la portada | `js/components/welcome-poster.js` | Control Iniciar visible con el arte original. |
+| Diseño de welcome | `css/welcome-desktop.css`, `css/welcome-mobile-v2.css` | Distribución por pantalla y estilos aislados del resto de la app. |
 | Ejercicios | `js/components/activities.js` | Listados, ejercicios y formulario del diario. |
 | Opciones | `js/components/settings.js` | Más opciones y privacidad. |
 | Piezas compartidas | `js/components/common.js` | Reutiliza la marca y define el botón Volver. |
@@ -46,7 +58,7 @@ El lanzador usa PowerShell incluido en Windows. No requiere instalar paquetes ni
 | Sin conexión | `sw.js` | Guarda los archivos necesarios para uso sin conexión. |
 | Instalación web | `manifest.webmanifest` | Nombre e iconos de la aplicación web. |
 
-Las imágenes utilizadas están en `imagenes/` y los iconos de instalación en `iconos/`. Las antiguas capturas completas se conservan como referencias; no se usan como interfaz ni tienen zonas invisibles de toque. Los archivos gráficos usados se copiaron del proyecto original sin modificarlos.
+Las imágenes utilizadas están en `imagenes/` y los iconos de instalación en `iconos/`. Las antiguas capturas completas del inicio se conservan como referencias. El welcome utiliza la nueva portada aprobada como arte; el botón se representa dentro de un control HTML con contenido gráfico visible. Los PNG aprobados se copiaron sin modificar sus bytes.
 
 ## Recursos recibidos y estilo compartido
 

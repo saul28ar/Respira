@@ -1,4 +1,6 @@
 import { pets, petProfiles } from '../data.js';
+import { renderMobileWelcome } from './welcome-mobile.js';
+import { renderDesktopWelcome } from './welcome-desktop.js';
 import { safe } from '../utils.js';
 import { icon } from '../icons.js';
 import { brand, backButton } from './common.js';
@@ -20,28 +22,7 @@ function petArtwork(id, className = '', loading = 'lazy') {
 }
 
 export function renderWelcome() {
-  return `<main class="page welcome-page">
-    <header class="welcome-header">${brand()}<button class="text-button" type="button" data-go="home">Ir al inicio ${icon('arrow')}</button></header>
-    <section class="welcome-hero" aria-labelledby="welcome-title">
-      <div class="welcome-copy">
-        <span class="eyebrow">Un momento para ti</span>
-        <h1 id="welcome-title">Respira.<br>Estás en tu espacio de calma.</h1>
-        <p>Pequeños momentos para una vida más tranquila. Encuentra una pausa, escucha cómo te sientes y avanza a tu ritmo.</p>
-        <button class="primary welcome-start" type="button" data-go="pet-select">Comenzar ${icon('arrow')}</button>
-        <span class="welcome-gentle">Sin prisas. Sin tener que hacerlo perfecto.</span>
-      </div>
-      <div class="welcome-landscape">
-        <img class="welcome-lake" src="./imagenes/paisajes/lago.png" alt="Un lago tranquilo entre montañas, flores y árboles" width="941" height="1672" fetchpriority="high">
-        <div class="welcome-friends" aria-hidden="true">${petIds.map(id => petArtwork(id, `welcome-friend welcome-friend-${id}`, 'eager')).join('')}</div>
-        <span class="welcome-landscape-caption">Un pequeño refugio, siempre contigo.</span>
-      </div>
-    </section>
-    <div class="welcome-pillars" aria-label="Lo que encontrarás en Respira">
-      <div>${icon('breath')}<span>Respira con calma</span></div>
-      <div>${icon('journal')}<span>Dale espacio a lo que sientes</span></div>
-      <div>${icon('leaf')}<span>Encuentra tu compañía</span></div>
-    </div>
-  </main>`;
+  return `<main class="page welcome-page">${renderDesktopWelcome()}${renderMobileWelcome()}</main>`;
 }
 
 export function renderPetSelect({ petId = null } = {}) {

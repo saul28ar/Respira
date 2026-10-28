@@ -1,0 +1,17 @@
+RESPIRA 4.4 — WELCOME APROBADO
+
+1. Extrae TODO el ZIP.
+2. Para cargarlo en tu aplicación o sitio, reemplaza sus archivos por el contenido completo de este paquete. Conserva las carpetas y la misma dirección del sitio.
+3. index.html debe quedar en la carpeta principal, junto a sw.js, css, js, imagenes e iconos.
+4. Recarga la página. Si aparece la versión anterior, cierra esa pestaña y vuelve a abrirla; en computadora también puedes usar Ctrl+F5.
+
+PARA VERLO EN WINDOWS SIN SUBIRLO
+Abre INICIAR_RESPIRA.cmd. Mantén su ventana abierta mientras uses Respira.
+
+INCLUYE
+- Welcome Esmeralda 2 para computadora.
+- Portada aprobada para celular y botón Iniciar funcional.
+- Foto, botón transparente y logo originales en imagenes/welcome/.
+- El resto de la app y sus cuatro inicios aprobados.
+
+La aplicación funciona en la web con archivos estáticos. No necesita instalar paquetes de desarrollo.
