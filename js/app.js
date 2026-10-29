@@ -9,6 +9,7 @@ import { renderDesktopHome } from './components/home-desktop.js';
 import { renderHomeBackdrop } from './components/home-art.js';
 import { renderWelcome, renderPetSelect, renderPetLibrary, renderPetDetail, renderPetConfirm } from './components/companions.js';
 import { renderCollection, renderDetail } from './components/activities.js';
+import { renderMethods } from './components/methods.js';
 import { renderMore, renderAbout } from './components/settings.js';
 
 const app = document.getElementById('app');
@@ -58,17 +59,19 @@ function render() {
   if (view === 'pet-library') html = renderPetLibrary();
   if (view === 'pet-detail') html = renderPetDetail({petId:route.id,chosen:cp,returnView:petReturn});
   if (view === 'pet-confirm') html = renderPetConfirm({petId:cp,saveOk});
-  if (['methods','meditation','quick','advice','favorites'].includes(view)) html = renderCollection(view);
+  if (view === 'methods') html = renderMethods();
+  if (['meditation','quick','advice','favorites'].includes(view)) html = renderCollection(view);
   if (view === 'more') html = renderMore(cp);
   if (view === 'about') html = renderAbout();
   if (view === 'detail') html = renderDetail(route.id, {draft,petReturn:activityPet});
   const active = ['home','pet-select','pet-library','pet-detail','pet-confirm'].includes(view) ? 'home' : view === 'favorites' ? 'favorites' : ['more','about'].includes(view) ? 'more' : 'methods';
-  app.innerHTML = renderFrame(html, { active, welcome:view === 'welcome', home:view === 'home', desktopHome, backdrop:view === 'home' && !desktopHome ? renderHomeBackdrop() : '' });
+  app.innerHTML = renderFrame(html, { active, welcome:view === 'welcome', home:view === 'home', desktopHome, methods:view === 'methods', backdrop:view === 'home' && !desktopHome ? renderHomeBackdrop() : '' });
   const main = app.querySelector('main');
   if (main) { main.id = 'main-content'; main.tabIndex = -1; }
   document.body.classList.toggle('welcome-view', view === 'welcome');
   document.body.classList.toggle('home-view', view === 'home');
   document.body.classList.toggle('home-desktop-view', desktopHome);
+  document.body.classList.toggle('methods-view', view === 'methods');
   const title = app.querySelector('h1')?.textContent ?? 'Tu espacio de calma';
   document.title = `${title} · Respira`;
   if (!saveOk && cp && view === 'home') notify('Tu compañía funciona ahora, pero no se pudo guardar en este navegador.');

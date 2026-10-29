@@ -1,4 +1,16 @@
-# Revisión de Respira 4.5 · Home Jardín aprobado
+# Revisión de Respira 4.6 · Métodos 10 aprobado
+
+Actualización del 28 de octubre de 2026:
+
+- 24 comprobaciones por HTTP aprobadas: los 13 métodos en web y celular, títulos y descripciones originales, navegación, teclado, favoritos con persistencia, temporizador y uso sin conexión.
+- La app real coincide píxel por píxel con la propuesta 10 en las capturas de referencia web 2400×1650 y celular 860×1864.
+- Adaptación comprobada de 320 a 1920 píxeles, sin desbordamiento horizontal ni texto cortado.
+- 15 pruebas de regresión aprobadas. El selector de navegación de esa prueba se ajustó a los enlaces visibles, porque Métodos ahora tiene sus versiones web y móvil dentro del mismo componente.
+- Los 56 archivos invariantes de la versión 4.5 conservan sus SHA-256; no se modificaron los gráficos aprobados.
+- Cuatro Home móviles, Home web y welcome web: capturas idénticas a las anteriores. Welcome móvil: solo redondeos de hasta 1/255 por canal al comparar distintos entornos de captura.
+- La entrega se genera completa y como actualización incremental desde 4.5. La combinación de la entrega 4.5 y el ZIP de cambios se compara archivo por archivo y byte por byte con la nueva entrega completa.
+
+## Historial: Respira 4.5 · Home Jardín aprobado
 
 Actualización del 28 de octubre de 2026:
 

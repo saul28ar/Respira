@@ -1,0 +1,89 @@
+{
+  "version_base": "4.5 · Home Jardín 3",
+  "version_nueva": "4.6 · Métodos 10",
+  "base_zip": "Respira_4_5_Home_Jardin_APROBADO.zip",
+  "sha256_base_zip": "c27cb263fc5ec6825e61d8a1f35b505986b16db029bab58a962b08b98d3f4bd8",
+  "instruccion": "Copiar este contenido sobre la versión 4.5 respetando las carpetas y reemplazando archivos del mismo nombre. Conservar los demás archivos.",
+  "eliminaciones": [],
+  "archivos": [
+    {
+      "archivo": "ACTUALIZAR_RESPIRA.txt",
+      "bytes": 1428,
+      "sha256": "f67bb4632c5587fdd6788b23c6ff9146f48830d2ff552bfb6ca56c6c654d0217",
+      "tipo": "modificado"
+    },
+    {
+      "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
+      "bytes": 840,
+      "sha256": "a8e285fbbbb66136e2e7dcf6f4decb1321ef366228a73cd5811adf699836ce24",
+      "tipo": "nuevo"
+    },
+    {
+      "archivo": "ENTREGAS.md",
+      "bytes": 852,
+      "sha256": "032131fa789017fb5254aa2f9d94f1f724d13c03ff278710d56db5bc33ba1e42",
+      "tipo": "nuevo"
+    },
+    {
+      "archivo": "LEEME.md",
+      "bytes": 10683,
+      "sha256": "249930f725997cf4c09dfff2a0dd9407b116dcf1614b9ca859e41ea002443793",
+      "tipo": "modificado"
+    },
+    {
+      "archivo": "METODOS_APROBADO.md",
+      "bytes": 1226,
+      "sha256": "bd0eacb2271d99be819ebbf44b472eb74287b6f06241577103815311165c0184",
+      "tipo": "nuevo"
+    },
+    {
+      "archivo": "VERIFICACION.md",
+      "bytes": 7436,
+      "sha256": "38cf6bd90127f5fff03731a20ae2a43b9c23174fcb2f63ad23dca9f07c27cb34",
+      "tipo": "modificado"
+    },
+    {
+      "archivo": "css/methods.css",
+      "bytes": 15616,
+      "sha256": "4cd50608d835565bf86281843c7a831308519d3f8078b0fd4c100ec00d871b69",
+      "tipo": "nuevo"
+    },
+    {
+      "archivo": "index.html",
+      "bytes": 1416,
+      "sha256": "efa48c65dd2d8f37891231c605e40e7c3a9af21f389b6cd554662b8f6dad5d4e",
+      "tipo": "modificado"
+    },
+    {
+      "archivo": "js/app.js",
+      "bytes": 13424,
+      "sha256": "a3f8a7b0a5582a760c7b80ff8c2548797d230f1519d537bb9b98e7a684d12f83",
+      "tipo": "modificado"
+    },
+    {
+      "archivo": "js/components/interface.js",
+      "bytes": 2479,
+      "sha256": "bcfca8c32a747ff7761a4b1849221e2c884c7283c6f76b28897a47df449d56be",
+      "tipo": "modificado"
+    },
+    {
+      "archivo": "js/components/methods.js",
+      "bytes": 3417,
+      "sha256": "b4fa4a2db43fdc423898b123a90ab9ecea48f311e69d78966098eed57260fc34",
+      "tipo": "nuevo"
+    },
+    {
+      "archivo": "manifest-entrega.json",
+      "bytes": 11818,
+      "sha256": "bd5c91afb693c3724ba4a2983cd418315ea890ccc91f78ac111e2fdbd692f418",
+      "tipo": "modificado"
+    },
+    {
+      "archivo": "sw.js",
+      "bytes": 3101,
+      "sha256": "90d4cdb899f5b71819dc1ce2531784c5c3896fdc12e6755c4937c2b489cb3fcd",
+      "tipo": "modificado"
+    }
+  ],
+  "metadatos_propios": "manifest-cambios.json"
+}

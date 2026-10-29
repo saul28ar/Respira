@@ -1,0 +1,14 @@
+RESPIRA 4.6 — SOLO CAMBIOS DESDE RESPIRA 4.5
+
+Este ZIP pequeño se aplica sobre Respira 4.5 (Home Jardín 3 aprobado).
+No es una app independiente.
+
+1. Extrae el ZIP de solo cambios.
+2. Copia TODO su contenido dentro de la carpeta de tu app 4.5, respetando las carpetas.
+3. Acepta reemplazar los archivos del mismo nombre. Conserva los demás archivos y las imágenes que ya tienes.
+4. Si actualizas el sitio web, carga estos archivos en las mismas rutas del sitio.
+5. Recarga la página. Si ves la versión anterior, cierra la pestaña y vuelve a abrirla; en computadora también puedes usar Ctrl+F5.
+
+Si partes de otra versión o no tienes la 4.5 completa, usa el ZIP COMPLETO de Respira 4.6.
+
+Esta actualización incorpora el diseño 10 de Métodos en web y celular, con sus ejercicios y favoritos reales. Home y welcome se conservan.

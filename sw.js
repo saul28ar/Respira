@@ -1,5 +1,7 @@
-const CACHE = 'respira-code-4-5-home-jardin-v3';
+const CACHE = 'respira-code-4-6-metodos-jardin-v10';
 const ASSETS = [
+  "./css/methods.css",
+  "./js/components/methods.js",
   "./css/home-desktop.css",
   "./js/components/home-desktop.js",
   "./imagenes/inicio-web/lago-hd.png",

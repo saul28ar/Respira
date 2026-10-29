@@ -1,6 +1,8 @@
-# Respira 4.5 · Home Jardín y welcome aprobados
+# Respira 4.6 · Métodos 10, Home y welcome aprobados
 
-Esta entrega integra el Home Jardín (propuesta 3 aprobada) para computadora. Conserva el welcome Esmeralda 2 de computadora, la portada aprobada para celular y los cuatro Home de celular anteriores. El nuevo Home usa texto, navegación y botones reales en HTML, CSS y JavaScript, junto con los mismos paisajes y gatito de mayor resolución de la propuesta elegida.
+Esta entrega integra Métodos 10, Jardín ligero, para computadora y celular, con sus 13 ejercicios y favoritos reales. Conserva el Home Jardín 3 de computadora, el welcome Esmeralda 2 de computadora, la portada aprobada para celular y los cuatro Home de celular anteriores. Las pantallas utilizan texto, navegación y botones reales en HTML, CSS y JavaScript, junto con los gráficos aprobados de mayor resolución.
+
+Se entregan dos ZIP: **completo**, para instalar o cargar todos los archivos, y **solo cambios desde 4.5**, para actualizar la entrega anterior sin repetir las imágenes que ya tienes. El segundo se aplica sobre Respira 4.5, Home Jardín 3 aprobado. Consulta `ACTUALIZAR_SOLO_CAMBIOS.txt`.
 
 ## Para cargar esta actualización
 
@@ -47,6 +49,8 @@ El lanzador usa PowerShell incluido en Windows. No requiere instalar paquetes ni
 | Botón de la portada | `js/components/welcome-poster.js` | Control Iniciar visible con el arte original. |
 | Diseño de welcome | `css/welcome-desktop.css`, `css/welcome-mobile-v2.css` | Distribución por pantalla y estilos aislados del resto de la app. |
 | Ejercicios | `js/components/activities.js` | Listados, ejercicios y formulario del diario. |
+| Métodos 10 | `js/components/methods.js` | Página aprobada de Métodos, con ejercicios y favoritos reales. |
+| Diseño de Métodos | `css/methods.css` | Jardín ligero 10 adaptable a computadora y celular, con estilos aislados. |
 | Opciones | `js/components/settings.js` | Más opciones y privacidad. |
 | Piezas compartidas | `js/components/common.js` | Reutiliza la marca y define el botón Volver. |
 | Interfaz compartida | `js/components/interface.js` | Agrupa logotipo, menú superior y barra inferior bajo un mismo tema. |

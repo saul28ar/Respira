@@ -1,0 +1,175 @@
+/* Métodos 10 · Jardín ligero. Estilos aislados de las demás pantallas. */
+body.methods-view { background: #eef7f1; }
+body.methods-view #app { padding-bottom: 0; }
+.methods-jardin, .methods-jardin * { box-sizing:border-box }
+.methods-jardin { margin:0;min-height:100% }
+.methods-jardin { --m10-ink:#174c3b;--m10-muted:#617d6c;--m10-green:#266b50;--m10-paper:#f1f7ed;--m10-card:#fffefa;--m10-line:#dce8d8;--m10-accent:#2b7f6b;background:var(--m10-paper);color:var(--m10-ink);font:16px/1.5 "Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility }
+.methods-jardin a { color:inherit;text-decoration:none }
+.methods-jardin button { font:inherit;color:inherit;cursor:pointer;border:0 }
+.methods-jardin button, .methods-jardin a { -webkit-tap-highlight-color:transparent }
+.methods-jardin button:focus-visible, .methods-jardin a:focus-visible { outline:3px solid #398eab;outline-offset:4px }
+.methods-jardin img { display:block;max-width:100% }
+.methods-jardin .icon { width:24px;height:24px;vertical-align:middle;display:inline-block;flex:none }
+.methods-jardin { position:relative;isolation:isolate;min-height:100vh;padding:28px 64px 32px;overflow:hidden }
+.methods-jardin .m10-main { max-width:1360px;margin:0 auto;position:relative;z-index:1 }
+.methods-jardin .m10-topbar { height:80px;display:flex;align-items:center;gap:30px;margin-bottom:24px }
+.methods-jardin .m10-brand { display:block;flex:none;width:165px }
+.methods-jardin .m10-brand img { width:100%;height:auto }
+.methods-jardin .m10-top-nav { display:flex;align-items:center;gap:8px;margin-left:auto }
+.methods-jardin .m10-top-nav a { display:flex;gap:8px;align-items:center;padding:10px 17px;border-radius:999px;color:#6a826e;font-size:13px }
+.methods-jardin .m10-top-nav .icon { width:18px;height:18px }
+.methods-jardin .m10-top-nav .m10-active { background:#e2efda;color:#225c3e;font-weight:650 }
+.methods-jardin .m10-top-nav .m10-active .icon { fill:currentColor }
+.methods-jardin .m10-top-nav .m10-active-dot { display:none }
+.methods-jardin .m10-menu { height:43px;width:43px;background:#fffef8;border:1px solid var(--m10-line);border-radius:50%;display:grid;place-items:center;color:#215f49 }
+.methods-jardin .m10-menu .icon { width:23px;height:23px }
+.methods-jardin .m10-intro { height:175px;display:flex;align-items:center;position:relative;isolation:isolate;overflow:hidden;border-radius:26px;border:1px solid #d6e6d0;background:#e1eee0 url('../imagenes/inicio-web/lago-hd.png') center 43%/cover;box-shadow:0 7px 24px #3b65401a }
+.methods-jardin .m10-intro::before { content:'';position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,#fbfff6fa,#fbfff6dc 50%,#fbfff640 80%,#fbfff640) }
+.methods-jardin .m10-intro-copy { padding:24px 34px;width:calc(100% - 225px);position:relative;z-index:1 }
+.methods-jardin .m10-eyebrow { display:block;margin:0 0 11px;color:#54765d;font-size:10px;font-weight:650;letter-spacing:.19em }
+.methods-jardin .m10-intro h1 { font:400 43px/1.08 Georgia,serif;letter-spacing:-.04em;color:var(--m10-ink);margin:0 0 13px }
+.methods-jardin .m10-intro p { font-size:14px;line-height:1.6;color:#54725f;margin:0 }
+.methods-jardin .m10-intro-art { position:absolute;right:24px;top:8px;bottom:4px;width:185px;display:flex;align-items:center;justify-content:center }
+.methods-jardin .m10-cloud { width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 6px 6px #92b9b338) }
+.methods-jardin .m10-section-line { display:flex;align-items:center;justify-content:space-between;gap:16px;height:45px;margin:20px 0 16px }
+.methods-jardin .m10-section-line h2 { font:400 23px/1.2 Georgia,serif;letter-spacing:-.02em;margin:0 }
+.methods-jardin .m10-count { font-size:12px;color:#748b75 }
+.methods-jardin .m10-method-grid { display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px }
+.methods-jardin .m10-method-card { --m10-tone:#e5f4f9;--m10-tone-ink:#258ca0;position:relative;min-width:0;height:126px;border:1px solid #dfe9db;border-radius:20px;background:var(--m10-card);box-shadow:0 4px 16px #37582c0b;overflow:hidden }
+.methods-jardin .m10-tone-green { --m10-tone:#eaf3df;--m10-tone-ink:#558a40 }
+.methods-jardin .m10-tone-yellow { --m10-tone:#fbf0d0;--m10-tone-ink:#ac8a23 }
+.methods-jardin .m10-tone-purple { --m10-tone:#efe7f9;--m10-tone-ink:#8c6fb7 }
+.methods-jardin .m10-tone-pink { --m10-tone:#fce8e8;--m10-tone-ink:#c98284 }
+.methods-jardin .m10-method-open { display:flex;align-items:center;gap:17px;padding:0 50px 0 0;min-width:0;width:100%;height:100%;text-align:left;background:transparent;border-radius:inherit;position:relative }
+.methods-jardin .m10-method-picture { position:relative;display:block;width:112px;height:100%;flex:none;overflow:hidden;background:var(--m10-tone) }
+.methods-jardin .m10-method-picture>img { width:100%;height:100%;object-fit:cover }
+.methods-jardin .m10-method-symbol { position:absolute;bottom:9px;left:9px;display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:#fffffff0;color:var(--m10-tone-ink);box-shadow:0 2px 6px #143d2e12 }
+.methods-jardin .m10-method-symbol .icon { width:19px;height:19px }
+.methods-jardin .m10-picture-cat>img { object-fit:contain;object-position:center;background:#eee6f8 }
+.methods-jardin .m10-method-content { display:flex;flex-direction:column;gap:7px;flex:1;min-width:0;padding:10px 0 }
+.methods-jardin .m10-method-title { font:400 18px/1.17 Georgia,serif;letter-spacing:-.02em;color:var(--m10-ink) }
+.methods-jardin .m10-method-sub { font-size:11px;line-height:1.5;color:#6c8270 }
+.methods-jardin .m10-method-arrow { position:absolute;bottom:15px;right:17px;color:#7b9880 }
+.methods-jardin .m10-method-arrow .icon { width:14px;height:17px }
+.methods-jardin .m10-favorite { position:absolute;top:11px;right:10px;width:31px;height:31px;padding:7px;display:grid;place-items:center;border-radius:50%;background:#f5f8ef;color:#90a88d;z-index:2 }
+.methods-jardin .m10-favorite .icon { width:17px;height:17px;stroke-width:1.5 }
+.methods-jardin .m10-favorite[aria-pressed=true] { color:#b96286;background:#fbe7ef }
+.methods-jardin .m10-favorite[aria-pressed=true] .icon { fill:currentColor }
+.methods-jardin .m10-bottom-nav { display:none }
+.methods-jardin .m10-method-card:hover { box-shadow:0 5px 20px #315d3920 }
+@media(max-width:767px) {
+.methods-jardin { padding:14px 16px 110px }
+.methods-jardin .m10-main { width:100% }
+.methods-jardin .m10-topbar { height:60px;margin-bottom:14px;gap:20px }
+.methods-jardin .m10-brand { width:128px }
+.methods-jardin .m10-top-nav { display:none }
+.methods-jardin .m10-menu { margin-left:auto;width:39px;height:39px }
+.methods-jardin .m10-menu .icon { width:22px;height:22px }
+.methods-jardin .m10-intro { height:190px;border-radius:24px;background-position:center 39% }
+.methods-jardin .m10-intro::before { background:linear-gradient(90deg,#fffff8f7,#fffff8cd 60%,#fffff850) }
+.methods-jardin .m10-intro-copy { padding:20px;width:calc(100% - 90px) }
+.methods-jardin .m10-eyebrow { font-size:9px;letter-spacing:.16em;margin-bottom:9px }
+.methods-jardin .m10-intro h1 { font-size:28px;line-height:1.08;letter-spacing:-.035em;margin-bottom:11px }
+.methods-jardin .m10-intro p { font-size:12px;line-height:1.5 }
+.methods-jardin .m10-intro-art { width:115px;right:2px;top:auto;bottom:10px;height:110px }
+.methods-jardin .m10-section-line { height:37px;margin:17px 0 13px;gap:8px }
+.methods-jardin .m10-section-line h2 { font-size:20px }
+.methods-jardin .m10-count { font-size:10px }
+.methods-jardin .m10-method-grid { grid-template-columns:minmax(0,1fr);gap:11px }
+.methods-jardin .m10-method-card { height:111px;border-radius:19px }
+.methods-jardin .m10-method-open { gap:13px;padding-right:46px }
+.methods-jardin .m10-method-picture { width:84px }
+.methods-jardin .m10-method-symbol { left:7px;bottom:7px;width:29px;height:29px }
+.methods-jardin .m10-method-symbol .icon { width:17px;height:17px }
+.methods-jardin .m10-method-content { gap:5px;padding:8px 0 }
+.methods-jardin .m10-method-title { font-size:16px;line-height:1.16 }
+.methods-jardin .m10-method-sub { font-size:11px;line-height:1.4 }
+.methods-jardin .m10-favorite { width:29px;height:29px;top:9px;right:8px;padding:6px }
+.methods-jardin .m10-favorite .icon { width:17px;height:17px }
+.methods-jardin .m10-method-arrow { right:14px;bottom:12px }
+.methods-jardin .m10-bottom-nav { position:fixed;z-index:20;left:14px;right:14px;bottom:14px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:4px 12px;border-radius:999px;border:1px solid white;outline:1px solid #d2e7df;background:linear-gradient(140deg,#fffffff7,#eefbfaee,#f9fff5ee);box-shadow:0 5px 23px #347d7230;backdrop-filter:blur(12px);overflow:hidden }
+.methods-jardin .m10-bottom-nav::before { content:'';position:absolute;z-index:-1;inset:0;background:radial-gradient(ellipse at 0% 70%,#80bd9833,transparent 28%),radial-gradient(ellipse at 100% 40%,#7fc8dc44,transparent 28%);pointer-events:none }
+.methods-jardin .m10-bottom-nav a { position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:4px;min-height:57px;padding:5px 0 9px;font-size:10px;color:#8583ad }
+.methods-jardin .m10-bottom-nav .icon { width:22px;height:22px }
+.methods-jardin .m10-bottom-nav .m10-active { color:#12574a;font-weight:650 }
+.methods-jardin .m10-bottom-nav .m10-active .icon { fill:currentColor }
+.methods-jardin .m10-active-dot { position:absolute;bottom:3px;width:4px;height:4px;border-radius:50%;background:currentColor }
+}
+.methods-jardin .m10-intro-copy { padding: 0; }
+.methods-jardin .m10-method-open { padding: 0; gap: 0; }
+.methods-jardin { background: #eef7f1; color: #174f3d; }
+.methods-jardin { background: linear-gradient(#effaf1b8 0%,#effaf1f8 42%,#f4f8efff 75%),url('../imagenes/inicio-web/lago-hd.png') center top/100% auto no-repeat; padding-bottom: 40px; }
+.methods-jardin .m10-topbar { border-bottom: 1px solid #cbded0; margin-bottom: 28px; }
+.methods-jardin .m10-top-nav a.m10-active, .methods-jardin .m10-top-nav a.m10-is-active, .methods-jardin .m10-top-nav a[aria-current="page"] { background: #e0eddb; color: #16553b; }
+.methods-jardin .m10-intro { height: 202px; padding: 27px 36px; border: 1px solid #ffffffe0; border-radius: 28px; background: linear-gradient(90deg,#fffff8e8,#fffff8a6 70%,transparent),url('../imagenes/inicio-web/lago-hd.png') center 40%/cover; box-shadow: 0 6px 25px #245b431c; }
+.methods-jardin .m10-intro h1 { font-family: Georgia,serif; font-size: 46px; font-weight: 400; line-height: 1.06; letter-spacing: -.045em; color: #174f37; }
+.methods-jardin .m10-intro p { max-width: 610px; color: #456957; line-height: 1.7; }
+.methods-jardin .m10-eyebrow { color: #447059; letter-spacing: .17em; }
+.methods-jardin .m10-intro-art { width: 190px; margin-left: auto; }
+.methods-jardin .m10-cloud { width: 178px; height: 178px; object-fit: contain; }
+.methods-jardin .m10-section-line { margin-top: 25px; padding: 0 7px; }
+.methods-jardin .m10-section-line h2 { font-family: Georgia,serif; font-size: 25px; font-weight: 400; }
+.methods-jardin .m10-count { color: #688063; }
+.methods-jardin .m10-method-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 17px 21px; }
+.methods-jardin .m10-method-card { height: 137px; border: 1px solid #ffffffe6; background: #fffffaf0; border-radius: 24px; box-shadow: 0 7px 22px #4f876619; }
+.methods-jardin .m10-method-picture { width: 151px; flex: 0 0 151px; }
+.methods-jardin .m10-method-picture img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.methods-jardin .m10-method-content { padding: 19px 44px 19px 23px; gap: 8px; }
+.methods-jardin .m10-method-title { font-family: Georgia,serif; font-size: 22px; line-height: 1.12; color: #2b573d; }
+.methods-jardin .m10-method-sub { font-size: 12px; color: #6b8061; line-height: 1.45; }
+.methods-jardin .m10-method-arrow { color: #5d8255; }
+.methods-jardin .m10-favorite { top: 14px; right: 14px; background: #fffff5de; color: #71905f; border-color: #e1ead6; }
+@media (max-width: 1199px) and (min-width: 768px) {
+.methods-jardin .m10-intro h1 { font-size: 37px; }
+.methods-jardin .m10-intro-art { width: 145px; }
+.methods-jardin .m10-cloud { width: 140px; height: 140px; }
+.methods-jardin .m10-method-picture { width: 110px; flex-basis: 110px; }
+.methods-jardin .m10-method-content { padding-left: 16px; }
+.methods-jardin .m10-method-title { font-size: 19px; }
+}
+@media (max-width: 767px) {
+.methods-jardin { padding: 14px 16px 110px; background: linear-gradient(#effaf1d9 0%,#effaf1f5 25%,#f4f8efff 60%),url('../imagenes/inicio-web/lago-hd.png') center top/auto 390px no-repeat; }
+.methods-jardin .m10-topbar { height: 60px; margin-bottom: 17px; border-color: #cbded066; }
+.methods-jardin .m10-intro { height: 208px; padding: 21px; border-radius: 25px; background: linear-gradient(110deg,#fffff8e8,#fffff8bd 76%,#fffff864),url('../imagenes/inicio-web/lago-hd.png') center 40%/cover; }
+.methods-jardin .m10-intro-copy { width: calc(100% - 68px); max-width: calc(100% - 68px); }
+.methods-jardin .m10-intro h1 { font-size: 30px; line-height: 1.06; letter-spacing: -.04em; }
+.methods-jardin .m10-intro p { font-size: 12px; line-height: 1.65; max-width: 232px; }
+.methods-jardin .m10-eyebrow { font-size: 9px; }
+.methods-jardin .m10-intro-art { position: absolute; width: 98px; right: 10px; bottom: 20px; margin: 0; }
+.methods-jardin .m10-cloud { width: 98px; height: 98px; }
+.methods-jardin .m10-section-line { margin-top: 21px; padding: 0 2px; }
+.methods-jardin .m10-section-line h2 { font-size: 21px; }
+.methods-jardin .m10-count { font-size: 10px; }
+.methods-jardin .m10-method-grid { grid-template-columns: 1fr; gap: 12px; }
+.methods-jardin .m10-method-card { height: 116px; border-radius: 21px; background: #fffef9f5; border-color: #ffffffed; }
+.methods-jardin .m10-method-picture { width: 97px; flex-basis: 97px; }
+.methods-jardin .m10-method-content { padding: 13px 39px 13px 16px; gap: 7px; }
+.methods-jardin .m10-method-title { font-size: 16px; line-height: 1.15; }
+.methods-jardin .m10-method-sub { font-size: 10.5px; line-height: 1.4; }
+.methods-jardin .m10-favorite { top: 10px; right: 10px; }
+.methods-jardin .m10-bottom-nav { background: linear-gradient(145deg,#fffef9f0,#e6f6e8f2,#e7f4faf2); border-color: #fff; }
+}
+
+/* Ajustes de pantallas intermedias sin alterar las dos vistas aprobadas. */
+@media (min-width:768px) and (max-width:999px) {
+ .methods-jardin { padding-left:28px; padding-right:28px; }
+ .methods-jardin .m10-topbar { gap:16px; }
+ .methods-jardin .m10-brand { width:145px; }
+ .methods-jardin .m10-top-nav { gap:0; }
+ .methods-jardin .m10-top-nav a { padding:9px 10px; gap:6px; }
+ .methods-jardin .m10-intro-copy { width:calc(100% - 150px); }
+ .methods-jardin .m10-method-grid { grid-template-columns:minmax(0,1fr); }
+}
+@media (max-width:359px) {
+ .methods-jardin { padding-left:12px; padding-right:12px; }
+ .methods-jardin .m10-intro { padding:18px; }
+ .methods-jardin .m10-intro-copy { width:calc(100% - 45px); max-width:calc(100% - 45px); }
+ .methods-jardin .m10-intro h1 { font-size:27px; }
+ .methods-jardin .m10-intro-art { width:77px; right:3px; }
+ .methods-jardin .m10-cloud { width:77px; height:77px; }
+ .methods-jardin .m10-method-picture { width:76px; flex-basis:76px; }
+ .methods-jardin .m10-method-content { padding-left:11px; padding-right:31px; }
+ .methods-jardin .m10-method-title { font-size:15px; }
+ .methods-jardin .m10-method-sub { font-size:10px; }
+ .methods-jardin .m10-count { font-size:9px; }
+}

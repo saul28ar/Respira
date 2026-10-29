@@ -22,11 +22,11 @@ function navigation(active) {
   </nav>`;
 }
 
-export function renderFrame(content, { active = 'home', welcome = false, home = false, desktopHome = false, backdrop = '' } = {}) {
-  return `<div class="app-shell${home ? desktopHome ? ' app-shell-desktop-home' : ' app-shell-home' : ''}" data-interface-theme="botanico">
+export function renderFrame(content, { active = 'home', welcome = false, home = false, desktopHome = false, methods = false, backdrop = '' } = {}) {
+  return `<div class="app-shell${home ? desktopHome ? ' app-shell-desktop-home' : ' app-shell-home' : methods ? ' app-shell-methods' : ''}" data-interface-theme="botanico">
     ${backdrop}
     <div class="app-interface" data-component="respira-interface">
-      ${welcome || desktopHome ? '' : `<header class="app-header interface-header">${brand()}${menu()}</header>${navigation(active)}`}
+      ${welcome || desktopHome || methods ? '' : `<header class="app-header interface-header">${brand()}${menu()}</header>${navigation(active)}`}
     </div>
     ${content}
   </div>`;

@@ -1,14 +1,17 @@
-RESPIRA 4.5 — HOME JARDÍN 3 Y WELCOME APROBADOS
+RESPIRA 4.6 — MÉTODOS 10, HOME Y WELCOME APROBADOS
 
 1. Extrae TODO el ZIP.
 2. Para cargarlo en tu aplicación o sitio, reemplaza sus archivos por el contenido completo de este paquete. Conserva las carpetas y la misma dirección del sitio.
 3. index.html debe quedar en la carpeta principal, junto a sw.js, css, js, imagenes e iconos.
 4. Recarga la página. Si aparece la versión anterior, cierra esa pestaña y vuelve a abrirla; en computadora también puedes usar Ctrl+F5.
 
+También se entrega un ZIP SOLO CAMBIOS DESDE 4.5. Si ya tienes Respira 4.5 (Home Jardín 3), basta copiar sus archivos sobre esa versión, conservando los demás. Si no tienes esa base, usa este paquete COMPLETO. Consulta ACTUALIZAR_SOLO_CAMBIOS.txt.
+
 PARA VERLO EN WINDOWS SIN SUBIRLO
 Abre INICIAR_RESPIRA.cmd. Mantén su ventana abierta mientras uses Respira.
 
 INCLUYE
+- Métodos 10, Jardín ligero, para computadora y celular, con 13 métodos y favoritos funcionales.
 - Home Jardín, propuesta 3 aprobada, para computadora.
 - Los cinco gráficos de mayor resolución originales de la propuesta en imagenes/inicio-web/.
 - Welcome Esmeralda 2 para computadora.
