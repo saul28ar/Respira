@@ -1,12 +1,12 @@
-# Respira 4.6 · Métodos 10, Home y welcome aprobados
+# Respira 4.7 · Home 1, Favoritos 4 y Más 3
 
-Esta entrega integra Métodos 10, Jardín ligero, para computadora y celular, con sus 13 ejercicios y favoritos reales. Conserva el Home Jardín 3 de computadora, el welcome Esmeralda 2 de computadora, la portada aprobada para celular y los cuatro Home de celular anteriores. Las pantallas utilizan texto, navegación y botones reales en HTML, CSS y JavaScript, junto con los gráficos aprobados de mayor resolución.
+Esta actualización integra el Home móvil Jardín sereno 1, Favoritos 4 y Más 3, tal cual las propuestas aprobadas. Corrige las franjas de color por encima y debajo del welcome móvil: el mismo arte cubre el alto visible, conserva su proporción y ajusta el encuadre lateral en teléfonos altos. El Home web Jardín 3, Métodos 10 y el welcome Esmeralda 2 de computadora conservan su diseño. Los controles y textos funcionan en HTML, CSS y JavaScript, con los gráficos aprobados sin regenerarlos.
 
-Se entregan dos ZIP: **completo**, para instalar o cargar todos los archivos, y **solo cambios desde 4.5**, para actualizar la entrega anterior sin repetir las imágenes que ya tienes. El segundo se aplica sobre Respira 4.5, Home Jardín 3 aprobado. Consulta `ACTUALIZAR_SOLO_CAMBIOS.txt`.
+Se entrega **un solo ZIP de cambios desde Respira 4.6**. Incluye juntos el Home móvil aprobado pendiente y las dos secciones nuevas. Se mantiene un único respaldo completo en `respaldo/Respira_RESPALDO_ACTUAL.zip`, que se reemplaza al verificar cada entrega. Consulta `ENTREGAS.md` y la guía incluida en el parche.
 
 ## Para cargar esta actualización
 
-Extrae todo el ZIP. Copia su contenido a la carpeta principal de la aplicación o del sitio, conservando las carpetas `css/`, `js/`, `imagenes/` e `iconos/`. `index.html` debe quedar en esa raíz. Para el sitio que ya usas, conserva la misma dirección y ruta.
+Extrae todo el ZIP de cambios sobre la carpeta donde ya tienes Respira 4.6. Reemplaza los archivos del mismo nombre y conserva los demás, incluidas `imagenes/` e `iconos/`. `index.html` debe quedar en la raíz de la app. Para el sitio que ya usas, conserva la misma dirección y ruta.
 
 Después de subirlo, recarga la página. Si el navegador muestra la versión anterior, cierra esa pestaña y ábrela nuevamente; en computadora también puedes usar Ctrl+F5. Se actualizó la caché sin conexión para incluir los nuevos archivos.
 
@@ -16,7 +16,7 @@ Los cinco gráficos del Home Jardín están en `imagenes/inicio-web/`, sin modif
 
 ## Cómo abrirla en Windows
 
-1. Extrae **todo el ZIP** en una carpeta.
+1. Aplica **todo el ZIP de cambios sobre la carpeta de Respira 4.6**.
 2. Abre **INICIAR_RESPIRA.cmd** con doble clic.
 3. Se abrirá el navegador en `http://127.0.0.1:8765/`.
 4. Mantén la ventana de Respira abierta mientras la uses. Para detenerla, cierra esa ventana.
@@ -40,7 +40,7 @@ El lanzador usa PowerShell incluido en Windows. No requiere instalar paquetes ni
 | --- | --- | --- |
 | Entrada | `index.html` | Carga la aplicación y sus estilos. |
 | Contenido | `js/data.js` | Ejercicios, historias, mensajes y datos de mascotas. |
-| Inicio de celular | `js/components/home.js` | Saludo, compañía, tarjetas, calma y diario aprobados. |
+| Inicio de celular | `js/components/home-mobile-jardin.js`, `css/home-mobile-jardin.css` | Home Jardín sereno 1 aprobado, con compañía, calma, cuatro tarjetas y diario. |
 | Inicio de computadora | `js/components/home-desktop.js` | Home Jardín 3 aprobado, con enlaces, tarjetas y elección de compañía funcionales. |
 | Arte del inicio | `js/components/home-art.js` | Fondos y ventanas decorativas de las imágenes originales, sin textos ni controles dibujados. |
 | Mascotas | `js/components/companions.js` | Bienvenida, selección, biblioteca y perfiles. |
@@ -51,7 +51,9 @@ El lanzador usa PowerShell incluido en Windows. No requiere instalar paquetes ni
 | Ejercicios | `js/components/activities.js` | Listados, ejercicios y formulario del diario. |
 | Métodos 10 | `js/components/methods.js` | Página aprobada de Métodos, con ejercicios y favoritos reales. |
 | Diseño de Métodos | `css/methods.css` | Jardín ligero 10 adaptable a computadora y celular, con estilos aislados. |
-| Opciones | `js/components/settings.js` | Más opciones y privacidad. |
+| Favoritos 4 | `js/components/favorites.js`, `css/favorites.css` | Favoritos reales con miniaturas circulares y estado vacío. |
+| Más 3 | `js/components/more-jardin.js`, `css/more-jardin.css` | Diario destacado, compañía e información de Respira. |
+| Información | `js/components/settings.js` | Acerca de Respira y privacidad. |
 | Piezas compartidas | `js/components/common.js` | Reutiliza la marca y define el botón Volver. |
 | Interfaz compartida | `js/components/interface.js` | Agrupa logotipo, menú superior y barra inferior bajo un mismo tema. |
 | Navegación y acciones | `js/app.js` | Conecta los botones con las pantallas y funciones. |
@@ -80,7 +82,9 @@ El logo conserva el arte recibido: se muestra una pequeña ventana del PNG trans
 
 La carpeta `referencias/` no se descarga al usar la aplicación ni se guarda en su caché sin conexión. Los recursos que se utilizan se copian explícitamente a `imagenes/`: marca, paisajes y arte decorativo.
 
-## Inicio, siguiente revisión
+## Referencia del inicio anterior
+
+La sección siguiente describe el inicio anterior de la base. Desde 4.7 el Home móvil usa Jardín sereno 1 y reutiliza directamente las ilustraciones HD de `imagenes/inicio-web/`, con texto, iconos y controles independientes. Véase HOME_MOVIL_APROBADO.md.
 
 El inicio usa ahora el paisaje limpio detrás del encabezado y el saludo. La mascota aparece al lado del texto; sin compañía elegida se muestra el selector de las tres mascotas. Las cuatro tarjetas conservan su distribución de dos columnas, el botón de calma usa azul y el diario incorpora el gatito de la referencia.
 

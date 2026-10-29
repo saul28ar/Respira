@@ -15,3 +15,7 @@ Archivos originales incluidos:
 El botón ilustrado tiene un control HTML independiente con foco y nombre accesible. Su contenido visual usa la misma zona del PNG aprobado para conservar la letra menor y su ubicación exacta. El botón original transparente permanece incluido para futuras ediciones. Ambos botones Iniciar de computadora y el de celular abren el selector de compañía.
 
 Los cuatro inicios aprobados se conservan sin cambios visuales. Esta entrega no publica el sitio automáticamente.
+# Corrección de encuadre · 29 de octubre de 2026
+
+El usuario pidió quitar las franjas de color que aparecían encima y debajo de la portada en celular. `css/welcome-mobile-v2.css` hace que el mismo PNG aprobado cubra la altura visible, conservando su proporción. En teléfonos altos ajusta el encuadre lateral; en horizontal permite bajar por la portada hasta Iniciar. No se regeneran el logo, las mascotas ni el botón. La presentación de computadora se conserva.
+

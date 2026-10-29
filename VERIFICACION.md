@@ -1,4 +1,16 @@
-# Revisión de Respira 4.6 · Métodos 10 aprobado
+# Revisión de Respira 4.7 · Home 1, Favoritos 4 y Más 3
+
+Actualización del 29 de octubre de 2026, en Chrome para Windows:
+
+- 25 comprobaciones del conjunto aprobadas: navegación, compañía, favoritos vacíos y completos, persistencia, las tres opciones de Más, diario y temporizador.
+- 11 comparaciones visuales aprobadas: nueve exactas y dos con diferencias mínimas de rasterizado del arte. Home móvil 1, Favoritos 4 móvil y web y Más 3 móvil coinciden píxel por píxel. Más 3 web conserva composición y textos exactos; solo 521 píxeles presentan pequeñas variaciones de rasterizado histórico, con RMS de 0,087/255.
+- Home móvil verificado con y sin cada una de las tres mascotas a 360, 390 y 430 píxeles: 12 comprobaciones aprobadas.
+- Welcome móvil revisado a 360×800, 390×844, 412×915 y 844×390 táctil. La imagen cubre el alto en vertical sin bandas de relleno. En horizontal conserva su proporción y permite llegar a Iniciar mediante desplazamiento.
+- Regresión visual del welcome web, Home web y Métodos a 1600×1000 y 1024×768: sin cambios de diseño; únicamente redondeos de hasta 1/255 en una captura del Home web.
+- Se reutilizan los PNG aprobados sin alterar sus bytes. Los módulos y estilos nuevos están incluidos en la caché 4.7.
+- El empaquetador verifica por CRC y SHA256 que la base 4.6 y el parche produzcan exactamente el respaldo completo actualizado.
+
+## Historial: Respira 4.6 · Métodos 10 aprobado
 
 Actualización del 28 de octubre de 2026:
 

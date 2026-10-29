@@ -1,57 +1,75 @@
 {
-  "version": "Respira 4.6 · Métodos 10 aprobado",
-  "fecha": "2026-10-28",
   "metodos": "Jardín ligero 10 para web y celular",
   "home": "Jardín 3 web y los cuatro estados móviles conservados",
   "welcome": "Esmeralda 2 web y portada móvil conservados",
+  "version": "Respira 4.7 · Home 1, Favoritos 4, Más 3 y portada móvil sin franjas",
+  "version_id": "4.7",
+  "titulo": "Home 1, Favoritos 4, Más 3 y portada móvil sin franjas",
+  "fecha": "2026-10-29",
   "verificacion": {
-    "http_offline": 24,
-    "regresion": 15,
-    "invariantes": 56,
-    "comparacion_visual": [
+    "paquete": "CRC y SHA256 verificados; base + parche equivale exactamente al respaldo actualizado.",
+    "funcionales": [
       {
-        "pantalla": "Web",
-        "dimensiones": [
-          2400,
-          1650
-        ],
-        "pixel_identico": true
+        "informe": "work/qa-conjunta-47/informe.json",
+        "sha256": "44c6ca4a1372f5b80b005f6f3ea64cce8d54e1f75ff006dcf83ebfc42d13609c",
+        "passed": 25,
+        "failed": 0
       },
       {
-        "pantalla": "Movil",
-        "dimensiones": [
-          860,
-          1864
-        ],
-        "pixel_identico": true
+        "informe": "work/qa-conjunta-47/comparacion.json",
+        "sha256": "0b836a886671a14a3aae0de71ed92061e4849767303ec80116c865011b4c7185",
+        "passed": 11,
+        "failed": 0
+      },
+      {
+        "informe": "work/home1-integration/verificacion.json",
+        "sha256": "f6b090ba1b6eae872826d44d0d8abd56ca47ddaef93fbc524e14c1c0ed729603",
+        "passed": 12,
+        "failed": 0
+      },
+      {
+        "informe": "work/favorites-more-integration/verificacion.json",
+        "sha256": "6c32e9f1a0df2b806d77cc4fdcbe99c51c9f805fe3ff59cfd94ac5473eab5c69",
+        "passed": 4,
+        "failed": 0
       }
     ]
   },
   "archivos": [
     {
       "archivo": "ACTUALIZAR_RESPIRA.txt",
-      "bytes": 1428,
-      "sha256": "f67bb4632c5587fdd6788b23c6ff9146f48830d2ff552bfb6ca56c6c654d0217"
+      "bytes": 1510,
+      "sha256": "ae061c77e88fb351900749c62bda403d303521769b293e18d98e91c60df027db"
     },
     {
       "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
-      "bytes": 840,
-      "sha256": "a8e285fbbbb66136e2e7dcf6f4decb1321ef366228a73cd5811adf699836ce24"
+      "bytes": 429,
+      "sha256": "6fb5eb047642268a3127395905ad27464c62f7edfc159351fda232e5731e40c4"
     },
     {
       "archivo": "DISENO_APROBADO.md",
-      "bytes": 1430,
-      "sha256": "dc53a6ed8b84aa52490a322e452ec2b7e9929e0f6617f2b94daebade3803285b"
+      "bytes": 1810,
+      "sha256": "12e0a345fd550fd5faa6cecf7e509975a270084899e5d719e6729f8e454e8dc8"
     },
     {
       "archivo": "ENTREGAS.md",
-      "bytes": 852,
-      "sha256": "032131fa789017fb5254aa2f9d94f1f724d13c03ff278710d56db5bc33ba1e42"
+      "bytes": 1858,
+      "sha256": "d9c2061fce1455e3b8dedee564dd478f3483ac1be982be8d10f9418d141ffef9"
+    },
+    {
+      "archivo": "FAVORITOS_APROBADO.md",
+      "bytes": 1232,
+      "sha256": "cab60d5572ca35845163bceb469dfa3dbd8efe5078735179d9ea0915419ee1d9"
+    },
+    {
+      "archivo": "HOME_MOVIL_APROBADO.md",
+      "bytes": 1794,
+      "sha256": "b7adebbe17a89495ab856a7b6c02c7e627c221bc8a5a5d113dd7945016781c2b"
     },
     {
       "archivo": "HOME_WEB_APROBADO.md",
-      "bytes": 1368,
-      "sha256": "1376ffcccb720c1b8662151c5bcbc45bb47cb769cea4957e5cf95d4f1a9c3033"
+      "bytes": 1628,
+      "sha256": "f94253ffe5d683641d57a064c44bc13e15c528d10493145c03c53839493510bc"
     },
     {
       "archivo": "INICIAR_RESPIRA.cmd",
@@ -60,8 +78,13 @@
     },
     {
       "archivo": "LEEME.md",
-      "bytes": 10683,
-      "sha256": "249930f725997cf4c09dfff2a0dd9407b116dcf1614b9ca859e41ea002443793"
+      "bytes": 11432,
+      "sha256": "f3a33d339cd49ca7b22ece52c901ed739e40b665802b7ece8258b4161d50fc31"
+    },
+    {
+      "archivo": "MAS_APROBADO.md",
+      "bytes": 1008,
+      "sha256": "8b32cecaa3509beafc5237f27c00b75ed0480a3b417f633b540017e37ad9d13d"
     },
     {
       "archivo": "METODOS_APROBADO.md",
@@ -75,8 +98,8 @@
     },
     {
       "archivo": "VERIFICACION.md",
-      "bytes": 7436,
-      "sha256": "38cf6bd90127f5fff03731a20ae2a43b9c23174fcb2f63ad23dca9f07c27cb34"
+      "bytes": 8841,
+      "sha256": "3bd150780454ef69feff874f9bdc8efe0836b259013fbfe759aa34b1427e1b08"
     },
     {
       "archivo": "WELCOME_ALCANCE.md",
@@ -85,8 +108,8 @@
     },
     {
       "archivo": "WELCOME_APROBADO.md",
-      "bytes": 1250,
-      "sha256": "6fed444f225b844e9f005a41882bdca7d9dbc5854953362d1e2e0bc4a53a7e83"
+      "bytes": 1721,
+      "sha256": "9962887e3c31f34fd1ce8711efd062f6ae9aa088f5e37791cf8008a22de0269f"
     },
     {
       "archivo": "css/base.css",
@@ -99,9 +122,19 @@
       "sha256": "152f2be63a94eed195dbe21b77bf0bfa27124548d34749ccf169b797397a72c3"
     },
     {
+      "archivo": "css/favorites.css",
+      "bytes": 14365,
+      "sha256": "c18865149bd7b438a8070d7e0ecb6c206f70dd29a42544c467c96d0d5dda04ab"
+    },
+    {
       "archivo": "css/home-desktop.css",
       "bytes": 12748,
       "sha256": "b7f1478ca3de454fdb63cad5ec12d678b2d1e49fba8c261e1ecc5b31008eeba3"
+    },
+    {
+      "archivo": "css/home-mobile-jardin.css",
+      "bytes": 11431,
+      "sha256": "e6d79899433a097b3a675ebbc7f8b0ab486fca6bb2466618628c011d649ed851"
     },
     {
       "archivo": "css/home.css",
@@ -119,14 +152,19 @@
       "sha256": "4cd50608d835565bf86281843c7a831308519d3f8078b0fd4c100ec00d871b69"
     },
     {
+      "archivo": "css/more-jardin.css",
+      "bytes": 15316,
+      "sha256": "df20e3c2bab1a333e1b965894e1e983b3b6f9dacee53045cdcba8beb2a88e2d7"
+    },
+    {
       "archivo": "css/welcome-desktop.css",
       "bytes": 5808,
       "sha256": "dfa737855bea86bfd7e2ab8483db9439738cc2700b399ebb4dcfba62a068263d"
     },
     {
       "archivo": "css/welcome-mobile-v2.css",
-      "bytes": 2041,
-      "sha256": "83411e3b8a1124396ce74ac02b7f75100ae89a8404c2cac560e9bd6d708e7c33"
+      "bytes": 2157,
+      "sha256": "a57016f761c43c9cf08f36ae56b6c94804566832ea76e8db6c3eae5c9e3a5816"
     },
     {
       "archivo": "css/welcome-mobile.css",
@@ -265,13 +303,13 @@
     },
     {
       "archivo": "index.html",
-      "bytes": 1416,
-      "sha256": "efa48c65dd2d8f37891231c605e40e7c3a9af21f389b6cd554662b8f6dad5d4e"
+      "bytes": 1586,
+      "sha256": "b1196b3009a8376d9938e7898e2a9bead69bbceca298612878f452aec8e90cdc"
     },
     {
       "archivo": "js/app.js",
-      "bytes": 13424,
-      "sha256": "a3f8a7b0a5582a760c7b80ff8c2548797d230f1519d537bb9b98e7a684d12f83"
+      "bytes": 13840,
+      "sha256": "1488b3825e0a41ffb8d11c32f47b16af6ff4988ed7f8e4b8ff8b371f523c2d2a"
     },
     {
       "archivo": "js/components/activities.js",
@@ -289,6 +327,11 @@
       "sha256": "810109095ec3b38ccd9c96660adf9cf49901e5f196504350b791cf30063e2328"
     },
     {
+      "archivo": "js/components/favorites.js",
+      "bytes": 3974,
+      "sha256": "11d64cdba0e9c3ff6d415d355cdbba9f700a6ec4a7f14dccad5b434800329db2"
+    },
+    {
       "archivo": "js/components/home-art.js",
       "bytes": 1053,
       "sha256": "7529c88f64299c97401565e896a55407d2b4f04424bad1dbe8f489df5c24e62d"
@@ -299,19 +342,29 @@
       "sha256": "b40d95178aff1ef8318480a3dc64782a0b0ffee492d2505dc878f1e05d3c33d8"
     },
     {
+      "archivo": "js/components/home-mobile-jardin.js",
+      "bytes": 4411,
+      "sha256": "52d3e6bb5ac4e556fed49c2df33e26b3c236f8dbfde07f1fe9e738fd0e031acd"
+    },
+    {
       "archivo": "js/components/home.js",
       "bytes": 3468,
       "sha256": "14aa1449d47834438c1a1ce54befafdc3e579efa9f918cb2fda10a568369d369"
     },
     {
       "archivo": "js/components/interface.js",
-      "bytes": 2479,
-      "sha256": "bcfca8c32a747ff7761a4b1849221e2c884c7283c6f76b28897a47df449d56be"
+      "bytes": 2593,
+      "sha256": "d52ceeb0456d2515e4e2d9324e559ffc659b7e232254f1a12303712672dca1d2"
     },
     {
       "archivo": "js/components/methods.js",
       "bytes": 3417,
       "sha256": "b4fa4a2db43fdc423898b123a90ab9ecea48f311e69d78966098eed57260fc34"
+    },
+    {
+      "archivo": "js/components/more-jardin.js",
+      "bytes": 3942,
+      "sha256": "64d49511cd948de8e23d93386de1bbd87c0385b48f7c31475f6ffe9102e06b25"
     },
     {
       "archivo": "js/components/settings.js",
@@ -365,8 +418,8 @@
     },
     {
       "archivo": "sw.js",
-      "bytes": 3101,
-      "sha256": "90d4cdb899f5b71819dc1ce2531784c5c3896fdc12e6755c4937c2b489cb3fcd"
+      "bytes": 3309,
+      "sha256": "40da074061814f4f6dcc96a5ac49ff8a001bc1b18e0b4c48ba57a07e9cc37ad5"
     }
   ]
 }

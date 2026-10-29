@@ -16,3 +16,5 @@ El Home anterior de celular permanece en `js/components/home.js` y `css/home.css
 Si ya hay una compañía elegida para hoy, el mismo panel muestra esa mascota y abre su perfil. El resto del diseño y las funciones se mantienen. Los welcome aprobados de computadora y celular conservan su diseño.
 
 Esta entrega se prepara para cargarla manualmente; no publica el sitio automáticamente.
+
+Actualización posterior del 28 de octubre de 2026: la nueva referencia del Home móvil es Jardín sereno 1, aprobada y reservada para la próxima entrega junto con otro cambio. Véase HOME_MOVIL_APROBADO.md. Esta elección no modifica el Home web Jardín 3.

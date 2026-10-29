@@ -32,18 +32,25 @@
   .welcome-page .welcome-desktop { display: none; }
   .welcome-page .welcome-mobile {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     place-items: center;
     min-height: 100svh;
-    padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+    min-height: 100dvh;
+    padding: 0;
     overflow: hidden;
-    background: linear-gradient(#78c8f7 0%, #b5e4fd 30%, #c8f0f5 50%, #48c5d2 74%, #4b956a 100%);
+    background: #69c6e9;
   }
   .welcome-page .welcome-mobile-stage {
     position: relative;
     isolation: isolate;
-    width: min(100%, 600px, calc((100svh - env(safe-area-inset-top) - env(safe-area-inset-bottom)) * 941 / 1671));
+    /* La misma portada cubre la altura del teléfono sin bandas de relleno.
+       En horizontal conserva su proporción y permite bajar hasta Iniciar. */
+    width: max(100vw, calc(100svh * 941 / 1671));
+    width: max(100vw, calc(100dvh * 941 / 1671));
+    max-width: none;
+    min-width: 0;
     aspect-ratio: 941 / 1671;
-    margin: 0 auto;
+    margin: 0;
   }
   .welcome-page .welcome-mobile-art {
     display: block;

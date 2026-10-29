@@ -1,5 +1,11 @@
-const CACHE = 'respira-code-4-6-metodos-jardin-v10';
+const CACHE = 'respira-code-4-7-home1-favoritos4-mas3';
 const ASSETS = [
+  "./css/home-mobile-jardin.css",
+  "./js/components/home-mobile-jardin.js",
+  "./css/favorites.css",
+  "./js/components/favorites.js",
+  "./css/more-jardin.css",
+  "./js/components/more-jardin.js",
   "./css/methods.css",
   "./js/components/methods.js",
   "./css/home-desktop.css",

@@ -10,6 +10,8 @@ La entrega `Respira_4_2_Inicio_APROBADO.zip` contiene una copia de los archivos 
 
 ## Para cargar la aplicación
 
+Actualización posterior del 28 de octubre de 2026: el usuario eligió expresamente el nuevo Home móvil Jardín sereno 1. La referencia anterior de las cuatro vistas móviles queda sustituida por esta nueva aprobación para la siguiente entrega. Véase HOME_MOVIL_APROBADO.md. Los archivos de la última entrega permanecen como base hasta integrar los cambios aprobados juntos.
+
 Actualización del 28 de octubre de 2026: el usuario aprobó por separado el Home de computadora Jardín, propuesta 3. Esa nueva presentación sustituye el Home web en pantallas grandes. Los cuatro Home de celular descritos arriba siguen protegidos y sin cambios visuales. Véase HOME_WEB_APROBADO.md.
 
 Extraer todo el ZIP y conservar las carpetas. El contenido debe quedar en la carpeta principal de la aplicación o del sitio: `index.html`, `sw.js`, `manifest.webmanifest`, `css/`, `js/`, `imagenes/` e `iconos/`.

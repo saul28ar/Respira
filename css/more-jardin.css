@@ -1,0 +1,167 @@
+/* Diseño aprobado: mas-cuatro, propuesta 3. Estilos aislados. */
+body.more-jardin-view{background:#eef7f1}
+body.more-jardin-view #app{padding-bottom:0}
+.more-jardin *{box-sizing:border-box}
+.more-jardin,.more-jardin{margin:0;min-height:100%}
+.more-jardin{font:16px/1.5 "Segoe UI",Arial,sans-serif;color:#174e3c;background:#eef7ef;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.more-jardin a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.more-jardin a:focus-visible{outline:3px solid #398eab;outline-offset:4px}
+.more-jardin img{display:block;max-width:100%}
+.more-jardin .m3-icon{display:inline-block;vertical-align:middle;width:24px;height:24px;flex:none}
+.more-jardin .m3-page{position:relative;isolation:isolate;min-height:100svh;overflow:hidden;padding:28px 64px 30px;background:linear-gradient(#edf8f0de,#f4f9eff5 55%,#eef8ef)}
+.more-jardin .m3-frame{max-width:1360px;margin:auto;position:relative;z-index:1}
+.more-jardin .m3-ambient{position:absolute;z-index:-2;inset:0 0 auto;height:570px;background:url('../imagenes/inicio-web/lago-hd.png') center top/100% auto no-repeat;opacity:.4;mask-image:linear-gradient(#000,transparent 95%)}
+.more-jardin .m3-waves{position:absolute;z-index:-1;bottom:0;left:0;width:100%;height:600px;opacity:.17;pointer-events:none}
+.more-jardin .m3-topbar{display:flex;align-items:center;gap:30px;height:80px;border-bottom:1px solid #cbded0;margin-bottom:28px}
+.more-jardin .m3-brand{width:165px;flex:none}
+.more-jardin .m3-brand img{width:100%;height:auto}
+.more-jardin .m3-top-nav{display:flex;gap:8px;margin-left:auto}
+.more-jardin .m3-top-nav a{display:flex;align-items:center;gap:8px;padding:10px 17px;font-size:13px;color:#6a826e;border-radius:999px}
+.more-jardin .m3-top-nav .m3-icon{width:18px;height:18px}
+.more-jardin .m3-top-nav a.m3-active{background:#e0eddb;color:#16553b;font-weight:650}
+.more-jardin .m3-top-nav .m3-active>.m3-icon{fill:currentColor}
+.more-jardin .m3-active-dot{display:none}
+.more-jardin .m3-menu{width:43px;height:43px;display:grid;place-items:center;background:#fffef8;border:1px solid #dce8d8;border-radius:50%;color:#215f49}
+.more-jardin .m3-menu .m3-icon{width:23px;height:23px}
+.more-jardin .m3-intro{height:220px;padding:30px 36px;position:relative;isolation:isolate;overflow:hidden;border-radius:28px;border:1px solid #ffffffe0;background:linear-gradient(90deg,#fffff8f2,#fffff8bf 65%,#fffff840),url('../imagenes/inicio-web/lago-hd.png') center 40%/cover;box-shadow:0 6px 25px #245b431c;display:flex;align-items:center;margin-bottom:28px}
+.more-jardin .m3-intro-copy{position:relative;z-index:1;max-width:72%}
+.more-jardin .m3-eyebrow{display:block;color:#447059;font-size:10px;font-weight:650;letter-spacing:.17em;margin-bottom:13px}
+.more-jardin h1{font:400 48px/1.06 Georgia,serif;letter-spacing:-.045em;color:#174f37;margin:0 0 17px}
+.more-jardin .m3-intro p{margin:0;max-width:550px;font-size:14px;line-height:1.7;color:#456957}
+.more-jardin .m3-intro-pet{position:absolute;right:38px;bottom:7px;width:209px;height:209px;object-fit:contain;filter:drop-shadow(0 6px 6px #92b9b328)}
+.more-jardin .m3-options{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.more-jardin .m3-option{min-width:0;display:flex;flex-direction:column;overflow:hidden;background:#fffefa;border:1px solid #ffffffe6;border-radius:25px;box-shadow:0 7px 22px #4f876619}
+.more-jardin .m3-option-art{height:165px;position:relative;isolation:isolate;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.more-jardin .m3-journal .m3-option-art{background:radial-gradient(ellipse at 50% 88%,#d8c7ee,#f7f2fd 75%)}
+.more-jardin .m3-cat{width:245px;height:194px;object-fit:contain;object-position:center bottom;align-self:flex-end;margin-bottom:-11px}
+.more-jardin .m3-companion .m3-option-art{background:linear-gradient(#eff8e9,#deeddd)}
+.more-jardin .m3-companion .m3-option-art::before{content:'';position:absolute;z-index:-1;inset:0;background:linear-gradient(#edf6e4e8,#edf6e4db),url('../imagenes/inicio-web/lago-hd.png') center 60%/cover}
+.more-jardin .m3-trio{display:flex;align-items:center;justify-content:center;width:90%;max-width:330px;height:100%}
+.more-jardin .m3-trio img{width:41%;height:auto;flex:none;filter:drop-shadow(0 5px 4px #44874d18)}
+.more-jardin .m3-trio img+img{margin-left:-12%}
+.more-jardin .m3-trio img:nth-child(2){transform:translateY(12px);z-index:1}
+.more-jardin .m3-about .m3-option-art{background:#e5f3e8}
+.more-jardin .m3-landscape{width:100%;height:100%;object-fit:cover}
+.more-jardin .m3-about .m3-option-art::after{content:'';position:absolute;inset:0;background:#f8fff51f}
+.more-jardin .m3-art-leaf{display:none}
+.more-jardin .m3-option-panel{display:flex;align-items:center;gap:13px;padding:22px 20px;min-width:0;flex:1}
+.more-jardin .m3-symbol{width:39px;height:39px;display:grid;place-items:center;border-radius:13px;background:#e7f1dc;color:#6f9453;flex:none}
+.more-jardin .m3-symbol .m3-icon{width:23px;height:23px}
+.more-jardin .m3-journal .m3-symbol{background:#ede2fb;color:#9271bc}
+.more-jardin .m3-about .m3-symbol{background:#dff1ec;color:#539076}
+.more-jardin .m3-option-copy{display:flex;flex-direction:column;gap:10px;min-width:0;flex:1}
+.more-jardin .m3-option-copy strong{font:400 24px/1.13 Georgia,serif;letter-spacing:-.025em;color:#2b573d}
+.more-jardin .m3-option-copy small{font-size:12px;line-height:1.55;color:#6b8061}
+.more-jardin .m3-arrow{flex:none;color:#71926c}
+.more-jardin .m3-arrow .m3-icon{width:15px;height:19px}
+.more-jardin .m3-quiet-note{display:flex;align-items:center;justify-content:center;gap:12px;margin:35px 0 0;color:#5e805f}
+.more-jardin .m3-quiet-note .m3-icon{width:23px;height:23px;color:#87a576}
+.more-jardin .m3-quiet-note p{margin:0;font:400 21px/1.4 Georgia,serif;letter-spacing:-.01em}
+.more-jardin .m3-privacy{margin:38px 0 0;text-align:center;color:#82917b;font-size:11px}
+.more-jardin .m3-bottom-nav{display:none}
+.more-jardin .m3-option:hover{box-shadow:0 8px 24px #315d3927;transform:translateY(-1px)}
+.more-jardin.more-jardin .m3-intro{height:183px;margin-bottom:24px}
+.more-jardin.more-jardin .m3-intro-pet{width:170px;height:170px;right:31px}
+.more-jardin.more-jardin .m3-options{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);grid-template-rows:160px 160px;gap:18px}
+.more-jardin.more-jardin .m3-journal{grid-row:1/3;position:relative;background:linear-gradient(130deg,#f6efff,#ede2f8);isolation:isolate}
+.more-jardin.more-jardin .m3-journal .m3-option-art{height:202px;order:2;background:transparent}
+.more-jardin.more-jardin .m3-journal .m3-cat{width:300px;height:237px}
+.more-jardin.more-jardin .m3-journal .m3-option-panel{align-items:flex-start;padding:27px 27px 0;flex:none}
+.more-jardin.more-jardin .m3-journal .m3-option-copy{gap:11px}
+.more-jardin.more-jardin .m3-journal .m3-option-copy strong{font-size:27px;color:#615075}
+.more-jardin.more-jardin .m3-journal .m3-arrow{padding-top:10px}
+.more-jardin.more-jardin .m3-companion,.more-jardin.more-jardin .m3-about{flex-direction:row}
+.more-jardin.more-jardin .m3-companion .m3-option-art,.more-jardin.more-jardin .m3-about .m3-option-art{width:180px;height:100%;flex:none}
+.more-jardin.more-jardin .m3-companion .m3-trio{width:178px;max-width:none}
+.more-jardin.more-jardin .m3-option-panel{padding:21px;gap:12px}
+.more-jardin.more-jardin .m3-companion .m3-symbol,.more-jardin.more-jardin .m3-about .m3-symbol{display:none}
+.more-jardin.more-jardin .m3-quiet-note{margin-top:28px}
+.more-jardin.more-jardin .m3-privacy{margin-top:28px}
+@media(max-width:767px){.more-jardin .m3-page{padding:14px 18px 105px;background:linear-gradient(#edf8f0de,#f4f9eff5 55%,#eef8ef)}
+.more-jardin .m3-frame{width:100%;max-width:600px;margin:auto}
+.more-jardin .m3-ambient{height:420px;background-size:auto 340px;opacity:.48}
+.more-jardin .m3-waves{height:430px;opacity:.2}
+.more-jardin .m3-topbar{height:58px;margin-bottom:16px;border-color:#cbded066}
+.more-jardin .m3-brand{width:132px}
+.more-jardin .m3-top-nav{display:none}
+.more-jardin .m3-menu{margin-left:auto;width:39px;height:39px}
+.more-jardin .m3-menu .m3-icon{width:23px;height:23px}
+.more-jardin .m3-intro{height:192px;padding:22px 21px;margin-bottom:19px;border-radius:25px;background:linear-gradient(100deg,#fffff8ef,#fffff8c9 70%,#fffff84a),url('../imagenes/inicio-web/lago-hd.png') center 40%/cover}
+.more-jardin .m3-intro-copy{max-width:75%}
+.more-jardin .m3-eyebrow{font-size:8px;margin-bottom:11px;letter-spacing:.16em}
+.more-jardin h1{font-size:32px;line-height:1.05;margin-bottom:13px}
+.more-jardin .m3-intro p{font-size:12px;line-height:1.65;max-width:235px}
+.more-jardin .m3-intro-pet{width:111px;height:111px;right:1px;bottom:7px}
+.more-jardin .m3-options{grid-template-columns:1fr;gap:13px}
+.more-jardin .m3-option{height:119px;flex-direction:row;border-radius:22px}
+.more-jardin .m3-option-art{height:100%;width:116px;flex:none}
+.more-jardin .m3-cat{width:146px;height:130px;max-width:none;margin-bottom:-5px}
+.more-jardin .m3-trio{width:112px;max-width:none}
+.more-jardin .m3-trio img{width:43%}
+.more-jardin .m3-trio img+img{margin-left:-14%}
+.more-jardin .m3-trio img:nth-child(2){transform:translateY(5px)}
+.more-jardin .m3-option-panel{padding:15px 13px;gap:8px}
+.more-jardin .m3-symbol{display:none}
+.more-jardin .m3-option-copy{gap:7px}
+.more-jardin .m3-option-copy strong{font-size:19px;line-height:1.12;letter-spacing:-.025em}
+.more-jardin .m3-option-copy small{font-size:10.5px;line-height:1.5}
+.more-jardin .m3-arrow .m3-icon{width:12px;height:17px}
+.more-jardin .m3-quiet-note{margin-top:26px;gap:9px}
+.more-jardin .m3-quiet-note .m3-icon{width:19px;height:19px}
+.more-jardin .m3-quiet-note p{font-size:16px}
+.more-jardin .m3-privacy{font-size:9px;line-height:1.6;max-width:270px;margin:19px auto 0}
+.more-jardin .m3-bottom-nav{position:fixed;z-index:20;left:14px;right:14px;bottom:14px;max-width:570px;margin:auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:3px 14px;border:1.5px solid #fffffff0;outline:1px solid #d5e7dc;border-radius:999px;background:linear-gradient(135deg,#fffffff5,#eef9f3eb,#edf8fdec);box-shadow:0 5px 22px #3a8d7f2b;backdrop-filter:blur(11px);overflow:hidden;isolation:isolate}
+.more-jardin .m3-bottom-nav::before{content:'';position:absolute;z-index:-1;inset:0;background:radial-gradient(ellipse at 0% 70%,#80bd9833,transparent 28%),radial-gradient(ellipse at 100% 40%,#7fc8dc44,transparent 28%);pointer-events:none}
+.more-jardin .m3-bottom-nav a{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:57px;padding:4px 0 9px;color:#8582ad;font-size:10px;line-height:1.2}
+.more-jardin .m3-bottom-nav a>.m3-icon{width:22px;height:22px}
+.more-jardin .m3-bottom-nav .m3-active{color:#155b4a;font-weight:650}
+.more-jardin .m3-bottom-nav .m3-active>.m3-icon{fill:currentColor}
+.more-jardin .m3-bottom-nav .m3-active-dot{display:block;position:absolute;width:4px;height:4px;bottom:3px;background:currentColor;border-radius:50%}
+.more-jardin.more-jardin .m3-intro{height:183px;margin-bottom:17px}
+.more-jardin.more-jardin .m3-intro-pet{width:106px;height:106px;right:1px;bottom:6px}
+.more-jardin.more-jardin .m3-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:157px 227px;gap:13px}
+.more-jardin.more-jardin .m3-journal{grid-column:1/3;grid-row:1;flex-direction:row;align-items:center}
+.more-jardin.more-jardin .m3-journal .m3-option-art{position:absolute;z-index:-1;right:6px;bottom:0;width:157px;height:144px;order:0}
+.more-jardin.more-jardin .m3-journal .m3-cat{width:175px;height:153px;max-width:none;margin-bottom:-10px}
+.more-jardin.more-jardin .m3-journal .m3-option-panel{padding:21px 17px;min-height:100%;align-items:flex-start}
+.more-jardin.more-jardin .m3-journal .m3-symbol{display:grid;width:29px;height:35px;border-radius:10px;margin-top:3px}
+.more-jardin.more-jardin .m3-journal .m3-symbol .m3-icon{width:20px;height:20px}
+.more-jardin.more-jardin .m3-journal .m3-option-copy{padding-right:116px;gap:9px}
+.more-jardin.more-jardin .m3-journal .m3-option-copy strong{font-size:22px;line-height:1.05}
+.more-jardin.more-jardin .m3-journal .m3-option-copy small{font-size:10.5px;max-width:150px}
+.more-jardin.more-jardin .m3-journal .m3-arrow{padding:48px 0 0}
+.more-jardin.more-jardin .m3-companion,.more-jardin.more-jardin .m3-about{flex-direction:column;height:227px}
+.more-jardin.more-jardin .m3-companion .m3-option-art,.more-jardin.more-jardin .m3-about .m3-option-art{width:100%;height:110px;flex:none}
+.more-jardin.more-jardin .m3-companion .m3-trio{width:170px;max-width:100%}
+.more-jardin.more-jardin .m3-companion .m3-option-panel,.more-jardin.more-jardin .m3-about .m3-option-panel{padding:14px 13px;gap:5px;align-items:flex-start}
+.more-jardin.more-jardin .m3-companion .m3-option-copy strong,.more-jardin.more-jardin .m3-about .m3-option-copy strong{font-size:18px;line-height:1.13}
+.more-jardin.more-jardin .m3-companion .m3-option-copy small,.more-jardin.more-jardin .m3-about .m3-option-copy small{font-size:10px;line-height:1.45}
+.more-jardin.more-jardin .m3-companion .m3-arrow,.more-jardin.more-jardin .m3-about .m3-arrow{align-self:center}
+.more-jardin.more-jardin .m3-quiet-note{margin-top:24px}
+.more-jardin.more-jardin .m3-privacy{margin-top:18px}}
+@media(max-width:767px){.more-jardin.more-jardin .m3-journal{height:157px}
+.more-jardin.more-jardin .m3-journal .m3-option-panel{width:100%;height:100%;padding:20px 17px}
+.more-jardin.more-jardin .m3-journal .m3-option-copy{flex:1;padding-right:112px;min-width:0}
+.more-jardin.more-jardin .m3-journal .m3-option-copy strong{display:block;width:100%;min-width:0;white-space:normal}
+.more-jardin.more-jardin .m3-journal .m3-option-art{width:145px;height:144px}
+.more-jardin.more-jardin .m3-journal .m3-option-copy small{font-size:10.5px}
+.more-jardin.more-jardin .m3-journal .m3-arrow{position:absolute;right:13px;top:62px;padding:0}}
+.more-jardin{min-height:100svh}
+.more-jardin .m3-page{width:100%;max-width:none;margin:0}
+
+.more-jardin .m3-chosen-pet img{width:auto;height:98%;max-width:100%;margin:0;transform:none}
+
+/* Teléfonos estrechos: conserva el diseño aprobado de 430 px sin recortar textos. */
+@media(max-width:339px){
+ .more-jardin .m3-intro p{max-width:150px;font-size:11px}
+ .more-jardin .m3-intro h1{font-size:29px}
+ .more-jardin.more-jardin .m3-journal .m3-option-panel{padding:17px 12px;gap:8px}
+ .more-jardin.more-jardin .m3-journal .m3-symbol{width:26px}
+ .more-jardin.more-jardin .m3-journal .m3-option-copy{padding-right:105px;gap:8px}
+ .more-jardin.more-jardin .m3-journal .m3-option-copy strong{font-size:18px;line-height:1.1}
+ .more-jardin.more-jardin .m3-journal .m3-option-copy small{font-size:9.5px}
+ .more-jardin.more-jardin .m3-journal .m3-option-art{width:108px;height:120px}
+ .more-jardin.more-jardin .m3-journal .m3-cat{width:130px;height:120px}
+ .more-jardin.more-jardin .m3-companion .m3-option-copy strong,.more-jardin.more-jardin .m3-about .m3-option-copy strong{font-size:16px}
+ .more-jardin.more-jardin .m3-companion .m3-option-copy small,.more-jardin.more-jardin .m3-about .m3-option-copy small{font-size:9.5px}
+}
