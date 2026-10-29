@@ -1,6 +1,6 @@
-# Respira 4.4 · Welcome aprobado
+# Respira 4.5 · Home Jardín y welcome aprobados
 
-Esta entrega integra el welcome Esmeralda (versión 2 aprobada) para computadora y la portada aprobada para celular. El texto y la navegación de escritorio son HTML, CSS y JavaScript. La portada conserva el gráfico original; su botón Iniciar es un control HTML visible y accesible que reproduce el arte aprobado. Los cuatro inicios anteriores se mantienen iguales.
+Esta entrega integra el Home Jardín (propuesta 3 aprobada) para computadora. Conserva el welcome Esmeralda 2 de computadora, la portada aprobada para celular y los cuatro Home de celular anteriores. El nuevo Home usa texto, navegación y botones reales en HTML, CSS y JavaScript, junto con los mismos paisajes y gatito de mayor resolución de la propuesta elegida.
 
 ## Para cargar esta actualización
 
@@ -9,6 +9,8 @@ Extrae todo el ZIP. Copia su contenido a la carpeta principal de la aplicación 
 Después de subirlo, recarga la página. Si el navegador muestra la versión anterior, cierra esa pestaña y ábrela nuevamente; en computadora también puedes usar Ctrl+F5. Se actualizó la caché sin conexión para incluir los nuevos archivos.
 
 Los tres archivos recibidos están incluidos sin modificar en `imagenes/welcome/`: `portada-aprobada-v2.png`, `boton-iniciar-original-v2.png` y `logo-aprobado-v2.png`. El botón transparente se conserva por separado para futuras ediciones. El control de la portada usa una ventana del propio arte aprobado para mantener exactamente el tamaño menor de la palabra Iniciar.
+
+Los cinco gráficos del Home Jardín están en `imagenes/inicio-web/`, sin modificar respecto de la propuesta 3. El diseño de computadora se activa desde 768 píxeles; los teléfonos táctiles horizontales de hasta 1024×600 conservan el Home móvil. Al cambiar el ancho, la app cambia de presentación sin perder la mascota elegida, las notas ni los favoritos.
 
 ## Cómo abrirla en Windows
 
@@ -36,7 +38,8 @@ El lanzador usa PowerShell incluido en Windows. No requiere instalar paquetes ni
 | --- | --- | --- |
 | Entrada | `index.html` | Carga la aplicación y sus estilos. |
 | Contenido | `js/data.js` | Ejercicios, historias, mensajes y datos de mascotas. |
-| Inicio | `js/components/home.js` | Saludo, compañía, tarjetas, calma y diario. |
+| Inicio de celular | `js/components/home.js` | Saludo, compañía, tarjetas, calma y diario aprobados. |
+| Inicio de computadora | `js/components/home-desktop.js` | Home Jardín 3 aprobado, con enlaces, tarjetas y elección de compañía funcionales. |
 | Arte del inicio | `js/components/home-art.js` | Fondos y ventanas decorativas de las imágenes originales, sin textos ni controles dibujados. |
 | Mascotas | `js/components/companions.js` | Bienvenida, selección, biblioteca y perfiles. |
 | Welcome de computadora | `js/components/welcome-desktop.js` | Versión Esmeralda aprobada, con texto y enlaces reales. |
@@ -53,6 +56,7 @@ El lanzador usa PowerShell incluido en Windows. No requiere instalar paquetes ni
 | Iconos | `js/icons.js` | Iconos vectoriales en código, sin imágenes de menús. |
 | Diseño general | `css/base.css` | Colores, texto, botones, navegación y ejercicios. |
 | Diseño del inicio | `css/home.css` | Distribución y apariencia del inicio. |
+| Diseño del Home web | `css/home-desktop.css` | Estilos aislados de Jardín 3, sin modificar el Home móvil. |
 | Diseño de mascotas | `css/companions.css` | Distribución de selección y perfiles. |
 | Estilo de las tres piezas | `css/interface.css` | Tema, aspecto del logotipo, menú y barra inferior. |
 | Sin conexión | `sw.js` | Guarda los archivos necesarios para uso sin conexión. |

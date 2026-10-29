@@ -1,4 +1,4 @@
-RESPIRA 4.4 — WELCOME APROBADO
+RESPIRA 4.5 — HOME JARDÍN 3 Y WELCOME APROBADOS
 
 1. Extrae TODO el ZIP.
 2. Para cargarlo en tu aplicación o sitio, reemplaza sus archivos por el contenido completo de este paquete. Conserva las carpetas y la misma dirección del sitio.
@@ -9,6 +9,8 @@ PARA VERLO EN WINDOWS SIN SUBIRLO
 Abre INICIAR_RESPIRA.cmd. Mantén su ventana abierta mientras uses Respira.
 
 INCLUYE
+- Home Jardín, propuesta 3 aprobada, para computadora.
+- Los cinco gráficos de mayor resolución originales de la propuesta en imagenes/inicio-web/.
 - Welcome Esmeralda 2 para computadora.
 - Portada aprobada para celular y botón Iniciar funcional.
 - Foto, botón transparente y logo originales en imagenes/welcome/.

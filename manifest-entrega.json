@@ -1,44 +1,73 @@
 {
-  "version": "Respira 4.4 · Welcome aprobado",
+  "version": "Respira 4.5 · Home Jardín 3 aprobado",
   "fecha": "2026-10-28",
-  "escritorio": "Esmeralda, propuesta web 2",
-  "celular": "Portada aprobada con Iniciar funcional",
-  "arte_original": [
+  "home_computadora": "Propuesta 3, Jardín",
+  "home_celular": "Los cuatro estados aprobados, sin cambios",
+  "welcome": "Esmeralda 2 en computadora y portada aprobada en celular",
+  "assets_hd": [
     {
-      "archivo": "imagenes/welcome/portada-aprobada-v2.png",
-      "sha256": "22ef401d0d12ea9a860abad1edab6211fbf9a733ed11ed1cc570db0fa9b8d5a7",
-      "ancho": 941,
-      "alto": 1671
+      "archivo": "imagenes/inicio-web/lago-hd.png",
+      "original": "work/home-web-diez/assets/lago-hd.png",
+      "sha256": "b0822edc99c4bd218176dfc500188e0fd6537874d3e4c3a85e3b94cdb65cfc0c",
+      "ancho": 1942,
+      "alto": 809,
+      "modo": "RGB",
+      "copia_binaria_identica": true
     },
     {
-      "archivo": "imagenes/welcome/boton-iniciar-original-v2.png",
-      "sha256": "1de83c67d85789ad81a3337510216f1797814b28f0ae60470d4346cef9c5d3a3",
-      "ancho": 2149,
-      "alto": 732
-    },
-    {
-      "archivo": "imagenes/welcome/logo-aprobado-v2.png",
-      "sha256": "645392cda33fa7a88f45291e8610de7b7abadafefc4152190e2c0f7081a9ae47",
+      "archivo": "imagenes/inicio-web/meditacion-hd.png",
+      "original": "work/home-web-diez/assets/meditacion-hd.png",
+      "sha256": "399bb5778630e440bff4251ec0dadebc4cb704ed33c8724acb5be145899f5b50",
       "ancho": 1774,
-      "alto": 887
+      "alto": 887,
+      "modo": "RGB",
+      "copia_binaria_identica": true
+    },
+    {
+      "archivo": "imagenes/inicio-web/tecnicas-hd.png",
+      "original": "work/home-web-diez/assets/tecnicas-hd.png",
+      "sha256": "653cc21743f8b05b0278f51c0cdc1aa2a21529ddecd1be9a67c9a8879db53eb1",
+      "ancho": 1774,
+      "alto": 887,
+      "modo": "RGB",
+      "copia_binaria_identica": true
+    },
+    {
+      "archivo": "imagenes/inicio-web/consejos-hd.png",
+      "original": "work/home-web-diez/assets/consejos-hd.png",
+      "sha256": "831491842fd29e400fc7bb31d07940a84cedfafc1219b4564244a99404db2b09",
+      "ancho": 1774,
+      "alto": 887,
+      "modo": "RGB",
+      "copia_binaria_identica": true
+    },
+    {
+      "archivo": "imagenes/inicio-web/gatito-hd.png",
+      "original": "work/home-web-diez/assets/gatito-hd.png",
+      "sha256": "8cf70d304ddff97ce449c00371c014083a650f0aa50d27a946d78d5b32d90d08",
+      "ancho": 1536,
+      "alto": 1024,
+      "modo": "RGBA",
+      "copia_binaria_identica": true
     }
   ],
-  "verificaciones": {
-    "welcome_http_offline": 16,
+  "verificacion": {
+    "home_http_offline": 22,
     "regresion": 15,
-    "inicios_pixel_identicos": 4,
-    "archivos_protegidos_identicos": 12
+    "inicios_moviles_pixel_identicos": 4,
+    "welcomes_sin_cambios_de_diseno": true,
+    "archivos_invariantes": 15
   },
   "archivos": [
     {
       "archivo": "index.html",
-      "bytes": 1309,
-      "sha256": "575d8727848c42aba0b469c96faff6c03c552f1944a1ecaa404cb1b79e05e83d"
+      "bytes": 1365,
+      "sha256": "ed6a8821871ca8281fca05015df3f3d99ef938701a602d1c65a4d4e29f0082a5"
     },
     {
       "archivo": "sw.js",
-      "bytes": 2762,
-      "sha256": "9898da0acc0eb789064739ba1a2a7e9bb23fbb10c424a73d23dc3b152520007a"
+      "bytes": 3040,
+      "sha256": "1c90692c3972933cb0388bba6c4a8f778e2f082175c28daa2821c84abf1ac751"
     },
     {
       "archivo": "manifest.webmanifest",
@@ -57,18 +86,23 @@
     },
     {
       "archivo": "LEEME.md",
-      "bytes": 9442,
-      "sha256": "199963dc03497e8c72a9f461e56667c7e7370d7c2d077b6359d5d0d144c1a7cf"
+      "bytes": 10102,
+      "sha256": "cca1c0f88feb42cf6f993b9058a06f161d84687ce45977fe0a33a06ae13c22c4"
     },
     {
       "archivo": "VERIFICACION.md",
-      "bytes": 5158,
-      "sha256": "69abeeabc18d3ad43813933211a46fe3690395bbdf11a8e1c6ca36dfa7a1797d"
+      "bytes": 6215,
+      "sha256": "2962cec557ae06ed4e8487323df27822c5c4789efa0258288199b9b41028ef91"
     },
     {
       "archivo": "DISENO_APROBADO.md",
-      "bytes": 1127,
-      "sha256": "e7ea92871f3a2dcda2e10a3160b466719c1c6e37f1692183c531f32d9fe2d0df"
+      "bytes": 1430,
+      "sha256": "dc53a6ed8b84aa52490a322e452ec2b7e9929e0f6617f2b94daebade3803285b"
+    },
+    {
+      "archivo": "HOME_WEB_APROBADO.md",
+      "bytes": 1368,
+      "sha256": "1376ffcccb720c1b8662151c5bcbc45bb47cb769cea4957e5cf95d4f1a9c3033"
     },
     {
       "archivo": "WELCOME_APROBADO.md",
@@ -82,8 +116,8 @@
     },
     {
       "archivo": "ACTUALIZAR_RESPIRA.txt",
-      "bytes": 903,
-      "sha256": "409b990b7800a5cf34c0aa6ff3e645ad5b597bdce382852609f82e7d58b5ac71"
+      "bytes": 1072,
+      "sha256": "47b7b962302581ac3787987da380833073c03c28a2ed19ce6412a159fe7876bc"
     },
     {
       "archivo": "css/base.css",
@@ -94,6 +128,11 @@
       "archivo": "css/companions.css",
       "bytes": 15055,
       "sha256": "152f2be63a94eed195dbe21b77bf0bfa27124548d34749ccf169b797397a72c3"
+    },
+    {
+      "archivo": "css/home-desktop.css",
+      "bytes": 12748,
+      "sha256": "b7f1478ca3de454fdb63cad5ec12d678b2d1e49fba8c261e1ecc5b31008eeba3"
     },
     {
       "archivo": "css/home.css",
@@ -122,8 +161,8 @@
     },
     {
       "archivo": "js/app.js",
-      "bytes": 12601,
-      "sha256": "91dd6789f0896115a7f0fa740fd90077763fc21f2052e87deca591a0d8cf25aa"
+      "bytes": 13229,
+      "sha256": "991deb2f114565361965dfbdf2d69584d7f7a107dd3072633e8b573a132a61c2"
     },
     {
       "archivo": "js/components/activities.js",
@@ -146,14 +185,19 @@
       "sha256": "7529c88f64299c97401565e896a55407d2b4f04424bad1dbe8f489df5c24e62d"
     },
     {
+      "archivo": "js/components/home-desktop.js",
+      "bytes": 4483,
+      "sha256": "b40d95178aff1ef8318480a3dc64782a0b0ffee492d2505dc878f1e05d3c33d8"
+    },
+    {
       "archivo": "js/components/home.js",
       "bytes": 3468,
       "sha256": "14aa1449d47834438c1a1ce54befafdc3e579efa9f918cb2fda10a568369d369"
     },
     {
       "archivo": "js/components/interface.js",
-      "bytes": 2340,
-      "sha256": "c7984e5e3c79fbdd15b5cc431f7ca52a1a3ef1d1a1885c1f66e8b47890533504"
+      "bytes": 2418,
+      "sha256": "3dac8f8967820b752f38cd369828b92dd1a599cc919b61aff42561778f29feb8"
     },
     {
       "archivo": "js/components/settings.js",
@@ -229,6 +273,31 @@
       "archivo": "imagenes/inicio/tarjeta-tecnicas.png",
       "bytes": 261097,
       "sha256": "8d4b8c36b4ab047122ba5b59c3c4985d072de9a60cfe6e610517dfc450894151"
+    },
+    {
+      "archivo": "imagenes/inicio-web/consejos-hd.png",
+      "bytes": 3485552,
+      "sha256": "831491842fd29e400fc7bb31d07940a84cedfafc1219b4564244a99404db2b09"
+    },
+    {
+      "archivo": "imagenes/inicio-web/gatito-hd.png",
+      "bytes": 1732614,
+      "sha256": "8cf70d304ddff97ce449c00371c014083a650f0aa50d27a946d78d5b32d90d08"
+    },
+    {
+      "archivo": "imagenes/inicio-web/lago-hd.png",
+      "bytes": 3542287,
+      "sha256": "b0822edc99c4bd218176dfc500188e0fd6537874d3e4c3a85e3b94cdb65cfc0c"
+    },
+    {
+      "archivo": "imagenes/inicio-web/meditacion-hd.png",
+      "bytes": 3092349,
+      "sha256": "399bb5778630e440bff4251ec0dadebc4cb704ed33c8724acb5be145899f5b50"
+    },
+    {
+      "archivo": "imagenes/inicio-web/tecnicas-hd.png",
+      "bytes": 3487917,
+      "sha256": "653cc21743f8b05b0278f51c0cdc1aa2a21529ddecd1be9a67c9a8879db53eb1"
     },
     {
       "archivo": "imagenes/interfaz/marco-original.png",

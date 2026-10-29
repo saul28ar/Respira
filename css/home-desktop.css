@@ -1,0 +1,127 @@
+/* Home 3 · Jardín. Las reglas no afectan al Home móvil ni al welcome. */
+.home-desktop-jardin {
+  --hd3-card: #fffef9;
+  padding: 32px 64px;
+  min-height: 100vh;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(#effaf1b8 0%, #effaf1f8 55%, #f4f8efff), url('../imagenes/inicio-web/lago-hd.png') center top / 100% auto no-repeat;
+  color: #124f3d;
+  font: 16px/1.5 "Segoe UI", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.home-desktop-jardin, .home-desktop-jardin * { box-sizing: border-box; }
+.home-desktop-jardin button, .home-desktop-jardin a { -webkit-tap-highlight-color: transparent; }
+.home-desktop-jardin button { font: inherit; cursor: pointer; border: 0; color: inherit; }
+.home-desktop-jardin a { color: inherit; text-decoration: none; }
+.home-desktop-jardin img { max-width: 100%; display: block; }
+.home-desktop-jardin button:focus-visible, .home-desktop-jardin a:focus-visible { outline: 3px solid #167d9f; outline-offset: 4px; }
+.home-desktop-jardin .icon { width: 24px; height: 24px; display: inline-block; flex: none; vertical-align: middle; }
+.home-desktop-jardin .hd3-shell { max-width: 1360px; margin: 0 auto; position: relative; z-index: 1; }
+.home-desktop-jardin .hd3-topbar { display: flex; align-items: center; gap: 36px; height: 84px; margin-bottom: 28px; border-bottom: 1px solid #cbded0; }
+.home-desktop-jardin .hd3-brand { width: 167px; display: block; flex: none; }
+.home-desktop-jardin .hd3-brand img { width: 100%; height: auto; }
+.home-desktop-jardin .hd3-top-nav { display: flex; align-items: center; gap: 12px; margin-left: auto; }
+.home-desktop-jardin .hd3-top-nav a { display: flex; align-items: center; gap: 8px; font-size: 13px; padding: 10px 18px; border-radius: 999px; color: #647c6c; }
+.home-desktop-jardin .hd3-top-nav .icon { width: 18px; height: 18px; }
+.home-desktop-jardin .hd3-top-nav a.active { background: #e0eddb; color: #16553b; font-weight: 650; }
+.home-desktop-jardin .hd3-top-nav a.active .icon { fill: currentColor; }
+.home-desktop-jardin .hd3-menu { width: 43px; height: 43px; border-radius: 50%; display: grid; place-items: center; background: #fffef9; border: 1px solid #d6e4d4; color: #1a5e45; }
+.home-desktop-jardin .hd3-menu .icon { width: 23px; height: 23px; }
+.home-desktop-jardin .hd3-layout { display: grid; grid-template-columns: 1fr 1fr .9fr .9fr; grid-template-rows: 178px 150px 264px 94px; grid-template-areas: 'intro intro calm calm' 'intro intro choose choose' 'cards cards cards cards' 'journal journal journal journal'; gap: 18px; }
+.home-desktop-jardin .hd3-intro { grid-area: intro; min-width: 0; position: relative; isolation: isolate; border-radius: 28px; overflow: hidden; display: flex; align-items: center; background: #d4eef0 url('../imagenes/inicio-web/lago-hd.png') center 40% / cover; border: 1px solid #ffffffe0; box-shadow: 0 5px 30px #245b4320; }
+.home-desktop-jardin .hd3-intro::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #fffff8e8, #fffff8a6 70%, transparent); }
+.home-desktop-jardin .hd3-greeting { padding: 30px 38px; position: relative; z-index: 1; }
+.home-desktop-jardin .hd3-eyebrow { display: block; color: #447059; font-size: 10px; font-weight: 650; letter-spacing: .16em; margin-bottom: 13px; }
+.home-desktop-jardin .hd3-greeting h1 { font: 400 53px/1.04 Georgia, "Times New Roman", serif; letter-spacing: -.045em; margin: 0 0 17px; color: #174f37; }
+.home-desktop-jardin .hd3-greeting h1 i { display: inline-flex; color: #338155; vertical-align: middle; }
+.home-desktop-jardin .hd3-greeting h1 .icon { width: 22px; height: 25px; }
+.home-desktop-jardin .hd3-greeting p { font-size: 15px; line-height: 1.65; color: #456957; margin: 0; }
+.home-desktop-jardin .hd3-choose { grid-area: choose; display: grid; grid-template-columns: 1fr 1.1fr; grid-template-rows: 28px 1fr; gap: 0 25px; align-items: center; justify-content: center; min-width: 0; position: relative; overflow: hidden; background: #ffffffdb; border: 1px solid #d5e4cf; border-radius: 24px; padding: 18px 30px; box-shadow: 0 8px 24px #315b2710; backdrop-filter: blur(10px); }
+.home-desktop-jardin .hd3-choose-title { grid-column: 2; align-self: end; text-align: left; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: #5e7c56; }
+.home-desktop-jardin .hd3-trio { display: flex; justify-content: center; align-items: center; width: 100%; grid-column: 1; grid-row: 1/3; height: 105px; margin: 0; min-height: 0; }
+.home-desktop-jardin .hd3-trio img { width: 43%; max-width: 116px; height: auto; object-fit: contain; filter: drop-shadow(0 4px 4px #46783d16); }
+.home-desktop-jardin .hd3-trio img+img { margin-left: -10%; }
+.home-desktop-jardin .hd3-trio img:nth-child(2) { z-index: 1; transform: translateY(5px); }
+.home-desktop-jardin .hd3-choose-label { grid-column: 2; display: flex; align-items: center; justify-content: flex-start; gap: 18px; width: 100%; min-height: 38px; padding: 0; background: none; border-radius: 999px; color: #2b5e42; font-size: 20px; font-weight: 600; }
+.home-desktop-jardin .hd3-choose-label .icon { width: 16px; height: 16px; }
+.home-desktop-jardin .hd3-selected-art { grid-column: 1; grid-row: 1/3; display: flex; align-items: center; justify-content: center; height: 105px; }
+.home-desktop-jardin .hd3-selected-art img { width: 116px; height: 105px; object-fit: contain; filter: drop-shadow(0 4px 4px #46783d16); }
+.home-desktop-jardin .hd3-calm { grid-area: calm; display: flex; align-items: center; gap: 18px; width: 100%; min-width: 0; padding: 26px 30px; border: 1px solid #ffffffc7; border-radius: 22px; background: linear-gradient(120deg, #07647c, #0d7882); box-shadow: 0 7px 19px #257f8c20; color: #fff; text-align: left; position: relative; overflow: hidden; }
+.home-desktop-jardin .hd3-calm-icon { width: 62px; height: 62px; flex: none; display: grid; place-items: center; border-radius: 50%; background: #ffffff15; }
+.home-desktop-jardin .hd3-calm-icon .icon { width: 39px; height: 39px; fill: currentColor; stroke-width: 1; }
+.home-desktop-jardin .hd3-calm-copy { display: flex; flex: 1; min-width: 0; flex-direction: column; gap: 2px; }
+.home-desktop-jardin .hd3-calm-copy strong { font: 400 32px/1.16 Georgia, serif; letter-spacing: -.025em; }
+.home-desktop-jardin .hd3-calm-copy>span { font-size: 13px; color: #d3f2f3; margin-top: 8px; }
+.home-desktop-jardin .hd3-calm-arrow { width: 36px; height: 36px; flex: none; display: grid; place-items: center; background: #ffffff23; border-radius: 50%; }
+.home-desktop-jardin .hd3-calm-arrow .icon { width: 21px; height: 21px; }
+.home-desktop-jardin .hd3-cards { grid-area: cards; min-width: 0; min-height: 0; }
+.home-desktop-jardin .hd3-card-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; height: 100%; }
+.home-desktop-jardin .hd3-pathway { display: flex; flex-direction: column; width: 100%; min-width: 0; overflow: hidden; padding: 0; text-align: left; border-radius: 22px; background: var(--hd3-card); border: 1px solid #ffffffe6; box-shadow: 0 7px 22px #4f876619; }
+.home-desktop-jardin .hd3-card-art { width: 100%; height: 150px; flex: none; object-fit: cover; }
+.home-desktop-jardin .hd3-card-panel { display: flex; align-items: center; gap: 11px; padding: 18px 15px; min-width: 0; width: 100%; flex: 1; position: relative; background: var(--hd3-card); }
+.home-desktop-jardin .hd3-symbol { width: 39px; height: 39px; display: grid; place-items: center; border-radius: 50%; background: #e1f4fb; color: #1997ad; flex: none; }
+.home-desktop-jardin .hd3-symbol .icon { width: 24px; height: 24px; }
+.home-desktop-jardin .hd3-pathway-pink .hd3-symbol { background: #ffebe3; color: #df8d77; }
+.home-desktop-jardin .hd3-pathway-green .hd3-symbol { background: #eaf5df; color: #418b31; }
+.home-desktop-jardin .hd3-pathway-green .hd3-symbol .icon { fill: currentColor; }
+.home-desktop-jardin .hd3-pathway-yellow .hd3-symbol { background: #fff2d1; color: #be941c; }
+.home-desktop-jardin .hd3-card-copy { display: flex; flex-direction: column; gap: 5px; flex: 1; min-width: 0; }
+.home-desktop-jardin .hd3-card-copy strong { font: 400 21px/1.12 Georgia, serif; letter-spacing: -.025em; color: #174c3b; }
+.home-desktop-jardin .hd3-card-copy small { font-size: 11px; line-height: 1.4; color: #627b68; }
+.home-desktop-jardin .hd3-card-arrow { flex: none; color: #3e765b; }
+.home-desktop-jardin .hd3-card-arrow .icon { width: 15px; height: 21px; }
+.home-desktop-jardin .hd3-journal { grid-area: journal; position: relative; isolation: isolate; display: flex; align-items: center; gap: 16px; padding: 18px 24px; min-width: 0; overflow: hidden; text-align: left; border: 1px solid #dfd7ef; border-radius: 22px; background: linear-gradient(105deg, #ede5fb, #f6f0fd 52%, #e6dff7); box-shadow: 0 5px 18px #756d9c0c; }
+.home-desktop-jardin .hd3-journal-icon { display: grid; place-items: center; width: 46px; height: 48px; border-radius: 15px; background: #dfd3f6; color: #8b6ac5; flex: none; }
+.home-desktop-jardin .hd3-journal-icon .icon { width: 27px; height: 27px; }
+.home-desktop-jardin .hd3-journal-copy { display: flex; flex-direction: column; gap: 5px; min-width: 0; flex: 1; position: relative; z-index: 2; padding-right: 220px; }
+.home-desktop-jardin .hd3-journal-copy strong { font: 400 24px/1.13 Georgia, serif; color: #554374; letter-spacing: -.02em; }
+.home-desktop-jardin .hd3-journal-copy small { font-size: 12px; color: #7a6795; }
+.home-desktop-jardin .hd3-cat { position: absolute; z-index: 1; right: 72px; bottom: -9px; width: 215px; height: 139px; object-fit: contain; pointer-events: none; }
+.home-desktop-jardin .hd3-journal-arrow { position: relative; z-index: 2; color: #8c72ba; flex: none; }
+.home-desktop-jardin .hd3-journal-arrow .icon { width: 22px; height: 22px; }
+.home-desktop-jardin button:hover { filter: brightness(1.015); }
+.home-desktop-jardin .hd3-visually-hidden { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* En pantallas intermedias se conserva el orden y se evita cortar los controles. */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .home-desktop-jardin { padding: 24px 32px; }
+  .home-desktop-jardin .hd3-topbar { gap: 20px; }
+  .home-desktop-jardin .hd3-brand { width: 145px; }
+  .home-desktop-jardin .hd3-top-nav { gap: 2px; }
+  .home-desktop-jardin .hd3-top-nav a { padding: 9px 12px; font-size: 12px; gap: 6px; }
+  .home-desktop-jardin .hd3-layout { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-rows: 178px 150px auto 94px; grid-template-areas: 'intro calm' 'intro choose' 'cards cards' 'journal journal'; }
+  .home-desktop-jardin .hd3-greeting { padding: 26px; }
+  .home-desktop-jardin .hd3-greeting h1 { font-size: clamp(37px,4.42vw,50px); }
+  .home-desktop-jardin .hd3-calm { padding: 22px; gap: 14px; }
+  .home-desktop-jardin .hd3-calm-icon { width: 50px; height: 50px; }
+  .home-desktop-jardin .hd3-calm-icon .icon { width: 32px; height: 32px; }
+  .home-desktop-jardin .hd3-calm-copy strong { font-size: 27px; }
+  .home-desktop-jardin .hd3-calm-copy>span { font-size: 12px; }
+  .home-desktop-jardin .hd3-calm-arrow { width: 30px; height: 30px; }
+  .home-desktop-jardin .hd3-choose { grid-template-columns: 1fr 1fr; gap: 0 12px; padding: 18px; }
+  .home-desktop-jardin .hd3-choose-label { font-size: 17px; gap: 8px; }
+  .home-desktop-jardin .hd3-trio img { width: 45%; }
+  .home-desktop-jardin .hd3-card-grid { grid-template-columns: repeat(2,minmax(0,1fr)); grid-auto-rows: 236px; }
+  .home-desktop-jardin .hd3-card-art { height: 135px; }
+}
+@media (min-width: 768px) and (max-width: 899px) {
+  .home-desktop-jardin { padding: 20px 24px; }
+  .home-desktop-jardin .hd3-topbar { gap: 12px; }
+  .home-desktop-jardin .hd3-brand { width: 130px; }
+  .home-desktop-jardin .hd3-top-nav a { padding: 9px; gap: 5px; }
+  .home-desktop-jardin .hd3-top-nav .icon { width: 16px; height: 16px; }
+  .home-desktop-jardin .hd3-menu { width: 38px; height: 38px; }
+  .home-desktop-jardin .hd3-greeting { padding: 22px; }
+  .home-desktop-jardin .hd3-greeting p { font-size: 13px; }
+  .home-desktop-jardin .hd3-calm { padding: 17px; gap: 11px; }
+  .home-desktop-jardin .hd3-calm-icon { display: none; }
+  .home-desktop-jardin .hd3-calm-copy strong { font-size: 26px; }
+  .home-desktop-jardin .hd3-choose { grid-template-columns: 1fr 1fr; gap: 0 7px; padding: 15px; }
+  .home-desktop-jardin .hd3-choose-label { font-size: 16px; gap: 5px; }
+  .home-desktop-jardin .hd3-journal-copy { padding-right: 145px; }
+  .home-desktop-jardin .hd3-journal-copy strong { font-size: 22px; }
+  .home-desktop-jardin .hd3-cat { width: 175px; right: 55px; }
+}

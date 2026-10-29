@@ -5,6 +5,7 @@ import { ExerciseClock } from './timer.js';
 import { icon } from './icons.js';
 import { renderFrame } from './components/interface.js';
 import { renderHome } from './components/home.js';
+import { renderDesktopHome } from './components/home-desktop.js';
 import { renderHomeBackdrop } from './components/home-art.js';
 import { renderWelcome, renderPetSelect, renderPetLibrary, renderPetDetail, renderPetConfirm } from './components/companions.js';
 import { renderCollection, renderDetail } from './components/activities.js';
@@ -12,6 +13,8 @@ import { renderMore, renderAbout } from './components/settings.js';
 
 const app = document.getElementById('app');
 const announcer = document.getElementById('announcer');
+// La misma definición de teléfono que en el welcome conserva el Home móvil.
+const mobileHomeViewport = window.matchMedia('(max-width: 767px), (max-width: 1024px) and (max-height: 600px) and (orientation: landscape) and (hover: none) and (pointer: coarse)');
 const routes = new Set(['welcome','home','pet-select','pet-library','pet-detail','pet-confirm','methods','meditation','quick','advice','favorites','more','about','detail']);
 let route = { view: '', id: null };
 let sessionClock = null;
@@ -48,8 +51,9 @@ function render() {
   const cp = companionToday();
   let html = '';
   const view = route.view;
+  const desktopHome = view === 'home' && !mobileHomeViewport.matches;
   if (view === 'welcome') html = renderWelcome();
-  if (view === 'home') html = renderHome({ petId:cp, message: cp ? pets[cp].messages[messageIndex % pets[cp].messages.length] : '' });
+  if (view === 'home') html = (desktopHome ? renderDesktopHome : renderHome)({ petId:cp, message: cp ? pets[cp].messages[messageIndex % pets[cp].messages.length] : '' });
   if (view === 'pet-select') html = renderPetSelect({ petId:cp });
   if (view === 'pet-library') html = renderPetLibrary();
   if (view === 'pet-detail') html = renderPetDetail({petId:route.id,chosen:cp,returnView:petReturn});
@@ -59,11 +63,12 @@ function render() {
   if (view === 'about') html = renderAbout();
   if (view === 'detail') html = renderDetail(route.id, {draft,petReturn:activityPet});
   const active = ['home','pet-select','pet-library','pet-detail','pet-confirm'].includes(view) ? 'home' : view === 'favorites' ? 'favorites' : ['more','about'].includes(view) ? 'more' : 'methods';
-  app.innerHTML = renderFrame(html, { active, welcome:view === 'welcome', home:view === 'home', backdrop:view === 'home' ? renderHomeBackdrop() : '' });
+  app.innerHTML = renderFrame(html, { active, welcome:view === 'welcome', home:view === 'home', desktopHome, backdrop:view === 'home' && !desktopHome ? renderHomeBackdrop() : '' });
   const main = app.querySelector('main');
   if (main) { main.id = 'main-content'; main.tabIndex = -1; }
   document.body.classList.toggle('welcome-view', view === 'welcome');
   document.body.classList.toggle('home-view', view === 'home');
+  document.body.classList.toggle('home-desktop-view', desktopHome);
   const title = app.querySelector('h1')?.textContent ?? 'Tu espacio de calma';
   document.title = `${title} · Respira`;
   if (!saveOk && cp && view === 'home') notify('Tu compañía funciona ahora, pero no se pudo guardar en este navegador.');
@@ -240,6 +245,9 @@ document.addEventListener('keydown',event => {
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) return;
   sessionClock?.tick();
+  if (route.view === 'home') render();
+});
+mobileHomeViewport.addEventListener('change', () => {
   if (route.view === 'home') render();
 });
 if (!location.hash) history.replaceState(null,'','#welcome');

@@ -10,6 +10,8 @@ La entrega `Respira_4_2_Inicio_APROBADO.zip` contiene una copia de los archivos 
 
 ## Para cargar la aplicación
 
+Actualización del 28 de octubre de 2026: el usuario aprobó por separado el Home de computadora Jardín, propuesta 3. Esa nueva presentación sustituye el Home web en pantallas grandes. Los cuatro Home de celular descritos arriba siguen protegidos y sin cambios visuales. Véase HOME_WEB_APROBADO.md.
+
 Extraer todo el ZIP y conservar las carpetas. El contenido debe quedar en la carpeta principal de la aplicación o del sitio: `index.html`, `sw.js`, `manifest.webmanifest`, `css/`, `js/`, `imagenes/` e `iconos/`.
 
 Para revisarla en Windows, abrir `INICIAR_RESPIRA.cmd` desde la carpeta extraída.

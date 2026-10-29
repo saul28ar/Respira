@@ -1,5 +1,12 @@
-const CACHE = 'respira-code-4-4-welcome-aprobado-v2';
+const CACHE = 'respira-code-4-5-home-jardin-v3';
 const ASSETS = [
+  "./css/home-desktop.css",
+  "./js/components/home-desktop.js",
+  "./imagenes/inicio-web/lago-hd.png",
+  "./imagenes/inicio-web/meditacion-hd.png",
+  "./imagenes/inicio-web/tecnicas-hd.png",
+  "./imagenes/inicio-web/consejos-hd.png",
+  "./imagenes/inicio-web/gatito-hd.png",
   "./css/welcome-desktop.css",
   "./css/welcome-mobile-v2.css",
   "./css/welcome-mobile.css",

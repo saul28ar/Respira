@@ -1,4 +1,16 @@
-# Revisión de Respira 4.4 · Welcome aprobado
+# Revisión de Respira 4.5 · Home Jardín aprobado
+
+Actualización del 28 de octubre de 2026:
+
+- 22 comprobaciones del Home Jardín aprobadas con servidor HTTP bajo la ruta `/Respira/`: navegación, las siete acciones principales, teclado, compañía diaria, cambios de ancho y uso sin conexión.
+- Comparación con la propuesta 3 a 2400×1500: se conserva la geometría y el texto. La diferencia media es inferior a 0,1/255 por canal; solo 27 de 3,6 millones de píxeles superan 2/255, en el muestreo de bordes redondeados de imágenes.
+- 15 pruebas de regresión aprobadas, sin errores de JavaScript, consola o recursos.
+- Los cuatro Home de celular son idénticos píxel por píxel a las capturas anteriores.
+- Los welcome conservan sus archivos, geometría y arte. La comparación entre archivos locales y HTTP presenta únicamente redondeos de hasta 1/255 por canal.
+- Los 15 archivos invariantes del Home móvil, welcome, datos y almacenamiento conservan su SHA-256.
+- Los cinco PNG HD de Jardín son copias binarias exactas de la propuesta elegida.
+
+## Historial: Respira 4.4 · Welcome aprobado
 
 Actualización del 28 de octubre de 2026, en Chrome para Windows:
 
