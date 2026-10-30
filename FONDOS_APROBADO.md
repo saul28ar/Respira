@@ -11,3 +11,5 @@ Las ondas y hojas originales comparten `imagenes/paisajes/ondas-original.png`, P
 La portada y las ilustraciones completas aprobadas conservan su propia composición y sus archivos originales. No sustituirlas por otro paisaje ni regenerar mascotas, logo o controles como consecuencia de una mejora de calidad del fondo compartido.
 
 La auditoría se registra en `work/auditoria-fondos.json`. Esta revisión no cambia los PNG ni el código de la aplicación 4.8. El criterio se incluye como documentación en la entrega acumulada desde 4.6 y en el respaldo único actualizado.
+
+Pendiente para la siguiente entrega: al aprobar Métodos por secciones 1 el 29 de octubre de 2026, el mismo fondo se extiende también a todos los métodos individuales, diario y listados de categorías mediante `css/method-details.css`. Se conservan los paneles y controles de los ejercicios, así como el PNG maestro original.

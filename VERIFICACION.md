@@ -1,4 +1,19 @@
-# Revisión de Respira 4.8 · Selección de compañía 4
+# Revisión de Respira 4.9 · Todos los cambios aprobados
+
+Actualización del 30 de octubre de 2026:
+
+- 26 comprobaciones de integración aprobadas: cinco categorías, trece métodos sin duplicados, favoritos, navegación de ejercicios, guardado del diario, temporizador y fondo HD compartido. Las tres compañías se mantienen en Home, Métodos, Favoritos y Más después de recargar, tanto en celular como en computadora.
+- La página de Métodos de la app coincide píxel por píxel con la propuesta 1 aprobada en las capturas de celular 860×1864 y computadora 2400×1500. El componente también conserva su geometría a 320 y 768 píxeles.
+- 30 comprobaciones de las tarjetas nuevas aprobadas en ocho formatos, desde 320 píxeles hasta computadora de 1600 y celular horizontal táctil de 844×390. Se verifican los cuatro recursos, textos, acciones y regreso al Home, sin errores JavaScript ni desbordamientos horizontales.
+- Inspección visual de las tarjetas a 320, 430 y 1600 píxeles: las caras de las tres mascotas se mantienen visibles. Los cuatro PNG nuevos coinciden byte por byte con los originales elegidos; no se regeneran ni alteran.
+- El módulo compartido de las tarjetas, la clasificación de métodos, el estilo del fondo de ejercicios y las cuatro ilustraciones están incluidos en la nueva caché sin conexión.
+- La entrega acumulada compara CRC y SHA256 y simula su aplicación sobre 4.6, 4.7 y las dos variantes entregadas de 4.8 antes de reemplazar el respaldo único. Las imágenes anteriores que no cambian no se repiten.
+
+Informes de trabajo: `work/qa-metodos-secciones-pets/informe.json`, `work/qa-tarjetas-integradas/informe.json` y `work/verificacion-acumulado-49.json`.
+
+La comprobación adicional por HTTP de la actualización de caché quedó limitada por la restricción de acceso a la red local del entorno. Las 56 pruebas funcionales anteriores se ejecutaron con archivos locales; el inventario de la caché y las dependencias del paquete sí están verificados. No se afirma una nueva prueba sin conexión por HTTP para esta entrega.
+
+## Historial: Respira 4.8 · Selección de compañía 4
 
 Actualización del 29 de octubre de 2026:
 

@@ -1,5 +1,12 @@
-const CACHE = 'respira-code-4-8-pet-select4';
+const CACHE = 'respira-code-4-9-metodos-tarjetas';
 const ASSETS = [
+  "./js/components/home-card-art.js",
+  "./imagenes/tarjetas/escenas-01.png",
+  "./imagenes/tarjetas/escenas-02.png",
+  "./imagenes/tarjetas/escenas-03.png",
+  "./imagenes/tarjetas/escenas-05.png",
+  "./css/method-details.css",
+  "./js/method-categories.js",
   "./css/pet-select-jardin.css",
   "./js/components/pet-select-jardin.js",
   "./css/home-mobile-jardin.css",

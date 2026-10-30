@@ -2,7 +2,7 @@
 
 El 29 de octubre de 2026, el usuario eligió la propuesta 3 de Más para computadora y celular y pidió conservarla tal cual.
 
-Se mantienen el paisaje suave, el logo, el encabezado con Nubecita, el diario lavanda destacado con el gatito, las tarjetas de compañía y Acerca de Respira, sus textos y la navegación con Más activo. El título del diario conserva el espacio aprobado para evitar superposición con el gatito en celular.
+Se mantienen el paisaje suave, el logo, el encabezado, el diario lavanda destacado con el gatito, las tarjetas de compañía y Acerca de Respira, sus textos y la navegación con Más activo. El título del diario conserva el espacio aprobado para evitar superposición con el gatito en celular. Actualización autorizada el 29 de octubre de 2026: la Nubecita de referencia del encabezado se sustituye por la compañía elegida de hoy en ese mismo espacio; sin elección, se omite esa mascota individual. Véase MASCOTAS_APROBADO.md.
 
 Implementación: `js/components/more-jardin.js` y `css/more-jardin.css`. Los controles abren el diario, la elección o perfil de la compañía de hoy y la información existente de Respira. Los datos y su almacenamiento se conservan.
 

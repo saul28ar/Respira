@@ -1,3 +1,5 @@
+import { methodGroups } from './method-categories.js';
+
 export const catalog={
  breath:{title:'Respiración 4-4-4-4',sub:'Una técnica para recuperar la calma',emoji:'💨',color:'blue',kind:'breath'},
  calm:{title:'Calma en 5 minutos',sub:'Un momento de atención plena',emoji:'🌿',color:'green',kind:'timer',duration:300,script:'Siéntate cómodamente. Nota cómo entra y sale el aire. Cuando aparezca un pensamiento, obsérvalo con amabilidad y vuelve a tu respiración.'},
@@ -14,7 +16,7 @@ export const catalog={
  talk:{title:'Habla con alguien',sub:'No tienes que afrontarlo todo a solas',emoji:'🫂',color:'blue',kind:'advice',script:'Si te resulta posible, conversa con alguien de confianza. Pedir acompañamiento también es una forma de cuidarte.'}
 };
 
-export const groups={meditation:['calm','anxiety','sleep','selflove'],quick:['grounding','muscle','reframe','journal'],advice:['sleep','caffeine','move','unplug','talk']};
+export const groups=methodGroups;
 
 export const breathPhases=[['Inhala',4],['Mantén',4],['Exhala',4],['Mantén',4]];
 

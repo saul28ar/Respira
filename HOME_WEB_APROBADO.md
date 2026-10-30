@@ -18,3 +18,5 @@ Si ya hay una compañía elegida para hoy, el mismo panel muestra esa mascota y 
 Esta entrega se prepara para cargarla manualmente; no publica el sitio automáticamente.
 
 Actualización posterior del 28 de octubre de 2026: la nueva referencia del Home móvil es Jardín sereno 1, aprobada y reservada para la próxima entrega junto con otro cambio. Véase HOME_MOVIL_APROBADO.md. Esta elección no modifica el Home web Jardín 3.
+
+Actualización autorizada el 30 de octubre de 2026: las cuatro imágenes de las tarjetas se sustituyen por las escenas de las tres mascotas elegidas en TARJETAS_HOME_APROBADO.md, compartidas con celular. La distribución, dimensiones, textos, iconos, acciones y demás elementos de Jardín 3 se conservan para la próxima entrega conjunta.

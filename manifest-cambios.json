@@ -1,176 +1,195 @@
 {
-  "version_base": "4.6",
-  "version_nueva": "4.8",
-  "variantes_base_compatibles": [
-    "4.6",
-    "4.7",
-    "4.8"
-  ],
-  "variante_paquete": "acumulada_desde_4.6",
-  "sha256_base_zip": "c44081e9eac170860bb1efc99a56c331ca9ae4b34da8c377a02a78a40e1df024",
-  "instruccion": "Aplicar este único ZIP sobre Respira 4.6, 4.7 o 4.8, reemplazando archivos y conservando los demás.",
+  "version_base": "4.8",
+  "version_nueva": "4.9",
+  "variante_paquete": "incremental_desde_4.8",
+  "sha256_base_zip": "b960dcba1578c3be97cfdce0cea7ce3c0d39f906338b286e9009b540843d4cca",
+  "instruccion": "Aplicar solamente sobre Respira 4.8. Reemplazar archivos del mismo nombre y conservar los demás.",
   "eliminaciones": [],
   "archivos": [
     {
       "archivo": "ACTUALIZAR_RESPIRA.txt",
-      "bytes": 1857,
-      "sha256": "40315633ba84052cf2a1d30584d56588718c074791b4b51eb9fbedada0771d80",
+      "bytes": 936,
+      "sha256": "478b642121a5d16177c19041a9e7d43297bfdca1ee7848d98afd95fe84189150",
       "tipo": "modificado"
     },
     {
       "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
-      "bytes": 806,
-      "sha256": "9f97ef5a0bd62e97e4aebd3991f8a48f2273a2d50d2acb051e999c5f07eaeeb7",
-      "tipo": "modificado"
-    },
-    {
-      "archivo": "DISENO_APROBADO.md",
-      "bytes": 1810,
-      "sha256": "12e0a345fd550fd5faa6cecf7e509975a270084899e5d719e6729f8e454e8dc8",
+      "bytes": 936,
+      "sha256": "478b642121a5d16177c19041a9e7d43297bfdca1ee7848d98afd95fe84189150",
       "tipo": "modificado"
     },
     {
       "archivo": "ENTREGAS.md",
-      "bytes": 2866,
-      "sha256": "32d42cf016c2d771a737bbe2b9ea08ed4a1018081c09bd7019f3a57d0b847bf8",
+      "bytes": 4466,
+      "sha256": "4216d31cb6e6b305371e5043e283a556d773eadb23d894dae3fa297c6fba846a",
       "tipo": "modificado"
     },
     {
       "archivo": "FAVORITOS_APROBADO.md",
-      "bytes": 1232,
-      "sha256": "cab60d5572ca35845163bceb469dfa3dbd8efe5078735179d9ea0915419ee1d9",
-      "tipo": "nuevo"
+      "bytes": 1442,
+      "sha256": "30f5fcacb4c06b88acd561e6126b1e97756fc139b54dbedf89173d9db52c8259",
+      "tipo": "modificado"
     },
     {
       "archivo": "FONDOS_APROBADO.md",
-      "bytes": 1744,
-      "sha256": "457b89893ac70346ee84d75be82b4f4572410551e7908f7f761853f181740a4c",
-      "tipo": "nuevo"
+      "bytes": 2074,
+      "sha256": "d51b266b29483198bd269344874631b89909e964b96ded8ba4e36409a8e8ac9b",
+      "tipo": "modificado"
     },
     {
       "archivo": "HOME_MOVIL_APROBADO.md",
-      "bytes": 1794,
-      "sha256": "b7adebbe17a89495ab856a7b6c02c7e627c221bc8a5a5d113dd7945016781c2b",
-      "tipo": "nuevo"
+      "bytes": 2161,
+      "sha256": "c68285d8404ed7dcfea5534fb55f6febf307ea2cee67ff39e4514f69a380cba4",
+      "tipo": "modificado"
     },
     {
       "archivo": "HOME_WEB_APROBADO.md",
-      "bytes": 1628,
-      "sha256": "f94253ffe5d683641d57a064c44bc13e15c528d10493145c03c53839493510bc",
+      "bytes": 1969,
+      "sha256": "96b5be33ee147a41b4c54e3073e751daab711e82d59889a7d5e380885dd7ee5b",
       "tipo": "modificado"
     },
     {
       "archivo": "LEEME.md",
-      "bytes": 11608,
-      "sha256": "3cfc48dda5d3ec810c6a06bfda27950e31eb925aebef21bf3beb7afb506d826f",
+      "bytes": 12123,
+      "sha256": "4996851029e99213db0c801ef5993c104670da43ced978123b3e40f4e0e0f1c5",
       "tipo": "modificado"
     },
     {
-      "archivo": "MAS_APROBADO.md",
-      "bytes": 1008,
-      "sha256": "8b32cecaa3509beafc5237f27c00b75ed0480a3b417f633b540017e37ad9d13d",
+      "archivo": "MASCOTAS_APROBADO.md",
+      "bytes": 1770,
+      "sha256": "cb58e4eb980a45e97aad1f3452f86bf2824531f26fc511cf19c1cb7ce93d5bc6",
       "tipo": "nuevo"
     },
     {
-      "archivo": "PET_SELECT_APROBADO.md",
-      "bytes": 1477,
-      "sha256": "b9ad1ef067bcba98daa5d5438b02e610e89cff3f03cf6680fbbc20222ad1be22",
+      "archivo": "MAS_APROBADO.md",
+      "bytes": 1233,
+      "sha256": "0d352d5680a2a6c369bec2c6a81dcff521a6460fa0630097b9aab74cd426e98e",
+      "tipo": "modificado"
+    },
+    {
+      "archivo": "METODOS_APROBADO.md",
+      "bytes": 3256,
+      "sha256": "722982c589ee29ab21711462f07be47bf5ee5cbbc7189945620e710435e784d9",
+      "tipo": "modificado"
+    },
+    {
+      "archivo": "TARJETAS_HOME_APROBADO.md",
+      "bytes": 2228,
+      "sha256": "ca451e24a641cee1eb767ee6ef13e7c81c0370069c732b3922495083767bbd52",
       "tipo": "nuevo"
     },
     {
       "archivo": "VERIFICACION.md",
-      "bytes": 10284,
-      "sha256": "e80113535f49727fc52959b4c1f81853175a16a03b17731d3f31d48374be7f44",
+      "bytes": 12358,
+      "sha256": "47ee3a014cb189602399cbc79eb8fec12c91a77b04f497a7fbc0c51b799a58d9",
       "tipo": "modificado"
     },
     {
-      "archivo": "WELCOME_APROBADO.md",
-      "bytes": 1721,
-      "sha256": "9962887e3c31f34fd1ce8711efd062f6ae9aa088f5e37791cf8008a22de0269f",
+      "archivo": "css/method-details.css",
+      "bytes": 570,
+      "sha256": "09aea433b83aac8ec8c5df2343917d0d4ee12aaac600da95546cb22222f94846",
+      "tipo": "nuevo"
+    },
+    {
+      "archivo": "css/methods.css",
+      "bytes": 13623,
+      "sha256": "daa04c692acdc363b23ca3dea882fa88b7518646353b2e695359760c24092f2c",
       "tipo": "modificado"
     },
     {
-      "archivo": "css/favorites.css",
-      "bytes": 14365,
-      "sha256": "c18865149bd7b438a8070d7e0ecb6c206f70dd29a42544c467c96d0d5dda04ab",
+      "archivo": "imagenes/tarjetas/escenas-01.png",
+      "bytes": 3376407,
+      "sha256": "d5a474d8688d492d343d83f45d1458e8647443b266b008f76612565472314571",
       "tipo": "nuevo"
     },
     {
-      "archivo": "css/home-mobile-jardin.css",
-      "bytes": 11431,
-      "sha256": "e6d79899433a097b3a675ebbc7f8b0ab486fca6bb2466618628c011d649ed851",
+      "archivo": "imagenes/tarjetas/escenas-02.png",
+      "bytes": 3236672,
+      "sha256": "d2800b4861c7497cfce06cfc585fb963250b0aee9f31f0103bda8e0d4a6c3fdf",
       "tipo": "nuevo"
     },
     {
-      "archivo": "css/more-jardin.css",
-      "bytes": 15316,
-      "sha256": "df20e3c2bab1a333e1b965894e1e983b3b6f9dacee53045cdcba8beb2a88e2d7",
+      "archivo": "imagenes/tarjetas/escenas-03.png",
+      "bytes": 3282546,
+      "sha256": "145d3c18a2a2f359c309b5219ccafd4e039faee7aa70f272b371a175c851c4e8",
       "tipo": "nuevo"
     },
     {
-      "archivo": "css/pet-select-jardin.css",
-      "bytes": 15013,
-      "sha256": "6efcca180a4cc691ff9731225a3c521901622ed99b1541be840d6d2fc9b0e4f4",
+      "archivo": "imagenes/tarjetas/escenas-05.png",
+      "bytes": 3240612,
+      "sha256": "06ea8bd514681820bdb6307b85069315d14c8c90708944674a64f903291ac78c",
       "tipo": "nuevo"
-    },
-    {
-      "archivo": "css/welcome-mobile-v2.css",
-      "bytes": 2157,
-      "sha256": "a57016f761c43c9cf08f36ae56b6c94804566832ea76e8db6c3eae5c9e3a5816",
-      "tipo": "modificado"
     },
     {
       "archivo": "index.html",
-      "bytes": 1647,
-      "sha256": "89eddd6ca420fd0890653f8af208e8468b51eb40c49739656ea8eebbcdf79e16",
+      "bytes": 1705,
+      "sha256": "413a910e48604409e32ce742d0cfb6ccb2d479e401611bbf4d9784afd1a0afb0",
       "tipo": "modificado"
     },
     {
       "archivo": "js/app.js",
-      "bytes": 14000,
-      "sha256": "2bc2b2d19b8a1f2a05f64ad7f54252433c056ab6f91eef3fc7d13ee14e307846",
+      "bytes": 14407,
+      "sha256": "540deaf78ebbddd58a376871d1bfa484ea8333c90d4ead6d603d9d5c5689f5b4",
       "tipo": "modificado"
     },
     {
       "archivo": "js/components/favorites.js",
-      "bytes": 3974,
-      "sha256": "11d64cdba0e9c3ff6d415d355cdbba9f700a6ec4a7f14dccad5b434800329db2",
+      "bytes": 4117,
+      "sha256": "a2b2e0a55bd5aeabc107304d3b2c3a5ae2a3325bbc13f6316ce75d9b0123e3fb",
+      "tipo": "modificado"
+    },
+    {
+      "archivo": "js/components/home-card-art.js",
+      "bytes": 827,
+      "sha256": "a337bca5b246555136485f3c633d6d78ee9c5005a2f31ac902bf59d1d571a60b",
       "tipo": "nuevo"
+    },
+    {
+      "archivo": "js/components/home-desktop.js",
+      "bytes": 4506,
+      "sha256": "f211df18eff87288d2aab79166af507e9aa1a609ae7088d5da4f4f20e3c1ff94",
+      "tipo": "modificado"
     },
     {
       "archivo": "js/components/home-mobile-jardin.js",
-      "bytes": 4411,
-      "sha256": "52d3e6bb5ac4e556fed49c2df33e26b3c236f8dbfde07f1fe9e738fd0e031acd",
-      "tipo": "nuevo"
+      "bytes": 4359,
+      "sha256": "41e612a64a00508a59c21c5fd0884f2e08c968e6a20d8d5c254f18da12d91b24",
+      "tipo": "modificado"
     },
     {
-      "archivo": "js/components/interface.js",
-      "bytes": 2593,
-      "sha256": "d52ceeb0456d2515e4e2d9324e559ffc659b7e232254f1a12303712672dca1d2",
+      "archivo": "js/components/methods.js",
+      "bytes": 5105,
+      "sha256": "2a2209bf80d263718b2dd323253eb9eb6eb2b3c903cef86da6d7bad7ad159f99",
       "tipo": "modificado"
     },
     {
       "archivo": "js/components/more-jardin.js",
-      "bytes": 3942,
-      "sha256": "64d49511cd948de8e23d93386de1bbd87c0385b48f7c31475f6ffe9102e06b25",
-      "tipo": "nuevo"
+      "bytes": 4034,
+      "sha256": "f958df772692f03ebda680638f3628a96a43b8b49647f4e4e25512d329580df9",
+      "tipo": "modificado"
     },
     {
-      "archivo": "js/components/pet-select-jardin.js",
-      "bytes": 4030,
-      "sha256": "c33aafa0f5935d6e12b66d7fff8268dfe435b262b622e12704068d0a795aed33",
+      "archivo": "js/data.js",
+      "bytes": 9789,
+      "sha256": "1fd7ae610b3e53d40fa82d3ce4291c72b149e25e77651487b66ec2deef77e55a",
+      "tipo": "modificado"
+    },
+    {
+      "archivo": "js/method-categories.js",
+      "bytes": 1039,
+      "sha256": "8dc2485cb4986bbae946cf8f8021f8f067f97eb72dc8fd00dc35e5bf5e57d303",
       "tipo": "nuevo"
     },
     {
       "archivo": "manifest-entrega.json",
-      "bytes": 15467,
-      "sha256": "d16c0d18b93fa3ca8721ecbeb4947533e300d9df37effea5c249991d74132c2d",
+      "bytes": 16172,
+      "sha256": "4bc7ed4ffa4e921bb901d55bac147f875904bec6edb9f3ba9669aa8415350b93",
       "tipo": "modificado"
     },
     {
       "archivo": "sw.js",
-      "bytes": 3376,
-      "sha256": "3cadb71fb772c2fdee9fca865f11e3de9b1fc88303c014ac975ff15b8fda9d3d",
+      "bytes": 3647,
+      "sha256": "07131d85eb2a3b2e2ca73bc2872bbac1a06b2b784dd8491cf460b00db152f532",
       "tipo": "modificado"
     }
   ],

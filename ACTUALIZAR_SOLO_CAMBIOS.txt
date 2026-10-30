@@ -1,9 +1,9 @@
-RESPIRA 4.8 — TODOS LOS CAMBIOS DESDE 4.6
+RESPIRA 4.9 — SOLO CAMBIOS DESDE 4.8
 
-Aplica este único ZIP sobre la carpeta de Respira 4.6, 4.7 o 4.8. Extrae todo, reemplaza los archivos del mismo nombre y conserva los demás. No necesitas aplicar los parches anteriores por separado.
+Este ZIP se aplica únicamente sobre tu carpeta de Respira 4.8. Extrae todo su contenido, reemplaza los archivos del mismo nombre y conserva los demás. Mantén las carpetas y la misma dirección web. No necesitas el otro ZIP 4.9 acumulado.
 
-Incluye Home móvil 1, Favoritos 4 y Más 3 para celular y computadora, selección de mascota 4 en ambos tamaños, portada móvil sin franjas y hojas de computadora corregidas en la selección de mascota. Conserva los fondos HD y el resto del diseño aprobado.
+Incluye Métodos por secciones, las cinco categorías y los trece métodos sin duplicados; el fondo HD dentro de los ejercicios y el diario; la compañía elegida en Home, Métodos, Favoritos y Más; y las cuatro ilustraciones seleccionadas del Home para celular y computadora.
 
-Después de copiar, recarga la app. Si ves la versión anterior, cierra la pestaña y vuelve a abrirla; en computadora también puedes usar Ctrl+F5.
+Las imágenes, diseños y archivos anteriores que no cambian no se repiten. El tamaño del ZIP corresponde principalmente a las cuatro ilustraciones nuevas.
 
-Es una actualización de archivos, no una app independiente. Conserva las carpetas imagenes e iconos de tu instalación y la misma dirección web.
+Después de copiar, recarga la app. Si ves la versión anterior, cierra la pestaña y vuelve a abrirla; en computadora también puedes usar Ctrl+F5. No borres los datos del sitio para conservar tus notas y favoritos.

@@ -1,0 +1,18 @@
+/* El mismo fondo maestro aprobado en cada método, diario y categoría. */
+body:has(.detail-page),
+body:has(.collection-page) {
+  background:
+    linear-gradient(#effaf1b8 0%, #effaf1f8 42%, #f4f8ef 75%),
+    url('../imagenes/inicio-web/lago-hd.png') center top / 100% auto no-repeat,
+    #eef7f1;
+}
+
+@media(max-width:767px) {
+  body:has(.detail-page),
+  body:has(.collection-page) {
+    background:
+      linear-gradient(#effaf1d9 0%, #effaf1f5 25%, #f4f8ef 60%),
+      url('../imagenes/inicio-web/lago-hd.png') center top / auto 390px no-repeat,
+      #eef7f1;
+  }
+}

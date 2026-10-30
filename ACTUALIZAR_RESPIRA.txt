@@ -1,30 +1,9 @@
-RESPIRA 4.8 — TODOS LOS CAMBIOS APROBADOS
+RESPIRA 4.9 — SOLO CAMBIOS DESDE 4.8
 
-1. Extrae TODO este ZIP sobre la carpeta de Respira 4.6, 4.7 o 4.8.
-2. Reemplaza los archivos del mismo nombre y conserva los demás. Mantén las carpetas y la misma dirección del sitio.
-3. index.html debe quedar en la carpeta principal, junto a sw.js, css, js, imagenes e iconos.
-4. Recarga la página. Si aparece la versión anterior, cierra esa pestaña y vuelve a abrirla; en computadora también puedes usar Ctrl+F5.
+Este ZIP se aplica únicamente sobre tu carpeta de Respira 4.8. Extrae todo su contenido, reemplaza los archivos del mismo nombre y conserva los demás. Mantén las carpetas y la misma dirección web. No necesitas el otro ZIP 4.9 acumulado.
 
-Este ZIP reúne TODOS LOS CAMBIOS DESDE 4.6. No es una aplicación independiente. No necesitas copiar los parches anteriores por separado. Consulta ACTUALIZAR_SOLO_CAMBIOS.txt.
+Incluye Métodos por secciones, las cinco categorías y los trece métodos sin duplicados; el fondo HD dentro de los ejercicios y el diario; la compañía elegida en Home, Métodos, Favoritos y Más; y las cuatro ilustraciones seleccionadas del Home para celular y computadora.
 
-PARA VERLO EN WINDOWS SIN SUBIRLO
-Abre INICIAR_RESPIRA.cmd. Mantén su ventana abierta mientras uses Respira.
+Las imágenes, diseños y archivos anteriores que no cambian no se repiten. El tamaño del ZIP corresponde principalmente a las cuatro ilustraciones nuevas.
 
-INCLUYE
-- Selección de mascota 4, Un encuentro sereno, para celular y computadora.
-- Hojas del fondo corregidas en computadora, con tamaño moderado y proporciones originales.
-- Elección diaria, historias y entrada opcional conectadas a las funciones reales.
-
-TAMBIÉN INCLUYE LOS CAMBIOS DE 4.7
-- Home móvil 1, Jardín sereno, aprobado.
-- Favoritos 4 y Más 3, para celular y computadora, tal cual las propuestas elegidas.
-- Welcome móvil sin franjas de relleno arriba y abajo, con el mismo PNG aprobado.
-- Métodos 10, Jardín ligero, para computadora y celular, con 13 métodos y favoritos funcionales.
-- Home Jardín, propuesta 3 aprobada, para computadora.
-- Los cinco gráficos de mayor resolución originales de la propuesta en imagenes/inicio-web/.
-- Welcome Esmeralda 2 para computadora.
-- Portada aprobada para celular y botón Iniciar funcional.
-- Foto, botón transparente y logo originales en imagenes/welcome/.
-- Los demás archivos y datos se conservan al aplicar el parche.
-
-La aplicación funciona en la web con archivos estáticos. No necesita instalar paquetes de desarrollo.
+Después de copiar, recarga la app. Si ves la versión anterior, cierra la pestaña y vuelve a abrirla; en computadora también puedes usar Ctrl+F5. No borres los datos del sitio para conservar tus notas y favoritos.

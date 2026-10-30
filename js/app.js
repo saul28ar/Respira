@@ -62,9 +62,9 @@ function render() {
   if (view === 'pet-library') html = renderPetLibrary();
   if (view === 'pet-detail') html = renderPetDetail({petId:route.id,chosen:cp,returnView:petReturn});
   if (view === 'pet-confirm') html = renderPetConfirm({petId:cp,saveOk});
-  if (view === 'methods') html = renderMethods();
+  if (view === 'methods') html = renderMethods({ petId:cp });
   if (['meditation','quick','advice'].includes(view)) html = renderCollection(view);
-  if (view === 'favorites') html = renderFavorites();
+  if (view === 'favorites') html = renderFavorites({ petId:cp });
   if (view === 'more') html = renderMoreJardin(cp);
   if (view === 'about') html = renderAbout();
   if (view === 'detail') html = renderDetail(route.id, {draft,petReturn:activityPet});
@@ -157,8 +157,16 @@ function showStep(kind) {
   announcer.textContent = `Paso ${currentStep + 1}. ${steps[currentStep][0]}`;
 }
 app.addEventListener('click', event => {
-  const element = event.target.closest('[data-go],[data-open],[data-fav],[data-action],[data-pet-view]');
+  const element = event.target.closest('[data-go],[data-open],[data-fav],[data-action],[data-pet-view],[data-method-category]');
   if (!element || element.disabled) return;
+  if (element.dataset.methodCategory) {
+    const section = document.getElementById('m10-category-' + element.dataset.methodCategory);
+    if (section) {
+      section.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',block:'start'});
+      section.focus({preventScroll:true});
+    }
+    return;
+  }
   if (element.dataset.go) { navigate(element.dataset.go); return; }
   if (element.dataset.petView) {
     if (route.view !== 'pet-detail' && route.view !== 'detail') petReturn = route.view;

@@ -13,3 +13,5 @@ Conservar composición, paleta marfil y menta, paisaje con velo, logo, tipograf�
 La apariencia común del welcome, el Home y Métodos queda fijada como referencia para Favoritos y Más. Sus propuestas deben variar la distribución sin introducir otro estilo visual.
 
 El 29 de octubre de 2026, el usuario pidió la entrega conjunta e indicó Favoritos 4 y Más 3. Home móvil 1 se conecta mediante `js/components/home-mobile-jardin.js` y `css/home-mobile-jardin.css`, con controles reales y el mismo panel de compañía. El Home web Jardín 3 permanece como estaba.
+
+Actualización autorizada el 30 de octubre de 2026: las cuatro imágenes de las tarjetas pasan a mostrar las escenas de las tres mascotas elegidas en TARJETAS_HOME_APROBADO.md. Se conserva la cuadrícula de dos columnas de celular, las dimensiones, los textos, iconos, acciones, saludo, diario y navegación. Este cambio forma parte de la próxima entrega conjunta.
