@@ -1,16 +1,21 @@
-RESPIRA 4.7 — HOME 1, FAVORITOS 4 Y MÁS 3
+RESPIRA 4.8 — TODOS LOS CAMBIOS APROBADOS
 
-1. Extrae TODO el ZIP de cambios sobre la carpeta de Respira 4.6.
+1. Extrae TODO este ZIP sobre la carpeta de Respira 4.6, 4.7 o 4.8.
 2. Reemplaza los archivos del mismo nombre y conserva los demás. Mantén las carpetas y la misma dirección del sitio.
 3. index.html debe quedar en la carpeta principal, junto a sw.js, css, js, imagenes e iconos.
 4. Recarga la página. Si aparece la versión anterior, cierra esa pestaña y vuelve a abrirla; en computadora también puedes usar Ctrl+F5.
 
-Esta entrega contiene SOLO CAMBIOS DESDE 4.6; no es una aplicación independiente. Consulta ACTUALIZAR_SOLO_CAMBIOS.txt.
+Este ZIP reúne TODOS LOS CAMBIOS DESDE 4.6. No es una aplicación independiente. No necesitas copiar los parches anteriores por separado. Consulta ACTUALIZAR_SOLO_CAMBIOS.txt.
 
 PARA VERLO EN WINDOWS SIN SUBIRLO
 Abre INICIAR_RESPIRA.cmd. Mantén su ventana abierta mientras uses Respira.
 
 INCLUYE
+- Selección de mascota 4, Un encuentro sereno, para celular y computadora.
+- Hojas del fondo corregidas en computadora, con tamaño moderado y proporciones originales.
+- Elección diaria, historias y entrada opcional conectadas a las funciones reales.
+
+TAMBIÉN INCLUYE LOS CAMBIOS DE 4.7
 - Home móvil 1, Jardín sereno, aprobado.
 - Favoritos 4 y Más 3, para celular y computadora, tal cual las propuestas elegidas.
 - Welcome móvil sin franjas de relleno arriba y abajo, con el mismo PNG aprobado.

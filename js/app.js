@@ -6,7 +6,8 @@ import { icon } from './icons.js';
 import { renderFrame } from './components/interface.js';
 import { renderMobileHome } from './components/home-mobile-jardin.js';
 import { renderDesktopHome } from './components/home-desktop.js';
-import { renderWelcome, renderPetSelect, renderPetLibrary, renderPetDetail, renderPetConfirm } from './components/companions.js';
+import { renderWelcome, renderPetLibrary, renderPetDetail, renderPetConfirm } from './components/companions.js';
+import { renderPetSelectJardin } from './components/pet-select-jardin.js';
 import { renderCollection, renderDetail } from './components/activities.js';
 import { renderMethods } from './components/methods.js';
 import { renderFavorites } from './components/favorites.js';
@@ -57,7 +58,7 @@ function render() {
   const mobileHome = view === 'home' && mobileHomeViewport.matches;
   if (view === 'welcome') html = renderWelcome();
   if (view === 'home') html = (desktopHome ? renderDesktopHome : renderMobileHome)({ petId:cp, message: cp ? pets[cp].messages[messageIndex % pets[cp].messages.length] : '' });
-  if (view === 'pet-select') html = renderPetSelect({ petId:cp });
+  if (view === 'pet-select') html = renderPetSelectJardin({ petId:cp });
   if (view === 'pet-library') html = renderPetLibrary();
   if (view === 'pet-detail') html = renderPetDetail({petId:route.id,chosen:cp,returnView:petReturn});
   if (view === 'pet-confirm') html = renderPetConfirm({petId:cp,saveOk});
@@ -68,7 +69,7 @@ function render() {
   if (view === 'about') html = renderAbout();
   if (view === 'detail') html = renderDetail(route.id, {draft,petReturn:activityPet});
   const active = ['home','pet-select','pet-library','pet-detail','pet-confirm'].includes(view) ? 'home' : view === 'favorites' ? 'favorites' : ['more','about'].includes(view) ? 'more' : 'methods';
-  app.innerHTML = renderFrame(html, { active, welcome:view === 'welcome', home:view === 'home', desktopHome, mobileHome, methods:view === 'methods', ownInterface:['favorites','more'].includes(view) });
+  app.innerHTML = renderFrame(html, { active, welcome:view === 'welcome', home:view === 'home', desktopHome, mobileHome, methods:view === 'methods', ownInterface:['favorites','more','pet-select'].includes(view) });
   const main = app.querySelector('main');
   if (main) { main.id = 'main-content'; main.tabIndex = -1; }
   document.body.classList.toggle('welcome-view', view === 'welcome');
@@ -78,6 +79,7 @@ function render() {
   document.body.classList.toggle('methods-view', view === 'methods');
   document.body.classList.toggle('favorites-jardin-view', view === 'favorites');
   document.body.classList.toggle('more-jardin-view', view === 'more');
+  document.body.classList.toggle('pet-select-jardin-view', view === 'pet-select');
   const title = app.querySelector('h1')?.textContent ?? 'Tu espacio de calma';
   document.title = `${title} · Respira`;
   if (!saveOk && cp && view === 'home') notify('Tu compañía funciona ahora, pero no se pudo guardar en este navegador.');

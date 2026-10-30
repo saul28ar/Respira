@@ -1,0 +1,158 @@
+/* Pet select 4 aprobado · Un encuentro sereno. Estilos aislados. */
+body.pet-select-jardin-view{background:#eef7ef}
+body.pet-select-jardin-view #app{padding-bottom:0}
+.pet-select-jardin *{box-sizing:border-box}
+.pet-select-jardin,.pet-select-jardin{margin:0;min-height:100%}
+.pet-select-jardin{font:16px/1.5 "Segoe UI",Arial,sans-serif;color:#174e3c;background:#eef7ef;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.pet-select-jardin a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.pet-select-jardin button{font:inherit;color:inherit;cursor:pointer;border:0;-webkit-tap-highlight-color:transparent}
+.pet-select-jardin a:focus-visible,.pet-select-jardin button:focus-visible{outline:3px solid #398eab;outline-offset:4px}
+.pet-select-jardin img{display:block;max-width:100%}
+.pet-select-jardin .ps4-icon{display:inline-block;vertical-align:middle;width:24px;height:24px;flex:none}
+.pet-select-jardin .ps4-page{position:relative;isolation:isolate;min-height:100svh;overflow:hidden;padding:28px 64px 32px;background:linear-gradient(#edf8f0de,#f4f9eff5 55%,#eef8ef)}
+.pet-select-jardin .ps4-frame{max-width:1360px;margin:auto;position:relative;z-index:1}
+.pet-select-jardin .ps4-ambient{position:absolute;z-index:-2;inset:0 0 auto;height:570px;background:url('../imagenes/inicio-web/lago-hd.png') center top/100% auto no-repeat;opacity:.4;mask-image:linear-gradient(#000,transparent 95%)}
+.pet-select-jardin .ps4-waves{position:absolute;z-index:-1;bottom:0;left:0;width:100%;height:600px;opacity:.17;pointer-events:none}
+.pet-select-jardin .ps4-topbar{display:flex;align-items:center;gap:30px;height:80px;border-bottom:1px solid #cbded0;margin-bottom:28px}
+.pet-select-jardin .ps4-brand{width:165px;flex:none}
+.pet-select-jardin .ps4-brand img{width:100%;height:auto}
+.pet-select-jardin .ps4-top-nav{display:flex;gap:8px;margin-left:auto}
+.pet-select-jardin .ps4-top-nav a{display:flex;align-items:center;gap:8px;padding:10px 17px;font-size:13px;color:#6a826e;border-radius:999px}
+.pet-select-jardin .ps4-top-nav .ps4-icon{width:18px;height:18px}
+.pet-select-jardin .ps4-top-nav a.ps4-active{background:#e0eddb;color:#16553b;font-weight:650}
+.pet-select-jardin .ps4-top-nav .ps4-active>.ps4-icon{fill:currentColor}
+.pet-select-jardin .ps4-active-dot{display:none}
+.pet-select-jardin .ps4-menu{width:43px;height:43px;display:grid;place-items:center;background:#fffef8;border:1px solid #dce8d8;border-radius:50%;color:#215f49}
+.pet-select-jardin .ps4-menu .ps4-icon{width:23px;height:23px}
+.pet-select-jardin .ps4-intro{height:198px;padding:28px 36px;position:relative;isolation:isolate;overflow:hidden;border-radius:28px;border:1px solid #ffffffe0;background:linear-gradient(90deg,#fffff8f2,#fffff8c9 65%,#fffff840),url('../imagenes/inicio-web/lago-hd.png') center 40%/cover;box-shadow:0 6px 25px #245b431c;display:flex;align-items:center;margin-bottom:24px}
+.pet-select-jardin .ps4-intro-copy{position:relative;z-index:1;max-width:70%}
+.pet-select-jardin .ps4-eyebrow{display:block;color:#447059;font-size:10px;font-weight:650;letter-spacing:.17em;margin-bottom:12px}
+.pet-select-jardin h1{font:400 46px/1.06 Georgia,serif;letter-spacing:-.045em;color:#174f37;margin:0 0 15px;max-width:740px}
+.pet-select-jardin .ps4-intro p{margin:0;max-width:590px;font-size:14px;line-height:1.7;color:#456957}
+.pet-select-jardin .ps4-intro-trio{display:flex;align-items:center;justify-content:center;position:absolute;right:24px;bottom:12px;width:285px;height:162px}
+.pet-select-jardin .ps4-intro-trio img{width:42%;height:auto;flex:none;filter:drop-shadow(0 4px 4px #447c5d1a)}
+.pet-select-jardin .ps4-intro-trio img+img{margin-left:-13%}
+.pet-select-jardin .ps4-intro-trio img:nth-child(2){transform:translateY(10px);z-index:1}
+.pet-select-jardin .ps4-pet-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.pet-select-jardin .ps4-pet-card{position:relative;min-width:0;display:flex;flex-direction:column;overflow:hidden;background:#fffefa;border:1px solid #ffffffe6;border-radius:25px;box-shadow:0 7px 22px #4f876619}
+.pet-select-jardin .ps4-pet-art{height:191px;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 70%,#eff7e8,#e3efdf);position:relative;isolation:isolate}
+.pet-select-jardin .ps4-pet-nubecita .ps4-pet-art{background:radial-gradient(ellipse at 50% 70%,#f3fbfa,#e4f2f1)}
+.pet-select-jardin .ps4-pet-lunita .ps4-pet-art{background:radial-gradient(ellipse at 50% 70%,#f7f4fc,#eae6f5)}
+.pet-select-jardin .ps4-pet-art>img{width:203px;height:203px;object-fit:contain;filter:drop-shadow(0 6px 6px #568e6a12)}
+.pet-select-jardin .ps4-pet-copy{padding:21px 24px 23px;min-width:0;flex:1}
+.pet-select-jardin .ps4-pet-name{font:400 29px/1.08 Georgia,serif;letter-spacing:-.025em;color:#2b573d;margin:0 0 10px}
+.pet-select-jardin .ps4-pet-sub{font-size:12px;line-height:1.55;color:#6b8061;margin:0;min-height:38px}
+.pet-select-jardin .ps4-pet-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px}
+.pet-select-jardin .ps4-pet-pick{display:inline-flex;align-items:center;justify-content:center;gap:22px;min-height:39px;padding:9px 20px;border-radius:999px;background:#286b53;color:#fffef8;font-size:12px;font-weight:600;line-height:1.3;flex:none}
+.pet-select-jardin .ps4-pet-pick .ps4-icon{width:16px;height:16px}
+.pet-select-jardin .ps4-pet-history{display:inline-flex;align-items:center;gap:4px;font-size:10px;line-height:1.3;color:#4c7a62;white-space:nowrap}
+.pet-select-jardin .ps4-pet-history .ps4-icon{width:11px;height:15px}
+.pet-select-jardin .ps4-selection-footer{display:flex;flex-direction:column;align-items:center;gap:11px;margin-top:25px;text-align:center}
+.pet-select-jardin .ps4-selection-footer p{font-size:11px;line-height:1.5;color:#70866e;margin:0}
+.pet-select-jardin .ps4-skip{display:flex;align-items:center;gap:20px;font-size:13px;color:#2f725b;border:1px solid #bfd5c2;border-radius:999px;background:#fffff8c9;min-height:42px;padding:9px 23px}
+.pet-select-jardin .ps4-skip .ps4-icon{width:17px;height:17px}
+.pet-select-jardin .ps4-library{font-size:11px;display:flex;align-items:center;gap:4px;color:#66826b;line-height:1.4}
+.pet-select-jardin .ps4-library .ps4-icon{width:12px;height:14px}
+.pet-select-jardin .ps4-bottom-nav{display:none}
+.pet-select-jardin .ps4-pet-card.ps4-chosen{outline:2px solid #6c9d7d;outline-offset:1px}
+.pet-select-jardin .ps4-intro{height:185px;margin-bottom:22px}
+.pet-select-jardin .ps4-pet-grid{grid-template-columns:1fr;gap:15px;max-width:1110px;margin:auto}
+.pet-select-jardin .ps4-pet-card{height:131px;flex-direction:row;border-radius:25px;background:#fffefaf0}
+.pet-select-jardin .ps4-pet-art{width:190px;height:100%;flex:none;background:linear-gradient(90deg,#eff6e6d9,#eff6e6a1),url('../imagenes/inicio-web/lago-hd.png') center 48%/cover}
+.pet-select-jardin .ps4-pet-nubecita .ps4-pet-art{background:linear-gradient(90deg,#effaf7da,#effaf7a8),url('../imagenes/inicio-web/lago-hd.png') center 48%/cover}
+.pet-select-jardin .ps4-pet-lunita .ps4-pet-art{background:linear-gradient(90deg,#f2eef9e5,#f2eef9b8),url('../imagenes/inicio-web/lago-hd.png') center 48%/cover}
+.pet-select-jardin .ps4-pet-art>img{width:145px;height:145px}
+.pet-select-jardin .ps4-pet-copy{display:grid;grid-template-columns:1fr 250px;grid-template-rows:auto auto;padding:23px 28px;align-content:center;gap:8px 30px}
+.pet-select-jardin .ps4-pet-name{font-size:28px;margin:0}
+.pet-select-jardin .ps4-pet-sub{min-height:0;grid-column:1;grid-row:2}
+.pet-select-jardin .ps4-pet-actions{grid-column:2;grid-row:1/3;margin:0;align-self:center;gap:17px}
+.pet-select-jardin .ps4-selection-footer{margin-top:22px}
+@media(max-width:767px){.pet-select-jardin .ps4-page{padding:14px 18px 105px;background:linear-gradient(#edf8f0de,#f4f9eff5 55%,#eef8ef)}
+.pet-select-jardin .ps4-frame{width:100%;max-width:600px;margin:auto}
+.pet-select-jardin .ps4-ambient{height:420px;background-size:auto 340px;opacity:.48}
+.pet-select-jardin .ps4-waves{height:430px;opacity:.2}
+.pet-select-jardin .ps4-topbar{height:58px;margin-bottom:16px;border-color:#cbded066;gap:20px}
+.pet-select-jardin .ps4-brand{width:132px}
+.pet-select-jardin .ps4-top-nav{display:none}
+.pet-select-jardin .ps4-menu{margin-left:auto;width:39px;height:39px}
+.pet-select-jardin .ps4-menu .ps4-icon{width:23px;height:23px}
+.pet-select-jardin .ps4-intro{height:175px;padding:20px 21px;margin-bottom:18px;border-radius:25px;background:linear-gradient(100deg,#fffff8f2,#fffff8d9 70%,#fffff861),url('../imagenes/inicio-web/lago-hd.png') center 40%/cover}
+.pet-select-jardin .ps4-intro-copy{max-width:100%;position:relative;z-index:2}
+.pet-select-jardin .ps4-eyebrow{font-size:8px;margin-bottom:10px;letter-spacing:.16em}
+.pet-select-jardin h1{font-size:31px;line-height:1.04;margin-bottom:12px;max-width:300px}
+.pet-select-jardin .ps4-intro p{font-size:11.5px;line-height:1.6;max-width:315px}
+.pet-select-jardin .ps4-intro-trio{display:none}
+.pet-select-jardin .ps4-pet-grid{grid-template-columns:1fr;gap:12px}
+.pet-select-jardin .ps4-pet-card{height:132px;flex-direction:row;border-radius:23px}
+.pet-select-jardin .ps4-pet-art{height:100%;width:116px;flex:none}
+.pet-select-jardin .ps4-pet-art>img{width:122px;height:122px;max-width:none}
+.pet-select-jardin .ps4-pet-copy{padding:15px 13px;min-width:0}
+.pet-select-jardin .ps4-pet-name{font-size:23px;line-height:1.06;margin-bottom:7px}
+.pet-select-jardin .ps4-pet-sub{font-size:10.5px;line-height:1.45;min-height:28px;max-width:235px}
+.pet-select-jardin .ps4-pet-actions{margin-top:9px;gap:11px;justify-content:flex-start}
+.pet-select-jardin .ps4-pet-pick{min-height:30px;font-size:10.5px;line-height:1.2;padding:7px 14px;gap:13px}
+.pet-select-jardin .ps4-pet-pick .ps4-icon{width:13px;height:13px}
+.pet-select-jardin .ps4-pet-history{font-size:9px;gap:2px;white-space:nowrap}
+.pet-select-jardin .ps4-pet-history .ps4-icon{width:9px;height:12px}
+.pet-select-jardin .ps4-selection-footer{margin-top:20px;gap:9px}
+.pet-select-jardin .ps4-selection-footer p{font-size:9.5px;line-height:1.5;max-width:310px}
+.pet-select-jardin .ps4-skip{min-height:37px;font-size:11px;gap:16px;padding:8px 20px}
+.pet-select-jardin .ps4-skip .ps4-icon{width:15px;height:15px}
+.pet-select-jardin .ps4-library{font-size:10px}
+.pet-select-jardin .ps4-library .ps4-icon{width:11px;height:13px}
+.pet-select-jardin .ps4-bottom-nav{position:fixed;z-index:20;left:14px;right:14px;bottom:14px;max-width:570px;margin:auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));padding:3px 14px;border:1.5px solid #fffffff0;outline:1px solid #d5e7dc;border-radius:999px;background:linear-gradient(135deg,#fffffff5,#eef9f3eb,#edf8fdec);box-shadow:0 5px 22px #3a8d7f2b;backdrop-filter:blur(11px);overflow:hidden;isolation:isolate}
+.pet-select-jardin .ps4-bottom-nav::before{content:'';position:absolute;z-index:-1;inset:0;background:radial-gradient(ellipse at 0% 70%,#80bd9833,transparent 28%),radial-gradient(ellipse at 100% 40%,#7fc8dc44,transparent 28%);pointer-events:none}
+.pet-select-jardin .ps4-bottom-nav a{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:57px;padding:4px 0 9px;color:#8582ad;font-size:10px;line-height:1.2}
+.pet-select-jardin .ps4-bottom-nav a>.ps4-icon{width:22px;height:22px}
+.pet-select-jardin .ps4-bottom-nav .ps4-active{color:#155b4a;font-weight:650}
+.pet-select-jardin .ps4-bottom-nav .ps4-active>.ps4-icon{fill:currentColor}
+.pet-select-jardin .ps4-bottom-nav .ps4-active-dot{display:block;position:absolute;width:4px;height:4px;bottom:3px;background:currentColor;border-radius:50%}
+.pet-select-jardin .ps4-intro{height:166px;margin-bottom:17px}
+.pet-select-jardin .ps4-pet-grid{gap:12px}
+.pet-select-jardin .ps4-pet-card{height:133px;border-radius:23px}
+.pet-select-jardin .ps4-pet-art{width:121px;height:100%;flex:none}
+.pet-select-jardin .ps4-pet-art>img{width:130px;height:130px}
+.pet-select-jardin .ps4-pet-copy{display:block;padding:16px 13px}
+.pet-select-jardin .ps4-pet-name{font-size:24px;margin-bottom:7px}
+.pet-select-jardin .ps4-pet-sub{font-size:10.5px;min-height:28px;line-height:1.4}
+.pet-select-jardin .ps4-pet-actions{margin-top:9px;gap:10px}
+.pet-select-jardin .ps4-pet-pick{padding:7px 13px;gap:12px}
+.pet-select-jardin .ps4-pet-history{font-size:9px}
+.pet-select-jardin .ps4-selection-footer{margin-top:21px}}
+@media(max-width:389px){.pet-select-jardin .ps4-page{padding-left:14px;padding-right:14px}
+.pet-select-jardin .ps4-pet-art{width:102px}
+.pet-select-jardin .ps4-pet-copy{padding-left:12px;padding-right:10px}
+.pet-select-jardin .ps4-pet-actions{gap:7px}
+.pet-select-jardin .ps4-pet-history{font-size:8.1px}
+.pet-select-jardin .ps4-pet-pick{padding:7px 11px;gap:9px}
+.pet-select-jardin .ps4-pet-art{width:103px}
+.pet-select-jardin .ps4-pet-history{font-size:8px}
+.pet-select-jardin .ps4-pet-pick{padding:7px 10px;gap:8px}}
+.pet-select-jardin .ps4-foliage{display:none;pointer-events:none}
+.pet-select-jardin .ps4-chosen-badge{position:absolute;z-index:2;top:8px;right:10px;display:flex;align-items:center;gap:4px;background:#fffff5e8;border:1px solid #c5dcc5;border-radius:999px;padding:4px 8px;font-size:9px;color:#286b53;line-height:1.2}
+.pet-select-jardin .ps4-chosen-badge .ps4-icon{width:12px;height:12px}
+
+/* Hojas de computadora: ventanas pequeñas sobre el arte original.
+   Se conserva su proporción y se funden los bordes con el fondo. */
+@media(min-width:768px){
+ .pet-select-jardin .ps4-waves{display:none}
+ .pet-select-jardin .ps4-foliage{display:block;position:absolute;z-index:-1;height:auto;opacity:.24;pointer-events:none;overflow:hidden;mask-composite:intersect}
+ .pet-select-jardin .ps4-foliage-left{left:-18px;bottom:-20px;width:clamp(155px,14vw,230px);mask-image:linear-gradient(to right,#000 48%,transparent 100%),linear-gradient(to bottom,transparent,#000 20%)}
+ .pet-select-jardin .ps4-foliage-right{right:-15px;bottom:-15px;width:clamp(145px,13vw,210px);mask-image:linear-gradient(to left,#000 48%,transparent 100%),linear-gradient(to bottom,transparent,#000 20%)}
+}
+@media(min-width:768px) and (max-width:1100px){
+  .pet-select-jardin .ps4-topbar{gap:16px}
+  .pet-select-jardin .ps4-brand{width:132px}
+  .pet-select-jardin .ps4-top-nav{gap:0}
+  .pet-select-jardin .ps4-top-nav a{padding:8px 10px;gap:5px;font-size:11px}
+  .pet-select-jardin .ps4-intro-copy{max-width:67%}
+  .pet-select-jardin .ps4-intro-trio{width:210px;right:14px}
+  .pet-select-jardin h1{font-size:36px}
+  .pet-select-jardin .ps4-pet-art{width:150px}
+  .pet-select-jardin .ps4-pet-copy{grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto auto;padding:15px 18px;gap:5px}
+  .pet-select-jardin .ps4-pet-name{font-size:25px}
+  .pet-select-jardin .ps4-pet-actions{grid-column:1;grid-row:3;gap:15px}
+}
+@media(max-width:409px){
+  .pet-select-jardin .ps4-pet-card{height:143px}
+}

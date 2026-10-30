@@ -1,13 +1,17 @@
 {
   "metodos": "Jardín ligero 10 para web y celular",
-  "home": "Jardín 3 web y los cuatro estados móviles conservados",
-  "welcome": "Esmeralda 2 web y portada móvil conservados",
-  "version": "Respira 4.7 · Home 1, Favoritos 4, Más 3 y portada móvil sin franjas",
-  "version_id": "4.7",
-  "titulo": "Home 1, Favoritos 4, Más 3 y portada móvil sin franjas",
+  "home": "Jardín sereno 1 móvil y Jardín 3 web",
+  "welcome": "Esmeralda 2 web y portada móvil aprobada sin franjas",
+  "version": "Respira 4.8 · Todos los cambios aprobados",
+  "version_id": "4.8",
+  "titulo": "Todos los cambios aprobados desde 4.6",
   "fecha": "2026-10-29",
+  "variante_paquete": "acumulada_desde_4.6",
+  "favoritos": "Un refugio para volver 4, web y móvil",
+  "mas": "Tu rincón de calma 3, web y móvil",
+  "pet_select": "Un encuentro sereno 4, web y móvil; hojas web corregidas",
   "verificacion": {
-    "paquete": "CRC y SHA256 verificados; base + parche equivale exactamente al respaldo actualizado.",
+    "paquete": "CRC y SHA256 verificados. La aplicación sobre 4.6, 4.7 y 4.8 produce el mismo respaldo actualizado. Código y gráficos idénticos a 4.8.",
     "funcionales": [
       {
         "informe": "work/qa-conjunta-47/informe.json",
@@ -32,19 +36,37 @@
         "sha256": "6c32e9f1a0df2b806d77cc4fdcbe99c51c9f805fe3ff59cfd94ac5473eab5c69",
         "passed": 4,
         "failed": 0
+      },
+      {
+        "informe": "work/qa-petselect-48/informe.json",
+        "sha256": "8e529c2ef743024d8b87bd91bfebefd8d0af096dec8b017893018716d1b19f46",
+        "passed": 25,
+        "failed": 0
+      },
+      {
+        "informe": "work/qa-petselect-48/comparacion.json",
+        "sha256": "7df843eb60d04ebb6291c979cbabacb07ed8626390f0558886a14fae110bcfaf",
+        "passed": 11,
+        "failed": 0
+      },
+      {
+        "informe": "work/pet4-integration/verificacion.json",
+        "sha256": "484cf4bb8688bc05510110bcfd8cdb56bc4e0f32d0250b010f185d43cadb8290",
+        "passed": 24,
+        "failed": 0
       }
     ]
   },
   "archivos": [
     {
       "archivo": "ACTUALIZAR_RESPIRA.txt",
-      "bytes": 1510,
-      "sha256": "ae061c77e88fb351900749c62bda403d303521769b293e18d98e91c60df027db"
+      "bytes": 1857,
+      "sha256": "40315633ba84052cf2a1d30584d56588718c074791b4b51eb9fbedada0771d80"
     },
     {
       "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
-      "bytes": 429,
-      "sha256": "6fb5eb047642268a3127395905ad27464c62f7edfc159351fda232e5731e40c4"
+      "bytes": 806,
+      "sha256": "9f97ef5a0bd62e97e4aebd3991f8a48f2273a2d50d2acb051e999c5f07eaeeb7"
     },
     {
       "archivo": "DISENO_APROBADO.md",
@@ -53,13 +75,18 @@
     },
     {
       "archivo": "ENTREGAS.md",
-      "bytes": 1858,
-      "sha256": "d9c2061fce1455e3b8dedee564dd478f3483ac1be982be8d10f9418d141ffef9"
+      "bytes": 2866,
+      "sha256": "32d42cf016c2d771a737bbe2b9ea08ed4a1018081c09bd7019f3a57d0b847bf8"
     },
     {
       "archivo": "FAVORITOS_APROBADO.md",
       "bytes": 1232,
       "sha256": "cab60d5572ca35845163bceb469dfa3dbd8efe5078735179d9ea0915419ee1d9"
+    },
+    {
+      "archivo": "FONDOS_APROBADO.md",
+      "bytes": 1744,
+      "sha256": "457b89893ac70346ee84d75be82b4f4572410551e7908f7f761853f181740a4c"
     },
     {
       "archivo": "HOME_MOVIL_APROBADO.md",
@@ -78,8 +105,8 @@
     },
     {
       "archivo": "LEEME.md",
-      "bytes": 11432,
-      "sha256": "f3a33d339cd49ca7b22ece52c901ed739e40b665802b7ece8258b4161d50fc31"
+      "bytes": 11608,
+      "sha256": "3cfc48dda5d3ec810c6a06bfda27950e31eb925aebef21bf3beb7afb506d826f"
     },
     {
       "archivo": "MAS_APROBADO.md",
@@ -92,14 +119,19 @@
       "sha256": "bd0eacb2271d99be819ebbf44b472eb74287b6f06241577103815311165c0184"
     },
     {
+      "archivo": "PET_SELECT_APROBADO.md",
+      "bytes": 1477,
+      "sha256": "b9ad1ef067bcba98daa5d5438b02e610e89cff3f03cf6680fbbc20222ad1be22"
+    },
+    {
       "archivo": "Servidor.ps1",
       "bytes": 3400,
       "sha256": "4e5d7c30594e6e42ff40bc11916ad62df691b8d9fc791f39b8e714c895f8ac96"
     },
     {
       "archivo": "VERIFICACION.md",
-      "bytes": 8841,
-      "sha256": "3bd150780454ef69feff874f9bdc8efe0836b259013fbfe759aa34b1427e1b08"
+      "bytes": 10284,
+      "sha256": "e80113535f49727fc52959b4c1f81853175a16a03b17731d3f31d48374be7f44"
     },
     {
       "archivo": "WELCOME_ALCANCE.md",
@@ -155,6 +187,11 @@
       "archivo": "css/more-jardin.css",
       "bytes": 15316,
       "sha256": "df20e3c2bab1a333e1b965894e1e983b3b6f9dacee53045cdcba8beb2a88e2d7"
+    },
+    {
+      "archivo": "css/pet-select-jardin.css",
+      "bytes": 15013,
+      "sha256": "6efcca180a4cc691ff9731225a3c521901622ed99b1541be840d6d2fc9b0e4f4"
     },
     {
       "archivo": "css/welcome-desktop.css",
@@ -303,13 +340,13 @@
     },
     {
       "archivo": "index.html",
-      "bytes": 1586,
-      "sha256": "b1196b3009a8376d9938e7898e2a9bead69bbceca298612878f452aec8e90cdc"
+      "bytes": 1647,
+      "sha256": "89eddd6ca420fd0890653f8af208e8468b51eb40c49739656ea8eebbcdf79e16"
     },
     {
       "archivo": "js/app.js",
-      "bytes": 13840,
-      "sha256": "1488b3825e0a41ffb8d11c32f47b16af6ff4988ed7f8e4b8ff8b371f523c2d2a"
+      "bytes": 14000,
+      "sha256": "2bc2b2d19b8a1f2a05f64ad7f54252433c056ab6f91eef3fc7d13ee14e307846"
     },
     {
       "archivo": "js/components/activities.js",
@@ -367,6 +404,11 @@
       "sha256": "64d49511cd948de8e23d93386de1bbd87c0385b48f7c31475f6ffe9102e06b25"
     },
     {
+      "archivo": "js/components/pet-select-jardin.js",
+      "bytes": 4030,
+      "sha256": "c33aafa0f5935d6e12b66d7fff8268dfe435b262b622e12704068d0a795aed33"
+    },
+    {
       "archivo": "js/components/settings.js",
       "bytes": 2566,
       "sha256": "187193f4e7cf4d1dd35cda9f122bd4ec2c731267ef9be016d6e5fcbbdf6c3bc2"
@@ -418,8 +460,8 @@
     },
     {
       "archivo": "sw.js",
-      "bytes": 3309,
-      "sha256": "40da074061814f4f6dcc96a5ac49ff8a001bc1b18e0b4c48ba57a07e9cc37ad5"
+      "bytes": 3376,
+      "sha256": "3cadb71fb772c2fdee9fca865f11e3de9b1fc88303c014ac975ff15b8fda9d3d"
     }
   ]
 }

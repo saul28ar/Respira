@@ -1,20 +1,26 @@
 {
   "version_base": "4.6",
-  "version_nueva": "4.7",
+  "version_nueva": "4.8",
+  "variantes_base_compatibles": [
+    "4.6",
+    "4.7",
+    "4.8"
+  ],
+  "variante_paquete": "acumulada_desde_4.6",
   "sha256_base_zip": "c44081e9eac170860bb1efc99a56c331ca9ae4b34da8c377a02a78a40e1df024",
-  "instruccion": "Aplicar sobre Respira 4.6, respetando las carpetas y conservando los demás archivos.",
+  "instruccion": "Aplicar este único ZIP sobre Respira 4.6, 4.7 o 4.8, reemplazando archivos y conservando los demás.",
   "eliminaciones": [],
   "archivos": [
     {
       "archivo": "ACTUALIZAR_RESPIRA.txt",
-      "bytes": 1510,
-      "sha256": "ae061c77e88fb351900749c62bda403d303521769b293e18d98e91c60df027db",
+      "bytes": 1857,
+      "sha256": "40315633ba84052cf2a1d30584d56588718c074791b4b51eb9fbedada0771d80",
       "tipo": "modificado"
     },
     {
       "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
-      "bytes": 429,
-      "sha256": "6fb5eb047642268a3127395905ad27464c62f7edfc159351fda232e5731e40c4",
+      "bytes": 806,
+      "sha256": "9f97ef5a0bd62e97e4aebd3991f8a48f2273a2d50d2acb051e999c5f07eaeeb7",
       "tipo": "modificado"
     },
     {
@@ -25,14 +31,20 @@
     },
     {
       "archivo": "ENTREGAS.md",
-      "bytes": 1858,
-      "sha256": "d9c2061fce1455e3b8dedee564dd478f3483ac1be982be8d10f9418d141ffef9",
+      "bytes": 2866,
+      "sha256": "32d42cf016c2d771a737bbe2b9ea08ed4a1018081c09bd7019f3a57d0b847bf8",
       "tipo": "modificado"
     },
     {
       "archivo": "FAVORITOS_APROBADO.md",
       "bytes": 1232,
       "sha256": "cab60d5572ca35845163bceb469dfa3dbd8efe5078735179d9ea0915419ee1d9",
+      "tipo": "nuevo"
+    },
+    {
+      "archivo": "FONDOS_APROBADO.md",
+      "bytes": 1744,
+      "sha256": "457b89893ac70346ee84d75be82b4f4572410551e7908f7f761853f181740a4c",
       "tipo": "nuevo"
     },
     {
@@ -49,8 +61,8 @@
     },
     {
       "archivo": "LEEME.md",
-      "bytes": 11432,
-      "sha256": "f3a33d339cd49ca7b22ece52c901ed739e40b665802b7ece8258b4161d50fc31",
+      "bytes": 11608,
+      "sha256": "3cfc48dda5d3ec810c6a06bfda27950e31eb925aebef21bf3beb7afb506d826f",
       "tipo": "modificado"
     },
     {
@@ -60,9 +72,15 @@
       "tipo": "nuevo"
     },
     {
+      "archivo": "PET_SELECT_APROBADO.md",
+      "bytes": 1477,
+      "sha256": "b9ad1ef067bcba98daa5d5438b02e610e89cff3f03cf6680fbbc20222ad1be22",
+      "tipo": "nuevo"
+    },
+    {
       "archivo": "VERIFICACION.md",
-      "bytes": 8841,
-      "sha256": "3bd150780454ef69feff874f9bdc8efe0836b259013fbfe759aa34b1427e1b08",
+      "bytes": 10284,
+      "sha256": "e80113535f49727fc52959b4c1f81853175a16a03b17731d3f31d48374be7f44",
       "tipo": "modificado"
     },
     {
@@ -90,6 +108,12 @@
       "tipo": "nuevo"
     },
     {
+      "archivo": "css/pet-select-jardin.css",
+      "bytes": 15013,
+      "sha256": "6efcca180a4cc691ff9731225a3c521901622ed99b1541be840d6d2fc9b0e4f4",
+      "tipo": "nuevo"
+    },
+    {
       "archivo": "css/welcome-mobile-v2.css",
       "bytes": 2157,
       "sha256": "a57016f761c43c9cf08f36ae56b6c94804566832ea76e8db6c3eae5c9e3a5816",
@@ -97,14 +121,14 @@
     },
     {
       "archivo": "index.html",
-      "bytes": 1586,
-      "sha256": "b1196b3009a8376d9938e7898e2a9bead69bbceca298612878f452aec8e90cdc",
+      "bytes": 1647,
+      "sha256": "89eddd6ca420fd0890653f8af208e8468b51eb40c49739656ea8eebbcdf79e16",
       "tipo": "modificado"
     },
     {
       "archivo": "js/app.js",
-      "bytes": 13840,
-      "sha256": "1488b3825e0a41ffb8d11c32f47b16af6ff4988ed7f8e4b8ff8b371f523c2d2a",
+      "bytes": 14000,
+      "sha256": "2bc2b2d19b8a1f2a05f64ad7f54252433c056ab6f91eef3fc7d13ee14e307846",
       "tipo": "modificado"
     },
     {
@@ -132,15 +156,21 @@
       "tipo": "nuevo"
     },
     {
+      "archivo": "js/components/pet-select-jardin.js",
+      "bytes": 4030,
+      "sha256": "c33aafa0f5935d6e12b66d7fff8268dfe435b262b622e12704068d0a795aed33",
+      "tipo": "nuevo"
+    },
+    {
       "archivo": "manifest-entrega.json",
-      "bytes": 13976,
-      "sha256": "83f91e42333a0d3bd8bd6ab5868cc29403b7f2b19093dc2ece2264bbd30461ca",
+      "bytes": 15467,
+      "sha256": "d16c0d18b93fa3ca8721ecbeb4947533e300d9df37effea5c249991d74132c2d",
       "tipo": "modificado"
     },
     {
       "archivo": "sw.js",
-      "bytes": 3309,
-      "sha256": "40da074061814f4f6dcc96a5ac49ff8a001bc1b18e0b4c48ba57a07e9cc37ad5",
+      "bytes": 3376,
+      "sha256": "3cadb71fb772c2fdee9fca865f11e3de9b1fc88303c014ac975ff15b8fda9d3d",
       "tipo": "modificado"
     }
   ],

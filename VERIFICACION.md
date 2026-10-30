@@ -1,4 +1,16 @@
-# Revisión de Respira 4.7 · Home 1, Favoritos 4 y Más 3
+# Revisión de Respira 4.8 · Selección de compañía 4
+
+Actualización del 29 de octubre de 2026:
+
+- Selección de compañía 4 conectada a las acciones y al almacenamiento existentes. Se comprueban las tres elecciones, la persistencia, la regla diaria, las historias, la biblioteca y la entrada opcional.
+- 24 comprobaciones del componente aprobadas: sin compañía y con cada mascota a 320, 390, 430, 768, 1024 y 1600 píxeles.
+- Celular de referencia 430×932, DPR2: el componente aislado coincide píxel por píxel con la propuesta 4 aprobada. En la app completa hay mínimos redondeos en imágenes filtradas; la geometría y los textos son idénticos.
+- En computadora se corrigen exclusivamente los adornos inferiores del fondo: dos ventanas SVG pequeñas del mismo PNG, con proporciones originales y máscaras de transición. Se elimina la ampliación que producía hojas gigantes y borrosas.
+- La cabecera y la navegación de esta pantalla se muestran una sola vez. Los estilos están aislados para conservar las otras pantallas aprobadas.
+- 25 comprobaciones de integración y 11 comparaciones visuales aprobadas. Las diferencias históricas de rasterizado afectan a menos del 0,05% de píxeles con variación superior a 1/255; no cambian las composiciones ni los PNG originales.
+- El paquete se aplica desde 4.7; CRC, hashes y simulación de actualización incremental se verifican antes de reemplazar el respaldo completo único.
+
+## Historial: Respira 4.7 · Home 1, Favoritos 4 y Más 3
 
 Actualización del 29 de octubre de 2026, en Chrome para Windows:
 

@@ -1,5 +1,7 @@
-const CACHE = 'respira-code-4-7-home1-favoritos4-mas3';
+const CACHE = 'respira-code-4-8-pet-select4';
 const ASSETS = [
+  "./css/pet-select-jardin.css",
+  "./js/components/pet-select-jardin.js",
   "./css/home-mobile-jardin.css",
   "./js/components/home-mobile-jardin.js",
   "./css/favorites.css",
