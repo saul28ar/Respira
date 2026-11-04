@@ -13,3 +13,5 @@ El 30 de octubre de 2026 se aprueban también cuatro ilustraciones de actividad 
 Conservar tamaño, encuadre, posiciones y recursos originales de las ilustraciones al conectar la elección. Este ajuste y Métodos por secciones 1 quedan pendientes de la próxima entrega conjunta.
 
 El 30 de octubre de 2026 se solicita esa entrega conjunta y se incorpora el ajuste a Respira 4.9 acumulada.
+
+Actualización aprobada el 2 de noviembre de 2026: solo en el Home, cada una de las tres mascotas elegidas va sin recuadro e interactúa al tocar su figura. El botón para elegir aparece únicamente si aún no se eligió. Fuera del Home, las imágenes personales siguen siendo estáticas y corresponden a la misma mascota elegida, sin botón añadido ni interacción del personaje. Véase HOME_MASCOTAS_APROBADO.md; se reserva para la siguiente entrega.

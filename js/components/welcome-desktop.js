@@ -14,7 +14,7 @@ export function renderDesktopWelcome() {
           <div class="wd2-eyebrow"><span aria-hidden="true"></span>UN MOMENTO PARA TI</div>
           <h1 class="wd2-headline" id="welcome-desktop-title">Respira.<br>Estás en tu espacio<br>de calma.</h1>
           <p class="wd2-description">Pequeños momentos para una vida más tranquila. Encuentra una pausa, escucha cómo te sientes y avanza a tu ritmo.</p>
-          <div class="wd2-actions"><a class="wd2-primary" href="#pet-select" data-go="pet-select">Iniciar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a class="wd2-quiet-link" href="#methods" data-go="methods">Explorar métodos</a></div>
+          <div class="wd2-actions"><a class="wd2-primary" href="#pet-select" data-action="start">Iniciar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a class="wd2-quiet-link" href="#methods" data-go="methods">Explorar métodos</a></div>
           <p class="wd2-gentle">Sin prisas. Sin tener que hacerlo perfecto.</p>
         </section>
         <figure class="wd2-art-area"><div class="wd2-art-frame">${renderApprovedWelcomePoster({ imageClass: 'wd2-poster', startId: 'welcome-desktop-start' })}</div></figure>

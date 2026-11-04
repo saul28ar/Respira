@@ -22,11 +22,11 @@ export function journal() {
 let sessionChoice = null;
 export function companionToday() {
   const choice = sessionChoice ?? getStore('petOfDay', null);
-  return choice && choice.day === dateAtDevice() && Object.hasOwn(pets, choice.id) ? choice.id : null;
+  return choice && typeof choice === 'object' && !Array.isArray(choice) && choice.day === dateAtDevice() && typeof choice.id === 'string' && Object.hasOwn(pets, choice.id) ? choice.id : null;
 }
 export function chooseCompanion(id) {
   const existing = companionToday();
-  if (existing || !Object.hasOwn(pets, id)) return { id: existing, saved: true };
+  if (existing || typeof id !== 'string' || !Object.hasOwn(pets, id)) return { id: existing, saved: true };
   sessionChoice = { day: dateAtDevice(), id };
   return { id, saved: setStore('petOfDay', sessionChoice) };
 }

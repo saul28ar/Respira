@@ -1,4 +1,18 @@
-# Revisión de Respira 4.9 · Todos los cambios aprobados
+# Revisión de Respira 4.10 · Compañía y bienvenida aprobadas
+
+Actualización del 4 de noviembre de 2026, en Chrome local para Windows:
+
+- Home: 30 comprobaciones aprobadas para las tres mascotas en celular y computadora, incluyendo toque dentro y fuera del contorno, teclado, movimiento reducido y limpieza al navegar. La composición coincide con la vista aprobada; las pequeñas diferencias de rasterizado tienen media inferior a 0,074/255 por canal.
+- Entrada diaria: 11 recorridos reales y 20 comprobaciones del módulo aprobados. Primera entrada, omisión, recarga, día siguiente, migración de las tres mascotas, almacenamiento bloqueado y datos inválidos. Las notas y los favoritos se conservan.
+- Welcome e iconos: 17 comprobaciones aprobadas desde 320 píxeles hasta computadora, proporciones, áreas seguras simuladas e integridad del arte. El maestro Lunita coincide exactamente con el aprobado; los tamaños derivados tienen medidas y propósitos separados.
+- Integración completa: 16 comprobaciones aprobadas, incluyendo persistencia de notas y favoritos, las cinco categorías, trece métodos, respiración, temporizador, técnicas y la misma compañía estática fuera del Home.
+- Se valida la sintaxis JavaScript, las dependencias, los recursos de la caché nueva y la integridad de las imágenes anteriores. La actualización incremental se comprueba por CRC, SHA256 y equivalencia exacta entre base más parche y respaldo actualizado.
+
+Informes: `work/qa-home410/informe.json`, `work/qa-410-entrada/informe.json`, `work/qa-410-entrada/informe-modulo.json`, `work/qa-410-visual/informe.json`, `work/qa-410-integracion/informe.json` e `informe-archivos.json`.
+
+Estas pruebas usan archivos locales. No se afirma una nueva prueba de instalación y recarga sin conexión por HTTP. Las barras nativas y el aspecto del icono ya instalado se deben revisar en el teléfono físico; la captura de áreas seguras verifica el acabado HTML sin dibujar barras falsas.
+
+## Historial: Respira 4.9 · Todos los cambios aprobados
 
 Actualización del 30 de octubre de 2026:
 

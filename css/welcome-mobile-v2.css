@@ -29,24 +29,40 @@
 /* Teléfonos en vertical y teléfonos táctiles en horizontal. */
 @media (max-width: 767px),
        (max-width: 1024px) and (max-height: 600px) and (orientation: landscape) and (hover: none) and (pointer: coarse) {
+  html:has(body.welcome-view), body.welcome-view { background: #147b99; }
   .welcome-page .welcome-desktop { display: none; }
   .welcome-page .welcome-mobile {
+    --welcome-safe-top: env(safe-area-inset-top, 0px);
+    --welcome-safe-bottom: env(safe-area-inset-bottom, 0px);
+    position: relative;
+    isolation: isolate;
     display: grid;
     grid-template-columns: minmax(0, 1fr);
     place-items: center;
     min-height: 100svh;
     min-height: 100dvh;
-    padding: 0;
+    padding: var(--welcome-safe-top) 0 var(--welcome-safe-bottom);
     overflow: hidden;
-    background: #69c6e9;
+    background: #147b99;
+  }
+  /* El paisaje aprobado se prolonga suavemente en las áreas seguras.
+     No se dibujan barras de sistema; su acabado depende del navegador. */
+  .welcome-page .welcome-mobile::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: -15px;
+    background: url('../imagenes/welcome/portada-aprobada-v2.png') center / cover;
+    filter: blur(13px) brightness(.65);
+    pointer-events: none;
   }
   .welcome-page .welcome-mobile-stage {
     position: relative;
     isolation: isolate;
     /* La misma portada cubre la altura del teléfono sin bandas de relleno.
        En horizontal conserva su proporción y permite bajar hasta Iniciar. */
-    width: max(100vw, calc(100svh * 941 / 1671));
-    width: max(100vw, calc(100dvh * 941 / 1671));
+    width: max(100vw, calc((100svh - var(--welcome-safe-top) - var(--welcome-safe-bottom)) * 941 / 1671));
+    width: max(100vw, calc((100dvh - var(--welcome-safe-top) - var(--welcome-safe-bottom)) * 941 / 1671));
     max-width: none;
     min-width: 0;
     aspect-ratio: 941 / 1671;

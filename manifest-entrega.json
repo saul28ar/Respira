@@ -2,29 +2,53 @@
   "metodos": "Por secciones 1; trece métodos en cinco categorías, móvil y web",
   "home": "Jardín sereno 1 móvil y Jardín 3 web; cuatro ilustraciones de actividad aprobadas",
   "welcome": "Esmeralda 2 web y portada móvil aprobada sin franjas",
-  "variante_paquete": "incremental_desde_4.8",
+  "variante_paquete": "acumulada_desde_4.6",
   "favoritos": "Un refugio para volver 4, web y móvil",
   "mas": "Tu rincón de calma 3, web y móvil",
   "pet_select": "Un encuentro sereno 4, web y móvil; hojas web corregidas",
-  "version": "Respira 4.9 · Todos los cambios aprobados",
-  "version_id": "4.9",
-  "fecha": "2026-10-30",
-  "titulo": "Solo cambios desde 4.8",
   "compania": "La misma compañía elegida en los espacios personales de la app",
   "fondos": "Maestro HD aprobado compartido, también dentro de métodos y diario",
+  "version": "Respira 4.10 · Compañía y bienvenida aprobadas",
+  "version_id": "4.10",
+  "titulo": "Compañía y bienvenida aprobadas",
+  "fecha": "2026-11-04",
   "verificacion": {
-    "paquete": "CRC y SHA256 verificados; 4.8 más el parche produce esta variante 4.9. Código, estilos y gráficos idénticos al respaldo canónico 4.9.",
+    "paquete": "CRC y SHA256 verificados; base + parche equivale exactamente al respaldo actualizado.",
     "funcionales": [
       {
-        "informe": "work/qa-metodos-secciones-pets/informe.json",
-        "sha256": "6a8b40c07d9a17e13aec2b43b7c17f2585f3d7f1d60bad3cabe96f1364176f6b",
-        "passed": 26,
+        "informe": "work/qa-home410/informe.json",
+        "sha256": "e70bc8f7e307f7e70d9235c2a77f73ebe70f6a74ececf775a72dab250eede57e",
+        "passed": 30,
         "failed": 0
       },
       {
-        "informe": "work/qa-tarjetas-integradas/informe.json",
-        "sha256": "2b77e3931c7c4bbdb75bb77f1289e0453b3e84286360114139c7413e9b756c35",
-        "passed": 30,
+        "informe": "work/qa-410-entrada/informe.json",
+        "sha256": "10e5ac32d3a67a2aacf9717c626cadf98b2f203dd626899a7ecef89a849205e8",
+        "passed": 11,
+        "failed": 0
+      },
+      {
+        "informe": "work/qa-410-entrada/informe-modulo.json",
+        "sha256": "2cc8f8749b5f1bc9e863cf0705a9f8a828a9724053e34f8b1fbd1ddd995f5218",
+        "passed": 20,
+        "failed": 0
+      },
+      {
+        "informe": "work/qa-410-visual/informe.json",
+        "sha256": "075c350cf3e7e5dbc61d18c4d4f6c6a2d081eb25b5996b64a8ddb3ff30734594",
+        "passed": 17,
+        "failed": 0
+      },
+      {
+        "informe": "work/qa-410-integracion/informe.json",
+        "sha256": "63a6cf31d46741544ba78da88f895affca0fbd7ef2e60142066a6be3b2e3a32c",
+        "passed": 16,
+        "failed": 0
+      },
+      {
+        "informe": "work/qa-410-integracion/informe-archivos.json",
+        "sha256": "5c91d7725b15bb30b67bd7f9caff8b99b495fb49c0a66a36e4c3e9b12c54f474",
+        "passed": 109,
         "failed": 0
       }
     ]
@@ -32,13 +56,13 @@
   "archivos": [
     {
       "archivo": "ACTUALIZAR_RESPIRA.txt",
-      "bytes": 936,
-      "sha256": "478b642121a5d16177c19041a9e7d43297bfdca1ee7848d98afd95fe84189150"
+      "bytes": 1826,
+      "sha256": "9b54d9c0ef85de85b82bb97063f4065b9c9b0ee4baf16ff0bfbd6eeed8cb6ff1"
     },
     {
       "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
-      "bytes": 936,
-      "sha256": "478b642121a5d16177c19041a9e7d43297bfdca1ee7848d98afd95fe84189150"
+      "bytes": 407,
+      "sha256": "f1e9462449bd315585bce02bc0ae03b74b0849b4b81798931d3ea9e251f82682"
     },
     {
       "archivo": "DISENO_APROBADO.md",
@@ -46,9 +70,14 @@
       "sha256": "12e0a345fd550fd5faa6cecf7e509975a270084899e5d719e6729f8e454e8dc8"
     },
     {
+      "archivo": "ENTRADA_DIARIA_APROBADO.md",
+      "bytes": 1901,
+      "sha256": "6f2572597d5f2736d2d61c50d71aca807720e28ddbce01d48fd576af18c0dbd1"
+    },
+    {
       "archivo": "ENTREGAS.md",
-      "bytes": 4466,
-      "sha256": "4216d31cb6e6b305371e5043e283a556d773eadb23d894dae3fa297c6fba846a"
+      "bytes": 6260,
+      "sha256": "fc48c7590f871efced49e40c3fab5510e0647734fc2f55355ba82c10fed20e0a"
     },
     {
       "archivo": "FAVORITOS_APROBADO.md",
@@ -61,6 +90,11 @@
       "sha256": "d51b266b29483198bd269344874631b89909e964b96ded8ba4e36409a8e8ac9b"
     },
     {
+      "archivo": "HOME_MASCOTAS_APROBADO.md",
+      "bytes": 2127,
+      "sha256": "d00b14c573f8209c45e58a9ff6185be1f4152d64f21e0c5f2c0686ca1e63ba70"
+    },
+    {
       "archivo": "HOME_MOVIL_APROBADO.md",
       "bytes": 2161,
       "sha256": "c68285d8404ed7dcfea5534fb55f6febf307ea2cee67ff39e4514f69a380cba4"
@@ -71,19 +105,24 @@
       "sha256": "96b5be33ee147a41b4c54e3073e751daab711e82d59889a7d5e380885dd7ee5b"
     },
     {
+      "archivo": "ICONO_APROBADO.md",
+      "bytes": 2003,
+      "sha256": "4ecbd96a38115d8cf8f0a461df731576b58f8611127496e43a47b6bcf275568f"
+    },
+    {
       "archivo": "INICIAR_RESPIRA.cmd",
       "bytes": 166,
       "sha256": "c32c360baeb7e5aea9b2667e80dcc92ffb246e0cbac67d13955c422bc64c77b6"
     },
     {
       "archivo": "LEEME.md",
-      "bytes": 12123,
-      "sha256": "4996851029e99213db0c801ef5993c104670da43ced978123b3e40f4e0e0f1c5"
+      "bytes": 12641,
+      "sha256": "6185efb56cf4341a4a5186fad5c633fa3282874ae65b8ea7a40a173971dfdacd"
     },
     {
       "archivo": "MASCOTAS_APROBADO.md",
-      "bytes": 1770,
-      "sha256": "cb58e4eb980a45e97aad1f3452f86bf2824531f26fc511cf19c1cb7ce93d5bc6"
+      "bytes": 2225,
+      "sha256": "46d248ac549dc93f29b92c2ac0b1381cd03fbf99b4e6c50f4d7e6eccffcc8d98"
     },
     {
       "archivo": "MAS_APROBADO.md",
@@ -112,8 +151,8 @@
     },
     {
       "archivo": "VERIFICACION.md",
-      "bytes": 12358,
-      "sha256": "47ee3a014cb189602399cbc79eb8fec12c91a77b04f497a7fbc0c51b799a58d9"
+      "bytes": 14337,
+      "sha256": "404727080245371afbb5e50762ae6748e9d6213392513d69989ed0cf19558402"
     },
     {
       "archivo": "WELCOME_ALCANCE.md",
@@ -122,8 +161,8 @@
     },
     {
       "archivo": "WELCOME_APROBADO.md",
-      "bytes": 1721,
-      "sha256": "9962887e3c31f34fd1ce8711efd062f6ae9aa088f5e37791cf8008a22de0269f"
+      "bytes": 3246,
+      "sha256": "271df0976147a874b3b5faf1fe6d7bfcca39044fed7b69daed23df05f33beefb"
     },
     {
       "archivo": "css/base.css",
@@ -142,13 +181,13 @@
     },
     {
       "archivo": "css/home-desktop.css",
-      "bytes": 12748,
-      "sha256": "b7f1478ca3de454fdb63cad5ec12d678b2d1e49fba8c261e1ecc5b31008eeba3"
+      "bytes": 14428,
+      "sha256": "c28d72a9454a2831f4d1216737414e7269cbc548c6a2043d85968dc55be604c7"
     },
     {
       "archivo": "css/home-mobile-jardin.css",
-      "bytes": 11431,
-      "sha256": "e6d79899433a097b3a675ebbc7f8b0ab486fca6bb2466618628c011d649ed851"
+      "bytes": 13206,
+      "sha256": "e67bc08ba54503bfd27915d2b6624d2b75d78a54fffb9a45f9bf4a8be7d0de5f"
     },
     {
       "archivo": "css/home.css",
@@ -187,8 +226,8 @@
     },
     {
       "archivo": "css/welcome-mobile-v2.css",
-      "bytes": 2157,
-      "sha256": "a57016f761c43c9cf08f36ae56b6c94804566832ea76e8db6c3eae5c9e3a5816"
+      "bytes": 2977,
+      "sha256": "e2a5973255c6f69708288833a4f7f934761a8dff3ca82f86eeffb7af166e4278"
     },
     {
       "archivo": "css/welcome-mobile.css",
@@ -196,14 +235,39 @@
       "sha256": "d28ae3fd7cfb8b06d60b95d46e9b103f80053706600a4fcb85e009fb35248c9d"
     },
     {
+      "archivo": "iconos/apple-touch-icon.png",
+      "bytes": 38889,
+      "sha256": "bb90b14fc8bffe2b85a7b6460e442abf2be4c667ef2c92a1169f53af99c634f2"
+    },
+    {
+      "archivo": "iconos/favicon-16.png",
+      "bytes": 728,
+      "sha256": "8e9643c5ff082effbd465e33b521cc689e8515b8ebdc6ad6dc53e4f894734742"
+    },
+    {
+      "archivo": "iconos/favicon-32.png",
+      "bytes": 2164,
+      "sha256": "43e4f8504c9cf355acf15daa3898d8380727b344317a7560203fbef67dbd9484"
+    },
+    {
       "archivo": "iconos/icon-192.png",
-      "bytes": 5680,
-      "sha256": "18a3dfad48a284112d9a2ea4f0de89ac69eadd2f6205e3285693483ce8ae1f65"
+      "bytes": 43514,
+      "sha256": "6c97bbe6f1da56263d777063e0018becb50171e3d80df1123f1b3fed0d6c578e"
     },
     {
       "archivo": "iconos/icon-512.png",
-      "bytes": 18719,
-      "sha256": "ce0ac37197e3bdb7f6a2c2cac2d9a9061f9e0901dbe4e0b05e9c32402895e267"
+      "bytes": 262718,
+      "sha256": "c18362c317c26fd5f0282e9cced21832c84bc7df8e9b6e3ff08efb5be0179ce6"
+    },
+    {
+      "archivo": "iconos/icon-maskable-512.png",
+      "bytes": 170830,
+      "sha256": "aa2a20fa49cb3a5a82686286395acc8d5ef6d9e7f451c7d9b2b8257e0b13015f"
+    },
+    {
+      "archivo": "iconos/lunita-esmeralda-maestro.png",
+      "bytes": 1684992,
+      "sha256": "a48889c2f5e676992977efe8d9a7a8fb5d5511224253db494b822931f495f34e"
     },
     {
       "archivo": "imagenes/inicio-web/consejos-hd.png",
@@ -347,13 +411,13 @@
     },
     {
       "archivo": "index.html",
-      "bytes": 1705,
-      "sha256": "413a910e48604409e32ce742d0cfb6ccb2d479e401611bbf4d9784afd1a0afb0"
+      "bytes": 1970,
+      "sha256": "8bb850cb42cab1f029c9975b888d5cfa9c0a30d19258231c36bfd141b4e94f8d"
     },
     {
       "archivo": "js/app.js",
-      "bytes": 14407,
-      "sha256": "540deaf78ebbddd58a376871d1bfa484ea8333c90d4ead6d603d9d5c5689f5b4"
+      "bytes": 14956,
+      "sha256": "3636137aea6f423f2fd2ba1b81891d74d460e43da66e8e4cab22bb4cd7828189"
     },
     {
       "archivo": "js/components/activities.js",
@@ -387,13 +451,13 @@
     },
     {
       "archivo": "js/components/home-desktop.js",
-      "bytes": 4506,
-      "sha256": "f211df18eff87288d2aab79166af507e9aa1a609ae7088d5da4f4f20e3c1ff94"
+      "bytes": 4434,
+      "sha256": "86c0ccd5c273d58e00301138c5b9561aa17c8236edac6856075f583d2f845bd0"
     },
     {
       "archivo": "js/components/home-mobile-jardin.js",
-      "bytes": 4359,
-      "sha256": "41e612a64a00508a59c21c5fd0884f2e08c968e6a20d8d5c254f18da12d91b24"
+      "bytes": 4475,
+      "sha256": "253e0ac46432e5ec33dc2b57c837ce182d3156aff2ffa7086577098c0f34b8e2"
     },
     {
       "archivo": "js/components/home.js",
@@ -427,8 +491,8 @@
     },
     {
       "archivo": "js/components/welcome-desktop.js",
-      "bytes": 2848,
-      "sha256": "8a218ba8c37aad249e4651152f6e8fe796be66b1c0aa7357c9d291474b6d025a"
+      "bytes": 2847,
+      "sha256": "0506fdd5cc471834825761bbbb67a8961028ac87bbd7d7b5d695c34511510ebe"
     },
     {
       "archivo": "js/components/welcome-mobile.js",
@@ -437,13 +501,23 @@
     },
     {
       "archivo": "js/components/welcome-poster.js",
-      "bytes": 843,
-      "sha256": "b6c08571dd51fb281ca351e2016530f7a5696de6fef033a6b79f267248b01e65"
+      "bytes": 842,
+      "sha256": "752d88189532173ac21b34aad2116a201440a4adca951aa1165792efdb4f5f6b"
+    },
+    {
+      "archivo": "js/daily-entry.js",
+      "bytes": 1203,
+      "sha256": "ed2a2284ece490f959bad8e563b564895be5aab472f6b20a5963db50b8e86089"
     },
     {
       "archivo": "js/data.js",
       "bytes": 9789,
       "sha256": "1fd7ae610b3e53d40fa82d3ce4291c72b149e25e77651487b66ec2deef77e55a"
+    },
+    {
+      "archivo": "js/home-pet-interaction.js",
+      "bytes": 3664,
+      "sha256": "8b0460fad6becd2f5c2e189ead46ef88fa3f15c571242860ef9cd6b6290fc099"
     },
     {
       "archivo": "js/icons.js",
@@ -457,8 +531,8 @@
     },
     {
       "archivo": "js/storage.js",
-      "bytes": 1325,
-      "sha256": "6b493d49e33ad3c4bbfd68730cacdf00aec82ac9a7787d7df719782e37c1667f"
+      "bytes": 1440,
+      "sha256": "2bfdd7b612e69a8f51edf5d69df4dd64b8f838bce5f4af868f95ad50fc3cf30d"
     },
     {
       "archivo": "js/timer.js",
@@ -472,13 +546,13 @@
     },
     {
       "archivo": "manifest.webmanifest",
-      "bytes": 620,
-      "sha256": "d52c83bb8946e8e5edf1a205c99a7422ab08202ee0819e77ed972db26512a182"
+      "bytes": 751,
+      "sha256": "6432cb5505f0cde94d16e4adf0f641a1c7f9e57c388beb023d31113d76a0ae54"
     },
     {
       "archivo": "sw.js",
-      "bytes": 3647,
-      "sha256": "07131d85eb2a3b2e2ca73bc2872bbac1a06b2b784dd8491cf460b00db152f532"
+      "bytes": 3845,
+      "sha256": "0e8941d78af3b6944be77f7b757ae5b1ddc88efb1184f936a318c0248882ce5b"
     }
   ]
 }

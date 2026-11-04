@@ -13,6 +13,8 @@ import { renderMethods } from './components/methods.js';
 import { renderFavorites } from './components/favorites.js';
 import { renderMoreJardin } from './components/more-jardin.js';
 import { renderAbout } from './components/settings.js';
+import { markPetOfferSeen, welcomeDestination } from './daily-entry.js';
+import { bindHomePetInteractions } from './home-pet-interaction.js';
 
 const app = document.getElementById('app');
 const announcer = document.getElementById('announcer');
@@ -31,6 +33,7 @@ let petReturn = 'pet-select';
 let returnRoute = 'methods';
 let toastTimeout = null;
 let visited = false;
+let cleanupHomePet = null;
 const historyStack = [];
 function routeKey(value) { return value.view + (value.id ? '/' + value.id : ''); }
 function readRoute() {
@@ -51,6 +54,8 @@ function goBack() {
   else navigate(route.view === 'pet-detail' ? petReturn : route.view === 'about' ? 'more' : route.view === 'detail' ? returnRoute : 'home');
 }
 function render() {
+  cleanupHomePet?.();
+  cleanupHomePet = null;
   const cp = companionToday();
   let html = '';
   const view = route.view;
@@ -58,7 +63,10 @@ function render() {
   const mobileHome = view === 'home' && mobileHomeViewport.matches;
   if (view === 'welcome') html = renderWelcome();
   if (view === 'home') html = (desktopHome ? renderDesktopHome : renderMobileHome)({ petId:cp, message: cp ? pets[cp].messages[messageIndex % pets[cp].messages.length] : '' });
-  if (view === 'pet-select') html = renderPetSelectJardin({ petId:cp });
+  if (view === 'pet-select') {
+    markPetOfferSeen();
+    html = renderPetSelectJardin({ petId:cp });
+  }
   if (view === 'pet-library') html = renderPetLibrary();
   if (view === 'pet-detail') html = renderPetDetail({petId:route.id,chosen:cp,returnView:petReturn});
   if (view === 'pet-confirm') html = renderPetConfirm({petId:cp,saveOk});
@@ -70,6 +78,7 @@ function render() {
   if (view === 'detail') html = renderDetail(route.id, {draft,petReturn:activityPet});
   const active = ['home','pet-select','pet-library','pet-detail','pet-confirm'].includes(view) ? 'home' : view === 'favorites' ? 'favorites' : ['more','about'].includes(view) ? 'more' : 'methods';
   app.innerHTML = renderFrame(html, { active, welcome:view === 'welcome', home:view === 'home', desktopHome, mobileHome, methods:view === 'methods', ownInterface:['favorites','more','pet-select'].includes(view) });
+  if (view === 'home') cleanupHomePet = bindHomePetInteractions(app);
   const main = app.querySelector('main');
   if (main) { main.id = 'main-content'; main.tabIndex = -1; }
   document.body.classList.toggle('welcome-view', view === 'welcome');
@@ -80,6 +89,8 @@ function render() {
   document.body.classList.toggle('favorites-jardin-view', view === 'favorites');
   document.body.classList.toggle('more-jardin-view', view === 'more');
   document.body.classList.toggle('pet-select-jardin-view', view === 'pet-select');
+  const theme = document.querySelector('meta[name="theme-color"]');
+  if (theme) theme.content = view === 'welcome' && mobileHomeViewport.matches ? '#147b99' : '#f6f8f2';
   const title = app.querySelector('h1')?.textContent ?? 'Tu espacio de calma';
   document.title = `${title} · Respira`;
   if (!saveOk && cp && view === 'home') notify('Tu compañía funciona ahora, pero no se pudo guardar en este navegador.');
@@ -194,7 +205,11 @@ app.addEventListener('click', event => {
   }
   const action = element.dataset.action;
   if (action === 'back') goBack();
-  if (action === 'start') navigate(companionToday() ? 'home' : 'pet-select');
+  if (action === 'start') {
+    event.preventDefault();
+    navigate(welcomeDestination());
+    return;
+  }
   if (action === 'pet-pick') {
     const result = chooseCompanion(element.dataset.petId);
     saveOk = result.saved;
@@ -267,7 +282,7 @@ document.addEventListener('visibilitychange', () => {
   if (route.view === 'home') render();
 });
 mobileHomeViewport.addEventListener('change', () => {
-  if (route.view === 'home') render();
+  if (route.view === 'home' || route.view === 'welcome') render();
 });
 if (!location.hash) history.replaceState(null,'','#welcome');
 showRoute();

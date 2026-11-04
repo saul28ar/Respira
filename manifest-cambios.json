@@ -1,195 +1,200 @@
 {
-  "version_base": "4.8",
-  "version_nueva": "4.9",
-  "variante_paquete": "incremental_desde_4.8",
-  "sha256_base_zip": "b960dcba1578c3be97cfdce0cea7ce3c0d39f906338b286e9009b540843d4cca",
-  "instruccion": "Aplicar solamente sobre Respira 4.8. Reemplazar archivos del mismo nombre y conservar los demás.",
+  "version_base": "4.9",
+  "version_nueva": "4.10",
+  "sha256_base_zip": "c5fe26f790dae59c643d3f6f5673048d73fcda707621551a1018447c27a38b34",
+  "instruccion": "Aplicar sobre Respira 4.9, respetando las carpetas y conservando los demás archivos.",
   "eliminaciones": [],
   "archivos": [
     {
       "archivo": "ACTUALIZAR_RESPIRA.txt",
-      "bytes": 936,
-      "sha256": "478b642121a5d16177c19041a9e7d43297bfdca1ee7848d98afd95fe84189150",
+      "bytes": 1826,
+      "sha256": "9b54d9c0ef85de85b82bb97063f4065b9c9b0ee4baf16ff0bfbd6eeed8cb6ff1",
       "tipo": "modificado"
     },
     {
       "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
-      "bytes": 936,
-      "sha256": "478b642121a5d16177c19041a9e7d43297bfdca1ee7848d98afd95fe84189150",
+      "bytes": 407,
+      "sha256": "f1e9462449bd315585bce02bc0ae03b74b0849b4b81798931d3ea9e251f82682",
       "tipo": "modificado"
+    },
+    {
+      "archivo": "ENTRADA_DIARIA_APROBADO.md",
+      "bytes": 1901,
+      "sha256": "6f2572597d5f2736d2d61c50d71aca807720e28ddbce01d48fd576af18c0dbd1",
+      "tipo": "nuevo"
     },
     {
       "archivo": "ENTREGAS.md",
-      "bytes": 4466,
-      "sha256": "4216d31cb6e6b305371e5043e283a556d773eadb23d894dae3fa297c6fba846a",
+      "bytes": 6260,
+      "sha256": "fc48c7590f871efced49e40c3fab5510e0647734fc2f55355ba82c10fed20e0a",
       "tipo": "modificado"
     },
     {
-      "archivo": "FAVORITOS_APROBADO.md",
-      "bytes": 1442,
-      "sha256": "30f5fcacb4c06b88acd561e6126b1e97756fc139b54dbedf89173d9db52c8259",
-      "tipo": "modificado"
+      "archivo": "HOME_MASCOTAS_APROBADO.md",
+      "bytes": 2127,
+      "sha256": "d00b14c573f8209c45e58a9ff6185be1f4152d64f21e0c5f2c0686ca1e63ba70",
+      "tipo": "nuevo"
     },
     {
-      "archivo": "FONDOS_APROBADO.md",
-      "bytes": 2074,
-      "sha256": "d51b266b29483198bd269344874631b89909e964b96ded8ba4e36409a8e8ac9b",
-      "tipo": "modificado"
-    },
-    {
-      "archivo": "HOME_MOVIL_APROBADO.md",
-      "bytes": 2161,
-      "sha256": "c68285d8404ed7dcfea5534fb55f6febf307ea2cee67ff39e4514f69a380cba4",
-      "tipo": "modificado"
-    },
-    {
-      "archivo": "HOME_WEB_APROBADO.md",
-      "bytes": 1969,
-      "sha256": "96b5be33ee147a41b4c54e3073e751daab711e82d59889a7d5e380885dd7ee5b",
-      "tipo": "modificado"
+      "archivo": "ICONO_APROBADO.md",
+      "bytes": 2003,
+      "sha256": "4ecbd96a38115d8cf8f0a461df731576b58f8611127496e43a47b6bcf275568f",
+      "tipo": "nuevo"
     },
     {
       "archivo": "LEEME.md",
-      "bytes": 12123,
-      "sha256": "4996851029e99213db0c801ef5993c104670da43ced978123b3e40f4e0e0f1c5",
+      "bytes": 12641,
+      "sha256": "6185efb56cf4341a4a5186fad5c633fa3282874ae65b8ea7a40a173971dfdacd",
       "tipo": "modificado"
     },
     {
       "archivo": "MASCOTAS_APROBADO.md",
-      "bytes": 1770,
-      "sha256": "cb58e4eb980a45e97aad1f3452f86bf2824531f26fc511cf19c1cb7ce93d5bc6",
-      "tipo": "nuevo"
-    },
-    {
-      "archivo": "MAS_APROBADO.md",
-      "bytes": 1233,
-      "sha256": "0d352d5680a2a6c369bec2c6a81dcff521a6460fa0630097b9aab74cd426e98e",
+      "bytes": 2225,
+      "sha256": "46d248ac549dc93f29b92c2ac0b1381cd03fbf99b4e6c50f4d7e6eccffcc8d98",
       "tipo": "modificado"
-    },
-    {
-      "archivo": "METODOS_APROBADO.md",
-      "bytes": 3256,
-      "sha256": "722982c589ee29ab21711462f07be47bf5ee5cbbc7189945620e710435e784d9",
-      "tipo": "modificado"
-    },
-    {
-      "archivo": "TARJETAS_HOME_APROBADO.md",
-      "bytes": 2228,
-      "sha256": "ca451e24a641cee1eb767ee6ef13e7c81c0370069c732b3922495083767bbd52",
-      "tipo": "nuevo"
     },
     {
       "archivo": "VERIFICACION.md",
-      "bytes": 12358,
-      "sha256": "47ee3a014cb189602399cbc79eb8fec12c91a77b04f497a7fbc0c51b799a58d9",
+      "bytes": 14337,
+      "sha256": "404727080245371afbb5e50762ae6748e9d6213392513d69989ed0cf19558402",
       "tipo": "modificado"
     },
     {
-      "archivo": "css/method-details.css",
-      "bytes": 570,
-      "sha256": "09aea433b83aac8ec8c5df2343917d0d4ee12aaac600da95546cb22222f94846",
-      "tipo": "nuevo"
-    },
-    {
-      "archivo": "css/methods.css",
-      "bytes": 13623,
-      "sha256": "daa04c692acdc363b23ca3dea882fa88b7518646353b2e695359760c24092f2c",
+      "archivo": "WELCOME_APROBADO.md",
+      "bytes": 3246,
+      "sha256": "271df0976147a874b3b5faf1fe6d7bfcca39044fed7b69daed23df05f33beefb",
       "tipo": "modificado"
     },
     {
-      "archivo": "imagenes/tarjetas/escenas-01.png",
-      "bytes": 3376407,
-      "sha256": "d5a474d8688d492d343d83f45d1458e8647443b266b008f76612565472314571",
+      "archivo": "css/home-desktop.css",
+      "bytes": 14428,
+      "sha256": "c28d72a9454a2831f4d1216737414e7269cbc548c6a2043d85968dc55be604c7",
+      "tipo": "modificado"
+    },
+    {
+      "archivo": "css/home-mobile-jardin.css",
+      "bytes": 13206,
+      "sha256": "e67bc08ba54503bfd27915d2b6624d2b75d78a54fffb9a45f9bf4a8be7d0de5f",
+      "tipo": "modificado"
+    },
+    {
+      "archivo": "css/welcome-mobile-v2.css",
+      "bytes": 2977,
+      "sha256": "e2a5973255c6f69708288833a4f7f934761a8dff3ca82f86eeffb7af166e4278",
+      "tipo": "modificado"
+    },
+    {
+      "archivo": "iconos/apple-touch-icon.png",
+      "bytes": 38889,
+      "sha256": "bb90b14fc8bffe2b85a7b6460e442abf2be4c667ef2c92a1169f53af99c634f2",
       "tipo": "nuevo"
     },
     {
-      "archivo": "imagenes/tarjetas/escenas-02.png",
-      "bytes": 3236672,
-      "sha256": "d2800b4861c7497cfce06cfc585fb963250b0aee9f31f0103bda8e0d4a6c3fdf",
+      "archivo": "iconos/favicon-16.png",
+      "bytes": 728,
+      "sha256": "8e9643c5ff082effbd465e33b521cc689e8515b8ebdc6ad6dc53e4f894734742",
       "tipo": "nuevo"
     },
     {
-      "archivo": "imagenes/tarjetas/escenas-03.png",
-      "bytes": 3282546,
-      "sha256": "145d3c18a2a2f359c309b5219ccafd4e039faee7aa70f272b371a175c851c4e8",
+      "archivo": "iconos/favicon-32.png",
+      "bytes": 2164,
+      "sha256": "43e4f8504c9cf355acf15daa3898d8380727b344317a7560203fbef67dbd9484",
       "tipo": "nuevo"
     },
     {
-      "archivo": "imagenes/tarjetas/escenas-05.png",
-      "bytes": 3240612,
-      "sha256": "06ea8bd514681820bdb6307b85069315d14c8c90708944674a64f903291ac78c",
+      "archivo": "iconos/icon-192.png",
+      "bytes": 43514,
+      "sha256": "6c97bbe6f1da56263d777063e0018becb50171e3d80df1123f1b3fed0d6c578e",
+      "tipo": "modificado"
+    },
+    {
+      "archivo": "iconos/icon-512.png",
+      "bytes": 262718,
+      "sha256": "c18362c317c26fd5f0282e9cced21832c84bc7df8e9b6e3ff08efb5be0179ce6",
+      "tipo": "modificado"
+    },
+    {
+      "archivo": "iconos/icon-maskable-512.png",
+      "bytes": 170830,
+      "sha256": "aa2a20fa49cb3a5a82686286395acc8d5ef6d9e7f451c7d9b2b8257e0b13015f",
+      "tipo": "nuevo"
+    },
+    {
+      "archivo": "iconos/lunita-esmeralda-maestro.png",
+      "bytes": 1684992,
+      "sha256": "a48889c2f5e676992977efe8d9a7a8fb5d5511224253db494b822931f495f34e",
       "tipo": "nuevo"
     },
     {
       "archivo": "index.html",
-      "bytes": 1705,
-      "sha256": "413a910e48604409e32ce742d0cfb6ccb2d479e401611bbf4d9784afd1a0afb0",
+      "bytes": 1970,
+      "sha256": "8bb850cb42cab1f029c9975b888d5cfa9c0a30d19258231c36bfd141b4e94f8d",
       "tipo": "modificado"
     },
     {
       "archivo": "js/app.js",
-      "bytes": 14407,
-      "sha256": "540deaf78ebbddd58a376871d1bfa484ea8333c90d4ead6d603d9d5c5689f5b4",
+      "bytes": 14956,
+      "sha256": "3636137aea6f423f2fd2ba1b81891d74d460e43da66e8e4cab22bb4cd7828189",
       "tipo": "modificado"
-    },
-    {
-      "archivo": "js/components/favorites.js",
-      "bytes": 4117,
-      "sha256": "a2b2e0a55bd5aeabc107304d3b2c3a5ae2a3325bbc13f6316ce75d9b0123e3fb",
-      "tipo": "modificado"
-    },
-    {
-      "archivo": "js/components/home-card-art.js",
-      "bytes": 827,
-      "sha256": "a337bca5b246555136485f3c633d6d78ee9c5005a2f31ac902bf59d1d571a60b",
-      "tipo": "nuevo"
     },
     {
       "archivo": "js/components/home-desktop.js",
-      "bytes": 4506,
-      "sha256": "f211df18eff87288d2aab79166af507e9aa1a609ae7088d5da4f4f20e3c1ff94",
+      "bytes": 4434,
+      "sha256": "86c0ccd5c273d58e00301138c5b9561aa17c8236edac6856075f583d2f845bd0",
       "tipo": "modificado"
     },
     {
       "archivo": "js/components/home-mobile-jardin.js",
-      "bytes": 4359,
-      "sha256": "41e612a64a00508a59c21c5fd0884f2e08c968e6a20d8d5c254f18da12d91b24",
+      "bytes": 4475,
+      "sha256": "253e0ac46432e5ec33dc2b57c837ce182d3156aff2ffa7086577098c0f34b8e2",
       "tipo": "modificado"
     },
     {
-      "archivo": "js/components/methods.js",
-      "bytes": 5105,
-      "sha256": "2a2209bf80d263718b2dd323253eb9eb6eb2b3c903cef86da6d7bad7ad159f99",
+      "archivo": "js/components/welcome-desktop.js",
+      "bytes": 2847,
+      "sha256": "0506fdd5cc471834825761bbbb67a8961028ac87bbd7d7b5d695c34511510ebe",
       "tipo": "modificado"
     },
     {
-      "archivo": "js/components/more-jardin.js",
-      "bytes": 4034,
-      "sha256": "f958df772692f03ebda680638f3628a96a43b8b49647f4e4e25512d329580df9",
+      "archivo": "js/components/welcome-poster.js",
+      "bytes": 842,
+      "sha256": "752d88189532173ac21b34aad2116a201440a4adca951aa1165792efdb4f5f6b",
       "tipo": "modificado"
     },
     {
-      "archivo": "js/data.js",
-      "bytes": 9789,
-      "sha256": "1fd7ae610b3e53d40fa82d3ce4291c72b149e25e77651487b66ec2deef77e55a",
-      "tipo": "modificado"
-    },
-    {
-      "archivo": "js/method-categories.js",
-      "bytes": 1039,
-      "sha256": "8dc2485cb4986bbae946cf8f8021f8f067f97eb72dc8fd00dc35e5bf5e57d303",
+      "archivo": "js/daily-entry.js",
+      "bytes": 1203,
+      "sha256": "ed2a2284ece490f959bad8e563b564895be5aab472f6b20a5963db50b8e86089",
       "tipo": "nuevo"
     },
     {
+      "archivo": "js/home-pet-interaction.js",
+      "bytes": 3664,
+      "sha256": "8b0460fad6becd2f5c2e189ead46ef88fa3f15c571242860ef9cd6b6290fc099",
+      "tipo": "nuevo"
+    },
+    {
+      "archivo": "js/storage.js",
+      "bytes": 1440,
+      "sha256": "2bfdd7b612e69a8f51edf5d69df4dd64b8f838bce5f4af868f95ad50fc3cf30d",
+      "tipo": "modificado"
+    },
+    {
       "archivo": "manifest-entrega.json",
-      "bytes": 16172,
-      "sha256": "4bc7ed4ffa4e921bb901d55bac147f875904bec6edb9f3ba9669aa8415350b93",
+      "bytes": 18568,
+      "sha256": "5c54d70bcd10401438b4e8345c13f3c1baed2546f986df9fd7b22f03152e9a66",
+      "tipo": "modificado"
+    },
+    {
+      "archivo": "manifest.webmanifest",
+      "bytes": 751,
+      "sha256": "6432cb5505f0cde94d16e4adf0f641a1c7f9e57c388beb023d31113d76a0ae54",
       "tipo": "modificado"
     },
     {
       "archivo": "sw.js",
-      "bytes": 3647,
-      "sha256": "07131d85eb2a3b2e2ca73bc2872bbac1a06b2b784dd8491cf460b00db152f532",
+      "bytes": 3845,
+      "sha256": "0e8941d78af3b6944be77f7b757ae5b1ddc88efb1184f936a318c0248882ce5b",
       "tipo": "modificado"
     }
   ],
