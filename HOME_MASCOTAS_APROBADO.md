@@ -15,3 +15,9 @@ Reglas fijadas para celular y computadora:
 La referencia funcional está en `work/home-mascota-libre/`. La vista previa se ajusta a esta aclaración; la app y el respaldo 4.9 aún no se modifican. Se reserva este cambio para la siguiente entrega conjunta.
 
 Integrado en Respira 4.10 para la entrega solicitada el 4 de noviembre de 2026. Se conserva la composición de la vista aprobada, con interacción sobre el canal alfa de los PNG originales, acceso con teclado y limpieza de temporizadores al navegar.
+
+## Corrección solicitada después de probar 4.10
+
+El 4 de noviembre de 2026 el usuario aclara que tocar la figura debe abrir el perfil personal de la mascota elegida. Se retiran los mensajes emergentes y la animación añadida. Debajo de la figura elegida aparece un botón pequeño «Volver a elegir», dentro de la misma zona del Home indicada por el usuario. Esta instrucción sustituye la regla anterior que ocultaba ese botón.
+
+Aplica a las tres mascotas, en celular y computadora. Los píxeles transparentes no abren el perfil; el teclado sí. «Volver a elegir» abre el selector existente y permite cambiar manualmente la compañía del día; cancelar conserva la actual. La oferta automática continúa siendo una vez al día. El selector sin elección y los demás diseños se conservan. Cambios de trabajo pendientes de revisión y próxima entrega; el respaldo entregado sigue siendo 4.10.

@@ -12,7 +12,7 @@ const pathways = [
 const tabs = [['home','Inicio','home'],['methods','Métodos','methods'],['favorites','Favoritos','heart'],['more','Más','settings']];
 
 function companion(petId) {
-  if (petId && Object.hasOwn(pets, petId)) return `<div class="free-companion" data-selected-companion="${petId}"><button class="free-pet-button" type="button" data-interactive-pet="${petId}" aria-label="Interactuar con ${safe(pets[petId].name)}" aria-describedby="free-companion-response"><img class="free-pet-art" data-companion-id="${petId}" src="./imagenes/mascotas/${petId}.png" alt="" width="724" height="724" draggable="false"></button><output class="free-pet-response" id="free-companion-response" data-companion-response role="status" aria-live="polite" hidden></output></div>`;
+  if (petId && Object.hasOwn(pets, petId)) return `<div class="free-companion" data-selected-companion="${petId}"><button class="free-pet-button" type="button" data-interactive-pet="${petId}" aria-label="Abrir el perfil de ${safe(pets[petId].name)}"><img class="free-pet-art" data-companion-id="${petId}" src="./imagenes/mascotas/${petId}.png" alt="" width="724" height="724" draggable="false"></button><button class="free-rechoose" type="button" data-action="home-rechoose"><span>Volver a elegir</span>${icon('chevron')}</button></div>`;
   return `<button class="hm1-choose" type="button" data-go="pet-select"><span class="hm1-trio" aria-hidden="true">${['brotecito','nubecita','lunita'].map(id=>`<img src="./imagenes/mascotas/${id}.png" alt="" width="724" height="724">`).join('')}</span><span class="hm1-choose-label">Elegir mascota ${icon('chevron')}</span></button>`;
 }
 

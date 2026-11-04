@@ -1,4 +1,4 @@
-const CACHE = 'respira-code-4-10-compania-bienvenida';
+const CACHE = 'respira-code-4-10-1-home-perfil';
 const ASSETS = [
   "./js/daily-entry.js",
   "./js/home-pet-interaction.js",

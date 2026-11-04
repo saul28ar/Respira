@@ -34,6 +34,7 @@ let returnRoute = 'methods';
 let toastTimeout = null;
 let visited = false;
 let cleanupHomePet = null;
+let homeReselection = false;
 const historyStack = [];
 function routeKey(value) { return value.view + (value.id ? '/' + value.id : ''); }
 function readRoute() {
@@ -65,7 +66,7 @@ function render() {
   if (view === 'home') html = (desktopHome ? renderDesktopHome : renderMobileHome)({ petId:cp, message: cp ? pets[cp].messages[messageIndex % pets[cp].messages.length] : '' });
   if (view === 'pet-select') {
     markPetOfferSeen();
-    html = renderPetSelectJardin({ petId:cp });
+    html = renderPetSelectJardin({ petId:cp, reselect:homeReselection });
   }
   if (view === 'pet-library') html = renderPetLibrary();
   if (view === 'pet-detail') html = renderPetDetail({petId:route.id,chosen:cp,returnView:petReturn});
@@ -104,6 +105,7 @@ function showRoute() {
   }
   if (sessionClock) { sessionClock.dispose(); sessionClock = null; }
   route = next;
+  if (!['pet-select','pet-detail','pet-library'].includes(route.view)) homeReselection = false;
   currentStep = 0;
   render();
   if (route.view === 'detail') setupExercise();
@@ -167,6 +169,12 @@ function showStep(kind) {
   document.getElementById(kind + '-next').innerHTML = currentStep === steps.length - 1 ? 'Volver a empezar' : `Siguiente ${icon('arrow')}`;
   announcer.textContent = `Paso ${currentStep + 1}. ${steps[currentStep][0]}`;
 }
+app.addEventListener('companion-profile', event => {
+  const id = event.detail?.id;
+  if (route.view !== 'home' || id !== companionToday()) return;
+  petReturn = 'home';
+  navigate('pet-detail', id);
+});
 app.addEventListener('click', event => {
   const element = event.target.closest('[data-go],[data-open],[data-fav],[data-action],[data-pet-view],[data-method-category]');
   if (!element || element.disabled) return;
@@ -207,11 +215,17 @@ app.addEventListener('click', event => {
   if (action === 'back') goBack();
   if (action === 'start') {
     event.preventDefault();
+    homeReselection = false;
     navigate(welcomeDestination());
     return;
   }
+  if (action === 'home-rechoose' && route.view === 'home' && companionToday()) {
+    homeReselection = true;
+    navigate('pet-select');
+    return;
+  }
   if (action === 'pet-pick') {
-    const result = chooseCompanion(element.dataset.petId);
+    const result = chooseCompanion(element.dataset.petId, { replace:route.view === 'pet-select' && homeReselection });
     saveOk = result.saved;
     if (result.id) navigate('home');
   }

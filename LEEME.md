@@ -1,14 +1,16 @@
-# Respira 4.10 · Compañía y bienvenida aprobadas
+# Respira 4.10.1 · Perfil y reelección desde el Home
 
-Esta actualización reúne los cuatro cambios aprobados para la siguiente entrega: las tres mascotas elegidas sin recuadro e interactivas solo en el Home, la oferta automática de compañía una vez cada día, los bordes de paisaje difuminado en el welcome móvil y el icono Lunita Esmeralda sin letras. En las demás páginas se conserva la misma compañía como imagen estática. El selector original aparece en el Home solo si todavía no se ha elegido una mascota.
+Esta corrección hace que tocar la figura de Brotecito, Nubecita o Lunita en el Home abra su perfil personal, sin mensajes emergentes ni animación. Debajo se añade un botón pequeño «Volver a elegir» que permite cambiar manualmente la compañía. Cancelar conserva la mascota actual; la oferta automática continúa una vez al día. Los demás diseños, imágenes, fondos e iconos se conservan exactamente respecto de 4.10.
+
+El difuminado de las barras nativas del welcome sigue pendiente en la PWA Android instalada desde Chrome del usuario. La referencia de tres propuestas simulaba esas barras; el CSS actual no puede dibujarlas mientras el navegador las mantenga fuera del contenido de la página. Esta corrección no presenta ese acabado como resuelto ni cambia la portada.
 
 Se conservan los diseños aprobados de la versión 4.9: Home móvil 1, Home web 3, Métodos por secciones 1, Favoritos 4, Más 3, selección de mascota 4 para ambos tamaños, las cuatro ilustraciones de categorías y el fondo HD compartido. Las notas, favoritos y elección diaria utilizan las mismas claves de almacenamiento.
 
-Se entrega **un solo ZIP de cambios desde Respira 4.9**: `Respira_4_10_SOLO_CAMBIOS_desde_4_9.zip`. Se mantiene un único respaldo completo en `respaldo/Respira_RESPALDO_ACTUAL.zip`, que se reemplaza al verificar cada entrega. Consulta `ENTREGAS.md` y la guía incluida en el parche.
+Se entrega **un solo ZIP de cambios desde Respira 4.10**: `Respira_4_10_1_SOLO_CAMBIOS_desde_4_10.zip`. Se mantiene un único respaldo completo en `respaldo/Respira_RESPALDO_ACTUAL.zip`, que se reemplaza al verificar cada entrega. Consulta `ENTREGAS.md` y la guía incluida en el parche.
 
 ## Para cargar esta actualización
 
-Extrae todo el ZIP de cambios sobre la carpeta donde ya tienes Respira 4.9. Reemplaza los archivos del mismo nombre y conserva los demás, incluidas `imagenes/` e `iconos/`. `index.html` debe quedar en la raíz de la app. Para el sitio que ya usas, conserva la misma dirección y ruta.
+Extrae todo el ZIP de cambios sobre la carpeta donde ya tienes Respira 4.10. Reemplaza los archivos del mismo nombre y conserva los demás, incluidas `imagenes/` e `iconos/`. `index.html` debe quedar en la raíz de la app. Para el sitio que ya usas, conserva la misma dirección y ruta.
 
 Después de subirlo, recarga la página. Si el navegador muestra la versión anterior, cierra esa pestaña y ábrela nuevamente; en computadora también puedes usar Ctrl+F5. Se actualizó la caché sin conexión para incluir los nuevos archivos.
 
@@ -18,7 +20,7 @@ Los cinco gráficos del Home Jardín están en `imagenes/inicio-web/`, sin modif
 
 ## Cómo abrirla en Windows
 
-1. Aplica **todo el ZIP de cambios sobre la carpeta de Respira 4.9**.
+1. Aplica **todo el ZIP de cambios sobre la carpeta de Respira 4.10**.
 2. Abre **INICIAR_RESPIRA.cmd** con doble clic.
 3. Se abrirá el navegador en `http://127.0.0.1:8765/`.
 4. Mantén la ventana de Respira abierta mientras la uses. Para detenerla, cierra esa ventana.
@@ -32,7 +34,7 @@ El lanzador usa PowerShell incluido en Windows. No requiere instalar paquetes ni
 - Navegación real, con historial del navegador y acceso con teclado.
 - Respiración guiada, meditaciones con temporizador, técnica 5-4-3-2-1, relajación muscular, reencuadre y consejos del proyecto original.
 - Favoritos y diario que se guardan en este navegador.
-- Una mascota por día, como en la versión original. La elección es opcional. El selector se ofrece automáticamente solo en la primera entrada del día; si se omite, se puede abrir desde el Home.
+- La elección es opcional. El selector se ofrece automáticamente solo en la primera entrada del día; si se omite, se puede abrir desde el Home. El botón «Volver a elegir» debajo de la mascota permite cambiarla manualmente.
 - Distribución adaptable a móvil y escritorio y controles con nombres accesibles.
 - Uso sin conexión después de la primera carga completa y preparación del navegador.
 

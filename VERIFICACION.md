@@ -1,4 +1,15 @@
-# Revisión de Respira 4.10 · Compañía y bienvenida aprobadas
+# Revisión de Respira 4.10.1 · Perfil y reelección desde el Home
+
+Corrección del 4 de noviembre de 2026:
+
+- 33 comprobaciones aprobadas en la app real, para las tres mascotas en celular y computadora. Toque dentro/fuera del contorno, perfil personal, Enter, regreso al Home, botón pequeño debajo, cancelación y reelección persistente en las demás páginas.
+- No se generan mensajes emergentes ni animación en el Home. El selector original sin elección y la compañía estática en las demás páginas se conservan. No hay errores JavaScript en los recorridos.
+- Arte, fondos, iconos, welcome y demás componentes sin cambios respecto de 4.10. Se verifica el alcance del parche y la equivalencia exacta entre base y actualización.
+- Las barras nativas del welcome no se dan por resueltas: la captura del teléfono muestra que Chrome no expone esas áreas al contenido web. Esta corrección no altera su CSS ni sus metadatos.
+
+Informe funcional: `work/qa-home-perfil-correccion/informe.json`. Comprobación local en Chrome; no equivale a una validación de barras nativas ni a una nueva instalación sin conexión por HTTP.
+
+## Historial: Respira 4.10 · Compañía y bienvenida aprobadas
 
 Actualización del 4 de noviembre de 2026, en Chrome local para Windows:
 

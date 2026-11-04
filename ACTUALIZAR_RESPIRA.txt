@@ -1,19 +1,20 @@
-RESPIRA 4.10 — SOLO CAMBIOS DESDE 4.9
+RESPIRA 4.10.1 — CORRECCIÓN DEL HOME DESDE 4.10
 
-1. Extrae TODO el ZIP sobre la carpeta de Respira 4.9.
+1. Extrae TODO el ZIP sobre la carpeta de Respira 4.10.
 2. Reemplaza los archivos del mismo nombre y conserva los demás. Respeta las carpetas y la misma dirección del sitio.
 3. index.html debe quedar en la carpeta principal, junto a sw.js, css, js, imagenes e iconos.
 4. Recarga la página. Si aparece la versión anterior, cierra esa pestaña y vuelve a abrirla; en computadora también puedes usar Ctrl+F5.
 
-Incluye todos los cambios aprobados para esta actualización:
-- Brotecito, Nubecita y Lunita sin recuadro en el Home. Solo su figura visible reacciona al toque; también funcionan con teclado.
-- El botón Elegir mascota conserva su diseño original cuando no hay elección. Con una compañía elegida no aparece Volver a elegir.
-- La misma compañía se conserva como imagen estática en las demás páginas personales.
-- El selector se ofrece automáticamente una vez cada día. Si se omite, no vuelve a abrirse automáticamente ese día; se puede elegir desde el Home.
-- Bordes de paisaje difuminado en el welcome móvil, con la portada original intacta. La apariencia de las barras del sistema depende del teléfono y navegador.
-- Icono aprobado Lunita Esmeralda, sin letras, para instalación y navegador.
+Incluye la corrección solicitada del Home:
+- Tocar la figura visible de la mascota abre su perfil personal. El teclado también funciona.
+- Se retiran los mensajes emergentes y la animación del Home.
+- Debajo de la mascota aparece un botón pequeño «Volver a elegir».
+- Este botón permite cambiar manualmente la compañía. Volver al Home sin elegir conserva la actual.
+- La oferta automática continúa una vez cada día; los demás diseños y recursos se conservan.
 
-Este ZIP actualiza Respira 4.9; se aplica tanto a la entrega acumulada como a la de solo cambios si ya están instaladas. Los diseños y recursos anteriores se conservan.
+El welcome con ambas barras nativas difuminadas sigue pendiente en la PWA instalada desde Chrome. La vista aprobada simulaba las barras; esta corrección no cambia esas zonas del sistema ni las presenta como resueltas.
+
+Este ZIP actualiza Respira 4.10. Los diseños y recursos anteriores se conservan. No incluye nuevamente las imágenes sin cambios.
 
 Las notas, favoritos y mascota se guardan en el navegador. Para conservarlos, mantén la misma dirección y navegador al actualizar; conserva los datos del sitio.
 

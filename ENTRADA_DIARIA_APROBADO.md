@@ -17,3 +17,5 @@ El prototipo aislado de `work/entrada-diaria-preview/` usa almacenamiento propio
 Estado: requisito fijado, preparado como prototipo para la próxima actualización; la app y el respaldo de la entrega 4.9 no se modifican por este registro.
 
 Integrado en Respira 4.10, entrega conjunta del 4 de noviembre de 2026. La clave nueva `respira_petOfferDay` registra la oferta vista; las claves de notas, favoritos y compañía se conservan. La elección válida de 4.9 sigue vigente y los identificadores corruptos se rechazan sin borrar los demás datos.
+
+Corrección posterior de ese día: el usuario exige «Volver a elegir» debajo de la mascota en el Home. Este acceso manual puede reemplazar la compañía actual; la oferta automática sigue limitada a una vez al día. El resto de accesos mantiene el comportamiento existente. Véase HOME_MASCOTAS_APROBADO.md.

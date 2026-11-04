@@ -35,12 +35,10 @@ export function bindHomePetInteractions(root) {
     const id = button.dataset.interactivePet;
     if (!Object.hasOwn(pets, id) || button.dataset.bound) continue;
     const image = button.querySelector('img');
-    const response = button.closest('[data-selected-companion]')?.querySelector('[data-companion-response]');
-    if (!image || !response) continue;
+    if (!image) continue;
     button.dataset.bound = 'true';
     button.dataset.tapCount = '0';
     let mask = null;
-    let timeout = null;
     let disposed = false;
     const events = new AbortController();
     const ready = readMask(image, id).then(value => {
@@ -62,25 +60,12 @@ export function bindHomePetInteractions(root) {
       if (!keyboard && !painted(contour, image, event)) return;
       const count = Number(button.dataset.tapCount) + 1;
       button.dataset.tapCount = String(count);
-      button.classList.remove('is-petted');
-      void button.offsetWidth;
-      button.classList.add('is-petted');
-      response.textContent = pets[id].messages[(count - 1) % pets[id].messages.length];
-      response.hidden = false;
-      clearTimeout(timeout);
-      timeout = setTimeout(() => {
-        response.hidden = true;
-        button.classList.remove('is-petted');
-      }, 3500);
-      root.dispatchEvent(new CustomEvent('companion-tap', { detail:{ id, count, keyboard } }));
+      root.dispatchEvent(new CustomEvent('companion-profile', { detail:{ id, keyboard } }));
     }, { signal:events.signal });
     cleanups.push(() => {
       disposed = true;
       events.abort();
-      clearTimeout(timeout);
       delete button.dataset.bound;
-      button.classList.remove('is-petted');
-      response.hidden = true;
     });
   }
   return () => cleanups.forEach(cleanup => cleanup());

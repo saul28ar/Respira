@@ -89,11 +89,10 @@
 .home-desktop-jardin .free-companion{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;margin:0;padding:0;border:0;background:transparent;box-shadow:none;backdrop-filter:none;min-width:0;grid-area:choose;justify-self:center;align-self:center;width:170px;height:150px}
 .home-desktop-jardin .free-companion .free-pet-button{display:block;position:relative;width:120px;max-width:100%;margin:0;padding:0;line-height:0;border:0;border-radius:0;background:transparent;box-shadow:none;backdrop-filter:none;filter:none;touch-action:manipulation;cursor:default}
 .home-desktop-jardin .free-companion .free-pet-art{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:contain;max-width:none;user-select:none;-webkit-user-drag:none;pointer-events:none}
-.home-desktop-jardin .free-companion .free-pet-response{position:absolute;z-index:5;bottom:calc(100% + 5px);right:0;width:205px;max-width:calc(100vw - 36px);border:1px solid #d7e4cc;border-radius:15px;background:#fffef7f5;box-shadow:0 5px 18px #2d6c5120;padding:9px 11px;color:#315f49;font:12px/1.4 "Segoe UI",Arial,sans-serif;pointer-events:none}
-.home-desktop-jardin .free-companion [hidden]{display:none!important}
-.home-desktop-jardin .free-pet-button.is-petted .free-pet-art{animation:home-desktop-pet-hello .65s ease-in-out}
-@keyframes home-desktop-pet-hello{0%,100%{transform:translateY(0) scale(1)}35%{transform:translateY(-5px) scale(1.04)}70%{transform:translateY(-1px) scale(1.015)}}
-@media(prefers-reduced-motion:reduce){.home-desktop-jardin .free-pet-button.is-petted .free-pet-art{animation:none}}
+.home-desktop-jardin .free-companion .free-rechoose{display:inline-flex;align-items:center;justify-content:center;gap:3px;min-height:28px;max-width:100%;margin:0;padding:5px 10px;border:1px solid #aecfb599;border-radius:999px;background:#fffef3d9;box-shadow:0 2px 6px #285a4020;color:#245b43;font:500 11px/1.2 "Segoe UI",Arial,sans-serif;white-space:nowrap;cursor:pointer;touch-action:manipulation}
+.home-desktop-jardin .free-companion .free-rechoose>.icon{width:12px;height:12px;flex:none}
+.home-desktop-jardin .free-companion .free-rechoose:hover{background:#f5fae9;color:#174a34}
+.home-desktop-jardin .free-companion .free-pet-button:focus-visible,.home-desktop-jardin .free-companion .free-rechoose:focus-visible{outline:2px solid #185b42;outline-offset:3px;border-radius:999px}
 
 /* En pantallas intermedias se conserva el orden y se evita cortar los controles. */
 @media (min-width: 768px) and (max-width: 1199px) {

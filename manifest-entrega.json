@@ -8,47 +8,23 @@
   "pet_select": "Un encuentro sereno 4, web y móvil; hojas web corregidas",
   "compania": "La misma compañía elegida en los espacios personales de la app",
   "fondos": "Maestro HD aprobado compartido, también dentro de métodos y diario",
-  "version": "Respira 4.10 · Compañía y bienvenida aprobadas",
-  "version_id": "4.10",
-  "titulo": "Compañía y bienvenida aprobadas",
+  "version": "Respira 4.10.1 · Perfil y reelección desde el Home",
+  "version_id": "4.10.1",
+  "titulo": "Perfil y reelección desde el Home",
   "fecha": "2026-11-04",
   "verificacion": {
     "paquete": "CRC y SHA256 verificados; base + parche equivale exactamente al respaldo actualizado.",
     "funcionales": [
       {
-        "informe": "work/qa-home410/informe.json",
-        "sha256": "e70bc8f7e307f7e70d9235c2a77f73ebe70f6a74ececf775a72dab250eede57e",
-        "passed": 30,
+        "informe": "work/qa-home-perfil-correccion/informe.json",
+        "sha256": "ee0d9a7ffa2a73ed15a18fde9d479daf577d9b8be22f711c548c1ac117c03b97",
+        "passed": 33,
         "failed": 0
       },
       {
-        "informe": "work/qa-410-entrada/informe.json",
-        "sha256": "10e5ac32d3a67a2aacf9717c626cadf98b2f203dd626899a7ecef89a849205e8",
-        "passed": 11,
-        "failed": 0
-      },
-      {
-        "informe": "work/qa-410-entrada/informe-modulo.json",
-        "sha256": "2cc8f8749b5f1bc9e863cf0705a9f8a828a9724053e34f8b1fbd1ddd995f5218",
-        "passed": 20,
-        "failed": 0
-      },
-      {
-        "informe": "work/qa-410-visual/informe.json",
-        "sha256": "075c350cf3e7e5dbc61d18c4d4f6c6a2d081eb25b5996b64a8ddb3ff30734594",
-        "passed": 17,
-        "failed": 0
-      },
-      {
-        "informe": "work/qa-410-integracion/informe.json",
-        "sha256": "63a6cf31d46741544ba78da88f895affca0fbd7ef2e60142066a6be3b2e3a32c",
-        "passed": 16,
-        "failed": 0
-      },
-      {
-        "informe": "work/qa-410-integracion/informe-archivos.json",
-        "sha256": "5c91d7725b15bb30b67bd7f9caff8b99b495fb49c0a66a36e4c3e9b12c54f474",
-        "passed": 109,
+        "informe": "work/qa-home-perfil-correccion/alcance.json",
+        "sha256": "c7f6f72080f0e5550e8e5d3d6c4867d27641fea82d79dd1fc3e596b9a78a7bc6",
+        "passed": 9,
         "failed": 0
       }
     ]
@@ -56,13 +32,13 @@
   "archivos": [
     {
       "archivo": "ACTUALIZAR_RESPIRA.txt",
-      "bytes": 1826,
-      "sha256": "9b54d9c0ef85de85b82bb97063f4065b9c9b0ee4baf16ff0bfbd6eeed8cb6ff1"
+      "bytes": 1683,
+      "sha256": "459eb8d8a0e4793e3ea311288da8bc562c3aee3cc90d3b7dad9ff3d0525b3f2d"
     },
     {
       "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
-      "bytes": 407,
-      "sha256": "f1e9462449bd315585bce02bc0ae03b74b0849b4b81798931d3ea9e251f82682"
+      "bytes": 412,
+      "sha256": "7e0c3e414fd32cadb82f98a4e4b4d9774da19daaed935be4adb43436db991b67"
     },
     {
       "archivo": "DISENO_APROBADO.md",
@@ -71,13 +47,13 @@
     },
     {
       "archivo": "ENTRADA_DIARIA_APROBADO.md",
-      "bytes": 1901,
-      "sha256": "6f2572597d5f2736d2d61c50d71aca807720e28ddbce01d48fd576af18c0dbd1"
+      "bytes": 2213,
+      "sha256": "3b09f960e035cfcf49ddc7e7c9ff76b1a3fb9a6b155c45d61023117f0845a03b"
     },
     {
       "archivo": "ENTREGAS.md",
-      "bytes": 6260,
-      "sha256": "fc48c7590f871efced49e40c3fab5510e0647734fc2f55355ba82c10fed20e0a"
+      "bytes": 6797,
+      "sha256": "c3ac1b135a68fd9a64eaf721ff9fc4c34d903aebac5c8f9e66b9bbaabb0f53bf"
     },
     {
       "archivo": "FAVORITOS_APROBADO.md",
@@ -91,8 +67,8 @@
     },
     {
       "archivo": "HOME_MASCOTAS_APROBADO.md",
-      "bytes": 2127,
-      "sha256": "d00b14c573f8209c45e58a9ff6185be1f4152d64f21e0c5f2c0686ca1e63ba70"
+      "bytes": 3032,
+      "sha256": "637aa88e591a45b249471c58c76142db5229c39fbc0692fc6ed3115aa0bcfe54"
     },
     {
       "archivo": "HOME_MOVIL_APROBADO.md",
@@ -116,8 +92,8 @@
     },
     {
       "archivo": "LEEME.md",
-      "bytes": 12641,
-      "sha256": "6185efb56cf4341a4a5186fad5c633fa3282874ae65b8ea7a40a173971dfdacd"
+      "bytes": 12995,
+      "sha256": "bb3e0820fc2ac5551b26452df96aa8b743e80535c35ee24d6d3f62816b8cf6d0"
     },
     {
       "archivo": "MASCOTAS_APROBADO.md",
@@ -151,8 +127,8 @@
     },
     {
       "archivo": "VERIFICACION.md",
-      "bytes": 14337,
-      "sha256": "404727080245371afbb5e50762ae6748e9d6213392513d69989ed0cf19558402"
+      "bytes": 15471,
+      "sha256": "09f6121f1f6bdc74b97cb997603b6f2786a55311e8b799dbb295daaf73c7e551"
     },
     {
       "archivo": "WELCOME_ALCANCE.md",
@@ -161,8 +137,8 @@
     },
     {
       "archivo": "WELCOME_APROBADO.md",
-      "bytes": 3246,
-      "sha256": "271df0976147a874b3b5faf1fe6d7bfcca39044fed7b69daed23df05f33beefb"
+      "bytes": 3717,
+      "sha256": "a11b2421514993227feee2ada6a57364d13a53bd1a8cdd8c2c78ca88adc31a9a"
     },
     {
       "archivo": "css/base.css",
@@ -181,13 +157,13 @@
     },
     {
       "archivo": "css/home-desktop.css",
-      "bytes": 14428,
-      "sha256": "c28d72a9454a2831f4d1216737414e7269cbc548c6a2043d85968dc55be604c7"
+      "bytes": 14399,
+      "sha256": "f37c83714b6f60ce3d9c7b54d3e7c631913ddd7fc1bd50feeb50e161d9f3775a"
     },
     {
       "archivo": "css/home-mobile-jardin.css",
-      "bytes": 13206,
-      "sha256": "e67bc08ba54503bfd27915d2b6624d2b75d78a54fffb9a45f9bf4a8be7d0de5f"
+      "bytes": 13191,
+      "sha256": "396b9cdec47adf78efd7dac306feb65b255ce74f8f1e9c1bf2b4f86839e0f47e"
     },
     {
       "archivo": "css/home.css",
@@ -416,8 +392,8 @@
     },
     {
       "archivo": "js/app.js",
-      "bytes": 14956,
-      "sha256": "3636137aea6f423f2fd2ba1b81891d74d460e43da66e8e4cab22bb4cd7828189"
+      "bytes": 15553,
+      "sha256": "adf512f41e9e8ce9d4aa7fa2332964f8db970cee30bc8fec58b1725ebfab6847"
     },
     {
       "archivo": "js/components/activities.js",
@@ -451,13 +427,13 @@
     },
     {
       "archivo": "js/components/home-desktop.js",
-      "bytes": 4434,
-      "sha256": "86c0ccd5c273d58e00301138c5b9561aa17c8236edac6856075f583d2f845bd0"
+      "bytes": 4385,
+      "sha256": "9c3d59a1da8b18b11288b99096de390c2333d7aac7a2b2315f5f633bf5de0d12"
     },
     {
       "archivo": "js/components/home-mobile-jardin.js",
-      "bytes": 4475,
-      "sha256": "253e0ac46432e5ec33dc2b57c837ce182d3156aff2ffa7086577098c0f34b8e2"
+      "bytes": 4426,
+      "sha256": "ace41a9b579fc0b63ed593abb2255dabffc2fbd2bebec07fe7f7fd5e95bc0ac6"
     },
     {
       "archivo": "js/components/home.js",
@@ -481,8 +457,8 @@
     },
     {
       "archivo": "js/components/pet-select-jardin.js",
-      "bytes": 4030,
-      "sha256": "c33aafa0f5935d6e12b66d7fff8268dfe435b262b622e12704068d0a795aed33"
+      "bytes": 4145,
+      "sha256": "f5142f537e56d9f378cd8a292e889ecb88695d49678538a2ff9658f7a349c0f3"
     },
     {
       "archivo": "js/components/settings.js",
@@ -516,8 +492,8 @@
     },
     {
       "archivo": "js/home-pet-interaction.js",
-      "bytes": 3664,
-      "sha256": "8b0460fad6becd2f5c2e189ead46ef88fa3f15c571242860ef9cd6b6290fc099"
+      "bytes": 3018,
+      "sha256": "d06390008a6c7f014ad34db782025cf232ed65225e3a3d33e3ddfac73bfed498"
     },
     {
       "archivo": "js/icons.js",
@@ -531,8 +507,8 @@
     },
     {
       "archivo": "js/storage.js",
-      "bytes": 1440,
-      "sha256": "2bfdd7b612e69a8f51edf5d69df4dd64b8f838bce5f4af868f95ad50fc3cf30d"
+      "bytes": 1499,
+      "sha256": "82db366e2ad71f33f4f266c87c83c545efdf07065f675cb10466b336101006a1"
     },
     {
       "archivo": "js/timer.js",
@@ -551,8 +527,8 @@
     },
     {
       "archivo": "sw.js",
-      "bytes": 3845,
-      "sha256": "0e8941d78af3b6944be77f7b757ae5b1ddc88efb1184f936a318c0248882ce5b"
+      "bytes": 3839,
+      "sha256": "3853ea0dea5f47bee24f747b1ec77b040878b735c6076174e1e3e0e640dd894b"
     }
   ]
 }

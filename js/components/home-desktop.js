@@ -12,7 +12,7 @@ const pathways = [
 
 function companion(petId, message) {
   const pet = pets[petId];
-  if (pet) return `<div class="free-companion" data-selected-companion="${petId}"><button class="free-pet-button" type="button" data-interactive-pet="${petId}" aria-label="Interactuar con ${safe(pet.name)}" aria-describedby="free-companion-response"><img class="free-pet-art" data-companion-id="${petId}" src="./imagenes/mascotas/${petId}.png" alt="" width="724" height="724" draggable="false"></button><output class="free-pet-response" id="free-companion-response" data-companion-response role="status" aria-live="polite" hidden></output></div>`;
+  if (pet) return `<div class="free-companion" data-selected-companion="${petId}"><button class="free-pet-button" type="button" data-interactive-pet="${petId}" aria-label="Abrir el perfil de ${safe(pet.name)}"><img class="free-pet-art" data-companion-id="${petId}" src="./imagenes/mascotas/${petId}.png" alt="" width="724" height="724" draggable="false"></button><button class="free-rechoose" type="button" data-action="home-rechoose"><span>Volver a elegir</span>${icon('chevron')}</button></div>`;
   return `<button class="hd3-choose" type="button" data-go="pet-select" aria-label="Elegir mascota"><span class="hd3-choose-title">Tu compañía</span><span class="hd3-trio" aria-hidden="true">${['brotecito','nubecita','lunita'].map(id=>`<img src="./imagenes/mascotas/${id}.png" alt="" width="724" height="724">`).join('')}</span><span class="hd3-choose-label">Elegir mascota ${icon('chevron')}</span></button>`;
 }
 

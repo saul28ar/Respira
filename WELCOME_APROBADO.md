@@ -29,3 +29,5 @@ Esta aprobación queda reservada para la siguiente entrega junto con la entrada 
 
 Integrado en Respira 4.10 para la entrega conjunta del 4 de noviembre de 2026. Las áreas seguras del welcome móvil prolongan el paisaje con difuminado y el color del navegador acompaña al fondo. No se simulan barras nativas en la aplicación; su acabado real depende del teléfono y navegador. Portada, logo, botón y diseño de computadora conservan sus archivos originales.
 
+Corrección reportada después de probar 4.10 en Android: la PWA instalada desde Chrome muestra la barra superior azul sólida y la de navegación inferior blanca, sin el acabado de la opción 3. La vista original de tres propuestas simulaba esas barras. No se considera resuelta la apariencia nativa por haber comprobado únicamente CSS y áreas seguras simuladas. Se investiga el soporte real del navegador; la portada y el diseño de computadora permanecen intactos.
+
