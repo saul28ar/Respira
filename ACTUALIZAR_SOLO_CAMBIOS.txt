@@ -1,7 +1,0 @@
-RESPIRA 4.11 — SOLO CAMBIOS DESDE 4.10.1
-
-Este ZIP se aplica sobre Respira 4.10.1; no es una app independiente.
-
-Extrae todo su contenido sobre la carpeta de esa versión, conservando las carpetas y reemplazando los archivos del mismo nombre. Conserva los demás archivos. Recarga el sitio tras actualizarlo. Si ves el diseño anterior, cierra la pestaña y vuelve a abrirla.
-
-Ilustraciones y encuadre de Métodos

@@ -1,4 +1,5 @@
 import { icon } from '../icons.js';
+import { renderMobileNavigation } from './mobile-navigation.js';
 
 // Las tres piezas comparten un único tema en css/interface.css.
 // La marca conserva el arte original; menú y navegación son controles reales.
@@ -29,5 +30,6 @@ export function renderFrame(content, { active = 'home', welcome = false, home = 
       ${welcome || desktopHome || mobileHome || methods || ownInterface ? '' : `<header class="app-header interface-header">${brand()}${menu()}</header>${navigation(active)}`}
     </div>
     ${content}
+    ${renderMobileNavigation(active)}
   </div>`;
 }

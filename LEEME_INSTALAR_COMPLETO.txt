@@ -1,0 +1,11 @@
+﻿RESPIRA 4.12 - APLICACION COMPLETA Y LIMPIA
+
+Este ZIP contiene toda la app. No es un parche y no necesita archivos ni entregas anteriores.
+
+1. Extrae todo el ZIP en una carpeta nueva. index.html debe quedar en la raiz junto a css, js, imagenes, iconos, sw.js y manifest.webmanifest.
+2. Reemplaza los archivos publicados de Respira por el contenido de esta carpeta. Usa todos sus archivos y conserva las rutas; no hace falta ejecutar la limpieza del parche anterior.
+3. Abre la app en su misma direccion web. No borres los datos del sitio para conservar tus notas, favoritos y mascota.
+
+Incluye todas las pantallas, 13 ilustraciones de Metodos, 3 mascotas y sus perfiles, fondos e iconos PWA, funcionamiento sin conexion, barra movil original y Mi espacio para escribir con calendario abierto inicialmente, lista de hoy, paginas por fecha y aviso al salir sin guardar.
+
+No contiene propuestas, capturas, videos, pruebas, herramientas de desarrollo ni recursos de versiones anteriores sin uso. Los archivos esenciales coinciden exactamente con el respaldo verificado de Respira 4.12.

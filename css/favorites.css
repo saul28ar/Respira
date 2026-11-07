@@ -81,7 +81,7 @@ body.favorites-jardin-view #app{padding-bottom:0}
 .favorites-jardin.favorites-jardin .f4-explore{margin-top:24px;background:linear-gradient(110deg,#edf7e8,#fafdF3);border-radius:22px}
 @media(max-width:767px){.favorites-jardin .f4-page{padding:14px 16px 110px;background:linear-gradient(#effaf1de,#effaf1f5 25%,#f4f8ef 60%)}
 .favorites-jardin .f4-ambient{height:450px;background-size:auto 390px;opacity:.3}
-.favorites-jardin .f4-waves{height:390px;opacity:.14}
+.favorites-jardin .f4-waves{height:auto;aspect-ratio:941/872;max-height:none;opacity:.14;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 96px);mask-image:linear-gradient(to bottom,transparent,#000 96px)}
 .favorites-jardin .f4-topbar{height:60px;margin-bottom:17px;gap:20px;border-color:#cbded066}
 .favorites-jardin .f4-brand{width:128px}
 .favorites-jardin .f4-top-nav{display:none}

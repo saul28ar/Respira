@@ -1,4 +1,6 @@
 /* Home 3 · Jardín. Las reglas no afectan al Home móvil ni al welcome. */
+body.home-desktop-view { background: #d9f3fa; }
+body.home-desktop-view #app { padding-bottom: 0; }
 .home-desktop-jardin {
   --hd3-card: #fffef9;
   padding: 32px 64px;

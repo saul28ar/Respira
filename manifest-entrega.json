@@ -1,150 +1,120 @@
 {
-  "metodos": "Por secciones 1; trece métodos en cinco categorías, móvil y web",
-  "home": "Jardín sereno 1 móvil y Jardín 3 web; cuatro ilustraciones de actividad aprobadas",
-  "welcome": "Esmeralda 2 web y portada móvil aprobada sin franjas",
-  "variante_paquete": "acumulada_desde_4.6",
-  "favoritos": "Un refugio para volver 4, web y móvil",
-  "mas": "Tu rincón de calma 3, web y móvil",
-  "pet_select": "Un encuentro sereno 4, web y móvil; hojas web corregidas",
-  "compania": "La misma compañía elegida en los espacios personales de la app",
-  "fondos": "Maestro HD aprobado compartido, también dentro de métodos y diario",
-  "version": "Respira 4.11 · Ilustraciones y encuadre de Métodos",
-  "version_id": "4.11",
-  "titulo": "Ilustraciones y encuadre de Métodos",
-  "fecha": "2026-11-06",
+  "version": "Respira 4.12 · Aplicacion completa y limpia",
+  "version_id": "4.12",
+  "fecha": "2026-11-07",
+  "tipo": "Completo; instalacion independiente de parches anteriores",
+  "runtime": [
+    "css/base.css",
+    "css/companions.css",
+    "css/favorites.css",
+    "css/home-desktop.css",
+    "css/home-mobile-jardin.css",
+    "css/interface.css",
+    "css/journal-agenda.css",
+    "css/method-details.css",
+    "css/methods.css",
+    "css/mobile-navigation.css",
+    "css/more-jardin.css",
+    "css/pet-select-jardin.css",
+    "css/welcome-desktop.css",
+    "css/welcome-mobile-v2.css",
+    "iconos/apple-touch-icon.png",
+    "iconos/favicon-16.png",
+    "iconos/favicon-32.png",
+    "iconos/icon-192.png",
+    "iconos/icon-512.png",
+    "iconos/icon-maskable-512.png",
+    "imagenes/inicio-web/consejos-hd.png",
+    "imagenes/inicio-web/gatito-hd.png",
+    "imagenes/inicio-web/lago-hd.png",
+    "imagenes/inicio-web/meditacion-hd.png",
+    "imagenes/inicio-web/tecnicas-hd.png",
+    "imagenes/interfaz/barras/respira_barra_favoritos_activo.png",
+    "imagenes/interfaz/barras/respira_barra_inicio_activo.png",
+    "imagenes/interfaz/barras/respira_barra_mas_activo.png",
+    "imagenes/interfaz/barras/respira_barra_metodos_activo.png",
+    "imagenes/interfaz/marco-original.png",
+    "imagenes/mascotas/brotecito.png",
+    "imagenes/mascotas/lunita.png",
+    "imagenes/mascotas/nubecita.png",
+    "imagenes/metodos/anxiety.webp",
+    "imagenes/metodos/breath.webp",
+    "imagenes/metodos/caffeine.webp",
+    "imagenes/metodos/calm.webp",
+    "imagenes/metodos/grounding.webp",
+    "imagenes/metodos/journal.webp",
+    "imagenes/metodos/move.webp",
+    "imagenes/metodos/muscle.webp",
+    "imagenes/metodos/reframe.webp",
+    "imagenes/metodos/selflove.webp",
+    "imagenes/metodos/sleep.webp",
+    "imagenes/metodos/talk.webp",
+    "imagenes/metodos/unplug.webp",
+    "imagenes/paisajes/ondas-original.png",
+    "imagenes/perfiles/escena-brotecito.png",
+    "imagenes/perfiles/escena-lunita.png",
+    "imagenes/perfiles/escena-nubecita.png",
+    "imagenes/tarjetas/escenas-01.png",
+    "imagenes/tarjetas/escenas-02.png",
+    "imagenes/tarjetas/escenas-03.png",
+    "imagenes/tarjetas/escenas-05.png",
+    "imagenes/welcome/logo-aprobado-v2.png",
+    "imagenes/welcome/portada-aprobada-v2.png",
+    "index.html",
+    "js/app.js",
+    "js/components/activities.js",
+    "js/components/common.js",
+    "js/components/companions.js",
+    "js/components/favorites.js",
+    "js/components/home-card-art.js",
+    "js/components/home-desktop.js",
+    "js/components/home-mobile-jardin.js",
+    "js/components/interface.js",
+    "js/components/journal-agenda.js",
+    "js/components/methods.js",
+    "js/components/mobile-navigation.js",
+    "js/components/more-jardin.js",
+    "js/components/pet-select-jardin.js",
+    "js/components/settings.js",
+    "js/components/welcome-desktop.js",
+    "js/components/welcome-mobile.js",
+    "js/components/welcome-poster.js",
+    "js/daily-entry.js",
+    "js/data.js",
+    "js/home-pet-interaction.js",
+    "js/icons.js",
+    "js/journal-agenda-controller.js",
+    "js/journal-storage.js",
+    "js/method-categories.js",
+    "js/storage.js",
+    "js/timer.js",
+    "js/utils.js",
+    "manifest.webmanifest",
+    "sw.js"
+  ],
+  "respaldo_origen_sha256": "a329df6dd225faa651ab7e21082917eb38d3d24834511408d8d709860ee18cc3",
   "verificacion": {
-    "paquete": "CRC y SHA256 verificados; base + parche equivale exactamente al respaldo actualizado.",
+    "runtime": "87 archivos identicos a los de la app 4.12 ya verificada; dependencias y cache completos.",
     "funcionales": [
       {
-        "informe": "work/qa-metodos-imagenes/informe-final.json",
-        "sha256": "0ed3a86fa199ce87e636b55cb2ce28d16e4f7c743939f9c4b75e0c4ba1e3a884",
-        "passed": 39,
+        "informe": "work/qa-entrega-412/informe-runtime-limpio.json",
+        "sha256": "f4e53f8d06b3e2cdd60a6d0ef03bf2822b301a4877766f16f909950db623cfb2",
+        "passed": 90,
         "failed": 0
       },
       {
-        "informe": "work/qa-metodos-imagenes-cuadradas/informe.json",
-        "sha256": "f10bf69f3a1dc859686ba4ad4cf8838e1e929be8f10ab09ff50b52211ab0974a",
-        "passed": 27,
-        "failed": 0
-      },
-      {
-        "informe": "work/qa-metodos-imagenes-cuadradas/alcance-entrega.json",
-        "sha256": "4100430abd91b439df3886a3be30f617984cf11215fe92cac0a087945864efc1",
-        "passed": 5,
+        "informe": "work/qa-entrega-412/informe-unitario.json",
+        "sha256": "9ec58ef5719b6bc4f662d2ff234e37fe2cee9c87d65a36440e90f78383a64ca5",
+        "passed": 28,
         "failed": 0
       }
     ]
   },
   "archivos": [
     {
-      "archivo": "ACTUALIZAR_RESPIRA.txt",
-      "bytes": 1683,
-      "sha256": "459eb8d8a0e4793e3ea311288da8bc562c3aee3cc90d3b7dad9ff3d0525b3f2d"
-    },
-    {
-      "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
-      "bytes": 416,
-      "sha256": "16514388daa89c22647a7470c9c7a9c28743757eaf8929e4f455fa09a546d2b9"
-    },
-    {
-      "archivo": "DISENO_APROBADO.md",
-      "bytes": 1810,
-      "sha256": "12e0a345fd550fd5faa6cecf7e509975a270084899e5d719e6729f8e454e8dc8"
-    },
-    {
-      "archivo": "ENTRADA_DIARIA_APROBADO.md",
-      "bytes": 2213,
-      "sha256": "3b09f960e035cfcf49ddc7e7c9ff76b1a3fb9a6b155c45d61023117f0845a03b"
-    },
-    {
-      "archivo": "ENTREGAS.md",
-      "bytes": 7448,
-      "sha256": "5a9a2672bce52b8bd669596230bfca611a0d301034d917f49635f4a8e1023593"
-    },
-    {
-      "archivo": "FAVORITOS_APROBADO.md",
-      "bytes": 1442,
-      "sha256": "30f5fcacb4c06b88acd561e6126b1e97756fc139b54dbedf89173d9db52c8259"
-    },
-    {
-      "archivo": "FONDOS_APROBADO.md",
-      "bytes": 2074,
-      "sha256": "d51b266b29483198bd269344874631b89909e964b96ded8ba4e36409a8e8ac9b"
-    },
-    {
-      "archivo": "HOME_MASCOTAS_APROBADO.md",
-      "bytes": 3032,
-      "sha256": "637aa88e591a45b249471c58c76142db5229c39fbc0692fc6ed3115aa0bcfe54"
-    },
-    {
-      "archivo": "HOME_MOVIL_APROBADO.md",
-      "bytes": 2161,
-      "sha256": "c68285d8404ed7dcfea5534fb55f6febf307ea2cee67ff39e4514f69a380cba4"
-    },
-    {
-      "archivo": "HOME_WEB_APROBADO.md",
-      "bytes": 1969,
-      "sha256": "96b5be33ee147a41b4c54e3073e751daab711e82d59889a7d5e380885dd7ee5b"
-    },
-    {
-      "archivo": "ICONO_APROBADO.md",
-      "bytes": 2003,
-      "sha256": "4ecbd96a38115d8cf8f0a461df731576b58f8611127496e43a47b6bcf275568f"
-    },
-    {
-      "archivo": "INICIAR_RESPIRA.cmd",
-      "bytes": 166,
-      "sha256": "c32c360baeb7e5aea9b2667e80dcc92ffb246e0cbac67d13955c422bc64c77b6"
-    },
-    {
-      "archivo": "LEEME.md",
-      "bytes": 13260,
-      "sha256": "3edada1bea610a6284f9aa69911651da40293cf6a001927103877edc5bae4c15"
-    },
-    {
-      "archivo": "MASCOTAS_APROBADO.md",
-      "bytes": 2225,
-      "sha256": "46d248ac549dc93f29b92c2ac0b1381cd03fbf99b4e6c50f4d7e6eccffcc8d98"
-    },
-    {
-      "archivo": "MAS_APROBADO.md",
-      "bytes": 1233,
-      "sha256": "0d352d5680a2a6c369bec2c6a81dcff521a6460fa0630097b9aab74cd426e98e"
-    },
-    {
-      "archivo": "METODOS_APROBADO.md",
-      "bytes": 4792,
-      "sha256": "6eeeb9449b73b35a9ecc079a672c9c3b70401c6f42ddebb94705686e8c46d818"
-    },
-    {
-      "archivo": "PET_SELECT_APROBADO.md",
-      "bytes": 1477,
-      "sha256": "b9ad1ef067bcba98daa5d5438b02e610e89cff3f03cf6680fbbc20222ad1be22"
-    },
-    {
-      "archivo": "Servidor.ps1",
-      "bytes": 3400,
-      "sha256": "4e5d7c30594e6e42ff40bc11916ad62df691b8d9fc791f39b8e714c895f8ac96"
-    },
-    {
-      "archivo": "TARJETAS_HOME_APROBADO.md",
-      "bytes": 2228,
-      "sha256": "ca451e24a641cee1eb767ee6ef13e7c81c0370069c732b3922495083767bbd52"
-    },
-    {
-      "archivo": "VERIFICACION.md",
-      "bytes": 16783,
-      "sha256": "9069708c80c32ed6a2162d23f6369e39e854bd28b0b87eae53df7d1fe944d828"
-    },
-    {
-      "archivo": "WELCOME_ALCANCE.md",
-      "bytes": 856,
-      "sha256": "d46be3050c0bafb70f059477fce721b2f70b30058f0e1c294476ac64f36c930b"
-    },
-    {
-      "archivo": "WELCOME_APROBADO.md",
-      "bytes": 3717,
-      "sha256": "a11b2421514993227feee2ada6a57364d13a53bd1a8cdd8c2c78ca88adc31a9a"
+      "archivo": "LEEME_INSTALAR_COMPLETO.txt",
+      "bytes": 1085,
+      "sha256": "189df8f8c9d1c377d2098b5325aa68a69c89338bb9952746bc109ffae1aee457"
     },
     {
       "archivo": "css/base.css",
@@ -158,28 +128,28 @@
     },
     {
       "archivo": "css/favorites.css",
-      "bytes": 14365,
-      "sha256": "c18865149bd7b438a8070d7e0ecb6c206f70dd29a42544c467c96d0d5dda04ab"
+      "bytes": 14529,
+      "sha256": "a7e8a9a12716484880b264e567b61fcd62e0c84d17326dd99b1139dff4fbaf78"
     },
     {
       "archivo": "css/home-desktop.css",
-      "bytes": 14399,
-      "sha256": "f37c83714b6f60ce3d9c7b54d3e7c631913ddd7fc1bd50feeb50e161d9f3775a"
+      "bytes": 14498,
+      "sha256": "c5c0045136c3759d03528a65970b888a9b0998508e8ef88eb21b0a3cad93b082"
     },
     {
       "archivo": "css/home-mobile-jardin.css",
-      "bytes": 13191,
-      "sha256": "396b9cdec47adf78efd7dac306feb65b255ce74f8f1e9c1bf2b4f86839e0f47e"
-    },
-    {
-      "archivo": "css/home.css",
-      "bytes": 8836,
-      "sha256": "78d617332f1317774e67e962b74b7f6d2e033818480a29f9de0ec8ac3c744162"
+      "bytes": 13339,
+      "sha256": "c54e8e825b2a34a52e81f91916993c325b8623156933c6d2910380fdce5f2d41"
     },
     {
       "archivo": "css/interface.css",
       "bytes": 4828,
       "sha256": "0a431da7150dfc7b981c6267f20e1f4df4b7fed1ca5283d8f89440faece9bd3d"
+    },
+    {
+      "archivo": "css/journal-agenda.css",
+      "bytes": 33931,
+      "sha256": "314577a3c78a8aee2ff22f74a6111717f8a990975dfc4b8fe6805a1bc96b450a"
     },
     {
       "archivo": "css/method-details.css",
@@ -188,8 +158,13 @@
     },
     {
       "archivo": "css/methods.css",
-      "bytes": 13347,
-      "sha256": "a11eb7af76bd26ca070c4273142dc400c0972920db33c615e0a87766bb28d0eb"
+      "bytes": 13511,
+      "sha256": "fcb76de327a6cd92f326df2bbc1a5520c1663ed68a6c9b9de60c34fc75ebd421"
+    },
+    {
+      "archivo": "css/mobile-navigation.css",
+      "bytes": 1722,
+      "sha256": "8e6e3c0cd978aa87d576959d40ee3181c0898f20e421abf7fe7baf1fca5ff814"
     },
     {
       "archivo": "css/more-jardin.css",
@@ -210,11 +185,6 @@
       "archivo": "css/welcome-mobile-v2.css",
       "bytes": 2977,
       "sha256": "e2a5973255c6f69708288833a4f7f934761a8dff3ca82f86eeffb7af166e4278"
-    },
-    {
-      "archivo": "css/welcome-mobile.css",
-      "bytes": 4180,
-      "sha256": "d28ae3fd7cfb8b06d60b95d46e9b103f80053706600a4fcb85e009fb35248c9d"
     },
     {
       "archivo": "iconos/apple-touch-icon.png",
@@ -247,11 +217,6 @@
       "sha256": "aa2a20fa49cb3a5a82686286395acc8d5ef6d9e7f451c7d9b2b8257e0b13015f"
     },
     {
-      "archivo": "iconos/lunita-esmeralda-maestro.png",
-      "bytes": 1684992,
-      "sha256": "a48889c2f5e676992977efe8d9a7a8fb5d5511224253db494b822931f495f34e"
-    },
-    {
       "archivo": "imagenes/inicio-web/consejos-hd.png",
       "bytes": 3485552,
       "sha256": "831491842fd29e400fc7bb31d07940a84cedfafc1219b4564244a99404db2b09"
@@ -277,34 +242,24 @@
       "sha256": "653cc21743f8b05b0278f51c0cdc1aa2a21529ddecd1be9a67c9a8879db53eb1"
     },
     {
-      "archivo": "imagenes/inicio/arte-inicio-original.png",
-      "bytes": 2465694,
-      "sha256": "b3fdc5a9a6e05c1d0f0eab77cafcf4a9cba5b4c0a2fb19899d50727b3f8a8f54"
+      "archivo": "imagenes/interfaz/barras/respira_barra_favoritos_activo.png",
+      "bytes": 259564,
+      "sha256": "c3bfa8a3b7c11128ae6f3ad3427bb1fe378659b5d89055781224f981f5e6f47d"
     },
     {
-      "archivo": "imagenes/inicio/logo.svg",
-      "bytes": 663,
-      "sha256": "a6e1242d6e62672e353195dd274bab551e09ad3fc421c1c4ed4cda1701e60c11"
+      "archivo": "imagenes/interfaz/barras/respira_barra_inicio_activo.png",
+      "bytes": 253355,
+      "sha256": "5e54c3c9b78eb75d005419e442d69388643dac03ebd3bc9e451e2707caed39ac"
     },
     {
-      "archivo": "imagenes/inicio/tarjeta-consejos.png",
-      "bytes": 279709,
-      "sha256": "d61ab2d514ee9e4ddbbe5a5f2b49cda9664f9e3fb1325efb998badf9a2708588"
+      "archivo": "imagenes/interfaz/barras/respira_barra_mas_activo.png",
+      "bytes": 250505,
+      "sha256": "31b8a03583c65cc93b1c9429176c73d1117393a2bd2253947ab038a7b9d3faeb"
     },
     {
-      "archivo": "imagenes/inicio/tarjeta-meditacion.png",
-      "bytes": 154756,
-      "sha256": "2c66f7e5eee33620188d36676a61a8e696657ffa74c486cd246d243384ca182e"
-    },
-    {
-      "archivo": "imagenes/inicio/tarjeta-respiracion.png",
-      "bytes": 225415,
-      "sha256": "ff2f142ae0c56ae2366acc772c46aa5c8d289b0b649d2d42f767b96086a1d87b"
-    },
-    {
-      "archivo": "imagenes/inicio/tarjeta-tecnicas.png",
-      "bytes": 261097,
-      "sha256": "8d4b8c36b4ab047122ba5b59c3c4985d072de9a60cfe6e610517dfc450894151"
+      "archivo": "imagenes/interfaz/barras/respira_barra_metodos_activo.png",
+      "bytes": 262087,
+      "sha256": "b99fc292a938ba85321a7f028ddf191440c602d6ee89311dbebc190e3ae9e4ca"
     },
     {
       "archivo": "imagenes/interfaz/marco-original.png",
@@ -392,11 +347,6 @@
       "sha256": "11a6a6091f95806dd850d45952e006879d04f39045c3a6bad497a2d7564d8955"
     },
     {
-      "archivo": "imagenes/paisajes/lago.png",
-      "bytes": 4312480,
-      "sha256": "34cb5665b6ab5826480e7fe0ad276a0baf52e9bb40a1204e1e5e9580e249cac3"
-    },
-    {
       "archivo": "imagenes/paisajes/ondas-original.png",
       "bytes": 2230664,
       "sha256": "01ca6a514bac2dd04f1ff87f3f1ba12a441fcb86ebfeee412f86a79e318ec7fd"
@@ -437,11 +387,6 @@
       "sha256": "06ea8bd514681820bdb6307b85069315d14c8c90708944674a64f903291ac78c"
     },
     {
-      "archivo": "imagenes/welcome/boton-iniciar-original-v2.png",
-      "bytes": 1674933,
-      "sha256": "1de83c67d85789ad81a3337510216f1797814b28f0ae60470d4346cef9c5d3a3"
-    },
-    {
       "archivo": "imagenes/welcome/logo-aprobado-v2.png",
       "bytes": 902878,
       "sha256": "645392cda33fa7a88f45291e8610de7b7abadafefc4152190e2c0f7081a9ae47"
@@ -452,19 +397,14 @@
       "sha256": "22ef401d0d12ea9a860abad1edab6211fbf9a733ed11ed1cc570db0fa9b8d5a7"
     },
     {
-      "archivo": "imagenes/welcome/portada-movil-feliz-serena-v1.png",
-      "bytes": 2516625,
-      "sha256": "d3fb92abc26c9538976812dbfe44f4ebfee7a77e0d95ce64ff03a05c0aa5c998"
-    },
-    {
       "archivo": "index.html",
-      "bytes": 1970,
-      "sha256": "8bb850cb42cab1f029c9975b888d5cfa9c0a30d19258231c36bfd141b4e94f8d"
+      "bytes": 2041,
+      "sha256": "f80dfa2769767208a14c1ee11660bcf7f75b39ae0888be4447bd08b0ff5465aa"
     },
     {
       "archivo": "js/app.js",
-      "bytes": 15553,
-      "sha256": "adf512f41e9e8ce9d4aa7fa2332964f8db970cee30bc8fec58b1725ebfab6847"
+      "bytes": 16478,
+      "sha256": "f248eb0b016ab27f40241e410588374489cad20b62f8c56a58b70858728d3b55"
     },
     {
       "archivo": "js/components/activities.js",
@@ -487,11 +427,6 @@
       "sha256": "a2b2e0a55bd5aeabc107304d3b2c3a5ae2a3325bbc13f6316ce75d9b0123e3fb"
     },
     {
-      "archivo": "js/components/home-art.js",
-      "bytes": 1053,
-      "sha256": "7529c88f64299c97401565e896a55407d2b4f04424bad1dbe8f489df5c24e62d"
-    },
-    {
       "archivo": "js/components/home-card-art.js",
       "bytes": 827,
       "sha256": "a337bca5b246555136485f3c633d6d78ee9c5005a2f31ac902bf59d1d571a60b"
@@ -507,19 +442,24 @@
       "sha256": "ace41a9b579fc0b63ed593abb2255dabffc2fbd2bebec07fe7f7fd5e95bc0ac6"
     },
     {
-      "archivo": "js/components/home.js",
-      "bytes": 3468,
-      "sha256": "14aa1449d47834438c1a1ce54befafdc3e579efa9f918cb2fda10a568369d369"
+      "archivo": "js/components/interface.js",
+      "bytes": 2696,
+      "sha256": "b2954cc4135e38a6d7befa109b885152c53904845f2ed38eaa40df4842b04fce"
     },
     {
-      "archivo": "js/components/interface.js",
-      "bytes": 2593,
-      "sha256": "d52ceeb0456d2515e4e2d9324e559ffc659b7e232254f1a12303712672dca1d2"
+      "archivo": "js/components/journal-agenda.js",
+      "bytes": 12299,
+      "sha256": "987f9065b71d3a3f9941a850c102f38388f47a41f202aff144bb738c506228e7"
     },
     {
       "archivo": "js/components/methods.js",
       "bytes": 5198,
       "sha256": "a9a2ed10bfe323a9c8f097fa57debc0beeaf114acf995ba876962f72369c0e03"
+    },
+    {
+      "archivo": "js/components/mobile-navigation.js",
+      "bytes": 877,
+      "sha256": "0749b2e3dd3aa249ca9532f1630bc8ea0ff05d5875d488d4cae978c9b4f2c3b0"
     },
     {
       "archivo": "js/components/more-jardin.js",
@@ -572,6 +512,16 @@
       "sha256": "1902b48fd6d98e387a98175eddcbfaa5f35fd8646f198d5d62dd8826c056a79b"
     },
     {
+      "archivo": "js/journal-agenda-controller.js",
+      "bytes": 11430,
+      "sha256": "4b438d50cf5d06e06ec3b9e7e4ec9829186db4000799e3d8cc18986f4550d8e7"
+    },
+    {
+      "archivo": "js/journal-storage.js",
+      "bytes": 7657,
+      "sha256": "052b3f9b8c76812de0a6efa3eb265520091eab0d32931882567d2cc579cb2699"
+    },
+    {
       "archivo": "js/method-categories.js",
       "bytes": 1039,
       "sha256": "8dc2485cb4986bbae946cf8f8021f8f067f97eb72dc8fd00dc35e5bf5e57d303"
@@ -598,8 +548,8 @@
     },
     {
       "archivo": "sw.js",
-      "bytes": 4327,
-      "sha256": "7f40b30c413ea6fd2280247651b1cc60c0d8d10c6bd6939705426e9f0a308ca1"
+      "bytes": 4188,
+      "sha256": "e23a4828ba9dfc8e544bdf3a60d79d7de585d3f322bb5b12d50e727f272dbfcc"
     }
   ]
 }

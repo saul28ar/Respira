@@ -1,6 +1,6 @@
 import { catalog, pets, groundSteps, muscleSteps, breathPhases } from './data.js';
 import { clock } from './utils.js';
-import { favorites, journal, setStore, companionToday, chooseCompanion } from './storage.js';
+import { favorites, setStore, companionToday, chooseCompanion } from './storage.js';
 import { ExerciseClock } from './timer.js';
 import { icon } from './icons.js';
 import { renderFrame } from './components/interface.js';
@@ -15,6 +15,8 @@ import { renderMoreJardin } from './components/more-jardin.js';
 import { renderAbout } from './components/settings.js';
 import { markPetOfferSeen, welcomeDestination } from './daily-entry.js';
 import { bindHomePetInteractions } from './home-pet-interaction.js';
+import { renderJournalAgenda } from './components/journal-agenda.js';
+import { journalAgendaView, bindJournalAgenda, flushJournalAgenda, hasPendingJournalChanges, requestJournalLeave } from './journal-agenda-controller.js';
 
 const app = document.getElementById('app');
 const announcer = document.getElementById('announcer');
@@ -26,16 +28,23 @@ let sessionClock = null;
 let currentStep = 0;
 let messageIndex = 0;
 let saveOk = true;
-let draft = journal();
-let dirtyDraft = false;
 let activityPet = null;
 let petReturn = 'pet-select';
 let returnRoute = 'methods';
 let toastTimeout = null;
 let visited = false;
 let cleanupHomePet = null;
+let cleanupJournal = null;
 let homeReselection = false;
 const historyStack = [];
+let historyIndex = Number.isSafeInteger(history.state?.respiraRouteIndex) ? history.state.respiraRouteIndex : 0;
+let restoringJournalNavigation = null;
+function isJournalRoute() { return route.view === 'detail' && route.id === 'journal'; }
+function leaveJournal(action) {
+  if (isJournalRoute() && hasPendingJournalChanges()) return requestJournalLeave(action);
+  action();
+  return true;
+}
 function routeKey(value) { return value.view + (value.id ? '/' + value.id : ''); }
 function readRoute() {
   const [requested, id] = location.hash.slice(1).split('/');
@@ -48,18 +57,23 @@ function readRoute() {
 function navigate(view, id) {
   const next = { view, id: id || null };
   if (routeKey(next) === routeKey(route)) return;
-  location.hash = routeKey(next);
+  leaveJournal(() => { location.hash = routeKey(next); });
 }
 function goBack() {
-  if (historyStack.length) history.back();
-  else navigate(route.view === 'pet-detail' ? petReturn : route.view === 'about' ? 'more' : route.view === 'detail' ? returnRoute : 'home');
+  leaveJournal(() => {
+    if (historyStack.length) history.back();
+    else navigate(route.view === 'pet-detail' ? petReturn : route.view === 'about' ? 'more' : route.view === 'detail' ? returnRoute : 'home');
+  });
 }
 function render() {
   cleanupHomePet?.();
   cleanupHomePet = null;
+  cleanupJournal?.();
+  cleanupJournal = null;
   const cp = companionToday();
   let html = '';
   const view = route.view;
+  const journalView = view === 'detail' && route.id === 'journal';
   const desktopHome = view === 'home' && !mobileHomeViewport.matches;
   const mobileHome = view === 'home' && mobileHomeViewport.matches;
   if (view === 'welcome') html = renderWelcome();
@@ -76,10 +90,11 @@ function render() {
   if (view === 'favorites') html = renderFavorites({ petId:cp });
   if (view === 'more') html = renderMoreJardin(cp);
   if (view === 'about') html = renderAbout();
-  if (view === 'detail') html = renderDetail(route.id, {draft,petReturn:activityPet});
-  const active = ['home','pet-select','pet-library','pet-detail','pet-confirm'].includes(view) ? 'home' : view === 'favorites' ? 'favorites' : ['more','about'].includes(view) ? 'more' : 'methods';
-  app.innerHTML = renderFrame(html, { active, welcome:view === 'welcome', home:view === 'home', desktopHome, mobileHome, methods:view === 'methods', ownInterface:['favorites','more','pet-select'].includes(view) });
+  if (view === 'detail') html = journalView ? renderJournalAgenda(journalAgendaView()) : renderDetail(route.id, {petReturn:activityPet});
+  const active = ['welcome','home','pet-select','pet-library','pet-detail','pet-confirm'].includes(view) ? 'home' : view === 'favorites' ? 'favorites' : ['more','about'].includes(view) ? 'more' : 'methods';
+  app.innerHTML = renderFrame(html, { active, welcome:view === 'welcome', home:view === 'home', desktopHome, mobileHome, methods:view === 'methods', ownInterface:journalView || ['favorites','more','pet-select'].includes(view) });
   if (view === 'home') cleanupHomePet = bindHomePetInteractions(app);
+  if (journalView) cleanupJournal = bindJournalAgenda(app, render);
   const main = app.querySelector('main');
   if (main) { main.id = 'main-content'; main.tabIndex = -1; }
   document.body.classList.toggle('welcome-view', view === 'welcome');
@@ -90,6 +105,7 @@ function render() {
   document.body.classList.toggle('favorites-jardin-view', view === 'favorites');
   document.body.classList.toggle('more-jardin-view', view === 'more');
   document.body.classList.toggle('pet-select-jardin-view', view === 'pet-select');
+  document.body.classList.toggle('journal-agenda-view', journalView);
   const theme = document.querySelector('meta[name="theme-color"]');
   if (theme) theme.content = view === 'welcome' && mobileHomeViewport.matches ? '#147b99' : '#f6f8f2';
   const title = app.querySelector('h1')?.textContent ?? 'Tu espacio de calma';
@@ -98,6 +114,23 @@ function render() {
 }
 function showRoute() {
   const next = readRoute();
+  const changed = route.view && routeKey(next) !== routeKey(route);
+  const marker = history.state?.respiraRouteIndex;
+  if (restoringJournalNavigation && marker === historyIndex && !changed) {
+    const continuation = restoringJournalNavigation;
+    restoringJournalNavigation = null;
+    requestJournalLeave(() => history.go(continuation.delta));
+    return;
+  }
+  let nextIndex = Number.isSafeInteger(marker) ? marker : route.view ? historyIndex + 1 : historyIndex;
+  if (changed && nextIndex === historyIndex) nextIndex++;
+  history.replaceState({ ...history.state, respiraRouteIndex: nextIndex }, '', location.href);
+  if (changed && isJournalRoute() && hasPendingJournalChanges()) {
+    restoringJournalNavigation = { delta: nextIndex - historyIndex };
+    history.go(historyIndex - nextIndex);
+    return;
+  }
+  historyIndex = nextIndex;
   if (route.view && routeKey(next) !== routeKey(route)) {
     const previous = historyStack.at(-1);
     if (previous === routeKey(next)) historyStack.pop();
@@ -186,7 +219,7 @@ app.addEventListener('click', event => {
     }
     return;
   }
-  if (element.dataset.go) { navigate(element.dataset.go); return; }
+  if (element.dataset.go) { event.preventDefault(); navigate(element.dataset.go); return; }
   if (element.dataset.petView) {
     if (route.view !== 'pet-detail' && route.view !== 'detail') petReturn = route.view;
     navigate('pet-detail',element.dataset.petView); return;
@@ -253,40 +286,21 @@ app.addEventListener('click', event => {
     currentStep = action.endsWith('prev') ? Math.max(0,currentStep-1) : (currentStep+1)%steps.length;
     showStep(kind);
   }
-  if (action === 'journal-save') {
-    const value = document.getElementById('journal-text').value;
-    const saved = setStore('journal',value);
-    if (saved) { draft = value; dirtyDraft = false; }
-    setText('journal-status',saved ? 'Tu nota se guardó en este dispositivo.' : 'No se pudo guardar. Conserva una copia antes de cerrar.');
-  }
-  if (action === 'journal-clear' && confirm('¿Quieres borrar tu nota guardada?')) {
-    if (setStore('journal','')) {
-      draft = ''; dirtyDraft = false;
-      document.getElementById('journal-text').value = '';
-      setText('journal-count','0/10000');
-      setText('journal-status','Nota borrada.');
-    } else setText('journal-status','No se pudo borrar la nota en este navegador.');
-  }
-});
-app.addEventListener('input', event => {
-  if (event.target.id !== 'journal-text') return;
-  draft = event.target.value;
-  dirtyDraft = draft !== journal();
-  setText('journal-count',`${draft.length}/10000`);
-  setText('journal-status',dirtyDraft ? 'Tienes cambios por guardar.' : 'Tu nota está guardada.');
 });
 window.addEventListener('beforeunload',event => {
-  if (dirtyDraft) { event.preventDefault(); event.returnValue = ''; }
+  if (hasPendingJournalChanges()) { event.preventDefault(); event.returnValue = ''; }
 });
+window.addEventListener('pagehide', flushJournalAgenda);
 window.addEventListener('hashchange',() => {
   if (location.hash === '#main-content') {
-    history.replaceState(null,'','#' + routeKey(route));
+    history.replaceState(history.state,'','#' + routeKey(route));
     app.querySelector('main')?.focus(); return;
   }
   showRoute();
 });
 document.addEventListener('keydown',event => {
   if (event.key !== 'Escape' || event.repeat || event.target.matches('textarea,input,select,[contenteditable]')) return;
+  if (document.querySelector('dialog[open]')) return;
   if (['welcome','home','pet-select','pet-confirm'].includes(route.view)) return;
   event.preventDefault(); goBack();
 });

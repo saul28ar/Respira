@@ -1,0 +1,19 @@
+/* Las cuatro barras originales se conservan completas y en su proporción. */
+.mobile-approved-nav{display:none}
+@media(max-width:767px),
+       (max-width:1024px) and (max-height:600px) and (orientation:landscape) and (hover:none) and (pointer:coarse){
+  .app-shell .interface-nav,
+  .app-shell .hm1-bottom-nav,
+  .app-shell .m10-bottom-nav,
+  .app-shell .f4-bottom-nav,
+  .app-shell .m3-bottom-nav,
+  .app-shell .ps4-bottom-nav{display:none!important}
+  .app-shell .mobile-approved-nav{position:fixed;z-index:40;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:grid;align-items:center;width:min(570px,calc(100% - 28px));min-height:44px;aspect-ratio:1812/160;padding:0;margin:0;border:0;background:transparent;isolation:isolate}
+  .mobile-approved-nav-art{display:block;width:100%;height:auto;max-width:100%;pointer-events:none;user-select:none}
+  .mobile-approved-nav-links{position:absolute;inset:0;display:grid;grid-template-columns:31.29fr 21.47fr 20.67fr 26.57fr}
+  .mobile-approved-nav-links a{display:block;min-width:0;min-height:44px;border-radius:999px;background:transparent;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+  .mobile-approved-nav-links a:focus-visible{outline:2px solid #07544c;outline-offset:-2px}
+  /* La portada deja lugar al mismo control que el resto de pantallas. */
+  .welcome-page .welcome-mobile{padding-bottom:calc(var(--welcome-safe-bottom,0px) + 58px)}
+  .welcome-page .welcome-mobile-stage{width:max(100vw,calc((100svh - var(--welcome-safe-top,0px) - var(--welcome-safe-bottom,0px) - 58px)*941/1671));width:max(100vw,calc((100dvh - var(--welcome-safe-top,0px) - var(--welcome-safe-bottom,0px) - 58px)*941/1671))}
+}
