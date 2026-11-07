@@ -153,3 +153,11 @@ Esta actualización se revisó con archivos locales. El uso sin conexión indica
 - Se corrigió la separación visible de «Elegir mascota» y se oscureció el fondo del botón de calma para mejorar el contraste de sus textos blancos.
 - Las ventanas de arte de las tarjetas excluyen los textos de las referencias. El saludo del fondo no se muestra una segunda vez.
 - Los nuevos recursos están incluidos en la lista de caché. Esta revisión no repitió la prueba sin conexión con servidor HTTP.
+
+## Respira 4.11 · Imágenes de Métodos · 6 de noviembre de 2026
+
+Se verificaron 39 comprobaciones de integración y 27 de encuadre final, sin fallos pendientes. Las trece imágenes WebP conservan exactamente los píxeles RGBA de las fuentes aprobadas; escritura utiliza la tercera opción del gatito. Los marcos son cuadrados, completos y sin relleno difuminado a 320, 359, 360, 390, 430, 768 y 1600 px, sin choques entre texto y controles.
+
+Se comprobaron las cinco categorías, los trece favoritos persistentes, abrir y volver de los trece ejercicios, las tres compañías elegidas y la ausencia de errores JavaScript y de recursos. Catorce pares de capturas fuera de Métodos fueron idénticos; el ajuste final de las fotos conserva los exteriores de las tarjetas. La actualización del service worker desde la versión anterior y la recarga sin red pasaron, con los trece recursos nuevos en caché y dieciocho rutas disponibles. El ajuste posterior de marcos solo cambia CSS y el nombre de caché, sin alterar rutas ni imágenes.
+
+Los informes fuente se conservan en `work/qa-metodos-imagenes/` y `work/qa-metodos-imagenes-cuadradas/`, fuera del ZIP. El manifiesto de entrega registra sus huellas y resultados; el parche se compara con el respaldo 4.10.1 antes de reemplazar el único respaldo completo.

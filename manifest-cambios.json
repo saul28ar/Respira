@@ -1,116 +1,140 @@
 {
-  "version_base": "4.10",
-  "version_nueva": "4.10.1",
-  "sha256_base_zip": "ab41c5cbf5aff8d508bb78e2d69a9760cbe3940deabe4bc7cdc57be696799833",
-  "instruccion": "Aplicar sobre Respira 4.10, respetando las carpetas y conservando los demás archivos.",
+  "version_base": "4.10.1",
+  "version_nueva": "4.11",
+  "sha256_base_zip": "a26b6d2a5a764e32463ce29708429fb003c4333e1c75edc39d0e94a74102a45c",
+  "instruccion": "Aplicar sobre Respira 4.10.1, respetando las carpetas y conservando los demás archivos.",
   "eliminaciones": [],
   "archivos": [
     {
-      "archivo": "ACTUALIZAR_RESPIRA.txt",
-      "bytes": 1683,
-      "sha256": "459eb8d8a0e4793e3ea311288da8bc562c3aee3cc90d3b7dad9ff3d0525b3f2d",
-      "tipo": "modificado"
-    },
-    {
       "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
-      "bytes": 412,
-      "sha256": "7e0c3e414fd32cadb82f98a4e4b4d9774da19daaed935be4adb43436db991b67",
-      "tipo": "modificado"
-    },
-    {
-      "archivo": "ENTRADA_DIARIA_APROBADO.md",
-      "bytes": 2213,
-      "sha256": "3b09f960e035cfcf49ddc7e7c9ff76b1a3fb9a6b155c45d61023117f0845a03b",
+      "bytes": 416,
+      "sha256": "16514388daa89c22647a7470c9c7a9c28743757eaf8929e4f455fa09a546d2b9",
       "tipo": "modificado"
     },
     {
       "archivo": "ENTREGAS.md",
-      "bytes": 6797,
-      "sha256": "c3ac1b135a68fd9a64eaf721ff9fc4c34d903aebac5c8f9e66b9bbaabb0f53bf",
-      "tipo": "modificado"
-    },
-    {
-      "archivo": "HOME_MASCOTAS_APROBADO.md",
-      "bytes": 3032,
-      "sha256": "637aa88e591a45b249471c58c76142db5229c39fbc0692fc6ed3115aa0bcfe54",
+      "bytes": 7448,
+      "sha256": "5a9a2672bce52b8bd669596230bfca611a0d301034d917f49635f4a8e1023593",
       "tipo": "modificado"
     },
     {
       "archivo": "LEEME.md",
-      "bytes": 12995,
-      "sha256": "bb3e0820fc2ac5551b26452df96aa8b743e80535c35ee24d6d3f62816b8cf6d0",
+      "bytes": 13260,
+      "sha256": "3edada1bea610a6284f9aa69911651da40293cf6a001927103877edc5bae4c15",
+      "tipo": "modificado"
+    },
+    {
+      "archivo": "METODOS_APROBADO.md",
+      "bytes": 4792,
+      "sha256": "6eeeb9449b73b35a9ecc079a672c9c3b70401c6f42ddebb94705686e8c46d818",
       "tipo": "modificado"
     },
     {
       "archivo": "VERIFICACION.md",
-      "bytes": 15471,
-      "sha256": "09f6121f1f6bdc74b97cb997603b6f2786a55311e8b799dbb295daaf73c7e551",
+      "bytes": 16783,
+      "sha256": "9069708c80c32ed6a2162d23f6369e39e854bd28b0b87eae53df7d1fe944d828",
       "tipo": "modificado"
     },
     {
-      "archivo": "WELCOME_APROBADO.md",
-      "bytes": 3717,
-      "sha256": "a11b2421514993227feee2ada6a57364d13a53bd1a8cdd8c2c78ca88adc31a9a",
+      "archivo": "css/methods.css",
+      "bytes": 13347,
+      "sha256": "a11eb7af76bd26ca070c4273142dc400c0972920db33c615e0a87766bb28d0eb",
       "tipo": "modificado"
     },
     {
-      "archivo": "css/home-desktop.css",
-      "bytes": 14399,
-      "sha256": "f37c83714b6f60ce3d9c7b54d3e7c631913ddd7fc1bd50feeb50e161d9f3775a",
-      "tipo": "modificado"
+      "archivo": "imagenes/metodos/anxiety.webp",
+      "bytes": 2066102,
+      "sha256": "db38f9fc10c196424c9e9a2c5524d774e7a47b69313cf1449ac837a826bb25c9",
+      "tipo": "nuevo"
     },
     {
-      "archivo": "css/home-mobile-jardin.css",
-      "bytes": 13191,
-      "sha256": "396b9cdec47adf78efd7dac306feb65b255ce74f8f1e9c1bf2b4f86839e0f47e",
-      "tipo": "modificado"
+      "archivo": "imagenes/metodos/breath.webp",
+      "bytes": 1887794,
+      "sha256": "ddafa6f0eed30f849862f771b4df4559a210002258474a34dca4ea0f246a2a43",
+      "tipo": "nuevo"
     },
     {
-      "archivo": "js/app.js",
-      "bytes": 15553,
-      "sha256": "adf512f41e9e8ce9d4aa7fa2332964f8db970cee30bc8fec58b1725ebfab6847",
-      "tipo": "modificado"
+      "archivo": "imagenes/metodos/caffeine.webp",
+      "bytes": 1920762,
+      "sha256": "ea3f6864264ebfd72efff08eb7562227721b7630938ce73f0228fafc200c43c2",
+      "tipo": "nuevo"
     },
     {
-      "archivo": "js/components/home-desktop.js",
-      "bytes": 4385,
-      "sha256": "9c3d59a1da8b18b11288b99096de390c2333d7aac7a2b2315f5f633bf5de0d12",
-      "tipo": "modificado"
+      "archivo": "imagenes/metodos/calm.webp",
+      "bytes": 1825880,
+      "sha256": "74862f804576722a965c65480e46e99c0dcfbc5a7e4938e729dbc24be1f6b690",
+      "tipo": "nuevo"
     },
     {
-      "archivo": "js/components/home-mobile-jardin.js",
-      "bytes": 4426,
-      "sha256": "ace41a9b579fc0b63ed593abb2255dabffc2fbd2bebec07fe7f7fd5e95bc0ac6",
-      "tipo": "modificado"
+      "archivo": "imagenes/metodos/grounding.webp",
+      "bytes": 2216000,
+      "sha256": "0aaa30f445ffdd9a0995e013244c541e3bafbda906de570cd8f4849fec6a47e9",
+      "tipo": "nuevo"
     },
     {
-      "archivo": "js/components/pet-select-jardin.js",
-      "bytes": 4145,
-      "sha256": "f5142f537e56d9f378cd8a292e889ecb88695d49678538a2ff9658f7a349c0f3",
-      "tipo": "modificado"
+      "archivo": "imagenes/metodos/journal.webp",
+      "bytes": 1890458,
+      "sha256": "742c8ad9da524038e6ae60cd908f22ab1415072450b8b4de3aaab583dcda297c",
+      "tipo": "nuevo"
     },
     {
-      "archivo": "js/home-pet-interaction.js",
-      "bytes": 3018,
-      "sha256": "d06390008a6c7f014ad34db782025cf232ed65225e3a3d33e3ddfac73bfed498",
-      "tipo": "modificado"
+      "archivo": "imagenes/metodos/move.webp",
+      "bytes": 2077084,
+      "sha256": "c1d13a48ac03f5c801446e660983e77a33eeea48ed6ecdb57873930bef93b779",
+      "tipo": "nuevo"
     },
     {
-      "archivo": "js/storage.js",
-      "bytes": 1499,
-      "sha256": "82db366e2ad71f33f4f266c87c83c545efdf07065f675cb10466b336101006a1",
+      "archivo": "imagenes/metodos/muscle.webp",
+      "bytes": 1764154,
+      "sha256": "3d6f6b41e5acb340cd2cd10679ddcc7f43302a6e98efa4bd137733a801b950c0",
+      "tipo": "nuevo"
+    },
+    {
+      "archivo": "imagenes/metodos/reframe.webp",
+      "bytes": 1851108,
+      "sha256": "cfc81ef2e05af3df20ad8494446f3d35cb5b6e8d198396490cca4ffec256d5dd",
+      "tipo": "nuevo"
+    },
+    {
+      "archivo": "imagenes/metodos/selflove.webp",
+      "bytes": 1981500,
+      "sha256": "a7148ffc2f7b817e1996f66a2281c19d31bd5b3c278f8042f854221271f177bc",
+      "tipo": "nuevo"
+    },
+    {
+      "archivo": "imagenes/metodos/sleep.webp",
+      "bytes": 1566628,
+      "sha256": "d1fd2975cfdb7f16e0ebc98cefffdd3581f907889215fdfc21db13da9ff8ef87",
+      "tipo": "nuevo"
+    },
+    {
+      "archivo": "imagenes/metodos/talk.webp",
+      "bytes": 1851834,
+      "sha256": "4fba2c4da2a002abde86aa03004b11f79c663cb34e24039cce005bae7111ee7b",
+      "tipo": "nuevo"
+    },
+    {
+      "archivo": "imagenes/metodos/unplug.webp",
+      "bytes": 1936868,
+      "sha256": "11a6a6091f95806dd850d45952e006879d04f39045c3a6bad497a2d7564d8955",
+      "tipo": "nuevo"
+    },
+    {
+      "archivo": "js/components/methods.js",
+      "bytes": 5198,
+      "sha256": "a9a2ed10bfe323a9c8f097fa57debc0beeaf114acf995ba876962f72369c0e03",
       "tipo": "modificado"
     },
     {
       "archivo": "manifest-entrega.json",
-      "bytes": 17775,
-      "sha256": "45aecba06ada322e3f5afd01a4150eb5d84ef87b240e63ad0014070c80a91c1c",
+      "bytes": 20202,
+      "sha256": "a07538414d418697556cc912a87656c315fdf81875594aca2649aa525bbf9cd9",
       "tipo": "modificado"
     },
     {
       "archivo": "sw.js",
-      "bytes": 3839,
-      "sha256": "3853ea0dea5f47bee24f747b1ec77b040878b735c6076174e1e3e0e640dd894b",
+      "bytes": 4327,
+      "sha256": "7f40b30c413ea6fd2280247651b1cc60c0d8d10c6bd6939705426e9f0a308ca1",
       "tipo": "modificado"
     }
   ],

@@ -36,3 +36,13 @@ Archivos de esta parte:
 Se reutilizan los archivos de `imagenes/inicio-web/`, `imagenes/mascotas/` y `imagenes/welcome/`, sin modificarlos. El Home y los welcome aprobados se conservan.
 
 La entrega histórica 4.6 incluyó la aplicación completa y un ZIP con solo cambios respecto de Respira 4.5. La política vigente para entregas posteriores es `ENTREGAS.md`.
+
+## Ilustraciones aprobadas el 6 de noviembre de 2026
+
+El usuario aprobó las imágenes 1–12 de personas acompañadas por las mascotas y eligió la opción 3 del gatito para «Escribe lo que sientes». Solicitó integrarlas únicamente en las trece tarjetas de la página Métodos, sin cambiar las demás páginas.
+
+Los originales y sus huellas están registrados en `referencias/aprobadas/metodos-personas-mascotas-v2.json`. Las copias para la app se guardan en `imagenes/metodos/` como WebP sin pérdida, con los mismos píxeles y resolución de los PNG aprobados. Cada escena se muestra completa dentro del marco existente. Se conservan títulos, descripciones, categorías, tamaños de tarjetas, controles y encabezado con la compañía elegida.
+
+No se sustituyen recursos compartidos de `imagenes/inicio-web/`: el Home, Favoritos, Más, welcome, selector y detalles de ejercicios conservan sus imágenes. El caché sin conexión incorpora los trece archivos nuevos. Esta integración se entrega en Respira 4.11 sobre 4.10.1, con un único ZIP de cambios y el mismo respaldo completo actualizado después de verificarlo.
+
+El usuario pidió después cuadrar las fotos también en celular, sin franjas ni relleno difuminado. Los marcos quedan cuadrados, de 120 × 120 px en computadora y tablet y de 114 × 114 px en celular, llenos con la imagen original completa. Se mantienen el alto de las tarjetas, sus textos y controles; el ajuste está aislado en los estilos de Métodos. No se regeneran ni recortan los archivos aprobados.

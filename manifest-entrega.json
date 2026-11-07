@@ -8,23 +8,29 @@
   "pet_select": "Un encuentro sereno 4, web y móvil; hojas web corregidas",
   "compania": "La misma compañía elegida en los espacios personales de la app",
   "fondos": "Maestro HD aprobado compartido, también dentro de métodos y diario",
-  "version": "Respira 4.10.1 · Perfil y reelección desde el Home",
-  "version_id": "4.10.1",
-  "titulo": "Perfil y reelección desde el Home",
-  "fecha": "2026-11-04",
+  "version": "Respira 4.11 · Ilustraciones y encuadre de Métodos",
+  "version_id": "4.11",
+  "titulo": "Ilustraciones y encuadre de Métodos",
+  "fecha": "2026-11-06",
   "verificacion": {
     "paquete": "CRC y SHA256 verificados; base + parche equivale exactamente al respaldo actualizado.",
     "funcionales": [
       {
-        "informe": "work/qa-home-perfil-correccion/informe.json",
-        "sha256": "ee0d9a7ffa2a73ed15a18fde9d479daf577d9b8be22f711c548c1ac117c03b97",
-        "passed": 33,
+        "informe": "work/qa-metodos-imagenes/informe-final.json",
+        "sha256": "0ed3a86fa199ce87e636b55cb2ce28d16e4f7c743939f9c4b75e0c4ba1e3a884",
+        "passed": 39,
         "failed": 0
       },
       {
-        "informe": "work/qa-home-perfil-correccion/alcance.json",
-        "sha256": "c7f6f72080f0e5550e8e5d3d6c4867d27641fea82d79dd1fc3e596b9a78a7bc6",
-        "passed": 9,
+        "informe": "work/qa-metodos-imagenes-cuadradas/informe.json",
+        "sha256": "f10bf69f3a1dc859686ba4ad4cf8838e1e929be8f10ab09ff50b52211ab0974a",
+        "passed": 27,
+        "failed": 0
+      },
+      {
+        "informe": "work/qa-metodos-imagenes-cuadradas/alcance-entrega.json",
+        "sha256": "4100430abd91b439df3886a3be30f617984cf11215fe92cac0a087945864efc1",
+        "passed": 5,
         "failed": 0
       }
     ]
@@ -37,8 +43,8 @@
     },
     {
       "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
-      "bytes": 412,
-      "sha256": "7e0c3e414fd32cadb82f98a4e4b4d9774da19daaed935be4adb43436db991b67"
+      "bytes": 416,
+      "sha256": "16514388daa89c22647a7470c9c7a9c28743757eaf8929e4f455fa09a546d2b9"
     },
     {
       "archivo": "DISENO_APROBADO.md",
@@ -52,8 +58,8 @@
     },
     {
       "archivo": "ENTREGAS.md",
-      "bytes": 6797,
-      "sha256": "c3ac1b135a68fd9a64eaf721ff9fc4c34d903aebac5c8f9e66b9bbaabb0f53bf"
+      "bytes": 7448,
+      "sha256": "5a9a2672bce52b8bd669596230bfca611a0d301034d917f49635f4a8e1023593"
     },
     {
       "archivo": "FAVORITOS_APROBADO.md",
@@ -92,8 +98,8 @@
     },
     {
       "archivo": "LEEME.md",
-      "bytes": 12995,
-      "sha256": "bb3e0820fc2ac5551b26452df96aa8b743e80535c35ee24d6d3f62816b8cf6d0"
+      "bytes": 13260,
+      "sha256": "3edada1bea610a6284f9aa69911651da40293cf6a001927103877edc5bae4c15"
     },
     {
       "archivo": "MASCOTAS_APROBADO.md",
@@ -107,8 +113,8 @@
     },
     {
       "archivo": "METODOS_APROBADO.md",
-      "bytes": 3256,
-      "sha256": "722982c589ee29ab21711462f07be47bf5ee5cbbc7189945620e710435e784d9"
+      "bytes": 4792,
+      "sha256": "6eeeb9449b73b35a9ecc079a672c9c3b70401c6f42ddebb94705686e8c46d818"
     },
     {
       "archivo": "PET_SELECT_APROBADO.md",
@@ -127,8 +133,8 @@
     },
     {
       "archivo": "VERIFICACION.md",
-      "bytes": 15471,
-      "sha256": "09f6121f1f6bdc74b97cb997603b6f2786a55311e8b799dbb295daaf73c7e551"
+      "bytes": 16783,
+      "sha256": "9069708c80c32ed6a2162d23f6369e39e854bd28b0b87eae53df7d1fe944d828"
     },
     {
       "archivo": "WELCOME_ALCANCE.md",
@@ -182,8 +188,8 @@
     },
     {
       "archivo": "css/methods.css",
-      "bytes": 13623,
-      "sha256": "daa04c692acdc363b23ca3dea882fa88b7518646353b2e695359760c24092f2c"
+      "bytes": 13347,
+      "sha256": "a11eb7af76bd26ca070c4273142dc400c0972920db33c615e0a87766bb28d0eb"
     },
     {
       "archivo": "css/more-jardin.css",
@@ -321,6 +327,71 @@
       "sha256": "449fe12110c145feda2c8b410c4595518067f5789e2ae23c20b89e9d673b7238"
     },
     {
+      "archivo": "imagenes/metodos/anxiety.webp",
+      "bytes": 2066102,
+      "sha256": "db38f9fc10c196424c9e9a2c5524d774e7a47b69313cf1449ac837a826bb25c9"
+    },
+    {
+      "archivo": "imagenes/metodos/breath.webp",
+      "bytes": 1887794,
+      "sha256": "ddafa6f0eed30f849862f771b4df4559a210002258474a34dca4ea0f246a2a43"
+    },
+    {
+      "archivo": "imagenes/metodos/caffeine.webp",
+      "bytes": 1920762,
+      "sha256": "ea3f6864264ebfd72efff08eb7562227721b7630938ce73f0228fafc200c43c2"
+    },
+    {
+      "archivo": "imagenes/metodos/calm.webp",
+      "bytes": 1825880,
+      "sha256": "74862f804576722a965c65480e46e99c0dcfbc5a7e4938e729dbc24be1f6b690"
+    },
+    {
+      "archivo": "imagenes/metodos/grounding.webp",
+      "bytes": 2216000,
+      "sha256": "0aaa30f445ffdd9a0995e013244c541e3bafbda906de570cd8f4849fec6a47e9"
+    },
+    {
+      "archivo": "imagenes/metodos/journal.webp",
+      "bytes": 1890458,
+      "sha256": "742c8ad9da524038e6ae60cd908f22ab1415072450b8b4de3aaab583dcda297c"
+    },
+    {
+      "archivo": "imagenes/metodos/move.webp",
+      "bytes": 2077084,
+      "sha256": "c1d13a48ac03f5c801446e660983e77a33eeea48ed6ecdb57873930bef93b779"
+    },
+    {
+      "archivo": "imagenes/metodos/muscle.webp",
+      "bytes": 1764154,
+      "sha256": "3d6f6b41e5acb340cd2cd10679ddcc7f43302a6e98efa4bd137733a801b950c0"
+    },
+    {
+      "archivo": "imagenes/metodos/reframe.webp",
+      "bytes": 1851108,
+      "sha256": "cfc81ef2e05af3df20ad8494446f3d35cb5b6e8d198396490cca4ffec256d5dd"
+    },
+    {
+      "archivo": "imagenes/metodos/selflove.webp",
+      "bytes": 1981500,
+      "sha256": "a7148ffc2f7b817e1996f66a2281c19d31bd5b3c278f8042f854221271f177bc"
+    },
+    {
+      "archivo": "imagenes/metodos/sleep.webp",
+      "bytes": 1566628,
+      "sha256": "d1fd2975cfdb7f16e0ebc98cefffdd3581f907889215fdfc21db13da9ff8ef87"
+    },
+    {
+      "archivo": "imagenes/metodos/talk.webp",
+      "bytes": 1851834,
+      "sha256": "4fba2c4da2a002abde86aa03004b11f79c663cb34e24039cce005bae7111ee7b"
+    },
+    {
+      "archivo": "imagenes/metodos/unplug.webp",
+      "bytes": 1936868,
+      "sha256": "11a6a6091f95806dd850d45952e006879d04f39045c3a6bad497a2d7564d8955"
+    },
+    {
       "archivo": "imagenes/paisajes/lago.png",
       "bytes": 4312480,
       "sha256": "34cb5665b6ab5826480e7fe0ad276a0baf52e9bb40a1204e1e5e9580e249cac3"
@@ -447,8 +518,8 @@
     },
     {
       "archivo": "js/components/methods.js",
-      "bytes": 5105,
-      "sha256": "2a2209bf80d263718b2dd323253eb9eb6eb2b3c903cef86da6d7bad7ad159f99"
+      "bytes": 5198,
+      "sha256": "a9a2ed10bfe323a9c8f097fa57debc0beeaf114acf995ba876962f72369c0e03"
     },
     {
       "archivo": "js/components/more-jardin.js",
@@ -527,8 +598,8 @@
     },
     {
       "archivo": "sw.js",
-      "bytes": 3839,
-      "sha256": "3853ea0dea5f47bee24f747b1ec77b040878b735c6076174e1e3e0e640dd894b"
+      "bytes": 4327,
+      "sha256": "7f40b30c413ea6fd2280247651b1cc60c0d8d10c6bd6939705426e9f0a308ca1"
     }
   ]
 }

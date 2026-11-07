@@ -4,7 +4,8 @@ import { favorites } from '../storage.js';
 import { safe } from '../utils.js';
 import { icon } from '../icons.js';
 
-const scenes={breath:'lago',calm:'meditacion',anxiety:'consejos',sleep:'meditacion',selflove:'consejos',grounding:'tecnicas',muscle:'tecnicas',reframe:'lago',journal:'gatito',caffeine:'consejos',move:'tecnicas',unplug:'lago',talk:'consejos'};
+// Ilustraciones aprobadas solo para las tarjetas de esta página.
+const scenes={breath:'breath',calm:'calm',anxiety:'anxiety',sleep:'sleep',selflove:'selflove',grounding:'grounding',muscle:'muscle',reframe:'reframe',journal:'journal',caffeine:'caffeine',move:'move',unplug:'unplug',talk:'talk'};
 const symbols={breath:'breath',calm:'lotus',anxiety:'sun',sleep:'moon',selflove:'heart',grounding:'leaf',muscle:'bolt',reframe:'spark',journal:'journal',caffeine:'bulb',move:'sun',unplug:'leaf',talk:'heart'};
 const tabs=[['home','Inicio','home'],['methods','Métodos','methods'],['favorites','Favoritos','heart'],['more','Más','settings']];
 const asset=name=>'./imagenes/'+name;
@@ -16,7 +17,7 @@ function navigation(className) {
   return `<nav class="${className}" aria-label="Navegación principal">${tabs.map(([route,label,symbol])=>`<a href="#${route}" data-go="${route}" class="${route==='methods'?'active':''}" ${route==='methods'?'aria-current="page"':''}>${icon(symbol)}<span>${label}</span>${route==='methods'?'<i class="active-dot" aria-hidden="true"></i>':''}</a>`).join('')}</nav>`;
 }
 function picture(id) {
-  return `<span class="method-picture ${id==='journal'?'picture-cat':''}"><img src="${asset('inicio-web/'+scenes[id]+'-hd.png')}" alt=""><span class="method-symbol">${icon(symbols[id])}</span></span>`;
+  return `<span class="method-picture ${id==='journal'?'picture-cat':''}"><img src="${asset('metodos/'+scenes[id]+'.webp')}" alt="" width="1254" height="1254" decoding="async"><span class="method-symbol">${icon(symbols[id])}</span></span>`;
 }
 function card(id,selected) {
   const item=catalog[id];

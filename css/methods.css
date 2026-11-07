@@ -56,11 +56,10 @@ body.methods-view #app{padding-bottom:0}
 .methods-jardin .m10-method-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 20px}
 .methods-jardin .m10-method-card{--tone:#e4f3f8;--tone-ink:#2691a4;position:relative;min-width:0;height:122px;border:1px solid #ffffffe6;border-radius:23px;background:#fffef9f5;box-shadow:0 7px 22px #4f876619;overflow:hidden}
 .methods-jardin .m10-method-open{display:flex;align-items:center;width:100%;height:100%;min-width:0;position:relative}
-.methods-jardin .m10-method-picture{width:133px;height:100%;flex:none;position:relative;overflow:hidden;background:var(--tone)}
+.methods-jardin .m10-method-picture{width:120px;height:100%;flex:none;position:relative;overflow:hidden;background:var(--tone)}
 .methods-jardin .m10-method-picture>img{width:100%;height:100%;object-fit:cover}
 .methods-jardin .m10-method-symbol{position:absolute;left:8px;bottom:8px;width:30px;height:30px;display:grid;place-items:center;border-radius:50%;color:var(--tone-ink);background:#fffffff0;box-shadow:0 2px 6px #143d2e12}
 .methods-jardin .m10-method-symbol .m10-icon{width:18px;height:18px}
-.methods-jardin .m10-picture-cat>img{object-fit:contain;background:#eee6f8}
 .methods-jardin .m10-method-copy{display:flex;flex-direction:column;gap:7px;flex:1;min-width:0;padding:18px 43px 18px 21px}
 .methods-jardin .m10-method-copy strong{font:400 21px/1.13 Georgia,serif;letter-spacing:-.02em;color:#2b573d}
 .methods-jardin .m10-method-copy small{font-size:11.5px;line-height:1.45;color:#6b8061}
@@ -77,7 +76,6 @@ body.methods-view #app{padding-bottom:0}
 .methods-jardin .m10-writing-section .m10-method-grid{grid-template-columns:1fr}
 .methods-jardin .m10-writing-section .m10-method-picture{background:#eee6f8}
 .methods-jardin .m10-writing-section .m10-method-copy strong{color:#665075}
-.methods-jardin .m10-writing-section .m10-method-picture>img{object-fit:contain}
 @media(min-width:768px) and (max-width:1100px){
 .methods-jardin .m10-page{padding-left:28px;padding-right:28px}
 .methods-jardin .m10-topbar{gap:15px}
@@ -87,7 +85,6 @@ body.methods-view #app{padding-bottom:0}
 .methods-jardin .m10-intro-copy{width:calc(100% - 175px)}
 .methods-jardin h1{font-size:38px}
 .methods-jardin .m10-intro-pet{width:150px;height:150px}
-.methods-jardin .m10-method-picture{width:105px}
 .methods-jardin .m10-method-copy{padding-left:15px}
 .methods-jardin .m10-method-copy strong{font-size:18px}
 }
@@ -122,7 +119,7 @@ body.methods-view #app{padding-bottom:0}
 .methods-jardin .m10-category-count{font-size:9px}
 .methods-jardin .m10-method-grid{grid-template-columns:1fr;gap:11px}
 .methods-jardin .m10-method-card{height:116px;border-radius:21px}
-.methods-jardin .m10-method-picture{width:97px}
+.methods-jardin .m10-method-picture{width:114px}
 .methods-jardin .m10-method-symbol{left:7px;bottom:7px;width:29px;height:29px}
 .methods-jardin .m10-method-symbol .m10-icon{width:17px;height:17px}
 .methods-jardin .m10-method-copy{padding:13px 39px 13px 16px;gap:7px}
@@ -147,8 +144,7 @@ body.methods-view #app{padding-bottom:0}
 .methods-jardin .m10-intro-pet{width:80px;height:80px;right:2px}
 .methods-jardin .m10-category-description{max-width:190px}
 .methods-jardin .m10-category-count{font-size:8px}
-.methods-jardin .m10-method-picture{width:77px}
-.methods-jardin .m10-method-copy{padding-left:11px;padding-right:33px}
+.methods-jardin .m10-method-copy{padding-left:11px}
 .methods-jardin .m10-method-copy strong{font-size:15px}
 .methods-jardin .m10-method-copy small{font-size:10px}
 }

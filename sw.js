@@ -1,5 +1,18 @@
-const CACHE = 'respira-code-4-10-1-home-perfil';
+const CACHE = 'respira-code-4-11-metodos-cuadradas';
 const ASSETS = [
+  "./imagenes/metodos/breath.webp",
+  "./imagenes/metodos/calm.webp",
+  "./imagenes/metodos/anxiety.webp",
+  "./imagenes/metodos/sleep.webp",
+  "./imagenes/metodos/selflove.webp",
+  "./imagenes/metodos/grounding.webp",
+  "./imagenes/metodos/muscle.webp",
+  "./imagenes/metodos/reframe.webp",
+  "./imagenes/metodos/caffeine.webp",
+  "./imagenes/metodos/move.webp",
+  "./imagenes/metodos/unplug.webp",
+  "./imagenes/metodos/talk.webp",
+  "./imagenes/metodos/journal.webp",
   "./js/daily-entry.js",
   "./js/home-pet-interaction.js",
   "./iconos/favicon-16.png",
