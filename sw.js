@@ -1,6 +1,13 @@
-const CACHE = 'respira-code-4-12-limpio';
+const CACHE = 'respira-code-4-13-respiracion-meditacion';
 const ASSETS = [
   "./",
+  "./css/meditation.css",
+  "./js/components/meditation.js",
+  "./js/meditation-data.js",
+  "./js/meditation-controller.js",
+  "./css/breathing-companion.css",
+  "./js/components/breathing-companion.js",
+  "./js/breathing-companion-controller.js",
   "./css/base.css",
   "./css/companions.css",
   "./css/favorites.css",

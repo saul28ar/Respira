@@ -1,7 +1,5 @@
-import { catalog, pets, groundSteps, muscleSteps, breathPhases } from './data.js';
-import { clock } from './utils.js';
+import { catalog, pets, groundSteps, muscleSteps } from './data.js';
 import { favorites, setStore, companionToday, chooseCompanion } from './storage.js';
-import { ExerciseClock } from './timer.js';
 import { icon } from './icons.js';
 import { renderFrame } from './components/interface.js';
 import { renderMobileHome } from './components/home-mobile-jardin.js';
@@ -17,6 +15,8 @@ import { markPetOfferSeen, welcomeDestination } from './daily-entry.js';
 import { bindHomePetInteractions } from './home-pet-interaction.js';
 import { renderJournalAgenda } from './components/journal-agenda.js';
 import { journalAgendaView, bindJournalAgenda, flushJournalAgenda, hasPendingJournalChanges, requestJournalLeave } from './journal-agenda-controller.js';
+import { bindBreathingCompanion } from './breathing-companion-controller.js';
+import { bindMeditation } from './meditation-controller.js';
 
 const app = document.getElementById('app');
 const announcer = document.getElementById('announcer');
@@ -24,7 +24,6 @@ const announcer = document.getElementById('announcer');
 const mobileHomeViewport = window.matchMedia('(max-width: 767px), (max-width: 1024px) and (max-height: 600px) and (orientation: landscape) and (hover: none) and (pointer: coarse)');
 const routes = new Set(['welcome','home','pet-select','pet-library','pet-detail','pet-confirm','methods','meditation','quick','advice','favorites','more','about','detail']);
 let route = { view: '', id: null };
-let sessionClock = null;
 let currentStep = 0;
 let messageIndex = 0;
 let saveOk = true;
@@ -35,6 +34,8 @@ let toastTimeout = null;
 let visited = false;
 let cleanupHomePet = null;
 let cleanupJournal = null;
+let cleanupBreathing = null;
+let cleanupMeditation = null;
 let homeReselection = false;
 const historyStack = [];
 let historyIndex = Number.isSafeInteger(history.state?.respiraRouteIndex) ? history.state.respiraRouteIndex : 0;
@@ -66,6 +67,10 @@ function goBack() {
   });
 }
 function render() {
+  cleanupMeditation?.();
+  cleanupMeditation = null;
+  cleanupBreathing?.();
+  cleanupBreathing = null;
   cleanupHomePet?.();
   cleanupHomePet = null;
   cleanupJournal?.();
@@ -86,15 +91,17 @@ function render() {
   if (view === 'pet-detail') html = renderPetDetail({petId:route.id,chosen:cp,returnView:petReturn});
   if (view === 'pet-confirm') html = renderPetConfirm({petId:cp,saveOk});
   if (view === 'methods') html = renderMethods({ petId:cp });
-  if (['meditation','quick','advice'].includes(view)) html = renderCollection(view);
+  if (['meditation','quick','advice'].includes(view)) html = renderCollection(view, {petId:cp});
   if (view === 'favorites') html = renderFavorites({ petId:cp });
   if (view === 'more') html = renderMoreJardin(cp);
   if (view === 'about') html = renderAbout();
-  if (view === 'detail') html = journalView ? renderJournalAgenda(journalAgendaView()) : renderDetail(route.id, {petReturn:activityPet});
+  if (view === 'detail') html = journalView ? renderJournalAgenda(journalAgendaView()) : renderDetail(route.id, {petReturn:activityPet,petId:cp,mobile:mobileHomeViewport.matches});
   const active = ['welcome','home','pet-select','pet-library','pet-detail','pet-confirm'].includes(view) ? 'home' : view === 'favorites' ? 'favorites' : ['more','about'].includes(view) ? 'more' : 'methods';
   app.innerHTML = renderFrame(html, { active, welcome:view === 'welcome', home:view === 'home', desktopHome, mobileHome, methods:view === 'methods', ownInterface:journalView || ['favorites','more','pet-select'].includes(view) });
   if (view === 'home') cleanupHomePet = bindHomePetInteractions(app);
   if (journalView) cleanupJournal = bindJournalAgenda(app, render);
+  if (view === 'detail' && route.id === 'breath') cleanupBreathing = bindBreathingCompanion(app, {announce:text => { announcer.textContent = text; }});
+  if (view === 'detail' && catalog[route.id]?.kind === 'timer') cleanupMeditation = bindMeditation(app, {announce:text => { announcer.textContent = text; }});
   const main = app.querySelector('main');
   if (main) { main.id = 'main-content'; main.tabIndex = -1; }
   document.body.classList.toggle('welcome-view', view === 'welcome');
@@ -136,12 +143,10 @@ function showRoute() {
     if (previous === routeKey(next)) historyStack.pop();
     else historyStack.push(routeKey(route));
   }
-  if (sessionClock) { sessionClock.dispose(); sessionClock = null; }
   route = next;
   if (!['pet-select','pet-detail','pet-library'].includes(route.view)) homeReselection = false;
   currentStep = 0;
   render();
-  if (route.view === 'detail') setupExercise();
   window.scrollTo(0, 0);
   if (visited) app.querySelector('main')?.focus({preventScroll:true});
   visited = true;
@@ -159,38 +164,6 @@ function notify(text) {
 function setText(id, text) {
   const element = document.getElementById(id);
   if (element && element.textContent !== text) element.textContent = text;
-}
-function setupExercise() {
-  const x = catalog[route.id];
-  if (x.kind === 'timer') {
-    sessionClock = new ExerciseClock({duration:x.duration, onTick(elapsed, running) {
-      setText('clock', clock(x.duration - elapsed));
-      document.getElementById('timer-progress').value = elapsed;
-      const control = document.getElementById('timer-toggle');
-      control.innerHTML = `${icon(running ? 'pause' : 'play')} ${running ? 'Pausar' : elapsed ? 'Continuar' : 'Empezar'}`;
-      setText('timer-status', running ? 'Este momento es para ti.' : elapsed ? 'Pausado. Continúa cuando quieras.' : 'Cuando quieras, empezamos.');
-    },onComplete() {
-      const control = document.getElementById('timer-toggle');
-      control.innerHTML = `${icon('check')} Terminado`;
-      control.disabled = true;
-      setText('timer-status', 'Has completado tu momento de calma.');
-      announcer.textContent = 'Ejercicio completado.';
-    }});
-  }
-  if (x.kind === 'breath') {
-    sessionClock = new ExerciseClock({onTick(elapsed,running) {
-      const ticks = Math.floor(elapsed), position = ticks % 16;
-      const phaseIndex = Math.floor(position / 4);
-      setText('phase', breathPhases[phaseIndex][0]);
-      setText('phase-seconds', `${4 - position % 4} segundos`);
-      setText('breath-cycles', `Ciclos completados: ${Math.floor(ticks / 16)}`);
-      const progress = (elapsed % 4) / 4;
-      const scale = phaseIndex === 0 ? .88 + .24 * progress : phaseIndex === 1 ? 1.12 : phaseIndex === 2 ? 1.12 - .24 * progress : .88;
-      document.getElementById('breath-inner').style.transform = `scale(${scale})`;
-      setText('breath-status', running ? 'Respira cómodamente. Puedes pausar cuando quieras.' : elapsed ? 'Pausado. Continúa cuando quieras.' : 'Sigue el ritmo que te resulte cómodo.');
-      document.getElementById('breath-toggle').innerHTML = `${icon(running ? 'pause' : 'play')} ${running ? 'Pausar' : elapsed ? 'Continuar' : 'Empezar'}`;
-    }});
-  }
 }
 function showStep(kind) {
   const steps = kind === 'ground' ? groundSteps : muscleSteps;
@@ -271,15 +244,6 @@ app.addEventListener('click', event => {
     if (text) text.textContent = message;
     announcer.textContent = message;
   }
-  if (action === 'breath-toggle' || action === 'timer-toggle') {
-    if (!sessionClock) return;
-    sessionClock.running ? sessionClock.pause() : sessionClock.start();
-  }
-  if (action === 'breath-reset' || action === 'timer-reset') {
-    sessionClock?.reset();
-    const toggle = document.getElementById(action === 'breath-reset' ? 'breath-toggle' : 'timer-toggle');
-    if (toggle) toggle.disabled = false;
-  }
   if (['ground-next','ground-prev','muscle-next','muscle-prev'].includes(action)) {
     const kind = action.split('-')[0];
     const steps = kind === 'ground' ? groundSteps : muscleSteps;
@@ -306,7 +270,6 @@ document.addEventListener('keydown',event => {
 });
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) return;
-  sessionClock?.tick();
   if (route.view === 'home') render();
 });
 mobileHomeViewport.addEventListener('change', () => {

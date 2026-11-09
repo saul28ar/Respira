@@ -1,14 +1,19 @@
-﻿RESPIRA 4.12 - APLICACION COMPLETA SIN LIMPIEZA
+﻿RESPIRA 4.13 - APP COMPLETA
 
-Esta es toda la app con los archivos antiguos conservados y los ultimos cambios aprobados.
-No requiere versiones ni parches anteriores. No elimina archivos ni incluye programas de limpieza.
+1. Descomprime este ZIP en una carpeta.
+2. Copia TODO su contenido a la carpeta de tu app y acepta Reemplazar.
+3. index.html debe quedar junto a css, js, imagenes e iconos.
 
-1. Extrae todo el ZIP. index.html debe quedar junto a las carpetas css, js, imagenes e iconos.
-2. Copia el contenido extraido sobre la carpeta de tu app y acepta reemplazar los archivos del mismo nombre. Conserva todos los demas archivos.
-3. En GitHub, sube ese contenido descomprimido a la raiz del repositorio; no subas solamente el ZIP ni una carpeta que contenga toda la app por dentro.
-4. Comprueba que la publicacion de GitHub Pages termine correctamente antes de comprobar los cambios en la web.
+Si lo subes a GitHub: sube el contenido descomprimido en la raiz del repositorio,
+en el mismo lugar donde ya esta index.html. El ZIP por si solo no actualiza la web.
 
-Incluye Mi espacio para escribir con calendario, varias paginas por dia, lista de hoy y aviso de guardado; la barra movil original; los fondos aprobados; las 13 ilustraciones de Metodos; las tres mascotas y todas las pantallas.
+Incluye todos los archivos anteriores y los cambios de Respiracion y Meditacion:
+- Respiracion con la compania elegida, fases, pausa, ciclos y guia con beneficios.
+- Cuatro meditaciones con circulo de tiempo y mascota pequena dentro.
+- Etapas con sus horarios y ejemplos propios que cambian al tocar.
+- Barra movil aprobada en todas las pantallas salvo Welcome.
+- Navegacion de computadora en la parte superior.
+- Mi espacio para escribir, favoritos, mascotas y el resto de la app conservados.
 
-Conserva la misma direccion web y los datos del sitio para mantener tus notas, favoritos y mascota.
-Los 87 archivos activos coinciden exactamente con la version actual verificada. Los recursos antiguos se conservan sin volver a activar estilos anteriores.
+Las animaciones nuevas de mascotas siguen pendientes, como se acordo.
+Para conservar notas y favoritos usa la misma direccion de la app y navegador.

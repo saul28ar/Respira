@@ -1,16 +1,18 @@
 {
-  "version": "Respira 4.12 · Completa con archivos antiguos y ultimos cambios",
-  "version_id": "4.12",
-  "fecha": "2026-11-07",
-  "tipo": "Completo sin limpieza; conserva archivos anteriores",
+  "version": "Respira 4.13 · Respiración y Meditación · Completa",
+  "version_id": "4.13",
+  "fecha": "2026-11-09",
+  "tipo": "Completo con archivos anteriores conservados",
   "runtime": [
     "css/base.css",
+    "css/breathing-companion.css",
     "css/companions.css",
     "css/favorites.css",
     "css/home-desktop.css",
     "css/home-mobile-jardin.css",
     "css/interface.css",
     "css/journal-agenda.css",
+    "css/meditation.css",
     "css/method-details.css",
     "css/methods.css",
     "css/mobile-navigation.css",
@@ -62,7 +64,9 @@
     "imagenes/welcome/portada-aprobada-v2.png",
     "index.html",
     "js/app.js",
+    "js/breathing-companion-controller.js",
     "js/components/activities.js",
+    "js/components/breathing-companion.js",
     "js/components/common.js",
     "js/components/companions.js",
     "js/components/favorites.js",
@@ -71,6 +75,7 @@
     "js/components/home-mobile-jardin.js",
     "js/components/interface.js",
     "js/components/journal-agenda.js",
+    "js/components/meditation.js",
     "js/components/methods.js",
     "js/components/mobile-navigation.js",
     "js/components/more-jardin.js",
@@ -85,6 +90,8 @@
     "js/icons.js",
     "js/journal-agenda-controller.js",
     "js/journal-storage.js",
+    "js/meditation-controller.js",
+    "js/meditation-data.js",
     "js/method-categories.js",
     "js/storage.js",
     "js/timer.js",
@@ -108,149 +115,22 @@
     "js/components/home-art.js",
     "js/components/home.js"
   ],
-  "archivos_anteriores_conservados": [
-    "ACTUALIZAR_RESPIRA.txt",
-    "ACTUALIZAR_SOLO_CAMBIOS.txt",
-    "DISENO_APROBADO.md",
-    "ENTRADA_DIARIA_APROBADO.md",
-    "ENTREGAS.md",
-    "FAVORITOS_APROBADO.md",
-    "FONDOS_APROBADO.md",
-    "HOME_MASCOTAS_APROBADO.md",
-    "HOME_MOVIL_APROBADO.md",
-    "HOME_WEB_APROBADO.md",
-    "ICONO_APROBADO.md",
-    "INICIAR_RESPIRA.cmd",
-    "LEEME.md",
-    "MASCOTAS_APROBADO.md",
-    "MAS_APROBADO.md",
-    "METODOS_APROBADO.md",
-    "PET_SELECT_APROBADO.md",
-    "Servidor.ps1",
-    "TARJETAS_HOME_APROBADO.md",
-    "VERIFICACION.md",
-    "WELCOME_ALCANCE.md",
-    "WELCOME_APROBADO.md",
-    "css/base.css",
-    "css/companions.css",
-    "css/favorites.css",
-    "css/home-desktop.css",
-    "css/home-mobile-jardin.css",
-    "css/home.css",
-    "css/interface.css",
-    "css/method-details.css",
-    "css/methods.css",
-    "css/more-jardin.css",
-    "css/pet-select-jardin.css",
-    "css/welcome-desktop.css",
-    "css/welcome-mobile-v2.css",
-    "css/welcome-mobile.css",
-    "iconos/apple-touch-icon.png",
-    "iconos/favicon-16.png",
-    "iconos/favicon-32.png",
-    "iconos/icon-192.png",
-    "iconos/icon-512.png",
-    "iconos/icon-maskable-512.png",
-    "iconos/lunita-esmeralda-maestro.png",
-    "imagenes/inicio-web/consejos-hd.png",
-    "imagenes/inicio-web/gatito-hd.png",
-    "imagenes/inicio-web/lago-hd.png",
-    "imagenes/inicio-web/meditacion-hd.png",
-    "imagenes/inicio-web/tecnicas-hd.png",
-    "imagenes/inicio/arte-inicio-original.png",
-    "imagenes/inicio/logo.svg",
-    "imagenes/inicio/tarjeta-consejos.png",
-    "imagenes/inicio/tarjeta-meditacion.png",
-    "imagenes/inicio/tarjeta-respiracion.png",
-    "imagenes/inicio/tarjeta-tecnicas.png",
-    "imagenes/interfaz/marco-original.png",
-    "imagenes/mascotas/brotecito.png",
-    "imagenes/mascotas/lunita.png",
-    "imagenes/mascotas/nubecita.png",
-    "imagenes/metodos/anxiety.webp",
-    "imagenes/metodos/breath.webp",
-    "imagenes/metodos/caffeine.webp",
-    "imagenes/metodos/calm.webp",
-    "imagenes/metodos/grounding.webp",
-    "imagenes/metodos/journal.webp",
-    "imagenes/metodos/move.webp",
-    "imagenes/metodos/muscle.webp",
-    "imagenes/metodos/reframe.webp",
-    "imagenes/metodos/selflove.webp",
-    "imagenes/metodos/sleep.webp",
-    "imagenes/metodos/talk.webp",
-    "imagenes/metodos/unplug.webp",
-    "imagenes/paisajes/lago.png",
-    "imagenes/paisajes/ondas-original.png",
-    "imagenes/perfiles/escena-brotecito.png",
-    "imagenes/perfiles/escena-lunita.png",
-    "imagenes/perfiles/escena-nubecita.png",
-    "imagenes/tarjetas/escenas-01.png",
-    "imagenes/tarjetas/escenas-02.png",
-    "imagenes/tarjetas/escenas-03.png",
-    "imagenes/tarjetas/escenas-05.png",
-    "imagenes/welcome/boton-iniciar-original-v2.png",
-    "imagenes/welcome/logo-aprobado-v2.png",
-    "imagenes/welcome/portada-aprobada-v2.png",
-    "imagenes/welcome/portada-movil-feliz-serena-v1.png",
-    "index.html",
-    "js/app.js",
-    "js/components/activities.js",
-    "js/components/common.js",
-    "js/components/companions.js",
-    "js/components/favorites.js",
-    "js/components/home-art.js",
-    "js/components/home-card-art.js",
-    "js/components/home-desktop.js",
-    "js/components/home-mobile-jardin.js",
-    "js/components/home.js",
-    "js/components/interface.js",
-    "js/components/methods.js",
-    "js/components/more-jardin.js",
-    "js/components/pet-select-jardin.js",
-    "js/components/settings.js",
-    "js/components/welcome-desktop.js",
-    "js/components/welcome-mobile.js",
-    "js/components/welcome-poster.js",
-    "js/daily-entry.js",
-    "js/data.js",
-    "js/home-pet-interaction.js",
-    "js/icons.js",
-    "js/method-categories.js",
-    "js/storage.js",
-    "js/timer.js",
-    "js/utils.js",
-    "manifest.webmanifest",
-    "sw.js"
-  ],
   "verificacion": {
-    "paquete": "CRC y SHA256 de todos los archivos; todos los nombres anteriores conservados; sin eliminaciones.",
-    "runtime": "87 archivos activos identicos al completo 4.12 que supero 90 comprobaciones de navegador y 28 pruebas unitarias.",
-    "funcionales": [
-      {
-        "informe": "work/qa-entrega-412/informe-runtime-limpio.json",
-        "sha256": "f4e53f8d06b3e2cdd60a6d0ef03bf2822b301a4877766f16f909950db623cfb2",
-        "passed": 90,
-        "failed": 0
-      },
-      {
-        "informe": "work/qa-entrega-412/informe-unitario.json",
-        "sha256": "9ec58ef5719b6bc4f662d2ff234e37fe2cee9c87d65a36440e90f78383a64ca5",
-        "passed": 28,
-        "failed": 0
-      }
-    ]
+    "integridad": "CRC y SHA256 de cada archivo; runtime idéntico al código local verificado; todos los nombres de la entrega anterior conservados.",
+    "navegador": "Respiración: 16 escenarios de integración; Meditación: 12 escenarios de integración, tres anchos y cuatro métodos. Sin errores de navegador ni recursos ausentes.",
+    "ejemplos": "Veinte ejemplos, cinco propios por método, aleatorios sin repetir dentro de su ciclo.",
+    "publicacion_remota": false
   },
   "archivos": [
     {
       "archivo": "ACTUALIZAR_RESPIRA.txt",
-      "bytes": 1232,
-      "sha256": "72fa366a7b1de6976377bbd16eb66b14a285bab5c92e2bb9c0128e68824d8620"
+      "bytes": 1017,
+      "sha256": "df224bf60e3ac722d68e195802f98e807a729ff442e3eec33be2726102e45787"
     },
     {
       "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
-      "bytes": 1232,
-      "sha256": "72fa366a7b1de6976377bbd16eb66b14a285bab5c92e2bb9c0128e68824d8620"
+      "bytes": 1017,
+      "sha256": "df224bf60e3ac722d68e195802f98e807a729ff442e3eec33be2726102e45787"
     },
     {
       "archivo": "BARRA_MOVIL_APROBADO.md",
@@ -274,8 +154,8 @@
     },
     {
       "archivo": "ENTREGAS.md",
-      "bytes": 10126,
-      "sha256": "c19026c1d3e12173ddf462dd1b9e97b980464e09b0813bf45157940fa6da4e00"
+      "bytes": 10857,
+      "sha256": "9192adba5a6ff37b6b698ef656976f3e85e34dabdec23630b7fe401d99f0b9f1"
     },
     {
       "archivo": "FAVORITOS_APROBADO.md",
@@ -319,8 +199,8 @@
     },
     {
       "archivo": "LEEME_INSTALAR_COMPLETO.txt",
-      "bytes": 1232,
-      "sha256": "72fa366a7b1de6976377bbd16eb66b14a285bab5c92e2bb9c0128e68824d8620"
+      "bytes": 1017,
+      "sha256": "df224bf60e3ac722d68e195802f98e807a729ff442e3eec33be2726102e45787"
     },
     {
       "archivo": "MASCOTAS_APROBADO.md",
@@ -373,6 +253,11 @@
       "sha256": "ecfe9d3f5835a237be36ea8643c531c32f7b1996e89d73177e4e688d538ac619"
     },
     {
+      "archivo": "css/breathing-companion.css",
+      "bytes": 5467,
+      "sha256": "fdf7f903abeb6b6e4d07c72f8219a44bb588dd8074e354d9b979dfbf64e05767"
+    },
+    {
       "archivo": "css/companions.css",
       "bytes": 15055,
       "sha256": "152f2be63a94eed195dbe21b77bf0bfa27124548d34749ccf169b797397a72c3"
@@ -399,13 +284,18 @@
     },
     {
       "archivo": "css/interface.css",
-      "bytes": 4828,
-      "sha256": "0a431da7150dfc7b981c6267f20e1f4df4b7fed1ca5283d8f89440faece9bd3d"
+      "bytes": 5860,
+      "sha256": "da2746f54f2c1627aba8849d9564d4b762bf75eb5b5102154e9c6eebeb6181d8"
     },
     {
       "archivo": "css/journal-agenda.css",
       "bytes": 33931,
       "sha256": "314577a3c78a8aee2ff22f74a6111717f8a990975dfc4b8fe6805a1bc96b450a"
+    },
+    {
+      "archivo": "css/meditation.css",
+      "bytes": 10119,
+      "sha256": "1e4b784d24b5c972235860486929946ca44a398cb30f6ddc9b5e6f45550f84cb"
     },
     {
       "archivo": "css/method-details.css",
@@ -419,8 +309,8 @@
     },
     {
       "archivo": "css/mobile-navigation.css",
-      "bytes": 1722,
-      "sha256": "8e6e3c0cd978aa87d576959d40ee3181c0898f20e421abf7fe7baf1fca5ff814"
+      "bytes": 2507,
+      "sha256": "1d5ff8156bb690271a75468a23cc9cea57e4cf1e4dd77d34a0094071c8f7dc26"
     },
     {
       "archivo": "css/more-jardin.css",
@@ -709,18 +599,28 @@
     },
     {
       "archivo": "index.html",
-      "bytes": 2041,
-      "sha256": "f80dfa2769767208a14c1ee11660bcf7f75b39ae0888be4447bd08b0ff5465aa"
+      "bytes": 2158,
+      "sha256": "76d7e3f1b91ab124399322e2055fca74af07406f5e2fbcd91fe1df6595bf1c55"
     },
     {
       "archivo": "js/app.js",
-      "bytes": 16478,
-      "sha256": "f248eb0b016ab27f40241e410588374489cad20b62f8c56a58b70858728d3b55"
+      "bytes": 14512,
+      "sha256": "d541eaea8ce39c3138f404f16ef8c44434f1c0c0ca0fdd4ca94a2822fe8faede"
+    },
+    {
+      "archivo": "js/breathing-companion-controller.js",
+      "bytes": 6355,
+      "sha256": "11d8e580304af95f3d9ed58bdc030c2dc9cda62bec643321f9e7fc70dfd183fd"
     },
     {
       "archivo": "js/components/activities.js",
-      "bytes": 6865,
-      "sha256": "129a0e7a456edabbc5a3b2b153afe6384af739a72217b72f8cee7e2bbd53f625"
+      "bytes": 5787,
+      "sha256": "0cb516f01d931ec7c8ab9c5bb1172345db6714eb5f9ea090ef851a445868d612"
+    },
+    {
+      "archivo": "js/components/breathing-companion.js",
+      "bytes": 4011,
+      "sha256": "8d1264c5e581707a3625c8416e06725703890dcc13621c0dc2e2f18c2f9b43e4"
     },
     {
       "archivo": "js/components/common.js",
@@ -764,13 +664,18 @@
     },
     {
       "archivo": "js/components/interface.js",
-      "bytes": 2696,
-      "sha256": "b2954cc4135e38a6d7befa109b885152c53904845f2ed38eaa40df4842b04fce"
+      "bytes": 2005,
+      "sha256": "da63f8fab1ef800fd937c3f62ae73be3d58dce36b525fd4c83fe0aebfdab4085"
     },
     {
       "archivo": "js/components/journal-agenda.js",
       "bytes": 12299,
       "sha256": "987f9065b71d3a3f9941a850c102f38388f47a41f202aff144bb738c506228e7"
+    },
+    {
+      "archivo": "js/components/meditation.js",
+      "bytes": 5266,
+      "sha256": "2bbe3edc35ffbaa38e191375bd32448352fecd4e2e649bda8856982f0da217a0"
     },
     {
       "archivo": "js/components/methods.js",
@@ -779,8 +684,8 @@
     },
     {
       "archivo": "js/components/mobile-navigation.js",
-      "bytes": 877,
-      "sha256": "0749b2e3dd3aa249ca9532f1630bc8ea0ff05d5875d488d4cae978c9b4f2c3b0"
+      "bytes": 1338,
+      "sha256": "96565c59ead680a3c89083398b608fc8e638c9ec767b62ae705afad5f9d64066"
     },
     {
       "archivo": "js/components/more-jardin.js",
@@ -843,6 +748,16 @@
       "sha256": "052b3f9b8c76812de0a6efa3eb265520091eab0d32931882567d2cc579cb2699"
     },
     {
+      "archivo": "js/meditation-controller.js",
+      "bytes": 7341,
+      "sha256": "5d1700f7084ac8dc002e89c2c1958377ab1b78055f49e18d152d7bbde6eaa543"
+    },
+    {
+      "archivo": "js/meditation-data.js",
+      "bytes": 7026,
+      "sha256": "20b9f2fb315aad9ee3fb78da94870e1e59b9b7457d33cf95a1e40de274b5f6c2"
+    },
+    {
       "archivo": "js/method-categories.js",
       "bytes": 1039,
       "sha256": "8dc2485cb4986bbae946cf8f8021f8f067f97eb72dc8fd00dc35e5bf5e57d303"
@@ -869,8 +784,8 @@
     },
     {
       "archivo": "sw.js",
-      "bytes": 4188,
-      "sha256": "e23a4828ba9dfc8e544bdf3a60d79d7de585d3f322bb5b12d50e727f272dbfcc"
+      "bytes": 4459,
+      "sha256": "d1295fe40cd0ec0cd0f1c93e11fd205a52ca4fe42ba23084d6803e90dd26af8d"
     }
   ]
 }
