@@ -42,7 +42,7 @@ body.favorites-jardin-view #app{padding-bottom:0}
 .favorites-jardin .f4-tone-pink{--tone:#fce8e8;--tone-ink:#c98284}
 .favorites-jardin .f4-card-open{display:flex;align-items:center;padding:0;min-width:0;width:100%;height:100%;text-align:left;background:transparent;border-radius:inherit;position:relative}
 .favorites-jardin .f4-picture{display:block;position:relative;width:151px;height:100%;flex:0 0 151px;overflow:hidden;background:var(--tone)}
-.favorites-jardin .f4-picture>img{width:100%;height:100%;object-fit:cover}
+.favorites-jardin .f4-picture>img{width:100%;height:100%;object-fit:contain;object-position:center}
 .favorites-jardin .f4-symbol{position:absolute;bottom:10px;left:10px;display:grid;place-items:center;width:33px;height:33px;border-radius:50%;background:#fffffff0;color:var(--tone-ink);box-shadow:0 2px 6px #143d2e12}
 .favorites-jardin .f4-symbol .f4-icon{width:20px;height:20px}
 .favorites-jardin .f4-card-copy{display:flex;flex-direction:column;flex:1;min-width:0;padding:19px 50px 19px 23px;gap:8px}
@@ -71,9 +71,9 @@ body.favorites-jardin-view #app{padding-bottom:0}
 .favorites-jardin.favorites-jardin .f4-intro{height:202px;border-radius:28px}
 .favorites-jardin.favorites-jardin .f4-intro-art{right:38px;width:220px}
 .favorites-jardin.favorites-jardin .f4-intro-art img{width:205px;height:205px}
-.favorites-jardin.favorites-jardin .f4-favorite-card{height:135px;padding:12px;overflow:visible}
+.favorites-jardin.favorites-jardin .f4-favorite-card{height:auto;min-height:135px;padding:12px;overflow:visible}
 .favorites-jardin.favorites-jardin .f4-card-open{gap:18px}
-.favorites-jardin.favorites-jardin .f4-picture{width:108px;height:108px;flex-basis:108px;border-radius:50%;overflow:hidden}
+.favorites-jardin.favorites-jardin .f4-picture{width:108px;height:108px;aspect-ratio:1;flex:0 0 108px;border-radius:50%;overflow:hidden;box-shadow:0 0 0 1px #e0e9dc,0 4px 10px #3159360a}
 .favorites-jardin.favorites-jardin .f4-symbol{width:29px;height:29px;bottom:2px;left:0}
 .favorites-jardin.favorites-jardin .f4-card-copy{padding-left:0}
 .favorites-jardin.favorites-jardin .f4-favorite{top:15px;right:15px}
@@ -127,7 +127,7 @@ body.favorites-jardin-view #app{padding-bottom:0}
 .favorites-jardin.favorites-jardin .f4-intro{height:177px;border-radius:25px}
 .favorites-jardin.favorites-jardin .f4-intro-art{right:8px;width:106px;height:106px}
 .favorites-jardin.favorites-jardin .f4-intro-art img{width:106px;height:106px}
-.favorites-jardin.favorites-jardin .f4-favorite-card{height:105px;padding:10px 11px;border-radius:23px}
+.favorites-jardin.favorites-jardin .f4-favorite-card{height:auto;min-height:105px;padding:10px 11px;border-radius:23px}
 .favorites-jardin.favorites-jardin .f4-card-open{gap:15px}
 .favorites-jardin.favorites-jardin .f4-picture{width:82px;height:82px;flex-basis:82px}
 .favorites-jardin.favorites-jardin .f4-card-copy{padding:7px 35px 7px 0}
@@ -139,7 +139,7 @@ body.favorites-jardin-view #app{padding-bottom:0}
 .favorites-jardin.favorites-jardin .f4-explore{margin-top:18px;padding:16px 17px}}
 @media(max-width:767px){.favorites-jardin .f4-quiet-note{display:none}
 .favorites-jardin .f4-favorite-card{height:101px}
-.favorites-jardin.favorites-jardin .f4-favorite-card{height:100px}
+.favorites-jardin.favorites-jardin .f4-favorite-card{height:auto;min-height:100px}
 .favorites-jardin.favorites-jardin .f4-picture{width:78px;height:78px;flex-basis:78px}}
 .favorites-jardin.favorites-jardin .f4-symbol{left:40px;bottom:8px}
 @media(max-width:767px){.favorites-jardin.favorites-jardin .f4-symbol{left:25px;bottom:7px}}
@@ -148,3 +148,4 @@ body.favorites-jardin-view #app{padding-bottom:0}
 .favorites-jardin .f4-page{width:100%;max-width:none;margin:0}
 
 .favorites-jardin .f4-picture-cat{background:#eee6f8}.favorites-jardin .f4-picture-cat>img{object-fit:contain}
+.favorites-jardin [data-card="food"] .f4-picture>img,.favorites-jardin [data-card="grief"] .f4-picture>img{object-fit:cover}

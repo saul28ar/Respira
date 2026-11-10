@@ -11,9 +11,10 @@ function companion(petId, className) {
 }
 
 export function renderMeditationCollection({petId = null, favorite = () => ''} = {}) {
+  const petHtml = companion(petId, 'med-category-pet');
   return `<main class="page collection-page meditation-collection">
     ${backButton()}
-    <div class="med-category-heading"><div><span class="eyebrow">A TU RITMO</span><h1>Meditación</h1><p>Una pausa para escucharte. Elige lo que te venga bien hoy.</p></div>${companion(petId, 'med-category-pet')}</div>
+    <div class="med-category-heading${petHtml ? ' has-companion' : ''}"><div class="med-category-copy"><span class="eyebrow">A TU RITMO</span><h1>Meditación</h1></div>${petHtml}<p class="med-category-intro"><span>Una pausa para escucharte. Elige</span><br><span>lo que te venga bien hoy.</span></p></div>
     <div class="med-section-heading"><h2>Un momento para ti</h2><span>4 prácticas</span></div>
     <div class="med-method-list">${Object.entries(meditationMethods).map(([id, method]) => `<article class="med-method-row med-tone-${id}"><button type="button" data-open="${id}" class="med-method-open"><span class="med-symbol">${icon(method.icon)}</span><span class="med-method-copy"><small>${method.duration / 60} min</small><strong>${safe(method.title)}</strong><span>${safe(method.subtitle)}</span></span>${icon('chevron')}</button>${favorite(id)}</article>`).join('')}</div>
     <p class="med-quiet">No hace falta hacerlo perfecto. Este momento es tuyo.</p>

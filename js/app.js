@@ -19,6 +19,7 @@ import { bindBreathingCompanion } from './breathing-companion-controller.js';
 import { bindMeditation } from './meditation-controller.js';
 import { bindQuickTechniques } from './quick-techniques-controller.js';
 import { bindAdvicePage } from './advice-controller.js';
+import { bindDesktopWelcome } from './welcome-desktop-controller.js';
 
 const app = document.getElementById('app');
 const announcer = document.getElementById('announcer');
@@ -40,6 +41,7 @@ let cleanupBreathing = null;
 let cleanupMeditation = null;
 let cleanupQuick = null;
 let cleanupAdvice = null;
+let cleanupWelcome = null;
 let homeReselection = false;
 const historyStack = [];
 let historyIndex = Number.isSafeInteger(history.state?.respiraRouteIndex) ? history.state.respiraRouteIndex : 0;
@@ -71,6 +73,8 @@ function goBack() {
   });
 }
 function render() {
+  cleanupWelcome?.();
+  cleanupWelcome = null;
   cleanupAdvice?.();
   cleanupAdvice = null;
   cleanupQuick?.();
@@ -106,6 +110,7 @@ function render() {
   if (view === 'detail') html = journalView ? renderJournalAgenda(journalAgendaView()) : renderDetail(route.id, {petReturn:activityPet,petId:cp,mobile:mobileHomeViewport.matches});
   const active = ['welcome','home','pet-select','pet-library','pet-detail','pet-confirm'].includes(view) ? 'home' : view === 'favorites' ? 'favorites' : ['more','about'].includes(view) ? 'more' : 'methods';
   app.innerHTML = renderFrame(html, { active, welcome:view === 'welcome', home:view === 'home', desktopHome, mobileHome, methods:view === 'methods', ownInterface:journalView || ['favorites','more','pet-select'].includes(view) });
+  if (view === 'welcome') cleanupWelcome = bindDesktopWelcome(app);
   if (view === 'home') cleanupHomePet = bindHomePetInteractions(app);
   if (journalView) cleanupJournal = bindJournalAgenda(app, render);
   if (view === 'detail' && route.id === 'breath') cleanupBreathing = bindBreathingCompanion(app, {announce:text => { announcer.textContent = text; }});

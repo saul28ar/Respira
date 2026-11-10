@@ -1,29 +1,18 @@
-import { renderApprovedWelcomePoster } from './welcome-poster.js';
+import { icon } from '../icons.js';
 
-// La versión Esmeralda conserva el diseño aprobado con texto y navegación reales.
+// Un pequeño comienzo: diseño aprobado con las tres mascotas en un mismo paisaje.
 export function renderDesktopWelcome() {
-  return `<section class="welcome-desktop welcome-desktop-v2" aria-labelledby="welcome-desktop-title">
-    <div class="wd2-shell">
-      <header class="wd2-topbar">
-        <a class="wd2-brand" href="#welcome" data-go="welcome" aria-label="Respira, tu espacio de calma"><img src="./imagenes/welcome/logo-aprobado-v2.png" alt="Respira. Tu espacio de calma." width="1774" height="887" draggable="false"></a>
-        <nav class="wd2-toplinks" aria-label="Principal"><a href="#methods" data-go="methods">Métodos</a><a href="#pet-library" data-go="pet-library">Tu compañía</a></nav>
-        <a class="wd2-backlink" href="#home" data-go="home">Ir al inicio <span aria-hidden="true">↗</span></a>
-      </header>
-      <div class="wd2-hero">
-        <section class="wd2-copy">
-          <div class="wd2-eyebrow"><span aria-hidden="true"></span>UN MOMENTO PARA TI</div>
-          <h1 class="wd2-headline" id="welcome-desktop-title">Respira.<br>Estás en tu espacio<br>de calma.</h1>
-          <p class="wd2-description">Pequeños momentos para una vida más tranquila. Encuentra una pausa, escucha cómo te sientes y avanza a tu ritmo.</p>
-          <div class="wd2-actions"><a class="wd2-primary" href="#pet-select" data-action="start">Iniciar <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a><a class="wd2-quiet-link" href="#methods" data-go="methods">Explorar métodos</a></div>
-          <p class="wd2-gentle">Sin prisas. Sin tener que hacerlo perfecto.</p>
-        </section>
-        <figure class="wd2-art-area"><div class="wd2-art-frame">${renderApprovedWelcomePoster({ imageClass: 'wd2-poster', startId: 'welcome-desktop-start' })}</div></figure>
-      </div>
-      <footer class="wd2-features" aria-label="Lo que encontrarás en Respira">
-        <div class="wd2-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h12a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h5a3 3 0 1 1-3 3"/></svg><span>Respira con calma</span></div>
-        <div class="wd2-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 3h13v18H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm0 0v18m4-12h5m-5 4h5"/></svg><span>Dale espacio a lo que sientes</span></div>
-        <div class="wd2-feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 4C8 1 1 10 7 17c7 6 15-1 13-13Z"/><path d="m5 21 10-11M9 16v-5m0 5h5"/></svg><span>Encuentra tu compañía</span></div>
-      </footer>
+  return `<section class="welcome-desktop welcome-desktop-camino" aria-labelledby="welcome-desktop-title">
+    <header class="cam-header"><a href="#welcome" data-go="welcome" aria-label="Respira, tu espacio de calma"><img class="cam-logo" src="./imagenes/welcome/logo-aprobado-v2.png" alt="Respira. Tu espacio de calma." width="1774" height="887" draggable="false"></a><nav class="cam-nav" aria-label="Descubre Respira"><button type="button" data-welcome-panel="espacio">Tu espacio</button><button type="button" data-welcome-panel="compania">Tu compañía ${icon('arrow')}</button></nav></header>
+    <div class="cam-intro"><p class="cam-kicker">${icon('leaf')}Un lugar para volver a ti</p><h1 id="welcome-desktop-title">Tu calma puede empezar<br>en <em>algo pequeño.</em></h1><p>Respira, escribe lo que llevas dentro o encuentra una compañía.<br>Hay muchas maneras de hacerte un espacio.</p></div>
+    <div class="cam-landscape" aria-hidden="true"></div>
+    <div class="cam-paths" aria-label="Explora tu primer paso">
+      <button class="cam-path" type="button" data-welcome-path="respira" aria-pressed="false">${icon('breath')}<span><strong>Respira</strong><small>Encuentra tu propio ritmo.</small></span></button>
+      <button class="cam-path" type="button" data-welcome-path="escribe" aria-pressed="false">${icon('journal')}<span><strong>Escribe</strong><small>Dale un lugar a lo que sientes.</small></span></button>
+      <button class="cam-path" type="button" data-welcome-path="compania" aria-pressed="false">${icon('heart')}<span><strong>Encuentra tu compañía</strong><small>Conoce a quien irá contigo.</small></span></button>
     </div>
+    <div class="cam-center"><p data-welcome-output aria-live="polite" aria-atomic="true"><strong>¿Por dónde te gustaría empezar?</strong>Toca una opción y descubre tu primer paso.</p><button class="cam-enter" type="button" data-action="start">Entrar a mi espacio ${icon('arrow')}</button><small>A tu ritmo · Sin prisa por hacerlo todo</small></div>
+    <p class="cam-footer">${icon('leaf')}Un pequeño momento también cuenta.</p>
+    <dialog class="cam-panel" data-welcome-dialog aria-labelledby="welcome-panel-title"><div class="cam-panel-inner"><img src="./imagenes/welcome/logo-aprobado-v2.png" alt="Respira" width="1774" height="887" draggable="false"><h2 id="welcome-panel-title"></h2><p data-welcome-panel-copy></p><button class="cam-enter" type="button" data-action="start">Entrar a Respira ${icon('arrow')}</button><button type="button" class="cam-panel-close" data-welcome-close>Volver a la bienvenida</button></div></dialog>
   </section>`;
 }

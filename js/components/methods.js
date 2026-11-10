@@ -3,9 +3,8 @@ import { methodCategories } from '../method-categories.js';
 import { favorites } from '../storage.js';
 import { safe } from '../utils.js';
 import { icon } from '../icons.js';
+import { methodArtwork } from '../method-art.js';
 
-// Ilustraciones aprobadas solo para las tarjetas de esta página.
-const scenes={breath:'breath',calm:'calm',anxiety:'anxiety',sleep:'sleep',selflove:'selflove',grounding:'grounding',muscle:'muscle',reframe:'reframe',journal:'journal',caffeine:'caffeine',move:'move',unplug:'unplug',talk:'talk'};
 const symbols={breath:'breath',calm:'lotus',anxiety:'sun',sleep:'moon',selflove:'heart',grounding:'leaf',muscle:'bolt',reframe:'spark',journal:'journal',caffeine:'bulb',move:'sun',unplug:'leaf',talk:'heart'};
 const tabs=[['home','Inicio','home'],['methods','Métodos','methods'],['favorites','Favoritos','heart'],['more','Más','settings']];
 const asset=name=>'./imagenes/'+name;
@@ -17,14 +16,16 @@ function navigation(className) {
   return `<nav class="${className}" aria-label="Navegación principal">${tabs.map(([route,label,symbol])=>`<a href="#${route}" data-go="${route}" class="${route==='methods'?'active':''}" ${route==='methods'?'aria-current="page"':''}>${icon(symbol)}<span>${label}</span>${route==='methods'?'<i class="active-dot" aria-hidden="true"></i>':''}</a>`).join('')}</nav>`;
 }
 function picture(id) {
-  const source = scenes[id] ? 'metodos/'+scenes[id]+'.webp' : 'inicio-web/consejos-hd.png';
-  return `<span class="method-picture ${id==='journal'?'picture-cat':''}"><img src="${asset(source)}" alt="" width="1254" height="1254" decoding="async"><span class="method-symbol">${icon(symbols[id] || (id==='grief'?'heart':'leaf'))}</span></span>`;
+  return `<span class="method-picture ${id==='journal'?'picture-cat':''}"><img src="${methodArtwork(id)}" alt="" width="1254" height="1254" decoding="async"><span class="method-symbol">${icon(symbols[id] || (id==='grief'?'heart':'leaf'))}</span></span>`;
 }
 function card(id,selected) {
   const item=catalog[id];
   return `<article class="method-card tone-${safe(item.color)}" data-method-id="${id}"><a class="method-open" href="#detail/${id}" data-open="${id}" aria-label="Abrir ${safe(item.title)}">${picture(id)}<span class="method-copy"><strong>${safe(item.title)}</strong><small>${safe(item.sub)}</small></span><span class="method-arrow">${icon('chevron')}</span></a><button class="favorite" type="button" data-fav="${id}" aria-label="${selected.has(id)?'Quitar de':'Añadir a'} favoritos: ${safe(item.title)}" aria-pressed="${selected.has(id)}">${icon('heart')}</button></article>`;
 }
 function category(category,selected) {
+  if (category.id === 'consejos') {
+    return `<section class="category-section" data-category="consejos" id="m10-category-consejos" tabindex="-1" aria-labelledby="m10-title-consejos"><a class="advice-entry" href="#advice" data-go="advice"><span class="category-symbol tone-yellow">${icon(category.icon)}</span><span class="advice-entry-copy"><strong id="m10-title-consejos">Consejos</strong><small>Explora las infografías para cuidarte.</small></span><span class="advice-entry-arrow" aria-hidden="true">${icon('chevron')}</span></a></section>`;
+  }
   return `<section class="category-section ${category.id==='escribir'?'writing-section':''}" data-category="${category.id}" id="m10-category-${category.id}" tabindex="-1" aria-labelledby="m10-title-${category.id}"><h2 class="category-heading" id="m10-title-${category.id}"><span class="category-symbol tone-${category.color}">${icon(category.icon)}</span><span class="category-copy"><span class="category-label">${category.title}</span><span class="category-description">${category.description}</span></span><span class="category-count">${category.ids.length} ${category.ids.length===1?'opción':'opciones'}</span></h2><div class="category-body"><div class="method-grid">${category.ids.map(id=>card(id,selected)).join('')}</div></div></section>`;
 }
 function chapterNavigation() {

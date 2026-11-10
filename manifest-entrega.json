@@ -1,11 +1,11 @@
 {
-  "version": "Respira 4.14 · Técnicas rápidas, Consejos y círculos manejables",
-  "version_id": "4.14",
-  "fecha": "2026-11-09",
+  "version": "Respira 4.15 · Welcome, escritura, Favoritos y Consejos",
+  "version_id": "4.15",
+  "fecha": "2026-11-10",
   "tipo": "Completa; respaldo único con archivos anteriores conservados",
   "base_parche": {
-    "version": "4.13",
-    "sha256": "05edab16df193fc826246145e1ca0b9a6e4521c953bde6409c7444772a6e35ca"
+    "version": "4.14",
+    "sha256": "093e48cb8237a572d56bbf07fcc5fdb3b13bb02e2ad08b955bea8e6885e0b55b"
   },
   "runtime": [
     "css/advice-infographics.css",
@@ -70,7 +70,9 @@
     "imagenes/tarjetas/escenas-03.png",
     "imagenes/tarjetas/escenas-05.png",
     "imagenes/welcome/logo-aprobado-v2.png",
+    "imagenes/welcome/paisaje-companias-v3.png",
     "imagenes/welcome/portada-aprobada-v2.png",
+    "imagenes/welcome/portada-movil-nitida-v3.png",
     "index.html",
     "js/advice-controller.js",
     "js/advice-data.js",
@@ -109,38 +111,63 @@
     "js/journal-storage.js",
     "js/meditation-controller.js",
     "js/meditation-data.js",
+    "js/method-art.js",
     "js/method-categories.js",
     "js/quick-techniques-controller.js",
     "js/storage.js",
     "js/timer.js",
     "js/utils.js",
+    "js/welcome-desktop-controller.js",
     "manifest.webmanifest",
     "sw.js"
   ],
   "verificacion": {
-    "navegador": {
-      "passed": 154,
-      "failed": 0,
-      "anchos": [
-        320,
-        390,
-        1440
-      ]
+    "informes": {
+      "work/qa-415/browser-audit.json": {
+        "passed": 155,
+        "failed": 0,
+        "sha256": "bf44e6a5bfab2a3d8d1016b7faf1cf4e22c3adf7baf7ea6db23950630c6fe502"
+      },
+      "work/qa-415/journal-controller-report.json": {
+        "passed": 13,
+        "failed": 0,
+        "sha256": "1e6c3bb4e8fe8774639aba85082fc3777924c0f62ebac594a0d670121e1ea307"
+      },
+      "work/qa-415/method-art-meditation-report.json": {
+        "passed": 36,
+        "failed": 0,
+        "sha256": "9ae59488f0467b9e2e1ae1ad673134af770120f740803d5f8819d03814922366"
+      },
+      "work/qa-415/methods-advice-entry-report.json": {
+        "passed": 12,
+        "failed": 0,
+        "sha256": "cee495251409b9e379ea31b2c47d89ee446e28e2f81531ec42bba2b22e83db3b"
+      },
+      "work/qa-415-advice/advice-fit-production-report.json": {
+        "passed": 36,
+        "failed": 0,
+        "sha256": "dc6aeae7febab59aa5968f610bf0ef974b2de8d84f8509915fa680175fe1caa0"
+      },
+      "work/welcome-pc-cinco/qa-welcome-415.json": {
+        "passed": 10,
+        "failed": 0,
+        "sha256": "78a4fb95b9b09db7798f29e68a52070204b9e935fe587429c63e936558aac0da"
+      }
     },
-    "dependencias_estaticas": 149,
+    "dependencias_estaticas": 154,
     "archivos_anteriores_conservados": true,
     "publicado": false
   },
   "archivos": [
     {
       "archivo": "ACTUALIZAR_RESPIRA.txt",
-      "bytes": 1290,
-      "sha256": "6d5ea8bac43917027d258d090b39c9f7ca2ba9c8aeefb9be1f5c5d7d60b1e020"
+      "bytes": 1639,
+      "sha256": "435012fa841b43f86742d9cf6374c0b99db38ef658d1d195a1971a97453fbda7"
     },
     {
       "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
-      "bytes": 1290,
-      "sha256": "6d5ea8bac43917027d258d090b39c9f7ca2ba9c8aeefb9be1f5c5d7d60b1e020"
+      "bytes": 1639,
+      "sha256": "435012fa841b43f86742d9cf6374c0b99db38ef658d1d195a1971a97453fbda7"
     },
     {
       "archivo": "BARRA_MOVIL_APROBADO.md",
@@ -164,8 +191,8 @@
     },
     {
       "archivo": "ENTREGAS.md",
-      "bytes": 11683,
-      "sha256": "efd6e8badcce694197f12923b1406e727d4ebb671d8a399cb29604c389dd4fce"
+      "bytes": 12729,
+      "sha256": "48479b892b30eb069834801fbb5a65b1c1b83db88b0fde198b08c05c42ff40d7"
     },
     {
       "archivo": "FAVORITOS_APROBADO.md",
@@ -209,8 +236,8 @@
     },
     {
       "archivo": "LEEME_INSTALAR_COMPLETO.txt",
-      "bytes": 392,
-      "sha256": "2d7cb0541833623afcbd37f38415a18542dd24e2c38501c88dcd91986491c29c"
+      "bytes": 345,
+      "sha256": "72efc19bd7b336a66ccfe062fd5a7808bb143c6f68d8bf9095113e63e598c501"
     },
     {
       "archivo": "MASCOTAS_APROBADO.md",
@@ -259,8 +286,8 @@
     },
     {
       "archivo": "css/advice-infographics.css",
-      "bytes": 12440,
-      "sha256": "5909f46b5e40c40b17439c74c57bd381a89b10c3604ca1a67edb8d5098b78993"
+      "bytes": 24382,
+      "sha256": "910388ce110927f522dab3a2da9c954ecf924fbd8ee2fd352eb151de6e60d27f"
     },
     {
       "archivo": "css/advice-stack.css",
@@ -294,8 +321,8 @@
     },
     {
       "archivo": "css/favorites.css",
-      "bytes": 14529,
-      "sha256": "a7e8a9a12716484880b264e567b61fcd62e0c84d17326dd99b1139dff4fbaf78"
+      "bytes": 14791,
+      "sha256": "709a8cc15281de9e1d4115ae8fc795c7a166f6bd8bc52705929cf435e092fc7f"
     },
     {
       "archivo": "css/home-desktop.css",
@@ -319,13 +346,13 @@
     },
     {
       "archivo": "css/journal-agenda.css",
-      "bytes": 33931,
-      "sha256": "314577a3c78a8aee2ff22f74a6111717f8a990975dfc4b8fe6805a1bc96b450a"
+      "bytes": 44283,
+      "sha256": "a6177a95cbf252b8521c7bc41913250866d9a8c63f6402495ef9064a4ac996ea"
     },
     {
       "archivo": "css/meditation.css",
-      "bytes": 10119,
-      "sha256": "1e4b784d24b5c972235860486929946ca44a398cb30f6ddc9b5e6f45550f84cb"
+      "bytes": 10982,
+      "sha256": "dc656a4b1004c71a8926f9b54936104be255c300fb4f262617096f4c027a9af6"
     },
     {
       "archivo": "css/method-details.css",
@@ -334,8 +361,8 @@
     },
     {
       "archivo": "css/methods.css",
-      "bytes": 13511,
-      "sha256": "fcb76de327a6cd92f326df2bbc1a5520c1663ed68a6c9b9de60c34fc75ebd421"
+      "bytes": 14589,
+      "sha256": "f694acb213d3fa95c355edbaad4ca818afbb9b6fb2528b7ba2514557f49a13c8"
     },
     {
       "archivo": "css/mobile-navigation.css",
@@ -359,13 +386,13 @@
     },
     {
       "archivo": "css/welcome-desktop.css",
-      "bytes": 5808,
-      "sha256": "dfa737855bea86bfd7e2ab8483db9439738cc2700b399ebb4dcfba62a068263d"
+      "bytes": 8769,
+      "sha256": "e37f2154753634fb2a8da7033641757f756a4e8e6a34e4fa80d2b9d3a0b0ae6f"
     },
     {
       "archivo": "css/welcome-mobile-v2.css",
-      "bytes": 2977,
-      "sha256": "e2a5973255c6f69708288833a4f7f934761a8dff3ca82f86eeffb7af166e4278"
+      "bytes": 2981,
+      "sha256": "c637ff42bca04f5247a314458f085d9d2f82cb22bc7426b54ca861dd7808d77d"
     },
     {
       "archivo": "css/welcome-mobile.css",
@@ -623,6 +650,11 @@
       "sha256": "645392cda33fa7a88f45291e8610de7b7abadafefc4152190e2c0f7081a9ae47"
     },
     {
+      "archivo": "imagenes/welcome/paisaje-companias-v3.png",
+      "bytes": 3144055,
+      "sha256": "c6296548e2c7eb69ad436adbe239604f2b5f0d049e0a4f768d467a8f18341593"
+    },
+    {
       "archivo": "imagenes/welcome/portada-aprobada-v2.png",
       "bytes": 3077268,
       "sha256": "22ef401d0d12ea9a860abad1edab6211fbf9a733ed11ed1cc570db0fa9b8d5a7"
@@ -633,9 +665,14 @@
       "sha256": "d3fb92abc26c9538976812dbfe44f4ebfee7a77e0d95ce64ff03a05c0aa5c998"
     },
     {
+      "archivo": "imagenes/welcome/portada-movil-nitida-v3.png",
+      "bytes": 2909985,
+      "sha256": "18c3bcce45da4e4507a4a8085fe37ad634e13648bc4c6705fb1fee811a5d7fef"
+    },
+    {
       "archivo": "index.html",
-      "bytes": 2444,
-      "sha256": "03813a8de3a3794f6d21cb2d29506481a464f029de0da1307efffeb788ec2f0c"
+      "bytes": 2491,
+      "sha256": "1734be89406d264129180b209b1e1cfbaa07cca2f5bdc1a9c8806bc3b9f1d642"
     },
     {
       "archivo": "js/advice-controller.js",
@@ -659,8 +696,8 @@
     },
     {
       "archivo": "js/app.js",
-      "bytes": 15293,
-      "sha256": "e8549ad80be13961f59dd059f12d9f8e67607ef04b71d84529edbfbe4012a215"
+      "bytes": 15505,
+      "sha256": "62651b575207adc1f51de4b01401e7e0c7f53a4db87aeb21669cf74e326bb7d5"
     },
     {
       "archivo": "js/breathing-companion-controller.js",
@@ -679,8 +716,8 @@
     },
     {
       "archivo": "js/components/advice-infographics.js",
-      "bytes": 6026,
-      "sha256": "ad8966a33ffa375b844fdfd754720abb3c33450488c98d533f4c68920dee5476"
+      "bytes": 6085,
+      "sha256": "f6f3f8d0b97a1990628bbe83cc58dd233b1315a52eab15b5ce00ca684fd42e65"
     },
     {
       "archivo": "js/components/advice.js",
@@ -704,8 +741,8 @@
     },
     {
       "archivo": "js/components/favorites.js",
-      "bytes": 4166,
-      "sha256": "e280f3de265cd9cba1ae9b014a3a8e2de31f2f1715c85b0f260228329b649ae1"
+      "bytes": 3975,
+      "sha256": "0047bc6c9583f551b01a81099b6e994f3c6a794cb9de950e7690451705f108e2"
     },
     {
       "archivo": "js/components/home-art.js",
@@ -739,18 +776,18 @@
     },
     {
       "archivo": "js/components/journal-agenda.js",
-      "bytes": 12299,
-      "sha256": "987f9065b71d3a3f9941a850c102f38388f47a41f202aff144bb738c506228e7"
+      "bytes": 18085,
+      "sha256": "6879d61bee6aa2e6e4ddabff1c704d0d1f583eb4488e1f2d038f68f6e95cb689"
     },
     {
       "archivo": "js/components/meditation.js",
-      "bytes": 5769,
-      "sha256": "def02bb1ca223593528351572f5e1fc7af910b524148fbb3669fe2d17a32e0a0"
+      "bytes": 5912,
+      "sha256": "6c6a8bf343f4b84e909c3d9c2a5a180c7f11d378bb836b2f96fea49ccbd01380"
     },
     {
       "archivo": "js/components/methods.js",
-      "bytes": 5300,
-      "sha256": "abbbb810c0c9b42ff5b8a9f09cefa534bc691988a744a1c8cb8febc4ece0f9c9"
+      "bytes": 5517,
+      "sha256": "3b8a1941026e541c40fab23bc8730e86f2d3689361098127b70c5973ff9fa514"
     },
     {
       "archivo": "js/components/mobile-navigation.js",
@@ -779,8 +816,8 @@
     },
     {
       "archivo": "js/components/welcome-desktop.js",
-      "bytes": 2847,
-      "sha256": "0506fdd5cc471834825761bbbb67a8961028ac87bbd7d7b5d695c34511510ebe"
+      "bytes": 2776,
+      "sha256": "049f18004af1e91c883b0d6029b2628f533dd32264e9828c6d1ba5564ab54bd7"
     },
     {
       "archivo": "js/components/welcome-mobile.js",
@@ -789,8 +826,8 @@
     },
     {
       "archivo": "js/components/welcome-poster.js",
-      "bytes": 842,
-      "sha256": "752d88189532173ac21b34aad2116a201440a4adca951aa1165792efdb4f5f6b"
+      "bytes": 846,
+      "sha256": "d1e6a30267a7e35dc04f4e9fc33ae007e3b44cf569e6d02b5bbcd5c9882f9808"
     },
     {
       "archivo": "js/daily-entry.js",
@@ -809,18 +846,18 @@
     },
     {
       "archivo": "js/icons.js",
-      "bytes": 2392,
-      "sha256": "1902b48fd6d98e387a98175eddcbfaa5f35fd8646f198d5d62dd8826c056a79b"
+      "bytes": 2452,
+      "sha256": "3ee70ef19b33133100dcb82b5e194b2f71202f2dfed97a1d74e8586f94e30502"
     },
     {
       "archivo": "js/journal-agenda-controller.js",
-      "bytes": 11430,
-      "sha256": "4b438d50cf5d06e06ec3b9e7e4ec9829186db4000799e3d8cc18986f4550d8e7"
+      "bytes": 17572,
+      "sha256": "4805ecefd058c028cee19051f24da9e00e85352576facfe9af968650414c4543"
     },
     {
       "archivo": "js/journal-storage.js",
-      "bytes": 7657,
-      "sha256": "052b3f9b8c76812de0a6efa3eb265520091eab0d32931882567d2cc579cb2699"
+      "bytes": 14519,
+      "sha256": "733b7c91bd129abd3ef19c283ba3a170a16db5e143b6af01f3f174d30659f410"
     },
     {
       "archivo": "js/meditation-controller.js",
@@ -831,6 +868,11 @@
       "archivo": "js/meditation-data.js",
       "bytes": 7026,
       "sha256": "20b9f2fb315aad9ee3fb78da94870e1e59b9b7457d33cf95a1e40de274b5f6c2"
+    },
+    {
+      "archivo": "js/method-art.js",
+      "bytes": 908,
+      "sha256": "663e072801834e2ba90122655b703f4cea17ea087ffd4e4462d42e289c5e0f43"
     },
     {
       "archivo": "js/method-categories.js",
@@ -858,14 +900,19 @@
       "sha256": "90f22978055bf8c0c15ccb112c3b02bfecac634840ddee141f1339017d058ceb"
     },
     {
+      "archivo": "js/welcome-desktop-controller.js",
+      "bytes": 2401,
+      "sha256": "18a9371f35b95cab48f4492887968159aeea7b25b2b4dbaef822f18f0d411a10"
+    },
+    {
       "archivo": "manifest.webmanifest",
       "bytes": 751,
       "sha256": "6432cb5505f0cde94d16e4adf0f641a1c7f9e57c388beb023d31113d76a0ae54"
     },
     {
       "archivo": "sw.js",
-      "bytes": 4906,
-      "sha256": "8756391d758ba25566a3de7aaf9dea5537cadd92a02876b4e63b0507b1e8a324"
+      "bytes": 5081,
+      "sha256": "795c6e675a3ca32f47b72c3f3502b229032732a04854e67c8e23d5be54617e14"
     }
   ]
 }

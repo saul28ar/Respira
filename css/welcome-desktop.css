@@ -1,70 +1,57 @@
-/* Welcome Esmeralda: réplica del prototipo 02. Todo está acotado a esta vista. */
-.welcome-desktop-v2 {
-  --wd2-ink: #124d37;
-  --wd2-accent: #176447;
-  --wd2-muted: #516e5d;
-  --wd2-line: #cddbc9;
-  display: block;
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  padding: 38px 84px;
-  overflow: hidden;
-  background: radial-gradient(ellipse at 100% 30%, #dceccf 0%, transparent 50%), #f1f5e9;
-  color: var(--wd2-ink);
-  font: 16px "Segoe UI", Arial, sans-serif;
-  line-height: normal;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-}
-.welcome-desktop-v2 a { color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent; }
-.welcome-desktop-v2 a:focus-visible { outline: 3px solid #d7b974; outline-offset: 5px; }
-.welcome-desktop-v2 .wd2-shell { max-width: 1300px; margin: 0 auto; position: relative; z-index: 1; }
-.welcome-desktop-v2 .wd2-topbar { display: flex; align-items: center; gap: 42px; height: 84px; margin-bottom: 15px; }
-.welcome-desktop-v2 .wd2-brand { display: block; width: 174px; flex: none; }
-.welcome-desktop-v2 .wd2-brand img { display: block; width: 100%; height: auto; }
-.welcome-desktop-v2 .wd2-toplinks { display: flex; gap: 32px; align-items: center; margin-left: auto; font-size: 13px; color: var(--wd2-muted); letter-spacing: .01em; }
-.welcome-desktop-v2 .wd2-backlink { display: flex; align-items: center; gap: 15px; font-size: 13px; border-bottom: 1px solid var(--wd2-accent); padding: 5px 0; color: var(--wd2-accent); }
-.welcome-desktop-v2 .wd2-backlink span { font-size: 20px; }
-.welcome-desktop-v2 .wd2-hero { display: grid; grid-template-columns: 1.14fr .86fr; gap: 48px; align-items: center; min-height: 730px; }
-.welcome-desktop-v2 .wd2-copy { max-width: 620px; padding-bottom: 20px; }
-.welcome-desktop-v2 .wd2-eyebrow { display: flex; align-items: center; gap: 10px; font-size: 11px; font-weight: 650; letter-spacing: .16em; color: var(--wd2-accent); margin-bottom: 23px; }
-.welcome-desktop-v2 .wd2-eyebrow span { width: 23px; height: 1px; background: currentColor; display: block; }
-.welcome-desktop-v2 .wd2-headline { font-family: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif; font-size: 71px; font-weight: 400; line-height: 1.08; letter-spacing: -.05em; margin: 0 0 30px; }
-.welcome-desktop-v2 .wd2-description { max-width: 430px; font-size: 17px; line-height: 1.9; color: var(--wd2-muted); margin: 0 0 28px; }
-.welcome-desktop-v2 .wd2-actions { display: flex; align-items: center; gap: 24px; margin: 0 0 18px; }
-.welcome-desktop-v2 .wd2-primary { display: inline-flex; align-items: center; justify-content: space-between; gap: 48px; padding: 16px 27px; border-radius: 999px; background: linear-gradient(130deg, #247448, #105338); border: 1px solid #bcaa6e; color: #fff7df; font-size: 14px; font-weight: 600; min-width: 179px; min-height: 52px; box-shadow: 0 7px 14px #14513b20; }
-.welcome-desktop-v2 .wd2-primary svg { width: 21px; height: 21px; flex: none; }
-.welcome-desktop-v2 .wd2-quiet-link { font-size: 13px; color: var(--wd2-accent); display: block; }
-.welcome-desktop-v2 .wd2-gentle { color: var(--wd2-muted); font-size: 12px; line-height: 1.6; margin: 0; }
-.welcome-desktop-v2 .wd2-art-area { margin: 0; display: flex; align-items: center; justify-content: center; position: relative; }
-.welcome-desktop-v2 .wd2-art-frame { height: 692px; position: relative; isolation: isolate; display: flex; justify-content: center; align-items: center; border-radius: 26px; max-width: 100%; background: transparent; box-shadow: 0 0 0 12px #ffffff98, 0 0 0 13px #cad9bd, 0 30px 60px -36px #345c2975; transform: rotate(1.3deg); }
-.welcome-desktop-v2 .wd2-poster { height: 100%; width: auto; max-width: 100%; display: block; object-fit: contain; border-radius: inherit; position: relative; z-index: 1; }
-.welcome-desktop-v2 .wd2-features { display: flex; justify-content: space-between; gap: 32px; align-items: center; border-top: 1px solid var(--wd2-line); padding: 25px 0 0; margin-top: 21px; color: var(--wd2-accent); }
-.welcome-desktop-v2 .wd2-feature { display: flex; align-items: center; gap: 13px; font-size: 12px; white-space: nowrap; }
-.welcome-desktop-v2 .wd2-feature svg { width: 22px; height: 22px; flex: none; }
+/* Welcome aprobado: Un pequeño comienzo, tres mascotas integradas. */
 
-/* En pantallas menores la misma composición se adapta sin cortar la portada. */
-@media (min-width: 768px) and (max-width: 1399px) {
-  .welcome-desktop-v2 { padding: 30px clamp(30px, 5.25vw, 74px); }
-  .welcome-desktop-v2 .wd2-hero { grid-template-columns: minmax(0, 1.14fr) minmax(0, .86fr); gap: clamp(26px, 3vw, 42px); min-height: clamp(560px, 51vw, 710px); }
-  .welcome-desktop-v2 .wd2-headline { font-size: clamp(43px, 4.44vw, 67px); }
-  .welcome-desktop-v2 .wd2-description { font-size: 16px; max-width: 410px; }
-  .welcome-desktop-v2 .wd2-art-frame { height: min(660px, 49.4vw); }
-  .welcome-desktop-v2 .wd2-actions { gap: 18px; flex-wrap: wrap; }
-  .welcome-desktop-v2 .wd2-primary { gap: 32px; min-width: 160px; }
-  .welcome-desktop-v2 .wd2-toplinks { gap: 22px; }
-  .welcome-desktop-v2 .wd2-feature { font-size: 11px; gap: 9px; }
-}
-@media (min-width: 768px) and (max-width: 999px) {
-  .welcome-desktop-v2 .wd2-topbar { gap: 24px; }
-  .welcome-desktop-v2 .wd2-brand { width: 145px; }
-  .welcome-desktop-v2 .wd2-toplinks { gap: 18px; font-size: 12px; }
-  .welcome-desktop-v2 .wd2-backlink { font-size: 12px; gap: 8px; }
-  .welcome-desktop-v2 .wd2-eyebrow { letter-spacing: .12em; font-size: 10px; margin-bottom: 20px; }
-  .welcome-desktop-v2 .wd2-description { font-size: 15px; line-height: 1.8; }
-  .welcome-desktop-v2 .wd2-gentle { font-size: 11px; }
-  .welcome-desktop-v2 .wd2-features { gap: 17px; }
-  .welcome-desktop-v2 .wd2-feature { white-space: normal; align-items: flex-start; }
-  .welcome-desktop-v2 .wd2-feature svg { width: 20px; height: 20px; }
-}
+.welcome-desktop-camino{position:relative;min-height:660px;overflow:hidden;background:#f7f8ed;color:#164b3a;isolation:isolate}
+.welcome-desktop-camino *{box-sizing:border-box}
+.welcome-desktop-camino button{font:inherit;cursor:pointer}
+.welcome-desktop-camino .cam-header{height:77px;padding:15px 40px;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:3}
+.welcome-desktop-camino .cam-logo{width:128px;height:45px;object-fit:contain}
+.welcome-desktop-camino .cam-nav{display:flex;gap:26px;align-items:center}
+.welcome-desktop-camino .cam-nav button{border:0;background:none;color:#446657;font-size:12px;padding:10px 0}
+.welcome-desktop-camino .cam-nav button:last-child{display:flex;gap:7px;align-items:center;border-bottom:1px solid #a2b9a6}
+.welcome-desktop-camino .cam-intro{position:relative;z-index:2;text-align:center;padding:11px 20px 0}
+.welcome-desktop-camino .cam-kicker{display:flex;gap:8px;align-items:center;justify-content:center;text-transform:uppercase;font-size:11px;letter-spacing:.16em;font-weight:650;color:#557463;margin:0 0 11px}
+.welcome-desktop-camino .cam-kicker i{width:15px;height:15px}
+.welcome-desktop-camino h1{font-family:Georgia,'Times New Roman',serif;font-size:45px;font-weight:400;letter-spacing:-1.8px;line-height:1.08;margin:0 auto 14px;max-width:670px}
+.welcome-desktop-camino h1 em{font-style:italic;color:#5e8266}
+.welcome-desktop-camino .cam-intro>p:last-child{font-size:14px;line-height:1.6;color:#5c7468;margin:0 auto;max-width:560px}
+.welcome-desktop-camino .cam-landscape{position:absolute;z-index:-1;inset:267px 0 0;background-image:linear-gradient(180deg,#f7f8ed 0%,rgba(247,248,237,.32) 21%,rgba(246,248,231,.05) 58%,rgba(17,61,43,.22) 100%),url('../imagenes/welcome/paisaje-companias-v3.png');background-size:cover;background-position:center 57%}
+.welcome-desktop-camino .cam-landscape:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(248,249,238,.25),transparent 25%,transparent 75%,rgba(248,249,238,.25))}
+.welcome-desktop-camino .cam-paths{position:relative;z-index:2;display:flex;justify-content:center;gap:0;width:770px;max-width:calc(100% - 64px);margin:27px auto 0;padding:17px 9px;background:rgba(255,255,247,.88);border:1px solid #d6dfcb;border-radius:21px;box-shadow:0 12px 35px #385c3d0b}
+.welcome-desktop-camino .cam-path{display:grid;grid-template-columns:35px 1fr;align-items:center;gap:10px;width:33.333%;border:0;background:transparent;color:#254f3d;text-align:left;padding:7px 17px;border-radius:12px;transition:background .15s}
+.welcome-desktop-camino .cam-path+.cam-path{border-left:1px solid #d9e3d2;border-radius:0 12px 12px 0}
+.welcome-desktop-camino .cam-path:hover,.welcome-desktop-camino .cam-path[aria-pressed=true]{background:#e7eddb}
+.welcome-desktop-camino .cam-path:focus-visible,.welcome-desktop-camino button:focus-visible{outline:3px solid #96b68c;outline-offset:4px}
+.welcome-desktop-camino .cam-path i{width:27px;height:27px;stroke-width:1.4}
+.welcome-desktop-camino .cam-path strong{display:block;font-size:14px;font-weight:600;line-height:1.3}
+.welcome-desktop-camino .cam-path small{display:block;font-size:11px;line-height:1.5;margin-top:3px;color:#65806b}
+.welcome-desktop-camino .cam-center{position:relative;z-index:2;text-align:center;margin:25px auto 0;width:380px;max-width:80%;padding:21px 20px 18px;background:rgba(249,250,240,.91);border:1px solid #ffffffb3;border-radius:25px;backdrop-filter:blur(7px)}
+.welcome-desktop-camino .cam-center>p{margin:0 0 16px;min-height:37px;font-size:12px;line-height:1.55;color:#5f7665}
+.welcome-desktop-camino .cam-center>p strong{display:block;color:#355d43;font-weight:600;font-size:13px;margin-bottom:2px}
+.welcome-desktop-camino .cam-enter{display:inline-flex;justify-content:center;align-items:center;gap:24px;border:0;border-radius:50px;background:#164f3b;color:#fffdf0;padding:15px 24px;font-size:14px;font-weight:600;box-shadow:0 7px 15px #21452c1c}
+.welcome-desktop-camino .cam-enter i{width:17px;height:17px}
+.welcome-desktop-camino .cam-center>small{display:block;color:#728274;font-size:11px;margin-top:12px;letter-spacing:.02em}
+.welcome-desktop-camino .cam-footer{position:relative;z-index:2;display:flex;justify-content:center;align-items:center;gap:7px;color:#f7faef;font-size:11px;margin:23px 0 0;text-shadow:0 1px 6px #234934}
+.welcome-desktop-camino .cam-footer i{width:13px;height:13px}
+@media(min-width:601px) and (max-width:900px){.welcome-desktop-camino .cam-landscape{inset:auto 0 0;height:auto;aspect-ratio:2.4;background-position:center center}}
+@media(min-width:601px) and (max-width:700px){.welcome-desktop-camino .cam-landscape{bottom:-38px}}
+@media(max-width:600px){.welcome-desktop-camino{min-height:800px}.welcome-desktop-camino .cam-header{height:70px;padding:13px 20px}.welcome-desktop-camino .cam-logo{width:107px;height:42px}.welcome-desktop-camino .cam-nav{gap:12px}.welcome-desktop-camino .cam-nav button{font-size:11px}.welcome-desktop-camino .cam-nav button:first-child{display:none}.welcome-desktop-camino .cam-intro{padding-top:15px}.welcome-desktop-camino h1{font-size:37px;letter-spacing:-1.3px;max-width:350px}.welcome-desktop-camino .cam-kicker{font-size:11px;letter-spacing:.1em}.welcome-desktop-camino .cam-intro>p:last-child{font-size:13px;max-width:310px}.welcome-desktop-camino .cam-paths{flex-direction:column;max-width:calc(100% - 40px);margin-top:23px;padding:8px 12px;border-radius:18px}.welcome-desktop-camino .cam-path{width:100%;padding:12px 10px;grid-template-columns:29px 1fr}.welcome-desktop-camino .cam-path+.cam-path{border-left:0;border-top:1px solid #d9e3d2;border-radius:0}.welcome-desktop-camino .cam-path small{font-size:11px;margin-top:1px}.welcome-desktop-camino .cam-path strong{font-size:14px}.welcome-desktop-camino .cam-landscape{top:350px;background-position:center bottom}.welcome-desktop-camino .cam-center{max-width:calc(100% - 52px);margin-top:20px;padding:17px 14px}.welcome-desktop-camino .cam-center>small{font-size:11px}.welcome-desktop-camino .cam-brote{width:82px;height:82px;left:2%;bottom:16px}.welcome-desktop-camino .cam-nube{width:92px;height:80px;right:2%;bottom:18px}.welcome-desktop-camino .cam-footer{font-size:11px;margin:24px 0 105px}}
+@media(max-width:600px){.welcome-desktop-camino .cam-landscape{inset:auto 0 0;height:auto;aspect-ratio:1942/809;background-size:cover;background-position:center bottom;background-repeat:no-repeat}.welcome-desktop-camino .cam-footer{color:#5f7665;text-shadow:none}}
+
+.welcome-desktop-camino{min-height:max(680px,100dvh);width:100%;font:16px/1.5 'Segoe UI',Arial,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.welcome-desktop-camino a{color:inherit;text-decoration:none;-webkit-tap-highlight-color:transparent}
+.welcome-desktop-camino .cam-landscape{inset:auto 0 0;height:auto;aspect-ratio:1942/809;background-position:center bottom;background-repeat:no-repeat}
+.welcome-desktop-camino .cam-nav .icon{width:16px;height:16px;transform:rotate(-45deg)}
+.welcome-desktop-camino .cam-kicker>.icon{width:18px;height:18px}
+.welcome-desktop-camino .cam-path>.icon{width:27px;height:27px;stroke-width:1.4}
+.welcome-desktop-camino .cam-enter>.icon{width:19px;height:19px}
+.welcome-desktop-camino .cam-footer>.icon{width:15px;height:15px}
+.welcome-desktop-camino .cam-panel{position:fixed;inset:0;z-index:100;width:100%;height:100dvh;max-width:none;max-height:none;margin:0;border:0;padding:35px;background:#ecf3e4f5;color:#1a503d;backdrop-filter:blur(8px)}
+.welcome-desktop-camino .cam-panel[open]{display:grid;place-items:center}
+.welcome-desktop-camino .cam-panel::backdrop{background:#ecf3e4b0}
+.welcome-desktop-camino .cam-panel-inner{max-width:500px;text-align:center}
+.welcome-desktop-camino .cam-panel-inner>img{width:150px;height:75px;object-fit:contain;margin:0 auto 25px}
+.welcome-desktop-camino .cam-panel h2{font:400 38px/1.15 Georgia,serif;letter-spacing:-1px;margin:0 0 20px}
+.welcome-desktop-camino .cam-panel p{font-size:14px;line-height:1.8;color:#60795f;margin:0 auto 25px;max-width:410px}
+.welcome-desktop-camino .cam-panel-close{display:block;margin:20px auto 0;background:none;color:#56765b;padding:11px;border:0;font-size:12px;text-decoration:underline;text-underline-offset:4px}
+@media(min-width:768px) and (max-width:900px){.welcome-desktop-camino .cam-header{padding-left:25px;padding-right:25px}.welcome-desktop-camino .cam-path{padding-left:11px;padding-right:11px;gap:8px}.welcome-desktop-camino .cam-path strong{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.welcome-desktop-camino *,.welcome-desktop-camino *:before,.welcome-desktop-camino *:after{transition:none!important;animation:none!important}}

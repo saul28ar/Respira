@@ -22,7 +22,8 @@ const paths = {
  pause: '<path d="M8 4v16M16 4v16"/>',
  check: '<path d="m5 12 4 4L19 6"/>',
  close: '<path d="m6 6 12 12M6 18 18 6"/>',
- download: '<path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/>'
+ download: '<path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/>',
+ pin: '<path d="M9 3h6l-1 7 4 4v2H6v-2l4-4-1-7Zm3 13v6"/>'
 };
 export function icon(name, className = '') {
  return `<svg class="icon ${className}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${paths[name] || paths.leaf}</svg>`;

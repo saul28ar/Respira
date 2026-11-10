@@ -1,7 +1,6 @@
-﻿RESPIRA 4.14 - RESPALDO COMPLETO ACTUAL
+﻿RESPIRA 4.15 — RESPALDO COMPLETO ACTUAL
 
 Copia todo el contenido descomprimido en la carpeta de la app y acepta Reemplazar.
 index.html debe quedar junto a css, js, imagenes e iconos.
-Se conservan todos los archivos anteriores y las mejoras aprobadas de Respiracion,
-Meditacion, Tecnicas rapidas y Consejos. No se necesita borrar nada.
-Esta copia es el unico respaldo completo actualizado.
+Incluye todos los cambios aprobados hasta 4.15 y conserva los archivos anteriores.
+No se necesita borrar nada. Esta es la copia completa única actualizada.

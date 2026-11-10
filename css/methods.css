@@ -53,6 +53,12 @@ body.methods-view #app{padding-bottom:0}
 .methods-jardin .m10-category-label{font:400 25px/1.15 Georgia,serif;letter-spacing:-.025em;color:#2b573d}
 .methods-jardin .m10-category-description{font:400 12px/1.4 "Segoe UI",Arial,sans-serif;color:#6c8469}
 .methods-jardin .m10-category-count{font:400 11px/1.3 "Segoe UI",Arial,sans-serif;color:#7b9171;white-space:nowrap}
+.methods-jardin .m10-advice-entry{display:flex;align-items:center;gap:16px;min-height:98px;padding:22px 26px;border:1px solid #ffffffe6;border-radius:23px;background:linear-gradient(110deg,#fffef9f5,#fcf7eaf2);box-shadow:0 7px 22px #4f876619}
+.methods-jardin .m10-advice-entry-copy{display:flex;flex-direction:column;gap:6px;flex:1;min-width:0}
+.methods-jardin .m10-advice-entry-copy strong{font:400 25px/1.15 Georgia,serif;letter-spacing:-.025em;color:#2b573d}
+.methods-jardin .m10-advice-entry-copy small{font-size:12px;line-height:1.4;color:#6c8469}
+.methods-jardin .m10-advice-entry-arrow{display:grid;place-items:center;width:34px;height:34px;flex:none;border-radius:50%;background:#f7edcf;color:#997b26}
+.methods-jardin .m10-advice-entry-arrow .m10-icon{width:18px;height:18px}
 .methods-jardin .m10-method-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 20px}
 .methods-jardin .m10-method-card{--tone:#e4f3f8;--tone-ink:#2691a4;position:relative;min-width:0;height:122px;border:1px solid #ffffffe6;border-radius:23px;background:#fffef9f5;box-shadow:0 7px 22px #4f876619;overflow:hidden}
 .methods-jardin .m10-method-open{display:flex;align-items:center;width:100%;height:100%;min-width:0;position:relative}
@@ -117,6 +123,10 @@ body.methods-view #app{padding-bottom:0}
 .methods-jardin .m10-category-label{font-size:21px;line-height:1.1}
 .methods-jardin .m10-category-description{font-size:10px;line-height:1.4}
 .methods-jardin .m10-category-count{font-size:9px}
+.methods-jardin .m10-advice-entry{min-height:90px;gap:11px;padding:18px 16px;border-radius:21px}
+.methods-jardin .m10-advice-entry-copy strong{font-size:21px}
+.methods-jardin .m10-advice-entry-copy small{font-size:11px}
+.methods-jardin .m10-advice-entry-arrow{width:29px;height:29px}
 .methods-jardin .m10-method-grid{grid-template-columns:1fr;gap:11px}
 .methods-jardin .m10-method-card{height:116px;border-radius:21px}
 .methods-jardin .m10-method-picture{width:114px}

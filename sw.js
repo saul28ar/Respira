@@ -1,6 +1,10 @@
-const CACHE = 'respira-code-4-14-consejos-tecnicas';
+const CACHE = 'respira-code-4-15-welcome-agenda-consejos';
 const ASSETS = [
   "./",
+  "./js/method-art.js",
+  "./js/welcome-desktop-controller.js",
+  "./imagenes/welcome/paisaje-companias-v3.png",
+  "./imagenes/welcome/portada-movil-nitida-v3.png",
   "./css/advice.css",
   "./css/advice-infographics.css",
   "./css/advice-stack.css",

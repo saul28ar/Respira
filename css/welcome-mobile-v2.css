@@ -7,9 +7,9 @@
   position: absolute;
   z-index: 3;
   left: 20.1912858661%;
-  top: 85.4578096948%;
+  top: 85.4066985646%;
   width: 59.7236981934%;
-  height: 8.3782166367%;
+  height: 8.3732057416%;
   display: block;
   padding: 0;
   margin: 0;
@@ -52,7 +52,7 @@
     position: absolute;
     z-index: -1;
     inset: -15px;
-    background: url('../imagenes/welcome/portada-aprobada-v2.png') center / cover;
+    background: url('../imagenes/welcome/portada-movil-nitida-v3.png') center / cover;
     filter: blur(13px) brightness(.65);
     pointer-events: none;
   }
@@ -61,11 +61,11 @@
     isolation: isolate;
     /* La misma portada cubre la altura del teléfono sin bandas de relleno.
        En horizontal conserva su proporción y permite bajar hasta Iniciar. */
-    width: max(100vw, calc((100svh - var(--welcome-safe-top) - var(--welcome-safe-bottom)) * 941 / 1671));
-    width: max(100vw, calc((100dvh - var(--welcome-safe-top) - var(--welcome-safe-bottom)) * 941 / 1671));
+    width: max(100vw, calc((100svh - var(--welcome-safe-top) - var(--welcome-safe-bottom)) * 941 / 1672));
+    width: max(100vw, calc((100dvh - var(--welcome-safe-top) - var(--welcome-safe-bottom)) * 941 / 1672));
     max-width: none;
     min-width: 0;
-    aspect-ratio: 941 / 1671;
+    aspect-ratio: 941 / 1672;
     margin: 0;
   }
   .welcome-page .welcome-mobile-art {

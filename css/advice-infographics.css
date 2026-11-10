@@ -119,7 +119,7 @@ body:has(.info-page){background:linear-gradient(to bottom,#effaf1b8 0,#effaf1d9 
 @media(max-width:767px),(max-width:1024px) and (max-height:600px) and (orientation:landscape) and (hover:none) and (pointer:coarse){
  .app-shell:has(.info-page) .interface-header{display:none}
  .info-page{width:100%;padding:16px 14px 40px}
- .info-page>.back-button{display:none}
+ .info-page>.back-button{display:inline-flex;min-height:40px;margin:0 8px 8px}
  .info-mobile-brand{height:70px;display:flex;align-items:center;justify-content:center;margin:0 -14px}
  .info-mobile-brand img{display:block;width:112px;height:auto;max-height:58px;object-fit:contain}
  .info-heading{padding:0 8px;margin:0 0 19px}
@@ -130,3 +130,154 @@ body:has(.info-page){background:linear-gradient(to bottom,#effaf1b8 0,#effaf1d9 
  .info-heading .info-mobile-hint{display:inline}
 }
 
+
+/* Consejos aprobados: una pantalla adaptable con Volver visible. */
+html:has(.info-page){height:100%;scroll-padding:0}
+body:has(.info-page){height:100dvh;min-height:0;overflow:hidden}
+body:has(.info-page) #app{height:100%;min-height:0;padding:0}
+body:has(.info-page) .app-shell{height:100%;min-height:0;display:grid;grid-template-rows:86px minmax(0,1fr)}
+body:has(.info-page) .interface-header{height:86px;padding:5px 0;width:min(1040px,calc(100% - 48px))}
+body:has(.info-page) .interface-brand{width:115px}
+body:has(.info-page) .info-page{height:100%;min-height:0;padding:0 0 7px;display:grid;grid-template-rows:112px minmax(0,1fr)}
+body:has(.info-page) .info-compact-header{display:grid;grid-template-rows:32px 1fr;min-height:0}
+body:has(.info-page) .back-button{display:inline-flex;justify-self:start;margin:0;min-height:32px;padding:0;font-size:13px}
+body:has(.info-page) .back-button .icon{width:18px;height:18px}
+body:has(.info-page) .info-heading{margin:0;max-width:none;padding:0}
+body:has(.info-page) .info-heading .eyebrow{font-size:10px;margin-bottom:3px}
+body:has(.info-page) .info-heading h1{font-size:36px;line-height:1.1;margin:0 0 3px}
+body:has(.info-page) .info-heading>p{font-size:13px;line-height:1.45}
+body:has(.info-page) .info-layout{height:100%;min-height:0;align-items:stretch}
+body:has(.info-page) .info-deck{height:100%;min-height:0;display:grid;grid-template-rows:minmax(0,1fr) 56px}
+body:has(.info-page) .info-track{height:100%;min-height:0;padding:5px 5px 7px;align-items:stretch}
+body:has(.info-page) .info-poster{height:100%;min-height:0;flex-shrink:0}
+body:has(.info-page) .info-poster-top{padding:10px 22px 2px;flex:none}
+body:has(.info-page) .info-poster-top>span{font-size:11px;line-height:1.25}
+body:has(.info-page) .info-favorite{height:36px;width:36px}
+body:has(.info-page) .info-poster>h2{font-size:clamp(27px,3.4dvh,33px);line-height:1.06;margin:3px 25px 7px;flex:none}
+body:has(.info-page) .info-tagline{font-size:14px;line-height:1.3;margin:0 25px 12px;flex:none}
+body:has(.info-page) .info-points{flex:none;padding:0 25px;gap:clamp(8px,1.5dvh,14px);margin:0 0 12px}
+body:has(.info-page) .info-points strong{font-size:17px;line-height:1.2}
+body:has(.info-page) .info-points>li>span>span{font-size:12.5px;line-height:1.45}
+body:has(.info-page) .info-points>li>span:last-child{gap:2px}
+body:has(.info-page) .info-point-leaf{height:27px;width:27px;margin-top:1px}
+body:has(.info-page) .info-scene{flex:1 1 0;min-height:65px;height:auto;margin-top:0}
+body:has(.info-page) .info-scene-pet{height:clamp(92px,17dvh,165px);width:clamp(92px,17dvh,165px);bottom:17px;right:20px}
+body:has(.info-page) .info-scene-caption{font-size:12px;bottom:5px}
+body:has(.info-page) .info-coffee{bottom:27px;transform:scale(.78) rotate(-8deg);transform-origin:bottom left}
+body:has(.info-page) .info-phone,body:has(.info-page) .info-plate,body:has(.info-page) .info-memory{bottom:23px;transform:scale(.74) rotate(-8deg);transform-origin:bottom left}
+body:has(.info-page) .info-bubbles{bottom:28px}
+body:has(.info-page) .info-footprints{bottom:25px;transform:scale(.65) rotate(17deg);transform-origin:bottom left}
+body:has(.info-page) .info-poster-bottom{padding:7px 23px;flex:none}
+body:has(.info-page) .info-read{min-height:36px;font-size:13px}
+body:has(.info-page) .info-navigation{padding:4px 0 0;gap:20px;min-height:0}
+body:has(.info-page) .info-arrow{height:38px;width:38px}
+body:has(.info-page) .info-position{gap:0;line-height:1.25;font-size:12px}
+body:has(.info-page) .info-dots button{height:28px}
+body:has(.info-page) .info-desktop-index{padding:16px 0;min-height:0}
+body:has(.info-page) .info-desktop-index h2{font-size:28px;margin-bottom:12px}
+body:has(.info-page) .info-desktop-index>p{margin-bottom:16px}
+body:has(.info-page) .info-desktop-index>button{min-height:55px;padding:10px 12px}
+
+@media(max-width:767px),(max-width:1024px) and (max-height:600px) and (orientation:landscape) and (hover:none) and (pointer:coarse){
+ body:has(.info-page) .app-shell{display:block;padding-bottom:calc(clamp(58px,15.5vw,70px) + 24px + env(safe-area-inset-bottom,0px))}
+ body:has(.info-page) .info-page{width:100%;padding:0 14px;grid-template-rows:50px 58px minmax(0,1fr)}
+ body:has(.info-page) .info-mobile-brand{height:50px;margin:0}
+ body:has(.info-page) .info-mobile-brand img{height:44px;width:98px;max-height:none;object-fit:contain}
+ body:has(.info-page) .info-compact-header{display:grid;grid-template-columns:84px 1fr 84px;grid-template-rows:1fr;align-items:center;padding:0 5px}
+ body:has(.info-page) .back-button{display:inline-flex;min-height:40px;font-size:12px;gap:4px}
+ body:has(.info-page) .info-heading{padding:0;margin:0;text-align:center}
+ body:has(.info-page) .info-heading>h1{font-size:29px;line-height:1.1;margin:0 0 2px;letter-spacing:-1px}
+ body:has(.info-page) .info-heading>p{font-size:11px;line-height:1.3;white-space:nowrap}
+ body:has(.info-page) .info-layout{display:block}
+ body:has(.info-page) .info-desktop-index{display:none}
+ body:has(.info-page) .info-deck{grid-template-rows:minmax(0,1fr) 56px;gap:18px}
+ body:has(.info-page) .info-track{height:100%!important;min-height:0;margin:3px 8px 0;padding:0}
+ body:has(.info-page) .info-poster{height:100%!important;min-height:0!important;inset:0;border-radius:24px}
+ body:has(.info-page) .info-poster-top{padding:9px 14px 2px;gap:6px}
+ body:has(.info-page) .info-poster-top>span{font-size:11px;letter-spacing:.4px;gap:5px}
+ body:has(.info-page) .info-favorite{height:36px;width:36px}
+ body:has(.info-page) .info-poster>h2{font-size:clamp(22px,3.2dvh,29px);line-height:1.06;margin:4px 18px 9px;letter-spacing:-.8px}
+ body:has(.info-page) .info-tagline{font-size:14px;line-height:1.4;margin:0 18px 14px}
+ body:has(.info-page) .info-points{padding:0 18px;gap:clamp(8px,1.6dvh,15px);margin:0 0 14px}
+ body:has(.info-page) .info-points>li{gap:8px}
+ body:has(.info-page) .info-points strong{font-size:15px;line-height:1.2}
+ body:has(.info-page) .info-points>li>span>span{font-size:12.5px;line-height:1.4}
+ body:has(.info-page) .info-point-leaf{height:25px;width:25px}
+ body:has(.info-page) .info-scene{height:auto;min-height:50px;flex:1 1 0}
+ body:has(.info-page) .info-scene-pet{width:clamp(80px,18dvh,153px);height:clamp(80px,18dvh,153px);bottom:22px;right:0}
+ body:has(.info-page) .info-coffee{bottom:30px;left:23px;transform:scale(.72) rotate(-8deg)}
+ body:has(.info-page) .info-phone,body:has(.info-page) .info-plate,body:has(.info-page) .info-memory{left:22px;bottom:25px;transform:scale(.66) rotate(-8deg)}
+ body:has(.info-page) .info-bubbles{left:17px;bottom:26px}
+ body:has(.info-page) .info-footprints{left:22px;bottom:26px;transform:scale(.6) rotate(17deg)}
+ body:has(.info-page) .info-poster-bottom{padding:6px 17px}
+ body:has(.info-page) .info-read{min-height:34px;font-size:12px}
+ body:has(.info-page) .info-navigation{height:56px;padding:0;gap:10px}
+ body:has(.info-page) .info-dots button{width:23px;height:28px}
+ body:has(.info-page) .info-arrow{width:36px;height:36px}
+}
+
+@media(max-width:767px) and (max-height:680px){
+ body:has(.info-page) .info-page{padding:0 10px;grid-template-rows:40px 44px minmax(0,1fr)}
+ body:has(.info-page) .info-mobile-brand{height:40px}
+ body:has(.info-page) .info-mobile-brand img{height:40px;width:82px}
+ body:has(.info-page) .info-compact-header{padding:0 4px;grid-template-columns:68px 1fr 68px}
+ body:has(.info-page) .info-heading>h1{font-size:25px}
+ body:has(.info-page) .info-deck{grid-template-rows:minmax(0,1fr) 42px;gap:23px}
+ body:has(.info-page) .info-navigation{height:42px}
+ body:has(.info-page) .info-poster-top{padding:5px 12px 0}
+ body:has(.info-page) .info-favorite{width:30px;height:30px}
+ body:has(.info-page) .info-poster>h2{font-size:22px;margin:2px 15px 8px}
+ body:has(.info-page) .info-tagline,body:has(.info-page) .info-scene-caption{display:none}
+ body:has(.info-page) .info-points{padding:0 15px;gap:8px;margin-bottom:8px}
+ body:has(.info-page) .info-points>li{gap:7px}
+ body:has(.info-page) .info-points strong{font-size:13px}
+ body:has(.info-page) .info-points>li>span>span{font-size:11px;line-height:1.3}
+ body:has(.info-page) .info-point-leaf{width:21px;height:21px}
+ body:has(.info-page) .info-scene{min-height:38px}
+ body:has(.info-page) .info-scene-pet{width:90px;height:90px;bottom:0;right:10px}
+ body:has(.info-page) .info-coffee{bottom:7px;left:25px;transform:scale(.45) rotate(-8deg)}
+ body:has(.info-page) .info-phone,body:has(.info-page) .info-plate,body:has(.info-page) .info-memory{bottom:5px;transform:scale(.43) rotate(-8deg)}
+ body:has(.info-page) .info-bubbles{bottom:8px;transform:scale(.6);transform-origin:bottom left}
+ body:has(.info-page) .info-footprints{bottom:5px;transform:scale(.4) rotate(17deg)}
+ body:has(.info-page) .info-poster-bottom{padding:3px 14px}
+ body:has(.info-page) .info-read{min-height:31px;font-size:11.5px}
+}
+
+/* El móvil apaisado distribuye texto y escena en dos columnas, sin escalar la app. */
+@media(max-width:767px) and (max-height:420px) and (orientation:landscape){
+ body:has(.info-page) .app-shell{padding-bottom:calc(58px + 20px + env(safe-area-inset-bottom,0px))}
+ body:has(.info-page) .info-page{grid-template-rows:40px minmax(0,1fr);padding:0 10px}
+ body:has(.info-page) .info-mobile-brand{position:absolute;left:50%;top:0;transform:translateX(-50%);height:40px;width:80px}
+ body:has(.info-page) .info-compact-header{grid-template-columns:84px 1fr 90px;align-items:center}
+ body:has(.info-page) .info-heading{text-align:right;grid-column:3}
+ body:has(.info-page) .info-heading>h1{font-size:21px}
+ body:has(.info-page) .info-heading>p{display:none}
+ body:has(.info-page) .info-deck{grid-template-rows:minmax(0,1fr) 28px;gap:18px}
+ body:has(.info-page) .info-track{margin:0 6px}
+ body:has(.info-page) .info-navigation{height:28px;gap:15px}
+ body:has(.info-page) .info-arrow{height:27px;width:27px}
+ body:has(.info-page) .info-position{display:flex;gap:8px;align-items:center}
+ body:has(.info-page) .info-dots button{height:26px;width:19px}
+ body:has(.info-page) .info-poster{display:grid;grid-template-columns:minmax(0,1fr) 115px;grid-template-rows:24px 24px minmax(0,1fr) 27px;border-radius:18px}
+ body:has(.info-page) .info-poster-top{grid-column:1 / -1;padding:2px 9px 0}
+ body:has(.info-page) .info-poster-top>span{font-size:11px}
+ body:has(.info-page) .info-favorite{width:24px;height:24px}
+ body:has(.info-page) .info-favorite .icon{height:16px;width:16px}
+ body:has(.info-page) .info-poster>h2{grid-column:1 / -1;font-size:19px;margin:2px 12px 3px;align-self:center}
+ body:has(.info-page) .info-points{grid-column:1;grid-row:3;gap:2px;padding:0 5px 0 12px;margin:0;align-content:center}
+ body:has(.info-page) .info-point-leaf{width:16px;height:16px;margin-top:2px}
+ body:has(.info-page) .info-point-leaf .icon{width:10px;height:10px}
+ body:has(.info-page) .info-points>li{gap:5px}
+ body:has(.info-page) .info-points>li>span:last-child{gap:0}
+ body:has(.info-page) .info-points strong{font-size:11px;line-height:1.1}
+ body:has(.info-page) .info-points>li>span>span{font-size:11px;line-height:1.1}
+ body:has(.info-page) .info-scene{grid-column:2;grid-row:3;height:100%;min-height:0;margin-right:7px;border-radius:13px}
+ body:has(.info-page) .info-scene:before{display:none}
+ body:has(.info-page) .info-scene-pet{width:90px;height:90px;right:3px;bottom:0}
+ body:has(.info-page) .info-coffee,body:has(.info-page) .info-phone,body:has(.info-page) .info-bubbles,body:has(.info-page) .info-plate,body:has(.info-page) .info-memory,body:has(.info-page) .info-footprints{left:6px;bottom:2px;transform:scale(.3);transform-origin:bottom left}
+ body:has(.info-page) .info-poster-bottom{grid-column:1 / -1;grid-row:4;padding:0 12px}
+ body:has(.info-page) .info-read{min-height:27px;font-size:11px}
+}
+
+/* Las dos tarjetas de fondo muestran el mazo, sin repetir textos bajo los controles. */
+body:has(.info-page) .is-stack-next>*,body:has(.info-page) .is-stack-after>*{visibility:hidden}

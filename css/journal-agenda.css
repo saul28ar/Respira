@@ -267,6 +267,63 @@ body.journal-agenda-view #app { padding-bottom: 0; }
 .journal-agenda .ja-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 42px; padding: 11px 17px; border: 1px solid #d0dcc6; border-radius: 30px; background: #f4f5ea; color: #5c7351; font-size: 12px; }
 .journal-agenda .ja-unsaved-dialog #journal-unsaved-status { margin: 15px 0 0; color: #a15158; font-size: 12px; }
 .journal-agenda #journal-unsaved-status:empty { display: none; }
+
+/* Páginas con título, pestañas que se cierran y pequeños hábitos. */
+.journal-agenda .ja-intro { justify-content: flex-start; gap: 30px; }
+.journal-agenda .ja-intro > div { min-width: 0; }
+.journal-agenda .ja-intro .ja-mascot { position: static; display: block; flex: none; width: 150px; height: 108px; object-fit: contain; align-self: center; transform: translateY(10px); opacity: 1; pointer-events: none; }
+.journal-agenda .ja-page-dots { position: absolute; right: 1px; bottom: 3px; left: 1px; display: flex; justify-content: center; align-items: center; gap: 2px; min-height: 5px; line-height: 1; }
+.journal-agenda .ja-page-dots i { position: static; display: block; flex: none; width: 3px; height: 3px; }
+.journal-agenda .ja-page-dots b { font-size: 6px; font-weight: 500; letter-spacing: -.04em; }
+.journal-agenda .ja-day-list { max-height: 390px; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: #cbd5bf transparent; }
+.journal-agenda .ja-day-link strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 500; font-size: 12px; }
+.journal-agenda .ja-pages-empty { margin: 5px 8px 10px; font-size: 11px; line-height: 1.65; color: #7c8872; }
+.journal-agenda .ja-paper > .ja-page-selector .ja-page-tab { display: inline-flex; align-items: center; flex: none; min-width: 0; margin-bottom: -1px; border: 1px solid #e3e2d7; border-bottom-color: #dddccf; border-radius: 8px 8px 0 0; background: #f5f4eb; color: #7a866d; }
+.journal-agenda .ja-paper > .ja-page-selector .ja-page-tab.is-active { border-color: #dcd2e6; border-bottom-color: #fffdf5; background: #fffdf5; color: #715a83; box-shadow: inset 0 2px 0 #bba7cc; }
+.journal-agenda .ja-paper > .ja-page-selector .ja-page-tab .ja-page-choice { margin: 0; min-height: 36px; padding: 8px 6px 9px 13px; border: 0; border-radius: 8px 0 0 0; background: transparent; color: inherit; box-shadow: none; }
+.journal-agenda .ja-paper > .ja-page-selector .ja-page-tab .ja-page-close { display: grid; place-items: center; flex: none; width: 29px; min-height: 34px; margin-right: 3px; padding: 7px; border-radius: 8px; background: transparent; color: #9b91a1; }
+.journal-agenda .ja-page-close .icon { width: 11px; height: 11px; }
+.journal-agenda .ja-paper > .ja-page-selector .ja-page-close:hover { background: #eae4ef; color: #745c83; }
+.journal-agenda input.ja-editor-title { display: block; width: 100%; min-width: 0; min-height: 44px; margin: 0 0 13px; padding: 3px 4px 8px; border: 0; border-bottom: 1px solid transparent; border-radius: 0; background: transparent; font: 400 25px/1.35 Georgia, serif; color: #4a674b; text-overflow: ellipsis; }
+.journal-agenda input.ja-editor-title::placeholder { color: #8b967f; opacity: 1; }
+.journal-agenda input.ja-editor-title:focus { border-bottom-color: #d8e0cf; }
+.journal-agenda .ja-empty-editor { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 340px; padding: 35px 10px 55px; text-align: center; }
+.journal-agenda .ja-empty-editor > span { margin-bottom: 17px; color: #b2a0c0; font: 35px/1 Georgia, serif; }
+.journal-agenda .ja-empty-editor h3 { margin: 0 0 12px; color: #5c7453; font: 400 25px/1.25 Georgia, serif; }
+.journal-agenda .ja-empty-editor p { max-width: 290px; margin: 0 0 25px; font-size: 12px; line-height: 1.7; color: #859078; }
+.journal-agenda .ja-empty-editor > div { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; }
+.journal-agenda .ja-check-row { align-items: flex-start; }
+.journal-agenda .ja-check-row .ja-task-copy { display: block; min-width: 0; }
+.journal-agenda .ja-task-copy > span { display: block; }
+.journal-agenda .ja-task-repeat { display: block; margin-top: 4px; color: #a18bae; font-size: 9px; line-height: 1.3; text-decoration: none; }
+.journal-agenda .ja-check-row.is-done .ja-task-copy { text-decoration: none; }
+.journal-agenda .ja-task-tools { display: flex; align-items: center; gap: 1px; flex: none; }
+.journal-agenda .ja-task-pin { display: grid; place-items: center; flex: none; width: 24px; min-height: 28px; padding: 4px; border-radius: 8px; background: transparent; color: #aa96b6; }
+.journal-agenda .ja-task-pin .icon { width: 13px; height: 13px; }
+.journal-agenda .ja-task-pin:hover { color: #806291; background: #e9dfef; }
+.journal-agenda .ja-task-pin[aria-pressed="true"] { color: #805c99; background: #e9def1; }
+.journal-agenda .ja-schedule-dialog { width: min(440px, calc(100% - 28px)); max-height: calc(100svh - 28px); overflow-y: auto; padding: 28px; color: #49694b; border: 1px solid #d7ddcb; border-radius: 25px; background: #fffdf5; box-shadow: 0 20px 70px #1c482d33; }
+.journal-agenda .ja-schedule-dialog::backdrop { background: #214c3b44; backdrop-filter: blur(3px); }
+.journal-agenda .ja-schedule-dialog .ja-dialog-title { margin-bottom: 16px; }
+.journal-agenda .ja-schedule-dialog .ja-dialog-title h2 { font-size: 25px; }
+.journal-agenda .ja-schedule-dialog .ja-dialog-title button { flex: none; }
+.journal-agenda .ja-schedule-task { margin: 0 0 20px; padding-bottom: 19px; border-bottom: 1px solid #e5e6d9; color: #7f7488; font-size: 13px; line-height: 1.65; overflow-wrap: anywhere; }
+.journal-agenda .ja-repeat-options { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; min-width: 0; margin: 0 0 22px; padding: 0; border: 0; }
+.journal-agenda .ja-repeat-options label { display: flex; align-items: center; gap: 8px; min-width: 0; min-height: 47px; padding: 10px 12px; border: 1px solid #dfdfd4; border-radius: 12px; color: #7d8171; background: #f8f7ef; cursor: pointer; font-size: 12px; }
+.journal-agenda .ja-repeat-options label:has(input:checked) { color: #6d577e; border-color: #cdbbda; background: #f0e9f5; }
+.journal-agenda .ja-repeat-options input { flex: none; accent-color: #9575a9; width: 15px; height: 15px; margin: 0; }
+.journal-agenda .ja-schedule-calendar { padding: 17px; border: 1px solid #e5e6d9; border-radius: 17px; background: #f8f7ef; }
+.journal-agenda .ja-schedule-calendar .ja-calendar-head strong { font-size: 20px; }
+.journal-agenda .ja-schedule-calendar .ja-calendar-grid > button { min-height: 36px; padding: 6px 0; }
+.journal-agenda .ja-schedule-calendar .ja-calendar-grid > button[aria-pressed="true"] { background: #9278a5; }
+.journal-agenda .ja-schedule-count { margin: 13px 0 0; font-size: 10px; color: #8c7a97; }
+.journal-agenda .ja-schedule-note { margin: 3px 3px 24px; color: #8b947e; font: italic 13px/1.6 Georgia, serif; }
+.journal-agenda .ja-schedule-date-help { margin: -5px 2px 14px; color: #86917b; font-size: 11px; line-height: 1.6; }
+.journal-agenda .ja-schedule-error { margin: 0 0 13px; color: #a15158; font-size: 12px; }
+.journal-agenda .ja-schedule-error:empty { display: none; }
+.journal-agenda .ja-schedule-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 9px; margin-top: 22px; }
+.journal-agenda .ja-schedule-actions > button { padding-right: 17px; padding-left: 17px; }
+.journal-agenda .ja-unpin { display: block; margin: 16px auto -5px; padding: 8px; background: transparent; color: #9a7e9f; font-size: 11px; }
 @media (min-width: 768px) and (max-width: 1100px) {
   .journal-agenda .ja-layout { grid-template-columns: 270px minmax(0, 1fr); gap: 20px; }
   .journal-agenda .ja-tasks { padding: 20px 18px 18px; }
@@ -323,4 +380,51 @@ body.journal-agenda-view #app { padding-bottom: 0; }
   .journal-agenda .ja-paper > .ja-page-selector .ja-add-page { min-height: 30px; margin: 0 0 4px 3px; padding: 6px 9px; font-size: 10px; }
   .journal-agenda .ja-unsaved-dialog { padding: 25px 22px; }
   .journal-agenda .ja-unsaved-dialog h2 { font-size: 24px; }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .journal-agenda .ja-checklist { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .journal-agenda .ja-check-row { display: flex; min-height: 66px; padding: 10px 7px 10px 10px; }
+  .journal-agenda .ja-check-row label { display: flex; align-items: flex-start; font-size: 11px; }
+  .journal-agenda .ja-check-row input { display: block; margin: 1px 0 0; }
+  .journal-agenda .ja-task-delete { position: static; min-height: 28px; }
+}
+@media (max-width: 767px), (max-width: 1024px) and (max-height: 600px) and (orientation: landscape) and (hover: none) and (pointer: coarse) {
+  .journal-agenda .ja-intro { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 21px; }
+  .journal-agenda .ja-intro > div { flex: 1; min-width: 0; padding-right: 0; }
+  .journal-agenda .ja-intro .ja-mascot { width: 100px; height: 76px; transform: translateY(10px); }
+  .journal-agenda .ja-intro h1 { font-size: clamp(26px, 7.5vw, 30px); }
+  .journal-agenda .ja-day-list { max-height: 300px; }
+  .journal-agenda .ja-day-link:nth-child(n+4) { display: flex; }
+  .journal-agenda .ja-day-link strong { font-size: 12px; }
+  .journal-agenda .ja-day-link small { max-width: none; }
+  .journal-agenda .ja-paper > .ja-page-selector .ja-page-tab .ja-page-choice { min-height: 36px; padding: 8px 3px 9px 10px; }
+  .journal-agenda .ja-paper > .ja-page-selector .ja-page-tab .ja-page-close { min-height: 36px; width: 30px; margin-right: 1px; padding: 8px; }
+  .journal-agenda input.ja-editor-title { min-height: 42px; margin-bottom: 10px; font-size: 22px; }
+  .journal-agenda .ja-check-row { align-items: center; }
+  .journal-agenda .ja-task-tools { gap: 1px; }
+  .journal-agenda .ja-task-pin { width: 32px; min-height: 40px; }
+  .journal-agenda .ja-task-pin .icon { width: 15px; height: 15px; }
+  .journal-agenda .ja-task-repeat { margin-top: 2px; font-size: 9px; }
+  .journal-agenda .ja-empty-editor { min-height: 300px; padding: 26px 2px 42px; }
+  .journal-agenda .ja-empty-editor h3 { font-size: 23px; }
+  .journal-agenda .ja-empty-editor p { font-size: 12px; }
+  .journal-agenda .ja-schedule-dialog { padding: 23px 19px; }
+  .journal-agenda .ja-schedule-dialog .ja-dialog-title h2 { font-size: 24px; }
+  .journal-agenda .ja-repeat-options { gap: 7px; }
+  .journal-agenda .ja-repeat-options label { padding: 10px 9px; font-size: 11px; }
+  .journal-agenda .ja-schedule-calendar { padding: 14px 12px; }
+  .journal-agenda .ja-schedule-calendar .ja-calendar-head strong { font-size: 18px; }
+  .journal-agenda .ja-schedule-actions { gap: 7px; }
+}
+@media (max-width: 350px) {
+  .journal-agenda .ja-intro { gap: 9px; }
+  .journal-agenda .ja-intro h1 { font-size: 26px; }
+  .journal-agenda .ja-intro .ja-mascot { width: 96px; height: 73px; }
+  .journal-agenda .ja-intro p { max-width: none; }
+  .journal-agenda input.ja-editor-title { font-size: 20px; }
+  .journal-agenda .ja-schedule-dialog { padding-right: 16px; padding-left: 16px; }
+  .journal-agenda .ja-schedule-dialog .ja-dialog-title { gap: 9px; }
+  .journal-agenda .ja-schedule-dialog .ja-dialog-title h2 { font-size: 22px; }
+  .journal-agenda .ja-schedule-actions > button { flex: 1 1 auto; padding-right: 12px; padding-left: 12px; }
 }
