@@ -1,29 +1,12 @@
-﻿RESPIRA 4.15 — TODOS LOS CAMBIOS DESDE 4.14
+﻿RESPIRA 4.16 — CAMBIOS DESDE 4.15
 
-1. Descomprime este ZIP.
-2. Abre tu carpeta de Respira, donde está index.html.
-3. Copia dentro TODO el contenido descomprimido y acepta Reemplazar.
-4. Conserva los demás archivos. No borres carpetas ni datos de la app.
+1. Descomprime el ZIP.
+2. Abre la carpeta de Respira 4.15, donde está index.html.
+3. Copia dentro todos los archivos y carpetas descomprimidos y acepta Reemplazar.
+4. Conserva los archivos restantes y abre Respira desde la dirección habitual.
 
-Si actualizas mediante GitHub:
-- Abre tu repositorio Respira, pestaña Code.
-- Pulsa Add file > Upload files.
-- Arrastra los archivos y carpetas DESCOMPRIMIDOS, no el ZIP ni la carpeta exterior.
-- index.html debe quedar junto a css, js, imágenes e iconos.
-- Pulsa Commit changes y espera a que la publicación de Pages termine correctamente.
-- Cierra Respira y ábrela de nuevo para cargar la nueva versión.
+Si actualizas en GitHub, abre el repositorio Respira y elige Add file > Upload files.
+Arrastra el contenido descomprimido a la raíz, junto al index.html que ya tienes.
+Pulsa Commit changes. Cuando GitHub Pages termine correctamente, cierra y abre Respira.
 
-Incluye todos los cambios posteriores a 4.14:
-- Welcome PC «Un pequeño comienzo» con las tres mascotas integradas.
-- Portada móvil aprobada con mayor definición.
-- Consejos adaptado a una pantalla, con Volver y acceso único desde Métodos.
-- Favoritos con la imagen correspondiente a cada método dentro del círculo.
-- Meditación: texto acomodado y compañía elegida centrada.
-- Mi espacio para escribir: títulos editables, pestañas con X y lista por fecha y título.
-- Calendario con indicadores de las páginas escritas cada día; gatito ajustado.
-- Actividades fijadas para todos los días o fechas concretas, con casillas independientes.
-
-La X cierra la pestaña del escrito; no borra la página guardada.
-Se conservan notas, tareas, favoritos, compañía e imágenes anteriores.
-Usa la misma dirección web y navegador para conservar los datos guardados.
-Este ZIP contiene solo archivos nuevos o modificados y se aplica sobre Respira 4.14.
+Incluye las 18 infografías aprobadas en Consejos, con la corrección de Muévete un poco.

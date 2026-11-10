@@ -1,4 +1,5 @@
 import { methodGroups } from './method-categories.js';
+import { adviceInfographics } from './advice-infographic-data.js';
 
 export const catalog={
  breath:{title:'Respiración 4-4-4-4',sub:'Una técnica para recuperar la calma',emoji:'💨',color:'blue',kind:'breath'},
@@ -19,6 +20,17 @@ export const catalog={
 };
 
 export const groups=methodGroups;
+
+for (const [id, poster] of Object.entries(adviceInfographics)) {
+  catalog[id] = {
+    sub: poster.subtitle,
+    emoji: '🌿',
+    color: 'green',
+    ...catalog[id],
+    title: poster.title,
+    kind: 'advice'
+  };
+}
 
 export const breathPhases=[['Inhala',4],['Mantén',4],['Exhala',4],['Mantén',4]];
 

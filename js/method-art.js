@@ -1,3 +1,5 @@
+import { adviceInfographics } from './advice-infographic-data.js';
+
 const fallbackArtwork = './imagenes/inicio-web/consejos-hd.png';
 
 // Métodos y Favoritos comparten las mismas ilustraciones aprobadas.
@@ -20,5 +22,6 @@ const artwork = Object.freeze({
 });
 
 export function methodArtwork(id) {
-  return Object.hasOwn(artwork, id) ? artwork[id] : fallbackArtwork;
+  if (Object.hasOwn(artwork, id)) return artwork[id];
+  return Object.hasOwn(adviceInfographics, id) ? adviceInfographics[id].image : fallbackArtwork;
 }

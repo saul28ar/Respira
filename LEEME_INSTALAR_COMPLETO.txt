@@ -1,6 +1,7 @@
-﻿RESPIRA 4.15 — RESPALDO COMPLETO ACTUAL
+﻿RESPIRA 4.16 — RESPALDO COMPLETO
 
-Copia todo el contenido descomprimido en la carpeta de la app y acepta Reemplazar.
-index.html debe quedar junto a css, js, imagenes e iconos.
-Incluye todos los cambios aprobados hasta 4.15 y conserva los archivos anteriores.
-No se necesita borrar nada. Esta es la copia completa única actualizada.
+Copia el contenido descomprimido en la carpeta de Respira y acepta Reemplazar.
+Deja index.html junto a las carpetas css, js, imagenes e iconos.
+Abre Respira desde la dirección habitual para acceder a tus datos guardados.
+
+Consejos incluye las 18 infografías aprobadas, con texto y fuentes consultables.

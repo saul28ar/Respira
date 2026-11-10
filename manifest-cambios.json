@@ -1,0 +1,173 @@
+{
+  "version_base": "4.15",
+  "version_nueva": "4.16",
+  "sha256_base_zip": "65eabed226ad454ae7f5491c7943848a11e59a723ccb787efc05b4d2fbb5a4be",
+  "eliminaciones": [],
+  "archivos": [
+    {
+      "archivo": "ACTUALIZAR_RESPIRA.txt",
+      "bytes": 635,
+      "sha256": "2d82ef7b69f32130aafcc488a4425a6f936b2024edec3fbeb74430c2e95164fb"
+    },
+    {
+      "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
+      "bytes": 635,
+      "sha256": "2d82ef7b69f32130aafcc488a4425a6f936b2024edec3fbeb74430c2e95164fb"
+    },
+    {
+      "archivo": "LEEME_INSTALAR_COMPLETO.txt",
+      "bytes": 344,
+      "sha256": "6f5c6e933ebc9a43cfa63fecf7dd07e4892bc31d1c8b2ebdf849670a0e62c6aa"
+    },
+    {
+      "archivo": "css/advice-infographics.css",
+      "bytes": 10067,
+      "sha256": "3b08195b6c339cafaf31496dc9522b690999817b31f87cf4b710765832fbc840"
+    },
+    {
+      "archivo": "css/advice-stack.css",
+      "bytes": 1534,
+      "sha256": "29d05d030c706016eef16ab66093fc5f1485b1d8d0e21512dba78bcdca6d56a4"
+    },
+    {
+      "archivo": "css/advice.css",
+      "bytes": 10579,
+      "sha256": "4d33ebc946f93a95f79d5ab7b77b379537d5445345e24f24dc4d71410c0de7bb"
+    },
+    {
+      "archivo": "imagenes/consejos/boundaries.png",
+      "bytes": 3089715,
+      "sha256": "72e8945865eec2fc19fc086015516d5341f8d3e98a4d142916afc0266d164736"
+    },
+    {
+      "archivo": "imagenes/consejos/caffeine.png",
+      "bytes": 2874286,
+      "sha256": "946156bea4f9d33855fb559466232d25de337c8226440db480e41b49a61bcfc1"
+    },
+    {
+      "archivo": "imagenes/consejos/comparison.png",
+      "bytes": 3007223,
+      "sha256": "0a6e4a9b4eb9aba0f969cc6007fd086033793baa819d2eefc1ceebac0139d47d"
+    },
+    {
+      "archivo": "imagenes/consejos/emotions.png",
+      "bytes": 2786470,
+      "sha256": "e483ebb5099d799f87b0834d8c6ce5ab0221a3ece066966864c74ec7a50b0e74"
+    },
+    {
+      "archivo": "imagenes/consejos/enjoy.png",
+      "bytes": 2830925,
+      "sha256": "360f0270d79f5ba55990b46c4ae17d0323f706f4c47896b21ef8556a0dbe8ebb"
+    },
+    {
+      "archivo": "imagenes/consejos/exam_nerves.png",
+      "bytes": 2769403,
+      "sha256": "a7609881e17a06b35707e403e1a736828891341e352105f15c6fcdf4c7498a7f"
+    },
+    {
+      "archivo": "imagenes/consejos/food.png",
+      "bytes": 2917439,
+      "sha256": "968be5086890738e38d7369849d1a28be5350220473c5931437b3d52710c15eb"
+    },
+    {
+      "archivo": "imagenes/consejos/grief.png",
+      "bytes": 2933881,
+      "sha256": "c170ffdd1f41ff0baf468f4cad7c88fc8743703144855623d2afad1079e8728a"
+    },
+    {
+      "archivo": "imagenes/consejos/help.png",
+      "bytes": 2891591,
+      "sha256": "426fd3da6a7c02ed229991ab9304cf14512de5ca81e9b46097bf9cf10f06ffcc"
+    },
+    {
+      "archivo": "imagenes/consejos/kindness.png",
+      "bytes": 2660060,
+      "sha256": "f94afe0860089fbba3ed99fa59fd65f772c605db9e853863582e0b53f05e8d10"
+    },
+    {
+      "archivo": "imagenes/consejos/move.png",
+      "bytes": 2914047,
+      "sha256": "26a21fea7920528e2d6a4bcd88d201f5f6fe15babdc31d393a20fb550dae2e41"
+    },
+    {
+      "archivo": "imagenes/consejos/perfectionism.png",
+      "bytes": 3046812,
+      "sha256": "14321fc2e7716c60abf3afe669213b98bf573ce821833e94507294448e9a397d"
+    },
+    {
+      "archivo": "imagenes/consejos/planning.png",
+      "bytes": 2609018,
+      "sha256": "30c85aa77a3af59defd62ab4b02025c4d29fe90f65d1cc99af2f21046d2938a0"
+    },
+    {
+      "archivo": "imagenes/consejos/rest.png",
+      "bytes": 2940703,
+      "sha256": "297099c641cbaa7aaea68797a44c451cc60bda83da6016965517db4d410dcd89"
+    },
+    {
+      "archivo": "imagenes/consejos/study_breaks.png",
+      "bytes": 2647608,
+      "sha256": "630ec5c0f5c4684ac6f4ff5df6c9b346f432c7479d34c269e42b1527b9aec143"
+    },
+    {
+      "archivo": "imagenes/consejos/talk.png",
+      "bytes": 2569589,
+      "sha256": "8f592a7df080ec82496d342780c9d5a8d8e583bca0d45cf3433e06a8daefed88"
+    },
+    {
+      "archivo": "imagenes/consejos/uncertainty.png",
+      "bytes": 2696667,
+      "sha256": "4b3eaca74831c0f53efc8730e426f94b9ae8d17b1d74601515900e5a950d08d8"
+    },
+    {
+      "archivo": "imagenes/consejos/unplug.png",
+      "bytes": 2939821,
+      "sha256": "f547f51bc5dbbd40af149955412a3ea0062e1c8b466007b5647aff96c418c1e6"
+    },
+    {
+      "archivo": "index.html",
+      "bytes": 2491,
+      "sha256": "aa3e8b1e71c1c162fb77a592a676dbc2ee8dca20b77f73f1ac2331cf0bab57fe"
+    },
+    {
+      "archivo": "js/advice-infographic-data.js",
+      "bytes": 28986,
+      "sha256": "714cf89bb2f568814e8718501db5368498097f1fb00adc0f85959b14e57f6124"
+    },
+    {
+      "archivo": "js/components/advice-infographics.js",
+      "bytes": 3493,
+      "sha256": "4625a210270571c36f605eb07098a5a6d3255c30eb9de5557733f942b8e09f14"
+    },
+    {
+      "archivo": "js/components/advice.js",
+      "bytes": 13693,
+      "sha256": "106a8ca0c5f7b66540c97e2e26bce4da3c13407664fd9c46e0cc2326c960c8fa"
+    },
+    {
+      "archivo": "js/data.js",
+      "bytes": 10334,
+      "sha256": "1edf85877eeeabe7b7f59cc2fef284ae18b3e7cc516bf7f5673e6d90b99dafe0"
+    },
+    {
+      "archivo": "js/method-art.js",
+      "bytes": 1058,
+      "sha256": "4c8614c7ec866af814e624e940ed07304e974e3cd7a0b5ec42191ce23c6bdcd5"
+    },
+    {
+      "archivo": "js/method-categories.js",
+      "bytes": 1092,
+      "sha256": "b4b3b84f2a1b2f62562c408a050b8d269894831a977edf88734bf3c0b8aac5d7"
+    },
+    {
+      "archivo": "manifest-entrega.json",
+      "bytes": 35366,
+      "sha256": "69efad45e02c7318feb113008acfe664520e72d8cd4aef5f88cddbad080c4b75"
+    },
+    {
+      "archivo": "sw.js",
+      "bytes": 5889,
+      "sha256": "ae6f51db6261b34e82b0ff880e801ffd978b9e9c43f51d802fcf2a1fa9fd5428"
+    }
+  ]
+}

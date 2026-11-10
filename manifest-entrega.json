@@ -1,11 +1,11 @@
 {
-  "version": "Respira 4.15 · Welcome, escritura, Favoritos y Consejos",
-  "version_id": "4.15",
+  "version": "Respira 4.16 · Infografías de Consejos",
+  "version_id": "4.16",
   "fecha": "2026-11-10",
-  "tipo": "Completa; respaldo único con archivos anteriores conservados",
+  "tipo": "Respaldo completo de la entrega 4.16",
   "base_parche": {
-    "version": "4.14",
-    "sha256": "093e48cb8237a572d56bbf07fcc5fdb3b13bb02e2ad08b955bea8e6885e0b55b"
+    "version": "4.15",
+    "sha256": "65eabed226ad454ae7f5491c7943848a11e59a723ccb787efc05b4d2fbb5a4be"
   },
   "runtime": [
     "css/advice-infographics.css",
@@ -35,6 +35,24 @@
     "iconos/icon-192.png",
     "iconos/icon-512.png",
     "iconos/icon-maskable-512.png",
+    "imagenes/consejos/boundaries.png",
+    "imagenes/consejos/caffeine.png",
+    "imagenes/consejos/comparison.png",
+    "imagenes/consejos/emotions.png",
+    "imagenes/consejos/enjoy.png",
+    "imagenes/consejos/exam_nerves.png",
+    "imagenes/consejos/food.png",
+    "imagenes/consejos/grief.png",
+    "imagenes/consejos/help.png",
+    "imagenes/consejos/kindness.png",
+    "imagenes/consejos/move.png",
+    "imagenes/consejos/perfectionism.png",
+    "imagenes/consejos/planning.png",
+    "imagenes/consejos/rest.png",
+    "imagenes/consejos/study_breaks.png",
+    "imagenes/consejos/talk.png",
+    "imagenes/consejos/uncertainty.png",
+    "imagenes/consejos/unplug.png",
     "imagenes/inicio-web/consejos-hd.png",
     "imagenes/inicio-web/gatito-hd.png",
     "imagenes/inicio-web/lago-hd.png",
@@ -76,6 +94,7 @@
     "index.html",
     "js/advice-controller.js",
     "js/advice-data.js",
+    "js/advice-infographic-data.js",
     "js/advice-stack.js",
     "js/advice-swipe.js",
     "js/app.js",
@@ -122,52 +141,43 @@
     "sw.js"
   ],
   "verificacion": {
-    "informes": {
-      "work/qa-415/browser-audit.json": {
-        "passed": 155,
-        "failed": 0,
-        "sha256": "bf44e6a5bfab2a3d8d1016b7faf1cf4e22c3adf7baf7ea6db23950630c6fe502"
-      },
-      "work/qa-415/journal-controller-report.json": {
-        "passed": 13,
-        "failed": 0,
-        "sha256": "1e6c3bb4e8fe8774639aba85082fc3777924c0f62ebac594a0d670121e1ea307"
-      },
-      "work/qa-415/method-art-meditation-report.json": {
-        "passed": 36,
-        "failed": 0,
-        "sha256": "9ae59488f0467b9e2e1ae1ad673134af770120f740803d5f8819d03814922366"
-      },
-      "work/qa-415/methods-advice-entry-report.json": {
-        "passed": 12,
-        "failed": 0,
-        "sha256": "cee495251409b9e379ea31b2c47d89ee446e28e2f81531ec42bba2b22e83db3b"
-      },
-      "work/qa-415-advice/advice-fit-production-report.json": {
-        "passed": 36,
-        "failed": 0,
-        "sha256": "dc6aeae7febab59aa5968f610bf0ef974b2de8d84f8509915fa680175fe1caa0"
-      },
-      "work/welcome-pc-cinco/qa-welcome-415.json": {
-        "passed": 10,
-        "failed": 0,
-        "sha256": "78a4fb95b9b09db7798f29e68a52070204b9e935fe587429c63e936558aac0da"
-      }
+    "informe": "work/qa-416/verificacion.json",
+    "informe_sha256": "e39c1c1fef863c4c46d654170495618978c40600bea723075af11ecd17369a2f",
+    "passed": 46,
+    "failed": 0,
+    "infografias_aprobadas": {
+      "imagenes/consejos/caffeine.png": "946156bea4f9d33855fb559466232d25de337c8226440db480e41b49a61bcfc1",
+      "imagenes/consejos/move.png": "26a21fea7920528e2d6a4bcd88d201f5f6fe15babdc31d393a20fb550dae2e41",
+      "imagenes/consejos/unplug.png": "f547f51bc5dbbd40af149955412a3ea0062e1c8b466007b5647aff96c418c1e6",
+      "imagenes/consejos/talk.png": "8f592a7df080ec82496d342780c9d5a8d8e583bca0d45cf3433e06a8daefed88",
+      "imagenes/consejos/food.png": "968be5086890738e38d7369849d1a28be5350220473c5931437b3d52710c15eb",
+      "imagenes/consejos/rest.png": "297099c641cbaa7aaea68797a44c451cc60bda83da6016965517db4d410dcd89",
+      "imagenes/consejos/kindness.png": "f94afe0860089fbba3ed99fa59fd65f772c605db9e853863582e0b53f05e8d10",
+      "imagenes/consejos/planning.png": "30c85aa77a3af59defd62ab4b02025c4d29fe90f65d1cc99af2f21046d2938a0",
+      "imagenes/consejos/study_breaks.png": "630ec5c0f5c4684ac6f4ff5df6c9b346f432c7479d34c269e42b1527b9aec143",
+      "imagenes/consejos/exam_nerves.png": "a7609881e17a06b35707e403e1a736828891341e352105f15c6fcdf4c7498a7f",
+      "imagenes/consejos/boundaries.png": "72e8945865eec2fc19fc086015516d5341f8d3e98a4d142916afc0266d164736",
+      "imagenes/consejos/comparison.png": "0a6e4a9b4eb9aba0f969cc6007fd086033793baa819d2eefc1ceebac0139d47d",
+      "imagenes/consejos/perfectionism.png": "14321fc2e7716c60abf3afe669213b98bf573ce821833e94507294448e9a397d",
+      "imagenes/consejos/help.png": "426fd3da6a7c02ed229991ab9304cf14512de5ca81e9b46097bf9cf10f06ffcc",
+      "imagenes/consejos/emotions.png": "e483ebb5099d799f87b0834d8c6ce5ab0221a3ece066966864c74ec7a50b0e74",
+      "imagenes/consejos/uncertainty.png": "4b3eaca74831c0f53efc8730e426f94b9ae8d17b1d74601515900e5a950d08d8",
+      "imagenes/consejos/enjoy.png": "360f0270d79f5ba55990b46c4ae17d0323f706f4c47896b21ef8556a0dbe8ebb",
+      "imagenes/consejos/grief.png": "c170ffdd1f41ff0baf468f4cad7c88fc8743703144855623d2afad1079e8728a"
     },
-    "dependencias_estaticas": 154,
     "archivos_anteriores_conservados": true,
     "publicado": false
   },
   "archivos": [
     {
       "archivo": "ACTUALIZAR_RESPIRA.txt",
-      "bytes": 1639,
-      "sha256": "435012fa841b43f86742d9cf6374c0b99db38ef658d1d195a1971a97453fbda7"
+      "bytes": 635,
+      "sha256": "2d82ef7b69f32130aafcc488a4425a6f936b2024edec3fbeb74430c2e95164fb"
     },
     {
       "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
-      "bytes": 1639,
-      "sha256": "435012fa841b43f86742d9cf6374c0b99db38ef658d1d195a1971a97453fbda7"
+      "bytes": 635,
+      "sha256": "2d82ef7b69f32130aafcc488a4425a6f936b2024edec3fbeb74430c2e95164fb"
     },
     {
       "archivo": "BARRA_MOVIL_APROBADO.md",
@@ -236,8 +246,8 @@
     },
     {
       "archivo": "LEEME_INSTALAR_COMPLETO.txt",
-      "bytes": 345,
-      "sha256": "72efc19bd7b336a66ccfe062fd5a7808bb143c6f68d8bf9095113e63e598c501"
+      "bytes": 344,
+      "sha256": "6f5c6e933ebc9a43cfa63fecf7dd07e4892bc31d1c8b2ebdf849670a0e62c6aa"
     },
     {
       "archivo": "MASCOTAS_APROBADO.md",
@@ -286,18 +296,18 @@
     },
     {
       "archivo": "css/advice-infographics.css",
-      "bytes": 24382,
-      "sha256": "910388ce110927f522dab3a2da9c954ecf924fbd8ee2fd352eb151de6e60d27f"
+      "bytes": 10067,
+      "sha256": "3b08195b6c339cafaf31496dc9522b690999817b31f87cf4b710765832fbc840"
     },
     {
       "archivo": "css/advice-stack.css",
-      "bytes": 3670,
-      "sha256": "5c92e8676bf193d10d521d42d6100e7e7de4a9f120811c0c4dd297f090258672"
+      "bytes": 1534,
+      "sha256": "29d05d030c706016eef16ab66093fc5f1485b1d8d0e21512dba78bcdca6d56a4"
     },
     {
       "archivo": "css/advice.css",
-      "bytes": 8531,
-      "sha256": "97eb2345212cb39c62f7bb5886dad8486ce398353450db910ded7321d45ac415"
+      "bytes": 10579,
+      "sha256": "4d33ebc946f93a95f79d5ab7b77b379537d5445345e24f24dc4d71410c0de7bb"
     },
     {
       "archivo": "css/base.css",
@@ -433,6 +443,96 @@
       "archivo": "iconos/lunita-esmeralda-maestro.png",
       "bytes": 1684992,
       "sha256": "a48889c2f5e676992977efe8d9a7a8fb5d5511224253db494b822931f495f34e"
+    },
+    {
+      "archivo": "imagenes/consejos/boundaries.png",
+      "bytes": 3089715,
+      "sha256": "72e8945865eec2fc19fc086015516d5341f8d3e98a4d142916afc0266d164736"
+    },
+    {
+      "archivo": "imagenes/consejos/caffeine.png",
+      "bytes": 2874286,
+      "sha256": "946156bea4f9d33855fb559466232d25de337c8226440db480e41b49a61bcfc1"
+    },
+    {
+      "archivo": "imagenes/consejos/comparison.png",
+      "bytes": 3007223,
+      "sha256": "0a6e4a9b4eb9aba0f969cc6007fd086033793baa819d2eefc1ceebac0139d47d"
+    },
+    {
+      "archivo": "imagenes/consejos/emotions.png",
+      "bytes": 2786470,
+      "sha256": "e483ebb5099d799f87b0834d8c6ce5ab0221a3ece066966864c74ec7a50b0e74"
+    },
+    {
+      "archivo": "imagenes/consejos/enjoy.png",
+      "bytes": 2830925,
+      "sha256": "360f0270d79f5ba55990b46c4ae17d0323f706f4c47896b21ef8556a0dbe8ebb"
+    },
+    {
+      "archivo": "imagenes/consejos/exam_nerves.png",
+      "bytes": 2769403,
+      "sha256": "a7609881e17a06b35707e403e1a736828891341e352105f15c6fcdf4c7498a7f"
+    },
+    {
+      "archivo": "imagenes/consejos/food.png",
+      "bytes": 2917439,
+      "sha256": "968be5086890738e38d7369849d1a28be5350220473c5931437b3d52710c15eb"
+    },
+    {
+      "archivo": "imagenes/consejos/grief.png",
+      "bytes": 2933881,
+      "sha256": "c170ffdd1f41ff0baf468f4cad7c88fc8743703144855623d2afad1079e8728a"
+    },
+    {
+      "archivo": "imagenes/consejos/help.png",
+      "bytes": 2891591,
+      "sha256": "426fd3da6a7c02ed229991ab9304cf14512de5ca81e9b46097bf9cf10f06ffcc"
+    },
+    {
+      "archivo": "imagenes/consejos/kindness.png",
+      "bytes": 2660060,
+      "sha256": "f94afe0860089fbba3ed99fa59fd65f772c605db9e853863582e0b53f05e8d10"
+    },
+    {
+      "archivo": "imagenes/consejos/move.png",
+      "bytes": 2914047,
+      "sha256": "26a21fea7920528e2d6a4bcd88d201f5f6fe15babdc31d393a20fb550dae2e41"
+    },
+    {
+      "archivo": "imagenes/consejos/perfectionism.png",
+      "bytes": 3046812,
+      "sha256": "14321fc2e7716c60abf3afe669213b98bf573ce821833e94507294448e9a397d"
+    },
+    {
+      "archivo": "imagenes/consejos/planning.png",
+      "bytes": 2609018,
+      "sha256": "30c85aa77a3af59defd62ab4b02025c4d29fe90f65d1cc99af2f21046d2938a0"
+    },
+    {
+      "archivo": "imagenes/consejos/rest.png",
+      "bytes": 2940703,
+      "sha256": "297099c641cbaa7aaea68797a44c451cc60bda83da6016965517db4d410dcd89"
+    },
+    {
+      "archivo": "imagenes/consejos/study_breaks.png",
+      "bytes": 2647608,
+      "sha256": "630ec5c0f5c4684ac6f4ff5df6c9b346f432c7479d34c269e42b1527b9aec143"
+    },
+    {
+      "archivo": "imagenes/consejos/talk.png",
+      "bytes": 2569589,
+      "sha256": "8f592a7df080ec82496d342780c9d5a8d8e583bca0d45cf3433e06a8daefed88"
+    },
+    {
+      "archivo": "imagenes/consejos/uncertainty.png",
+      "bytes": 2696667,
+      "sha256": "4b3eaca74831c0f53efc8730e426f94b9ae8d17b1d74601515900e5a950d08d8"
+    },
+    {
+      "archivo": "imagenes/consejos/unplug.png",
+      "bytes": 2939821,
+      "sha256": "f547f51bc5dbbd40af149955412a3ea0062e1c8b466007b5647aff96c418c1e6"
     },
     {
       "archivo": "imagenes/inicio-web/consejos-hd.png",
@@ -672,7 +772,7 @@
     {
       "archivo": "index.html",
       "bytes": 2491,
-      "sha256": "1734be89406d264129180b209b1e1cfbaa07cca2f5bdc1a9c8806bc3b9f1d642"
+      "sha256": "aa3e8b1e71c1c162fb77a592a676dbc2ee8dca20b77f73f1ac2331cf0bab57fe"
     },
     {
       "archivo": "js/advice-controller.js",
@@ -683,6 +783,11 @@
       "archivo": "js/advice-data.js",
       "bytes": 8690,
       "sha256": "6a255a364c1d48313021daa5cae41d04de7937eb96232c88b5eb8a0ecf9f01d0"
+    },
+    {
+      "archivo": "js/advice-infographic-data.js",
+      "bytes": 28986,
+      "sha256": "714cf89bb2f568814e8718501db5368498097f1fb00adc0f85959b14e57f6124"
     },
     {
       "archivo": "js/advice-stack.js",
@@ -716,13 +821,13 @@
     },
     {
       "archivo": "js/components/advice-infographics.js",
-      "bytes": 6085,
-      "sha256": "f6f3f8d0b97a1990628bbe83cc58dd233b1315a52eab15b5ce00ca684fd42e65"
+      "bytes": 3493,
+      "sha256": "4625a210270571c36f605eb07098a5a6d3255c30eb9de5557733f942b8e09f14"
     },
     {
       "archivo": "js/components/advice.js",
-      "bytes": 11710,
-      "sha256": "cadee8a7154c0952783ba967755c998911a54627120462f33f3d16467b704d39"
+      "bytes": 13693,
+      "sha256": "106a8ca0c5f7b66540c97e2e26bce4da3c13407664fd9c46e0cc2326c960c8fa"
     },
     {
       "archivo": "js/components/breathing-companion.js",
@@ -836,8 +941,8 @@
     },
     {
       "archivo": "js/data.js",
-      "bytes": 10035,
-      "sha256": "6b96232aca3458006e0ba68ee16c513b3dd4394e8e5ed57aa90830340ae020ba"
+      "bytes": 10334,
+      "sha256": "1edf85877eeeabe7b7f59cc2fef284ae18b3e7cc516bf7f5673e6d90b99dafe0"
     },
     {
       "archivo": "js/home-pet-interaction.js",
@@ -871,13 +976,13 @@
     },
     {
       "archivo": "js/method-art.js",
-      "bytes": 908,
-      "sha256": "663e072801834e2ba90122655b703f4cea17ea087ffd4e4462d42e289c5e0f43"
+      "bytes": 1058,
+      "sha256": "4c8614c7ec866af814e624e940ed07304e974e3cd7a0b5ec42191ce23c6bdcd5"
     },
     {
       "archivo": "js/method-categories.js",
-      "bytes": 1043,
-      "sha256": "33dbd7e0b160032f5e1c73f27d82a585af37b45b4a2a19ca2e51c9892de3257b"
+      "bytes": 1092,
+      "sha256": "b4b3b84f2a1b2f62562c408a050b8d269894831a977edf88734bf3c0b8aac5d7"
     },
     {
       "archivo": "js/quick-techniques-controller.js",
@@ -911,8 +1016,8 @@
     },
     {
       "archivo": "sw.js",
-      "bytes": 5081,
-      "sha256": "795c6e675a3ca32f47b72c3f3502b229032732a04854e67c8e23d5be54617e14"
+      "bytes": 5889,
+      "sha256": "ae6f51db6261b34e82b0ff880e801ffd978b9e9c43f51d802fcf2a1fa9fd5428"
     }
   ]
 }
