@@ -13,7 +13,9 @@ export const catalog={
  caffeine:{title:'Evita la cafeína en exceso',sub:'En algunas personas aumenta el nerviosismo',emoji:'☕',color:'green',kind:'advice',script:'Observa si el café o las bebidas energéticas intensifican tu inquietud. Si es así, reduce el consumo gradualmente, especialmente por la tarde.'},
  move:{title:'Muévete un poco',sub:'El movimiento puede aliviar la tensión',emoji:'🚶',color:'yellow',kind:'advice',script:'Camina unos minutos, estírate suavemente o cambia de postura. Adapta la actividad a tus posibilidades y a cómo te sientes.'},
  unplug:{title:'Desconéctate un rato',sub:'Aléjate un momento de las pantallas',emoji:'📱',color:'pink',kind:'advice',script:'Prueba una pausa breve de las notificaciones. Mira por la ventana, bebe agua o toma contacto con lo que te rodea.'},
- talk:{title:'Habla con alguien',sub:'No tienes que afrontarlo todo a solas',emoji:'🫂',color:'blue',kind:'advice',script:'Si te resulta posible, conversa con alguien de confianza. Pedir acompañamiento también es una forma de cuidarte.'}
+ talk:{title:'Habla con alguien',sub:'No tienes que afrontarlo todo a solas',emoji:'🫂',color:'blue',kind:'advice',script:'Si te resulta posible, conversa con alguien de confianza. Pedir acompañamiento también es una forma de cuidarte.'},
+ food:{title:'Comer con calma, sin culpa',sub:'Escucha tus necesidades sin juzgarte',emoji:'🌿',color:'green',kind:'advice'},
+ grief:{title:'Acompañar el duelo',sub:'Un espacio para lo que sientes',emoji:'♡',color:'purple',kind:'advice'}
 };
 
 export const groups=methodGroups;

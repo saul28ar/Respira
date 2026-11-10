@@ -5,6 +5,9 @@ import { icon } from '../icons.js';
 import { backButton } from './common.js';
 import { renderBreathingCompanion } from './breathing-companion.js';
 import { renderMeditationCollection, renderMeditationDetail, meditationMethods } from './meditation.js';
+import { renderQuickCollection, renderQuickDetail, quickMethods } from './quick-techniques.js';
+import { renderAdviceCollection } from './advice-infographics.js';
+import { renderAdviceDetail } from './advice.js';
 
 export function favoriteButton(id) {
   const selected = favorites().includes(id);
@@ -16,6 +19,8 @@ function listItem(id) {
 }
 export function renderCollection(view, { petId = null } = {}) {
   if (view === 'meditation') return renderMeditationCollection({petId, favorite:favoriteButton});
+  if (view === 'quick') return renderQuickCollection({petId, favorite:favoriteButton});
+  if (view === 'advice') return renderAdviceCollection({petId, favoriteIds:favorites()});
   const titles = {methods:'Encuentra tu momento',meditation:'Meditación',quick:'Técnicas rápidas',advice:'Pequeñas ideas para ti',favorites:'Mis favoritos'};
   const ids = view === 'favorites' ? favorites() : view === 'methods' ? Object.keys(catalog) : groups[view];
   return `<main class="page collection-page">${['meditation','quick','advice'].includes(view) ? backButton() : ''}<div class="page-intro"><span class="eyebrow">${view==='favorites'?'CERQUITA DE TI':'A TU RITMO'}</span><h1>${titles[view]}</h1><p class="muted">${view==='favorites'?'Tus ejercicios guardados, a mano para cuando los necesites.':'No tienes que hacerlo todo. Elige algo que te venga bien hoy.'}</p></div><div class="activity-list">${ids.length ? ids.map(listItem).join('') : `<div class="empty-state">${icon('heart')}<h2>Un lugar para tus favoritos</h2><p>Guarda un ejercicio tocando su corazón y lo encontrarás aquí.</p><button type="button" class="primary" data-go="methods">Explorar métodos ${icon('arrow')}</button></div>`}</div></main>`;
@@ -29,6 +34,8 @@ export function renderDetail(id, { draft = '', petReturn = null, petId = null, m
   const x = catalog[id];
   if (x.kind === 'breath') return renderBreathingCompanion({ petId, mobile, petReturn, favoriteHtml: favoriteButton(id) });
   if (Object.hasOwn(meditationMethods, id)) return renderMeditationDetail(id, {petId, petReturn, favoriteHtml:favoriteButton(id)});
+  if (Object.hasOwn(quickMethods, id)) return renderQuickDetail(id, {petId, petReturn, favoriteHtml:favoriteButton(id)});
+  if (x.kind === 'advice') return renderAdviceDetail(id, {petId, favoriteIds:favorites()});
   let body = '';
   if (x.kind === 'ground' || x.kind === 'muscle') body = stepBody(x.kind);
   if (x.kind === 'reframe') body = `<section class="content-card reflection"><h2>1. Identifica el pensamiento</h2><p>¿Qué me estoy diciendo ahora?</p><h2>2. Pregúntate</h2><p>¿Tengo pruebas de que eso siempre es cierto? ¿Existe otra explicación?</p><h2>3. Prueba una alternativa</h2><p>En lugar de “todo va a salir mal”, intenta “es difícil, pero puedo avanzar paso a paso”.</p></section><button type="button" class="primary" data-open="journal">${icon('journal')} Escribir lo que siento</button>`;

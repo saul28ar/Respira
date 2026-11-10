@@ -1,11 +1,19 @@
 {
-  "version": "Respira 4.13 · Respiración y Meditación · Completa",
-  "version_id": "4.13",
+  "version": "Respira 4.14 · Técnicas rápidas, Consejos y círculos manejables",
+  "version_id": "4.14",
   "fecha": "2026-11-09",
-  "tipo": "Completo con archivos anteriores conservados",
+  "tipo": "Completa; respaldo único con archivos anteriores conservados",
+  "base_parche": {
+    "version": "4.13",
+    "sha256": "05edab16df193fc826246145e1ca0b9a6e4521c953bde6409c7444772a6e35ca"
+  },
   "runtime": [
+    "css/advice-infographics.css",
+    "css/advice-stack.css",
+    "css/advice.css",
     "css/base.css",
     "css/breathing-companion.css",
+    "css/circular-seek.css",
     "css/companions.css",
     "css/favorites.css",
     "css/home-desktop.css",
@@ -18,6 +26,7 @@
     "css/mobile-navigation.css",
     "css/more-jardin.css",
     "css/pet-select-jardin.css",
+    "css/quick-techniques.css",
     "css/welcome-desktop.css",
     "css/welcome-mobile-v2.css",
     "iconos/apple-touch-icon.png",
@@ -63,9 +72,16 @@
     "imagenes/welcome/logo-aprobado-v2.png",
     "imagenes/welcome/portada-aprobada-v2.png",
     "index.html",
+    "js/advice-controller.js",
+    "js/advice-data.js",
+    "js/advice-stack.js",
+    "js/advice-swipe.js",
     "js/app.js",
     "js/breathing-companion-controller.js",
+    "js/circular-seek.js",
     "js/components/activities.js",
+    "js/components/advice-infographics.js",
+    "js/components/advice.js",
     "js/components/breathing-companion.js",
     "js/components/common.js",
     "js/components/companions.js",
@@ -80,6 +96,7 @@
     "js/components/mobile-navigation.js",
     "js/components/more-jardin.js",
     "js/components/pet-select-jardin.js",
+    "js/components/quick-techniques.js",
     "js/components/settings.js",
     "js/components/welcome-desktop.js",
     "js/components/welcome-mobile.js",
@@ -93,44 +110,37 @@
     "js/meditation-controller.js",
     "js/meditation-data.js",
     "js/method-categories.js",
+    "js/quick-techniques-controller.js",
     "js/storage.js",
     "js/timer.js",
     "js/utils.js",
     "manifest.webmanifest",
     "sw.js"
   ],
-  "recursos_antiguos_conservados": [
-    "css/home.css",
-    "css/welcome-mobile.css",
-    "iconos/lunita-esmeralda-maestro.png",
-    "imagenes/inicio/arte-inicio-original.png",
-    "imagenes/inicio/logo.svg",
-    "imagenes/inicio/tarjeta-consejos.png",
-    "imagenes/inicio/tarjeta-meditacion.png",
-    "imagenes/inicio/tarjeta-respiracion.png",
-    "imagenes/inicio/tarjeta-tecnicas.png",
-    "imagenes/paisajes/lago.png",
-    "imagenes/welcome/boton-iniciar-original-v2.png",
-    "imagenes/welcome/portada-movil-feliz-serena-v1.png",
-    "js/components/home-art.js",
-    "js/components/home.js"
-  ],
   "verificacion": {
-    "integridad": "CRC y SHA256 de cada archivo; runtime idéntico al código local verificado; todos los nombres de la entrega anterior conservados.",
-    "navegador": "Respiración: 16 escenarios de integración; Meditación: 12 escenarios de integración, tres anchos y cuatro métodos. Sin errores de navegador ni recursos ausentes.",
-    "ejemplos": "Veinte ejemplos, cinco propios por método, aleatorios sin repetir dentro de su ciclo.",
-    "publicacion_remota": false
+    "navegador": {
+      "passed": 154,
+      "failed": 0,
+      "anchos": [
+        320,
+        390,
+        1440
+      ]
+    },
+    "dependencias_estaticas": 149,
+    "archivos_anteriores_conservados": true,
+    "publicado": false
   },
   "archivos": [
     {
       "archivo": "ACTUALIZAR_RESPIRA.txt",
-      "bytes": 1017,
-      "sha256": "df224bf60e3ac722d68e195802f98e807a729ff442e3eec33be2726102e45787"
+      "bytes": 1290,
+      "sha256": "6d5ea8bac43917027d258d090b39c9f7ca2ba9c8aeefb9be1f5c5d7d60b1e020"
     },
     {
       "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
-      "bytes": 1017,
-      "sha256": "df224bf60e3ac722d68e195802f98e807a729ff442e3eec33be2726102e45787"
+      "bytes": 1290,
+      "sha256": "6d5ea8bac43917027d258d090b39c9f7ca2ba9c8aeefb9be1f5c5d7d60b1e020"
     },
     {
       "archivo": "BARRA_MOVIL_APROBADO.md",
@@ -154,8 +164,8 @@
     },
     {
       "archivo": "ENTREGAS.md",
-      "bytes": 10857,
-      "sha256": "9192adba5a6ff37b6b698ef656976f3e85e34dabdec23630b7fe401d99f0b9f1"
+      "bytes": 11683,
+      "sha256": "efd6e8badcce694197f12923b1406e727d4ebb671d8a399cb29604c389dd4fce"
     },
     {
       "archivo": "FAVORITOS_APROBADO.md",
@@ -199,8 +209,8 @@
     },
     {
       "archivo": "LEEME_INSTALAR_COMPLETO.txt",
-      "bytes": 1017,
-      "sha256": "df224bf60e3ac722d68e195802f98e807a729ff442e3eec33be2726102e45787"
+      "bytes": 392,
+      "sha256": "2d7cb0541833623afcbd37f38415a18542dd24e2c38501c88dcd91986491c29c"
     },
     {
       "archivo": "MASCOTAS_APROBADO.md",
@@ -248,14 +258,34 @@
       "sha256": "a11b2421514993227feee2ada6a57364d13a53bd1a8cdd8c2c78ca88adc31a9a"
     },
     {
+      "archivo": "css/advice-infographics.css",
+      "bytes": 12440,
+      "sha256": "5909f46b5e40c40b17439c74c57bd381a89b10c3604ca1a67edb8d5098b78993"
+    },
+    {
+      "archivo": "css/advice-stack.css",
+      "bytes": 3670,
+      "sha256": "5c92e8676bf193d10d521d42d6100e7e7de4a9f120811c0c4dd297f090258672"
+    },
+    {
+      "archivo": "css/advice.css",
+      "bytes": 8531,
+      "sha256": "97eb2345212cb39c62f7bb5886dad8486ce398353450db910ded7321d45ac415"
+    },
+    {
       "archivo": "css/base.css",
       "bytes": 9776,
       "sha256": "ecfe9d3f5835a237be36ea8643c531c32f7b1996e89d73177e4e688d538ac619"
     },
     {
       "archivo": "css/breathing-companion.css",
-      "bytes": 5467,
-      "sha256": "fdf7f903abeb6b6e4d07c72f8219a44bb588dd8074e354d9b979dfbf64e05767"
+      "bytes": 6369,
+      "sha256": "caf553de7bb86500da2afca0a78a6243cc7e8b190e12f82844c6c6b14266b971"
+    },
+    {
+      "archivo": "css/circular-seek.css",
+      "bytes": 1079,
+      "sha256": "bbfd30d6965f9066ce85b69ad690c6b11d9321374a6ba8302263edb5e89b76a3"
     },
     {
       "archivo": "css/companions.css",
@@ -321,6 +351,11 @@
       "archivo": "css/pet-select-jardin.css",
       "bytes": 15013,
       "sha256": "6efcca180a4cc691ff9731225a3c521901622ed99b1541be840d6d2fc9b0e4f4"
+    },
+    {
+      "archivo": "css/quick-techniques.css",
+      "bytes": 8058,
+      "sha256": "ca960dc703d391cffc0cc06658b15fb45ffc25b2129dc95fcbdc1a21e2aa75a4"
     },
     {
       "archivo": "css/welcome-desktop.css",
@@ -599,28 +634,63 @@
     },
     {
       "archivo": "index.html",
-      "bytes": 2158,
-      "sha256": "76d7e3f1b91ab124399322e2055fca74af07406f5e2fbcd91fe1df6595bf1c55"
+      "bytes": 2444,
+      "sha256": "03813a8de3a3794f6d21cb2d29506481a464f029de0da1307efffeb788ec2f0c"
+    },
+    {
+      "archivo": "js/advice-controller.js",
+      "bytes": 4675,
+      "sha256": "59be4c935200642cb9bc06c0f85c92f402caa18df5b63fc3ad6f5f9b8553374c"
+    },
+    {
+      "archivo": "js/advice-data.js",
+      "bytes": 8690,
+      "sha256": "6a255a364c1d48313021daa5cae41d04de7937eb96232c88b5eb8a0ecf9f01d0"
+    },
+    {
+      "archivo": "js/advice-stack.js",
+      "bytes": 12945,
+      "sha256": "a7c95c1d92b64452a13fd66c76308c3e95d7e39bdf7b1b6f8dc74dda59e6975e"
+    },
+    {
+      "archivo": "js/advice-swipe.js",
+      "bytes": 6285,
+      "sha256": "04b26d1bf70c1bf222dd2c201ccc0ff4821553e4f0148d20c69292668bbf1247"
     },
     {
       "archivo": "js/app.js",
-      "bytes": 14512,
-      "sha256": "d541eaea8ce39c3138f404f16ef8c44434f1c0c0ca0fdd4ca94a2822fe8faede"
+      "bytes": 15293,
+      "sha256": "e8549ad80be13961f59dd059f12d9f8e67607ef04b71d84529edbfbe4012a215"
     },
     {
       "archivo": "js/breathing-companion-controller.js",
-      "bytes": 6355,
-      "sha256": "11d8e580304af95f3d9ed58bdc030c2dc9cda62bec643321f9e7fc70dfd183fd"
+      "bytes": 8468,
+      "sha256": "3af88068b3928a40771ca7778adca889a6f1c3dd1d0cd5292d18a11fc277f79c"
+    },
+    {
+      "archivo": "js/circular-seek.js",
+      "bytes": 5454,
+      "sha256": "6fb1751784da0b3e86ec0cd974dff9ca8a951f6a1149965c963b5faf5a7f794c"
     },
     {
       "archivo": "js/components/activities.js",
-      "bytes": 5787,
-      "sha256": "0cb516f01d931ec7c8ab9c5bb1172345db6714eb5f9ea090ef851a445868d612"
+      "bytes": 6392,
+      "sha256": "31761b990e2f19d4ed1e467f625413fd495ebb1cc56dbbff16e1ca533691485c"
+    },
+    {
+      "archivo": "js/components/advice-infographics.js",
+      "bytes": 6026,
+      "sha256": "ad8966a33ffa375b844fdfd754720abb3c33450488c98d533f4c68920dee5476"
+    },
+    {
+      "archivo": "js/components/advice.js",
+      "bytes": 11710,
+      "sha256": "cadee8a7154c0952783ba967755c998911a54627120462f33f3d16467b704d39"
     },
     {
       "archivo": "js/components/breathing-companion.js",
-      "bytes": 4011,
-      "sha256": "8d1264c5e581707a3625c8416e06725703890dcc13621c0dc2e2f18c2f9b43e4"
+      "bytes": 4798,
+      "sha256": "7e69516d0596e321cb81c6eb599c4ed3b43485a2acd614ad73a85b5738e1bc78"
     },
     {
       "archivo": "js/components/common.js",
@@ -634,8 +704,8 @@
     },
     {
       "archivo": "js/components/favorites.js",
-      "bytes": 4117,
-      "sha256": "a2b2e0a55bd5aeabc107304d3b2c3a5ae2a3325bbc13f6316ce75d9b0123e3fb"
+      "bytes": 4166,
+      "sha256": "e280f3de265cd9cba1ae9b014a3a8e2de31f2f1715c85b0f260228329b649ae1"
     },
     {
       "archivo": "js/components/home-art.js",
@@ -674,13 +744,13 @@
     },
     {
       "archivo": "js/components/meditation.js",
-      "bytes": 5266,
-      "sha256": "2bbe3edc35ffbaa38e191375bd32448352fecd4e2e649bda8856982f0da217a0"
+      "bytes": 5769,
+      "sha256": "def02bb1ca223593528351572f5e1fc7af910b524148fbb3669fe2d17a32e0a0"
     },
     {
       "archivo": "js/components/methods.js",
-      "bytes": 5198,
-      "sha256": "a9a2ed10bfe323a9c8f097fa57debc0beeaf114acf995ba876962f72369c0e03"
+      "bytes": 5300,
+      "sha256": "abbbb810c0c9b42ff5b8a9f09cefa534bc691988a744a1c8cb8febc4ece0f9c9"
     },
     {
       "archivo": "js/components/mobile-navigation.js",
@@ -696,6 +766,11 @@
       "archivo": "js/components/pet-select-jardin.js",
       "bytes": 4145,
       "sha256": "f5142f537e56d9f378cd8a292e889ecb88695d49678538a2ff9658f7a349c0f3"
+    },
+    {
+      "archivo": "js/components/quick-techniques.js",
+      "bytes": 9812,
+      "sha256": "01480fb69d2949506ec698ae07a7d712432d1293f4b5cd69650fd291a4a86368"
     },
     {
       "archivo": "js/components/settings.js",
@@ -724,8 +799,8 @@
     },
     {
       "archivo": "js/data.js",
-      "bytes": 9789,
-      "sha256": "1fd7ae610b3e53d40fa82d3ce4291c72b149e25e77651487b66ec2deef77e55a"
+      "bytes": 10035,
+      "sha256": "6b96232aca3458006e0ba68ee16c513b3dd4394e8e5ed57aa90830340ae020ba"
     },
     {
       "archivo": "js/home-pet-interaction.js",
@@ -749,8 +824,8 @@
     },
     {
       "archivo": "js/meditation-controller.js",
-      "bytes": 7341,
-      "sha256": "5d1700f7084ac8dc002e89c2c1958377ab1b78055f49e18d152d7bbde6eaa543"
+      "bytes": 9042,
+      "sha256": "1a31babde8f1ae42c844e3cb8985ec99629a25effc05e106e7068721018d1101"
     },
     {
       "archivo": "js/meditation-data.js",
@@ -759,8 +834,13 @@
     },
     {
       "archivo": "js/method-categories.js",
-      "bytes": 1039,
-      "sha256": "8dc2485cb4986bbae946cf8f8021f8f067f97eb72dc8fd00dc35e5bf5e57d303"
+      "bytes": 1043,
+      "sha256": "33dbd7e0b160032f5e1c73f27d82a585af37b45b4a2a19ca2e51c9892de3257b"
+    },
+    {
+      "archivo": "js/quick-techniques-controller.js",
+      "bytes": 3833,
+      "sha256": "5a8fb6364ecc54c6a931428d56665abe644c217ab8fd2a9f06de1c046b937076"
     },
     {
       "archivo": "js/storage.js",
@@ -784,8 +864,8 @@
     },
     {
       "archivo": "sw.js",
-      "bytes": 4459,
-      "sha256": "d1295fe40cd0ec0cd0f1c93e11fd205a52ca4fe42ba23084d6803e90dd26af8d"
+      "bytes": 4906,
+      "sha256": "8756391d758ba25566a3de7aaf9dea5537cadd92a02876b4e63b0507b1e8a324"
     }
   ]
 }

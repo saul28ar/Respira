@@ -1,19 +1,7 @@
-﻿RESPIRA 4.13 - APP COMPLETA
+﻿RESPIRA 4.14 - RESPALDO COMPLETO ACTUAL
 
-1. Descomprime este ZIP en una carpeta.
-2. Copia TODO su contenido a la carpeta de tu app y acepta Reemplazar.
-3. index.html debe quedar junto a css, js, imagenes e iconos.
-
-Si lo subes a GitHub: sube el contenido descomprimido en la raiz del repositorio,
-en el mismo lugar donde ya esta index.html. El ZIP por si solo no actualiza la web.
-
-Incluye todos los archivos anteriores y los cambios de Respiracion y Meditacion:
-- Respiracion con la compania elegida, fases, pausa, ciclos y guia con beneficios.
-- Cuatro meditaciones con circulo de tiempo y mascota pequena dentro.
-- Etapas con sus horarios y ejemplos propios que cambian al tocar.
-- Barra movil aprobada en todas las pantallas salvo Welcome.
-- Navegacion de computadora en la parte superior.
-- Mi espacio para escribir, favoritos, mascotas y el resto de la app conservados.
-
-Las animaciones nuevas de mascotas siguen pendientes, como se acordo.
-Para conservar notas y favoritos usa la misma direccion de la app y navegador.
+Copia todo el contenido descomprimido en la carpeta de la app y acepta Reemplazar.
+index.html debe quedar junto a css, js, imagenes e iconos.
+Se conservan todos los archivos anteriores y las mejoras aprobadas de Respiracion,
+Meditacion, Tecnicas rapidas y Consejos. No se necesita borrar nada.
+Esta copia es el unico respaldo completo actualizado.

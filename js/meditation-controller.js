@@ -1,4 +1,5 @@
 import { meditationMethods } from './components/meditation.js';
+import { bindCircularSeek } from './circular-seek.js';
 
 // El tiempo transcurrido guía las etapas; la mascota permanece estática.
 export function bindMeditation(scope, { announce = () => {} } = {}) {
@@ -30,6 +31,8 @@ export function bindMeditation(scope, { announce = () => {} } = {}) {
   let announcedKey = '';
   let exampleBag = [];
   let lastExample = null;
+  let seeking = null;
+  let seek = null;
 
   const text = (element, value) => {
     if (element && element.textContent !== value) element.textContent = value;
@@ -94,6 +97,7 @@ export function bindMeditation(scope, { announce = () => {} } = {}) {
       ring.setAttribute('stroke-dasharray', '1');
       ring.setAttribute('stroke-dashoffset', String(1 - currentMs / totalMs));
     }
+    seek?.update(currentMs / 1000, `${format(Math.floor(currentMs / 1000))} transcurridos de ${format(method.duration)}; ${format(remaining)} restantes`);
     if (toggle) {
       const label = state === 'running' ? 'Pausar' : done ? 'Repetir' : state === 'paused' ? 'Continuar' : 'Iniciar';
       text(toggle.querySelector('[data-med-toggle-label]') || toggle, label);
@@ -108,8 +112,10 @@ export function bindMeditation(scope, { announce = () => {} } = {}) {
       if (active) item.setAttribute('aria-current', 'step');
       else item.removeAttribute('aria-current');
     });
-    if (done) say('complete', 'Práctica completada. ' + phases.at(-1).text);
-    else if (state === 'running') say('phase-' + index, phase.label + '. ' + phase.text);
+    if (!seeking) {
+      if (done) say('complete', 'Práctica completada. ' + phases.at(-1).text);
+      else if (state === 'running') say('phase-' + index, phase.label + '. ' + phase.text);
+    }
   }
 
   function complete() {
@@ -170,6 +176,35 @@ export function bindMeditation(scope, { announce = () => {} } = {}) {
     say('reset', 'Meditación reiniciada. Lista para comenzar.');
   }
 
+  function seekInput(seconds) {
+    if (disposed) return;
+    if (!seeking) {
+      seeking = { state, wasRunning: state === 'running' };
+      stop();
+    }
+    elapsedMs = Math.max(0, Math.min(totalMs, seconds * 1000));
+    startedAt = null;
+    state = elapsedMs >= totalMs ? 'complete' : seeking.state === 'idle' ? 'idle' : 'paused';
+    paint();
+  }
+
+  function seekCommit(seconds) {
+    if (disposed || !seeking) return;
+    const resume = seeking.wasRunning && !document.hidden && seconds < method.duration;
+    elapsedMs = Math.max(0, Math.min(totalMs, seconds * 1000));
+    state = elapsedMs >= totalMs ? 'complete' : resume ? 'running' : seeking.state === 'idle' ? 'idle' : 'paused';
+    startedAt = resume ? now() : null;
+    let index = 0;
+    for (let step = 1; step < phases.length; step++) {
+      if (elapsedMs >= phases[step].at * 1000) index = step;
+    }
+    announcedKey = state === 'complete' ? 'complete' : state === 'running' ? 'phase-' + index : '';
+    seeking = null;
+    paint();
+    announce(`Tiempo ajustado: ${format(Math.floor(elapsedMs / 1000))} de ${format(method.duration)}. ${state === 'complete' ? 'Práctica completada.' : phases[index].label + '.'}`);
+    if (resume) schedule();
+  }
+
   function click(event) {
     const button = event.target?.closest?.('[data-med-action]');
     if (!button || !root.contains(button) || button.disabled) return;
@@ -187,12 +222,19 @@ export function bindMeditation(scope, { announce = () => {} } = {}) {
   root.addEventListener('click', click);
   document.addEventListener('visibilitychange', visibility);
   view.addEventListener('pagehide', pause);
+  seek = bindCircularSeek(find('.med-time-orbit'), {
+    duration: method.duration,
+    getValue: () => elapsed() / 1000,
+    onInput: seekInput,
+    onCommit: seekCommit
+  });
   paint();
   nextExample();
   return () => {
     if (disposed) return;
     disposed = true;
     stop();
+    seek.dispose();
     startedAt = null;
     root.removeEventListener('click', click);
     document.removeEventListener('visibilitychange', visibility);

@@ -1,0 +1,9 @@
+/* El control sigue solo el aro: el centro y la página conservan sus gestos. */
+.timer-seek-overlay{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:3}
+.timer-seek-hit{fill:none;stroke:transparent;vector-effect:non-scaling-stroke;pointer-events:stroke;touch-action:none;cursor:grab;outline:none}
+.timer-seek-hit:active{cursor:grabbing}
+.timer-seek-hit:focus-visible{stroke:#397fba24;outline:none}
+.timer-seek-thumb{fill:#478568;stroke:#fffef7;stroke-width:2;pointer-events:none}
+.timer-seek-hint{color:#74846b;text-align:center;font-size:.72rem;margin:-8px 0 20px;line-height:1.5}
+@media(prefers-contrast:more){.timer-seek-hit:focus-visible{stroke:#397fba80}}
+@media(max-height:600px) and (orientation:landscape) and (hover:none) and (pointer:coarse){.bc-orbit,.med-time-orbit{width:min(100%,250px)}.bc-orbit .bc-pet{width:65px;height:47px}.bc-orbit-copy{gap:2px}.bc-orbit-copy h2{font-size:1.2rem}.bc-orbit #breath-clock{font-size:2.65rem}.bc-orbit-copy .bc-start{min-height:38px;padding:6px 15px;min-width:105px;font-size:.75rem}}

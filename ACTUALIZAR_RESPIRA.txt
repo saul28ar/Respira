@@ -1,19 +1,25 @@
-﻿RESPIRA 4.13 - APP COMPLETA
+﻿RESPIRA 4.14 - TODOS LOS CAMBIOS DESDE 4.13
 
-1. Descomprime este ZIP en una carpeta.
-2. Copia TODO su contenido a la carpeta de tu app y acepta Reemplazar.
-3. index.html debe quedar junto a css, js, imagenes e iconos.
+1. Descomprime este ZIP.
+2. Abre la carpeta de tu app donde esta index.html.
+3. Copia dentro TODO el contenido descomprimido y acepta Reemplazar.
+4. Conserva los demas archivos. No borres carpetas ni los datos de la app.
 
-Si lo subes a GitHub: sube el contenido descomprimido en la raiz del repositorio,
-en el mismo lugar donde ya esta index.html. El ZIP por si solo no actualiza la web.
+Para GitHub: sube los ARCHIVOS Y CARPETAS DESCOMPRIMIDOS, no el ZIP.
+index.html debe quedar en el mismo nivel que css, js, imagenes e iconos.
+Despues guarda los cambios con Commit changes.
 
-Incluye todos los archivos anteriores y los cambios de Respiracion y Meditacion:
-- Respiracion con la compania elegida, fases, pausa, ciclos y guia con beneficios.
-- Cuatro meditaciones con circulo de tiempo y mascota pequena dentro.
-- Etapas con sus horarios y ejemplos propios que cambian al tocar.
-- Barra movil aprobada en todas las pantallas salvo Welcome.
-- Navegacion de computadora en la parte superior.
-- Mi espacio para escribir, favoritos, mascotas y el resto de la app conservados.
+Incluye todas las mejoras pendientes sobre Respira 4.13:
+- Respiracion: circulo con mascota, tiempo restante y aro que puedes mover.
+- Las cuatro meditaciones conservadas, con aros de tiempo manejables.
+- Tecnicas rapidas: tres ejercicios con mascota elegida, guia y pasos propios.
+- Reencuadre mental de seis pasos y avance o retroceso a tu ritmo.
+- Consejos: seis infografias, carrusel en PC y tarjetas apiladas en celular.
+- Lecturas interactivas de cada consejo, favoritos y compania elegida.
+- Comer con calma, sin culpa, y Acompanar el duelo.
 
-Las animaciones nuevas de mascotas siguen pendientes, como se acordo.
-Para conservar notas y favoritos usa la misma direccion de la app y navegador.
+Se conservan Mi espacio para escribir, notas, tareas, mascotas, favoritos,
+las imagenes y los archivos anteriores. Esta entrega no elimina archivos.
+Usa la misma direccion web y navegador para conservar tus datos guardados.
+
+El ZIP contiene solo lo nuevo o modificado desde 4.13.

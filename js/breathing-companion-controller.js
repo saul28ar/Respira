@@ -24,6 +24,8 @@ export function bindBreathingCompanion(scope, { announce = () => {} } = {}) {
   const cycles = find('breath-cycles');
   const status = find('breath-status');
   const toggle = find('breath-toggle');
+  const totalClock = find('breath-clock');
+  const ring = root.querySelector('[data-breath-ring]');
   const phaseItems = [...root.querySelectorAll('[data-breath-phase]')];
   let state = 'ready';
   let elapsedMs = 0;
@@ -31,6 +33,10 @@ export function bindBreathingCompanion(scope, { announce = () => {} } = {}) {
   let timeout = null;
   let disposed = false;
   let announcedKey = null;
+  let seeker = null;
+  let seekWasRunning = null;
+  let seeking = false;
+  const timeText = milliseconds => { const value = Math.max(0, Math.ceil(milliseconds / 1000)); return String(Math.floor(value / 60)).padStart(2,'0') + ':' + String(value % 60).padStart(2,'0'); };
 
   const setText = (element, value) => {
     if (element && element.textContent !== value) element.textContent = value;
@@ -66,6 +72,9 @@ export function bindBreathingCompanion(scope, { announce = () => {} } = {}) {
     root.dataset.phase = paused ? 'paused' : finished ? 'complete' : current.id;
     setText(phase, finished ? 'Completado' : paused ? 'En pausa' : current.label);
     setText(seconds, paused || finished ? '—' : remaining + ' segundos');
+    setText(totalClock, timeText(TOTAL_MS - elapsed));
+    ring?.setAttribute('stroke-dashoffset', String(1 - elapsed / TOTAL_MS));
+    seeker?.update(elapsed / 1000, 'Transcurrido ' + timeText(elapsed) + ' de 01:04');
     setText(cycles, 'Ciclos completados: ' + completed + ' de ' + TOTAL_CYCLES);
     setText(status, finished ? 'Vuelve a respirar con naturalidad.'
       : paused ? 'Respira con naturalidad. Al continuar, empezamos por inhalar.'
@@ -84,6 +93,7 @@ export function bindBreathingCompanion(scope, { announce = () => {} } = {}) {
       else item.removeAttribute('aria-current');
     }
 
+    if (seeking) return;
     if (finished) say('complete', 'Has completado cuatro ciclos. Respira con naturalidad.');
     else if (paused) say('paused', 'En pausa. Respira con naturalidad. Al continuar, empezaremos por inhalar.');
     else if (running) say('phase-' + Math.floor(elapsed / PHASE_MS), current.label + ', cuatro segundos. ' + current.hint);
@@ -161,6 +171,40 @@ export function bindBreathingCompanion(scope, { announce = () => {} } = {}) {
     if (document.hidden) pause();
   }
 
+  seeker = bindCircularSeek(root.querySelector('.bc-orbit'), {
+    duration:TOTAL_MS / 1000,
+    getValue:() => totalElapsed() / 1000,
+    onInput(value) {
+      if (disposed) return;
+      if (seekWasRunning === null) seekWasRunning = state === 'running';
+      seeking = true;
+      stopTimeout();
+      elapsedMs = Math.max(0, Math.min(TOTAL_MS, value * 1000));
+      startedAt = null;
+      state = elapsedMs >= TOTAL_MS ? 'complete' : 'paused';
+      paint();
+      if (state !== 'complete') {
+        const index = Math.floor((elapsedMs % CYCLE_MS) / PHASE_MS);
+        setText(phase, PHASES[index].label);
+        setText(seconds, Math.max(1,Math.ceil((PHASE_MS - elapsedMs % PHASE_MS) / 1000)) + ' segundos');
+      }
+    },
+    onCommit(value) {
+      if (disposed) return;
+      const resume = seekWasRunning === true && !document.hidden;
+      elapsedMs = Math.max(0,Math.min(TOTAL_MS,value * 1000));
+      seeking = false;
+      seekWasRunning = null;
+      announcedKey = null;
+      startedAt = resume ? now() : null;
+      state = elapsedMs >= TOTAL_MS ? 'complete' : resume ? 'running' : elapsedMs === 0 ? 'ready' : 'paused';
+      paint();
+      if (state === 'paused') setText(status, 'Tiempo ajustado. Respira con naturalidad y continúa cuando quieras.');
+      if (state === 'running') schedule();
+      else announce('Tiempo ajustado. Quedan ' + timeText(TOTAL_MS - elapsedMs) + '.');
+    }
+  });
+
   root.addEventListener('click', click);
   document.addEventListener('visibilitychange', visibility);
   paint();
@@ -168,8 +212,11 @@ export function bindBreathingCompanion(scope, { announce = () => {} } = {}) {
     if (disposed) return;
     disposed = true;
     stopTimeout();
+    seeker?.dispose();
     startedAt = null;
     root.removeEventListener('click', click);
     document.removeEventListener('visibilitychange', visibility);
   };
 }
+import { bindCircularSeek } from './circular-seek.js';
+

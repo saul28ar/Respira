@@ -1,0 +1,132 @@
+body:has(.info-page){background:linear-gradient(to bottom,#effaf1b8 0,#effaf1d9 min(24vw,330px),#f1f7ec min(41vw,590px)),url('../imagenes/inicio-web/lago-hd.png') center top / 100% auto no-repeat,#f1f7ec}
+.info-page{max-width:1060px;--info-ink:#18523e;--info-muted:#6b816a;--info-green:#36775c}
+.info-heading{margin:6px 0 24px;max-width:570px}
+.info-heading h1{margin-bottom:12px}
+.info-heading>p{font-size:.94rem;color:#5f7763;line-height:1.7;margin:0}
+.info-layout{display:grid;grid-template-columns:minmax(0,590px) minmax(0,310px);align-items:start;gap:40px}
+.info-deck{min-width:0}
+.info-track{display:flex;gap:18px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-padding-left:5px;padding:6px 5px 12px;overscroll-behavior-x:contain;scrollbar-width:none;touch-action:pan-x pan-y;align-items:stretch}
+.info-track::-webkit-scrollbar{display:none}
+.info-track:focus-visible{outline:2px solid #397fba;outline-offset:4px;border-radius:27px}
+.info-poster{flex:0 0 93%;min-width:0;border:1px solid #d4e1ce;border-radius:29px;overflow:hidden;background:linear-gradient(145deg,#fffef6,#f7f8eb);box-shadow:0 7px 20px #3159360c;scroll-snap-align:start;display:flex;flex-direction:column;min-height:780px;position:relative}
+.info-poster-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:22px 23px 10px}
+.info-poster-top>span{display:flex;align-items:center;gap:7px;font-size:11px;font-weight:600;letter-spacing:1.4px;color:#68916d}
+.info-poster-top>span>.icon{height:17px;width:17px}
+.info-favorite{width:44px;height:44px;display:grid;place-items:center;background:#ecf2e5;border-radius:50%;flex-shrink:0;color:#43835e}
+.info-favorite>.icon{width:20px;height:20px}
+.info-favorite[aria-pressed=true]>.icon{fill:currentColor}
+.info-poster>h2{font:500 2.25rem/1.08 Georgia,serif;letter-spacing:-.035em;color:#18523e;margin:5px 27px 12px}
+.info-tagline{font:italic 1.02rem/1.5 Georgia,serif;color:#6f8468;margin:0 27px 22px;max-width:360px}
+.info-points{display:grid;gap:17px;list-style:none;padding:0 27px;margin:0 0 22px;flex:1;align-content:start}
+.info-points>li{display:flex;gap:12px;align-items:flex-start}
+.info-point-leaf{display:grid;place-items:center;width:31px;height:31px;background:#e9f0de;border-radius:50%;flex-shrink:0;color:#609166;margin-top:3px}
+.info-point-leaf>.icon{width:15px;height:15px}
+.info-points>li>span:last-child{display:grid;gap:4px}
+.info-points strong{font:500 1.2rem/1.25 Georgia,serif;color:#2c684b}
+.info-points>li>span>span{font-size:.87rem;line-height:1.55;color:#687e66}
+.info-scene{height:285px;position:relative;isolation:isolate;background:url('../imagenes/inicio-web/lago-hd.png') center center / cover no-repeat;overflow:hidden;margin-top:auto}
+.info-scene:before{content:"";position:absolute;left:-6%;right:-6%;top:-18px;height:44px;border-radius:0 0 50% 50%;background:#fbfbee;z-index:0}
+.info-scene-shade{position:absolute;inset:0;background:linear-gradient(transparent 56%,#064e4594);z-index:0}
+.info-scene-pet{position:absolute;right:8px;bottom:38px;width:190px;height:190px;object-fit:contain;z-index:2;filter:drop-shadow(0 5px 12px #fff8c555)}
+.info-scene-caption{position:absolute;bottom:12px;left:15px;right:15px;text-align:center;font:italic 14px/1.4 Georgia,serif;color:#fffef2;text-shadow:0 1px 3px #164c3f;z-index:3}
+.info-poster-bottom{background:#fffdf3;padding:16px 23px}
+.info-read{background:none;display:flex;align-items:center;justify-content:space-between;gap:12px;color:#286d4b;font-size:.86rem;font-weight:600;width:100%;min-height:38px;padding:0}
+.info-read>.icon{width:18px;height:18px}
+.info-coffee{position:absolute;left:35px;bottom:70px;width:126px;height:115px;z-index:1;filter:drop-shadow(0 8px 7px #084c4144);transform:rotate(-8deg)}
+.info-cup{position:absolute;width:96px;height:79px;left:0;bottom:5px;background:linear-gradient(100deg,#fffdec,#e0eacb);border-radius:7px 7px 30px 30px;border:2px solid #b9cda0;z-index:1}
+.info-cup:before{content:"";position:absolute;top:7px;left:7px;right:7px;height:14px;border-radius:50%;background:#765136;box-shadow:0 -3px #fbf2d6,inset 0 3px 6px #503e2b}
+.info-cup:after{content:"";position:absolute;right:-27px;top:13px;width:28px;height:35px;border:8px solid #ecf0d7;border-left:0;border-radius:0 22px 24px 0;z-index:-1}
+.info-saucer{position:absolute;width:124px;height:18px;border-radius:50%;background:#f7f1d1;left:-10px;bottom:-2px;border-bottom:4px solid #c6d8a5}
+.info-steam{position:absolute;top:0;left:26px;height:33px;width:14px;border-left:3px solid #fffde9;border-radius:50%;transform:rotate(12deg)}
+.info-steam.second{left:54px;top:-5px;transform:rotate(-8deg)}
+.info-phone{position:absolute;left:50px;bottom:54px;width:91px;height:145px;border:6px solid #235c45;border-radius:18px;background:linear-gradient(135deg,#dff3db,#a9d9d4);box-shadow:0 7px 12px #154b3f55;transform:rotate(-10deg);z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:11px;color:#306c4e}
+.info-phone:before{content:"";position:absolute;top:3px;width:25px;height:3px;border-radius:8px;background:#659b78}
+.info-phone .icon{width:35px;height:35px}
+.info-phone small{font:italic 13px/1.2 Georgia,serif}
+.info-bubbles{position:absolute;left:26px;bottom:81px;z-index:1;width:140px}
+.info-bubbles span{display:block;position:relative;background:#fffde9;padding:12px 14px;color:#2a7250;border-radius:20px 20px 20px 5px;box-shadow:0 4px 12px #164c3f22;font:italic 17px/1.2 Georgia,serif}
+.info-bubbles span+span{margin:13px 0 0 21px;border-radius:20px 20px 5px 20px;background:#d8ebc9}
+.info-plate{position:absolute;left:37px;bottom:60px;width:115px;height:115px;border:10px solid #d0e2ad;border-radius:50%;background:radial-gradient(circle,#fffdee 55%,#c4d3a6 56%,#f8f3df 62%);box-shadow:0 7px 12px #164c3f44;z-index:1;transform:rotate(-10deg)}
+.info-plate>span{position:absolute;top:23px;left:16px;color:#5d983b;transform:rotate(-20deg)}
+.info-plate .icon{width:35px;height:35px;fill:#a6ce7e55}
+.info-plate>i{position:absolute;width:27px;height:27px;background:#e3ac55;border-radius:50%;right:14px;top:20px;box-shadow:9px 25px 0 -5px #b7cf70}
+.info-plate>b{position:absolute;bottom:15px;left:24px;width:36px;height:12px;border-radius:50%;background:#d1bc7f}
+.info-memory{position:absolute;left:37px;bottom:72px;width:117px;height:120px;border:2px solid #e8e5c5;border-radius:13px;background:linear-gradient(140deg,#fffdeb,#e6edcf);transform:rotate(-8deg);box-shadow:0 5px 12px #164c3f44;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:#6c9869;z-index:1}
+.info-memory>.icon{width:41px;height:41px;fill:#b5cf9680}
+.info-memory>span{font:italic 14px/1.2 Georgia,serif}
+.info-footprints{position:absolute;left:35px;bottom:65px;width:125px;height:135px;transform:rotate(17deg);z-index:1;filter:drop-shadow(0 5px 5px #164c3f55)}
+.info-footprints>span{position:absolute;width:32px;height:66px;background:linear-gradient(#e5f1d0,#8bb580);border:2px solid #f2f6df;border-radius:50% 50% 42% 46%;left:12px;bottom:0}
+.info-footprints>span+span{left:72px;bottom:49px;transform:rotate(-25deg)}
+.info-footprints>i{position:absolute;width:26px;height:24px;background:#c5dea5;border:2px solid #f2f6df;border-radius:50%;left:15px;bottom:74px}
+.info-footprints>i+i{left:76px;bottom:124px;transform:rotate(-25deg)}
+.info-navigation{display:flex;align-items:center;justify-content:center;gap:22px;padding:14px 8px 4px}
+.info-arrow{width:44px;height:44px;border:1px solid #cfdfc8;border-radius:50%;background:#fffef6;color:#3e7957;display:grid;place-items:center;flex-shrink:0}
+.info-arrow>.icon{width:18px;height:18px}
+.info-position{display:grid;justify-items:center;gap:5px;color:#6c8169;font-size:12px}
+.info-dots{display:flex;gap:1px}
+.info-dots button{position:relative;width:26px;height:44px;background:none;padding:0}
+.info-dots button:after{content:"";position:absolute;width:5px;height:5px;border-radius:50%;background:#c7d8c0;left:50%;top:50%;transform:translate(-50%,-50%)}
+.info-dots button[aria-current=true]:after{background:#4f8764;width:16px;border-radius:4px}
+.info-desktop-index{padding:28px 0}
+.info-desktop-index h2{font:500 1.85rem/1.2 Georgia,serif;margin-bottom:14px}
+.info-desktop-index>p{font-size:.9rem;color:#6b816a;margin-bottom:25px}
+.info-desktop-index>button{display:flex;align-items:center;gap:11px;min-height:67px;width:100%;padding:13px 12px;border-bottom:1px solid #dbe6d5;background:transparent;text-align:left;color:#71836b;font-size:.88rem;border-radius:12px}
+.info-desktop-index>button>.icon{width:18px;height:18px;flex-shrink:0}
+.info-desktop-index>button>span{flex:1}
+.info-desktop-index>button>.icon:last-child{width:13px;height:13px}
+.info-desktop-index>button[aria-current=true]{background:#e2edda;color:#2e6848;font-weight:600}
+@media(max-width:767px),(max-width:1024px) and (max-height:600px) and (orientation:landscape) and (hover:none) and (pointer:coarse){
+ body:has(.info-page){background:linear-gradient(to bottom,#effaf1c2 0,#effaf1d8 190px,#f1f7ec 390px),url('../imagenes/inicio-web/lago-hd.png') center top / auto 390px no-repeat,#f1f7ec}
+ .info-page{width:calc(100% - 24px)}
+ .info-page>.back-button{margin-left:6px;margin-bottom:17px}
+ .info-heading{padding:0 6px;margin-bottom:20px}
+ .info-heading h1{font-size:2.2rem}
+ .info-heading>p{font-size:.84rem;max-width:320px}
+ .info-layout{display:block}
+ .info-desktop-index{display:none}
+ .info-track{gap:12px;padding-left:5px;padding-right:5px}
+ .info-poster{flex-basis:94%;min-height:700px;border-radius:25px}
+ .info-poster-top{padding:16px 16px 5px}
+ .info-poster-top>span{font-size:11px;letter-spacing:.8px}
+ .info-poster-top>span>.icon{width:15px;height:15px}
+ .info-favorite{width:44px;height:44px}
+ .info-poster>h2{font-size:1.9rem;margin:7px 20px 11px}
+ .info-tagline{font-size:.91rem;margin:0 20px 19px}
+ .info-points{padding:0 20px;gap:15px;margin-bottom:16px}
+ .info-points>li{gap:9px}
+ .info-point-leaf{height:27px;width:27px}
+ .info-point-leaf>.icon{width:14px;height:14px}
+ .info-points strong{font-size:1.04rem}
+ .info-points>li>span>span{font-size:.78rem;line-height:1.55}
+ .info-scene{height:260px}
+ .info-scene-pet{width:153px;height:153px;right:1px;bottom:37px}
+ .info-scene-caption{font-size:12px;bottom:13px}
+ .info-coffee{left:26px;transform:scale(.85) rotate(-8deg);transform-origin:bottom left;bottom:62px}
+ .info-phone{left:31px;bottom:49px;transform:scale(.85) rotate(-10deg);transform-origin:bottom left}
+ .info-bubbles{left:20px;width:119px;bottom:72px}
+ .info-bubbles span{font-size:15px;padding:11px}
+ .info-memory{left:25px;bottom:62px;transform:scale(.85) rotate(-8deg);transform-origin:bottom left}
+ .info-plate{left:24px;bottom:54px;transform:scale(.85) rotate(-10deg);transform-origin:bottom left}
+ .info-footprints{left:20px;bottom:60px;transform:scale(.8) rotate(17deg);transform-origin:bottom left}
+ .info-poster-bottom{padding:12px 18px}
+ .info-read{font-size:.8rem;min-height:40px}
+ .info-navigation{gap:13px}
+}
+@media(max-width:360px){.info-poster>h2{font-size:1.65rem}.info-points{padding-left:16px;padding-right:16px}.info-points strong{font-size:.96rem}.info-points>li>span>span{font-size:.74rem}.info-scene-pet{width:132px;height:132px;bottom:37px;right:-2px}.info-coffee{left:19px;transform:scale(.72) rotate(-8deg)}.info-phone{left:21px;transform:scale(.76) rotate(-10deg)}.info-bubbles{left:12px;width:108px}.info-plate{left:17px;transform:scale(.75) rotate(-10deg)}.info-memory{left:18px;transform:scale(.75) rotate(-8deg)}}
+
+/* La colección móvil lleva su propia marca, sin alterar la barra global. */
+.info-mobile-brand,.info-mobile-hint{display:none}
+@media(max-width:767px),(max-width:1024px) and (max-height:600px) and (orientation:landscape) and (hover:none) and (pointer:coarse){
+ .app-shell:has(.info-page) .interface-header{display:none}
+ .info-page{width:100%;padding:16px 14px 40px}
+ .info-page>.back-button{display:none}
+ .info-mobile-brand{height:70px;display:flex;align-items:center;justify-content:center;margin:0 -14px}
+ .info-mobile-brand img{display:block;width:112px;height:auto;max-height:58px;object-fit:contain}
+ .info-heading{padding:0 8px;margin:0 0 19px}
+ .info-heading>.eyebrow{display:none}
+ .info-heading h1{font:400 34px/1.15 Georgia,serif;letter-spacing:-1px;margin:0 0 7px}
+ .info-heading>p{font:400 13px/1.5 Arial,sans-serif;color:#607a63;margin:0}
+ .info-heading .info-desktop-hint{display:none}
+ .info-heading .info-mobile-hint{display:inline}
+}
+

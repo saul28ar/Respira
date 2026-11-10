@@ -17,6 +17,8 @@ import { renderJournalAgenda } from './components/journal-agenda.js';
 import { journalAgendaView, bindJournalAgenda, flushJournalAgenda, hasPendingJournalChanges, requestJournalLeave } from './journal-agenda-controller.js';
 import { bindBreathingCompanion } from './breathing-companion-controller.js';
 import { bindMeditation } from './meditation-controller.js';
+import { bindQuickTechniques } from './quick-techniques-controller.js';
+import { bindAdvicePage } from './advice-controller.js';
 
 const app = document.getElementById('app');
 const announcer = document.getElementById('announcer');
@@ -36,6 +38,8 @@ let cleanupHomePet = null;
 let cleanupJournal = null;
 let cleanupBreathing = null;
 let cleanupMeditation = null;
+let cleanupQuick = null;
+let cleanupAdvice = null;
 let homeReselection = false;
 const historyStack = [];
 let historyIndex = Number.isSafeInteger(history.state?.respiraRouteIndex) ? history.state.respiraRouteIndex : 0;
@@ -67,6 +71,10 @@ function goBack() {
   });
 }
 function render() {
+  cleanupAdvice?.();
+  cleanupAdvice = null;
+  cleanupQuick?.();
+  cleanupQuick = null;
   cleanupMeditation?.();
   cleanupMeditation = null;
   cleanupBreathing?.();
@@ -102,6 +110,12 @@ function render() {
   if (journalView) cleanupJournal = bindJournalAgenda(app, render);
   if (view === 'detail' && route.id === 'breath') cleanupBreathing = bindBreathingCompanion(app, {announce:text => { announcer.textContent = text; }});
   if (view === 'detail' && catalog[route.id]?.kind === 'timer') cleanupMeditation = bindMeditation(app, {announce:text => { announcer.textContent = text; }});
+  if (view === 'detail' && ['grounding','muscle','reframe'].includes(route.id)) cleanupQuick = bindQuickTechniques(app, {announce:text => { announcer.textContent = text; }});
+  if (view === 'advice' || (view === 'detail' && catalog[route.id]?.kind === 'advice')) cleanupAdvice = bindAdvicePage(app, {
+    open(id) { activityPet = null; returnRoute = 'advice'; navigate('detail',id); },
+    back() { navigate(view === 'advice' ? 'methods' : 'advice'); },
+    announce(text) { announcer.textContent = text; }
+  });
   const main = app.querySelector('main');
   if (main) { main.id = 'main-content'; main.tabIndex = -1; }
   document.body.classList.toggle('welcome-view', view === 'welcome');

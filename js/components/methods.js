@@ -17,7 +17,8 @@ function navigation(className) {
   return `<nav class="${className}" aria-label="Navegación principal">${tabs.map(([route,label,symbol])=>`<a href="#${route}" data-go="${route}" class="${route==='methods'?'active':''}" ${route==='methods'?'aria-current="page"':''}>${icon(symbol)}<span>${label}</span>${route==='methods'?'<i class="active-dot" aria-hidden="true"></i>':''}</a>`).join('')}</nav>`;
 }
 function picture(id) {
-  return `<span class="method-picture ${id==='journal'?'picture-cat':''}"><img src="${asset('metodos/'+scenes[id]+'.webp')}" alt="" width="1254" height="1254" decoding="async"><span class="method-symbol">${icon(symbols[id])}</span></span>`;
+  const source = scenes[id] ? 'metodos/'+scenes[id]+'.webp' : 'inicio-web/consejos-hd.png';
+  return `<span class="method-picture ${id==='journal'?'picture-cat':''}"><img src="${asset(source)}" alt="" width="1254" height="1254" decoding="async"><span class="method-symbol">${icon(symbols[id] || (id==='grief'?'heart':'leaf'))}</span></span>`;
 }
 function card(id,selected) {
   const item=catalog[id];

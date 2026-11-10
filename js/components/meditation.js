@@ -38,7 +38,9 @@ export function renderMeditationDetail(id, {petId = null, favoriteHtml = '', pet
       <div class="med-time-orbit${petHtml ? '' : ' med-time-orbit-without-pet'}">
         <svg class="med-time-ring" viewBox="0 0 280 280" aria-hidden="true" focusable="false"><circle class="med-ring-track" cx="140" cy="140" r="130"/><circle data-med-ring cx="140" cy="140" r="130" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg>
         <div class="med-time-center">${petHtml}<span>Tiempo restante</span><output data-med-clock role="timer" aria-live="off">${clock(method.duration)}</output></div>
+        <svg class="timer-seek-overlay" viewBox="0 0 280 280"><circle class="timer-seek-hit" data-circular-seek cx="140" cy="140" r="130" fill="none" stroke="transparent" stroke-width="44" role="slider" tabindex="0" aria-label="Tiempo transcurrido de la meditación" aria-describedby="med-seek-hint"/><circle class="timer-seek-thumb" data-seek-thumb cx="140" cy="10" r="5" aria-hidden="true"/></svg>
       </div>
+      <p class="timer-seek-hint" id="med-seek-hint">Toca o arrastra el aro para cambiar el tiempo.</p>
       <div class="med-stage-message"><h2 data-med-stage-title>${safe(method.phases[0].label)}</h2><p data-med-stage-text>${safe(method.phases[0].text)}</p></div>
       <progress class="med-progress" data-med-progress value="0" max="${method.duration}" aria-label="Avance de la práctica"></progress>
       <div class="med-timeline-heading"><span>Momentos de la práctica</span><span data-med-elapsed>Transcurrido 0:00 de ${clock(method.duration).replace(/^0/, '')}</span></div>

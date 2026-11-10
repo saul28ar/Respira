@@ -27,9 +27,10 @@ export function renderBreathingCompanion({ petId = null, mobile = false, favorit
       <section class="bc-session" aria-label="Guía de respiración">
         <span class="bc-duration">4 ciclos <span aria-hidden="true">·</span> 1 min 4 s</span>
         <div class="bc-orbit">
-          <div class="bc-halo" aria-hidden="true"></div>
-          ${pet ? `<img class="bc-pet" src="./imagenes/mascotas/${selected}.png" alt="${safe(pet.name)} te acompaña" width="724" height="724">` : ''}
-          <div class="bc-orbit-copy"><h2 id="phase">Inhala</h2><span id="phase-seconds" role="timer" aria-live="off">4 segundos</span><button type="button" class="primary bc-start" id="breath-toggle" data-breath-action="toggle">Iniciar</button></div>
+          <svg class="bc-time-ring" viewBox="0 0 280 280" aria-hidden="true" focusable="false"><circle class="bc-ring-track" cx="140" cy="140" r="130"/><circle data-breath-ring cx="140" cy="140" r="130" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg>
+          <div class="bc-orbit-copy">${pet ? `<img class="bc-pet" src="./imagenes/mascotas/${selected}.png" alt="${safe(pet.name)} te acompaña" width="724" height="724">` : ''}<span class="bc-clock-label">Tiempo restante</span><output id="breath-clock" role="timer" aria-live="off">01:04</output><h2 id="phase">Inhala</h2><span id="phase-seconds">4 segundos</span><button type="button" class="primary bc-start" id="breath-toggle" data-breath-action="toggle">Iniciar</button></div>
+          <svg class="timer-seek-overlay" viewBox="0 0 280 280" aria-label="Cambiar momento de respiración"><circle class="timer-seek-hit" data-circular-seek role="slider" tabindex="0" aria-label="Momento de la respiración" aria-valuemin="0" aria-valuemax="64" aria-valuenow="0" cx="140" cy="140" r="130" stroke-width="44"/><circle class="timer-seek-thumb" data-seek-thumb cx="140" cy="10" r="5" aria-hidden="true"/></svg>
+          <span class="bc-seek-caption">Toca o arrastra el aro</span>
         </div>
         <div class="bc-phases" aria-label="Las cuatro fases">${['Inhala','Mantén','Exhala','Pausa'].map((name, i) => `<div data-breath-phase="${i}"${i === 0 ? ' class="is-active" aria-current="step"' : ''}><span>${name}</span><small>4 s</small></div>`).join('')}</div>
         <p id="breath-status" class="bc-status">Cuando quieras, empezamos.</p>
