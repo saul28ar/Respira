@@ -1,11 +1,11 @@
 {
-  "version": "Respira 4.16 · Infografías de Consejos",
-  "version_id": "4.16",
+  "version": "Respira 4.17 · Juegos y calendario por mascota",
+  "version_id": "4.17",
   "fecha": "2026-11-10",
-  "tipo": "Respaldo completo de la entrega 4.16",
+  "tipo": "Respaldo completo de la entrega 4.17",
   "base_parche": {
-    "version": "4.15",
-    "sha256": "65eabed226ad454ae7f5491c7943848a11e59a723ccb787efc05b4d2fbb5a4be"
+    "version": "4.16",
+    "sha256": "22a618ed9641af9ed04e9f0aa2b14356d62c3849718571971d0fee33656ff89f"
   },
   "runtime": [
     "css/advice-infographics.css",
@@ -16,6 +16,7 @@
     "css/circular-seek.css",
     "css/companions.css",
     "css/favorites.css",
+    "css/games.css",
     "css/home-desktop.css",
     "css/home-mobile-jardin.css",
     "css/interface.css",
@@ -107,6 +108,7 @@
     "js/components/common.js",
     "js/components/companions.js",
     "js/components/favorites.js",
+    "js/components/games.js",
     "js/components/home-card-art.js",
     "js/components/home-desktop.js",
     "js/components/home-mobile-jardin.js",
@@ -124,6 +126,13 @@
     "js/components/welcome-poster.js",
     "js/daily-entry.js",
     "js/data.js",
+    "js/games/catalog.js",
+    "js/games/controller.js",
+    "js/games/crossword-bank.js",
+    "js/games/phrase-bank.js",
+    "js/games/play-time.js",
+    "js/games/progress.js",
+    "js/games/word-search-bank.js",
     "js/home-pet-interaction.js",
     "js/icons.js",
     "js/journal-agenda-controller.js",
@@ -141,43 +150,21 @@
     "sw.js"
   ],
   "verificacion": {
-    "informe": "work/qa-416/verificacion.json",
-    "informe_sha256": "e39c1c1fef863c4c46d654170495618978c40600bea723075af11ecd17369a2f",
-    "passed": 46,
-    "failed": 0,
-    "infografias_aprobadas": {
-      "imagenes/consejos/caffeine.png": "946156bea4f9d33855fb559466232d25de337c8226440db480e41b49a61bcfc1",
-      "imagenes/consejos/move.png": "26a21fea7920528e2d6a4bcd88d201f5f6fe15babdc31d393a20fb550dae2e41",
-      "imagenes/consejos/unplug.png": "f547f51bc5dbbd40af149955412a3ea0062e1c8b466007b5647aff96c418c1e6",
-      "imagenes/consejos/talk.png": "8f592a7df080ec82496d342780c9d5a8d8e583bca0d45cf3433e06a8daefed88",
-      "imagenes/consejos/food.png": "968be5086890738e38d7369849d1a28be5350220473c5931437b3d52710c15eb",
-      "imagenes/consejos/rest.png": "297099c641cbaa7aaea68797a44c451cc60bda83da6016965517db4d410dcd89",
-      "imagenes/consejos/kindness.png": "f94afe0860089fbba3ed99fa59fd65f772c605db9e853863582e0b53f05e8d10",
-      "imagenes/consejos/planning.png": "30c85aa77a3af59defd62ab4b02025c4d29fe90f65d1cc99af2f21046d2938a0",
-      "imagenes/consejos/study_breaks.png": "630ec5c0f5c4684ac6f4ff5df6c9b346f432c7479d34c269e42b1527b9aec143",
-      "imagenes/consejos/exam_nerves.png": "a7609881e17a06b35707e403e1a736828891341e352105f15c6fcdf4c7498a7f",
-      "imagenes/consejos/boundaries.png": "72e8945865eec2fc19fc086015516d5341f8d3e98a4d142916afc0266d164736",
-      "imagenes/consejos/comparison.png": "0a6e4a9b4eb9aba0f969cc6007fd086033793baa819d2eefc1ceebac0139d47d",
-      "imagenes/consejos/perfectionism.png": "14321fc2e7716c60abf3afe669213b98bf573ce821833e94507294448e9a397d",
-      "imagenes/consejos/help.png": "426fd3da6a7c02ed229991ab9304cf14512de5ca81e9b46097bf9cf10f06ffcc",
-      "imagenes/consejos/emotions.png": "e483ebb5099d799f87b0834d8c6ce5ab0221a3ece066966864c74ec7a50b0e74",
-      "imagenes/consejos/uncertainty.png": "4b3eaca74831c0f53efc8730e426f94b9ae8d17b1d74601515900e5a950d08d8",
-      "imagenes/consejos/enjoy.png": "360f0270d79f5ba55990b46c4ae17d0323f706f4c47896b21ef8556a0dbe8ebb",
-      "imagenes/consejos/grief.png": "c170ffdd1f41ff0baf468f4cad7c88fc8743703144855623d2afad1079e8728a"
-    },
+    "funcional": "Juegos en celular y computadora, 225 retos, progreso separado, calendario, insignias y límite diario. Consejos con 18 infografías y desplegables independientes.",
+    "paquete": "CRC y SHA256 verificados. Aplicar el parche a la versión anterior reproduce el respaldo actualizado.",
     "archivos_anteriores_conservados": true,
     "publicado": false
   },
   "archivos": [
     {
       "archivo": "ACTUALIZAR_RESPIRA.txt",
-      "bytes": 635,
-      "sha256": "2d82ef7b69f32130aafcc488a4425a6f936b2024edec3fbeb74430c2e95164fb"
+      "bytes": 803,
+      "sha256": "97fa743e877bf7da5ab87d60368278c301e1fd50196b196b91dad578755e5943"
     },
     {
       "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
-      "bytes": 635,
-      "sha256": "2d82ef7b69f32130aafcc488a4425a6f936b2024edec3fbeb74430c2e95164fb"
+      "bytes": 803,
+      "sha256": "97fa743e877bf7da5ab87d60368278c301e1fd50196b196b91dad578755e5943"
     },
     {
       "archivo": "BARRA_MOVIL_APROBADO.md",
@@ -246,8 +233,8 @@
     },
     {
       "archivo": "LEEME_INSTALAR_COMPLETO.txt",
-      "bytes": 344,
-      "sha256": "6f5c6e933ebc9a43cfa63fecf7dd07e4892bc31d1c8b2ebdf849670a0e62c6aa"
+      "bytes": 423,
+      "sha256": "7c514bcd90f3b61158e704389788a5eb0f4f383a4e0527a7516fee4e4ccc9b48"
     },
     {
       "archivo": "MASCOTAS_APROBADO.md",
@@ -306,8 +293,8 @@
     },
     {
       "archivo": "css/advice.css",
-      "bytes": 10579,
-      "sha256": "4d33ebc946f93a95f79d5ab7b77b379537d5445345e24f24dc4d71410c0de7bb"
+      "bytes": 4763,
+      "sha256": "085e32848c0bc14fb78d56cfd3b6eece1ced8401dccfdd9267a78d40843d4e3a"
     },
     {
       "archivo": "css/base.css",
@@ -333,6 +320,11 @@
       "archivo": "css/favorites.css",
       "bytes": 14791,
       "sha256": "709a8cc15281de9e1d4115ae8fc795c7a166f6bd8bc52705929cf435e092fc7f"
+    },
+    {
+      "archivo": "css/games.css",
+      "bytes": 12139,
+      "sha256": "cba8ae8a339b1431e143ffbb9a824ee872c51ed1f580ea75866b4162c5c40ec8"
     },
     {
       "archivo": "css/home-desktop.css",
@@ -771,8 +763,8 @@
     },
     {
       "archivo": "index.html",
-      "bytes": 2491,
-      "sha256": "aa3e8b1e71c1c162fb77a592a676dbc2ee8dca20b77f73f1ac2331cf0bab57fe"
+      "bytes": 2540,
+      "sha256": "cb5f7cd96ee5dd6bf857e469d5e30de54c7d3cab1640ce41941934ae127f92a0"
     },
     {
       "archivo": "js/advice-controller.js",
@@ -801,8 +793,8 @@
     },
     {
       "archivo": "js/app.js",
-      "bytes": 15505,
-      "sha256": "62651b575207adc1f51de4b01401e7e0c7f53a4db87aeb21669cf74e326bb7d5"
+      "bytes": 16355,
+      "sha256": "1765a178de0d846fe8dd49935d2cd2b25fddb8d4753ecc19691b1ad560ef561a"
     },
     {
       "archivo": "js/breathing-companion-controller.js",
@@ -826,8 +818,8 @@
     },
     {
       "archivo": "js/components/advice.js",
-      "bytes": 13693,
-      "sha256": "106a8ca0c5f7b66540c97e2e26bce4da3c13407664fd9c46e0cc2326c960c8fa"
+      "bytes": 6159,
+      "sha256": "cff2c0f64c3a0b03acab67a58e9e07d0eddaff1c83d220bb7457bcb07edba862"
     },
     {
       "archivo": "js/components/breathing-companion.js",
@@ -850,6 +842,11 @@
       "sha256": "0047bc6c9583f551b01a81099b6e994f3c6a794cb9de950e7690451705f108e2"
     },
     {
+      "archivo": "js/components/games.js",
+      "bytes": 7838,
+      "sha256": "9c56b7f128e9f7dea223f919534a7808845ee298031ad4b0a1b15a48a390f2f2"
+    },
+    {
       "archivo": "js/components/home-art.js",
       "bytes": 1053,
       "sha256": "7529c88f64299c97401565e896a55407d2b4f04424bad1dbe8f489df5c24e62d"
@@ -861,13 +858,13 @@
     },
     {
       "archivo": "js/components/home-desktop.js",
-      "bytes": 4385,
-      "sha256": "9c3d59a1da8b18b11288b99096de390c2333d7aac7a2b2315f5f633bf5de0d12"
+      "bytes": 4490,
+      "sha256": "95b64ba924aecfc4d09f47e7185c4eba6c2b8bfd5a613bb232c5bbde75ea4398"
     },
     {
       "archivo": "js/components/home-mobile-jardin.js",
-      "bytes": 4426,
-      "sha256": "ace41a9b579fc0b63ed593abb2255dabffc2fbd2bebec07fe7f7fd5e95bc0ac6"
+      "bytes": 4531,
+      "sha256": "a54a8242ab80b94ec78655af92beffd7662d28f77bbf7cf3c68b123a0ca10e77"
     },
     {
       "archivo": "js/components/home.js",
@@ -945,6 +942,41 @@
       "sha256": "1edf85877eeeabe7b7f59cc2fef284ae18b3e7cc516bf7f5673e6d90b99dafe0"
     },
     {
+      "archivo": "js/games/catalog.js",
+      "bytes": 606,
+      "sha256": "4110289e5534e6d9450b92cddf06250a1d3e8e4ca70f6fdb46a6d63cb442836c"
+    },
+    {
+      "archivo": "js/games/controller.js",
+      "bytes": 13746,
+      "sha256": "9b254b488e645e69a9c124d623f5fe261caed3bb504e29782add9afb120ab87b"
+    },
+    {
+      "archivo": "js/games/crossword-bank.js",
+      "bytes": 30057,
+      "sha256": "f2dfb81867c633c3e7235b8789c6a50dcf6929f815933e3ac625da0fc7be5cf1"
+    },
+    {
+      "archivo": "js/games/phrase-bank.js",
+      "bytes": 48043,
+      "sha256": "816be78ab9557508b752857fb25d4ab60942802cc9bfa38f3d2a10ad6b196542"
+    },
+    {
+      "archivo": "js/games/play-time.js",
+      "bytes": 2805,
+      "sha256": "1f606ca5ae9ffe58e9bc9c153c090d09ce0e58cb3fc8932d738f13130ed47757"
+    },
+    {
+      "archivo": "js/games/progress.js",
+      "bytes": 2344,
+      "sha256": "ae7296779e6215eaa902ace6f5fb255fcb01897950465681455a425b635b9fd8"
+    },
+    {
+      "archivo": "js/games/word-search-bank.js",
+      "bytes": 7786,
+      "sha256": "2a43c875a89c4fe5ec546e9c0f2e5007ae8b74e6bbd47646ea9360d8678cdde5"
+    },
+    {
       "archivo": "js/home-pet-interaction.js",
       "bytes": 3018,
       "sha256": "d06390008a6c7f014ad34db782025cf232ed65225e3a3d33e3ddfac73bfed498"
@@ -991,8 +1023,8 @@
     },
     {
       "archivo": "js/storage.js",
-      "bytes": 1499,
-      "sha256": "82db366e2ad71f33f4f266c87c83c545efdf07065f675cb10466b336101006a1"
+      "bytes": 1690,
+      "sha256": "b937012839008aaf7271617c46211cedc3b83100fcd4361b6bb3d9113d18721b"
     },
     {
       "archivo": "js/timer.js",
@@ -1001,8 +1033,8 @@
     },
     {
       "archivo": "js/utils.js",
-      "bytes": 499,
-      "sha256": "90f22978055bf8c0c15ccb112c3b02bfecac634840ddee141f1339017d058ceb"
+      "bytes": 489,
+      "sha256": "1b0ff7dcf845bbfa9fdeb78813cdb8d6ef4611638f4d834f073b3b848bf43ac0"
     },
     {
       "archivo": "js/welcome-desktop-controller.js",
@@ -1016,8 +1048,8 @@
     },
     {
       "archivo": "sw.js",
-      "bytes": 5889,
-      "sha256": "ae6f51db6261b34e82b0ff880e801ffd978b9e9c43f51d802fcf2a1fa9fd5428"
+      "bytes": 6159,
+      "sha256": "d635ce46e15ec67b33edb9b2f7e6b84405338b4516370c4b0d3dcab61a642df5"
     }
   ]
 }

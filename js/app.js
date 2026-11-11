@@ -20,12 +20,15 @@ import { bindMeditation } from './meditation-controller.js';
 import { bindQuickTechniques } from './quick-techniques-controller.js';
 import { bindAdvicePage } from './advice-controller.js';
 import { bindDesktopWelcome } from './welcome-desktop-controller.js';
+import { renderGames } from './components/games.js';
+import { games } from './games/catalog.js';
+import { bindGames } from './games/controller.js';
 
 const app = document.getElementById('app');
 const announcer = document.getElementById('announcer');
 // La misma definición de teléfono que en el welcome activa el Home móvil aprobado.
 const mobileHomeViewport = window.matchMedia('(max-width: 767px), (max-width: 1024px) and (max-height: 600px) and (orientation: landscape) and (hover: none) and (pointer: coarse)');
-const routes = new Set(['welcome','home','pet-select','pet-library','pet-detail','pet-confirm','methods','meditation','quick','advice','favorites','more','about','detail']);
+const routes = new Set(['welcome','home','pet-select','pet-library','pet-detail','pet-confirm','methods','meditation','quick','advice','favorites','more','about','detail','games']);
 let route = { view: '', id: null };
 let currentStep = 0;
 let messageIndex = 0;
@@ -42,6 +45,7 @@ let cleanupMeditation = null;
 let cleanupQuick = null;
 let cleanupAdvice = null;
 let cleanupWelcome = null;
+let cleanupGames = null;
 let homeReselection = false;
 const historyStack = [];
 let historyIndex = Number.isSafeInteger(history.state?.respiraRouteIndex) ? history.state.respiraRouteIndex : 0;
@@ -52,10 +56,15 @@ function leaveJournal(action) {
   action();
   return true;
 }
-function routeKey(value) { return value.view + (value.id ? '/' + value.id : ''); }
+function routeKey(value) { return value.view + (value.id ? '/' + value.id : '') + (value.level ? '/' + value.level : ''); }
 function readRoute() {
-  const [requested, id] = location.hash.slice(1).split('/');
+  const [requested, id, level] = location.hash.slice(1).split('/');
   const view = routes.has(requested) ? requested : 'welcome';
+  if (view === 'games') {
+    const type = Object.hasOwn(games, id) ? id : null;
+    const number = /^\d+$/.test(level) ? Number(level) : 0;
+    return { view, id: type, level: type && number > 0 && number <= games[type].levels.length ? number : null };
+  }
   if (view === 'detail' && !Object.hasOwn(catalog, id)) return { view:'methods', id:null };
   if (view === 'pet-detail' && !Object.hasOwn(pets, id)) return { view:'pet-select', id:null };
   if (view === 'pet-confirm' && !companionToday()) return { view:'pet-select', id:null };
@@ -73,6 +82,8 @@ function goBack() {
   });
 }
 function render() {
+  cleanupGames?.();
+  cleanupGames = null;
   cleanupWelcome?.();
   cleanupWelcome = null;
   cleanupAdvice?.();
@@ -103,15 +114,17 @@ function render() {
   if (view === 'pet-detail') html = renderPetDetail({petId:route.id,chosen:cp,returnView:petReturn});
   if (view === 'pet-confirm') html = renderPetConfirm({petId:cp,saveOk});
   if (view === 'methods') html = renderMethods({ petId:cp });
+  if (view === 'games') html = renderGames({ type:route.id, level:route.level, petId:cp });
   if (['meditation','quick','advice'].includes(view)) html = renderCollection(view, {petId:cp});
   if (view === 'favorites') html = renderFavorites({ petId:cp });
   if (view === 'more') html = renderMoreJardin(cp);
   if (view === 'about') html = renderAbout();
   if (view === 'detail') html = journalView ? renderJournalAgenda(journalAgendaView()) : renderDetail(route.id, {petReturn:activityPet,petId:cp,mobile:mobileHomeViewport.matches});
-  const active = ['welcome','home','pet-select','pet-library','pet-detail','pet-confirm'].includes(view) ? 'home' : view === 'favorites' ? 'favorites' : ['more','about'].includes(view) ? 'more' : 'methods';
+  const active = ['welcome','home','pet-select','pet-library','pet-detail','pet-confirm','games'].includes(view) ? 'home' : view === 'favorites' ? 'favorites' : ['more','about'].includes(view) ? 'more' : 'methods';
   app.innerHTML = renderFrame(html, { active, welcome:view === 'welcome', home:view === 'home', desktopHome, mobileHome, methods:view === 'methods', ownInterface:journalView || ['favorites','more','pet-select'].includes(view) });
   if (view === 'welcome') cleanupWelcome = bindDesktopWelcome(app);
   if (view === 'home') cleanupHomePet = bindHomePetInteractions(app);
+  if (view === 'games') cleanupGames = bindGames(app.querySelector('.games-page'), { type:route.id, level:route.level, petId:cp });
   if (journalView) cleanupJournal = bindJournalAgenda(app, render);
   if (view === 'detail' && route.id === 'breath') cleanupBreathing = bindBreathingCompanion(app, {announce:text => { announcer.textContent = text; }});
   if (view === 'detail' && catalog[route.id]?.kind === 'timer') cleanupMeditation = bindMeditation(app, {announce:text => { announcer.textContent = text; }});
@@ -252,7 +265,7 @@ app.addEventListener('click', event => {
   if (action === 'pet-pick') {
     const result = chooseCompanion(element.dataset.petId, { replace:route.view === 'pet-select' && homeReselection });
     saveOk = result.saved;
-    if (result.id) navigate('home');
+    if (result.id) navigate(historyStack.at(-1) === 'games' ? 'games' : 'home');
   }
   if (action === 'pet-message') {
     const cp = companionToday();
@@ -289,7 +302,7 @@ document.addEventListener('keydown',event => {
 });
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) return;
-  if (route.view === 'home') render();
+  if (route.view === 'home' || (route.view === 'games' && !route.level)) render();
 });
 mobileHomeViewport.addEventListener('change', () => {
   if (route.view === 'home' || route.view === 'welcome') render();

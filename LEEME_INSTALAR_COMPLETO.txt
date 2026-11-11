@@ -1,7 +1,8 @@
-﻿RESPIRA 4.16 — RESPALDO COMPLETO
+﻿RESPIRA 4.17 — RESPALDO COMPLETO
 
 Copia el contenido descomprimido en la carpeta de Respira y acepta Reemplazar.
 Deja index.html junto a las carpetas css, js, imagenes e iconos.
 Abre Respira desde la dirección habitual para acceder a tus datos guardados.
 
-Consejos incluye las 18 infografías aprobadas, con texto y fuentes consultables.
+Juegos incluye 225 retos, un calendario y una racha independiente por mascota.
+Consejos incluye las 18 infografías aprobadas y los desplegables independientes.

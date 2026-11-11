@@ -2,6 +2,7 @@ import { pets } from '../data.js';
 import { safe } from '../utils.js';
 import { icon } from '../icons.js';
 import { renderHomeCardArt } from './home-card-art.js';
+import { homeGamesButton } from './games.js';
 
 const pathways = [
   {title:'Respiración',subtitle:'Ejercicios para relajarte',image:'lago',symbol:'breath',color:'blue',action:'data-open="breath"'},
@@ -26,7 +27,7 @@ export function renderDesktopHome({petId=null,message=''}={}) {
       <div class="hd3-layout">
         <section class="hd3-intro" aria-labelledby="hd3-title"><div class="hd3-greeting"><small class="hd3-eyebrow">TU ESPACIO DE CALMA</small><h1 id="hd3-title">¡Qué bueno<br>verte aquí! <i aria-hidden="true">${icon('leaf')}</i></h1><p>Hoy también es un buen día<br>para cuidar de ti.</p></div></section>
         ${companion(chosen,message)}
-        <button class="hd3-calm" type="button" data-open="grounding"><span class="hd3-calm-icon">${icon('lotus')}</span><span class="hd3-calm-copy"><strong>Necesito calma</strong><span>Comienza un ejercicio ahora</span></span><span class="hd3-calm-arrow">${icon('chevron')}</span></button>
+        <div class="home-calm-and-games"><button class="hd3-calm" type="button" data-open="grounding"><span class="hd3-calm-icon">${icon('lotus')}</span><span class="hd3-calm-copy"><strong>Necesito calma</strong><span>Comienza un ejercicio ahora</span></span><span class="hd3-calm-arrow">${icon('chevron')}</span></button>${homeGamesButton()}</div>
         <section class="hd3-cards" aria-label="Elige un momento para ti"><div class="hd3-card-grid">${pathways.map(card=>`<button class="hd3-pathway hd3-pathway-${card.color}" type="button" ${card.action}>${renderHomeCardArt(card.image,'hd3-card-art')}<span class="hd3-card-panel"><span class="hd3-symbol">${icon(card.symbol)}</span><span class="hd3-card-copy"><strong>${card.title}</strong><small>${card.subtitle}</small></span><span class="hd3-card-arrow">${icon('chevron')}</span></span></button>`).join('')}</div></section>
         <button class="hd3-journal" type="button" data-open="journal"><span class="hd3-journal-icon">${icon('journal')}</span><span class="hd3-journal-copy"><strong>Mi espacio para escribir</strong><small>Comparte lo que sientes</small></span><img class="hd3-cat" src="./imagenes/inicio-web/gatito-hd.png" alt="" width="1536" height="1024"><span class="hd3-journal-arrow">${icon('chevron')}</span></button>
       </div>

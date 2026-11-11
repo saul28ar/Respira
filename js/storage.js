@@ -11,6 +11,11 @@ export function setStore(key, value) {
   try { localStorage.setItem(prefix + key, JSON.stringify(value)); return true; }
   catch { return false; }
 }
+export function storeKeys(start) {
+  try {
+    return Object.keys(localStorage).filter(key => key.startsWith(prefix + start)).map(key => key.slice(prefix.length));
+  } catch { return []; }
+}
 export function favorites() {
   const value = getStore('favorites', []);
   return Array.isArray(value) ? [...new Set(value.filter(id => typeof id === 'string' && Object.hasOwn(catalog, id)))] : [];

@@ -1,4 +1,4 @@
-const CACHE = 'respira-code-4-16-infografias';
+const CACHE = 'respira-code-4-17-juegos';
 const ASSETS = [
   "./",
   "./js/method-art.js",
@@ -107,6 +107,15 @@ const ASSETS = [
   "./js/components/common.js",
   "./js/components/companions.js",
   "./js/components/favorites.js",
+  "./css/games.css",
+  "./js/components/games.js",
+  "./js/games/catalog.js",
+  "./js/games/controller.js",
+  "./js/games/crossword-bank.js",
+  "./js/games/phrase-bank.js",
+  "./js/games/play-time.js",
+  "./js/games/progress.js",
+  "./js/games/word-search-bank.js",
   "./js/components/home-card-art.js",
   "./js/components/home-desktop.js",
   "./js/components/home-mobile-jardin.js",
