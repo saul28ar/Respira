@@ -16,6 +16,12 @@ const activityIcons = {
   nubecita: ['breath', 'leaf', 'spark'],
   lunita: ['moon', 'journal', 'leaf']
 };
+const petEmblems = { brotecito: 'leaf', nubecita: 'breath', lunita: 'moon' };
+const petHomes = {
+  brotecito: 'Brotecito en un valle con flores silvestres',
+  nubecita: 'Nubecita flotando sobre el océano al amanecer',
+  lunita: 'Lunita en el lago del bosque bajo la luna'
+};
 
 function petArtwork(id, className = '', loading = 'lazy') {
   return `<img class="companion-art ${className}" src="./imagenes/mascotas/${id}.png" width="724" height="724" alt="" loading="${loading}">`;
@@ -71,24 +77,35 @@ export function renderPetDetail({ petId = 'brotecito', chosen = null, returnView
   const p = pets[id];
   const f = petProfiles[id];
   const chosenId = pets[chosen] ? chosen : null;
-  const chosenText = chosenId === id
-    ? 'Es tu compañía de hoy. Mañana podrás elegir nuevamente.'
+  const isChosen = chosenId === id;
+  const chosenText = isChosen
+    ? 'Mañana podrás elegir nuevamente.'
     : chosenId
       ? `Hoy te acompaña ${pets[chosenId].name}. Mañana podrás elegir nuevamente.`
       : 'Puedes elegir a tu compañía de hoy o seguir explorando Respira.';
   return `<main class="page companion-profile-page companion-${id}">
     <div class="companion-topline"><button class="back-button" type="button" data-go="${safe(returnView)}">${icon('back')}<span>Volver</span></button></div>
     <section class="companion-profile-hero" aria-labelledby="profile-name">
-      <div class="companion-profile-copy"><span class="eyebrow">Conoce a tu compañía</span><h1 id="profile-name">${safe(p.name)}</h1><p class="companion-profile-subtitle">${safe(p.subtitle)}</p><div class="companion-message">${icon('heart')}<p>${safe(f.message)}</p></div><span class="companion-essence">${safe(f.meaning)}</span></div>
-      <div class="companion-profile-scene"><img src="${p.image}" width="941" height="1672" alt="${safe(p.name)} en su paisaje natural" fetchpriority="high"></div>
+      <div class="companion-profile-copy">
+        ${isChosen ? `<span class="companion-profile-chosen">${icon('check')}Tu compañía de hoy</span>` : ''}
+        <h1 id="profile-name">${safe(p.name)}</h1>
+        <p class="companion-profile-subtitle">${safe(p.subtitle)}</p>
+        <blockquote class="companion-message">${icon(petEmblems[id])}<p>“${safe(f.message)}”</p></blockquote>
+      </div>
+      <div class="companion-profile-scene">
+        <img class="companion-profile-art" src="./imagenes/perfiles/perfil-${id}-integrado.webp" width="1536" height="1024" alt="${safe(petHomes[id])}">
+      </div>
     </section>
-    <section class="companion-profile-details" aria-label="Descubre más sobre ${safe(p.name)}">
-      <details class="companion-detail" open><summary>${icon('leaf')}<span>Su historia</span><span class="companion-expand" aria-hidden="true">+</span></summary><div class="companion-detail-copy"><p>${safe(f.short)}</p><p>${safe(f.long)}</p></div></details>
-      <details class="companion-detail"><summary>${icon('heart')}<span>Su personalidad</span><span class="companion-expand" aria-hidden="true">+</span></summary><div class="companion-detail-copy"><p>${safe(f.personality)}</p></div></details>
-      <details class="companion-detail"><summary>${icon('spark')}<span>Lo que representa</span><span class="companion-expand" aria-hidden="true">+</span></summary><div class="companion-detail-copy"><p>${safe(f.meaning)}</p><blockquote>“${safe(f.quote)}”</blockquote></div></details>
-    </section>
-    <blockquote class="companion-quote">“${safe(f.quote)}”</blockquote>
-    <section class="companion-activities" aria-labelledby="companion-activities-title"><div class="section-heading"><h2 id="companion-activities-title">Hoy pueden hacer juntos…</h2><p class="muted">Elige algo que te venga bien. Sin ninguna prisa.</p></div><div class="companion-activity-list">${f.activities.map(([,title,subtitle], index) => `<button class="companion-activity" type="button" data-open="${petActivities[id][index]}"><span class="companion-activity-icon">${icon(activityIcons[id][index])}</span><span><strong>${safe(title)}</strong><small>${safe(subtitle)}</small></span>${icon('chevron')}</button>`).join('')}</div></section>
+    <div class="companion-profile-sections">
+      <section class="companion-profile-details" aria-labelledby="companion-story-title">
+        <div class="companion-story"><h2 id="companion-story-title">Su historia</h2><p>${safe(f.short)}</p>
+          <details class="companion-full-story"><summary>Leer la historia completa ${icon('chevron')}</summary><p>${safe(f.long)}</p></details>
+        </div>
+        <details class="companion-detail"><summary>${icon('heart')}<span>Su personalidad</span>${icon('chevron', 'companion-expand')}</summary><div class="companion-detail-copy"><p>${safe(f.personality)}</p></div></details>
+        <details class="companion-detail"><summary>${icon('spark')}<span>Lo que representa</span>${icon('chevron', 'companion-expand')}</summary><div class="companion-detail-copy"><p>${safe(f.meaning)}</p><blockquote>“${safe(f.quote)}”</blockquote></div></details>
+      </section>
+      <section class="companion-activities" aria-labelledby="companion-activities-title"><h2 id="companion-activities-title">Para hacer juntos</h2><div class="companion-activity-list">${f.activities.map(([,title,subtitle], index) => `<button class="companion-activity" type="button" data-open="${petActivities[id][index]}"><span class="companion-activity-icon">${icon(activityIcons[id][index])}</span><span><strong>${safe(title)}</strong><small>${safe(subtitle)}</small></span>${icon('chevron')}</button>`).join('')}</div></section>
+    </div>
     <footer class="companion-profile-footer"><p>${safe(chosenText)}</p>${!chosenId ? `<button class="primary" type="button" data-action="pet-pick" data-pet-id="${id}">Elegir a ${safe(p.name)} ${icon('arrow')}</button>` : `<button class="primary" type="button" data-go="home">Volver al inicio ${icon('arrow')}</button>`}</footer>
   </main>`;
 }

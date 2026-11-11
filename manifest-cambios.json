@@ -1,118 +1,153 @@
 {
-  "version_base": "4.16",
-  "version_nueva": "4.17",
-  "sha256_base_zip": "22a618ed9641af9ed04e9f0aa2b14356d62c3849718571971d0fee33656ff89f",
+  "version_base": "4.17",
+  "version_nueva": "4.18",
+  "sha256_base_zip": "ce29ce7c879ec8ddf3e11ab2225e477a207f3995c4ee7a606e80c5b066e368e8",
   "eliminaciones": [],
   "archivos": [
     {
       "archivo": "ACTUALIZAR_RESPIRA.txt",
-      "bytes": 803,
-      "sha256": "97fa743e877bf7da5ab87d60368278c301e1fd50196b196b91dad578755e5943"
+      "bytes": 487,
+      "sha256": "9ad544649de0a92f7d81e78bd6b49786a4f02234722b4253047a2d683c15450b"
     },
     {
       "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
-      "bytes": 803,
-      "sha256": "97fa743e877bf7da5ab87d60368278c301e1fd50196b196b91dad578755e5943"
+      "bytes": 487,
+      "sha256": "9ad544649de0a92f7d81e78bd6b49786a4f02234722b4253047a2d683c15450b"
     },
     {
       "archivo": "LEEME_INSTALAR_COMPLETO.txt",
-      "bytes": 423,
-      "sha256": "7c514bcd90f3b61158e704389788a5eb0f4f383a4e0527a7516fee4e4ccc9b48"
+      "bytes": 261,
+      "sha256": "b1e51e38e799904f62c9ddc53b776eb2f00cedc8520cb329aebd1993530171c7"
     },
     {
-      "archivo": "css/advice.css",
-      "bytes": 4763,
-      "sha256": "085e32848c0bc14fb78d56cfd3b6eece1ced8401dccfdd9267a78d40843d4e3a"
+      "archivo": "css/companions.css",
+      "bytes": 15141,
+      "sha256": "8a8c87704a0b32d15d7e99f1ece51e5829623b11f4ce38c70314a82801b8356f"
+    },
+    {
+      "archivo": "css/favorites.css",
+      "bytes": 18909,
+      "sha256": "8bd4aa578a92f8cf29470a00e5d44ee976af604712ee423aa0acf66fb1f40893"
     },
     {
       "archivo": "css/games.css",
-      "bytes": 12139,
-      "sha256": "cba8ae8a339b1431e143ffbb9a824ee872c51ed1f580ea75866b4162c5c40ec8"
+      "bytes": 13991,
+      "sha256": "6163d6bf7a4f2c182d4f9bb542573d3b285124c00046bcfa5c855d3f7c09e5d9"
+    },
+    {
+      "archivo": "css/methods.css",
+      "bytes": 15337,
+      "sha256": "65f947c8ae8473131c1ac7da651ec53722b38b08bc6bcbb6306770eb8c142e93"
+    },
+    {
+      "archivo": "imagenes/mascotas/reacciones/favoritos-brotecito.webp",
+      "bytes": 54890,
+      "sha256": "985eb7a273ba901e7a1123b1b3b0142678d325c2e5e40977ddcaaddf90ffc22a"
+    },
+    {
+      "archivo": "imagenes/mascotas/reacciones/favoritos-lunita.webp",
+      "bytes": 41292,
+      "sha256": "e462b568e86be71f956236534f3b5cb445e8c8326a04ffaf4b26267732b4b715"
+    },
+    {
+      "archivo": "imagenes/mascotas/reacciones/favoritos-nubecita.webp",
+      "bytes": 78512,
+      "sha256": "b3c720c6ddfb354c1c0346146ff47e10b0221b8b353e32cb5c6f9d1f477c76fe"
+    },
+    {
+      "archivo": "imagenes/mascotas/reacciones/metodos-brotecito.webp",
+      "bytes": 55036,
+      "sha256": "6befed4fb36ff12873aeac6c91c02e44ef13b4def5b75488619d5cc4cc46f5a7"
+    },
+    {
+      "archivo": "imagenes/mascotas/reacciones/metodos-lunita.webp",
+      "bytes": 42114,
+      "sha256": "e6bca8c24c33f7bea502eec5746a0131f5ce95ca58f69be0bfa9beb636e31db2"
+    },
+    {
+      "archivo": "imagenes/mascotas/reacciones/metodos-nubecita.webp",
+      "bytes": 60240,
+      "sha256": "3965e0108e541436f44c979b1804cf2b23ec3db860fbe063f51cad59a668cf20"
+    },
+    {
+      "archivo": "imagenes/perfiles/perfil-brotecito-integrado.webp",
+      "bytes": 411016,
+      "sha256": "94222770917f40ceb307531ba04809e8b260caac94af493a0f3cedc4018978de"
+    },
+    {
+      "archivo": "imagenes/perfiles/perfil-lunita-integrado.webp",
+      "bytes": 245764,
+      "sha256": "a903acefbabf340f37c8d1949497521c75ed0695abad2478a4a880a820f2bebf"
+    },
+    {
+      "archivo": "imagenes/perfiles/perfil-nubecita-integrado.webp",
+      "bytes": 339206,
+      "sha256": "941e10ab57b5725ed9f69e4819a24b99888e891906f3ea79c4f545da35befc9e"
     },
     {
       "archivo": "index.html",
       "bytes": 2540,
-      "sha256": "cb5f7cd96ee5dd6bf857e469d5e30de54c7d3cab1640ce41941934ae127f92a0"
+      "sha256": "f404963ef37f2322da04e702e1c08b46a7e3c929fb48a08511abe7225dac5f99"
     },
     {
       "archivo": "js/app.js",
-      "bytes": 16355,
-      "sha256": "1765a178de0d846fe8dd49935d2cd2b25fddb8d4753ecc19691b1ad560ef561a"
+      "bytes": 16799,
+      "sha256": "e1c2d9b118a01e4ddf0a000fa9ce8c0548945ca5bb908cb342db0dfddb194c3a"
     },
     {
-      "archivo": "js/components/advice.js",
-      "bytes": 6159,
-      "sha256": "cff2c0f64c3a0b03acab67a58e9e07d0eddaff1c83d220bb7457bcb07edba862"
+      "archivo": "js/components/companions.js",
+      "bytes": 8234,
+      "sha256": "f9679215fcbb6926cf8c89a889c1943a35bfd1c88bf967e9113a9b215cbf8302"
+    },
+    {
+      "archivo": "js/components/favorites.js",
+      "bytes": 5186,
+      "sha256": "82a58d99671b19d6499c3742a9dff0c5db7094851c39805727dd922eda38aa6e"
     },
     {
       "archivo": "js/components/games.js",
-      "bytes": 7838,
-      "sha256": "9c56b7f128e9f7dea223f919534a7808845ee298031ad4b0a1b15a48a390f2f2"
+      "bytes": 6819,
+      "sha256": "66cda50c29dc90f62f0aa5454cfb3e5a0e83606e9cb95c7667af7340e0258df1"
     },
     {
-      "archivo": "js/components/home-desktop.js",
-      "bytes": 4490,
-      "sha256": "95b64ba924aecfc4d09f47e7185c4eba6c2b8bfd5a613bb232c5bbde75ea4398"
+      "archivo": "js/components/methods.js",
+      "bytes": 5627,
+      "sha256": "bd670e8e564f2914ce343f7289ed180731cc0c25c899df26ac7dbb96e2b96a4e"
     },
     {
-      "archivo": "js/components/home-mobile-jardin.js",
-      "bytes": 4531,
-      "sha256": "a54a8242ab80b94ec78655af92beffd7662d28f77bbf7cf3c68b123a0ca10e77"
-    },
-    {
-      "archivo": "js/games/catalog.js",
-      "bytes": 606,
-      "sha256": "4110289e5534e6d9450b92cddf06250a1d3e8e4ca70f6fdb46a6d63cb442836c"
+      "archivo": "js/favorites-reorder.js",
+      "bytes": 7135,
+      "sha256": "ec3628fe6d8de456ae199d1f66c46be90ba18cb46c465e4dbd11a79b8d9f193d"
     },
     {
       "archivo": "js/games/controller.js",
-      "bytes": 13746,
-      "sha256": "9b254b488e645e69a9c124d623f5fe261caed3bb504e29782add9afb120ab87b"
+      "bytes": 19528,
+      "sha256": "07c7ba21186613a8479e26cb7cb73a8d051e37a1374df7dc272fe88ef2cdf9cf"
     },
     {
-      "archivo": "js/games/crossword-bank.js",
-      "bytes": 30057,
-      "sha256": "f2dfb81867c633c3e7235b8789c6a50dcf6929f815933e3ac625da0fc7be5cf1"
+      "archivo": "js/games/drafts.js",
+      "bytes": 2680,
+      "sha256": "5f841fd3d4e4a3fa61fe30421ce0448fc85031184e314597d25fb971256d821a"
     },
     {
-      "archivo": "js/games/phrase-bank.js",
-      "bytes": 48043,
-      "sha256": "816be78ab9557508b752857fb25d4ab60942802cc9bfa38f3d2a10ad6b196542"
-    },
-    {
-      "archivo": "js/games/play-time.js",
-      "bytes": 2805,
-      "sha256": "1f606ca5ae9ffe58e9bc9c153c090d09ce0e58cb3fc8932d738f13130ed47757"
+      "archivo": "js/games/hints.js",
+      "bytes": 2774,
+      "sha256": "38e164824f5f5d3c62af94ebed999d57c36e97ab8989fd1ab8c8e223a0df7f10"
     },
     {
       "archivo": "js/games/progress.js",
-      "bytes": 2344,
-      "sha256": "ae7296779e6215eaa902ace6f5fb255fcb01897950465681455a425b635b9fd8"
-    },
-    {
-      "archivo": "js/games/word-search-bank.js",
-      "bytes": 7786,
-      "sha256": "2a43c875a89c4fe5ec546e9c0f2e5007ae8b74e6bbd47646ea9360d8678cdde5"
-    },
-    {
-      "archivo": "js/storage.js",
-      "bytes": 1690,
-      "sha256": "b937012839008aaf7271617c46211cedc3b83100fcd4361b6bb3d9113d18721b"
-    },
-    {
-      "archivo": "js/utils.js",
-      "bytes": 489,
-      "sha256": "1b0ff7dcf845bbfa9fdeb78813cdb8d6ef4611638f4d834f073b3b848bf43ac0"
+      "bytes": 2464,
+      "sha256": "bf8119ff47717840ace436caf324c3d35e90131972895f3512c98f1704875351"
     },
     {
       "archivo": "manifest-entrega.json",
-      "bytes": 35234,
-      "sha256": "d5f6f8c1957e77c73dd9a41f769a54313e19fb31c7440b05b29b9a7a11ca94e3"
+      "bytes": 37609,
+      "sha256": "fabe2c75d9fd088ceef937df0fd2aea369b3ec41c241afa40ec7807059d09969"
     },
     {
       "archivo": "sw.js",
-      "bytes": 6159,
-      "sha256": "d635ce46e15ec67b33edb9b2f7e6b84405338b4516370c4b0d3dcab61a642df5"
+      "bytes": 6785,
+      "sha256": "4b1a86a1bdb0103908dd959e79ac24f5a13371c286a6138bf6ccb2dfc7a65f23"
     }
   ]
 }

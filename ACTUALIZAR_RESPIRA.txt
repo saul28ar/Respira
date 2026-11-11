@@ -1,16 +1,9 @@
-﻿RESPIRA 4.17 — CAMBIOS DESDE 4.16
+﻿RESPIRA 4.18 — CAMBIOS DESDE 4.17
 
 1. Descomprime el ZIP.
-2. Copia su contenido sobre la carpeta donde ya está index.html y acepta Reemplazar.
-3. Conserva los demás archivos de Respira.
+2. Copia el contenido en la carpeta donde ya está index.html y acepta Reemplazar.
+3. En GitHub, sube ese contenido a la raíz del repositorio, junto al index.html existente.
+4. Guarda los cambios. Cuando GitHub Pages termine, vuelve a abrir Respira.
 
-Si actualizas por GitHub, sube el contenido descomprimido a la raíz del repositorio,
-junto al index.html existente. Espera a que GitHub Pages termine correctamente y
-vuelve a abrir Respira desde su dirección habitual.
-
-En Inicio, Juegos abre 75 sopas de letras, 75 crucigramas y 75 retos de completar
-la frase. El primer reto resuelto de cada día cuenta para la mascota elegida.
-El calendario y las insignias se guardan en el navegador de ese dispositivo.
-
-En Consejos, «Cómo hacerlo con comodidad» y «¿Para qué puede servirte?»
-se abren por separado. Se conserva el carrusel y las 18 infografías.
+Incluye los tres perfiles ilustrados, pistas con recarga y autoguardado en Juegos,
+Favoritos reordenables y las nuevas expresiones de las mascotas en Favoritos y Métodos.

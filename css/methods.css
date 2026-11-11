@@ -27,12 +27,47 @@ body.methods-view #app{padding-bottom:0}
 .methods-jardin .m10-active-dot{display:none}
 .methods-jardin .m10-menu{width:43px;height:43px;display:grid;place-items:center;border-radius:50%;background:#fffef8;border:1px solid #dce8d8;color:#215f49}
 .methods-jardin .m10-menu .m10-icon{width:23px;height:23px}
-.methods-jardin .m10-intro{height:202px;display:flex;align-items:center;padding:27px 36px;position:relative;isolation:isolate;overflow:hidden;border-radius:28px;border:1px solid #ffffffe0;background:linear-gradient(90deg,#fffff8e8,#fffff8a6 70%,transparent),url('../imagenes/inicio-web/lago-hd.png') center 40%/cover;box-shadow:0 6px 25px #245b431c}
-.methods-jardin .m10-intro-copy{position:relative;z-index:1;width:calc(100% - 225px)}
+.methods-jardin .m10-intro{min-height:202px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:16px;padding:20px 36px;position:relative;isolation:isolate;overflow:hidden;border-radius:28px;border:1px solid #ffffffe0;background:linear-gradient(90deg,#fffff8e8,#fffff8a6 70%,transparent),url('../imagenes/inicio-web/lago-hd.png') center 40%/cover;box-shadow:0 6px 25px #245b431c}
+.methods-jardin .m10-intro-copy{min-width:0}
 .methods-jardin .m10-eyebrow{display:block;color:#447059;font-size:10px;font-weight:650;letter-spacing:.17em;margin-bottom:11px}
 .methods-jardin h1{font:400 46px/1.06 Georgia,serif;letter-spacing:-.045em;margin:0 0 13px;color:#174f37}
 .methods-jardin .m10-intro p{font-size:14px;line-height:1.7;color:#456957;max-width:610px;margin:0}
-.methods-jardin .m10-intro-pet{position:absolute;right:24px;bottom:8px;width:178px;height:178px;object-fit:contain;filter:drop-shadow(0 6px 6px #92b9b328)}
+.methods-jardin .m10-intro p span{display:block}
+.methods-jardin .m10-intro-companion{
+  --curiosity-motion:m10-brotecito-peek;
+  position:relative;
+  width:clamp(150px,20vw,200px);
+  aspect-ratio:1;
+  display:grid;
+  place-items:center;
+}
+.methods-jardin .m10-intro-companion-nubecita{--curiosity-motion:m10-nubecita-peek}
+.methods-jardin .m10-intro-companion-lunita{--curiosity-motion:m10-lunita-peek}
+.methods-jardin .m10-intro-pet{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  transform-origin:50% 73%;
+  filter:drop-shadow(0 6px 6px #46796d34);
+}
+@media(prefers-reduced-motion:no-preference){
+  .methods-jardin .m10-intro-pet{animation:var(--curiosity-motion) 1.3s .15s ease-in-out both}
+}
+@keyframes m10-brotecito-peek{
+  0%,100%{transform:none}
+  45%{transform:translate(-3%,-3%) rotate(-5deg)}
+  72%{transform:translateY(-1%) rotate(-2deg)}
+}
+@keyframes m10-nubecita-peek{
+  0%,100%{transform:none}
+  48%{transform:translate(-4%,-6%) rotate(3deg)}
+  76%{transform:translate(-2%,-3%)}
+}
+@keyframes m10-lunita-peek{
+  0%,100%{transform:none}
+  48%{transform:rotate(5deg) scale(1.035)}
+  76%{transform:rotate(2deg)}
+}
 .methods-jardin .m10-section-line{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:23px 0 18px;padding:0 4px}
 .methods-jardin .m10-section-line h2{font:400 25px/1.2 Georgia,serif;letter-spacing:-.02em;margin:0}
 .methods-jardin .m10-section-line>span{font-size:12px;color:#688063}
@@ -88,9 +123,8 @@ body.methods-view #app{padding-bottom:0}
 .methods-jardin .m10-brand{width:145px}
 .methods-jardin .m10-top-nav{gap:0}
 .methods-jardin .m10-top-nav a{padding:9px 10px;gap:5px}
-.methods-jardin .m10-intro-copy{width:calc(100% - 175px)}
 .methods-jardin h1{font-size:38px}
-.methods-jardin .m10-intro-pet{width:150px;height:150px}
+.methods-jardin .m10-intro-companion{width:150px}
 .methods-jardin .m10-method-copy{padding-left:15px}
 .methods-jardin .m10-method-copy strong{font-size:18px}
 }
@@ -104,12 +138,11 @@ body.methods-view #app{padding-bottom:0}
 .methods-jardin .m10-top-nav{display:none}
 .methods-jardin .m10-menu{width:39px;height:39px;margin-left:auto}
 .methods-jardin .m10-menu .m10-icon{width:22px;height:22px}
-.methods-jardin .m10-intro{height:190px;padding:21px;border-radius:25px;background:linear-gradient(110deg,#fffff8e8,#fffff8bd 76%,#fffff864),url('../imagenes/inicio-web/lago-hd.png') center 40%/cover}
-.methods-jardin .m10-intro-copy{width:calc(100% - 65px);max-width:calc(100% - 65px)}
+.methods-jardin .m10-intro{min-height:190px;gap:5px;padding:18px 14px 18px 20px;border-radius:25px;background:linear-gradient(110deg,#fffff8e8,#fffff8bd 76%,#fffff864),url('../imagenes/inicio-web/lago-hd.png') center 40%/cover}
 .methods-jardin .m10-eyebrow{font-size:9px;letter-spacing:.16em;margin-bottom:9px}
 .methods-jardin h1{font-size:30px;line-height:1.06;letter-spacing:-.04em;margin-bottom:11px}
 .methods-jardin .m10-intro p{font-size:12px;line-height:1.6;max-width:232px}
-.methods-jardin .m10-intro-pet{width:98px;height:98px;right:10px;bottom:20px}
+.methods-jardin .m10-intro-companion{width:clamp(100px,32vw,150px)}
 .methods-jardin .m10-section-line{margin:19px 0 15px;gap:7px;padding:0 2px}
 .methods-jardin .m10-section-line h2{font-size:21px}
 .methods-jardin .m10-section-line>span{font-size:10px}
@@ -148,10 +181,8 @@ body.methods-view #app{padding-bottom:0}
 }
 @media(max-width:359px){
 .methods-jardin .m10-page{padding-left:12px;padding-right:12px}
-.methods-jardin .m10-intro{padding:18px}
-.methods-jardin .m10-intro-copy{width:calc(100% - 43px);max-width:calc(100% - 43px)}
+.methods-jardin .m10-intro{padding-inline:15px 10px}
 .methods-jardin h1{font-size:27px}
-.methods-jardin .m10-intro-pet{width:80px;height:80px;right:2px}
 .methods-jardin .m10-category-description{max-width:190px}
 .methods-jardin .m10-category-count{font-size:8px}
 .methods-jardin .m10-method-copy{padding-left:11px}

@@ -148,4 +148,104 @@ body.favorites-jardin-view #app{padding-bottom:0}
 .favorites-jardin .f4-page{width:100%;max-width:none;margin:0}
 
 .favorites-jardin .f4-picture-cat{background:#eee6f8}.favorites-jardin .f4-picture-cat>img{object-fit:contain}
-.favorites-jardin [data-card="food"] .f4-picture>img,.favorites-jardin [data-card="grief"] .f4-picture>img{object-fit:cover}
+
+.favorites-jardin.favorites-jardin .f4-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+}
+.favorites-jardin.favorites-jardin .f4-intro-with-pet {
+  grid-template-columns: minmax(0, 1fr) 212px;
+  gap: 12px;
+}
+.favorites-jardin.favorites-jardin .f4-intro-copy { width: auto; }
+.favorites-jardin .f4-intro p > span { display: block; }
+.favorites-jardin.favorites-jardin .f4-intro-art {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: 145px;
+}
+.favorites-jardin.favorites-jardin .f4-intro-art img {
+  width: 178px;
+  height: 178px;
+  object-fit: contain;
+  transform: translateY(var(--reaction-offset, 0));
+}
+.favorites-jardin [data-favorites-reaction="nubecita"] { --reaction-offset: -8px; --reaction-angle: -5deg; }
+.favorites-jardin [data-favorites-reaction="lunita"] { --reaction-offset: -5px; --reaction-angle: 4deg; }
+.favorites-jardin .f4-intro-art[data-favorites-reaction] img { animation: f4-delight .75s ease-out both; }
+@keyframes f4-delight {
+  0%, 100% { transform: translateY(var(--reaction-offset, 0)) rotate(0deg); }
+  45% { transform: translateY(calc(var(--reaction-offset, 0px) - 5px)) rotate(var(--reaction-angle, -2deg)); }
+}
+
+.favorites-jardin .f4-reorder-note { margin: -7px 7px 12px; color: #486a57; font-size: .78rem; }
+.favorites-jardin .f4-favorite-advice .f4-card-copy { padding-left: 11px; }
+.favorites-jardin .f4-favorite-sortable .f4-card-copy { padding-right: 51px; }
+.favorites-jardin.favorites-jardin .f4-favorite-sortable .f4-card-arrow { right: 40px; top: 50%; bottom: auto; transform: translateY(-50%); }
+.favorites-jardin .f4-favorite-grip {
+  position: absolute;
+  right: 8px;
+  bottom: 7px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: transparent;
+  color: #4a715d;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  z-index: 2;
+}
+.favorites-jardin .f4-favorite-grip > span {
+  width: 26px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  background: #eaf2e9;
+}
+.favorites-jardin .f4-favorite-grip > span::before {
+  content: '';
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: currentColor;
+  transform: translate(-2.5px, -5px);
+  box-shadow: 5px 0 currentColor, 0 5px currentColor, 5px 5px currentColor, 0 10px currentColor, 5px 10px currentColor;
+}
+.favorites-jardin .f4-favorite-grip:hover > span, .favorites-jardin .f4-favorite-grip:focus-visible > span { background: #dbeade; }
+.favorites-jardin .f4-favorite-grip:active, .favorites-jardin [data-favorite-dragging] .f4-favorite-grip { cursor: grabbing; }
+.favorites-jardin [data-favorite-dragging] { opacity: .62; outline: 1px dashed #4e8666; }
+.favorites-jardin [data-favorite-drop]::after {
+  content: '';
+  position: absolute;
+  left: 7px;
+  right: 7px;
+  height: 3px;
+  background: #42856a;
+  border-radius: 6px;
+  pointer-events: none;
+}
+.favorites-jardin [data-favorite-drop="before"]::after { top: -6px; }
+.favorites-jardin [data-favorite-drop="after"]::after { bottom: -6px; }
+
+@media (max-width: 767px) {
+  .favorites-jardin.favorites-jardin .f4-intro { padding: 16px; }
+  .favorites-jardin.favorites-jardin .f4-intro-with-pet { grid-template-columns: minmax(0, 1fr) clamp(100px, 32vw, 150px); gap: 5px; }
+  .favorites-jardin.favorites-jardin .f4-intro-art { height: auto; aspect-ratio: 1; }
+  .favorites-jardin.favorites-jardin .f4-intro-art img { width: 100%; height: 100%; }
+  .favorites-jardin .f4-favorite-advice .f4-card-copy { padding-left: 8px; }
+  .favorites-jardin.favorites-jardin .f4-favorite-sortable { min-height: 108px; }
+  .favorites-jardin.favorites-jardin .f4-favorite-sortable .f4-card-open { gap: 12px; }
+  .favorites-jardin.favorites-jardin .f4-favorite-sortable .f4-card-copy { padding-right: 41px; }
+  .favorites-jardin.favorites-jardin .f4-favorite-sortable .f4-card-arrow { right: 34px; }
+  .favorites-jardin .f4-favorite-grip { right: 3px; bottom: 3px; }
+  .favorites-jardin .f4-reorder-note { margin: -4px 2px 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .favorites-jardin .f4-intro-art[data-favorites-reaction] img { animation: none; }
+}

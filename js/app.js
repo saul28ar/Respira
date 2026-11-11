@@ -9,6 +9,7 @@ import { renderPetSelectJardin } from './components/pet-select-jardin.js';
 import { renderCollection, renderDetail } from './components/activities.js';
 import { renderMethods } from './components/methods.js';
 import { renderFavorites } from './components/favorites.js';
+import { bindFavoriteReorder } from './favorites-reorder.js';
 import { renderMoreJardin } from './components/more-jardin.js';
 import { renderAbout } from './components/settings.js';
 import { markPetOfferSeen, welcomeDestination } from './daily-entry.js';
@@ -20,7 +21,7 @@ import { bindMeditation } from './meditation-controller.js';
 import { bindQuickTechniques } from './quick-techniques-controller.js';
 import { bindAdvicePage } from './advice-controller.js';
 import { bindDesktopWelcome } from './welcome-desktop-controller.js';
-import { renderGames } from './components/games.js';
+import { nextGameLevel, renderGames } from './components/games.js';
 import { games } from './games/catalog.js';
 import { bindGames } from './games/controller.js';
 
@@ -46,6 +47,7 @@ let cleanupQuick = null;
 let cleanupAdvice = null;
 let cleanupWelcome = null;
 let cleanupGames = null;
+let cleanupFavoriteReorder = null;
 let homeReselection = false;
 const historyStack = [];
 let historyIndex = Number.isSafeInteger(history.state?.respiraRouteIndex) ? history.state.respiraRouteIndex : 0;
@@ -63,7 +65,8 @@ function readRoute() {
   if (view === 'games') {
     const type = Object.hasOwn(games, id) ? id : null;
     const number = /^\d+$/.test(level) ? Number(level) : 0;
-    return { view, id: type, level: type && number > 0 && number <= games[type].levels.length ? number : null };
+    if (!type) return { view, id: null };
+    return { view, id: type, level: number > 0 && number <= games[type].levels.length ? number : nextGameLevel(type, companionToday()) };
   }
   if (view === 'detail' && !Object.hasOwn(catalog, id)) return { view:'methods', id:null };
   if (view === 'pet-detail' && !Object.hasOwn(pets, id)) return { view:'pet-select', id:null };
@@ -82,6 +85,8 @@ function goBack() {
   });
 }
 function render() {
+  cleanupFavoriteReorder?.();
+  cleanupFavoriteReorder = null;
   cleanupGames?.();
   cleanupGames = null;
   cleanupWelcome?.();
@@ -124,6 +129,7 @@ function render() {
   app.innerHTML = renderFrame(html, { active, welcome:view === 'welcome', home:view === 'home', desktopHome, mobileHome, methods:view === 'methods', ownInterface:journalView || ['favorites','more','pet-select'].includes(view) });
   if (view === 'welcome') cleanupWelcome = bindDesktopWelcome(app);
   if (view === 'home') cleanupHomePet = bindHomePetInteractions(app);
+  if (view === 'favorites') cleanupFavoriteReorder = bindFavoriteReorder(app, { announce: text => { announcer.textContent = text; } });
   if (view === 'games') cleanupGames = bindGames(app.querySelector('.games-page'), { type:route.id, level:route.level, petId:cp });
   if (journalView) cleanupJournal = bindJournalAgenda(app, render);
   if (view === 'detail' && route.id === 'breath') cleanupBreathing = bindBreathingCompanion(app, {announce:text => { announcer.textContent = text; }});
@@ -145,6 +151,7 @@ function render() {
   document.body.classList.toggle('more-jardin-view', view === 'more');
   document.body.classList.toggle('pet-select-jardin-view', view === 'pet-select');
   document.body.classList.toggle('journal-agenda-view', journalView);
+  document.body.classList.toggle('games-view', view === 'games');
   const theme = document.querySelector('meta[name="theme-color"]');
   if (theme) theme.content = view === 'welcome' && mobileHomeViewport.matches ? '#147b99' : '#f6f8f2';
   const title = app.querySelector('h1')?.textContent ?? 'Tu espacio de calma';

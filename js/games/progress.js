@@ -4,7 +4,7 @@ import { dateAtDevice } from '../utils.js';
 
 const sessionProgress = new Set();
 const numberOfDays = day => Date.parse(day + 'T00:00:00Z') / 86400000;
-const petPrefix = petId => 'games_' + petId + '_';
+const petPrefix = petId => 'games_' + (petId ?? 'guest') + '_';
 
 function savedItems(prefix) {
   const stored = storeKeys(prefix).filter(key => getStore(key, false) === true);
@@ -21,24 +21,29 @@ export function gameProgress(petId, today = dateAtDevice()) {
   let streak = 0;
   if (!dayNumbers.has(cursor)) cursor--;
   while (dayNumbers.has(cursor)) { streak++; cursor--; }
-  const levels = new Set(hasPet ? savedItems(prefix + 'level_') : []);
+  const levels = new Set(hasPet || petId == null ? savedItems(prefix + 'level_') : []);
   return { days: new Set(days), streak, levels, total: days.length, playedToday: dayNumbers.has(numberOfDays(today)) };
 }
 
-export function recordGame(petId, type, level, today = dateAtDevice()) {
-  if (!Object.hasOwn(pets, petId)) return null;
+export function recordGame(petId, type, level, today = dateAtDevice(), { countDay = true } = {}) {
+  const hasPet = Object.hasOwn(pets, petId);
+  if (!hasPet && petId != null) return null;
   const prefix = petPrefix(petId);
   const dayKey = prefix + 'day_' + today;
   const levelKey = prefix + 'level_' + type + '_' + level;
-  const newDay = !sessionProgress.has(dayKey) && !getStore(dayKey, false);
-  const levelSaved = setStore(levelKey, true);
-  const daySaved = setStore(dayKey, true);
+  const markDay = hasPet && countDay;
+  const newDay = markDay && !sessionProgress.has(dayKey) && !getStore(dayKey, false);
+  const keys = markDay ? [levelKey, dayKey] : [levelKey];
+  let saved = true;
   // Use independent keys so finishing two challenges in different tabs can't erase either.
-  for (const [key, saved] of [[levelKey, levelSaved], [dayKey, daySaved]]) {
-    if (saved) sessionProgress.delete(key);
-    else sessionProgress.add(key);
+  for (const key of keys) {
+    if (setStore(key, true)) sessionProgress.delete(key);
+    else {
+      saved = false;
+      sessionProgress.add(key);
+    }
   }
-  return { ...gameProgress(petId, today), newDay, saved: levelSaved && daySaved };
+  return { ...gameProgress(petId, today), newDay, saved, markDay };
 }
 
 export function dailyLevel(progress, type, total, today = dateAtDevice()) {
