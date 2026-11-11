@@ -1,4 +1,4 @@
-const CACHE = 'respira-code-4-18-perfiles-integrados';
+const CACHE = 'respira-code-4-18-1-perfiles-integrados';
 const ASSETS = [
   "./",
   "./js/method-art.js",

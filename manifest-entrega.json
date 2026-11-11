@@ -1,8 +1,8 @@
 {
-  "version": "Respira 4.18 · Perfiles, pistas y favoritos",
-  "version_id": "4.18",
+  "version": "Respira 4.18.1 · Perfiles, pistas y favoritos",
+  "version_id": "4.18.1",
   "fecha": "2026-11-11",
-  "tipo": "Respaldo completo de la entrega 4.18",
+  "tipo": "Respaldo completo de la entrega 4.18.1",
   "base_parche": {
     "version": "4.17",
     "sha256": "ce29ce7c879ec8ddf3e11ab2225e477a207f3995c4ee7a606e80c5b066e368e8"
@@ -164,13 +164,13 @@
   "archivos": [
     {
       "archivo": "ACTUALIZAR_RESPIRA.txt",
-      "bytes": 487,
-      "sha256": "9ad544649de0a92f7d81e78bd6b49786a4f02234722b4253047a2d683c15450b"
+      "bytes": 577,
+      "sha256": "6b79ea0d39f0f04246ab505be365604816d7fab1f1972939cf32e97ff4c26620"
     },
     {
       "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
-      "bytes": 487,
-      "sha256": "9ad544649de0a92f7d81e78bd6b49786a4f02234722b4253047a2d683c15450b"
+      "bytes": 577,
+      "sha256": "6b79ea0d39f0f04246ab505be365604816d7fab1f1972939cf32e97ff4c26620"
     },
     {
       "archivo": "BARRA_MOVIL_APROBADO.md",
@@ -239,8 +239,8 @@
     },
     {
       "archivo": "LEEME_INSTALAR_COMPLETO.txt",
-      "bytes": 261,
-      "sha256": "b1e51e38e799904f62c9ddc53b776eb2f00cedc8520cb329aebd1993530171c7"
+      "bytes": 263,
+      "sha256": "37fc654cffcceb210a7bad84ef9650e5334b9aa23fb9218c60209679c2cb1ddd"
     },
     {
       "archivo": "MASCOTAS_APROBADO.md",
@@ -814,8 +814,8 @@
     },
     {
       "archivo": "index.html",
-      "bytes": 2540,
-      "sha256": "f404963ef37f2322da04e702e1c08b46a7e3c929fb48a08511abe7225dac5f99"
+      "bytes": 2542,
+      "sha256": "8431a9c849b962bfbf58755ec55980a48a84bbe152fe89ea5c077731ea5a54fe"
     },
     {
       "archivo": "js/advice-controller.js",
@@ -1114,8 +1114,12 @@
     },
     {
       "archivo": "sw.js",
-      "bytes": 6785,
-      "sha256": "4b1a86a1bdb0103908dd959e79ac24f5a13371c286a6138bf6ccb2dfc7a65f23"
+      "bytes": 6787,
+      "sha256": "9273cb6b8078327f6de72cef7b0af708de2a1bac73121f68e966886f14d2f5ca"
     }
+  ],
+  "bases_compatibles": [
+    "4.17",
+    "4.18"
   ]
 }
