@@ -5,7 +5,7 @@ import { renderHomeCardArt } from './home-card-art.js';
 import { homeGamesButton } from './games.js';
 
 const pathways = [
-  ['Respiración','Ejercicios para relajarte','lago','breath','blue','data-open="breath"'],
+  ['Respiración','Ejercicios para relajarte','lago','breath','blue','data-go="breathing"'],
   ['Meditación','Encuentra un momento de calma','meditacion','lotus','pink','data-go="meditation"'],
   ['Técnicas rápidas','Para cuando lo necesites','tecnicas','bolt','green','data-go="quick"'],
   ['Consejos','Pequeñas ideas para ti','consejos','bulb','yellow','data-go="advice"']

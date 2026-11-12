@@ -60,6 +60,45 @@ body:has(.companion-profile-page, .companion-library-page) {
   background: linear-gradient(#effaf1a8, #effaf1e8 clamp(160px, 21vw, 370px), #f4f8ef clamp(280px, 40vw, 670px)),
     url('../imagenes/inicio-web/lago-hd.png') center top / max(100%, 720px) auto no-repeat, #eef7f1;
 }
+body:has(.companion-library-page) #app {
+  position: relative;
+  isolation: isolate;
+}
+.companion-library-foliage {
+  position: absolute;
+  z-index: -1;
+  inset: auto 0 0;
+  pointer-events: none;
+  opacity: .24;
+}
+.companion-library-foliage svg {
+  height: auto;
+  overflow: hidden;
+}
+.companion-library-waves {
+  display: block;
+  width: 100%;
+  mask-image: linear-gradient(transparent, #000 96px);
+}
+.companion-library-leaves { display: none; }
+@media (min-width: 768px) {
+  .companion-library-waves { display: none; }
+  .companion-library-leaves {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: clamp(145px, 14vw, 220px);
+    mask-composite: intersect;
+  }
+  .companion-library-leaves-left {
+    left: 0;
+    mask-image: linear-gradient(to right, #000 48%, transparent), linear-gradient(transparent, #000 20%);
+  }
+  .companion-library-leaves-right {
+    right: 0;
+    mask-image: linear-gradient(to left, #000 48%, transparent), linear-gradient(transparent, #000 20%);
+  }
+}
 .companion-profile-page {
   max-width: 960px;
 }

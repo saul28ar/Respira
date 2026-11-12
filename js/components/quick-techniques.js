@@ -74,16 +74,6 @@ export const quickMethods = {
   }
 };
 
-export function renderQuickCollection({ favorite = () => '' } = {}) {
-  return `<main class="page collection-page meditation-collection quick-collection">
-    ${backButton()}
-    <div class="med-category-heading"><div><span class="eyebrow">A TU RITMO</span><h1>Técnicas rápidas</h1><p>Pequeñas pausas para volver a ti. Elige lo que te venga bien hoy.</p></div></div>
-    <div class="med-section-heading"><h2>Una pausa en tu día</h2><span>3 técnicas</span></div>
-    <div class="med-method-list">${Object.entries(quickMethods).map(([id, method]) => `<article class="med-method-row quick-tone-${id}"><button type="button" data-open="${id}" class="med-method-open"><span class="med-symbol">${icon(method.icon)}</span><span class="med-method-copy"><small>${safe(method.paceLabel || `${method.minutes} min orientativos`)}</small><strong>${safe(method.title)}</strong><span>${safe(method.subtitle)}</span></span>${icon('chevron')}</button>${favorite(id)}</article>`).join('')}</div>
-    <p class="med-quiet">Un paso a la vez, con el tiempo que necesites.</p>
-  </main>`;
-}
-
 export function renderQuickDetail(id, { petId = null, favoriteHtml = '', petReturn = null } = {}) {
   const method = Object.hasOwn(quickMethods, id) ? quickMethods[id] : null;
   if (!method) return '';

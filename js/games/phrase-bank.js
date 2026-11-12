@@ -1,3 +1,5 @@
+import { phraseExtraRounds } from './phrase-extra-rounds.js';
+
 function round(parts, options, correct, hint, feedback) {
   return { parts, options, correct, hint, feedback };
 }
@@ -393,4 +395,5 @@ export const phraseRounds = [
     [['elegir un objeto sencillo para dibujar', 'observar cómo me resulta sin exigirme disfrutar enseguida'], ['buscar un curso completo', 'aplazar el primer intento hasta elegirlo'], ['repetir mi dibujo más difícil', 'decidir si sigo según el resultado'], ['planear una racha de un mes', 'calificar el intento por si completé la primera hora']],
     0, 'La primera prueba puede ser breve. El disfrute no es una condición que tengas que cumplir.', 'Una versión sencilla te permite probar la actividad y decidir con calma si quieres volver.'
   ),
+  ...phraseExtraRounds,
 ];

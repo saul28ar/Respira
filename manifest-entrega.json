@@ -1,15 +1,14 @@
 {
-  "version": "Respira 4.19 · Inicio y acompañantes",
-  "version_id": "4.19",
-  "fecha": "2026-11-11",
-  "tipo": "Respaldo completo de la entrega 4.19",
+  "version": "Respira 4.20 · Juegos y mascotas",
+  "version_id": "4.20",
+  "fecha": "2026-11-12",
+  "tipo": "Respaldo completo de la entrega 4.20",
   "base_parche": {
-    "version": "4.18.2",
-    "sha256": "0a436a2c0951f171ecc3c6c5ae071a71e8ab341cbb6fc8da8c00822232aa4819"
+    "version": "4.19",
+    "sha256": "ac1f32f5421f0cce0450218d959d491492ba0a805d35f8df4fceaf514eb9bfa1"
   },
   "bases_compatibles": [
-    "4.18.1",
-    "4.18.2"
+    "4.19"
   ],
   "runtime": [
     "css/advice-infographics.css",
@@ -68,6 +67,8 @@
     "imagenes/interfaz/barras/respira_barra_mas_activo.png",
     "imagenes/interfaz/barras/respira_barra_metodos_activo.png",
     "imagenes/interfaz/marco-original.png",
+    "imagenes/juegos/mascotas-jugando.webp",
+    "imagenes/mas/respira-gatito-curioso.webp",
     "imagenes/mascotas/brotecito.png",
     "imagenes/mascotas/lunita.png",
     "imagenes/mascotas/nubecita.png",
@@ -77,9 +78,18 @@
     "imagenes/mascotas/reacciones/favoritos-brotecito.webp",
     "imagenes/mascotas/reacciones/favoritos-lunita.webp",
     "imagenes/mascotas/reacciones/favoritos-nubecita.webp",
+    "imagenes/mascotas/reacciones/meditacion-brotecito.webp",
+    "imagenes/mascotas/reacciones/meditacion-lunita.webp",
+    "imagenes/mascotas/reacciones/meditacion-nubecita.webp",
     "imagenes/mascotas/reacciones/metodos-brotecito.webp",
     "imagenes/mascotas/reacciones/metodos-lunita.webp",
     "imagenes/mascotas/reacciones/metodos-nubecita.webp",
+    "imagenes/mascotas/reacciones/respiracion-brotecito.webp",
+    "imagenes/mascotas/reacciones/respiracion-lunita.webp",
+    "imagenes/mascotas/reacciones/respiracion-nubecita.webp",
+    "imagenes/mascotas/reacciones/tecnicas-brotecito.webp",
+    "imagenes/mascotas/reacciones/tecnicas-lunita.webp",
+    "imagenes/mascotas/reacciones/tecnicas-nubecita.webp",
     "imagenes/metodos/anxiety.webp",
     "imagenes/metodos/breath.webp",
     "imagenes/metodos/caffeine.webp",
@@ -146,9 +156,11 @@
     "js/games/catalog.js",
     "js/games/controller.js",
     "js/games/crossword-bank.js",
+    "js/games/crossword-extra-layouts.js",
     "js/games/drafts.js",
     "js/games/hints.js",
     "js/games/phrase-bank.js",
+    "js/games/phrase-extra-rounds.js",
     "js/games/play-time.js",
     "js/games/progress.js",
     "js/games/word-search-bank.js",
@@ -176,8 +188,8 @@
     },
     {
       "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
-      "bytes": 379,
-      "sha256": "68eecc4610a45c19921e64d2c75f235becd617abdd6ed45916de19bbcd42fe2c"
+      "bytes": 562,
+      "sha256": "5fa8b2b64a9fa62f202e442d1ce6205a7ab251c6b27f6afabba2d810342e88f0"
     },
     {
       "archivo": "BARRA_MOVIL_APROBADO.md",
@@ -326,8 +338,8 @@
     },
     {
       "archivo": "css/companions.css",
-      "bytes": 15937,
-      "sha256": "1fd367cdc561da2e8697641054777cfd094ad22f856efe32fb9825a4837a7af6"
+      "bytes": 16939,
+      "sha256": "3b0a3bdd4d3e74d690e50305b9b8b7d2481e6cf62fa9b558e6df4848d68e060d"
     },
     {
       "archivo": "css/favorites.css",
@@ -336,8 +348,8 @@
     },
     {
       "archivo": "css/games.css",
-      "bytes": 14062,
-      "sha256": "b9df7a688e345ad8e8d6c71727b0e4a82e6d21d1fb00ee8fde5fb4fbdf05fa74"
+      "bytes": 15411,
+      "sha256": "5b2f128450a7d2d532311a1e78525d0702a311d7a26a60ed42ea145d42575101"
     },
     {
       "archivo": "css/home-desktop.css",
@@ -366,8 +378,8 @@
     },
     {
       "archivo": "css/meditation.css",
-      "bytes": 10982,
-      "sha256": "dc656a4b1004c71a8926f9b54936104be255c300fb4f262617096f4c027a9af6"
+      "bytes": 10168,
+      "sha256": "6fa6def8bf5f0b7f3a5e995bbfedab4287266714ce5675b6b381fd0ce3ae0bc1"
     },
     {
       "archivo": "css/method-details.css",
@@ -386,8 +398,8 @@
     },
     {
       "archivo": "css/more-jardin.css",
-      "bytes": 15316,
-      "sha256": "df20e3c2bab1a333e1b965894e1e983b3b6f9dacee53045cdcba8beb2a88e2d7"
+      "bytes": 15236,
+      "sha256": "cb6f48551ed1e63f204ff7d8f0536bbcabe0bbc21c33dc6522ad3e912f752e5d"
     },
     {
       "archivo": "css/pet-select-jardin.css",
@@ -396,8 +408,8 @@
     },
     {
       "archivo": "css/quick-techniques.css",
-      "bytes": 8058,
-      "sha256": "ca960dc703d391cffc0cc06658b15fb45ffc25b2129dc95fcbdc1a21e2aa75a4"
+      "bytes": 7998,
+      "sha256": "c4e2aad436a81d56e798d63922d05b962b0af603f8131d368d38491dd04e5e35"
     },
     {
       "archivo": "css/welcome-desktop.css",
@@ -620,6 +632,16 @@
       "sha256": "dea56c144cb12f119051f5e237ac02bf4e52abece74289dc3a7994b58b834516"
     },
     {
+      "archivo": "imagenes/juegos/mascotas-jugando.webp",
+      "bytes": 162176,
+      "sha256": "5b2281ec8eb83c96ca23f574499f6c8331690c253d51ced1d11429cdec985d50"
+    },
+    {
+      "archivo": "imagenes/mas/respira-gatito-curioso.webp",
+      "bytes": 70108,
+      "sha256": "e4765e98299059574537583e16cc462fe909f76c60cb72485591dad3bbd5420c"
+    },
+    {
       "archivo": "imagenes/mascotas/brotecito.png",
       "bytes": 620725,
       "sha256": "4875e14623f999ba19b4b73ed04fdc0c97fb273800e2509feefe742f9c8a6a19"
@@ -665,6 +687,21 @@
       "sha256": "b3c720c6ddfb354c1c0346146ff47e10b0221b8b353e32cb5c6f9d1f477c76fe"
     },
     {
+      "archivo": "imagenes/mascotas/reacciones/meditacion-brotecito.webp",
+      "bytes": 98686,
+      "sha256": "b5175853a1ac4b8e939a14a655422c8c40bfb24ceb73ea17b2539b7402668c79"
+    },
+    {
+      "archivo": "imagenes/mascotas/reacciones/meditacion-lunita.webp",
+      "bytes": 62736,
+      "sha256": "542a40c343bde4826c3f85e116eed99815af37b67324399a53cf3a5476984cbd"
+    },
+    {
+      "archivo": "imagenes/mascotas/reacciones/meditacion-nubecita.webp",
+      "bytes": 77162,
+      "sha256": "120e37e2dd480228c52f4b42ddb10e5b1476f9e40e0363e98cadd7726731464e"
+    },
+    {
       "archivo": "imagenes/mascotas/reacciones/metodos-brotecito.webp",
       "bytes": 55036,
       "sha256": "6befed4fb36ff12873aeac6c91c02e44ef13b4def5b75488619d5cc4cc46f5a7"
@@ -678,6 +715,36 @@
       "archivo": "imagenes/mascotas/reacciones/metodos-nubecita.webp",
       "bytes": 60240,
       "sha256": "3965e0108e541436f44c979b1804cf2b23ec3db860fbe063f51cad59a668cf20"
+    },
+    {
+      "archivo": "imagenes/mascotas/reacciones/respiracion-brotecito.webp",
+      "bytes": 103930,
+      "sha256": "6ef9cadc23182a26532cb052d9d4b78082c2d87a2f691c012ef577cec8252fac"
+    },
+    {
+      "archivo": "imagenes/mascotas/reacciones/respiracion-lunita.webp",
+      "bytes": 69088,
+      "sha256": "c7271244d3457521e6459c17d9c7bbf1eda08346f1a3f3fc7a8f223e0e5651ed"
+    },
+    {
+      "archivo": "imagenes/mascotas/reacciones/respiracion-nubecita.webp",
+      "bytes": 81748,
+      "sha256": "41c075b2e6a495e4ff73e29376e4d209ba73fb5af2c43f97dd7623af23d70e6b"
+    },
+    {
+      "archivo": "imagenes/mascotas/reacciones/tecnicas-brotecito.webp",
+      "bytes": 104268,
+      "sha256": "68926d30f1458235a5d3558df5136d65c4e9d4189bc2f3d38d45923b12d869d4"
+    },
+    {
+      "archivo": "imagenes/mascotas/reacciones/tecnicas-lunita.webp",
+      "bytes": 60562,
+      "sha256": "ac2498619aba94b2b81b1a3e8d5b65ef1f616141e3e71427760b10b16f8b6b2d"
+    },
+    {
+      "archivo": "imagenes/mascotas/reacciones/tecnicas-nubecita.webp",
+      "bytes": 84100,
+      "sha256": "04ec772fce005c1ddc8c1d33927f46514576ab1658caf396a13282e90f685e91"
     },
     {
       "archivo": "imagenes/metodos/anxiety.webp",
@@ -837,7 +904,7 @@
     {
       "archivo": "index.html",
       "bytes": 2540,
-      "sha256": "eae05015a2806101a54ad42cf5abb64db6ce1573e7b3c167e0c96ac40b2baa12"
+      "sha256": "314e778f1d106c4587a313407e09c6c0231d62fca21ccadec579b397d24f9d55"
     },
     {
       "archivo": "js/advice-controller.js",
@@ -866,8 +933,8 @@
     },
     {
       "archivo": "js/app.js",
-      "bytes": 16799,
-      "sha256": "e1c2d9b118a01e4ddf0a000fa9ce8c0548945ca5bb908cb342db0dfddb194c3a"
+      "bytes": 16823,
+      "sha256": "a4c608f546be9ab70f32b48254033baf03d237a6290fdd524ea20ccaf1270d96"
     },
     {
       "archivo": "js/breathing-companion-controller.js",
@@ -881,8 +948,8 @@
     },
     {
       "archivo": "js/components/activities.js",
-      "bytes": 6392,
-      "sha256": "31761b990e2f19d4ed1e467f625413fd495ebb1cc56dbbff16e1ca533691485c"
+      "bytes": 8932,
+      "sha256": "3ea6ccb318d263c65dedd2d6dcaf0b2ee1424af8c5cf51cefee8b3f2d405b00a"
     },
     {
       "archivo": "js/components/advice-infographics.js",
@@ -906,8 +973,8 @@
     },
     {
       "archivo": "js/components/companions.js",
-      "bytes": 8411,
-      "sha256": "ca3acdfdc8033f322293e36087d9b033bc9eb6d6ba5bebbd8b2270aeac7c4bd1"
+      "bytes": 9067,
+      "sha256": "f7b5e2b2e2b0071c4115d53b46c668266be91e3fcf98750f611c789c4c4774be"
     },
     {
       "archivo": "js/components/favorites.js",
@@ -916,8 +983,8 @@
     },
     {
       "archivo": "js/components/games.js",
-      "bytes": 6980,
-      "sha256": "553a1f1f66ad0034526f6a770ffe17834206a76be7ca5b184abdd400f0197a3b"
+      "bytes": 7825,
+      "sha256": "a47527381075a2b51d10d4926054a6aee2d2f98c3967279b7c751c4e9ca61f6f"
     },
     {
       "archivo": "js/components/home-art.js",
@@ -931,13 +998,13 @@
     },
     {
       "archivo": "js/components/home-desktop.js",
-      "bytes": 4441,
-      "sha256": "b5b6dc5f437301e4e16ca4092883c113aa603bc3c5103de4e829b28a1295196c"
+      "bytes": 4442,
+      "sha256": "ac8b4a36e157c107bd4dd61c7d4fb62166ddb0d7952b02154a8613566486ef86"
     },
     {
       "archivo": "js/components/home-mobile-jardin.js",
-      "bytes": 4531,
-      "sha256": "a54a8242ab80b94ec78655af92beffd7662d28f77bbf7cf3c68b123a0ca10e77"
+      "bytes": 4532,
+      "sha256": "750ff4683fab104de81b3c503bfded99b44272ae7bb8cfee287f69fddd971fe3"
     },
     {
       "archivo": "js/components/home.js",
@@ -956,8 +1023,8 @@
     },
     {
       "archivo": "js/components/meditation.js",
-      "bytes": 5912,
-      "sha256": "6c6a8bf343f4b84e909c3d9c2a5a180c7f11d378bb836b2f96fea49ccbd01380"
+      "bytes": 4701,
+      "sha256": "840fc4c76046c628be7a6184b6e43979bcc52de17d063e12e33d6a728b07b2a3"
     },
     {
       "archivo": "js/components/methods.js",
@@ -971,8 +1038,8 @@
     },
     {
       "archivo": "js/components/more-jardin.js",
-      "bytes": 4034,
-      "sha256": "f958df772692f03ebda680638f3628a96a43b8b49647f4e4e25512d329580df9"
+      "bytes": 3997,
+      "sha256": "ed8e4af21c772efc1586e4c4cfca243727bfcdd9955039f4ef58a30bc0424529"
     },
     {
       "archivo": "js/components/pet-select-jardin.js",
@@ -981,8 +1048,8 @@
     },
     {
       "archivo": "js/components/quick-techniques.js",
-      "bytes": 9812,
-      "sha256": "01480fb69d2949506ec698ae07a7d712432d1293f4b5cd69650fd291a4a86368"
+      "bytes": 8739,
+      "sha256": "419064ff74d785acb57e4e7eae669a2668d773c82b274a71941b93019c74cda2"
     },
     {
       "archivo": "js/components/settings.js",
@@ -1026,13 +1093,18 @@
     },
     {
       "archivo": "js/games/controller.js",
-      "bytes": 19528,
-      "sha256": "07c7ba21186613a8479e26cb7cb73a8d051e37a1374df7dc272fe88ef2cdf9cf"
+      "bytes": 20471,
+      "sha256": "2ed348e25025117feea7d084c2e1732f6951c222542c1338e83f7a7b489f9234"
     },
     {
       "archivo": "js/games/crossword-bank.js",
-      "bytes": 30057,
-      "sha256": "f2dfb81867c633c3e7235b8789c6a50dcf6929f815933e3ac625da0fc7be5cf1"
+      "bytes": 30158,
+      "sha256": "3f69ed684e4db42f470d6627d32d9f9e0b9067b203a176b71324b72a98b0aad6"
+    },
+    {
+      "archivo": "js/games/crossword-extra-layouts.js",
+      "bytes": 70513,
+      "sha256": "0988dde3c65c67db9b7b8c3d5dd2b1980bef0c51c3164072f580812cd3fd8d62"
     },
     {
       "archivo": "js/games/drafts.js",
@@ -1046,13 +1118,18 @@
     },
     {
       "archivo": "js/games/phrase-bank.js",
-      "bytes": 48043,
-      "sha256": "816be78ab9557508b752857fb25d4ab60942802cc9bfa38f3d2a10ad6b196542"
+      "bytes": 48130,
+      "sha256": "b3274b6bcbd9ce4ba241d0d0981af8747b9954c5cc439ecc55635e2eb5500b9b"
+    },
+    {
+      "archivo": "js/games/phrase-extra-rounds.js",
+      "bytes": 37351,
+      "sha256": "c15c8affcfbc99d55b2749494f53a53a00a85d6b394f400486902d9aa88949f0"
     },
     {
       "archivo": "js/games/play-time.js",
-      "bytes": 2805,
-      "sha256": "1f606ca5ae9ffe58e9bc9c153c090d09ce0e58cb3fc8932d738f13130ed47757"
+      "bytes": 3240,
+      "sha256": "73c3aa68adf5cc6f8d438d069389747fc63b2293b24228ac30c6018def8c2fae"
     },
     {
       "archivo": "js/games/progress.js",
@@ -1061,8 +1138,8 @@
     },
     {
       "archivo": "js/games/word-search-bank.js",
-      "bytes": 7786,
-      "sha256": "2a43c875a89c4fe5ec546e9c0f2e5007ae8b74e6bbd47646ea9360d8678cdde5"
+      "bytes": 13233,
+      "sha256": "0b3fd11f9cdaf1233026036b3c4c94ae69b971dcd14b3309198923a4abe28d27"
     },
     {
       "archivo": "js/home-pet-interaction.js",
@@ -1136,8 +1213,8 @@
     },
     {
       "archivo": "sw.js",
-      "bytes": 6976,
-      "sha256": "b1088683b4e653a23d2721be97e68e011399a1c9c6f603d19ed039ce94d255b3"
+      "bytes": 7705,
+      "sha256": "0ffa61303da6fe6ae384a12857bfcd2b4dfd58acb03de56778a6c42435a916ac"
     }
   ]
 }

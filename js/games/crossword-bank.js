@@ -1,3 +1,5 @@
+import { crosswordExtraLayouts } from './crossword-extra-layouts.js';
+
 // Pistas originales de autocuidado, relaciones y bienestar cotidiano.
 const clues = {
   ABRAZO: "Gesto de rodear a alguien con los brazos, cuando ambos quieren.",
@@ -559,4 +561,4 @@ function buildPuzzle(layout) {
   return { rows, columns, entries };
 }
 
-export const crosswordBank = layouts.map(buildPuzzle);
+export const crosswordBank = [...layouts, ...crosswordExtraLayouts].map(buildPuzzle);

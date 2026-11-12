@@ -4,7 +4,7 @@ import { gameCalendar, nextGameLevel } from '../components/games.js';
 import { games } from './catalog.js';
 import { gameProgress, recordGame } from './progress.js';
 import { normalizeWordSearchWord as normalize } from './word-search-bank.js';
-import { trackGameTime } from './play-time.js';
+import { gameTimeToday, trackGameTime } from './play-time.js';
 import { clearDraft, readDraft, writeDraft } from './drafts.js';
 import { bindGameHint, getHintCharge, saveHintCharge } from './hints.js';
 
@@ -21,6 +21,30 @@ function bindCalendar(page, petId) {
     const next = calendar.querySelector(`[data-games-month="${step}"]`);
     (next.disabled ? calendar.querySelector('[data-games-month="-1"]') : next).focus();
   });
+}
+
+function bindDailyUsage(page) {
+  const meter = page.querySelector('#games-daily-usage');
+  const duration = page.querySelector('[data-games-time-label]');
+  const events = new AbortController();
+  let timer;
+
+  function refresh() {
+    const now = new Date();
+    const { used, label } = gameTimeToday(now.getTime());
+    meter.value = used;
+    meter.setAttribute('aria-valuetext', label);
+    duration.textContent = label;
+    clearTimeout(timer);
+    const midnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+    timer = setTimeout(refresh, midnight - now);
+  }
+
+  window.addEventListener('storage', refresh, { signal: events.signal });
+  window.addEventListener('pageshow', refresh, { signal: events.signal });
+  document.addEventListener('visibilitychange', refresh, { signal: events.signal });
+  refresh();
+  return () => { clearTimeout(timer); events.abort(); };
 }
 
 function lineCells(first, last, size) {
@@ -352,7 +376,10 @@ function bindPhrase(board, round, say, finish, { draft, save, note }) {
 const bindPuzzle = { sopa: bindWordSearch, crucigrama: bindCrossword, frase: bindPhrase };
 
 export function bindGames(page, { type, level, petId }) {
-  if (!type) { bindCalendar(page, petId); return; }
+  if (!type) {
+    bindCalendar(page, petId);
+    return bindDailyUsage(page);
+  }
   const board = page.querySelector('[data-games-board]');
   const result = page.querySelector('[data-games-result]');
   const done = page.querySelector('[data-games-finish]');

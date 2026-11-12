@@ -4,6 +4,7 @@ import { dateAtDevice, safe } from '../utils.js';
 import { games } from '../games/catalog.js';
 import { dailyLevel, gameProgress } from '../games/progress.js';
 import { latestDraftLevel } from '../games/drafts.js';
+import { gameTimeToday } from '../games/play-time.js';
 
 const monthFormat = new Intl.DateTimeFormat('es', { month: 'long', year: 'numeric' });
 const dayFormat = new Intl.DateTimeFormat('es', { dateStyle: 'full' });
@@ -55,6 +56,19 @@ function companionArt(petId) {
   return `<div class="games-companion"><img src="./imagenes/mascotas/${petId || 'nubecita'}.png" alt="" width="724" height="724"></div>`;
 }
 
+function challengePosition(level, total) {
+  if (total <= 99) return `${level} de ${total}`;
+  return `${level} de <span aria-hidden="true" title="${total} retos">+99</span><span class="sr-only">${total}</span>`;
+}
+
+function dailyUsage() {
+  const { used, limit, label } = gameTimeToday();
+  return `<div class="games-usage">
+    <div class="games-usage-heading"><label for="games-daily-usage">Tiempo de juego hoy</label><span data-games-time-label>${label}</span></div>
+    <progress class="games-usage-meter" id="games-daily-usage" value="${used}" max="${limit}" aria-valuetext="${label}"></progress>
+  </div>`;
+}
+
 export function nextGameLevel(type, petId, progress = gameProgress(petId)) {
   const total = games[type].levels.length;
   const draft = latestDraftLevel(petId, type);
@@ -67,8 +81,9 @@ function renderMenu(petId, progress) {
   return `<main class="page games-page" data-games-view="menu">
     ${gameBack('#home')}
     <header class="games-hero">
-      <div><h1>Juegos</h1><p>Explora palabras sobre emociones, apoyo y autocuidado.</p><p class="games-limit">Hasta 4 horas al día</p></div>
-      ${companionArt(petId)}
+      <img class="games-crew" src="./imagenes/juegos/mascotas-jugando.webp" alt="Brotecito, Nubecita, Lunita y el gatito juegan juntos a videojuegos" width="900" height="600">
+      <div class="games-hero-copy"><h1>Juegos</h1><p>Explora palabras sobre emociones, apoyo y autocuidado.</p></div>
+      ${dailyUsage()}
     </header>
     <div class="games-summary">
       ${pet ? `<div><strong>${safe(pet.name)}</strong><p>${progress.playedToday ? 'El reto de hoy ya cuenta.' : 'Completa un reto para sumar el día.'}</p></div>
@@ -78,7 +93,7 @@ function renderMenu(petId, progress) {
     <div class="games-cards" aria-label="Elige un juego">${Object.entries(games).map(([type, game]) => {
       const draft = latestDraftLevel(petId, type);
       const level = nextGameLevel(type, petId, progress);
-      return `<article class="games-card" data-game-type="${type}"><a class="games-card-main" href="#games/${type}/${level}"><span class="games-symbol">${icon(game.icon)}</span><span><strong>${game.name}</strong><small>${draft ? `Continuar reto ${level} de ${game.levels.length}` : game.description}</small></span>${icon('chevron')}</a></article>`;
+      return `<article class="games-card" data-game-type="${type}"><a class="games-card-main" href="#games/${type}/${level}"><span class="games-symbol">${icon(game.icon)}</span><span><strong>${game.name}</strong><small>${draft ? `Continuar reto ${challengePosition(level, game.levels.length)}` : game.description}</small></span>${icon('chevron')}</a></article>`;
     }).join('')}</div>
     <details class="games-details" ${pet ? 'open' : ''}>
       <summary>Calendario ${pet ? `de ${safe(pet.name)}` : ''}</summary>
@@ -92,7 +107,7 @@ function renderChallenge(level, game, petId) {
   return `<main class="page games-page games-challenge" data-games-view="challenge">
     ${gameBack('#games')}
     <div class="games-panel" data-games-play>
-      <header class="games-play-heading"><div><p>Reto ${level} de ${game.levels.length}</p><h1>${game.name}</h1></div>${companionArt(petId)}</header>
+      <header class="games-play-heading"><div><p>Reto ${challengePosition(level, game.levels.length)}</p><h1>${game.name}</h1></div>${companionArt(petId)}</header>
       <div data-games-board></div>
       <p class="games-result" role="status" data-games-result></p>
       <div class="games-hint-bar">

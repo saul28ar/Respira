@@ -61,6 +61,11 @@ export function renderPetSelect({ petId = null } = {}) {
 
 export function renderPetLibrary() {
   return `<main class="page companion-library-page">
+    <div class="companion-library-foliage" aria-hidden="true">
+      <svg class="companion-library-waves" viewBox="0 800 941 872" focusable="false"><image href="./imagenes/paisajes/ondas-original.png" width="941" height="1672"/></svg>
+      <svg class="companion-library-leaves companion-library-leaves-left" viewBox="0 950 300 722" focusable="false"><image href="./imagenes/paisajes/ondas-original.png" width="941" height="1672"/></svg>
+      <svg class="companion-library-leaves companion-library-leaves-right" viewBox="670 1120 271 552" focusable="false"><image href="./imagenes/paisajes/ondas-original.png" width="941" height="1672"/></svg>
+    </div>
     <div class="companion-topline">${backButton('Volver')}</div>
     <header class="companion-intro"><span class="eyebrow">Si quieres, conoce su historia</span><h1>Conoce a tus acompañantes</h1><p>Cada uno tiene una historia para compartir contigo.</p></header>
     <div class="companion-library-list">${petIds.map(id => {

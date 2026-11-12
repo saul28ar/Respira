@@ -64,6 +64,41 @@ const themes = [
   }
 ];
 
+const extraThemes = [
+  ['Texturas y sonidos', 'arena madera algodón piedra agua lluvia viento sonido textura sombra contacto color tacto aroma silencio papel tierra aire'],
+  ['Volver al cuerpo', 'postura espalda hombros manos pies piernas apoyo suelo asiento peso contacto respiro pausa equilibrio comodidad cuello brazos reposo'],
+  ['Un ritmo de respiración', 'aire pecho nariz abdomen ritmo pausa inhalar exhalar respirar suavidad calma respiro atención postura soltura silencio presencia serenidad'],
+  ['Relajar los hombros', 'hombros cuello espalda brazos manos tensión descanso estirar postura comodidad suavidad pausa reposo gesto soltar respirar notar aflojar'],
+  ['Preparar una pausa', 'descanso permiso silencio agua asiento música sombra paseo lectura espacio ritmo margen tiempo respiro quietud calma pausa cuidado'],
+  ['Escuchar con atención', 'escucha palabras gesto pregunta tono silencio diálogo atención espera respeto presencia cercanía turno mirada confianza vínculo acuerdo apoyo'],
+  ['Conversar con calma', 'voz mensaje acuerdo tono diálogo escucha respeto pausa claridad palabra gesto disculpa cercanía intención empatía expresión sinceridad apoyo'],
+  ['Límites cotidianos', 'límite tiempo espacio permiso respeto horario claridad acuerdo elección petición energía cuidado decisión necesidad autonomía pausa margen prioridad'],
+  ['Pedir una mano', 'apoyo ayuda persona red confianza recursos pregunta ejemplo compañía aliento escucha amigo grupo familia diálogo respeto iniciativa turno'],
+  ['Hablarme con cuidado', 'paciencia permiso ternura cuidado respeto pausa gratitud amabilidad aliento dignidad serenidad perdón calma margen consuelo esperanza aprecio descanso'],
+  ['Probar otra idea', 'opción enfoque matiz evidencia motivo duda hecho contexto respuesta pregunta cambio hipótesis perspectiva detalle argumento criterio posibilidad certeza'],
+  ['Cuidar lo importante', 'valor elección propósito prioridad sentido tiempo interés espacio necesidad actividad compromiso hábito balance energía rumbo pausa decisión'],
+  ['Tareas en orden', 'agenda lista papel margen tarea plazo fecha objetivo horario orden tiempo paso enfoque avance descanso bloque pausa progreso'],
+  ['Un hábito pequeño', 'señal hábito acción paso rutina intento ensayo elección ajuste semana horario constancia registro avance observación apoyo paciencia práctica'],
+  ['Terminar una jornada', 'cierre escritorio pendientes agenda fecha reposo lectura música horario luz silencio descanso calma sueño noche mañana pausa serenidad'],
+  ['Antes de dormir', 'almohada cama luz lectura silencio rutina descanso reposo manta penumbra noche comodidad dormitorio horario sueño oscuridad serenidad pausa'],
+  ['Tiempo sin pantalla', 'móvil silencio aviso mensaje sonido brillo lectura paseo juego dibujo descanso recreo contacto conexión intervalo enfoque atención límite'],
+  ['Notificaciones a mi ritmo', 'aviso contacto permiso alerta teléfono sonido mensaje pantalla agenda pausa enfoque horario silencio turno límite elección tiempo llamada'],
+  ['Un paseo atento', 'sendero bosque hojas rama jardín cielo sombra nube viento arena pasos tierra verde piedra césped agua movimiento horizonte'],
+  ['Disfrutar de algo creativo', 'dibujo canto papel lápiz música acuarela boceto pincel ritmo color historia relato textura imagen idea juego fotografía collage'],
+  ['Historias para recordar', 'diario página cuaderno lápiz fecha título relato recuerdo memoria palabra dibujo carta experiencia detalle reflexión registro emoción gratitud'],
+  ['Reconocer una emoción', 'sorpresa tristeza alegría miedo enojo asombro nostalgia alivio ternura orgullo vergüenza calma inquietud culpa entusiasmo nombre emoción gesto'],
+  ['Cuando cambia el plan', 'cambio opción ajuste horario margen claridad acuerdo contexto calma alternativa pregunta tarea prioridad tiempo certeza motivo pausa adaptación'],
+  ['Aprender con paciencia', 'apuntes estudio repaso lectura práctica duda pregunta ejemplo memoria tarea atención pausa horario ensayo error intento progreso recurso'],
+  ['Reparar una conversación', 'disculpa escucha respeto voz pausa mensaje acuerdo diálogo gesto calma pregunta cuidado paciencia sinceridad confianza matiz claridad'],
+  ['Hacer espacio a lo nuevo', 'ensayo juego novedad intento práctica curiosidad iniciativa sorpresa comienzo interés aprendizaje proyecto paciencia confianza exploración ánimo'],
+  ['Un rato en compañía', 'amistad vínculo compañía apoyo confianza paseo abrazo cercanía charla alegría humor gratitud cariño respeto presencia reunión encuentro'],
+  ['Moverme con comodidad', 'movilidad estirar paseo caminar bailar sendero pasos postura piernas brazos manos fuerza flexión ritmo equilibrio movimiento descanso actividad'],
+  ['Notar lo que agradezco', 'gratitud aprecio gesto apoyo compañía paisaje detalle recuerdo alegría palabra regalo cuidado presencia vínculo cercanía nota alivio ternura']
+];
+
+const extraSettings = ['Al despertar', 'En casa', 'En una pausa', 'Al aire libre', 'A media tarde',
+  'Antes de empezar', 'Entre tareas', 'Al bajar el ritmo', 'Al cerrar el día', 'En un rato libre'];
+
 const directions = [
   [0, 1], [0, -1], [1, 0], [-1, 0],
   [1, 1], [1, -1], [-1, 1], [-1, -1]
@@ -148,4 +183,9 @@ function createPuzzle(theme, round, seed) {
 
 export const wordSearchBank = Array.from({length: 5}, (_, round) =>
   themes.map((theme, index) => createPuzzle(theme, round, 1841 + 569 * (round * themes.length + index)))
-).flat();
+).flat().concat(extraSettings.flatMap((setting, round) => extraThemes.map(([title, words], index) =>
+  createPuzzle({
+    titles: [`${title} · ${setting}`],
+    words
+  }, 0, 100003 + 569 * (round * extraThemes.length + index))
+)));

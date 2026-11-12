@@ -1,11 +1,12 @@
-import { catalog, groups, groundSteps, muscleSteps } from '../data.js';
+import { catalog, groups, groundSteps, muscleSteps, pets } from '../data.js';
+import { methodCategories } from '../method-categories.js';
 import { favorites } from '../storage.js';
 import { safe } from '../utils.js';
 import { icon } from '../icons.js';
 import { backButton } from './common.js';
 import { renderBreathingCompanion } from './breathing-companion.js';
-import { renderMeditationCollection, renderMeditationDetail, meditationMethods } from './meditation.js';
-import { renderQuickCollection, renderQuickDetail, quickMethods } from './quick-techniques.js';
+import { renderMeditationDetail, meditationMethods } from './meditation.js';
+import { renderQuickDetail, quickMethods } from './quick-techniques.js';
 import { renderAdviceCollection } from './advice-infographics.js';
 import { renderAdviceDetail } from './advice.js';
 
@@ -17,9 +18,59 @@ function listItem(id) {
   const x = catalog[id];
   return `<article class="activity-row"><button class="activity-open" type="button" data-open="${id}"><span class="activity-symbol tone-${x.color}" aria-hidden="true">${x.emoji}</span><span class="activity-copy"><strong>${safe(x.title)}</strong><small>${safe(x.sub)}</small></span>${icon('chevron')}</button>${favoriteButton(id)}</article>`;
 }
+
+const practiceMenus = {
+  breathing: {
+    intro: ['Haz una pausa y respira a tu ritmo.'],
+    section: 'Un ritmo suave',
+    count: '1 práctica',
+    emotion: 'exhala suavemente',
+    note: 'Aquí no hay prisa.',
+    card: id => ({ ...catalog[id], icon: 'breath', subtitle: catalog[id].sub, time: '1 min 4 s', tone: 'breath' }),
+  },
+  meditation: {
+    intro: ['Una pausa para escucharte. Elige', 'lo que te venga bien hoy.'],
+    section: 'Un momento para ti',
+    count: '4 prácticas',
+    emotion: 'medita en calma',
+    note: 'No hace falta hacerlo perfecto. Este momento es tuyo.',
+    card: id => ({ ...meditationMethods[id], time: `${meditationMethods[id].duration / 60} min`, tone: id }),
+  },
+  quick: {
+    intro: ['Pequeñas pausas para volver a ti.', 'Elige lo que te venga bien hoy.'],
+    section: 'Una pausa en tu día',
+    count: '3 técnicas',
+    emotion: 'observa con atención lo que tiene cerca',
+    note: 'Un paso a la vez, con el tiempo que necesites.',
+    card(id) {
+      const method = quickMethods[id];
+      return { ...method, time: method.paceLabel || `${method.minutes} min orientativos`, tone: `quick-${id}` };
+    },
+  },
+};
+
+function renderPracticeMenu(view, petId) {
+  const menu = practiceMenus[view];
+  const category = methodCategories.find(item => item.group === view);
+  const selected = typeof petId === 'string' && Object.hasOwn(pets, petId);
+  const artwork = selected ? `<img class="med-category-pet" src="./imagenes/mascotas/reacciones/${category.id}-${petId}.webp" width="640" height="640" alt="${safe(pets[petId].name)} ${menu.emotion}">` : '';
+  return `<main class="page collection-page practice-collection ${view}-collection">
+    ${backButton()}
+    <header class="med-category-heading${selected ? ' has-companion' : ''}">
+      <div class="med-category-copy"><span class="eyebrow">A TU RITMO</span><h1>${category.title}</h1><p>${menu.intro.map(safe).join('<br>')}</p></div>
+      ${artwork}
+    </header>
+    <div class="med-section-heading"><h2>${menu.section}</h2><span>${menu.count}</span></div>
+    <div class="med-method-list">${category.ids.map(id => {
+      const method = menu.card(id);
+      return `<article class="med-method-row med-tone-${method.tone}"><button type="button" data-open="${id}" class="med-method-open"><span class="med-symbol">${icon(method.icon)}</span><span class="med-method-copy"><small>${safe(method.time)}</small><strong>${safe(method.title)}</strong><span>${safe(method.subtitle)}</span></span>${icon('chevron')}</button>${favoriteButton(id)}</article>`;
+    }).join('')}</div>
+    <p class="med-quiet">${menu.note}</p>
+  </main>`;
+}
+
 export function renderCollection(view, { petId = null } = {}) {
-  if (view === 'meditation') return renderMeditationCollection({petId, favorite:favoriteButton});
-  if (view === 'quick') return renderQuickCollection({petId, favorite:favoriteButton});
+  if (Object.hasOwn(practiceMenus, view)) return renderPracticeMenu(view, petId);
   if (view === 'advice') return renderAdviceCollection({petId, favoriteIds:favorites()});
   const titles = {methods:'Encuentra tu momento',meditation:'Meditación',quick:'Técnicas rápidas',advice:'Pequeñas ideas para ti',favorites:'Mis favoritos'};
   const ids = view === 'favorites' ? favorites() : view === 'methods' ? Object.keys(catalog) : groups[view];

@@ -96,7 +96,7 @@ body.games-view {
 .games-hero {
   display: grid;
   justify-items: center;
-  gap: 2px;
+  gap: 8px;
   padding: 11px clamp(15px, 4vw, 28px) 18px;
   border-radius: 24px;
   background: linear-gradient(180deg, #f8fcf3b0, #f6fbefee 86%),
@@ -106,7 +106,38 @@ body.games-view {
   text-align: center;
 }
 .games-hero p { margin-top: 6px; color: #395e50; font-size: .94rem; max-width: 34ch; }
-.games-hero .games-limit { font-size: .78rem; }
+.games-crew {
+  width: min(100%, 320px);
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 7px #42664c26);
+}
+.games-usage {
+  width: min(100%, 390px);
+  margin-top: 5px;
+  padding: 10px 13px 11px;
+  border: 1px solid #cfdfce;
+  border-radius: 13px;
+  background: #fffef6d9;
+  text-align: left;
+}
+.games-usage-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  column-gap: 8px;
+  margin-bottom: 7px;
+  color: #365f4e;
+  font-size: .78rem;
+}
+.games-usage-heading label { font-weight: 650; }
+.games-usage-heading span { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.games-usage-meter { height: 9px; background: #e1ebdd; }
+.games-usage-meter::-webkit-progress-bar { background: #e1ebdd; }
+.games-usage-meter::-webkit-progress-value { background: linear-gradient(90deg, #76ac83, #337a66); }
+.games-usage-meter::-moz-progress-bar { background: linear-gradient(90deg, #76ac83, #337a66); }
 .games-companion {
   display: grid;
   place-items: center;
@@ -122,7 +153,6 @@ body.games-view {
   object-fit: contain;
   filter: drop-shadow(0 4px 4px #42664c25);
 }
-.games-hero .games-companion { grid-row: 1; }
 .games-summary {
   display: flex;
   flex-wrap: wrap;
@@ -379,6 +409,20 @@ body.games-view {
 @media (max-width: 550px) {
   .games-card-main { gap: 9px; min-height: 64px; }
   .home-mobile-jardin .home-calm-and-games .hm1-calm-arrow { display: none; }
+}
+@media (min-width: 620px) {
+  .games-hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.16fr);
+    grid-template-areas: "copy art" "usage art";
+    align-items: center;
+    justify-items: stretch;
+    column-gap: 12px;
+    padding-block: 12px;
+    text-align: left;
+  }
+  .games-hero-copy { grid-area: copy; align-self: end; }
+  .games-crew { grid-area: art; justify-self: center; }
+  .games-usage { grid-area: usage; align-self: start; }
 }
 @media (max-width: 360px) {
   .games-page { width: calc(100% - 24px); }

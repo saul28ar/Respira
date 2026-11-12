@@ -5,7 +5,7 @@ import { renderHomeCardArt } from './home-card-art.js';
 import { homeGamesLink } from './games.js';
 
 const pathways = [
-  {title:'Respiración',subtitle:'Ejercicios para relajarte',image:'lago',symbol:'breath',color:'blue',action:'data-open="breath"'},
+  {title:'Respiración',subtitle:'Ejercicios para relajarte',image:'lago',symbol:'breath',color:'blue',action:'data-go="breathing"'},
   {title:'Meditación',subtitle:'Encuentra un momento de calma',image:'meditacion',symbol:'lotus',color:'pink',action:'data-go="meditation"'},
   {title:'Técnicas rápidas',subtitle:'Para cuando lo necesites',image:'tecnicas',symbol:'bolt',color:'green',action:'data-go="quick"'},
   {title:'Consejos',subtitle:'Pequeñas ideas para ti',image:'consejos',symbol:'bulb',color:'yellow',action:'data-go="advice"'}

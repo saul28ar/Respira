@@ -1,7 +1,8 @@
 import { getStore, setStore, storeKeys } from '../storage.js';
 import { dateAtDevice } from '../utils.js';
 
-const dailyLimit = 4 * 60 * 60 * 1000;
+const dailyHours = 4;
+const dailyLimit = dailyHours * 60 * 60 * 1000;
 const tabId = globalThis.crypto.randomUUID?.() ?? Math.random().toString(36).slice(2);
 const unsaved = new Map();
 const dayPrefix = day => 'games_time_' + day + '_';
@@ -29,6 +30,15 @@ function countTime(now) {
   const prefix = dayPrefix(day);
   const keys = new Set([...storeKeys(prefix), ...[...unsaved.keys()].filter(key => key.startsWith(prefix))]);
   return joinIntervals([...keys].flatMap(storedIntervals)).reduce((total, [start, end]) => total + end - start, 0);
+}
+
+export function gameTimeToday(now = Date.now()) {
+  const used = Math.min(dailyLimit, countTime(now));
+  const minutes = Math.floor(used / 60000);
+  const hours = Math.floor(minutes / 60);
+  const remainder = minutes % 60;
+  const duration = hours ? `${hours} h${remainder ? ` ${remainder} min` : ''}` : `${minutes} min`;
+  return { used, limit: dailyLimit, label: `${duration} de ${dailyHours} h` };
 }
 
 function saveTime(start, end) {

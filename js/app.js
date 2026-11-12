@@ -29,7 +29,7 @@ const app = document.getElementById('app');
 const announcer = document.getElementById('announcer');
 // La misma definición de teléfono que en el welcome activa el Home móvil aprobado.
 const mobileHomeViewport = window.matchMedia('(max-width: 767px), (max-width: 1024px) and (max-height: 600px) and (orientation: landscape) and (hover: none) and (pointer: coarse)');
-const routes = new Set(['welcome','home','pet-select','pet-library','pet-detail','pet-confirm','methods','meditation','quick','advice','favorites','more','about','detail','games']);
+const routes = new Set(['welcome','home','pet-select','pet-library','pet-detail','pet-confirm','methods','breathing','meditation','quick','advice','favorites','more','about','detail','games']);
 let route = { view: '', id: null };
 let currentStep = 0;
 let messageIndex = 0;
@@ -120,7 +120,7 @@ function render() {
   if (view === 'pet-confirm') html = renderPetConfirm({petId:cp,saveOk});
   if (view === 'methods') html = renderMethods({ petId:cp });
   if (view === 'games') html = renderGames({ type:route.id, level:route.level, petId:cp });
-  if (['meditation','quick','advice'].includes(view)) html = renderCollection(view, {petId:cp});
+  if (['breathing','meditation','quick','advice'].includes(view)) html = renderCollection(view, {petId:cp});
   if (view === 'favorites') html = renderFavorites({ petId:cp });
   if (view === 'more') html = renderMoreJardin(cp);
   if (view === 'about') html = renderAbout();
