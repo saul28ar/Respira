@@ -1,4 +1,4 @@
-const CACHE = 'respira-code-4-20-juegos-y-mascotas';
+const CACHE = 'respira-code-4-21-pistas-y-practicas';
 const ASSETS = [
   "./",
   "./js/method-art.js",

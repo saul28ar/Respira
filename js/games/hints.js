@@ -2,94 +2,77 @@ import { clock } from '../utils.js';
 import { getStore, setStore } from '../storage.js';
 
 const chargeTime = 120000;
-const saveInterval = 5000;
+const capacity = 3;
 const unsaved = new Map();
-const chargeKey = (petId, type) => `games_hint_${petId || 'guest'}_${type}`;
 
-function validCharge(value) {
-  return Number.isFinite(value) ? Math.max(0, Math.min(chargeTime, value)) : 0;
+function saveBank(key, bank) {
+  if (setStore(key, bank)) unsaved.delete(key);
+  else unsaved.set(key, bank);
 }
 
-export function getHintCharge(petId, type) {
-  const key = chargeKey(petId, type);
-  return validCharge(unsaved.get(key) ?? getStore(key, chargeTime));
+function readBank(key, legacyKey, now) {
+  const bank = unsaved.get(key) ?? getStore(key, null);
+  if (Number.isInteger(bank?.charges) && bank.charges >= 0 && bank.charges < capacity &&
+      Number.isFinite(bank.refillAt)) {
+    if (bank.refillAt > now) return bank;
+    const regained = Math.floor((now - bank.refillAt) / chargeTime) + 1;
+    const charges = Math.min(capacity, bank.charges + regained);
+    return { charges, refillAt: charges === capacity ? null : bank.refillAt + regained * chargeTime };
+  }
+  const legacy = bank === null ? getStore(legacyKey, null) : null;
+  if (Number.isFinite(legacy) && legacy >= 0 && legacy < chargeTime) {
+    const migrated = { charges: 0, refillAt: now + chargeTime - legacy };
+    saveBank(key, migrated);
+    return migrated;
+  }
+  return { charges: capacity, refillAt: null };
 }
 
-export function saveHintCharge(petId, type, elapsed) {
-  const key = chargeKey(petId, type);
-  const charge = validCharge(elapsed);
-  if (setStore(key, charge)) unsaved.delete(key);
-  else unsaved.set(key, charge);
-}
-
-export function bindGameHint({ button, status, elapsed = 0, save, onHint }) {
-  let charge = validCharge(elapsed);
-  let lastSaved = charge;
-  let startedAt = null;
+export function bindGameHint({ button, label, status, petId, type, onHint }) {
+  const scope = `${petId || 'guest'}_${type}`;
+  const key = 'games_hint_bank_' + scope;
+  const legacyKey = 'games_hint_' + scope;
   let timeout;
-  let stopped = false;
 
-  function collectTime() {
-    if (startedAt === null) return;
-    charge = Math.min(chargeTime, charge + Math.max(0, performance.now() - startedAt));
-    startedAt = null;
-  }
-
-  function persist(force) {
-    if (lastSaved === charge) return;
-    if (!force && charge - lastSaved < saveInterval) return;
-    save(charge);
-    lastSaved = charge;
-  }
-
-  function render() {
-    button.disabled = charge < chargeTime;
-    const remaining = clock((chargeTime - charge) / 1000).slice(1);
-    if (status.textContent !== remaining) status.textContent = remaining;
-    button.setAttribute('aria-label', button.disabled ? 'Pista disponible en ' + remaining : 'Usar pista');
-  }
-
-  function update() {
-    if (stopped) return;
+  function refresh() {
     clearTimeout(timeout);
-    collectTime();
-    persist(document.hidden || charge === chargeTime);
-    render();
-    if (document.hidden || charge === chargeTime) return;
-    startedAt = performance.now();
-    timeout = setTimeout(update, Math.min(1000, chargeTime - charge));
-  }
-
-  function suspend() {
-    clearTimeout(timeout);
-    collectTime();
-    persist(true);
-    render();
+    const now = Date.now();
+    const { charges, refillAt } = readBank(key, legacyKey, now);
+    const available = refillAt === null ? '' : clock((refillAt - now) / 1000).slice(1);
+    button.disabled = charges === 0;
+    button.toggleAttribute('data-hint-refilling', charges > 0 && refillAt !== null);
+    const labelText = 'Pista · ' + charges;
+    if (label.textContent !== labelText) label.textContent = labelText;
+    if (status.textContent !== available) status.textContent = available;
+    button.setAttribute('aria-label', charges === 0
+      ? 'Próxima pista en ' + available
+      : `Usar pista. ${charges} de ${capacity} disponibles${available ? '. Próxima en ' + available : ''}`);
+    if (!document.hidden && refillAt !== null) timeout = setTimeout(refresh, Math.min(1000, refillAt - now));
   }
 
   function requestHint() {
     if (document.hidden) return;
-    update();
-    if (charge < chargeTime || !onHint()) return;
-    charge = 0;
-    persist(true);
-    update();
+    const now = Date.now();
+    const { charges, refillAt } = readBank(key, legacyKey, now);
+    if (charges && onHint()) saveBank(key, { charges: charges - 1, refillAt: refillAt ?? now + chargeTime });
+    refresh();
+  }
+
+  function sync(event) {
+    if (event.key === null || event.key === 'respira_' + key) refresh();
   }
 
   button.addEventListener('click', requestHint);
-  document.addEventListener('visibilitychange', update);
-  window.addEventListener('pagehide', suspend);
-  window.addEventListener('pageshow', update);
-  update();
+  document.addEventListener('visibilitychange', refresh);
+  window.addEventListener('pageshow', refresh);
+  window.addEventListener('storage', sync);
+  refresh();
 
   return () => {
-    if (stopped) return;
-    stopped = true;
-    suspend();
-    button.disabled = true;
+    clearTimeout(timeout);
     button.removeEventListener('click', requestHint);
-    document.removeEventListener('visibilitychange', update);
-    window.removeEventListener('pagehide', suspend);
-    window.removeEventListener('pageshow', update);
+    document.removeEventListener('visibilitychange', refresh);
+    window.removeEventListener('pageshow', refresh);
+    window.removeEventListener('storage', sync);
   };
 }

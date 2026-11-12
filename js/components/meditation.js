@@ -34,7 +34,7 @@ export function renderMeditationDetail(id, {petId = null, favoriteHtml = '', pet
       <div class="med-stage-message"><h2 data-med-stage-title>${safe(method.phases[0].label)}</h2><p data-med-stage-text>${safe(method.phases[0].text)}</p></div>
       <progress class="med-progress" data-med-progress value="0" max="${method.duration}" aria-label="Avance de la práctica"></progress>
       <div class="med-timeline-heading"><span>Momentos de la práctica</span><span data-med-elapsed>Transcurrido 0:00 de ${clock(method.duration).replace(/^0/, '')}</span></div>
-      <ol class="med-stages">${method.phases.map((phase, index) => `<li data-med-stage="${index}"${index === 0 ? ' class="is-active" aria-current="step"' : ''}><span class="med-stage-dot" aria-hidden="true"></span><strong>${safe(phase.label)}</strong><small>${clock(phase.at).replace(/^0/, '')} – ${clock(method.phases[index + 1]?.at ?? method.duration).replace(/^0/, '')}</small></li>`).join('')}</ol>
+      <ol class="med-stages">${method.phases.map((phase, index) => `<li><button type="button" data-med-action="stage" data-med-stage="${index}"${index === 0 ? ' class="is-active" aria-current="step"' : ''}><span class="med-stage-dot" aria-hidden="true"></span><strong>${safe(phase.label)}</strong><small>${clock(phase.at).replace(/^0/, '')} – ${clock(method.phases[index + 1]?.at ?? method.duration).replace(/^0/, '')}</small></button></li>`).join('')}</ol>
       <div class="med-actions"><button type="button" class="primary" data-med-toggle data-med-action="toggle">Iniciar</button><button type="button" class="secondary" data-med-action="reset">Reiniciar</button></div>
       <p class="med-small-note">Puedes pausar cuando lo necesites.</p>
     </section>

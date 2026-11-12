@@ -34,8 +34,7 @@ export function bindBreathingCompanion(scope, { announce = () => {} } = {}) {
   let disposed = false;
   let announcedKey = null;
   let seeker = null;
-  let seekWasRunning = null;
-  let seeking = false;
+  let seekOrigin = null;
   const timeText = milliseconds => { const value = Math.max(0, Math.ceil(milliseconds / 1000)); return String(Math.floor(value / 60)).padStart(2,'0') + ':' + String(value % 60).padStart(2,'0'); };
 
   const setText = (element, value) => {
@@ -70,14 +69,14 @@ export function bindBreathingCompanion(scope, { announce = () => {} } = {}) {
 
     root.dataset.state = state;
     root.dataset.phase = paused ? 'paused' : finished ? 'complete' : current.id;
-    setText(phase, finished ? 'Completado' : paused ? 'En pausa' : current.label);
-    setText(seconds, paused || finished ? '—' : remaining + ' segundos');
+    setText(phase, finished ? 'Completado' : current.label);
+    setText(seconds, finished ? '—' : remaining + ' segundos');
     setText(totalClock, timeText(TOTAL_MS - elapsed));
     ring?.setAttribute('stroke-dashoffset', String(1 - elapsed / TOTAL_MS));
     seeker?.update(elapsed / 1000, 'Transcurrido ' + timeText(elapsed) + ' de 01:04');
     setText(cycles, 'Ciclos completados: ' + completed + ' de ' + TOTAL_CYCLES);
     setText(status, finished ? 'Vuelve a respirar con naturalidad.'
-      : paused ? 'Respira con naturalidad. Al continuar, empezamos por inhalar.'
+      : paused ? 'En pausa. Respira con naturalidad y continúa cuando quieras.'
       : running ? current.hint : 'Cuando quieras, empezamos.');
 
     if (toggle) {
@@ -87,16 +86,16 @@ export function bindBreathingCompanion(scope, { announce = () => {} } = {}) {
       toggle.setAttribute('aria-pressed', String(running));
     }
     for (const item of phaseItems) {
-      const active = !paused && !finished && Number(item.dataset.breathPhase) === index;
+      const active = !finished && Number(item.dataset.breathPhase) === index;
       item.classList.toggle('is-active', active);
       if (active) item.setAttribute('aria-current', 'step');
       else item.removeAttribute('aria-current');
     }
 
-    if (seeking) return;
+    if (seekOrigin !== null) return;
     if (finished) say('complete', 'Has completado cuatro ciclos. Respira con naturalidad.');
-    else if (paused) say('paused', 'En pausa. Respira con naturalidad. Al continuar, empezaremos por inhalar.');
-    else if (running) say('phase-' + Math.floor(elapsed / PHASE_MS), current.label + ', cuatro segundos. ' + current.hint);
+    else if (paused) say('paused', 'En pausa. Respira con naturalidad y continúa cuando quieras.');
+    else if (running) say('phase-' + Math.floor(elapsed / PHASE_MS), current.label + ', ' + remaining + (remaining === 1 ? ' segundo. ' : ' segundos. ') + current.hint);
     else say('ready', 'Cuando quieras, pulsa Iniciar. Cuatro ciclos, un minuto y cuatro segundos.');
   }
 
@@ -105,6 +104,7 @@ export function bindBreathingCompanion(scope, { announce = () => {} } = {}) {
     elapsedMs = TOTAL_MS;
     startedAt = null;
     state = 'complete';
+    if (!document.hidden) view.navigator.vibrate?.(120);
     paint();
   }
 
@@ -139,8 +139,7 @@ export function bindBreathingCompanion(scope, { announce = () => {} } = {}) {
     const elapsed = totalElapsed();
     if (elapsed >= TOTAL_MS) { complete(); return; }
     stopTimeout();
-    // No se reanuda una retención: solo se conservan ciclos ya completados.
-    elapsedMs = Math.floor(elapsed / CYCLE_MS) * CYCLE_MS;
+    elapsedMs = elapsed;
     startedAt = null;
     state = 'paused';
     paint();
@@ -159,10 +158,19 @@ export function bindBreathingCompanion(scope, { announce = () => {} } = {}) {
   function click(event) {
     const control = event.target?.closest?.('[data-breath-action]');
     if (!control || !root.contains(control) || control.disabled) return;
-    if (!['toggle', 'reset'].includes(control.dataset.breathAction)) return;
+    const action = control.dataset.breathAction;
+    if (!['toggle', 'reset', 'phase'].includes(action)) return;
     event.preventDefault();
     event.stopPropagation();
-    if (control.dataset.breathAction === 'reset') reset();
+    if (action === 'reset') reset();
+    else if (action === 'phase') {
+      const index = Number(control.dataset.breathPhase);
+      if (!PHASES[index]) return;
+      const cycle = Math.min(TOTAL_CYCLES - 1, Math.floor(totalElapsed() / CYCLE_MS));
+      const target = (cycle * CYCLE_MS + index * PHASE_MS) / 1000;
+      seekInput(target);
+      seekCommit(target);
+    }
     else if (state === 'running') pause();
     else start();
   }
@@ -171,38 +179,34 @@ export function bindBreathingCompanion(scope, { announce = () => {} } = {}) {
     if (document.hidden) pause();
   }
 
+  function seekInput(value) {
+    if (disposed) return;
+    seekOrigin ??= state;
+    stopTimeout();
+    elapsedMs = Math.max(0, Math.min(TOTAL_MS, value * 1000));
+    startedAt = null;
+    state = elapsedMs >= TOTAL_MS ? 'complete' : 'paused';
+    paint();
+  }
+
+  function seekCommit(value) {
+    if (disposed || seekOrigin === null) return;
+    elapsedMs = Math.max(0, Math.min(TOTAL_MS, value * 1000));
+    const resume = seekOrigin === 'running' && elapsedMs < TOTAL_MS && !document.hidden;
+    state = elapsedMs >= TOTAL_MS ? 'complete' : resume ? 'running' : seekOrigin === 'ready' && elapsedMs === 0 ? 'ready' : 'paused';
+    startedAt = resume ? now() : null;
+    seekOrigin = null;
+    announcedKey = null;
+    paint();
+    if (resume) schedule();
+    else if (state === 'paused') announce('Tiempo ajustado. Quedan ' + timeText(TOTAL_MS - elapsedMs) + '.');
+  }
+
   seeker = bindCircularSeek(root.querySelector('.bc-orbit'), {
-    duration:TOTAL_MS / 1000,
-    getValue:() => totalElapsed() / 1000,
-    onInput(value) {
-      if (disposed) return;
-      if (seekWasRunning === null) seekWasRunning = state === 'running';
-      seeking = true;
-      stopTimeout();
-      elapsedMs = Math.max(0, Math.min(TOTAL_MS, value * 1000));
-      startedAt = null;
-      state = elapsedMs >= TOTAL_MS ? 'complete' : 'paused';
-      paint();
-      if (state !== 'complete') {
-        const index = Math.floor((elapsedMs % CYCLE_MS) / PHASE_MS);
-        setText(phase, PHASES[index].label);
-        setText(seconds, Math.max(1,Math.ceil((PHASE_MS - elapsedMs % PHASE_MS) / 1000)) + ' segundos');
-      }
-    },
-    onCommit(value) {
-      if (disposed) return;
-      const resume = seekWasRunning === true && !document.hidden;
-      elapsedMs = Math.max(0,Math.min(TOTAL_MS,value * 1000));
-      seeking = false;
-      seekWasRunning = null;
-      announcedKey = null;
-      startedAt = resume ? now() : null;
-      state = elapsedMs >= TOTAL_MS ? 'complete' : resume ? 'running' : elapsedMs === 0 ? 'ready' : 'paused';
-      paint();
-      if (state === 'paused') setText(status, 'Tiempo ajustado. Respira con naturalidad y continúa cuando quieras.');
-      if (state === 'running') schedule();
-      else announce('Tiempo ajustado. Quedan ' + timeText(TOTAL_MS - elapsedMs) + '.');
-    }
+    duration: TOTAL_MS / 1000,
+    getValue: () => totalElapsed() / 1000,
+    onInput: seekInput,
+    onCommit: seekCommit
   });
 
   root.addEventListener('click', click);

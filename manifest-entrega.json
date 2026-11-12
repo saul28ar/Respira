@@ -1,14 +1,14 @@
 {
-  "version": "Respira 4.20 · Juegos y mascotas",
-  "version_id": "4.20",
+  "version": "Respira 4.21 · Pistas y prácticas",
+  "version_id": "4.21",
   "fecha": "2026-11-12",
-  "tipo": "Respaldo completo de la entrega 4.20",
+  "tipo": "Respaldo completo de la entrega 4.21",
   "base_parche": {
-    "version": "4.19",
-    "sha256": "ac1f32f5421f0cce0450218d959d491492ba0a805d35f8df4fceaf514eb9bfa1"
+    "version": "4.20",
+    "sha256": "f5d0052ebf4b5a3562e22b95cc38715d17035481223d13fbb41ae9f29c75265e"
   },
   "bases_compatibles": [
-    "4.19"
+    "4.20"
   ],
   "runtime": [
     "css/advice-infographics.css",
@@ -188,8 +188,8 @@
     },
     {
       "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
-      "bytes": 562,
-      "sha256": "5fa8b2b64a9fa62f202e442d1ce6205a7ab251c6b27f6afabba2d810342e88f0"
+      "bytes": 446,
+      "sha256": "6072704bf5daeca675b92de9b0a8207b1d3db315150cbabae163557aeb4226d3"
     },
     {
       "archivo": "BARRA_MOVIL_APROBADO.md",
@@ -328,8 +328,8 @@
     },
     {
       "archivo": "css/breathing-companion.css",
-      "bytes": 6369,
-      "sha256": "caf553de7bb86500da2afca0a78a6243cc7e8b190e12f82844c6c6b14266b971"
+      "bytes": 6438,
+      "sha256": "aa97e31ca1959522e37a6b1a2451daca1818af70830593888f5e4bb7b769746b"
     },
     {
       "archivo": "css/circular-seek.css",
@@ -348,8 +348,8 @@
     },
     {
       "archivo": "css/games.css",
-      "bytes": 15411,
-      "sha256": "5b2f128450a7d2d532311a1e78525d0702a311d7a26a60ed42ea145d42575101"
+      "bytes": 16270,
+      "sha256": "ae30711304765b235ac278757634b7d81b243fea169f29b789c93714805c05a5"
     },
     {
       "archivo": "css/home-desktop.css",
@@ -378,8 +378,8 @@
     },
     {
       "archivo": "css/meditation.css",
-      "bytes": 10168,
-      "sha256": "6fa6def8bf5f0b7f3a5e995bbfedab4287266714ce5675b6b381fd0ce3ae0bc1"
+      "bytes": 10345,
+      "sha256": "adc39c2c4376eacd7fcfc514443476d4093b75bc654aeb720ba1d33f10e0daee"
     },
     {
       "archivo": "css/method-details.css",
@@ -904,7 +904,7 @@
     {
       "archivo": "index.html",
       "bytes": 2540,
-      "sha256": "314e778f1d106c4587a313407e09c6c0231d62fca21ccadec579b397d24f9d55"
+      "sha256": "cb2edd16091c6a6adb04d6d56f9d05b003fec7f4d38e5b9691c7995f583ded73"
     },
     {
       "archivo": "js/advice-controller.js",
@@ -938,8 +938,8 @@
     },
     {
       "archivo": "js/breathing-companion-controller.js",
-      "bytes": 8468,
-      "sha256": "3af88068b3928a40771ca7778adca889a6f1c3dd1d0cd5292d18a11fc277f79c"
+      "bytes": 8385,
+      "sha256": "53c5122072424f361fc761687ec8c6d7e8d85aa7e326b01ba41995c7629c7074"
     },
     {
       "archivo": "js/circular-seek.js",
@@ -963,8 +963,8 @@
     },
     {
       "archivo": "js/components/breathing-companion.js",
-      "bytes": 4798,
-      "sha256": "7e69516d0596e321cb81c6eb599c4ed3b43485a2acd614ad73a85b5738e1bc78"
+      "bytes": 4875,
+      "sha256": "a055a58b5ce9094f53a661ab7a48d229e506ac34a21da3937caab061dc631073"
     },
     {
       "archivo": "js/components/common.js",
@@ -983,8 +983,8 @@
     },
     {
       "archivo": "js/components/games.js",
-      "bytes": 7825,
-      "sha256": "a47527381075a2b51d10d4926054a6aee2d2f98c3967279b7c751c4e9ca61f6f"
+      "bytes": 8902,
+      "sha256": "955de3219d6fa089c9379563f248d6ac6261f47d0e45a69e6f04e322b9e49122"
     },
     {
       "archivo": "js/components/home-art.js",
@@ -1023,8 +1023,8 @@
     },
     {
       "archivo": "js/components/meditation.js",
-      "bytes": 4701,
-      "sha256": "840fc4c76046c628be7a6184b6e43979bcc52de17d063e12e33d6a728b07b2a3"
+      "bytes": 4756,
+      "sha256": "800912d4e1f597f5da272e6b4f71e2fd44cc7bc4687442cee77af8bba6fadb2f"
     },
     {
       "archivo": "js/components/methods.js",
@@ -1093,8 +1093,8 @@
     },
     {
       "archivo": "js/games/controller.js",
-      "bytes": 20471,
-      "sha256": "2ed348e25025117feea7d084c2e1732f6951c222542c1338e83f7a7b489f9234"
+      "bytes": 22122,
+      "sha256": "5e2227e5ee5cda6b33c73de3eb2ef8e7013c7de886a1a85f6c4e533bc8b3b31b"
     },
     {
       "archivo": "js/games/crossword-bank.js",
@@ -1113,8 +1113,8 @@
     },
     {
       "archivo": "js/games/hints.js",
-      "bytes": 2774,
-      "sha256": "38e164824f5f5d3c62af94ebed999d57c36e97ab8989fd1ab8c8e223a0df7f10"
+      "bytes": 3066,
+      "sha256": "6040cfd93a9c7009bc86aea66788bea67c90ee18d9b582e9f8d1bb1a4ee61722"
     },
     {
       "archivo": "js/games/phrase-bank.js",
@@ -1133,8 +1133,8 @@
     },
     {
       "archivo": "js/games/progress.js",
-      "bytes": 2464,
-      "sha256": "bf8119ff47717840ace436caf324c3d35e90131972895f3512c98f1704875351"
+      "bytes": 2922,
+      "sha256": "31a62604e4909f9acca8e6cac9bbd54e62f6e18a3aebc1af9b9a03e5784d9fb3"
     },
     {
       "archivo": "js/games/word-search-bank.js",
@@ -1163,8 +1163,8 @@
     },
     {
       "archivo": "js/meditation-controller.js",
-      "bytes": 9042,
-      "sha256": "1a31babde8f1ae42c844e3cb8985ec99629a25effc05e106e7068721018d1101"
+      "bytes": 9519,
+      "sha256": "27f9f3da014b72e2a64a2fa2f65d5b42771c0684418ad7ed8c3086ce42a69b85"
     },
     {
       "archivo": "js/meditation-data.js",
@@ -1213,8 +1213,8 @@
     },
     {
       "archivo": "sw.js",
-      "bytes": 7705,
-      "sha256": "0ffa61303da6fe6ae384a12857bfcd2b4dfd58acb03de56778a6c42435a916ac"
+      "bytes": 7706,
+      "sha256": "3d2b37443333e3d304d016618339d7af3db192998e700488ea3070ee2fe8c985"
     }
   ]
 }

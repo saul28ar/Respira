@@ -29,6 +29,7 @@ export function bindMeditation(scope, { announce = () => {} } = {}) {
   let timeout = null;
   let disposed = false;
   let announcedKey = '';
+  let lastStageCue = null;
   let exampleBag = [];
   let lastExample = null;
   let seeking = null;
@@ -44,6 +45,13 @@ export function bindMeditation(scope, { announce = () => {} } = {}) {
   };
   const now = () => view.performance.now();
   const elapsed = () => Math.min(totalMs, elapsedMs + (state === 'running' ? Math.max(0, now() - startedAt) : 0));
+  function phaseIndex(milliseconds) {
+    let index = 0;
+    for (let step = 1; step < phases.length; step++) {
+      if (milliseconds >= phases[step].at * 1000) index = step;
+    }
+    return index;
+  }
   const stop = () => {
     if (timeout !== null) view.clearTimeout(timeout);
     timeout = null;
@@ -75,10 +83,7 @@ export function bindMeditation(scope, { announce = () => {} } = {}) {
     if (disposed) return;
     const currentMs = elapsed();
     const done = state === 'complete';
-    let index = 0;
-    for (let step = 1; step < phases.length; step++) {
-      if (currentMs >= phases[step].at * 1000) index = step;
-    }
+    const index = phaseIndex(currentMs);
     const phase = phases[index];
     const remaining = Math.max(0, method.duration - currentMs / 1000);
     root.dataset.state = state;
@@ -114,7 +119,13 @@ export function bindMeditation(scope, { announce = () => {} } = {}) {
     });
     if (!seeking) {
       if (done) say('complete', 'Práctica completada. ' + phases.at(-1).text);
-      else if (state === 'running') say('phase-' + index, phase.label + '. ' + phase.text);
+      else if (state === 'running') {
+        if (!document.hidden && lastStageCue !== index) {
+          lastStageCue = index;
+          view.navigator.vibrate?.(90);
+        }
+        say('phase-' + index, phase.label + '. ' + phase.text);
+      }
     }
   }
 
@@ -147,6 +158,7 @@ export function bindMeditation(scope, { announce = () => {} } = {}) {
   function start() {
     if (disposed || document.hidden || state === 'running') return;
     if (state === 'complete') elapsedMs = 0;
+    if (state === 'complete' || state === 'idle') lastStageCue = null;
     startedAt = now();
     state = 'running';
     announcedKey = '';
@@ -172,6 +184,7 @@ export function bindMeditation(scope, { announce = () => {} } = {}) {
     elapsedMs = 0;
     startedAt = null;
     state = 'idle';
+    lastStageCue = null;
     paint();
     say('reset', 'Meditación reiniciada. Lista para comenzar.');
   }
@@ -194,10 +207,7 @@ export function bindMeditation(scope, { announce = () => {} } = {}) {
     elapsedMs = Math.max(0, Math.min(totalMs, seconds * 1000));
     state = elapsedMs >= totalMs ? 'complete' : resume ? 'running' : seeking.state === 'idle' ? 'idle' : 'paused';
     startedAt = resume ? now() : null;
-    let index = 0;
-    for (let step = 1; step < phases.length; step++) {
-      if (elapsedMs >= phases[step].at * 1000) index = step;
-    }
+    const index = phaseIndex(elapsedMs);
     announcedKey = state === 'complete' ? 'complete' : state === 'running' ? 'phase-' + index : '';
     seeking = null;
     paint();
@@ -209,11 +219,17 @@ export function bindMeditation(scope, { announce = () => {} } = {}) {
     const button = event.target?.closest?.('[data-med-action]');
     if (!button || !root.contains(button) || button.disabled) return;
     const action = button.dataset.medAction;
-    if (!['toggle', 'reset', 'example'].includes(action)) return;
+    if (!['toggle', 'reset', 'example', 'stage'].includes(action)) return;
     event.preventDefault();
     event.stopPropagation();
     if (action === 'example') nextExample(true);
     else if (action === 'reset') reset();
+    else if (action === 'stage') {
+      const stage = phases[Number(button.dataset.medStage)];
+      if (!stage) return;
+      seekInput(stage.at);
+      seekCommit(stage.at);
+    }
     else if (state === 'running') pause();
     else start();
   }

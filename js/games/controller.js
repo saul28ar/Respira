@@ -6,7 +6,11 @@ import { gameProgress, recordGame } from './progress.js';
 import { normalizeWordSearchWord as normalize } from './word-search-bank.js';
 import { gameTimeToday, trackGameTime } from './play-time.js';
 import { clearDraft, readDraft, writeDraft } from './drafts.js';
-import { bindGameHint, getHintCharge, saveHintCharge } from './hints.js';
+import { bindGameHint } from './hints.js';
+
+function randomItem(items) {
+  return items[Math.floor(Math.random() * items.length)];
+}
 
 function bindCalendar(page, petId) {
   const calendar = page.querySelector('.games-calendar');
@@ -70,7 +74,7 @@ function bindWordSearch(board, puzzle, say, finish, { draft, save, note }) {
   const targets = new Map(words.map((word, index) => [normalize(word), wordElements[index]]));
   const found = new Set();
   const matches = [];
-  let shownHint = null;
+  const shownHints = new Map();
   let firstTap;
   let pointer;
   let highlighted = [];
@@ -99,11 +103,16 @@ function bindWordSearch(board, puzzle, say, finish, { draft, save, note }) {
     board.querySelector('[data-puzzle-count]').textContent = found.size + ' de ' + words.length + ' palabras';
   }
 
-  function showHint(hint) {
-    if (shownHint) delete cells[shownHint.start].dataset.hint;
-    shownHint = hint;
-    if (hint) cells[hint.start].dataset.hint = '';
-    note(hint ? 'Busca ' + targets.get(hint.word).textContent + ' desde la casilla marcada.' : '');
+  function showHints() {
+    const starts = new Set(shownHints.values());
+    cells.forEach((cell, index) => cell.toggleAttribute('data-hint', starts.has(index)));
+    const names = [...shownHints.keys()].map(word => words[wordElements.indexOf(targets.get(word))]);
+    if (names.length === 1) note(`Busca ${names[0]} desde la casilla marcada.`);
+    else note(names.length ? `Busca desde las casillas marcadas: ${names.join(', ')}.` : '');
+  }
+
+  function saveWordSearch() {
+    save({ matches, wordHint: null, wordHints: [...shownHints].map(([word, start]) => ({ word, start })) });
   }
 
   if (Array.isArray(draft.matches)) {
@@ -113,8 +122,12 @@ function bindWordSearch(board, puzzle, say, finish, { draft, save, note }) {
       if (targets.has(answer) && !found.has(answer)) markWord(answer, path, ends);
     }
   }
-  if (draft.wordHint && targets.has(draft.wordHint.word) && !found.has(draft.wordHint.word) &&
-      Number.isInteger(draft.wordHint.start) && cells[draft.wordHint.start]) showHint(draft.wordHint);
+  const savedHints = Array.isArray(draft.wordHints) ? draft.wordHints : [draft.wordHint];
+  for (const hint of savedHints) {
+    if (hint && targets.has(hint.word) && !found.has(hint.word) &&
+        Number.isInteger(hint.start) && cells[hint.start]) shownHints.set(hint.word, hint.start);
+  }
+  if (shownHints.size) showHints();
 
   function check(first, last) {
     const { answer, path } = matchingWord(first, last);
@@ -124,12 +137,12 @@ function bindWordSearch(board, puzzle, say, finish, { draft, save, note }) {
     if (!target) { say('Ese tramo no forma una palabra de la lista.'); return; }
     if (found.has(answer)) { say('Esa palabra ya está marcada.'); return; }
     markWord(answer, path, [first, last]);
-    if (shownHint?.word === answer) showHint(null);
+    if (shownHints.delete(answer)) showHints();
     if (found.size === words.length) {
       cells.forEach(cell => { cell.disabled = true; });
       finish('Encontraste todas las palabras.');
     } else {
-      save({ matches, wordHint: shownHint });
+      saveWordSearch();
       say('Encontraste ' + words[wordElements.indexOf(target)] + '.');
     }
   }
@@ -183,15 +196,16 @@ function bindWordSearch(board, puzzle, say, finish, { draft, save, note }) {
   });
 
   return () => {
-    const word = [...targets.keys()].find(value => !found.has(value) && value !== shownHint?.word);
-    if (!word) { say('Ya tienes marcada la pista para la palabra que falta.'); return false; }
+    const word = randomItem([...targets.keys()].filter(value => !found.has(value) && !shownHints.has(value)));
+    if (!word) { say('Ya tienes pistas para las palabras que faltan.'); return false; }
     for (let start = 0; start < letters.length; start++) {
       if (letters[start] !== word[0]) continue;
       for (let end = 0; end < letters.length; end++) {
         const path = lineCells(start, end, size);
         if (path.length !== word.length || path.map(index => letters[index]).join('') !== word) continue;
-        showHint({ start, word });
-        save({ wordHint: shownHint });
+        shownHints.set(word, start);
+        showHints();
+        saveWordSearch();
         say('');
         return true;
       }
@@ -316,9 +330,15 @@ function bindCrossword(board, { rows, columns, entries }, say, finish, { draft, 
   });
   select(Number.isInteger(draft.selected) && entries[draft.selected] ? draft.selected : 0);
   return () => {
+    const eligible = (entry, index) => solved.has(index) ? [] : entry.cells.filter(cell => !cells[cell].querySelector('[data-cross-letter]').textContent);
+    const candidates = entries.map(eligible);
+    if (!candidates[selected].length) {
+      const next = randomItem(entries.map((_, index) => index).filter(index => candidates[index].length));
+      if (next === undefined) { say('Ya se muestran todas las letras del crucigrama.'); return false; }
+      select(next);
+    }
     const entry = entries[selected];
-    const cell = entry.cells.find(index => !cells[index].querySelector('[data-cross-letter]').textContent);
-    if (cell === undefined) { say('Esta palabra ya muestra todas sus letras. Puedes elegir otra.'); return false; }
+    const cell = randomItem(candidates[selected]);
     const position = entry.cells.indexOf(cell);
     reveal(cell, entry.answer[position], true);
     hints.add(cell);
@@ -336,18 +356,22 @@ function bindPhrase(board, round, say, finish, { draft, save, note }) {
     ${round.options.map((pair, index) => `<button type="button" data-phrase-answer="${index}" aria-pressed="false"><span>${safe(pair[0])}</span><span aria-hidden="true"> / </span><span>${safe(pair[1])}</span></button>`).join('')}</div>`;
   const options = [...board.querySelectorAll('[data-phrase-answer]')];
   const wrong = options.map((_, index) => index).filter(index => index !== round.correct);
-  let hints = Number.isInteger(draft.phraseHints) ? Math.max(0, Math.min(3, draft.phraseHints)) : 0;
+  const oldHints = Number.isInteger(draft.phraseHints) ? Math.max(0, Math.min(3, draft.phraseHints)) : 0;
+  const hintState = draft.phraseHintState;
+  let clue = typeof hintState?.clue === 'boolean' ? hintState.clue : oldHints > 0;
+  const savedEliminated = Array.isArray(hintState?.eliminated) ? hintState.eliminated : wrong.slice(0, Math.max(0, oldHints - 1));
+  const eliminated = [...new Set(savedEliminated.filter(index => wrong.includes(index)))].slice(0, 2);
   let choice = wrong.includes(draft.phraseChoice) ? draft.phraseChoice : null;
 
   function updateHints() {
-    const eliminated = wrong.slice(0, Math.max(0, hints - 1));
     if (eliminated.includes(choice)) choice = null;
     options.forEach((item, index) => {
       item.disabled = eliminated.includes(index);
       item.toggleAttribute('data-eliminated', item.disabled);
       item.setAttribute('aria-pressed', String(index === choice));
     });
-    if (hints) note(round.hint + (eliminated.length ? ` Opciones descartadas: ${eliminated.length}.` : ''));
+    const count = eliminated.length ? `Opciones descartadas: ${eliminated.length}.` : '';
+    note([clue ? round.hint : '', count].filter(Boolean).join(' '));
   }
   updateHints();
   for (const button of options) button.addEventListener('click', () => {
@@ -361,13 +385,18 @@ function bindPhrase(board, round, say, finish, { draft, save, note }) {
     }
     board.querySelector('.games-phrase-prompt').innerHTML = prompt(round.options[index]);
     options.forEach(item => { item.disabled = true; });
-    finish(round.feedback);
+    finish('¡Frase completada!');
   });
   return () => {
-    if (hints >= 3) { say('Ya tienes las pistas de esta frase. Elige entre las opciones restantes.'); return false; }
-    hints++;
+    const available = eliminated.length < Math.min(2, wrong.length - 1)
+      ? wrong.filter(index => !eliminated.includes(index)) : [];
+    if (!clue) available.push('clue');
+    const hint = randomItem(available);
+    if (hint === undefined) { say('Ya tienes las pistas de esta frase. Elige entre las opciones restantes.'); return false; }
+    if (hint === 'clue') clue = true;
+    else eliminated.push(hint);
     updateHints();
-    save({ phraseHints: hints, phraseChoice: choice });
+    save({ phraseHintState: { clue, eliminated }, phraseChoice: choice });
     say('');
     return true;
   };
@@ -404,7 +433,9 @@ export function bindGames(page, { type, level, petId }) {
     say(text);
     if (!progress?.saved) dayResult.textContent = 'No se pudo guardar el progreso en este dispositivo.';
     else if (!progress.markDay) dayResult.textContent = 'Reto guardado. Elige tu compañía de hoy para sumar días.';
-    else if (!progress.newDay) dayResult.textContent = 'El día de hoy ya estaba marcado en tu calendario.';
+    else if (!progress.newDay) dayResult.textContent = progress.newGameDay
+      ? 'Sumaste otro juego al calendario de hoy.'
+      : 'Este juego ya estaba marcado en el calendario de hoy.';
     else if (progress.total % 10 === 0) dayResult.textContent = '¡Ganaste la insignia de ' + progress.total + ' días!';
     else dayResult.textContent = 'Sumaste un día al calendario de tu mascota.';
     const total = games[type].levels.length;
@@ -412,7 +443,9 @@ export function bindGames(page, { type, level, petId }) {
     const next = allSolved ? level % total + 1 : nextGameLevel(type, petId);
     done.querySelector('[data-games-next]').href = '#games/' + type + '/' + next;
     done.hidden = false;
-    done.querySelector('a').focus({ preventScroll: true });
+    const explanation = done.querySelector('[data-games-explanation]');
+    if (explanation) explanation.focus();
+    else done.querySelector('a').focus({ preventScroll: true });
   }
 
   const hint = bindPuzzle[type](board, games[type].levels[level - 1], say, finish, { draft, save, note });
@@ -426,9 +459,10 @@ export function bindGames(page, { type, level, petId }) {
   if (!board.hidden) {
     stopHint = bindGameHint({
       button: hintBar.querySelector('button'),
+      label: hintBar.querySelector('.games-hint-label'),
       status: hintBar.querySelector('[data-games-hint-status]'),
-      elapsed: getHintCharge(petId, type),
-      save: elapsed => saveHintCharge(petId, type, elapsed),
+      petId,
+      type,
       onHint: hint
     });
   }

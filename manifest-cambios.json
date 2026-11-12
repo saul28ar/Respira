@@ -1,188 +1,83 @@
 {
-  "version_base": "4.19",
-  "version_nueva": "4.20",
-  "sha256_base_zip": "ac1f32f5421f0cce0450218d959d491492ba0a805d35f8df4fceaf514eb9bfa1",
+  "version_base": "4.20",
+  "version_nueva": "4.21",
+  "sha256_base_zip": "f5d0052ebf4b5a3562e22b95cc38715d17035481223d13fbb41ae9f29c75265e",
   "eliminaciones": [],
   "archivos": [
     {
       "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
-      "bytes": 562,
-      "sha256": "5fa8b2b64a9fa62f202e442d1ce6205a7ab251c6b27f6afabba2d810342e88f0"
+      "bytes": 446,
+      "sha256": "6072704bf5daeca675b92de9b0a8207b1d3db315150cbabae163557aeb4226d3"
     },
     {
-      "archivo": "css/companions.css",
-      "bytes": 16939,
-      "sha256": "3b0a3bdd4d3e74d690e50305b9b8b7d2481e6cf62fa9b558e6df4848d68e060d"
+      "archivo": "css/breathing-companion.css",
+      "bytes": 6438,
+      "sha256": "aa97e31ca1959522e37a6b1a2451daca1818af70830593888f5e4bb7b769746b"
     },
     {
       "archivo": "css/games.css",
-      "bytes": 15411,
-      "sha256": "5b2f128450a7d2d532311a1e78525d0702a311d7a26a60ed42ea145d42575101"
+      "bytes": 16270,
+      "sha256": "ae30711304765b235ac278757634b7d81b243fea169f29b789c93714805c05a5"
     },
     {
       "archivo": "css/meditation.css",
-      "bytes": 10168,
-      "sha256": "6fa6def8bf5f0b7f3a5e995bbfedab4287266714ce5675b6b381fd0ce3ae0bc1"
-    },
-    {
-      "archivo": "css/more-jardin.css",
-      "bytes": 15236,
-      "sha256": "cb6f48551ed1e63f204ff7d8f0536bbcabe0bbc21c33dc6522ad3e912f752e5d"
-    },
-    {
-      "archivo": "css/quick-techniques.css",
-      "bytes": 7998,
-      "sha256": "c4e2aad436a81d56e798d63922d05b962b0af603f8131d368d38491dd04e5e35"
-    },
-    {
-      "archivo": "imagenes/juegos/mascotas-jugando.webp",
-      "bytes": 162176,
-      "sha256": "5b2281ec8eb83c96ca23f574499f6c8331690c253d51ced1d11429cdec985d50"
-    },
-    {
-      "archivo": "imagenes/mas/respira-gatito-curioso.webp",
-      "bytes": 70108,
-      "sha256": "e4765e98299059574537583e16cc462fe909f76c60cb72485591dad3bbd5420c"
-    },
-    {
-      "archivo": "imagenes/mascotas/reacciones/meditacion-brotecito.webp",
-      "bytes": 98686,
-      "sha256": "b5175853a1ac4b8e939a14a655422c8c40bfb24ceb73ea17b2539b7402668c79"
-    },
-    {
-      "archivo": "imagenes/mascotas/reacciones/meditacion-lunita.webp",
-      "bytes": 62736,
-      "sha256": "542a40c343bde4826c3f85e116eed99815af37b67324399a53cf3a5476984cbd"
-    },
-    {
-      "archivo": "imagenes/mascotas/reacciones/meditacion-nubecita.webp",
-      "bytes": 77162,
-      "sha256": "120e37e2dd480228c52f4b42ddb10e5b1476f9e40e0363e98cadd7726731464e"
-    },
-    {
-      "archivo": "imagenes/mascotas/reacciones/respiracion-brotecito.webp",
-      "bytes": 103930,
-      "sha256": "6ef9cadc23182a26532cb052d9d4b78082c2d87a2f691c012ef577cec8252fac"
-    },
-    {
-      "archivo": "imagenes/mascotas/reacciones/respiracion-lunita.webp",
-      "bytes": 69088,
-      "sha256": "c7271244d3457521e6459c17d9c7bbf1eda08346f1a3f3fc7a8f223e0e5651ed"
-    },
-    {
-      "archivo": "imagenes/mascotas/reacciones/respiracion-nubecita.webp",
-      "bytes": 81748,
-      "sha256": "41c075b2e6a495e4ff73e29376e4d209ba73fb5af2c43f97dd7623af23d70e6b"
-    },
-    {
-      "archivo": "imagenes/mascotas/reacciones/tecnicas-brotecito.webp",
-      "bytes": 104268,
-      "sha256": "68926d30f1458235a5d3558df5136d65c4e9d4189bc2f3d38d45923b12d869d4"
-    },
-    {
-      "archivo": "imagenes/mascotas/reacciones/tecnicas-lunita.webp",
-      "bytes": 60562,
-      "sha256": "ac2498619aba94b2b81b1a3e8d5b65ef1f616141e3e71427760b10b16f8b6b2d"
-    },
-    {
-      "archivo": "imagenes/mascotas/reacciones/tecnicas-nubecita.webp",
-      "bytes": 84100,
-      "sha256": "04ec772fce005c1ddc8c1d33927f46514576ab1658caf396a13282e90f685e91"
+      "bytes": 10345,
+      "sha256": "adc39c2c4376eacd7fcfc514443476d4093b75bc654aeb720ba1d33f10e0daee"
     },
     {
       "archivo": "index.html",
       "bytes": 2540,
-      "sha256": "314e778f1d106c4587a313407e09c6c0231d62fca21ccadec579b397d24f9d55"
+      "sha256": "cb2edd16091c6a6adb04d6d56f9d05b003fec7f4d38e5b9691c7995f583ded73"
     },
     {
-      "archivo": "js/app.js",
-      "bytes": 16823,
-      "sha256": "a4c608f546be9ab70f32b48254033baf03d237a6290fdd524ea20ccaf1270d96"
+      "archivo": "js/breathing-companion-controller.js",
+      "bytes": 8385,
+      "sha256": "53c5122072424f361fc761687ec8c6d7e8d85aa7e326b01ba41995c7629c7074"
     },
     {
-      "archivo": "js/components/activities.js",
-      "bytes": 8932,
-      "sha256": "3ea6ccb318d263c65dedd2d6dcaf0b2ee1424af8c5cf51cefee8b3f2d405b00a"
-    },
-    {
-      "archivo": "js/components/companions.js",
-      "bytes": 9067,
-      "sha256": "f7b5e2b2e2b0071c4115d53b46c668266be91e3fcf98750f611c789c4c4774be"
+      "archivo": "js/components/breathing-companion.js",
+      "bytes": 4875,
+      "sha256": "a055a58b5ce9094f53a661ab7a48d229e506ac34a21da3937caab061dc631073"
     },
     {
       "archivo": "js/components/games.js",
-      "bytes": 7825,
-      "sha256": "a47527381075a2b51d10d4926054a6aee2d2f98c3967279b7c751c4e9ca61f6f"
-    },
-    {
-      "archivo": "js/components/home-desktop.js",
-      "bytes": 4442,
-      "sha256": "ac8b4a36e157c107bd4dd61c7d4fb62166ddb0d7952b02154a8613566486ef86"
-    },
-    {
-      "archivo": "js/components/home-mobile-jardin.js",
-      "bytes": 4532,
-      "sha256": "750ff4683fab104de81b3c503bfded99b44272ae7bb8cfee287f69fddd971fe3"
+      "bytes": 8902,
+      "sha256": "955de3219d6fa089c9379563f248d6ac6261f47d0e45a69e6f04e322b9e49122"
     },
     {
       "archivo": "js/components/meditation.js",
-      "bytes": 4701,
-      "sha256": "840fc4c76046c628be7a6184b6e43979bcc52de17d063e12e33d6a728b07b2a3"
-    },
-    {
-      "archivo": "js/components/more-jardin.js",
-      "bytes": 3997,
-      "sha256": "ed8e4af21c772efc1586e4c4cfca243727bfcdd9955039f4ef58a30bc0424529"
-    },
-    {
-      "archivo": "js/components/quick-techniques.js",
-      "bytes": 8739,
-      "sha256": "419064ff74d785acb57e4e7eae669a2668d773c82b274a71941b93019c74cda2"
+      "bytes": 4756,
+      "sha256": "800912d4e1f597f5da272e6b4f71e2fd44cc7bc4687442cee77af8bba6fadb2f"
     },
     {
       "archivo": "js/games/controller.js",
-      "bytes": 20471,
-      "sha256": "2ed348e25025117feea7d084c2e1732f6951c222542c1338e83f7a7b489f9234"
+      "bytes": 22122,
+      "sha256": "5e2227e5ee5cda6b33c73de3eb2ef8e7013c7de886a1a85f6c4e533bc8b3b31b"
     },
     {
-      "archivo": "js/games/crossword-bank.js",
-      "bytes": 30158,
-      "sha256": "3f69ed684e4db42f470d6627d32d9f9e0b9067b203a176b71324b72a98b0aad6"
+      "archivo": "js/games/hints.js",
+      "bytes": 3066,
+      "sha256": "6040cfd93a9c7009bc86aea66788bea67c90ee18d9b582e9f8d1bb1a4ee61722"
     },
     {
-      "archivo": "js/games/crossword-extra-layouts.js",
-      "bytes": 70513,
-      "sha256": "0988dde3c65c67db9b7b8c3d5dd2b1980bef0c51c3164072f580812cd3fd8d62"
+      "archivo": "js/games/progress.js",
+      "bytes": 2922,
+      "sha256": "31a62604e4909f9acca8e6cac9bbd54e62f6e18a3aebc1af9b9a03e5784d9fb3"
     },
     {
-      "archivo": "js/games/phrase-bank.js",
-      "bytes": 48130,
-      "sha256": "b3274b6bcbd9ce4ba241d0d0981af8747b9954c5cc439ecc55635e2eb5500b9b"
-    },
-    {
-      "archivo": "js/games/phrase-extra-rounds.js",
-      "bytes": 37351,
-      "sha256": "c15c8affcfbc99d55b2749494f53a53a00a85d6b394f400486902d9aa88949f0"
-    },
-    {
-      "archivo": "js/games/play-time.js",
-      "bytes": 3240,
-      "sha256": "73c3aa68adf5cc6f8d438d069389747fc63b2293b24228ac30c6018def8c2fae"
-    },
-    {
-      "archivo": "js/games/word-search-bank.js",
-      "bytes": 13233,
-      "sha256": "0b3fd11f9cdaf1233026036b3c4c94ae69b971dcd14b3309198923a4abe28d27"
+      "archivo": "js/meditation-controller.js",
+      "bytes": 9519,
+      "sha256": "27f9f3da014b72e2a64a2fa2f65d5b42771c0684418ad7ed8c3086ce42a69b85"
     },
     {
       "archivo": "manifest-entrega.json",
-      "bytes": 41553,
-      "sha256": "828cc88c67ed15034e44b4661b70db0533ea63702f9fcfea90c64e3cc6bfe719"
+      "bytes": 41555,
+      "sha256": "c34fb3c982baffbc7468b323c654a56f8e0aa5a46c804e60ac5f665a66ac1591"
     },
     {
       "archivo": "sw.js",
-      "bytes": 7705,
-      "sha256": "0ffa61303da6fe6ae384a12857bfcd2b4dfd58acb03de56778a6c42435a916ac"
+      "bytes": 7706,
+      "sha256": "3d2b37443333e3d304d016618339d7af3db192998e700488ea3070ee2fe8c985"
     }
   ]
 }

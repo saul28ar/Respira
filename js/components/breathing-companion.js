@@ -32,7 +32,7 @@ export function renderBreathingCompanion({ petId = null, mobile = false, favorit
           <svg class="timer-seek-overlay" viewBox="0 0 280 280" aria-label="Cambiar momento de respiración"><circle class="timer-seek-hit" data-circular-seek role="slider" tabindex="0" aria-label="Momento de la respiración" aria-valuemin="0" aria-valuemax="64" aria-valuenow="0" cx="140" cy="140" r="130" stroke-width="44"/><circle class="timer-seek-thumb" data-seek-thumb cx="140" cy="10" r="5" aria-hidden="true"/></svg>
           <span class="bc-seek-caption">Toca o arrastra el aro</span>
         </div>
-        <div class="bc-phases" aria-label="Las cuatro fases">${['Inhala','Mantén','Exhala','Pausa'].map((name, i) => `<div data-breath-phase="${i}"${i === 0 ? ' class="is-active" aria-current="step"' : ''}><span>${name}</span><small>4 s</small></div>`).join('')}</div>
+        <div class="bc-phases" role="group" aria-label="Las cuatro fases del ciclo actual">${['Inhala','Mantén','Exhala','Pausa'].map((name, i) => `<button type="button" data-breath-action="phase" data-breath-phase="${i}"${i === 0 ? ' class="is-active" aria-current="step"' : ''}><span>${name}</span><small>4 s</small></button>`).join('')}</div>
         <p id="breath-status" class="bc-status">Cuando quieras, empezamos.</p>
         <div class="bc-session-bottom"><span id="breath-cycles">Ciclos completados: 0 de 4</span><button class="bc-reset" type="button" data-breath-action="reset">${icon('back')}Reiniciar</button></div>
       </section>

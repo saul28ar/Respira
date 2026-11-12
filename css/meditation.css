@@ -73,14 +73,16 @@ body:has(.practice-collection, .meditation-session-page){background:linear-gradi
 .med-progress::-moz-progress-bar{background:#578a65}
 .med-timeline-heading{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:.68rem;line-height:1.5;color:#7b896e;margin-bottom:16px;text-align:left}
 .med-stages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;padding:0;margin:0 0 24px;list-style:none}
-.med-stages>li{display:flex;flex-direction:column;align-items:center;gap:7px;min-width:0;color:#839178;font-size:.75rem;line-height:1.4}
+.med-stages>li{min-width:0}
+.med-stages button{display:flex;flex-direction:column;align-items:center;gap:7px;width:100%;height:100%;min-height:44px;padding:2px 1px;border-radius:8px;background:transparent;color:#61765e;font-size:.75rem;line-height:1.4}
+.med-stages button:hover{background:#eef3e9}
 .med-stage-dot{height:7px;width:7px;border-radius:50%;background:#dce5d3;flex-shrink:0}
 .med-stages strong{font-size:.75rem;font-weight:400;min-height:2.8em;display:flex;align-items:center;justify-content:center}
 .med-stages small{font-size:.7rem;white-space:nowrap}
-.med-stages>li.is-active{color:#2f6849}
-.med-stages>li.is-active strong{font-weight:600}
-.med-stages>li.is-active .med-stage-dot{background:#458365;box-shadow:0 0 0 5px #edf2e6}
-.med-stages>li.is-complete .med-stage-dot{background:#91ad81}
+.med-stages button.is-active{color:#2f6849}
+.med-stages button.is-active strong{font-weight:600}
+.med-stages button.is-active .med-stage-dot{background:#458365;box-shadow:0 0 0 5px #edf2e6}
+.med-stages button.is-complete .med-stage-dot{background:#91ad81}
 .med-actions{display:flex;gap:12px;justify-content:center}
 .med-actions>button{flex:1;max-width:225px;min-width:0}
 .med-small-note{font-size:.72rem;color:#7b886f;margin:14px 0 0}

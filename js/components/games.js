@@ -29,16 +29,21 @@ export function gameCalendar(month, progress, today = dateAtDevice()) {
   const number = month.getMonth();
   const blanks = (month.getDay() + 6) % 7;
   const length = new Date(year, number + 1, 0).getDate();
+  const calendarGames = Object.entries(games);
   const cells = Array.from({ length }, (_, index) => {
     const date = new Date(year, number, index + 1);
     const day = dateAtDevice(date);
     const marked = progress.days.has(day);
-    return `<li class="games-day${marked ? ' games-day-played' : ''}" ${day === today ? 'aria-current="date"' : ''}><time datetime="${day}"><span class="sr-only">${dayFormat.format(date)}${marked ? ', reto completado' : ''}</span><span aria-hidden="true">${index + 1}</span></time></li>`;
+    const completed = progress.dayGames.get(day);
+    const labels = completed ? calendarGames.filter(([type]) => completed.has(type)).map(([, game]) => game.name).join(', ') : '';
+    const status = labels ? ', juegos completados: ' + labels : marked ? ', reto completado' : '';
+    const dots = calendarGames.map(([type]) => `<span class="games-calendar-dot" data-calendar-game="${type}" ${completed?.has(type) ? 'data-completed' : ''}></span>`).join('');
+    return `<li class="games-day${marked ? ' games-day-played' : ''}" ${day === today ? 'aria-current="date"' : ''}><time datetime="${day}"><span class="sr-only">${dayFormat.format(date)}${status}</span><span aria-hidden="true">${index + 1}</span><span class="games-day-dots" aria-hidden="true">${dots}</span></time></li>`;
   });
   return `<div class="games-month"><button type="button" data-games-month="-1" aria-label="Mes anterior">${icon('chevron')}</button><strong aria-live="polite">${monthFormat.format(month)}</strong><button type="button" data-games-month="1" aria-label="Mes siguiente" ${dateAtDevice(month) >= today.slice(0, 7) + '-01' ? 'disabled' : ''}>${icon('chevron')}</button></div>
     <div class="games-week" aria-hidden="true">${daysOfWeek.map(([letter, day]) => `<abbr title="${day}">${letter}</abbr>`).join('')}</div>
     <ol class="games-days" aria-label="Días del mes">${'<li aria-hidden="true"></li>'.repeat(blanks)}${cells.join('')}</ol>
-    <p class="games-calendar-key"><span></span> Día con un reto completado</p>`;
+    <ul class="games-calendar-key" aria-label="Juegos completados por día">${calendarGames.map(([type, game]) => `<li><span class="games-calendar-dot" data-calendar-game="${type}" data-completed aria-hidden="true"></span>${game.name}</li>`).join('')}</ul>`;
 }
 
 function badges(petId, total) {
@@ -104,6 +109,7 @@ function renderMenu(petId, progress) {
 }
 
 function renderChallenge(level, game, petId) {
+  const explanation = game.levels[level - 1].feedback;
   return `<main class="page games-page games-challenge" data-games-view="challenge">
     ${gameBack('#games')}
     <div class="games-panel" data-games-play>
@@ -112,13 +118,21 @@ function renderChallenge(level, game, petId) {
       <p class="games-result" role="status" data-games-result></p>
       <div class="games-hint-bar">
         <p class="games-hint-note" data-games-hint-note role="status" hidden></p>
-        <button type="button" class="games-hint-button" data-games-hint aria-label="Pista disponible en 2:00" disabled>
+        <button type="button" class="games-hint-button" data-games-hint aria-label="Pistas" disabled>
           ${icon('bulb')}
           <span class="games-hint-label" aria-hidden="true">Pista</span>
-          <span data-games-hint-status aria-hidden="true">2:00</span>
+          <span data-games-hint-status aria-hidden="true"></span>
         </button>
       </div>
-      <div class="games-finish" data-games-finish hidden><p data-games-day-result></p><a class="primary" href="#games">Volver a Juegos ${icon('arrow')}</a><a class="games-link" data-games-next>Siguiente reto</a></div>
+      <div class="games-finish" data-games-finish hidden>
+        ${explanation ? `<section class="games-phrase-explanation" aria-labelledby="phrase-explanation-title">
+          <h2 id="phrase-explanation-title" tabindex="-1" data-games-explanation>¿Qué quiere decir esta frase?</h2>
+          <p>${safe(explanation)}</p>
+        </section>` : ''}
+        <p data-games-day-result></p>
+        <a class="primary" href="#games">Volver a Juegos ${icon('arrow')}</a>
+        <a class="games-link" data-games-next>Siguiente reto</a>
+      </div>
     </div>
   </main>`;
 }
