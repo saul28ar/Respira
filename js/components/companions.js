@@ -66,7 +66,8 @@ export function renderPetLibrary() {
     <div class="companion-library-list">${petIds.map(id => {
       const p = pets[id];
       return `<button class="companion-library-card companion-${id}" type="button" data-pet-view="${id}">
-        ${petArtwork(id)}<span class="companion-library-copy"><strong>${safe(p.name)}</strong><span>${safe(p.subtitle)}</span><em>Conocer su historia ${icon('arrow')}</em></span>
+        <span class="companion-library-portrait"><img class="companion-art" src="./imagenes/mascotas/reacciones/acompanantes-${id}.webp" width="768" height="768" alt="" decoding="async"></span>
+        <span class="companion-library-copy"><strong>${safe(p.name)}</strong><span>${safe(p.subtitle)}</span><em>Conocer su historia ${icon('arrow')}</em></span>
       </button>`;
     }).join('')}</div>
   </main>`;

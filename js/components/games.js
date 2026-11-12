@@ -13,8 +13,14 @@ function gameBack(href, label = 'Volver') {
   return `<a class="back-button games-back" href="${href}">${icon('back')} ${label}</a>`;
 }
 
+const gamesLabel = '<span class="home-games-dice" aria-hidden="true"><i><b></b><b></b><b></b></i><i><b></b><b></b><b></b><b></b><b></b></i></span><span>Juegos</span>';
+
 export function homeGamesButton() {
-  return `<button class="home-games-button" type="button" data-go="games"><span class="home-games-dice" aria-hidden="true"><i><b></b><b></b><b></b></i><i><b></b><b></b><b></b><b></b><b></b></i></span><span>Juegos</span></button>`;
+  return `<button class="home-games-button" type="button" data-go="games">${gamesLabel}</button>`;
+}
+
+export function homeGamesLink() {
+  return `<a class="home-games-link" href="#games" data-go="games">${gamesLabel}</a>`;
 }
 
 export function gameCalendar(month, progress, today = dateAtDevice()) {

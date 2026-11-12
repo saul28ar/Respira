@@ -1,4 +1,4 @@
-const CACHE = 'respira-code-4-18-1-perfiles-integrados';
+const CACHE = 'respira-code-4-19-inicio-acompanantes';
 const ASSETS = [
   "./",
   "./js/method-art.js",
@@ -78,6 +78,9 @@ const ASSETS = [
   "./imagenes/mascotas/brotecito.png",
   "./imagenes/mascotas/lunita.png",
   "./imagenes/mascotas/nubecita.png",
+  "./imagenes/mascotas/reacciones/acompanantes-brotecito.webp",
+  "./imagenes/mascotas/reacciones/acompanantes-lunita.webp",
+  "./imagenes/mascotas/reacciones/acompanantes-nubecita.webp",
   "./imagenes/mascotas/reacciones/favoritos-brotecito.webp",
   "./imagenes/mascotas/reacciones/favoritos-lunita.webp",
   "./imagenes/mascotas/reacciones/favoritos-nubecita.webp",

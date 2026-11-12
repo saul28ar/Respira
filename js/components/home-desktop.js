@@ -2,7 +2,7 @@ import { pets } from '../data.js';
 import { safe } from '../utils.js';
 import { icon } from '../icons.js';
 import { renderHomeCardArt } from './home-card-art.js';
-import { homeGamesButton } from './games.js';
+import { homeGamesLink } from './games.js';
 
 const pathways = [
   {title:'Respiración',subtitle:'Ejercicios para relajarte',image:'lago',symbol:'breath',color:'blue',action:'data-open="breath"'},
@@ -11,25 +11,27 @@ const pathways = [
   {title:'Consejos',subtitle:'Pequeñas ideas para ti',image:'consejos',symbol:'bulb',color:'yellow',action:'data-go="advice"'}
 ];
 
-function companion(petId, message) {
+function companion(petId) {
   const pet = pets[petId];
   if (pet) return `<div class="free-companion" data-selected-companion="${petId}"><button class="free-pet-button" type="button" data-interactive-pet="${petId}" aria-label="Abrir el perfil de ${safe(pet.name)}"><img class="free-pet-art" data-companion-id="${petId}" src="./imagenes/mascotas/${petId}.png" alt="" width="724" height="724" draggable="false"></button><button class="free-rechoose" type="button" data-action="home-rechoose"><span>Volver a elegir</span>${icon('chevron')}</button></div>`;
   return `<button class="hd3-choose" type="button" data-go="pet-select" aria-label="Elegir mascota"><span class="hd3-choose-title">Tu compañía</span><span class="hd3-trio" aria-hidden="true">${['brotecito','nubecita','lunita'].map(id=>`<img src="./imagenes/mascotas/${id}.png" alt="" width="724" height="724">`).join('')}</span><span class="hd3-choose-label">Elegir mascota ${icon('chevron')}</span></button>`;
 }
 
 // Home 3 · Jardín: texto, navegación y botones reales sobre el arte aprobado.
-export function renderDesktopHome({petId=null,message=''}={}) {
+export function renderDesktopHome({petId=null}={}) {
   const chosen = Object.hasOwn(pets,petId) ? petId : null;
   const tabs = [['home','Inicio','home'],['methods','Métodos','methods'],['favorites','Favoritos','heart'],['more','Más','settings']];
   return `<div class="home-desktop-jardin">
     <main class="hd3-shell">
-      <header class="hd3-topbar"><a class="hd3-brand" href="#welcome" data-go="welcome" aria-label="Respira. Tu espacio de calma."><img src="./imagenes/welcome/logo-aprobado-v2.png" alt="Respira. Tu espacio de calma." width="1774" height="887"></a><nav class="hd3-top-nav" aria-label="Navegación principal">${tabs.map(([route,text,symbol],i)=>`<a href="#${route}" data-go="${route}" class="${i===0?'active':''}" ${i===0?'aria-current="page"':''}>${icon(symbol)}<span>${text}</span></a>`).join('')}</nav><button class="hd3-menu" type="button" data-go="more" aria-label="Abrir opciones">${icon('menu')}</button></header>
+      <header class="hd3-topbar"><a class="hd3-brand" href="#welcome" data-go="welcome" aria-label="Respira. Tu espacio de calma."><img src="./imagenes/welcome/logo-aprobado-v2.png" alt="Respira. Tu espacio de calma." width="1774" height="887"></a><nav class="hd3-top-nav" aria-label="Navegación principal">${homeGamesLink()}${tabs.map(([route,text,symbol],i)=>`<a href="#${route}" data-go="${route}" class="${i===0?'active':''}" ${i===0?'aria-current="page"':''}>${icon(symbol)}<span>${text}</span></a>`).join('')}</nav><button class="hd3-menu" type="button" data-go="more" aria-label="Abrir opciones">${icon('menu')}</button></header>
       <div class="hd3-layout">
-        <section class="hd3-intro" aria-labelledby="hd3-title"><div class="hd3-greeting"><small class="hd3-eyebrow">TU ESPACIO DE CALMA</small><h1 id="hd3-title">¡Qué bueno<br>verte aquí! <i aria-hidden="true">${icon('leaf')}</i></h1><p>Hoy también es un buen día<br>para cuidar de ti.</p></div></section>
-        ${companion(chosen,message)}
-        <div class="home-calm-and-games"><button class="hd3-calm" type="button" data-open="grounding"><span class="hd3-calm-icon">${icon('lotus')}</span><span class="hd3-calm-copy"><strong>Necesito calma</strong><span>Comienza un ejercicio ahora</span></span><span class="hd3-calm-arrow">${icon('chevron')}</span></button>${homeGamesButton()}</div>
-        <section class="hd3-cards" aria-label="Elige un momento para ti"><div class="hd3-card-grid">${pathways.map(card=>`<button class="hd3-pathway hd3-pathway-${card.color}" type="button" ${card.action}>${renderHomeCardArt(card.image,'hd3-card-art')}<span class="hd3-card-panel"><span class="hd3-symbol">${icon(card.symbol)}</span><span class="hd3-card-copy"><strong>${card.title}</strong><small>${card.subtitle}</small></span><span class="hd3-card-arrow">${icon('chevron')}</span></span></button>`).join('')}</div></section>
+        <section class="hd3-intro" aria-labelledby="hd3-title">
+          <div class="hd3-greeting"><small class="hd3-eyebrow">TU ESPACIO DE CALMA</small><h1 id="hd3-title">¡Qué bueno<br>verte aquí! <i aria-hidden="true">${icon('leaf')}</i></h1><p>Hoy también es un buen día<br>para cuidar de ti.</p></div>
+          ${companion(chosen)}
+        </section>
+        <button class="hd3-calm" type="button" data-open="grounding"><span class="hd3-calm-icon">${icon('lotus')}</span><span class="hd3-calm-copy"><strong>Necesito calma</strong><span>Comienza un ejercicio ahora</span></span><span class="hd3-calm-arrow">${icon('chevron')}</span></button>
         <button class="hd3-journal" type="button" data-open="journal"><span class="hd3-journal-icon">${icon('journal')}</span><span class="hd3-journal-copy"><strong>Mi espacio para escribir</strong><small>Comparte lo que sientes</small></span><img class="hd3-cat" src="./imagenes/inicio-web/gatito-hd.png" alt="" width="1536" height="1024"><span class="hd3-journal-arrow">${icon('chevron')}</span></button>
+        <section class="hd3-cards" aria-label="Elige un momento para ti"><div class="hd3-card-grid">${pathways.map(card=>`<button class="hd3-pathway hd3-pathway-${card.color}" type="button" ${card.action}>${renderHomeCardArt(card.image,'hd3-card-art')}<span class="hd3-card-panel"><span class="hd3-symbol">${icon(card.symbol)}</span><span class="hd3-card-copy"><strong>${card.title}</strong><small>${card.subtitle}</small></span><span class="hd3-card-arrow">${icon('chevron')}</span></span></button>`).join('')}</div></section>
       </div>
     </main>
   </div>`;

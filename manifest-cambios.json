@@ -1,0 +1,87 @@
+{
+  "version_base": "4.18.2",
+  "version_nueva": "4.19",
+  "sha256_base_zip": "0a436a2c0951f171ecc3c6c5ae071a71e8ab341cbb6fc8da8c00822232aa4819",
+  "bases_compatibles": [
+    "4.18.1",
+    "4.18.2"
+  ],
+  "eliminaciones": [],
+  "archivos": [
+    {
+      "archivo": "ACTUALIZAR_RESPIRA.txt",
+      "bytes": 379,
+      "sha256": "68eecc4610a45c19921e64d2c75f235becd617abdd6ed45916de19bbcd42fe2c"
+    },
+    {
+      "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
+      "bytes": 379,
+      "sha256": "68eecc4610a45c19921e64d2c75f235becd617abdd6ed45916de19bbcd42fe2c"
+    },
+    {
+      "archivo": "LEEME_INSTALAR_COMPLETO.txt",
+      "bytes": 432,
+      "sha256": "659c5ee596c02020f1477b05aa2117fd04b998bab08e26a5cd1ed1fbf5a7ac65"
+    },
+    {
+      "archivo": "css/companions.css",
+      "bytes": 15937,
+      "sha256": "1fd367cdc561da2e8697641054777cfd094ad22f856efe32fb9825a4837a7af6"
+    },
+    {
+      "archivo": "css/games.css",
+      "bytes": 14062,
+      "sha256": "b9df7a688e345ad8e8d6c71727b0e4a82e6d21d1fb00ee8fde5fb4fbdf05fa74"
+    },
+    {
+      "archivo": "css/home-desktop.css",
+      "bytes": 13506,
+      "sha256": "74c88526f946c0bd30de5fce8fb42afb700e0edb4f514c315201f9275b91c61b"
+    },
+    {
+      "archivo": "imagenes/mascotas/reacciones/acompanantes-brotecito.webp",
+      "bytes": 156158,
+      "sha256": "fc2baf6d66cf8fd42d7991af54c49d41e73676d883c212e9c38775eb03a68dea"
+    },
+    {
+      "archivo": "imagenes/mascotas/reacciones/acompanantes-lunita.webp",
+      "bytes": 99796,
+      "sha256": "b947ce3ad6ce6d3bdc33ec5c376855b1a73de2eb44964e69c222799e2ed9527c"
+    },
+    {
+      "archivo": "imagenes/mascotas/reacciones/acompanantes-nubecita.webp",
+      "bytes": 104124,
+      "sha256": "b96f26920e3ae468a94ea790ecd05b8766f685fedffa1fb2e851aac1f6d9f542"
+    },
+    {
+      "archivo": "index.html",
+      "bytes": 2540,
+      "sha256": "eae05015a2806101a54ad42cf5abb64db6ce1573e7b3c167e0c96ac40b2baa12"
+    },
+    {
+      "archivo": "js/components/companions.js",
+      "bytes": 8411,
+      "sha256": "ca3acdfdc8033f322293e36087d9b033bc9eb6d6ba5bebbd8b2270aeac7c4bd1"
+    },
+    {
+      "archivo": "js/components/games.js",
+      "bytes": 6980,
+      "sha256": "553a1f1f66ad0034526f6a770ffe17834206a76be7ca5b184abdd400f0197a3b"
+    },
+    {
+      "archivo": "js/components/home-desktop.js",
+      "bytes": 4441,
+      "sha256": "b5b6dc5f437301e4e16ca4092883c113aa603bc3c5103de4e829b28a1295196c"
+    },
+    {
+      "archivo": "manifest-entrega.json",
+      "bytes": 38433,
+      "sha256": "d9280d1069aa92bbbd2adf3131f58969fbc370014fc5170f9a956c2a6756782d"
+    },
+    {
+      "archivo": "sw.js",
+      "bytes": 6976,
+      "sha256": "b1088683b4e653a23d2721be97e68e011399a1c9c6f603d19ed039ce94d255b3"
+    }
+  ]
+}
