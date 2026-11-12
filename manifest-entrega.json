@@ -1,12 +1,8 @@
 {
-  "version": "Respira 4.18.1 · Perfiles, pistas y favoritos",
-  "version_id": "4.18.1",
+  "version": "Respira 4.18.2 · App completa",
+  "version_id": "4.18.2",
   "fecha": "2026-11-11",
-  "tipo": "Respaldo completo de la entrega 4.18.1",
-  "base_parche": {
-    "version": "4.17",
-    "sha256": "ce29ce7c879ec8ddf3e11ab2225e477a207f3995c4ee7a606e80c5b066e368e8"
-  },
+  "tipo": "App completa para publicar",
   "runtime": [
     "css/advice-infographics.css",
     "css/advice-stack.css",
@@ -163,131 +159,6 @@
   ],
   "archivos": [
     {
-      "archivo": "ACTUALIZAR_RESPIRA.txt",
-      "bytes": 577,
-      "sha256": "6b79ea0d39f0f04246ab505be365604816d7fab1f1972939cf32e97ff4c26620"
-    },
-    {
-      "archivo": "ACTUALIZAR_SOLO_CAMBIOS.txt",
-      "bytes": 577,
-      "sha256": "6b79ea0d39f0f04246ab505be365604816d7fab1f1972939cf32e97ff4c26620"
-    },
-    {
-      "archivo": "BARRA_MOVIL_APROBADO.md",
-      "bytes": 1847,
-      "sha256": "723007c0766b52c2603790914c7273ca2fbdf48fde556eb558cbce917cf10d84"
-    },
-    {
-      "archivo": "DIARIO_AGENDA.md",
-      "bytes": 3843,
-      "sha256": "b18ca5a412a8a61a1d1db60f5a474a7d3ec192eb93983a60c488157604a49808"
-    },
-    {
-      "archivo": "DISENO_APROBADO.md",
-      "bytes": 1810,
-      "sha256": "12e0a345fd550fd5faa6cecf7e509975a270084899e5d719e6729f8e454e8dc8"
-    },
-    {
-      "archivo": "ENTRADA_DIARIA_APROBADO.md",
-      "bytes": 2213,
-      "sha256": "3b09f960e035cfcf49ddc7e7c9ff76b1a3fb9a6b155c45d61023117f0845a03b"
-    },
-    {
-      "archivo": "ENTREGAS.md",
-      "bytes": 12729,
-      "sha256": "48479b892b30eb069834801fbb5a65b1c1b83db88b0fde198b08c05c42ff40d7"
-    },
-    {
-      "archivo": "FAVORITOS_APROBADO.md",
-      "bytes": 1442,
-      "sha256": "30f5fcacb4c06b88acd561e6126b1e97756fc139b54dbedf89173d9db52c8259"
-    },
-    {
-      "archivo": "FONDOS_APROBADO.md",
-      "bytes": 3602,
-      "sha256": "17c3fe319fdabdaacc134db7849fa2b8740ba27c104e4d1c471bd953c428a202"
-    },
-    {
-      "archivo": "HOME_MASCOTAS_APROBADO.md",
-      "bytes": 3032,
-      "sha256": "637aa88e591a45b249471c58c76142db5229c39fbc0692fc6ed3115aa0bcfe54"
-    },
-    {
-      "archivo": "HOME_MOVIL_APROBADO.md",
-      "bytes": 2161,
-      "sha256": "c68285d8404ed7dcfea5534fb55f6febf307ea2cee67ff39e4514f69a380cba4"
-    },
-    {
-      "archivo": "HOME_WEB_APROBADO.md",
-      "bytes": 1969,
-      "sha256": "96b5be33ee147a41b4c54e3073e751daab711e82d59889a7d5e380885dd7ee5b"
-    },
-    {
-      "archivo": "ICONO_APROBADO.md",
-      "bytes": 2003,
-      "sha256": "4ecbd96a38115d8cf8f0a461df731576b58f8611127496e43a47b6bcf275568f"
-    },
-    {
-      "archivo": "INICIAR_RESPIRA.cmd",
-      "bytes": 166,
-      "sha256": "c32c360baeb7e5aea9b2667e80dcc92ffb246e0cbac67d13955c422bc64c77b6"
-    },
-    {
-      "archivo": "LEEME.md",
-      "bytes": 13260,
-      "sha256": "3edada1bea610a6284f9aa69911651da40293cf6a001927103877edc5bae4c15"
-    },
-    {
-      "archivo": "LEEME_INSTALAR_COMPLETO.txt",
-      "bytes": 263,
-      "sha256": "37fc654cffcceb210a7bad84ef9650e5334b9aa23fb9218c60209679c2cb1ddd"
-    },
-    {
-      "archivo": "MASCOTAS_APROBADO.md",
-      "bytes": 2225,
-      "sha256": "46d248ac549dc93f29b92c2ac0b1381cd03fbf99b4e6c50f4d7e6eccffcc8d98"
-    },
-    {
-      "archivo": "MAS_APROBADO.md",
-      "bytes": 1233,
-      "sha256": "0d352d5680a2a6c369bec2c6a81dcff521a6460fa0630097b9aab74cd426e98e"
-    },
-    {
-      "archivo": "METODOS_APROBADO.md",
-      "bytes": 4792,
-      "sha256": "6eeeb9449b73b35a9ecc079a672c9c3b70401c6f42ddebb94705686e8c46d818"
-    },
-    {
-      "archivo": "PET_SELECT_APROBADO.md",
-      "bytes": 1477,
-      "sha256": "b9ad1ef067bcba98daa5d5438b02e610e89cff3f03cf6680fbbc20222ad1be22"
-    },
-    {
-      "archivo": "Servidor.ps1",
-      "bytes": 3400,
-      "sha256": "4e5d7c30594e6e42ff40bc11916ad62df691b8d9fc791f39b8e714c895f8ac96"
-    },
-    {
-      "archivo": "TARJETAS_HOME_APROBADO.md",
-      "bytes": 2228,
-      "sha256": "ca451e24a641cee1eb767ee6ef13e7c81c0370069c732b3922495083767bbd52"
-    },
-    {
-      "archivo": "VERIFICACION.md",
-      "bytes": 16783,
-      "sha256": "9069708c80c32ed6a2162d23f6369e39e854bd28b0b87eae53df7d1fe944d828"
-    },
-    {
-      "archivo": "WELCOME_ALCANCE.md",
-      "bytes": 856,
-      "sha256": "d46be3050c0bafb70f059477fce721b2f70b30058f0e1c294476ac64f36c930b"
-    },
-    {
-      "archivo": "WELCOME_APROBADO.md",
-      "bytes": 3717,
-      "sha256": "a11b2421514993227feee2ada6a57364d13a53bd1a8cdd8c2c78ca88adc31a9a"
-    },
-    {
       "archivo": "css/advice-infographics.css",
       "bytes": 10067,
       "sha256": "3b08195b6c339cafaf31496dc9522b690999817b31f87cf4b710765832fbc840"
@@ -341,11 +212,6 @@
       "archivo": "css/home-mobile-jardin.css",
       "bytes": 13339,
       "sha256": "c54e8e825b2a34a52e81f91916993c325b8623156933c6d2910380fdce5f2d41"
-    },
-    {
-      "archivo": "css/home.css",
-      "bytes": 8836,
-      "sha256": "78d617332f1317774e67e962b74b7f6d2e033818480a29f9de0ec8ac3c744162"
     },
     {
       "archivo": "css/interface.css",
@@ -403,11 +269,6 @@
       "sha256": "c637ff42bca04f5247a314458f085d9d2f82cb22bc7426b54ca861dd7808d77d"
     },
     {
-      "archivo": "css/welcome-mobile.css",
-      "bytes": 4180,
-      "sha256": "d28ae3fd7cfb8b06d60b95d46e9b103f80053706600a4fcb85e009fb35248c9d"
-    },
-    {
       "archivo": "iconos/apple-touch-icon.png",
       "bytes": 38889,
       "sha256": "bb90b14fc8bffe2b85a7b6460e442abf2be4c667ef2c92a1169f53af99c634f2"
@@ -436,11 +297,6 @@
       "archivo": "iconos/icon-maskable-512.png",
       "bytes": 170830,
       "sha256": "aa2a20fa49cb3a5a82686286395acc8d5ef6d9e7f451c7d9b2b8257e0b13015f"
-    },
-    {
-      "archivo": "iconos/lunita-esmeralda-maestro.png",
-      "bytes": 1684992,
-      "sha256": "a48889c2f5e676992977efe8d9a7a8fb5d5511224253db494b822931f495f34e"
     },
     {
       "archivo": "imagenes/consejos/boundaries.png",
@@ -556,36 +412,6 @@
       "archivo": "imagenes/inicio-web/tecnicas-hd.png",
       "bytes": 3487917,
       "sha256": "653cc21743f8b05b0278f51c0cdc1aa2a21529ddecd1be9a67c9a8879db53eb1"
-    },
-    {
-      "archivo": "imagenes/inicio/arte-inicio-original.png",
-      "bytes": 2465694,
-      "sha256": "b3fdc5a9a6e05c1d0f0eab77cafcf4a9cba5b4c0a2fb19899d50727b3f8a8f54"
-    },
-    {
-      "archivo": "imagenes/inicio/logo.svg",
-      "bytes": 663,
-      "sha256": "a6e1242d6e62672e353195dd274bab551e09ad3fc421c1c4ed4cda1701e60c11"
-    },
-    {
-      "archivo": "imagenes/inicio/tarjeta-consejos.png",
-      "bytes": 279709,
-      "sha256": "d61ab2d514ee9e4ddbbe5a5f2b49cda9664f9e3fb1325efb998badf9a2708588"
-    },
-    {
-      "archivo": "imagenes/inicio/tarjeta-meditacion.png",
-      "bytes": 154756,
-      "sha256": "2c66f7e5eee33620188d36676a61a8e696657ffa74c486cd246d243384ca182e"
-    },
-    {
-      "archivo": "imagenes/inicio/tarjeta-respiracion.png",
-      "bytes": 225415,
-      "sha256": "ff2f142ae0c56ae2366acc772c46aa5c8d289b0b649d2d42f767b96086a1d87b"
-    },
-    {
-      "archivo": "imagenes/inicio/tarjeta-tecnicas.png",
-      "bytes": 261097,
-      "sha256": "8d4b8c36b4ab047122ba5b59c3c4985d072de9a60cfe6e610517dfc450894151"
     },
     {
       "archivo": "imagenes/interfaz/barras/respira_barra_favoritos_activo.png",
@@ -723,11 +549,6 @@
       "sha256": "11a6a6091f95806dd850d45952e006879d04f39045c3a6bad497a2d7564d8955"
     },
     {
-      "archivo": "imagenes/paisajes/lago.png",
-      "bytes": 4312480,
-      "sha256": "34cb5665b6ab5826480e7fe0ad276a0baf52e9bb40a1204e1e5e9580e249cac3"
-    },
-    {
       "archivo": "imagenes/paisajes/ondas-original.png",
       "bytes": 2230664,
       "sha256": "01ca6a514bac2dd04f1ff87f3f1ba12a441fcb86ebfeee412f86a79e318ec7fd"
@@ -783,11 +604,6 @@
       "sha256": "06ea8bd514681820bdb6307b85069315d14c8c90708944674a64f903291ac78c"
     },
     {
-      "archivo": "imagenes/welcome/boton-iniciar-original-v2.png",
-      "bytes": 1674933,
-      "sha256": "1de83c67d85789ad81a3337510216f1797814b28f0ae60470d4346cef9c5d3a3"
-    },
-    {
       "archivo": "imagenes/welcome/logo-aprobado-v2.png",
       "bytes": 902878,
       "sha256": "645392cda33fa7a88f45291e8610de7b7abadafefc4152190e2c0f7081a9ae47"
@@ -803,11 +619,6 @@
       "sha256": "22ef401d0d12ea9a860abad1edab6211fbf9a733ed11ed1cc570db0fa9b8d5a7"
     },
     {
-      "archivo": "imagenes/welcome/portada-movil-feliz-serena-v1.png",
-      "bytes": 2516625,
-      "sha256": "d3fb92abc26c9538976812dbfe44f4ebfee7a77e0d95ce64ff03a05c0aa5c998"
-    },
-    {
       "archivo": "imagenes/welcome/portada-movil-nitida-v3.png",
       "bytes": 2909985,
       "sha256": "18c3bcce45da4e4507a4a8085fe37ad634e13648bc4c6705fb1fee811a5d7fef"
@@ -815,7 +626,7 @@
     {
       "archivo": "index.html",
       "bytes": 2542,
-      "sha256": "8431a9c849b962bfbf58755ec55980a48a84bbe152fe89ea5c077731ea5a54fe"
+      "sha256": "b4989719b0213fc1cad76cd2fadc6de4996e173341cb802455e4332459f04de4"
     },
     {
       "archivo": "js/advice-controller.js",
@@ -898,11 +709,6 @@
       "sha256": "66cda50c29dc90f62f0aa5454cfb3e5a0e83606e9cb95c7667af7340e0258df1"
     },
     {
-      "archivo": "js/components/home-art.js",
-      "bytes": 1053,
-      "sha256": "7529c88f64299c97401565e896a55407d2b4f04424bad1dbe8f489df5c24e62d"
-    },
-    {
       "archivo": "js/components/home-card-art.js",
       "bytes": 827,
       "sha256": "a337bca5b246555136485f3c633d6d78ee9c5005a2f31ac902bf59d1d571a60b"
@@ -916,11 +722,6 @@
       "archivo": "js/components/home-mobile-jardin.js",
       "bytes": 4531,
       "sha256": "a54a8242ab80b94ec78655af92beffd7662d28f77bbf7cf3c68b123a0ca10e77"
-    },
-    {
-      "archivo": "js/components/home.js",
-      "bytes": 3468,
-      "sha256": "14aa1449d47834438c1a1ce54befafdc3e579efa9f918cb2fda10a568369d369"
     },
     {
       "archivo": "js/components/interface.js",
@@ -1115,11 +916,7 @@
     {
       "archivo": "sw.js",
       "bytes": 6787,
-      "sha256": "9273cb6b8078327f6de72cef7b0af708de2a1bac73121f68e966886f14d2f5ca"
+      "sha256": "20220fa8d7e34617496c5346a7c0ac8669a1aa968d8019b006dc2fec699de526"
     }
-  ],
-  "bases_compatibles": [
-    "4.17",
-    "4.18"
   ]
 }
